@@ -1,0 +1,388 @@
+=== MSN 21-741
+
+Konfigurieren von Netzwerken mit Windows Server 2016
+
+=*= Unterrichtseinheiten Übersicht
+
+•   U01:    Planen und Implementieren eines IPv4-Netzwerks
+•   U02:    Implementieren von DHCP
+•   U03:    Implementieren von IPv6
+•   U04:    Implementieren von DNS
+•   U05:    Implementieren und Verwalten von IPAM
+•   U06:    Remotezugriff in Windows Server 2016
+•   U07:    Implementieren von DirectAccess
+•   U08:    Implementieren von VPNs
+•   U09:    Implementieren eines Netzwerks für Zweigstellen
+•   U10:    Konfigurieren erweiterter Netzwerkfeatures
+•   U11:    Implementieren von Software-Defined Networking
+
+===============================================================================
+!U01:    Planen und Implementieren eines IPv4-Netzwerks
+===============================================================================
+
+!L01:   Planen der IPv4-Adressierung
+
+    •   Übersicht der IPv4-Einstellungen
+    •   Definieren von Subnetzen
+    •   Öffentliche, private und APIPA-Adressen
+    •   Diskussion: Bestimmen der IPv4-Notation und –Translation
+    •   Diskussion: Erstellen eines Subnetzschemas für ein neues Büro
+    •   Erstellen von Supernetzen
+
+!L02:   Konfigurieren eines IPv4-Hosts
+
+    •   Konfigurierbare IPv4-Einstellungen
+    •   Tools zur Konfiguration von IPv4
+    •   Vorführung: Konfigurieren von IPv4
+    •   Automatisches Konfigurieren von IPv4
+
+!L03:   Verwaltung und Problembehandlung einer IPv4-Netzwerkverbindung
+
+    •   Routing zwischen IPv4-Netzwerken
+    •   Ändern der IPv4-Route
+    •   Methode zur Problembehandlung bei IPv4
+    •   Tools zur Problembehandlung bei IPv4
+    •   Vorführung: Problembehandlung von IPv4
+    •   Was ist Microsoft Message Analyzer?
+    •   Vorführung: Verwenden von Microsoft Message Analyzer
+
+===============================================================================
+!U02:    Implementieren von DHCP
+===============================================================================
+
+!L01:   Übersicht zur DHCP-Serverrolle
+
+    •   Vorteile der Verwendung von DHCP
+    •   Wie DHCP Adressen zuweist
+    •   Wie die DHCP-Leasegenerierung funktioniert
+    •   Wie die DHCP-Leaseerneuerung funktioniert
+
+!L02:   Bereitstellen von DHCP
+
+    •   Installieren und Konfigurieren der DHCP-Serverrolle
+    •   DHCP-Serverautorisierung
+    •   Vorführung: Installieren eines DHCP-Servers und Durchführen von Nachinstallationsaufgaben
+    •   Zuordnen und Verwalten von IPv4-Adressen mit DHCP
+    •   Konfigurieren von DHCP-Optionen
+    •   Vorführung: Konfigurieren eines DHCP-Servers
+    •   Was ist ein DHCP-Relay-Agent?
+
+!L03:   Verwaltung und Problembehandlung von DHCP
+
+    •   Was sind DHCP-Sicherheitsoptionen?
+    •   Erweiterte Optionen für die DHCP-Konfiguration
+    •   Konfigurieren von Bereichsgruppierungen und Multicastbereichen
+    •   Hochverfügbarkeitsoptionen für DHCP
+    •   Was ist DHCP-Failover?
+    •   Vorführung: Konfigurieren von DHCP-Failover
+    •   Warten der DHCP-Datenbank
+    •   Migration des DHCP-Servers
+    •   Diskussion: Problembehandlung bei DHCP
+
+===============================================================================
+!U03:    Implementieren von IPv6
+===============================================================================
+
+!L01:   Übersicht zur IPv6-Adressierung
+
+        •   Warum sollten Sie IPv6 verwenden?
+        •   Unterschiede zwischen IPv4 und IPv6
+        •   Übersicht zur IPv6-Adressierung
+        •   IPv6-Adressenstruktur
+        •   IPv6-Adressentypen
+        •   Autokonfigurationsoptionen für IPv6
+
+!L02:   Konfigurieren eines IPv6-Hosts
+
+        •   Konfigurierbare IPv6-Einstellungen
+        •   Tools zur Konfiguration von IPv6
+        •   Vorführung: Konfigurieren von IPv6
+        •   Verwenden von DHCPv6
+        •   Vorführung: Konfigurieren von DHCP für IPv6
+
+!L03:   Implementieren der IPv6- und IPv4-Koexistenz
+
+        •   Was sind Knotentypen?
+        •   Optionen für die IPv4- und IPv6-Koexistenz
+        •   Überlegungen für die Planung einer nativen IPv6-Umgebung
+        •   Was versteht man unter IPv6-über-IPv4-Tunneling?
+
+!L04:   Übergang von IPv4 zu IPv6
+
+        •   Was ist ISATAP?
+        •   Was versteht man unter IP6-zu-IP4?
+        •   Was ist Teredo?
+        •   Was ist PortProxy?
+        •   Prozess für den Übergang zu reinen IPv6-Netzwerken
+
+===============================================================================
+!U04:    Implementieren von DNS
+===============================================================================
+
+!L01:   Implementieren von DNS-Servern
+
+        •   Wie funktioniert die DNS-Namensauflösung?
+        •   DNS-Komponenten
+        •   Was sind DNS-Zonen und -Einträge?
+        •   Vorführung: Installieren und Konfigurieren der DNS-Rolle
+        •   Konfigurieren von DNS-Clients
+        •   Hilfsmittel und Vorgehensweisen zur Problembehandlung der Namensauflösung
+        •   Verwalten von DNS-Diensten
+        •   Vorführung: Problembehandlung bei der Namensauflösung
+        •   Testen von DNS-Servern
+        •   Vorführung: Testen des DNS-Servers
+
+
+!L02:   Konfigurieren von Zonen in DNS
+
+        •   DNS-Ressourceneintragstypen
+        •   Erstellen von DNS-Einträgen
+        •   Konfigurieren von DNS-Zonen
+        •   Was sind primäre und sekundäre Zonen?
+        •   Konfigurieren der Zonenreplikation
+
+!L03:   Konfigurieren der Namensauflösung zwischen DNS-Zonen
+
+        •   Auflösen von DNS-Namen zwischen Zonen
+        •   Was ist eine Stubzone?
+        •   Was versteht man unter DNS-Caching?
+        •   Was versteht man unter DNS-Weiterleitung?
+        •   Informationen über DNS-Weiterleitung und Stubzonen
+        •   Diskussion: Wann Sie DNS-Weiterleitung verwenden sollten
+        •   Konfigurieren der Delegierung
+
+!L04:   Konfigurieren der DNS-Integration mit AD DS
+
+        •   Übersicht der Integration von AD DS und DNS
+        •   Was sind Ressourceneinträge für Dienste (SRV)?
+        •   Vorteile von Ressourceneinträgen für Dienste (SRV)
+        •   Was sind Active Directory-integrierte Zonen?
+        •   Anwendungspartitionen in AD DS
+        •   Dynamische Updates
+        •   Vorführung: Konfigurieren von AD DS-integrierten Zonen
+
+!L05:   Konfigurieren erweiterter DNS-Einstellungen
+
+        •   Konfigurieren der erweiterten DNS-Namensauflösung
+        •   Konfigurieren von Stammhinweisen
+        •   Was ist die GlobalNames-Zone?
+        •   Vorführung: Konfigurieren der GlobalNames-Zone
+        •   Geteiltes DNS
+        •   Implementieren von Geteiltes DNS
+        •   DNS-Richtlinien
+        •   Vorführung: Konfigurieren von DNS-Richtlinien
+        •   Implementieren von DNS-Sicherheit
+        •   Implementieren von DNSSEC
+        •   Vorführung: Konfigurieren von DNSSEC
+        •   DNS auf Nano-Server
+
+===============================================================================
+!U05:    Implementieren und Verwalten von IPAM
+===============================================================================
+
+!L01:   Übersicht zu IPAM
+
+        •   Was ist IPAM?
+        •   IPAM-Architektur
+        •   Anforderungen für die IPAM-Bereitstellung
+        •   Überlegungen zur IPAM-Bereitstellung
+        •   Integration von IPAM mit Virtual Machine Manager
+
+!L02:   Bereitstellen von IPAM
+
+        •   Implementierungsprozess von IPAM
+        •   Vorführung: Installieren und Bereitstellen der IPAM-Rolle
+        •   IPAM-Verwaltung
+        •   Vorführung: Verwalten von IPAM
+        •   Konfigurieren von IPAM-Optionen
+        •   Verwalten von DNS über IPAM
+        •   Vorführung: Verwalten von DNS über IPAM
+        •   Konfigurieren von DHCP-Servern über IPAM
+        •   Vorführung: Verwalten von DHCP-Bereichen über IPAM
+
+!L03:   Verwalten von IP-Adressbereichen mit IPAM
+
+        •   Verwenden von IPAM zur Verwaltung von IP-Adressen
+        •   Hinzufügen von Adressräumen zu IPAM
+        •   Importieren und Aktualisieren von Adressbereichen
+        •   Suchen, Zuweisen und Freigeben von IP-Adressen
+        •   Verwalten des IP-Adressbestands in IPAM
+        •   Vorführung: Verwalten der IP-Adressierung über IPAM
+        •   Überwachen und Erstellen von Berichten in IPAM
+
+
+===============================================================================
+!U06:    Remotezugriff in Windows Server 2016
+===============================================================================
+
+!L01:   Übersicht über den Remotezugriff
+
+        •   Diskussion: Wann Remotezugriff verwendet wird
+        •   Remotezugriffsoptionen
+        •   Verwalten von Remotezugriff in Windows Server 2016
+        •   Vorführung: Installieren und Verwalten der Remotezugriffs-Serverrolle
+        •   Was ist ein Netzwerkrichtlinienserver?
+        •   Netzwerkrichtlinienserver-Richtlinien
+        •   Vorführung: Konfigurieren von Netzwerkrichtlinienserver-Richtlinien
+        •   Überlegungen bezüglich der Bereitstellung von PKI für den Remotezugriff
+        •   Konfigurieren von Routing und NAT mit der Remotezugriffsrolle
+
+!L02:   Implementieren des Webanwendungsproxys
+
+        •   Was ist ein Webanwendungsproxy?
+        •   Authentifizierungsoption für den Webanwendungsproxy
+        •   Veröffentlichen von Anwendungen über den Webanwendungsproxy
+        •   Vorführung: Veröffentlichen einer sicheren Website
+
+===============================================================================
+!U07:    Implementieren von DirectAccess (=:DA)
+===============================================================================
+
+!L01:   Überblick über DirectAccess
+
+        •   DirectAccess-Komponenten
+        •   Bereitstellungsoptionen für DirectAccess-Server
+        •   Optionen für DirectAccess-Tunneling-Protokoll
+        •   Verwalten von Remotezugriff in Windows Server 2016
+        •   Funktionsweise von DirectAccess bei internen Clients
+        •   Funktionsweise von DirectAccess bei externen Clients
+        •   Vorführung: Installieren der Remotezugriffs-Serverrolle
+
+!L02:   Implementieren von DA über den Assistenten für erste Schritte
+
+        •   DirectAccess-Komponenten
+        •   Bereitstellungsoptionen für DirectAccess-Server
+        •   Optionen für DirectAccess-Tunneling-Protokoll
+        •   Verwalten von Remotezugriff in Windows Server 2016
+        •   Funktionsweise von DirectAccess bei internen Clients
+        •   Funktionsweise von DirectAccess bei externen Clients
+        •   Vorführung: Installieren der Remotezugriffs-Serverrolle
+
+!L03:   Implementieren und Verwalten einer erweiterten DA-Infrastruktur
+
+        •   Übersicht über die erweiterten DirectAccess-Optionen
+        •   Optionen für Lastenausgleich und hohe Verfügbarkeit
+        •   Unterstützung mehrerer Standorte
+        •   Integration einer PKI mit DirectAccess
+        •   Implementieren von Clientzertifikaten für DirectAccess
+        •   Optionen zur internen Netzwerkkonfiguration
+        •   Konfigurieren erweiterter DNS-Einstellungen
+        •   Implementieren von Netzwerkadressenservern
+        •   Implementieren von Verwaltungsservern
+        •   Vorführung: Ändern der DirectAccess-Infrastruktur
+        •   Überwachung der DirectAccess-Verbindung
+        •   Problembehandlung der DirectAccess-Verbindung
+        •   Vorführung: Überwachung und Problembehandlung der DirectAccess-Verbindung
+        •   Implementieren eines Offline-Beitritts zur DirectAccess-Domäne
+
+===============================================================================
+!U08:    Implementieren von VPNs
+===============================================================================
+
+!L01:   Planen von VPNs
+
+        •   VPN-Szenarien
+        •   Standort-zu-Standort-VPN
+        •   Optionen für VPN-Tunneling-Protokolle
+        •   VPN-Authentifizierungsoptionen
+        •   Was ist die VPN-Verbindungswiederherstellung?
+        •   Das Feature VPN-Aufbau durch Apps
+
+
+!L02:   Implementieren von VPNs
+
+        •   Konfigurieren eines VPN über den Assistenten für erste Schritte
+        •   Optionen zur Anpassung von VPN-Konfigurationen
+        •   Vorführung: Konfigurieren von VPNWas ist das Verbindungs-Manager-Verwaltungskit?
+        •   Vorführung: Erstellen eines Verbindungsprofils
+        •   Verteilen von VPN-Profilen
+
+===============================================================================
+!U09:   Implementieren eines Netzwerks für Zweigstellen
+===============================================================================
+
+!L01:   Netzwerkfunktionen und Überlegungen bezüglich Zweigstellen
+
+        •   Szenarien für Zweigstellen
+        •   Überlegungen zu Zweigstellen
+        •   Optionen für die Bereitstellung von Netzwerkverbindungen für Zweigstellen
+        •   Überlegungen zur Bereitstellung von AD DS- und DNS-Diensten für Zweigstellen
+        •   Überlegungen zur Bereitstellung der Darstellungsvirtualisierung für Zweigstellen
+        •   Überlegungen zur Bereitstellung von Dateidiensten für Zweigstellen
+        •   Überlegungen zur Bereitstellung von Druckdiensten für Zweigstellen
+
+!L02:   Implementieren von DFS für Zweigstellen
+
+        •   Implementieren von DFS-Namespaces
+        •   Implementieren von DFS-Replikation
+        •   Szenarien für die Implementierung von DFS
+        •   Planen für DFS
+        •   Optimieren von Namespaces und Replikation
+        •   Vorführung: Konfigurieren von DFS-Namespaces und Replikation
+        •   Verwalten von DFS-Datenbanken
+        •   Überwachen und Fehlerbehebung von DFS
+
+!L03:   Implementieren von BranchCache für Zweigstellen
+
+        •   Wie funktioniert BranchCache?
+        •   BranchCache-Modi
+        •   BranchCache-Anforderungen
+        •   Konfigurieren der BranchCache-Servereinstellungen
+        •   Konfigurieren der BranchCache-Clienteinstellungen
+        •   Vorführung: Konfigurieren von BranchCache
+        •   Verwenden von BranchCache für Server
+        •   Überwachen von BranchCache
+
+
+===============================================================================
+!U10:    Konfigurieren erweiterter Netzwerkfeatures
+===============================================================================
+
+!L01:   Übersicht der Hochleistungsnetzwerk-funktionen
+
+        •   Was versteht man unter einem NIC-Teamvorgang?
+        •   Vorführung: Implementieren des NIC-Teamvorgangs
+        •   Implementieren von freigegebenen Ordnern auf Basis von SMB 3.1.1
+        •   Verwenden erweiterter SMB 3.1.1-Funktionalität
+        •   Bereitstellen eines hochverfügbaren Remotespeichers mit SMB 3.1.1
+        •   Was ist QoS?
+        •   Was ist RSS?
+        •   Was ist RSC?
+
+!L02:   Konfigurieren der erweiterten Hyper-V-Netzwerkfeatures
+
+        •   Erweiterte Funktionalität von virtuellen Switches
+        •   Die Erweiterbarkeit virtueller Switches verstehen
+        •   Was ist SR-IOV?
+        •   Was versteht man unter dynamischer VMQ?
+        •   Erweiterte Features von Netzwerkadaptern
+        •   NIC-Teamvorgang in virtuellen Computern
+        •   Vorführung: Konfigurieren der erweiterten Features von Netzwerkadaptern
+
+===============================================================================
+!U11:    Implementieren von Software-Defined Networking (:=SDN)
+===============================================================================
+
+!L01:   Übersicht über SDN
+
+        •   Was ist SDN?
+        •   Vorteile von SDN
+        •   Planen für SDN
+        •   Bereitstellen von SDN mithilfe von Skripten
+
+!L02:   Implementieren einer Netzwerkvirtualisierung
+
+        •   Was versteht man unter Netzwerkvirtualisierung?
+        •   Vorteile der Netzwerkvirtualisierung
+        •   Was ist NVGRE?
+        •   Was sind Netzwerkvirtualisierungsrichtlinien?
+
+!L03:   Implementieren eines Netzwerkcontrollers
+
+        •   Was ist ein Netzwerkcontroller?
+        •   Voraussetzungen für die Bereitstellung eines Netzwerkcontrollers
+        •   Vorführung: Vorbereiten der Bereitstellung eines Netzwerkcontrollers
+        •   Vorgehensweise bei der Bereitstellung eines Netzwerkcontrollers
+        •   RechenzentrumsfirewallSoftwarelastenausgleich
+        •   RAS-Gateway
+        •   Vorführung: Bereitstellen eines Netzwerkcontrollers

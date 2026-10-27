@@ -1,0 +1,9 @@
+{	
+	"Ping Microsoft": {
+		"prefix": "MS",
+		"body": [
+			"function Test-Microsoft { Test-Connection -ComputerName microsoft.com }"
+	],
+	"description": "Ping Microsoft" 
+}
+}

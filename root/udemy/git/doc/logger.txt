@@ -1,0 +1,562 @@
+=== readme
+    udemy.git.logging
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+=== m:  Logbuch
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+$>  cat <file>                      *   show file content
+$>  clear                           *   clear screen
+$>  ls -al                          *   list
+$>  rm ls -al                           *   list
+$>  rm --force --recursive tutor_git    *   rmDir
+
+<<< !date:<2022-10-28>:Fr
+
+=*= s:  Konfiguration
+    +   Die profile-Datei .bashrc
+    steht auf $HOME = c:\Users\peter
+    +   Die gitBash geht auf den Workspace
+    e:\public...\workspace
+
+=*= s:  Linux Befehle
+    •   cat
+    •   cd
+    •   cd ~        #  ins Home
+    •   clear
+    •   ls [-a]
+    •   mkdir
+    •   pwd
+    •   sudo ls     #   admin Befehl
+    •   touch
+    •   vi
+
+=*= s:  vi
+    • i         Einfügen von Text (Insert mode)
+    • ESC       Verlassen des Einfügemodus (Insert mode)
+    • :wq       speichern (write) und verlassen (quit) des vi
+    • :q!       nur verlassen (quit) des vi
+
+=*= s:  GitHub
+    url:https://github.com/
+    eml:"pluto64@e-mail.de"
+    usr:"phassen64"
+    pwd:<!samba>
+
++   lokal - global - system
+    Es gibt ein lokales und ein globales Abbild eines
+    git Repositories.
+    •   sytem - Windows %ProgramFiles%\Git
+    •   lokal - der PC
+    •   global - Git Hub
+    Ein git-Projekt aufsetzen
+    •   github.com
+
++  !c04: Git Workflow : welche Befehle bewirken was ?
+    lokal:
+        •   Arbeitsverzeichnis  :   die Datei erstellen
+        •   Stagingbereich      :   git add
+        •   Repository          :   git commit
+    remote:
+        •   Git Hub             :   git push
+
+<<< !date:<2022-10-28>:Fr
+
++   mein Clone
+    https://github.com/phassen64/tutor_git.git
+    git@github.com:phassen64/tutor_git.git
+
++   git SSH
+https://blog.datamics.com/github-anleitung-zum-umstellen-von-push-mit-passwort-auf-token-f%C3%BCr-windows-macos-und-linux-f%C3%BCr-ec615d63bf78
+
++  !c04: Git Token
+    1.  $>  cd ~/.ssh
+    2.  $>  ssh-keygen -t ed25519 -C "pluto64@e-mail.de"
+        kein PWD
+    3.  keinen SSH agent unter windows starten
+        $> eval "$(ssh-agent -s)"
+    4.  add SSH
+        $> ssh-add ~/.ssh/tron
+    5.  cat ~/.ssh/id_ed25519.pub
+
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO9saHPKOKHfkvD6kO3qr4hwOk+jOLdonFdpniDR+LCG pluto64@e-mail.de
+
++   rm git config
+    rm ~/.gitconfig
+
++   git config
+    $>git config --global user.name "phassen64"
+    $>git config --global user.email "pluto64@e-mail.de"
+    $>git config --global --list
+    Es gibt 3 verschiedende
+        system:     C:\Program Files\Git\etc
+        home:       C:\User\peter
+        local:      <dirRepository>\.git
+
++   git config global typical
+    $>git config --global
+    ...
+        remote.origin.url=https://github.com/phassen64/udemy_git.git
+        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+        branch.master.remote=origin
+        branch.master.merge=refs/heads/master
+
++   $>cd $HOME
+    $>mkdir git
+    $>git clone https://github.com/phassen64/tutor_git.git
+    $>cd tutor_git
+    $>echo "Hello World" > test.txt
+    $>git add test.txt
+    $>git status
+    $>git commit -m "erste Datei" test.txt
+    $>git status
+    $>git commit --amend    # view committed files
+    $>git push origin main
+    $>git branch -m main master# main=>master ????
+
+<<< !date:<2022-10-29>:Sa
+
++
+    $>  ssh-keygen -o -t rsa -C "pluto64@e-mail.de"
+    $<  use name "pluto"
+    $>  eval `ssh-agent -s`
+    $>git push origin master
+    $>ssh-keygen -y -e -f id_ed25519    # validate key
+    $>  ssh-add ~/.ssh/id_ed25519     #   key tron
+    $>openssl dsa -in id_ed25519 -modulus -noout
+
+<<< !date:<2022-10-30>:So
+
++   GitHub google research
+    https://github.com/google-research/football
+    +   hier auf den fork button clicken
+    +   dann
+        $>git clone https://github.com/phassen64/udemy_football.git
+
++   Mehrere Dateien hinzufügen zum Stash
+        $>git add .
+
++   Mehrere Dateien commit
+        $>git commit ...
+        vi># Kommentar eingeben
+
++   ls rekursiv mehrere Dateien ansehen
+    $>git ls-files
+
+<<< !date:<2022-10-31>:Mo
+
+=== Abschnitt 6 : wiederherstellen
+
++   $>git status vs $>git log
+    status  =>   Arbeitsverzeichnis und Staging
+    log     =>      commit History
+
++   git log 5 days ago
+    $>git log --since="5 days ago"
+
++   git show
+
++   Lokales Wiederherstellen einer Datei, welche committed wurde,
+    bzw. getracked wird.
+    Ein file auf dem Stage zurücksetzen auf die Vorgängerversion
+    $>  git checkout HEAD <file>
+    oder
+    $>  git reset --hard HEAD
+
++   Im lokalen Arbeitsverzeichnis kann man ein "untracked" file einfach
+    durch $>rm löschen.
+
++   Übersicht - lokale Arbeitsverzeichnis
+    •   $>  git log             :   History ansehen
+    •   $>  git show <commitID> :   mehr infos
+    •   $>  git checkout HEAD <file> oder
+    •   $>  git reset --hard HEAD   :   lokale Änderungen verwerfen
+    •   $>  rm file             :   ungetrackte Dateien löschen
+
++   Globales Wiederherstellen
+
+    $>  git revert  :   Änderungen verwerfen und neuer commit -
+                            HEAD danach - zwischenversion bleibt bestehen
+                        "alles bleibt bestehen"
+
+    $>  git reset   :   HEAD auf eine ältere Version setzen
+                        "alles wird verworfen"
+
+
+<<< !date:<2022-11-03>:Do
+
++   Wiederholungen
+
++   multiple git add
+    git add --all
+    git commit -am "<commit message>"
+    git push
+
++   git local documentation
+    file:///H:/MY/tools/Git/mingw64/share/doc/git-doc/index.html
+
++   git stash usage
+    $>  git status          #   clean ?
+    $>  echo "Spiderman" >> test1.txt
+    $>  git status          #   shows modified
+    $>  git stash           #   restore to HEAD but save modifications
+    $>  git status          #   no modifications
+    $>  git stash apply     #   restore modifications
+    $>  git status          #   show modfied file test1.txt again
+    $>  git commit --all -m "by stash"  # perform commit now
+
++   main => master umbenennung
+    $>  git branch -m main master   #   rename "master" into "main"
+    $>  git push -u origin master       #   push "master" to remote-server
+    $>  git push origin --delete main   #   delete main at remote-server
+
++   branch erstellen
+    $>  git branch          # view active branches and branch "master"
+    $>  git branch <newBranch>      #   create new branch
+    $>  git checkout <anyBranch>        #   switch to branch <anyBranch>
+    $>  git checkout -b <newBranch>     #   create+switch to new branch <newBranch>
+
++   HotFix auf den Master - Fast Forward
+    $>  git branch master
+    $>  git branch "bTmp"               #   add branch HOT
+    $>  git checkout -b "bHot"          #   create+switch to HotFix
+    $>  echo "SambaEnLaCase" > samba.txt
+    $>  git add .
+    $>  git commit -a -m "dancing"      #   commit to hotfix
+    $>  git checkout master             #   switch to master
+    $>  git merge "bHot"                #   merge hotfix with master
+    $>  git branch -d "bHot"            #   remove my HotFix
+    $>  git branch -D "bHot"            #   remove my HotFix der NICHT gemerged wurde
+
++   remove multiple
+    $>  git rm tron*.txt
+
++   FeatureBranch den Änderungen des MASTER aktualisieren
+    $>  git status
+    $>  git checkout -b "bTmp"      *   bFeature and checkout
+    $>  echo "Batman" >> file2.txt
+    $>  git commit -m "batman" -a   *   commit at bFeature
+    $>  git checkout master
+    $>  echo "Superman" >> file1.txt
+    $>  git commit -m "super" -a    *   commit at bMaster
+    $>  git checkout bTmp           *   HEAD:=bTmp
+    $>  git merge master            *   copy all changes from master into bTmp
+
++   Ein Remote Repository clonen und einen Branch ziehen
+    $>  cd git
+    $>  git clone https://github.com/datamics/flair udemy_flair
+    $>  git branch -a   # remote branches sehen
+    $>  git checkout hotfix
+    $<  *   branch 'hotfix' set up to track 'origin/hotfix
+
+<<< !date:<2022-11-07>:Mo
+
++   Merge
+    "Git merge is a command that allows you to merge branches from Git."
+    3-Wege-Merge  => 2 merges zusammenführen
+
++   Rebase
+    "Git rebase is a command that allows developers to integrate
+        changes from one branch to another."
+    +   der Verlauf wird neu erstellt
+    +   der Master verwendet die Historie des Branches
+    +   ist besser bei vielen branches
+    +   alter Zweige werden gelöscht
+    +   Konflikt werden nur 1 Konflikt angezeigt
+    +   nur, wenn ein einzelner mit einem Feature-Branch arbeitet
+    +   daher, niemals in öffentlichen Branches verwenden
+    === Beispiel:
+    +   $>git checkout -b bTmp
+    +   $>echo "Putzi"      >> fileVogel.txt
+    +   $>git commit -m "enter" -a
+    +   $>git checkout bMaster
+    +   $>echo "starWars"    >> fileMovie.txt
+    +   $>git commit -m "enter" -a
+    +   $>git status
+    +   $>git checkout bTmp     * zurück zum Feature-Branch
+    +   $>git rebase bMaster    * Änderungen vom Master übenehmen und Commit
+    +   $>git checkout bMaster  * zum Master
+    +   $>git merge bTmp        * fast-forward commit
+    +   $>git status
+    +   $>git log
+
++   Stash
+    "verwaltet Änderungen unabhängig von Commits "
+    === Beispiel:
+    +   $>git stash  clear      *   clear stash
+    #   $>git status            *   clean
+    +   $>git stash list        *   empty
+    +   $>git stash show        *   empty
+    +   $>echo "Mike" >> file1.txt
+    +   $>git status            *   modifikation
+    +   $>git stash push        *   save
+    +   $>git stash show        *   shows modification changes
+    +   $>git stash list        *   show stash STACK
+    +   $>echo "Mike" >> file2.txt
+    +   $>git stash             *   save - like stash push
+    +   $>git stash show        *   shows modification changes
+    +   $>git status            *   both changes saved into stash
+    +   $>cat file1.txt
+    +   $>cat file2.txt         *   no changes
+    +   $>git stash apply       *   restore file2 changes
+    +   $>git commit -m "mike" -a   *   commit
+    +   $>git log
+    +   $>git reset --hard HEAD
+
++   Ein neues Repository anlegen
+    c:  init
+    $>  git init  <newGitRepository>    * neues projekt
+
+<<< !date:<2022-11-08>:Di
+
++   HEAD
+    First of all what is HEAD?
+    HEAD is simply a reference to the current commit (latest) on the current branch.
+    There can only be a single HEAD at any given time (excluding git worktree).
+
++   $>v_SRC="https://github.com/datamics/flair.git udemy_flair"
+    $>git clone $v_SRC
+    $cd $v_REP/udemy_flair
+    $git tag
+
++   special tags
+    $>git log --pretty --graph
+    $>git tag tTmp
+    $>git tag tHot -a -m "HotTag"
+    $>git checkout <tagId>      #   goto snapshot tag tagId
+                                #   auch remote
++   blame
+    $>cd udemy_football
+    $>git blame gfootball/replay.py
+
++   tag vs branch
+    https://stackoverflow.com/questions/1457103/how-is-a-tag-different-from-a-branch-in-git-which-should-i-use-here
+    From the theoretical point of view:
+        tags...
+            are symbolic names for a given revision.
+            They always point to the same object (
+                usually: to the same revision);
+                they do not change.
+        branches
+            are symbolic names for line of development.
+            New commits are created on top of branch.
+            The branch pointer naturally advances,
+            pointing to newer and newer commits.
+        remote-tracking
+            branches reside in refs/remotes/<remote>/
+                namespace, and follow ordinary branches
+                in remote repository <remote>.
+    https://book.git-scm.com/docs/gitglossary
+    https://book.git-scm.com/docs/git-tag
+    https://book.git-scm.com/docs/git-branch
+
+<<< !date:<2024-03-04>:Mo
+
++   neuer KursBeginn Wiederholung
+    1. starten von GIT bzw MinGW
+    2. $> cd /d/repository/GIT/udemy/gitExercise
+
++   Server aktualisieren
+    $> git push https://github.com/phassen64/udemy_git.git
+    $> git push origin master
+
+<<< !date:<2024-03-05>:Di
+
++   init new repo via debian.bash and ADD my environment
+    $>  cd /d/repository/GIT/udemy
+    $>  git init gitTmp
+    $>  git config --global branch.master.remote "origin"
+    $>  git config --list
+    $>  git config --global --list
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    FILE: %ProgramFiles%\Git\etc\.gitconfig
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+[diff "astextplain"]
+	textconv = astextplain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	sslBackend = openssl
+	sslCAInfo = C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+[core]
+	autocrlf = true
+	fscache = true
+	symlinks = false
+[pull]
+	rebase = false
+[credential]
+	helper = manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[init]
+	defaultBranch = master
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    FILE: $HOME\.gitconfig
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = phassen64
+	email = pluto64@e-mail.de
+[core]
+	autocrlf = false
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    FILE:   d/repository/GIT/udemy/GitExercises/config
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/phassen64/udemy_git.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+### local ändern in linux.Debian
+
+    $>git config --local core.filemode false
+    $>git config --local remote.origin.url "https://github.com/phassen64/udemy_git.git"
+	$>git config --local remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+	$>git config --local branch.master.remote "origin"
+	$>git config --local branch.master.merge "refs/heads/master"
+	$>git config --local core.symlinks "false"
+    $>git config --global user.name "peter"
+	$>git config --local core.autocrlf "false"
+
+
+
++   Forking creates your own copy of a repository in a
+        remote location (for example, GitHub).
+    Your own copy means that you will be able to contribute changes to
+        your copy of the repository without affecting the original repository.
+    Cloning makes a local copy of a repository, not your own copy.
+    A developer who wants to set up a new, separate and isolated project
+        that is based on a publicly accessible Git repo should perform a fork.
+
+
+
++   using SSH
+    git@github.com:phassen64/udemy_football.git
+
+
+<<< !date:<2022-03-06>:Mi
+
++   Ohne Unix/Debian
++   cd /d/repository/GIT/udemy/gitTmp
+
+
++   git log --since="5 2024-03-06"   ??
++   git log --until="2024-03-06"   ??
+
++   try: RESET
+    $>  +cdgit_tmp
+    $>  echo "Arnold" >> myPerson.txt; git commit -m "putArnold" my*.txt
+    $>  echo "Berti">> myPerson.txt; git commit -m "putBerti" my*.txt
+    $>  echo "Cleor">> myPerson.txt; git commit -m "putCleor" my*.txt
+    $>  git log --abbrev-commit
+
+
+    $>  git reset --hard --quiet d12b4f3
+
++   try: REVERT
+    $>  git revert <id>
+    $>  git revert --abort
+    *   man kann nur 1 Version zurücksetzen
+
+
++   branch.HOFIX and merge
+    $>  git checkout -b b1      # create+switch branch b1
+    $>  git branch              # check activeBanch
+    $>  echo "helloInBranch1" >> hello.txt
+    $>  git add.
+    $>  git commit -m "add:b1:hello"
+    $>  git checkout master     #    zurück zum Master
+    $>  git branch              #   check
+    $>  git merge b1
+    $>  git branch -D b1        #   delete b1
+    $>  git log --abbrev-commit -5  # keine Auskunft über merge
+
++   branch.FEATURE and merge
+    #   Im Unterschied zum hotFix,
+            sind Änderungen während der Bearbeitung
+    #   3-Wege Merge
+            von bf1
+    $>  git checkout -b b1      # create+switch branch b1
+    $>  git branch              # check activeBanch
+    $>  echo "helloFeature1" >> hello.txt
+    $>  git add.
+    $>  git commit -m "add:b1:hello"
+###     $>  git merge master        #   master MERGE - option1
+    $>  git checkout master     #    zurück zum Master
+    $>  git branch              #   check
+    $>  git merge b1 -m "feature+master"
+    $>  git log --abbrev-commit -5
+    $>  git branch -D b1        #   delete b1
+    $>  git log --abbrev-commit -5  # =>  neuer commit
+
++   fork
+    url: https://github.com/datamics/flair
+    url: https://github.com/zalandoresearch
+    url: https://github.com/git-kurs-user/flair.git
+
++   Fork bzw clone auf git-kurs Repository
+    $>  git clone https://github.com/git-kurs-user/flair.git
+    $>  git branch
+    $<  * nur master
+    $>  git branch -a               # auch remote branch ansehen
+    $>  git checkout GH-822-xlnet   #  den remote branch verwenden
+    $>  git dif master hotfix
+
+
+<<< !date:<2022-03-07>:Do
+
++   git stash
+    +   ohne commit sichern
+    +   aber neue Dateien werden nicht in den Stash überführt
+
+
++   Befehle git stash #
+
+    $>  git stash push
+    $>  git stash           #   *stash++:=mem; mem:=0;
+            #   Änderungen speichern
+            #   den branch wieder zurücksetzen
+
+    $>  git stash list
+    $>  git stash show      #   Änderungen sehen
+
+#   stash einsetzen
+a)
+    $>  git stash apply     #   mem := *stash
+    $>  git stash drop      #   stash--
+b)
+    $>  git stash pop       #   mem := *stash--
+
+
++   Test
+    $>  echo "peter1" >> myPerson.txt; git stash push
+    $>  echo "peter2" >> myPerson.txt; git stash push
+    $>  echo "peter3" >> myPerson.txt; git stash push
+    $>  git stash list
+    $>  git stash pop   # holt nur peter3 zurück
+    $>  git stash pop   # ??? error
+    =>  Die Änderungen peter1 und peter2 sind verloren
+
+

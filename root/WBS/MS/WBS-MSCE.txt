@@ -1,0 +1,284 @@
+<<< MSCE Kurs 30.04.2020 Begin 
+
++   dutzen
+
++   2 PDF 
+    + OReiley 
+    + Skillpipe
+    => emails
+    
++   CertBase 
+        accounts gültig?
+
++   Download        
+        <b>Michael Klimke:</b>
+(09:24) 
+
+https://essigkrug-my.sharepoint.com/:f:/g/personal/michael_essigkrug_net/EhbAl8wTi3FPpxiKKP0XGFkBecNaVRbiPag59rYurhVEnQ
+
+
++   Vorstellung:
+    + Peter Hassen
+    + Alter:55
+    + was erwartet ihr 
+    + wo wohnt ihr 
+    + fachliche Erfahrung
+
++   Udo Kranz  DTP Operator
+    + Alter:51
+
++   Maik Michaelsen 
+    + Alter:53
+    + Telkom gearbeitet 
+    + Diagnose
+    + Fehler nachtesten
+    
++   Sebastian 
+    +  Ausbildung Pflege
+        + Webseiten
+         
++ 192.168.254.253
+  255.255.255.252    
+
++  in der VM ausführen: C:\Windows\System32\Sysprep\sysprep.exe
+        danach runter fahren und die VM sichern
+
++  ferner testen des Lizenzzeitraumes :
+        psh>slmgr /dlv
+
+<<< Di,200505        
+
++   Umgebung 
+
+
+<<< Mi,200506        
+        
++   Ms Exchange Install Zeichen
+        Buchstaben, Underline,...
++   prepare Schema,        
+    prepare AD erstes mal macht auch das Schema
+    
++   Installation EhExe01: 
+    mit dem eigenen Benutzer login, nicht der Domänen-Admin
+    +   install packackes    
+    +   d:
+    +   .\setup.exe /PrepareSchema /IAcceptExchangeServerLicenseTerms
+    +   .\setup.exe /PrepareAD /OrganizationName:"Ducktales Ltd" /IAcceptExchangeServerLicenseTerms
+    +   ...
+    +   Default lassen - NICHT AD neu setzten
+    
++   Installation Client: 
+    + nur Verwaltungstools
+    + Bug beheben
+https://support.microsoft.com/en-au/help/4538303/exchange-2019-setup-prerequisite-check-fails-for-net-4-8-framework
+    +   => RegistryKey 
+            KEY::HLM\Software\Microsoft\NetFrameworkSetup\NDP\v4\Full
+
+    
+    
+<<< Do,200507
+
++   IQN=IScsi-Qualified-Name
+
++   New-Item 
+            -Path HKCU:\Software\Microsoft\Office\16.0\Outlook\ 
+            -Name Autodiscover
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\Outlook\AutoDiscover" 
+                -Name "ExcludeExplicitO365Endpoint" -Value 1 -Type DWORD
+
+
+<<< Fr,200508
+
++   Fragen:
+    +   Lösungen ?
+    +   Hilfe bei der Management Shell
+    +   alias für "_go"
+
+
++   Verknüpfte Postfächer - Vetrauen von der Resource(AD) zum
+        Benutzer
++   Enable-Mailbox bei unserem Beispielen anstelle von New-Mailbox     
++   Get-User -OrganizationalUnit "Ducktales.ltd/Ducktales" | Enable-Mailbox 
++   Postfach - Postfachvertretung.Vollzugriff ohne Senden von emails
++   Postfach löschen löscht auch den AD-Eintrag !
+    => AD-Papierkorb aktivieren !
++   Postfach in falscher DB => andere Rechte    
++   Mailbox verschieben mittels eines MoveRequest
+    psh>Get-Mailbox mnade | fl Name,Database
+    psh>New-MoveRequest "Nade,Marie" -TargetDatabase "Verwaltung Ducktales LTD"
+    psh>Get-MoveRequest
+    psh>Remove-MoveRequest "Nade,Marie"
+    
+<<< Mo,200511
+
++   Walter: Registry key für Client01
++   Fragen:
+    +   Postfachquota
+    +   Dezimalstellen bei PowerShell mit "1,8GB"
+
++   2 Benutzer links anzeigen
++   pha soll alle emails ansehen    
+    
++   Postfach "Ressourcen"    
+    für Räume und physikalishe Geräte
++   für eine Verknüpfung mit einem Kalender
+    
+<<< Di,0512
+
+#   ExsPwd:="Pa$$w0rd"
+#   SHIFT+STRG+P : incognito Browser Sitzung
+
++   Frage:AD Script    
++   info Postfach
+
+<<< Mi,0513
+
+DAG := Database Availability Groups     
+
+=   Fragen
+
+=*= Frage1
+    >>> 5 verschiedene Empfänger-Objekte   
+    <<< Benutzerpostfächer, 
+        Email-Kontakte, Email-Benutzer, ResourcenPostfächer,
+        Freigegebene Postfächer: wie Info,..., 
+        Statische und Dynamische Verteilergruppen : an mehrere senden, 
+        Verknüpfte Postfächer,
+        Remotepostfächer : Drucker, Fahrzeugpools,
+        Websitepostfächer 
+        
+=*= Frage2
+    >>> Nenne 2 Gemeinsamkeiten und 2 Unterschiede von 
+        a)  Benutzerpostfächern 
+        b)  Freigegebenen Postfächern und 
+    <<< zu b) kein Anmeldename, keine Benutzerlizenz, deaktivert
+        das Postfach
+    
+=*= Frage3
+    >>> Welche 4 unterschiedlichen Postfachberechtigungen gibt es und 
+        wo werden sie gesetzt?
+        +   Vollzugriff => wird gesetzt im Postfach
+        +   SendenAls => greift im AD 
+           
+=*= Frage4
+    >>> Welchem Zweck dient eine Email-Adressrichtlinie ?
+    <<< einstellen im "Nachrichtenfluss|Regeln" 
+    <<< Wird genutzt email-Adressen an Postfächern zuzuweisen
+
+=*= Frage5
+    >>> Wofür benötigt man akzeptierte Domänen ?
+    <<< im "Nachrichtenfluss|AkzeptierteDomänen" 
+            einzustellen wird eine akzeptierte Domäne eingestellt.
+    <<< für die Email-Adressrichtlinie
+    <<< mit welchen Domänen können emails empfangen ?
+
+=== Lizenzierung Windows Server
+Das Produkt ist in den Varianten 
+•   Standard und 
+•   Enterprise 
+erhältlich. 
+Die Standardversion ist für den Einsatz in kleineren Unternehmen ausgerichtet, 
+    da sie nur 5 Datenbanken pro Server erlaubt. 
+Die Enterprise-Version erlaubt dagegen bis zu 100 Datenbanken pro Server. 
+Jede Datenbank kann in jeder Server-Variante bis zu 2 Terabyte Daten enthalten.
+
+<<< Do,0514 : Clientzugriff
+
++   Namespace: extern Ducktales".net" intern Ducktales".ltd"
++   Zertifikate öffentlich oder intern ? 
+        => bei intern => Zertifikate verteilen
+        => SAN oder Platzhalterzertifikate
++   ExchangeClients : Outlook 
++   Autoermittlung => "email autoconfig" in Outlook
++   Verfügbarkeitsdienst => bei Raumbuchungen oder Meetings
++   Outlook => nutzt standardardmäßig "Outlook Anywhere" eventuell
+        aber auch "MAPI über HHTP"
++   Cas:=ClientAccessService
++   ActiveSync => ist Teil der Firmware
+    https://de.wikipedia.org/wiki/Exchange_ActiveSync            
++   Outlook Clients...
++   Outlook Anywhere Offline
++   DirectPush : Nachrichten direkt an das mobile Gerät senden.
+                HTTPS-Verbindung, im Leerlauf, => TimeOut Zeiten erhöhen
++   Remotezurücksetztung => für gestohlene Geräte
++   Mitglieder geschützter Gruppen bzw. Domänen-Admin => 
+        dürfen nicht ActiveSync nutzen
++   Intune => kann Zertifikate, 
+                Remotezurücksetzuneg
+
+<<< Mo,0518 : Failovercluster 
+
++   fortlaufende Replikation => einer mit einem anderen
++   Failover:
+        lossless, best effort, good & best availabilty
+    +   mit Admin Freigabe Laufwerke vom Client betrachten
+        https://ehex1/ecp/E$    
+        https://ehex1/ecp/F$
+
+        
+        Sehr geehrter Herr Hassen,
+
+hiermit senden wir Ihnen den
+Gutschein-Code zu Ihrem E-Book „Microsoft Exchange Server
+2016 - Das Handbuch“,
+ISBN: 978-3-96010-030-0
+LizenzCode: tomeo-ptqvx-kxezw-sbknk
+Einzulösen bei „O´Reilly (über
+QuoLibris)“ unter:
+https://www.quolibris.shop/service/einside/
+
+Unter folgendem Link finden Sie die
+Anleitungen zum Einlösen der Codes:
+
+https://ecampus50.wbstraining.de/ilias.php?ref_id=564551&cmd=view&cmdClass=ilrepositorygui&cmdNode=qv&baseClass=ilRepositoryGUI
+
+
+<<< Mi,0520 : Reparieren
+
++ MailboxRepairRequest
+
+
+<<< Mo,0525
+
++   login myVM
+        usr:"Administrator"
+        pwd:""Pa55w.rd"  MSCA
+        pwd:""Pa$$w0rd"  MSCE
+
++   IE links 
+https://ehex1/owa/auth/logon.aspx?url=https%3a%2f%2fehex1%2fecp%2fdefault.aspx&reason=0
+https://ehex1/owa/#path=/mail
+
+eseutil E:\db01_management\DbManagementDucktales.edb
+
+
+<<< Di,0526
++   Kontakt:
+    michael@essigkrug.net
+        
+https://de.wikipedia.org/wiki/Multipurpose_Internet_Mail_Extensions
+
+
+Gute Morgen Michael, 
+
+seit dem Wochenende habe ich mit verschiedenen Backup-Szenarien
+gearbeitet.
+
+Zuletzt habe ich einen (alten-) FileServer importiert (Server1-VM import Backup) 
+und die Datenbanken der Sicherung zu verwenden. 
+
+Leider habe ich seit dem gar keine Verbindung mehr über das OWA -
+    obwohl die ISCSI-Laufwerke sichtbar sind in EX1 und 
+    auf die Dateien der ersten Datenbanken zugreifen kann.
+
+Was mich hierbei wundert ist, wir haben nach der Installation von Exchange und der Erstellung der ersten
+3 Datenbanken, im FileServer ausser ISCSI nicht gemacht haben.
+
+Das OWA ging von Anfang an.
+
+Welche Exchange-Verbindung besteht zwischen OWA und dem FileServer ?
+Vielleicht helfen die Screen Shots...
+
+Mit freundlichen Grüßen
+Peter 
+

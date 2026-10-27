@@ -1,0 +1,637 @@
+
+********************************************************************************
+--- readme udemy: Visual Studio Code und PowerShell 7 : Better together
+********************************************************************************
+encoding:UTF-8
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+!$@€ƒ„…†‡‰ŠŒŽ“”•—™šœžŸ¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÑÖØÜÞßäæçîðñôö÷üýþÿ·
+
+
+&&&	key
+	VsCode	:= Microsoft Visual Studio Code
+	VsIde 	:= Microsoft Visual Studio IDE
+
+
+&&&	url.shortCut.code&&ide
+c:	https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+i:	https://visualstudio.microsoft.com/keyboard-shortcuts.pdf
+
+&&&	url.powershell.language
+	https://code.visualstudio.com/docs/languages/powershell
+
+
+### date:2024-10-02:Mi
+
++	Lehrer :
+	Herr Patrick Grünar
+	Österreich
+
+&&&	!c:	A1.00::	Einführung und Arbeitsumgebung
+	?	Was brauche ich?
+	<<<	Windows11
+	<<<	Ms Visual Studio Code
+
+### date:2025-01-20:Mo
+
+?	wie kann man erreichen,
+	das VsCode immer ps1 Dateien bei Datei|Neu
+	anbietet ?
+
++	Settings anzeigen
+	key:[CTRL + ","]
+
++	settings|files.default
+	"powershell"
+	eintragen, kein OK button
+<<<	Dadurch wird bei
+		key:[CTRL+n]
+	automatisch eine Datei mit der Extension "*.ps1"
+	vorgeschlagen.
+	Zum Beispiel :
+		"Untitled-1.ps1"
+
+
++	ps7 platform-übergreifend,
+	könnte auch in linux verwendet werden.
+
+&&&	url.PowerShell.learn
+	https://learn.microsoft.com/de-de/powershell/
+
++	ps7 installieren***
+	auch mit winget möglich
+
++	winget
+	WinGet ist ein Befehlszeilentool,
+		mit dem Benutzer Anwendungen auf Computern unter Windows 10,
+			Windows 11 und Windows Server 2025 ermitteln,
+		installieren, aktualisieren, entfernen und konfigurieren können.
+	Dieses Tool ist die Clientschnittstelle für den
+		Windows-Paket-Manager-Dienst.
+
+&&&	url.winget
+	https://learn.microsoft.com/de-de/windows/package-manager/winget/
+
++	update ps7 wird über den windows update installiert
+
++	In ps7 prüfen
+	$>	$IsLinux
+	$<	False
+	$>	$IsWindows
+	$<	True
+	$>	$IsMacOs
+	$<	False
+
+>>>	Unterschiede
+	PS5 : PS7
+	+	Foreach-Object
+		führt unter ps7 wirklich parallel Kommandos aus.
+	+	farbige Anzeige
+	+	muss manuell installiwert werden
+<<<	eof.
+
++	Ausführen von Powershell Code
+	key:[CTRL+F8]
+
+
+
+Anm:
+?	Eine Zeile Code VsCode ausführen.
+<<<	auf die Zeile mit der Maus positionieren
+	key:[<F8>] Taste drücken
+
++	Navigation in VsCode
+	zwischen 2 Fenstern springen mit
+		key:[CTRL+TAB]
+
++	Aus einem TAB ein Fenster machen
+		key:[<CTRL>+<TAB>+<ArrowRight>]
+	und zurück mit
+		key:[<CTRL>+<TAB>+<ArrowLeft>]
+
+
+### date:2025-03-04:Di
+
+&&&	!c:	A2.01::	Einführung in VS Code
+
++	VS Code Better Together
++	Sprachpakete installieren
+
++	Anzeige-Sprache ändern
+	key:[F1] + 'language'
+
++	Test-Connection 8.8.8.8
+
++	Themes wechseln
+	key:[CTRL+k+t]
+
+	es gibt mehr als 10 verschiedene
+
+### date:2025-03-06:Do
+
+&&&	!c:	A2.11::	Arbeitsbereiche
+
++	Arbeitsbereich.de = Workspace.en
+
++	VS hat einen integrierte File Explorer
+
++	VS::File|AddFolderToWorkspace
+
+&&&	!c:	A2.10::	Themes
+
++	VS Theme Wechsel
+	key:[CTRL+k+t]
+
++	Toggle Sidebar visibility
+	workspace|FileExploror
+	key:[CTRL+b]
+
++	Dateien im geöffneten Ordner aussuchen
+	key:[CTRL+p]
+
++	Anzeigen, welche Shortcuts VS bietet
+	a)	VS::Help|KeyboardShortcutsReference
+	b)	mouseAtSideBarLeft &&
+		key:[CTRL+k+r]
+
++	RevealInFileExplorer
+	Eine Datei vom VS-Explorer im File-Explorer sehen
+	key:[Shift+ALT+r]
+
++	CompareSelected
+	2 Dateien im Vs-Explorer vergleichen
+	+	2 Dateien im Explorer selektieren
+	+	right-mouse menu öffnen
+	+	menu "CompareSelected"
+
++	VS neue Datei/Ordner erstellen
+	key:[CTRL+n]
+
+
+### date:2025-03-07:Fr
+
+&&&	!c:	A2.12::	Suchen & Finden && Ersetzen
+
++	Suchen in einer Datei
+	key:[CTRL+f]
+
++	Suchen im Arbeitsbereich
+	key:[Shift+CTRL+f]
+
+<<<	es eröffnet sich auf der linken Seite eine Suchleiste
+	es kann jetzt im Workspace gesuchet werden
+<<<	ANM: auch in msStudio
+
++	Replace in einer/inAllen Datei
+	key:[CTRL+h]
+	key:[Shift+CTRL+h]
+
+
+### date:2025-03-10:Mo
+
+&&&	!c:	A2.13::	PowerShell Command Explorer = ~
+
++	der ~ wird durch das "runDebug"-Icon der SideBar vielleicht
+	aktiviert
+
++	$>Get-ACL
+
+<<<	der PowerShell Command Explorer steht in meiner Version
+	7.5.0
+	nicht zur Verfügung
+
+&&&	!c:	A3.14::	VS bei der Arbeit - VS Cloud Sync
+
++	Das UserIcon in der SideBar clicken
+	und einloggen - Microsoft Account
+
++	Settings SyncOn wählen
+
+<<<	die Datei settings.json wird gesichert
+
++	Settings Dateien
+	"$env:UserProfile\.vscode"
+	"<workspace>\.vscode"
+
+
+### date:2025-03-11:Di
+
+&&&	!c:	A3.15::	Profile exportieren && importieren
+
++	Einstellungen NICHT in die Cloud, sondern lokal
+	VS::File|Share|ExportProfile(Default)
+	lokal : udemy\~\cfg
+
+&&&	!c:	A3.16::	settings.json
+
++	JSon Datei öffnen mit
+	key:[F1] + "settings.json"
+	>>>	open User Settings
+
++	siehe auch
+&&&	url.settings
+	https://code.visualstudio.com/docs/editor/settings
+
++	Evenfalls gibt es für das Windows-Terminal eine
+	JSon Datei.
+	+	öffnen der Console bzw. des Terminals
+
++	JSon
+	Die JavaScript Object Notation (JSON [ˈdʒeɪsən]) ist ein
+		kompaktes Datenformat in einer einfach lesbaren Textform für
+	den Datenaustausch zwischen Anwendungen.
+	JSON ist von Programmiersprachen unabhängig.
+	Parser und Generatoren existieren in allen verbreiteten Sprachen.
+	JSON wurde ursprünglich 1997 von Douglas Crockford spezifiziert.[3]
+		Derzeit (Stand Ende 2017) wird es durch zwei inhaltlich gleiche
+	Standards spezifiziert – RFC 8259[1] sowie ECMA-404.[2]
+	>>>	example.json
+		{
+		"Vorname": "Ronald",
+		"Nachname": "Reagan",
+		"Geburtsdatum": "1911-02-06",
+		"Nationalität": "US-amerikanisch",
+		"Partei":
+		{
+			"Name": "Republican Party",
+			"Hauptsitz": "Washington, D.C.",
+			"Gründungsdatum": "1854-03-20",
+			"Gründungsort": "Ripon"
+		},
+		"Amt": "US-Präsident"
+		}
+	<<<	endOfExample
+
+&&&	url.file.JSon
+	https://de.wikipedia.org/wiki/JSON
+
++	YAML
+	YAML [ˈjæməl] ist ein textbasiertes Dateiformat zur Datenserialisierung,
+		das außerdem für Konfigurationsdateien verbreitet ist. D
+	Die Idee zu YAML stammt von Clark Evans von 2001[4],
+		die Spezifikation wurde von ihm selbst,
+	Brian Ingerson und Oren Ben-Kiki erstellt.
+	YAML ist an XML (da ursprünglich als vereinfachte Auszeichnungssprache gedacht) und
+		an die Datenstrukturen in den Sprachen Perl, Python und C sowie
+	dem in RFC 2822[5] vorgestellten E-Mail-Format angelehnt.
+	YAML ist ein rekursives Akronym für „YAML Ain’t Markup Language“
+		(ursprünglich „Yet Another Markup Language“).
+	>>>	example.json
+		#Comment: Student record
+		#Describes some characteristics and preferences
+		---
+		name: Martin D'vloper #key-value
+		age: 26
+		hobbies:
+		- painting #first list item
+		- playing_music #second list item
+		- cooking #third list item
+		programming_languages:
+		java: Intermediate
+		python: Advanced
+		javascript: Beginner
+		favorite_food:
+		- vegetables: tomatoes
+		- fruits:
+			citrics: oranges
+			tropical: bananas
+			nuts: peanuts
+			sweets: raisins
+	<<<	endOfExample
+
+&&&	url.file.YAML
+	https://de.wikipedia.org/wiki/YAML
+
++	Beispiel Cisco Router
+	Cisco RV130-K9 RV130W-WB-EK9G5-RF 211,66 €
+	Cisco Catalyst IR1100
+
+&&&	!c:	A3.17::	bekannte Probleme
+
++	PowerShell Erweiterung "Extension" verträgt sich nicht mit VsCode
+	<<<	update der Extension
+	<<<	oder "SwitchToPreReleaseVersion" probieren
+
++	Manchmal Code-Vorschlag "IntelliSense"
+	<<<	warten
+
++	IntelliSense
+	IntelliSense is a general term for various code editing features
+		including: code completion, parameter info,
+			quick info, and member lists.
+	IntelliSense features are sometimes called by other
+		names such as "code completion", "content assist",
+			and "code hinting."
+	+	sense.en = "Gefühl.de" oder "Verstand.de"
+
+&&&	url.intellisense
+	https://code.visualstudio.com/docs/editor/intellisense
+
++	VsCode wird ständig erweitert und verändert.
+	Unter anderem werden Menüs verschoben.
+	<<<	F1 + Suchtext eingeben hilft
+
+&&&	!c:	A3.18::	Powershell Profile
+
++	VsCode hat ein eigenes Profile
+	Im VsCode im Terminal eingeben
+	$>notepad $profile
+
++	Es wird eine Datei erstellt
+	Microsoft.VSCode_profile.ps1
+
++	Eingabe :
+	Set-Location c:\
+	Get-Date
+
++	jetzt VsCode neu starten
+
+&&& REM
+	in PS7 3.7.5
+	steht $profile auf "Microsoft.PowerShell_profile.ps1"
+	Es wird zuerste profile.ps1 und dann
+	"Microsoft.PowerShell_profile.ps1" aufgerufen.
+
+&&&	url.profile
+	https://code.visualstudio.com/docs/terminal/profiles
+
+
+### date:2025-03-12:Mi
+
+&&&	!c:	A3.19::	Haltepunkte & Debugging
+
++	Debuggen mit der Datei "$fragezeichen.ps1"
+
++	Einen Breakpoint setzen und Start Debugging mit
+		key:[CTRL+F5]
+	Es wird der Breakpoint erreicht.
+	Es gibt 5 verschieden Variablen Gruppen
+		Auto, Command, Local, Script, Global
+	Ich finde die aktuellen Variablen des Scripts in der Gruppe
+		"Script"
+	>>>	wo stehe ich ?
+	<<<	die Variable $PWD zeigt die aktuelle Directory an
+
++	Debug Keys
+	F10 :	Step Over
+	F11	:	Step Into
+	Shift+F5 : stop
+
++	Mit dem "Strict Mode" mehr Fehlermeldungen
+
++	Im Fenster unten Registerkarte "Problems" läuft ein Debugger mit.
+
+&&&	!c:	A3.20::	Exkurs PS7 per GPO (Group Policy) VS Code erzwingt
+
+===	PS7 mit Gruppenrichtlinien verteilen
+	Rechner: Server
++	wird auf einem Domain Controller erstellt
+
++	aus VisualCode.exe muss msi Datei erstellt werden
+
+&&&	url.deploy.VsCode.GPO
+	https://www.youtube.com/watch?v=-Iph_gcip6M
+
+===	VsCode mit WinGet verteilen
+	Rechner: Client
+
+&&&	url.deploy.VsCode.winget
+	https://de.wikipedia.org/wiki/Windows_Package_Manager
+
++	WinGet = Windows Packet Manager
+	Das winget-Tool unterstützt Installer auf EXE-, MSIX- und
+		MSI-Basis.[15] Das öffentliche Windows Package Manager
+		Community Repository enthält Manifest-Dateien für
+	unterstützte Anwendungen im YAML-Format.[16]
+	Im September 2020 fügte Microsoft die Möglichkeit hinzu,
+		Anwendungen aus dem Microsoft Store zu installieren,
+		sowie eine Funktion zur automatischen Befehlsvervollständigung.[17]
+	Das folgende Beispiel installiert Visual Studio Code,
+		einen Open-Source-Quelltext-Editor von Microsoft.[18]
+	$>	winget install vscode
+
+$>	winget install Mozilla.Firefox
+§>	winget install Microsoft.VisualStudioCode
+
++	Problem:
+	winget muss installiert sein
+	Windows Server hat kein winget
+
++	Suche
+	$>winget search code
+
+
+&&&	!c:	A3.P::	Fragen
+
+?Fragen zu dieser Aufgabe
+
+?	Mit welchen Accounts können Sie einen VS Code Cloud Sync einrichten
+<	Github oder Microsoft
+
+&&&	url.vsCode.CloudSync
+	https://code.visualstudio.com/docs/configure/settings-sync
+
+### date:2025-03-20:Do
+
+&&&	!c:	A4	::	erweiterte Themen
+
+&&&	!c:	A4.21::	User vs System Installer
+
++	Auf der Download-Webseite
+	gibt es in der Rubrik Windows 3 Installer
+	+	User.Installer.zip
+	+	SystemInstaller.zip
+	+	CLI
+
+&&&	url.download
+	https://code.visualstudio.com/download
+
++	Der UserInstaller verwendet VsCode nur für den
+	aktuellen Benutzer.
+
++	Der SystemInstaller braucht admin Rechte.
+	Extensions und die Einstellungen(!)
+		werden für alle Benutzer
+	gleich gehalten.
+
+
+&&&	!c:	A4.22::	Code Snippet
+
+&&&	url.snippet
+	https://code.visualstudio.com/docs/editing/userdefinedsnippets
+
++	Bei der Eingabe wird etwas vorgeschlagen
+
++	Benutzer-Definierte Code-Snippets konfigurieren
+	VS::File|Preferences|ConfigureSnippets
+
++	powershell.json
+{
+	// Place your snippets for powershell here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+}
+
++	Es wird das Snippet vom Kurs verwendet :
+	{
+		"Ping Microsoft": {
+		"prefix": "MS",
+		"body": [
+			"function Test-Microsoft { Test-Connection -ComputerName microsoft.com }"
+		],
+		"description": "Ping Microsoft"
+		}
+	}
+
++	Die JSon-Datei wird in dem entsprechenden Ordner gesichert.
++	Wir erstellen jetzt eine neue Datei und geben "MS" ein.
++	Bei Aktivieren der CheckBox wird das
+		Script angezeigt.
++	Mit key:[F8] führen wir den Code aus
++	Dadurch wird die Funktion unter "Test-Microsoft" gespeichert
++	Test durch
+		$PS>	Test-Microsoft
+		$PS<	1 HDHN07A4         20.112.250.133                135         32
+
+
+&&&	!c:	A4.23::	Datei in VsCode anzeigen
+
+?	Welche Dateien lassen sich in VsCode öffnen ?
+
++	Extensions
+	*.pdf  	- nur mit Extension
+	*.png 	- auch Bilder lassen sich in VsCode betrachten
+	*.csv
+
+&&&	!c:	A4.24::	PS Erweiterungen
+
+?	welche Erweiterungen stehen zur Verfügung in VsCode
+	<<<	extensions
+
++	Color Highlight
+	<<<	Farben
+
++	GitHub Copilot
+	ist AI
+	in VsCode hineinschreiben, was man braucht
+	kostenpflichtig
+	<<<	code auto
+	<<<	AI direkt in VsCode
+	<<<	autocomplete style
+
+&&&	url.copilot
+	https://code.visualstudio.com/docs/copilot/overview
+
++	ToDo Highlight
+
++	Top 10 VsCode Extensions
+
+### date:2025-03-24:Mo
+&&&	!c:	A4.25::	Task Runner
+
+?	was ist eine Task
+
++	Erstellen
+	key:[CTRL+Shift+B]
+	>>>	Microsoft Template wählen
+
++	Ann: Für den Kurs
+		VsCode bitte NICHT im WinCmd ausführen !
+
++	Die Datei "task.json"
+		zeigt ein PopUp.
+	sie darf nur 1x im Ordner stehen
+
++	PowerShell Aufrufmöglichkeit
+
+
++	Debug Task
+
+&&&	url.task
+	https://code.visualstudio.com/docs/debugtest/tasks
+
+ psh>pwsh -?
+Usage: pwsh[.exe] [-Login] [[-File] <filePath> [args]]
+                  [-Command { - | <script-block> [-args <arg-array>]
+                                | <string> [<CommandParameters>] } ]
+                  [-CommandWithArgs <string> [<CommandParameters>]
+                  [-ConfigurationName <string>] [-ConfigurationFile <filePath>]
+                  [-CustomPipeName <string>] [-EncodedCommand <....
+
+### date:2025-03-25:Di
+&&&	!c:	A4.26::	SSH Verbindungen
+
++	links unten icon "Open a Remote Window"
+
+&&&	url.remoteSSH
+	https://code.visualstudio.com/docs/remote/ssh
+
++	SSH muss aktiviert werden 
+
++	sobald ich auf dieses icon clicke,
+	werden die Erweiterung SSH installiert
+	*	Remote-SSH
+	*	Remote-SSH EditonConfiguration
+	*	Remote Explorer
+
++
+SSH$>	ssh administrator@192.168.0.150
+
+
+### date:2025-03-26:Mi
+&&&	!c:	A4.27::	VS Code deinstallieren
+
++	beim standard wird nicht alles gelöscht
+
++	In der Suche "code" eingeben 
+	dann Deinstallieren selektieren
+	mit allen zugehörigen Erweiterungen entfernt werden 
+	
++ 	weitere Ordner 
+	%APPDATA%\Code
+	%UserProfile%\.vscode
+		
+&&&	!c:	A4.28::	Shortcuts
+	<<<	PDF Datei 
+		
+&&&	!c:	A4.29::	Praxis 
+
+1. Erstellen Sie mit neuer Ordner ein neues Projekt
+2. Legen Sie für dieses Projekt eine tasks.json 
+	Datei an (siehe Lektion)
+3. Editieren Sie die Datei, 
+	sodass eine PowerShell Datei ausgeführt wird 
+		(für Ideen was ausgeführt wird, kann ich chatgpt empfehlen)
+4. Testen Sie Ihre Einstellung, 
+	indem Sie den Task mit STRG + SHIFT + B ausführen
+
+Fragen zu dieser Aufgabe
+Worin besteht in VS Code der Unterschied 
+	zwischen dem User und System Installer?
+	
+<<<	 
+a)	Die Benutzerinstallation von VS Code wird normalerweise 
+	in einem Ordner im Benutzerverzeichnis installiert. 
+Dies bedeutet, dass sie nur für den angemeldeten Benutzer 
+	auf dem Computer verfügbar ist und 
+keine Systemberechtigungen erfordert. 
+Keine Administratorrechte erforderlich.
+b) Die Systeminstallation von VS Code wird normalerweise 
+	im systemweiten Installationsverzeichnis 
+(z. B. unter "Programme" auf Windows) installiert. 
+Dies macht sie für alle Benutzer auf dem Computer verfügbar. 
+Administratorrechte erforderlich.
+
+
+&&&	!c:	A4.29::	Zusammenfassung und Ende
+
+	

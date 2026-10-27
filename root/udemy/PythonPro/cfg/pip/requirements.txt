@@ -1,0 +1,13 @@
+-r requirements-dev.txt
+
+# Libraries
+loguru
+Cython
+numba
+numpy
+snakeviz
+matplotlib
+pyinstrument
+cython-lint
+tox
+staticfg

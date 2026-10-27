@@ -1,0 +1,10 @@
+[Icons, Styles and Standalone Release Builds]
+standalone release build
+icons and themes
+
+
+[icons]
+http://www.iconarchive.com/
+
+[Appearance Styles]
+https://crackinglessons.com/embarcadero-c-builder-application-appearance-styles/

@@ -1,0 +1,120 @@
+=== MSN 21-742
+
+Identitätsverwaltung mit Windows Server 2016
+
+=*= Unterrichtseinheiten Übersicht
+
+•   U00:    Überblick
+•   U01:    Installieren und Konfigurieren von Domänencontrollern
+•   U02:    Verwalten von Objekten in AD DS
+•   U03:    Erweiterte AD DS-Infrastrukturverwaltung
+•   U04:    Bereitstellen und Verwalten von AD DS-Standorten und Replikation
+•   U05:    Implementieren von Gruppenrichtlinien
+•   U06:    Verwalten von Benutzereinstellungen mit einer Gruppenrichtlinie
+•   U07:    Sichern von Active Directory-Domänendiensten
+•   U08:    Bereitstellen und Verwalten von AD CS
+•   U09:    Bereitstellen und Verwalten von Zertifikaten
+•   U10:    Implementieren und Verwalten von AD FS
+•   U11:    Implementieren und Verwalten von AD RMS
+•   U12:    Implementieren der AD DS-Synchronisierung mit Microsoft Azure AD
+•   U13:    Überwachen, Verwalten und Wiederherstellen von AD DS
+
+
+===============================================================================
+!U00:    Überblick
+
+=== !U01:    Installieren und Konfigurieren von Domänencontrollern
+
+L1: Übersicht über AD DS
+L2: Übersicht der AD DS-Domänencontroller
+L3: Bereitstellen eines Domänencontrollers
+
+=== !U02:    Verwalten von Objekten in AD DS
+
+L1:Verwalten von Benutzerkonten
+L2:Verwalten von Gruppen in AD DS
+L3:Verwalten von Computerobjekten in AD DS
+L4:Verwenden von Windows PowerShell für die AD DS-Verwaltung
+L5:Implementieren und Verwalten von Organisationseinheiten (OUs)
+
+
+=== !U03:   Erweiterte AD DS-Infrastrukturverwaltung
+
+Verwalten von Benutzerkonten
+Verwalten von Gruppen in AD DS
+Verwalten von Computerobjekten in AD DS
+Verwenden von Windows PowerShell für die AD DS-Verwaltung
+Implementieren und Verwalten von Organisationseinheiten (OUs)
+
+
+=== !U04:   Bereitstellen und Verwalten von AD DS-Standorten und Replikation
+
+Übersicht über AD DS-Replikation
+Konfigurieren von AD DS-Standorten
+Konfigurieren und Überwachen der AD DS-Replikation
+
+
+=== !U05:   Implementieren von Gruppenrichtlinien
+
+Einführung in Gruppenrichtlinien?
+Implementieren und Verwalten von GPOs?
+Geltungsbereich und Verarbeitung von Gruppenrichtlinien
+Problembehandlung bei der Anwendung von GPOs
+
+=== !U06:   Verwalten von Benutzereinstellungen mit einer Gruppenrichtlinie
+
+Implementieren von administrativen Vorlagen?
+Konfigurieren von Ordnerumleitung, Softwareinstallation und Skripts
+Konfigurieren von Gruppenrichtlinienpräferenzen
+
+=== !U07:   Sichern von Active Directory-Domänendiensten
+
+Sichern von Domänencontrollern
+Implementieren von Kontosicherheit
+Implementieren der Überwachung der Authentifizierung
+Konfigurieren von verwalteten Dienstkonten
+
+=== !U08:   Bereitstellen und Verwalten von AD CS
+
+Bereitstellen von ZS
+Verwalten von ZS
+Problembehandlung und Wartung von ZS
+
+=== !U09:   Bereitstellen und Verwalten von Zertifikaten
+
+Bereitstellen und Verwalten von Zertifikatvorlagen?
+Verwalten der Bereitstellung, Sperrung und Wiederherstellung von Zertifikaten?
+Verwenden von Zertifikaten in einer Geschäftsumgebung?
+Implementieren und Verwalten von Smartcards
+
+=== !U10:   Implementieren und Verwalten von AD FS
+
+Übersicht über AD FS
+AD FS – Anforderungen und Planung
+Bereitstellen und Konfigurieren von AD FS
+Übersicht über Webanwendungsproxys
+
+=== !U11:   Implementieren und Verwalten von AD RMS
+
+Überblick über AD RMS?
+Bereitstellen und Verwalten einer AD RMS-Infrastruktur?
+Konfigurieren des AD RMS-Inhaltsschutzes
+
+=== !U12:   Implementieren der AD DS-Synchronisierung mit Microsoft Azure AD
+
+Erweitern des Umfangs von AD DS
+Azure AD als Authentifizierungssystem
+Übersicht über die Verzeichnissynchronisierung
+Planen der Verzeichnissynchronisierung
+Voraussetzungen und Vorbereitung für Verzeichnissynchronisierung
+Konfigurieren eines Mandanten zur Verzeichnissynchronisierung
+AD FS und Azure AD
+
+=== !U13:   Überwachen, Verwalten und Wiederherstellen von AD DS
+
+Überwachen von AD DS
+Verwalten der Active Directory-Datenbank
+Active Directory-Sicherungs- und Wiederherstellungsoptionen für AD DS 
+    und andere Identitäts- und Zugriffslösungen
+
+

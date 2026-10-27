@@ -1,0 +1,132 @@
+=== readme udemy.EmbUnix.2023.06.20
+
+
+
+=*=:01 introduction
+
+=*=:02-04 installing
+    ubuntu 16.06 LTS 
+        release major 16 
+        release minor 06
+    LTS = long time support
+    Ubuntu 22.04.2 LTS
+    
+=*=:05  Linux Concepts
+
++   Terminal vs Console
+    Command-line interface CLI
+    https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell
+    
++   shell 
+    $>echo 
+    $>pwd
+
++   editor nano 
+    $>nano helloWorld
+    https://wiki.ubuntuusers.de/Nano/
+    +   copy-paste 
+        1.  selektieren
+        2.  ALT+6 speichern
+        3.  zur Position gehen
+        4.  CTR+u paste
+        
++   editor vi
+    +   cursor movement :   h,j,k,l
+    +   mode toggle     :   esc,insert,i 
+    +   delete char     :   x
+    +   delete line     :   dd 
+    +   copy a line     :   yy 
+    +   paste           :   p
+    +   undo            :   u 
+    +   save            :   w 
+    +   quit            :   q 
+    +   quit without save:  q!
+    +   text search     : /
+
++   editor vim
+    +   wie vi
+    +   mit Maus
+    
++   git d/repositoy/GIT
+    $>cd 
+    $>git init socrated
+    $>git config --global pluto64@e-mail.de
+    $>git add c06_macro.c
+    $>git commit -m "test1" c06_macro.c
+    $>git status
+    $>git branch    # alle anzeigen
+    url: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration        
+
+    $ git config --global color.ui false
+    $ git help -a
+
++   ctags
+    $ sudo apt-get install exuberant-ctags
+    $ cd <mydir>
+    $ ctags -R *
+    $ ls tags
+    $ CTR-T
+    
+    
++   cscope
+    $> sudo apt-get install cscope 
+    $> cscope -R
+    $> CTRL-D stop    
+
++   Embedded Concepts 
+    +   baremetal code 
+        => standalone code
+    
+
++   Minicom     
+    Minicom ist eine textbasierende Terminalemulation, 
+        für Modem- und serielle Kommunikation für Linux. 
+    Die Software wurde von Miquel van Smoorenburg entwickelt und 
+        gilt als einer der wichtigsten Terminalemulatoren auf Linux-Systemen[2] und ist 
+        Bestandteil der meisten Distributionen[3].
+    Minicom unterstützt ANSI- und VT100-Emulation.
+    Aufgrund der geringen Systemanforderungen ist die Software auch auf Intel-80386-Rechnern lauffähig.
+    $> sudo apt-get install minicom
+    $> sudo minicom -s
+    
+=== qemu  
+
+    QEMU (von englisch „Quick Emulator“) ist eine 
+        freie Virtualisierungssoftware, 
+        die die gesamte Hardware eines Computers emuliert 
+        und durch die dynamische Übersetzung der 
+        Prozessorinstruktionen des Gastprozessors (englisch guest) 
+        in Instruktionen für den Wirtprozessor (englisch host) 
+        eine sehr gute Ausführungsgeschwindigkeit erreicht.
+
++   Qemu
+    •   fullMode => komplettes OS
+    •   userMode => nur Prozesse
+    $> sudo apt-get install git
+    $> sudo apt-get install qemu    
+    
+    $>  git clone https://github.com/qemu/qemu.git
+    $   mkdir sysroot
+    $   pip install sphinx    
+    $   pip install sphinx-rtd-theme    
+    $   ./configure --target-list=arm-softmmu,arm-linux-user --disable-vnc --enable-sdl --prefix=$PWD/sysroot
+
+
++   Toolchain
+        binutils = Gnu assembler, linker
+        gcc
+        gdb
+    type: native vs cross ToolChain
+    $>  git clone https://github.com/raspberrypi/tools
+    
+
+
+=== andere Quellen    
+Internet
+https://www.embedded-software-engineering.de/embedded-linux-kernel-aufbau-toolchain-a-99d15279522f4d1fcd8b2d852a8f771b/
+
+youTube 
+https://www.youtube.com/watch?v=9vsu67uMcko
+https://www.youtube.com/watch?v=2-PwskQrZac
+
+    

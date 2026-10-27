@@ -1,0 +1,3790 @@
+=== MSN 21-740
+
+M01 :  Installieren, Aktualisieren und Migrieren von Servern und Arbeitsauslastungen
+M02 :  Konfigurieren des lokalen Speichers
+M03 :  Unternehmensspeicherlösungen
+M04 :  Speicherplätzen und Datendeduplizierung
+M05 :  Hyper-V und virtuellen Computern
+M06 :  Bereitstellen und   Verwalten von Windows- und Hyper-V-Containern und Docker
+
+M07 :  Hohe Verfügbarkeit und Notfallwiederherstellung
+M08 :  Failoverclustering
+M09 :  Failoverclustering mit Windows Server 2016 Hyper-V
+M10 :  Netzwerklastenausgleich (NLB)
+M11 :  Bereitstellungsimages
+M12:   Virtuelle Computer
+
+
+===============================================================================
+=*= !M01:Installieren,...
+===============================================================================
+
+#   Zusammenfassung des Microsoft Kurses
+#   Folie:21740B_01.PPT
+#   Unterrichtseinheit 1:
+
+*** Thema: Installieren, Aktualisieren und
+            Migrieren von Servern und Arbeitsauslastungen
+
+F02:Einführung in Windows Server 2016
+    Vorbereiten und Installieren von Nano-Server
+        und Server Core
+    Vorbereiten auf Upgrades und Migrationen
+    Migration von Serverrollen und Arbeitsauslastungen
+    Aktivierungsmodelle für Windows Server
+
+F03:Auswählen der geeigneten Windows Server 2016 Edition
+    Windows Server 2016 Essentials
+    Windows Server 2016 Standard
+    Windows Server 2016 Datacenter
+    Microsoft Hyper‑V Server 2016
+    Windows Storage Server 2016 Workgroup
+    Windows Storage Server 2016 Standard
+
+F04:Hardware-Anforderung
+    Windows Server 2016 weist an eine Server
+    Core-Installation folgende Mindesthardwareanforderungen auf:
+    +   CPU: x64
+    +   ProcessorSpee 1.4GHz
+    +   RAM 512MB
+    +   HardDriveSpace  32GB
+
+F06:Übersicht über Installationsoptionen
+    Bei der Bereitstellung von Windows Server 2016 können Sie
+        zwischen den folgenden Installationsoptionen wählen:
+    +   Windows Server 2016 (Desktopdarstellung)
+        – vollständige Serverinstallation
+    +   Windows Server 2016 – Server Core-Installation
+    +   Nano-Server –
+        minimale Serverinstallation der Standard- oder Datacenter Edition
+
+F07:Remoteverwaltung von Servern
+    Nutzen Sie die folgenden Optionen, um einen Computer,
+    auf dem Windows Server 2016 ausgeführt wird, remote zu verwalten:
+    +   Remoteserver-Verwaltungstools
+        Server-Manager
+        Verwaltungskonsolen für jede Rolle/jedes Feature
+    +   Remoteausführung von "Windows PowerShell" und "PowerShell Direct"
+    +   Remoteshell
+    +   Remotedesktop
+    +   Gruppenrichtlinie (nicht unterstützt bei Nano-Server)
+    => Für die Remoteverwaltung benötigte Firewallausnahmen
+
+F08:Verwenden von PowerShell 5.0 zur Verwaltung von Servern
+    PSH>Set-Item WsMan:\localhost\Client\TrustedHosts 172.16.0.10 ...
+
+F09:Windows Server 2012 oder Windows Server 2012 R2 neue Features:
+    +   Arbeitsordner
+    +   DHCP-Failover
+    +   IPAM
+    +   Dynamische Zugriffssteuerung
+    +   Datendeduplizierung
+    +   Speicherplätze
+    +   Speicherebenen
+    +   Bessere Virtualisierung von Domänencontrollern
+    +   Klonen von virtuellen Domänencontrollern
+
+F10:Neue Features Windows Server 2016
+    +   Nano-Server
+    +   ontainer
+    +   Unterstützung für Docker
+    +   Parallele Upgrades für HyperV und Speichercluster
+    +   Hinzufügen und Entfernen von virtuellem Speicher
+        und Netzwerkkarten im laufenden Betrieb
+    +   Verschachtelte Virtualisierung
+    +   PowerShell Direct
+    +   Abgeschirmte virtuelle Computer
+    +   Endpoint Protection
+    +   Storage Spaces Direct
+    +   Speicherreplikat
+    +   Remotedesktopdienste
+    +   Microsoft Passport
+    +   Unterstützung für Azure AD Join
+    +   Privileged Access Management
+
+F13:Was ist ein Nano-Server ?
+    *   Nano-Server eignet sich für folgende Szenarien:
+        +   Rechen-Host für virtuelle Hyper-V-Computer (egal ob in Clustern oder nicht)
+        +   Speicher-Host für einen horizontal skalierten Dateiserver (egal ob in Clustern oder nicht)
+        +   DNS-Server
+        +   Webserver, auf dem IIS ausgeführt wird
+        +   Host für Anwendungen, die mithilfe von
+            Cloudanwendungsmustern entwickelt
+            und in einem Container oder virtuellen Computer ausgeführt werden
+
+F14:Installation Nano-Server
+    +   Einrichtungsdateien für den Nano-Server
+        im Ordner \NanoServer auf Installationsmedium
+    +   Lässt sich bereitstellen als:
+            a)  Virtuelle Festplatte (VHD) auf einem Hyper-V-Host
+            b)  Per VHD startbares Laufwerk auf einem physischen Computer
+            c)  WIM-Datei auf einem physischen Computer
+    Erstellen Sie Images mit
+        a)  Windows PowerShell oder dem
+        b)  Nano Server Image Builder-Tool
+
+F15:Verwalten und Konfigurieren von Nano-Servers
+    +   Nano Server Recovery Console
+
+F16:Server Core
+
+Server Core ist:
++   Eine sicherere und weniger ressourcenintensive Installationsoption
+    als die Desktopdarstellung
++   Eine Installation, die nicht in eine vollständige
+        grafische Shell-Version von Windows Server 2016 umgewandelt werden kann
+    Die Standardinstallationsoption für Windows Server 2016
++   Mit Windows PowerShell und anderen Standardtools lokal verwaltbar
++   Mit aktivierter Remoteverwaltung ausgestattet,
+    sodass Sie sich nur selten lokal anmelden müssen
+
+F17:Vergleich
+
+    Faktoren, die beim Vergleich zwischen Nano-Server,
+    Server Core und Server mit Desktopdarstellung zu beachten sind:
++   Einfachheit der Installation
++   Einfachheit der lokalen Verwaltung und Remoteverwaltung
++   Hardwareanforderungen
++   Aktuelle Anwendungsanforderungen
++   Häufigkeit von Patches sowie Updates und Verfügbarkeitsanforderungen
++   Sicherheitsanforderungen/Angriffsfläche
++   Aktuell benötigte Rollen/Features und möglicher Bedarf für spätere Aktualisierungen
+
+F18:Installation von ServerCore und ServerDesktop
+=>  Angabe bei der Installation
+
+F19:Konfiguration nach der Installation
+
+    Nach der Installation von Windows Server 2016 müssen Sie folgende Schritte erledigen:
+    +   Die IP-Adresse konfigurieren
+    +   Den Computernamen festlegen
+    +   Einer Active Directory-Domäne beitreten
+    +   Die Zeitzone konfigurieren
+    +   Automatische Updates aktivieren
+    +   Rollen und Features hinzufügen
+    +   Das Remotedesktop-Feature aktivieren
+    +   Windows-Firewalleinstellungen konfigurieren
+
+F23:Upgrade und Migration
+    +   Direktes Upgrade oder Servermigration?
+    +   Szenarien mit direktem Upgrade
+    +   Vorteile einer Migration auf Windows Server 2016
+    +   Verwenden von Solution Accelerators
+    +   Empfehlungen für die Serverkonsolidierung
+    +   Vorführung: Verwenden von MAP
+
+F24:Direktes Upgrade oder Servermigration?
+
+    1)  Upgrade auf Windows Server 2016:
+        +   Upgrade von Windows Server 2008 R2 oder höher möglich
+        +   Upgrade nur auf gleiche oder neuere Editionen möglich
+        +   Setzt die gleiche Prozessorarchitektur voraus
+    2)  Migration auf Windows Server 2016:
+        +   Migrationsvoraussetzung ist eine x86-Version von Windows Server
+        +   Verwendung der Windows Server-Migrationstools möglich
+
+*   An upgrade is when you reinstall the program by using
+    a newer version of that program, with a higher first figure
+    of the version number. For example,
+    your currently installed version of the program is 2.5.0.337,
+    and you replace it with version 3.0.0.156.
+    The upgrades are usually not free, but cost less than new licenses.
+    Before you attempt to upgrade a program,
+    visit the Pricing page of the product
+    (e.g. CodeTwo Exchange Rules family, CodeTwo Exchange Rules Pro)
+    to find out if you are eligible for a discount or check your purchase options.
+
+*   A migration is when you stop using a program because you want
+    to move to another product on preferential terms.
+    For example, you no longer plan to use CodeTwo Exchange
+    Rules 2007 in order to migrate to CodeTwo Exchange Rules Pro.
+    The migration is not free, but you can get the new product at a discount.
+
+F25:Führen Sie ein direktes Upgrade durch, wenn:
+    +   Vorhandene Server die Hardwareanforderungen erfüllen
+    +   Auf einem vorhandenen Server installierte Softwareprodukte
+        ein direktes Upgrade unterstützen
+    +   Sie vorhandene Daten und Sicherheitsberechtigungen
+        bewahren möchten
+    +   Sie vorhandene Rollen, Features und Einstellungen behalten möchten
+
+F26:Vorteile einer Migration auf Windows Server 2016
+    Führen Sie eine Migration durch, wenn:
+    +   Sie die vorhandene IT-Infrastruktur mit Windows Server 2008
+        oder höher nicht verändern möchten
+    +   Sie eine Migration von Softwareprodukten
+        in einer separaten Umgebung vornehmen möchten
+    +   Serverrollen, Features und Einstellungen
+        in einer separaten Umgebung migrieren möchten
+    +   Neue Betriebssystemverbesserungen standardmäßig
+        installiert werden sollen
+
+F27:Verwenden von Solution Accelerators
+    Verwenden Sie das...
+    a) Microsoft Deployment Toolkit (MDT), um:
+        +   Bereitstellungen von Windows Server 2016 oder
+            anderer Windows-Betriebssysteme zu automatisieren
+    b) MAP-Toolkit für Windows Server 2016, um:
+        +   Die IT-Infrastruktur Ihres Unternehmens zu inventarisieren
+        +   Auf Grundlage der Bereitschaftsbewertung für
+            Windows Server 2016 einen Bericht
+            oder Vorschlag zur Planung einer Serverkonsolidierung
+            zu erstellen
+    c)  Windows Server-Migrationstools, um:
+        +   Serverrollen, Features,
+            Betriebssystemeinstellungen, Daten und Freigaben zu migrieren
+
+F28:Empfehlungen für die Serverkonsolidierung
+    +   Finden Sie heraus, ob ein gemeinsames Hosten
+        mehrerer Rollen unterstützt wird
+    +   Stellen Sie Rollen, die kein gemeinsames Hosten unterstützen,
+        auf anderen Servern bereit
+    +   Ermitteln Sie, ob ein gemeinsames Hosten mehrerer
+        Rollen die Serverperformance beeinträchtigen würde (das sollte nicht der Fall sein)
+    +   Analysieren Sie, ob gemeinsam gehostete Rollen
+        für Hochverfügbarkeit unterstützt werden
+
+F29:Vorführung: Verwenden von MAP
+    +   Überprüfen der MAP-Optionen
+    +   Durchführen einer Inventarbewertung
+    +   Überprüfen des Inventars aus einer Beispieldatenbank
+
+F33:Migration von Serverrollen a) innerhalb einer Domäne
+    Zu den Rollen, die Sie von unterstützten älteren Versionen
+    von Windows Server auf Windows Server 2016 migrieren können, gehören:
+    +   AD FS-Rollendienste
+    +   Hyper-V
+    +   DHCP
+    +   DNS
+    +   Netzwerkrichtlinienserver
+    +   Druck- und Dokumentdienste
+    +   Remotezugriff
+    +   WSUS
+
+F34:Migrieren von Serverrollen b) über Domänen oder Gesamtstrukturen hinweg
+    +   Erstellen Sie eine neue AD DS-Gesamtstruktur für Windows Server 2016
+    +   Stellen Sie Anwendungen auf neuen Servern bereit
+    +   Richten Sie eine AD DS-Vertrauensstellung zwischen
+        der vorhandenen sowie der neuen AD DS-Gesamtstruktur ein
+    +   Migrieren Sie AD DS-Objekte
+    +   Migrieren Sie Anwendungsdaten und Einstellungen
+    +   Legen Sie die alte AD DS-Umgebung still und entfernen Sie sie
+
+F36:Lizenzierung und Aktivierung von Windows Server 2016
+    Aktivierungsstrategien
+    +   manuell     : geeignet für wenig Server
+    +   automatisch : für viele Server
+
+F37:Volumenaktivierung ?
+
+F38:Übungsserver
+    Virtuelle Computer: 21740B-LON-DC1
+                        21740B-NANO-SVR1
+    Benutzername:   Adatum\Administrator
+    Kennwort    :   Pa55w.rd
+
+F40:Zusammenfassung der Übungseinheit
+>>> Frage
+    In der Übungseinheit haben Sie den Nano-Server
+    auf einem virtuellen Computer ausgeführt.
+    Wenn Sie den Nano-Server nach der Erstellung
+    Ihrer virtuellen Festplatte auf einem physischen Host ausführen wollen,
+    welche Befehle verwenden Sie zur Konfiguration der Startumgebung?
+<<< Antwort
+    So ändern Sie die Starteinstellungen eines physischen Computers
+    für die Nutzung der virtuellen Festplatte für Nano-Server:
+    Kopieren Sie in einer Eingabeaufforderung
+    mit erhöhten Rechten den vorhandenen Eintrag für das
+    Startladeprogramm auf den Computer,
+    auf dem Nano-Server ausgeführt werden soll,
+    und verwenden Sie diesen, um mit dem
+    Befehl bcdedit /copy {current} /d “Nano Server” einen neuen Eintrag zu erstellen.
+    Geben Sie erneut bcdedit ein und kopieren Sie die GUID inklusive der Klammern ({ }), die im Feld ID des neu kopierten Eintrags für das Startladeprogramm angezeigt wird.
+    Führen Sie folgende Befehle aus, wobei Sie {GUID} mit der kopierten GUID inkl. Klammern ersetzen:
+    bcdedit /set {GUID} device vhd=C:\NanoServer\NanoServer.vhd
+    bcdedit /set {GUID} osdevice vhd= C:\NanoServer\NanoServer.vhd
+    bcdedit /set {GUID} path \windows\system32\boot\winload.exe
+    Überprüfen Sie, ob die Einstellungen korrekt sind,
+    indem Sie die Systemeigenschaften aufrufen.
+    Wählen Sie Startup and Recovery settings (Start- und Wiederherstellungseinstellungen).
+    Sie sollten sehen können, dass im Systemstart Nano-Server aufgelistet wird.
+    Alternativ stellen Sie die Datei NanoServer.vhd im Dateisystem mit Laufwerk G: bereit und führen Sie bcdboot G:\Windows aus.
+
+
+===============================================================================
+=*= !M02:Konfigurieren des lokalen Speichers
+===============================================================================
+
+#   Zusammenfassung des Microsoft Kurses
+#   Folie:21740B_02.PPT; Unterrichtseinheit 2:
+
+*** Thema: Konfigurieren des lokalen Speichers
+
+F02:Datenträger vs Volume
++   Verwalten von Datenträgern in Windows Server
++   Verwalten von Volumes in Windows Server
+
+
+F03:Lektion1: Verwalten von Datenträgern
++   Auswählen eines Partitionstabellenformats
++   Auswahl eines Datenträgertyps
++   Auswahl eines Dateisystems
++   Implementieren von ReFS
++   Vorführung: Konfigurieren von ReFS
++   Verwenden der Dateitypen VHD und VHDX
++   Auswahl eines Datenträgertyps
+
+F04:Auswählen eines Partitionstabellenformats
++   MBR "MasterBootRecord"
+    Standard-Partitionstabellenformat seit den frühen 1980er Jahren
+    Unterstützt maximal vier primäre Partitionen pro Laufwerk
+    Kann einen Datenträger mit bis zu 2 TB partitionieren
++   GPT "GlobalPositionTable"
+    GPT ist der Nachfolger des MBR-Partitionstabellenformats
+    Unterstützt maximal 128 Partitionen pro Laufwerk
+    Kann einen Datenträger mit bis zu 18 Exabyte partitionieren
+=>  Verwenden Sie MBR für Datenträger, die kleiner als 2 TB sind
+=>  Verwenden Sie GPT für Datenträger, die größer als 2 TB sind
+
+F05:Auswahl eines Datenträgertyps
++   Basisdatenträger sind:
+    +   Für Basisspeicher initialisiert
+    +   Der Standardspeicher für das Windows-Betriebssystem
++   Dynamische Datenträger können:
+    +   Ohne Neustart des Windows-Betriebssystems verändert werden
+    +   Verschiedene Optionen für die Konfiguration von Volumes bieten
+Anforderungen an Datenträgervolumes:
+    +   Ein "Systemvolume" für hardwarespezifische Dateien,
+        die zum Starten des Servers benötigt werden
+    +   Ein "Startvolume" für die Windows-Betriebssystemdateien
+
+
+F06:Auswahl eines Dateisystems
++   FAT bietet:
+    Grundlegendes Dateisystem
+    Begrenzungen bei der Partitionsgröße
+    =>  FAT32 zur Unterstützung größerer Datenträger
+    =>  exFAT für Speichersticks
++   NTFS bietet:
+    +   Metadaten
+    +   Überwachung und Journaling
+    +   Sicherheit (ACLs und Verschlüsselung)
++   ReFS bietet:
+    +   Abwärtskompatibilität zu NTFS
+    +   Verbesserte Datenüberprüfung und Fehlerkorrektur
+    +   Unterstützung für größere Dateien, Verzeichnisse und Volumes
+
+F07:ReFS bietet eine Reihe von Vorteilen gegenüber NTFS
+    +   Metadatenintegrität mit Prüfsummen
+    +   Erweiterter Schutz vor Datenbeschädigung
+    +   Große Volume-, Datei- und Verzeichnisgrößen
+    +   Speicherpools und Virtualisierung
+    +   Fehlertoleranz durch Redundanz
+    +   Datenträgerbereinigung zum Schutz vor latenten Datenträgerfehlern
+    +   Resilienz gegenüber Beschädigungen
+    +   Gemeinsame, computerübergreifende Speicherpools
+
+F08:Konfigurieren von ReFS
+    Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    +   Abrufen der Volume- und Sektorinformationen für
+        ein NTFS-Volume mithilfe des Befehls fsutil
+    +   Neuformatieren des NTFS-Volumes als ReFS-Volume
+    +   Abrufen der Volume- und Sektorinformationen
+        für das ReFS-Volume mithilfe des Befehls fsutil
+
+F10:Verwenden der Dateitypen VHD und VHDX
+    Virtuelle Festplatten sind Dateien,
+        die Sie genauso verwenden können wie physische Festplatten
+    Sie haben folgende Möglichkeiten:
+        Erstellen und verwalten Sie virtuelle
+        Festplatten mithilfe von Datenträgerverwaltung und Diskpart.exe
+    Konfigurieren Sie VHD- oder VHDX-Dateien
+    Konfigurieren Sie Computer so,
+        dass sie von einer virtuellen Festplatte aus gestartet werden
+    Übertragen Sie virtuelle Festplatten
+        von Hyper-V-Servern und starten Sie Computer
+        von der virtuellen Festplatte
+    Verwenden Sie virtuelle Festplatten als Bereitstellungstechnologie
+
+F11:Auswahl des Datenträgertyps
+    +   mit wachsender Performance steigen auch die Kosten
+    +   EIDE -> SATA -> SCSI -> SAS -> SSD
+
+F13:Was sind Datenträgervolumes?
+    Windows Server 2016 unterstützt folgende Volumetypen:
+    +   Einfach
+    +   Übergreifend
+    +   Stripeset
+    +   Gespiegelt
+    +   RAID-5
+
+F14:Optionen für das Verwalten von Volumes
+    => ServerManager
+    +   Online|Offline
+    +   Virtual HD, msft Virtual Disk
+
+F16:diskpart
+    psh>diskpart
+    diskpart>list
+
+F17:Optionen für das Verwalten von Volumes
++   Get-disk
++   Clear-disk
++   Initialize-disk
++   Get-volume
++   Format-volume
+
+F20:Vergrößern und Verkleinern von Volums
+Mit Windows Server 2016 können Sie die Größe von Volumes ändern.
+Wenn Sie die Größe eines Datenträgers ändern möchten, beachten Sie Folgendes:
++   NTFS-Volumes lassen sich erweitern oder verkleinern
++   ReFS-Volumes lassen sich ausschließlich erweitern
++   Die Größe von FAT-, FAT32- und exFAT-Volumes lässt sich nicht ändern
++   Ein Volume lässt sich maximal auf nicht verschiebbare Dateien verkleinern
++   Ein Volume mit ungültigen Clustern lässt sich nicht verkleinern
+
+F21:RAID
+RAID:
++   Fasst mehrere Datenträger in einer logischen Einheit zusammen,
+    um für eine bessere Fehlertoleranz und Performance zu sorgen
++   Bietet Fehlertoleranz durch:
+        a) Datenträgerspiegelung
+        b) Paritätsinformationen
++   Kann durch Verteilung von Datenträger-E/A-Operationen
+    auf mehrere Datenträger die Performance verbessern
++   Lässt sich mit verschiedenen Stufen konfigurieren
++   Sollte nicht als Ersatz für Serversicherungen dienen
+
+F22:RAID-0
+RAID0:= Striped Set ohne Parität oder Spiegelung
+        Bsp:Datenträger0: A1,A3,A5,A7
+            Datenträger1: A2,A4,A6,A8
+
+F23:RAID-1
+RAID1:=Gespiegelte Datenträger
+        Bsp:Datenträger0: A1,A2,A3,A4
+            Datenträger1: A1,A2,A3,A4
+
+F24:RAID-5
+RAID5:=Striped Set auf Blockebene mit Parität verteilt über alle Datenträger
+    Bsp:    Datenträger0:   A1,B1,C1,D1
+            Datenträger1:   A2,B2,C2,Dp
+            Datenträger2:   A3,B3,Cp,D2
+            Datenträger3:   A4,Bp,C3,D3
+            Datenträger4:   Ap,B4,C4,D4
+    => 1 Datenträger darf ausfallen
+
+F25:RAID-6
+RAID5:=Striped Set auf Blockebene mit Parität verteilt über alle Datenträger
+    Bsp:    Datenträger0:   A1,B1,C1,D1
+            Datenträger1:   A2,B2,C2,Dp
+            Datenträger2:   A3,B3,Cp,Dp
+            Datenträger3:   A4,Bp,Cp,D2
+            Datenträger4:   Ap,Bp,C3,D3
+            Datenträger4:   Ap,B4,C4,D4
+    => 2 Datenträger dürfen ausfallen
+
+===============================================================================
+=*= !M03:Unternehmensspeicherlösungen
+===============================================================================
+
+#   Zusammenfassung des Microsoft Kurses
+#   Folie:21740B_03.PPT
+
+*** Thema: Implementieren von Unternehmensspeicherlösungen
+
+F02:
+    Übersicht zu DAS, NAS und SANs
+    Vergleich von Fibre Channel, iSCSI und Fibre Channel over Ethernet
+    Hintergrundwissen zu iSNS, DCB und MPIO
+    Konfigurieren von Freigaben in Windows Server 2016
+
+F06:DAS : "Direct Attached Storage"
+
++   Direct Attached Storage (DAS) oder
+    Server Attached Storage bezeichnet an einen
+    einzelnen Rechner angeschlossene Festplatten,
+    die sich in einem separaten Gehäuse befinden
+
++   Vorteile:
+    +   einfache Konfiguration
+    +   kostengünstig
++   Nachteile:
+    +   Isoliert, da die Datenträger mit einem einzelnen Server verbunden sind
+    +   weniger Flexibilität bei der Zuweisung
+
++   übliche Schnittstellen: SCSI und SAS
+
+
+F07:NAS  "Network Attached Storage"
+
++   Network Attached Storage
+    (NAS, englisch für netzgebundener Speicher)
+    bezeichnet einfach zu verwaltende Dateiserver.
+    Allgemein wird ein NAS eingesetzt,
+    um ohne hohen Aufwand unabhängige Speicherkapazität
+    in einem Rechnernetz bereitzustellen.
+
++   NAS ist Speicher,
+    der mit einem dedizierten Speichergerät verbunden
+    und über Netzwerkfreigaben aufrufbar ist
+    Zugriff: auf CIF|NFS-Netzwerk
+
++   Vorteile:
+    +   NAS ist relativ günstig und stellt zentralen
+        Speicher zum erschwinglichen Preis bereit
+    +   Einfache Konfiguration
+
++   Nachteile
+    +   Längere Zugriffszeiten
+    +   Keine Lösung für Großunternehmen
+
+
+F08:SAN  "Storage-Area-Network"
+
++   SANs bieten höhere Verfügbarkeit bei maximaler Flexibilität
+
++   Ein weiteres Problem der NAS-Systeme ist,
+    dass diese zusätzlich das vorhandene LAN mit den Zugriffen
+    auf die Daten belasten.
+    Weiterhin ist das Ethernet, über das die NAS-Systeme
+    mit den Servern bzw. den Clients verbunden sind,
+    mit seinen geringen Rahmengrößen und seinem
+    dabei relativ großen Protokoll-Overhead nicht
+    für den schnellen Zugriff auf Massenspeicher ausgelegt
+
++   Vorteile:
+    Kürzere Zugriffszeiten
+    Leicht erweiterbar
+    Zentrale Speicherung
+    Hohe Redundanz
+
++   Nachteile:
+    Mehr Kosten
+    Setzt spezielle Kenntnisse voraus
+
++   SANs lassen sich mit Fibre Channel oder iSCSI implementieren
+
+
+F10:Blockspeicher im Vergleich zu Dateispeicher
+    a)  Blockspeicher:
+        +   Hohe Leistung
+        +   Oftmals SAN-basiert
+        +   Wird Servern als LUNs präsentiert 
+        +   Ist nicht die kosteneffektivste Lösung
+    b)  Dateispeicher:
+        +   Wird via NAS, einen Speicherserver
+            oder einen Dateiserver bereitgestellt
+        +   Nutzt CIFS/SMB (freigegebene Ordner) oder NFS (Exporte)
+        +   Verwendet im Speicher-Back-End Blockspeicher
+
+
+F11: Vergleich von
+    +   Fibre Channel,
+    +   iSCSI und
+    +   Fibre Channel over Ethernet
+
+
+F12:Fibre Channel-Komponenten <siehe Kathrein> umfassen:
+    +   Ein SAN
+    +   Einen Computer mit einer HBA-Karte
+    +   Einen Fibre Channel-Switch
+    =   Fibre Channel-Anordnungen umfassen:
+        +   Arbitrated Loop
+        +   Punkt-zu-Punkt
+        +   Fabric
+
+F13:Fibre Channel
+    Infrastrukturerwägungen:
+    +   Vorhandene Switch- und Kabelinfrastruktur
+    +   Vorhandene Server und HBAs
+    +   Vorhandene Speicherinfrastruktur
+    Kosten:
+    +   Fibre Channel ist meist teurer als andere Lösungen
+    +   Umfangreiche Anfangsinvestitionen erforderlich
+    +   Anfängliche und kontinuierliche Schulungen können die
+    +   Ausgaben deutlich erhöhen
+
+F14:iSCSI
+    +   iSCSI-Ziele:
+        Server, die auf dem Speichergerät ausgeführt werden
+        und Zugriff auf die Datenträger ermöglichen
+    +   iSCSI-Initiatoren:
+        Softwarekomponente oder Hostadapter auf dem Server,
+        die oder der Zugriff auf iSCSI-Ziele bietet
+    +   iSCSI-IQN:
+        Globally Unique Identifier,
+        den iSCSI zur Adressierung von Initiatoren
+        und Zielen in einem iSCSI-Netzwerk verwendet
+
+F16:
+    +   Alternative Lösungen zu iSCSI sind Fibre Channel,
+        Fibre Channel over Ethernet und InfiniBand
+
+F17:Wichtige Systemkomponenten
+    +   Netzwerkadapter kommen meist in Ethernet-Netzwerken zum Einsatz
+    +   HBAs werden meist in Speichernetzwerken wie z. B. SANs verwendet
+    +   Converged-Netzwerkadapter lassen sich in
+        Ethernet-Netzwerken oder SANs nutzen
+    +   InfiniBand-Host-Channel-Adapter dienen dem Einsatz
+        in InfiniBand-Netzwerken
+    +   Datenträgercontroller ermöglichen eine
+        Kommunikation zwischen Festplattenlaufwerken und einer CPU
+
+F18:Vorführung: Konfigurieren eines iSCSI-Ziels
+=   Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    +   Den iSCSI-Zielserver-Rollendienst hinzufügen
+    +   Zwei virtuelle iSCSI-Datenträger und
+        ein iSCSI-Ziel erstellen
+    +   Eine Verbindung mit dem iSCSI-Ziel herstellen
+    +   Das Vorhandensein des iSCSI-Laufwerks überprüfen
+
+F22:iSNS "Internet Storage Name Service"
+    +   Der Internet Storage Name Service (iSNS) erlaubt
+        automatisierte Erkennung, Management und Konfiguration
+        von iSCSI- und Fibre-Channel-Systemen mit iFCP-Gateways im TCP/IP-Netz.
+    Der iSNS-Serverdienst ist ein Windows-Feature, das:
+    +   Aus drei Hauptkomponenten besteht:
+        1.  dem iSNS-Server,
+        2.  iSNS-Clients und
+        3.  einer iSNS-Datenbank
+    Verschiedene Vorteile bietet, darunter:
+    +   Geringerer Verwaltungsaufwand durch
+        automatisierte Konfiguration von iSCSI-Clients
+    +   Kompatibilität mit iSCSI und Fibre Channel
+    +   IP-Netzwerkfunktion, die wie in einem SAN funktioniert
+    +   Nahtlose Integration von IP- und Fibre Channel-Netzwerken
+    Nachteile:
+    +   Ist noch nicht weit verbreitet
+
+F23:DCB  "Data Center Bridging"
+
++   DCB ist eine Suite aus Elektrotechnikern und
+    Elektronik Technikern von (Technikern) ,
+    die konvergierte Fabrics im Rechenzentrum ermöglichen,
+    wo Speicher, Daten Netzwerke, Cluster übergreifende-Kommunikation
+    (zwischenProzessenIPC)und Verwaltungs Datenverkehr
+    nutzen dieselbe Ethernet-Netzwerkinfrastruktur.
+
++   Im folgenden finden Sie eine Liste der Hardwareanforderungen für DCB.
+    •   Der DCB--fähige Ethernet-Netzwerkadapter(s)
+        muss auf Computern installiert sein,
+        die Windows Server 2016 DCB bereitstellen.
+    •   DCB--fähige Hardware Switches müssen
+        in Ihrem Netzwerk bereitgestellt werden
+
+
++   psh> Install-WindowsFeature -Name Data-Center-Bridging -IncludeManagementTools
+
+
+F24:MPIO  "Multi Path I/O"
+
++   Multipath I/O (MPIO) is a Microsoft
+    framework designed to mitigate the effects of a host bus adapter (HBA)
+    failure by providing an alternate data path
+    between storage devices and a Windows operating system.
+    MPIO enables up to 32 alternate paths to add redundancy
+    and load balancing for Windows storage environments
+
++   MPIO requires at least two HBAs connected to
+    the storage device. (A dual-port HBA may provide two data paths,
+    but it still represents a single point of failure.)
+    In a storage area network (SAN) you also need to ensure
+    that any switches or routers laying in the data path have
+    enough path management intelligence to handle disruptions caused
+    by an HBA failure.
+
++   MPIO in Zusammenhang mit iSCSI
+
+
+F27:SMB vs NTFS
++   Windows10 & Windows Server2016 => SMB 3.1.1
+
+
+F28:SMB
+
++   SMB ist das Dateifreigabeprotokoll,
+    das von Windows-Client- und Server-Betriebssystemen genutzt wird
++   Jede neue Version verfügt über zusätzliche Features
++   In SMB 3.0 wurden wichtige Leistungsverbesserungen eingeführt
++   Neu in SMB 3.0.2:
+    Dateiserver mit horizontaler Skalierung
+    SMB 1.x entfernbar
++   Neu in SMB 3.1.1:
+    Integrität mit Vorauthentifizierung
+    Verbesserungen bei der SMB-Verschlüsselung
+    Dialektumgrenzung in Clustern
+
+
+F29:Konfigurieren von SMB Freigaben
+=   Es gibt drei SMB-Freigabeprofile:
++   Schnell
++   Erweitert
++   Anwendungen
+=   Windows PowerShell-Cmdlets für die Verwaltung von SMB-Freigaben:
++   New-SmbShare
++   Set-SmbShare
++   Remove-SmbShare
++   Get-SmbShare
++   Get-SmbSession
++   Get-SmbOpenFile
++   Set-SmbBandwidthLimit
+
+F30:SMB Freigaben mH von ...
+    +   ServerManager
+    +   mH von PowerShell
+    und SMB-Sitzungsinformationen anzeigen
+
+
+F32:NFS
+=   NFS ist ein Dateisystem, das auf offenen Standards basiert
+Die aktuelle Version ist 4.1
+Windows NFS-Komponenten beinhalten:
++   Client für NFS
++   Server für NFS
+Unterstützung für Kerberos v5-Authentifizierung
+Hauptanwendungen für NFS:
++   Speicher für virtuelle VMware-Computer
++   Freigabe von Daten über verschiedene Betriebssysteme hinweg
++   Freigabe von Daten über verschiedene IT-Infrastrukturen
+    hinweg nach einer Unternehmensfusion
+
+F33:NFS Freigaben
+=   Installieren Sie die Server für NFS-Serverrolle
+=   Zwei Optionen für NFS-Freigabeprofile:
+    +   NFS-Freigabe – Schnell
+    +   NFS-Freigabe – Erweitert
+=   Authentifizierungsoptionen:
+    +   Kerberos V5-Authentifizierung
+    +   Keine Serverauthentifizierung
+=   Freigabeberechtigungen bestimmen über zugelassene und verweigerte Hosts
+
+F34:
+    Zum Abschließen dieser Vorführung müssen Sie die vorherigen Vorführungen abgeschlossen haben.
+    Vorführungsschritte
+    +   Klicken Sie auf LON-SVR1 im Navigationsbereich
+        von Server-Manager auf Datei- und Speicherdienste und
+        dann auf Freigaben.
+    +   Klicken Sie im Bereich FREIGABEN auf AUFGABEN und
+        dann auf Neue Freigabe.
+    +   Klicken Sie im Assistenten für neue Freigaben,
+        auf der Seite Profil für die Freigabe auswählen
+            im Feld Dateifreigabeprofil auf NFS-Freigabe – Schnell,
+            und dann auf Weiter.
+    +   Klicken Sie auf der Seite Server und Pfad für diese
+        Freigabe auswählen auf LON-SVR1, auf Nach Volume auswählen,
+        auf D: und dann auf Weiter.
+    +   Geben Sie auf der Seite Freigabename angeben im
+        Feld Freigabename die Zeichenfolge DemoNfsShare ein
+        und klicken Sie auf Weiter.
+    +   Wählen Sie auf der Seite Authentifizierungsmethoden
+        angeben Kerberos V5-Authentifizierung (Krb5) aus
+        und klicken Sie auf Weiter.
+    +   Klicken Sie auf der Seite Freigabeberechtigungen
+        angeben auf Hinzufügen.
+    +   Klicken Sie im Fenster Berechtigungen hinzufügen
+        auf All Machines.
+    +   Wählen Sie im Feld Freigabeberechtigungen die
+        Option Lesen/Schreiben aus und klicken Sie auf Hinzufügen.
+    +   Klicken Sie auf der Seite Freigabeberechtigungen
+        angeben auf Weiter.
+    +   Klicken Sie auf der Seite Berechtigungen zur
+        Zugriffssteuerung angeben auf Weiter.
+    +   Klicken Sie auf der Seite Auswahl bestätigen auf Erstellen.
+    +   Klicken Sie auf der Seite Ergebnisse anzeigen auf Schließen.
+
+F37:
++   Frage:
+    Die Implementierung von MPIO für iSCSI ist nicht so
+    leicht wie die Installation von MPIO.
+    Welche Schritte haben Sie in dieser Übungseinheit unternommen, um MPIO zu aktivieren?
+<=  Antwort
+    Nach der Installation von MPIO mussten Sie es für iSCSI aktivieren.
+    Danach hat MPIO nicht alle Pfade automatisch ermittelt.
+    Sie mussten die entsprechenden Pfade manuell
+    vom iSCSI-Initiator zum iSCSI-Ziel hinzufügen.
++   Frage:
+    Werden alle offenen Dateien angezeigt,
+    wenn Sie Get-SmbOpenFile verwenden?
+<=  Nein, es werden nur vor Kurzem geöffnete Dateien angezeigt.
+    Kurz nachdem eine Datei geöffnet oder gespeichert wurde,
+    enthalten die von Get-SmbFileOpen bereitgestellten Informationen
+    keine Dateien, die in einer Anwendung geöffnet sind.
+
+
+
+===============================================================================
+=*= !M04:Speicherplätzen und Datendeduplizierung
+===============================================================================
+
+#   Zusammenfassung des Microsoft Kurses
+#   Folie:21740B_04.PPT
+
+
+*** Thema: Implementieren von Speicherplätzen und Datendeduplizierung
+
+F02
++   Implementieren von Speicherplätzen
++   Verwalten von Speicherplätzen
++   Implementieren von Datendeduplizierung
+
+=== Lektion 1: Implementieren von Speicherplätzen
+
+F04:Unternehmensspeicherbedarf
+=   Im Rahmen Ihrer Speicherplanung müssen Sie abwägen,
+    welche der folgenden Funktionen Ihre Speicherlösung enthalten soll, darunter:
+    +   Unterstützung von Spiegelung/Parität
+    +   Daten-Striping
+    +   Gehäuseinformationen
+    +   Speicherebenen
+    +   Speicherreplikation
+    +   Datendeduplizierung
+    +   Datenverschlüsselung
+    +   Leistungsanalyse
+
+F06:Was sind Speicherplätze?
+=   Verwenden Sie Speicherplätze zu folgenden Zwecken:
+    +   Physische Datenträger beliebiger Typen und Größe zu einem
+        Speicherpool hinzufügen
+    +   Hochverfügbare virtuelle Datenträger aus dem Pool erstellen
+=   Für die Erstellung eines virtuellen Datenträgers benötigen Sie:
+    +   Mindestens einen physischen Datenträger
+    +   einen Speicherpool, der die Datenträger enthält
+    +   virtuelle Datenträger (oder Speicherplätze),
+        die mit Datenträgern aus dem Speicherpool erstellt werden
+    +   Laufwerke, die auf virtuellen Laufwerken basieren
+=   Physikjalischer Datenträger => Speicherpool
+        => Virtueller Datenträger => (virt.) Laufwerk
+
+F07:Komponenten und Funktionen von Speicherplätzen
+=   Features zur optimalen Verwendung von Speicherplätzen in Ihrer Umgebung
+    Feature : Optionen
+    +   Speicheranordnung   :   einfach,
+                                2- oder 3-Wege-Spiegelung,
+                                Parität
+    +   Datenträger         :   512 oder 512e
+        Sektorgröße         :   4 KB
+    +   Laufwerkzuordnung   :   Datenspeicher | Manuell | Hot-Spare
+    +   Bereitstellungsmodelle
+                            :   Thin(Schlank) oder Fix (Fester)-Speicherplatz
+    +   Stripe-Parameter    :   Anzahl von Spalten, Interleave
+
+
+F10:Änderungen an Datei- und Datenträgerdiensten unter Windows Server 2016
+=   Windows Server 2016 bietet die folgenden neuen Datei-
+    und Speicherdienstfunktionen:
+    +   Direkte Speicherplätze (S2D)
+    +   Speicherreplikation
+    +   Speicher-QoS
+    +   Datendeduplizierung (verbessert):
+    +   Unterstützung von Volumegrößen bis zu 64 TB
+    +   Unterstützung von Dateigrößen bis zu 1 TB
+    +   Vereinfachte Deduplizierungskonfiguration für
+        virtualisierte Datensicherungsanwendungen
+    +   Unterstützung für Nano-Server
+    +   Unterstützung für parallele Clusterupgrades
+    +   Verbesserte SMB-Härtung
+
+F11:Änderungen an Datei- und Datenträgerdiensten unter Windows Server 2012 B
+=   Windows Server 2012 und Windows Server 2012 R2 bieten
+    die folgenden neuen Datei- und Speicherdienstfunktionen:
+    +   Volumes mit mehreren TB
+    +   Datendeduplizierung
+    +   iSCSI-Zielserver
+    +   Speicherplätzen und Speicherpools
+        (mehrstufige Speicherplätze in Windows Server 2012 R2)
+    +   Einheitliche Remoteverwaltung der Datei- und
+        Speicherdienste in Server-Manager
+    +   ReFS
+    +   ODX
+
+F12:Verwendungsszenarien für Speicherplätze
+=   Speicherplatzfunktionen:
++   Skalierbaren, zuverlässigen und kostengünstigen
+    Speicher implementieren und einfach verwalten
++   Kostengünstigen Speicher mit oder ohne externen Speicher verwenden
++   Mehrere Laufwerke zu Speicherpools zusammenfassen,
+    die als eine Einheit verwaltet werden können
++   Unterschiedliche Speichertypen im selben Pool implementieren
++   Speicherpools nach Bedarf erweitern
++   Speicher bei Bedarf aus vorhandenen Speicherpools bereitstellen
++   Bestimmte Laufwerke als Hot-Spares kennzeichnen
+
+
+F13:Verwendungsszenarien für Speicherplätze
+=   Einschränkungen von Speicherplätzen:
++   Speicherplatzvolumes werden auf Start- oder Systemvolumes nicht unterstützt.
++   Der Inhalt eines Laufwerks geht verloren,
+    sobald dieser in einen Speicherpool eingeführt wird.
++   In einem einfachen Speicherpool muss mindestens ein Laufwerk
+    vorhanden sein.
++   Fehlertolerante Konfigurationen haben verschiedene Voraussetzungen:
+    *   Ein gespiegelter Pool erfordert mind. zwei Laufwerke.
+    *   Parität erfordert mind. drei Laufwerke.
+    *   Drei-Wege-Spiegelung erfordert mind. fünf Laufwerke.
++   Alle Laufwerke in einem Pool müssen dieselbe Sektorgröße verwenden.
++   Fibre Channel und iSCSI werden nicht unterstützt.
+
+F14:Verwendungsszenarien für Speicherplätze : B
+=   Beachten Sie bei der Planung Ihrer Speicherplatzlösung Folgendes:
++   Fehlertoleranz:
+    Virtuelle Datenträger mit Spiegelung und Paritätslayout bereitstellen
++   Leistung:
+    *   virtuelle Datenträger mit Paritätslayout bereitstellen
+    *   Datenträger unterschiedlicher Typen verwenden,
+        um mehrstufigen Speicher bereitzustellen
++   Zuverlässigkeit:
+    *   Physische Hot-Spare-Datenträger verwenden,
+        falls ein Datenträger ausfällt
++   Erweiterbarkeit:
+    Physische Datenträger zu einem Speicherpool hinzufügen
+
+F15:Diskussion:Vergleich von Speicherplätzen mit anderen Speicherlösungen
+    SAN's vs NAS
+
+
+=== Lektion 2: Verwalten von Speicherplätzen
+
+F17:Verwalten von Speicherplätzen
++   Verwalten von Speicherplätzen
++   Verwalten von Datenträgerfehlern mit Speicherplätze
++   Erweiterung des Speicherpools
++   Vorführung: Verwalten von Speicherplätzen
+    mithilfe von Windows PowerShell
++   Ereignisprotokolle und Leistungsindikatoren
+
+
+F18:Verwalten von Speicherplätzen
+=   Zur Verwaltung von Speicherplätzen können Sie Folgendes verwenden:
++   Server-Manager
++   Windows PowerShell
++   Failovercluster-Manager
++   System Center Virtual Machine Manager
++   Windows-Verwaltungsinstrumentation
++   Erweitertes Management erfordert Windows PowerShell
+
+F19:Verwalten von Speicherplätzen mit Cmd-Let
++   Get-StoragPool
+    Speicherpools auflisten
++   Repair-VirtualDisk
+    Virtuellen Datenträger reparieren
++   Get-PhysicalDisk | Where { $_.HealthStatus -ne "Healthy"}
+    Fehlerhafte physische Datenträger auflisten
++   Reset-PhysicalDisk
+    Physischen Datenträger aus einem Speicherpool entfernen
++   Get-VirtualDisk |Get-PhysicalDisk :
+    Die für einen virtuellen Datenträger verwendeten
+    physischen Datenträger auflisten
++   Optimize-Volume
+    Optimiert ein Volume.
+    Je nach unterstützten Volumes und System-SKUs werden
+    Aufgaben wie Defragmentierung, Trimmen,
+    Bereichskonsolidierung und Speicherebenenverarbeitung ausgeführt.
+
+F20:Verwalten von Datenträgerfehlern mit Speicherplätze
+=   Verbesserung der Fehlertoleranz eines Datenträgers:
++   Umfassende, ausfallsichere Speicherlösung entwerfen
++   Hochverfügbaren Speicherpool bereitstellen
++   Hard- und Firmwarekomponenten überprüfen
++   Fehlerhafte Datenträger umgehend austauschen
++   Nicht zugeordneten Speicherplatz zurückhalten
++   Auf den Ausfall mehrerer Datenträger eingestellt sein
++   Fehlertoleranz auf Gehäuseebene ermöglichen
+
+F21:Erweiterung des Speicherpools
++   VDisk1,Vdisk2 => Disk1 ...
+
+F23:Erweiterung des Speicherpools PSH
++   psh>Get-VirtualDisk | Format-List
+<   NumberOfColumns     :   8
+<   OperationalStatus   :   OK
+
+F24:Vorführung: Verwalten von Speicherplätzen mithilfe von Windows PowerShell
+In dieser Vorführung erfahren Sie, wie Sie mit Windows PowerShell
+    folgende Aufgaben ausführen können:
++   Die Eigenschaften eines Speicherpools anzeigen
++   Physische Datenträger zu einem Speicherpool hinzufügen
+
+F25:In dieser Vorführung erfahren Sie,
+Ereignisprotokolle und Leistungsindikatoren
++   Bei jeder Speichertechnologie ist eine Überwachung
+    des Speicherverhaltens und der Speicherfunktion wichtig,
+    um fortwährende Zuverlässigkeit, Verfügbarkeit
+    und optimale Leistung zu gewährleisten.
+
+F29:Zusammenfassung der Übungseinheit
++   Wie viele Datenträger müssen Sie einem Speicherpool mindestens hinzufügen,
+    um einen virtuellen Datenträger mit Drei-Wege-Spiegelung zu erstellen?
+    => 5
++   Sie haben einen USB-Datenträger,
+    vier SAS-Datenträger und einen SATA-Datenträger,
+    die mit einem Windows Server 2012-Server verbunden sind.
+    Sie möchten Ihren Benutzern ein einziges Volume zum Speichern
+    von Daten bereitstellen. Welche Lösung würden Sie einsetzen?
+    => ?
+
+=== Lektion 3: Implementieren von Datendeduplizierung
+
+F30:Implementieren von Datendeduplizierung
++   Was ist Datendeduplizierung?
++   Komponenten der Datendeduplizierung
++   Bereitstellen der Datendeduplizierung
++   Vorführung: Implementieren von Datendeduplizierung
++   Verwendungsszenarien für die Datendeduplizierung
++   Überwachen und Warten der Datendeduplizierung
++   Überlegungen bezüglich der Datendeduplizierung
+    beim Sichern und Wiederherstellen
+
+F31:Was ist Datendeduplizierung?
+
+=   Datendeduplizierung:
++   Erkennt und entfernt Datenduplikate,
+    ohne die Integrität oder Genauigkeit der Daten zu beeinträchtigen.
++   Ziel ist,
+    mehr Daten auf geringerem Speicherplatz zu speichern.
+=   Beim Aktivieren der Datendeduplizierung auf einem Volume
+    wird eine Hintergrundaufgabe mit niedriger Priorität ausgeführt.
+    Diese:
+    +   Unterteilt Daten in kleine Blöcke unterschiedlicher Größe
+    +   Erkennt doppelte Blöcke
+    +   Ersetzt redundante Kopien durch eine Referenz
+    +   Komprimiert Datenblöcke
+
+F32:Was ist Datendeduplizierung? : Bild
+=   Deduplikation (aus englisch deduplication),
+    auch Datendeduplikation oder Deduplizierung,
+    ist in der Informationstechnik ein Prozess,
+    der redundante Daten identifiziert (Duplikaterkennung) und eliminiert,
+    bevor diese auf einen nichtflüchtigen Datenträger geschrieben werden.
+    Der Prozess komprimiert wie andere Verfahren auch die Datenmenge,
+    die von einem Sender an einen Empfänger geschickt wird.
+    Es ist nahezu unmöglich, die Effizienz bei der Verwendung von
+    Deduplikations-Algorithmen vorherzusagen,
+    da sie immer von der Datenstruktur und der Änderungsrate abhängig ist.
+    Deduplikation kann eine sehr effiziente Methode sein,
+    Datenmengen zu reduzieren,
+    bei denen eine Mustererkennung möglich ist (unverschlüsselte Daten).
+
+F33:Komponenten der Datendeduplizierung
+=   Das Datendeduplizierungsfeature besteht aus mehreren Komponenten:
++   Filtertreiber, der lokale oder Remote-E/A-Vorgänge überwacht
++   Datendeduplizierungs-Rollendienst,
+    der die drei verfügbaren Auftragstypen steuert:
+    +   Optimierung
+    +   Automatische Speicherbereinigung
+    +   Datenbereinigung
+
+
+F34:Komponenten der Datendeduplizierung B ...
+Speicherplatzeinsparungen durch Datendeduplizierung
+=> Einsparungen bis zu 80%
+
+
+F35:Komponenten der Datendeduplizierung C ...
+<Bild>
++ Deduplizierungsfiltertreiber
+
+
+F36:Bereitstellen der Datendeduplizierung
+=   Vor dem Installieren und Konfigurieren der Datendeduplizierung
+    in Ihrer Umgebung müssen Sie Ihre Bereitstellung folgendermaßen planen:
++   Bereitstellungsziele definieren
++   Überprüfen, welche Volumes für die Deduplizierung geeignet sind
++   Einsparungen mit dem Tool für die Datendeduplizierungsauswertung analysieren
++   Einführung, Skalierbarkeit und Deduplizierungsrichtlinien planen
+
+
+F37:Bereitstellen der Datendeduplizierung B
+=   Nach dem Abschluss Ihrer Planung müssen Sie die
+    folgenden Schritte ausführen, um die Datendeduplizierung
+    auf einem Server in Ihrer Umgebung bereitzustellen:
++   Datendeduplizierungskomponenten auf dem Server installieren
++   Datendeduplizierung aktivieren
++   Datendeduplizierungsaufträge konfigurieren
++   Datendeduplizierungszeitpläne konfigurieren
+
+
+F38:Vorführung: Implementieren von Datendeduplizierung
+=   In dieser Vorführung werden folgende Kenntnisse und 
+    Fertigkeiten vermittelt:
++   Datendeduplizierung-Rollendienst installieren
++   Datendeduplizierung aktivieren
++   Den Status der Datendeduplizierung überprüfen
+
+
+F41:Verwendungsszenarien für die Datendeduplizierung
++   Dateifreigaben
++   Softwarebereitstellungsfreigaben
++   VHD-Bibliotheken
+
+
+F42:Verwendungsszenarien für die Datendeduplizierung B
+=   Beispieleinsparungen durch Deduplizierung bei ruhenden Daten
++   User Home Folder:  30%
++   General File Share :    50%
++   Software Deployment Share: 70%
++   VHD Library : 90%
+* VHD       :   VirtualHardDisk-Library
+* Deployment:   Auslieferung
+
+
+F43:Überwachen und Warten der Datendeduplizierung
+=   Datendeduplizierung überwachen durch:
++   Windows PowerShell-Cmdlets
++   Ereignisanzeige-Protokolle
++   Leistungsüberwachungsdaten
++   Datei-Explorer
+=   Datendeduplizierung über
++   Windows PowerShell-Cmdlets verwalten
++   Auf Problembehandlung zur Datendeduplizierung vorbereitet sein
+
+F44:Überlegungen bezüglich der Datendeduplizierung beim
+    Sichern und Wiederherstellen
++   Einer der Vorteile, den die Datendeduplizierung
+    in der Regel bietet,
+    besteht in schnelleren Sicherungs- und Wiederherstellungsvorgängen.
+
+===============================================================================
+=*= !M05:Hyper-V und virtuellen Computern
+===============================================================================
+
+#   Folie:21740B_05.PPT
+
+*** Thema:  Installieren und Konfigurieren von
+        Hyper-V und virtuellen Computern
+
+F02:    Übersicht über Hyper-V
++   Installieren von Hyper-V
++   Konfigurieren des Speichers auf Hyper-V-Hostservern
++   Konfigurieren des Netzwerks auf Hyper-V-Hostservern
++   Konfigurieren von virtuellen Hyper-V-Computern
++   Verwalten von virtuellen Computern
+
+=== Lektion1: Übersicht über Hyper-V
+
+F03:Info
++   Was ist Hyper-V?
++   Neue Hyper-V-Hostfeatures in Windows Server 2016
++   Neue Features für virtuelle Hyper-V-Computer in Windows Server 2016
++   Windows Server-Container und Docker in Hyper-V
+
+F04:Was ist Hyper-V?
++   Hyper-V ist die Hardwarevirtualisierungsrolle in Windows Server 2016
++   Der Hypervisor steuert den Zugriff auf die Hardware
++   Hardwaretreiber werden im Hostbetriebssystem installiert
++   Es werden viele Gastbetriebssysteme unterstützt:
+    *   Windows Server 2008 SP2 oder höher
+    *   Windows Vista SP2 oder höher
+    *   Linux
+    *   FreeBSD
+
+F05:Neue Hyper-V-Hostfeatures in Windows Server 2016
+=   Zu den neuen Features für Hyper-V-Hosts zählen:
++   Hostressourcenschutz
++   Verbesserungen in Hyper-V-Manager
++   Verschachtelte Virtualisierung
++   Parallele Hyper-V-Cluster-Upgrades
++   Abgeschirmte virtuelle Computer
++   Priorität der Startreihenfolge
++   Speicher-QoS
++   PowerShell Direct
+
+
+F06:Neue Features für virtuelle Hyper-V-Computer in Windows Server 2016
+=   Zu den neuen Features für virtuelle Computer zählen:
++   Zuweisung separater Geräte
++   Hinzufügen per Hot Add oder Entfernen von
+    Netzwerkkarten und Arbeitsspeicher
++   Über Windows Update bereitgestellte Integrationsdienste
++   Schlüsselspeicher-Laufwerk
++   Linux Secure Boot
++   Verbesserungen bei Arbeitsspeicher und Prozessorkapazität
++   Produktionsprüfpunkte
++   Konfigurationsdateiformat des virtuellen Computers
++   Konfigurationsversion des virtuellen Computers
+
+F07:Windows Server-Container und Docker in Hyper-V
++   Virtuelle Computer stellen eine Hardwarevirtualisierung bereit
++   Container bieten eine Virtualisierung des Betriebssystems:
+    -   Isolierter Namespace
+    -   Gesteuerter Zugriff auf Hardware
++   Vorteile von Containern:
+    -   Schnellerer Start und Neustart
+    -   Hohe Bereitstellungsdichte
++   Docker ist die Managementsoftware für Container
++   Hyper-V-Container stellen eine bessere Isolation bereit
+
+F08:Windows Server-Container und Docker in Hyper-V
++   Container => Container - WinServer2016 - HW
++   Hyper-V Container => Container - WinServer2016 -Hypervisor - HW
+
+
+=== Lektion2: Installieren von Hyper-V
+
+F09:Installieren von Hyper-V
++   Voraussetzungen und Anforderungen für die Installation von Hyper-V
++   Vorführung: Installieren der Hyper-V-Rolle
++   Verschachtelte Virtualisierung
+
+F10:Voraussetzungen und Anforderungen für die
+    Installation von Hyper-V
++   Verwenden Sie Systeminfo.exe, um zu überprüfen, ob die Hardwareanforderungen für Hyper-V erfüllt werden.
+    psh>systeminfo
+    <psh
+        + Erweiterungen für den VM Überwachungsmodus: Ja
+        + Virtualisierung in Firmware aktivieren: Ja
+        + Adressübersetzung der 2.ten Ebene : Ja
+        + Datenausführungsverhinderung : Ja
++   Der Host muss über ausreichende Ressourcen verfügen,
+    um die Anforderungen der virtuellen Computer zu erfüllen:
+    +   Prozessor
+    +   Arbeitsspeicher
+    +   Speicher
+    +   Netwerk
+
+F13:Verschachtelte Virtualisierung
++   Ermöglicht einem virtuellen Hyper-V-Gastcomputer,
+    auch ein Hyper-V-Host zu sein
++   Nützlich für Entwicklungs- und Testserver
+    Anforderungen:
+    +   Mindestens 4 GB statischer Arbeitsspeicher
+    +   Spoofing von MAC-Adressen aktiviert
+    +   Konfigurationsversion 8.0 des virtuellen Computers
++   Einige Features sind im virtuellen Gastcomputer,
+    der Hyper-V ausführt, nicht verfügbar
+
+=== Lektion3: Konfigurieren des Speichers auf Hyper-V-Hostservern
+
+F14:Info
++   Speicheroptionen in Hyper-V
++   Überlegungen hinsichtlich virtueller Festplattenformate und -typen
++   Fibre-Channel-Unterstützung in Hyper-V
++   Wo sollten virtuelle Festplatten gespeichert werden?
++   Speichern von virtuellen Computern in SMB 3.0-Freigaben
++   Vorführung: Speicherverwaltung in Hyper-V
+
+F15:Speicheroptionen in Hyper-V
++   Formate virtueller Festplatten:
+    .vhd
+    .vhdx
+    .vhds
+Arten virtueller Festplatten:
++   Feste Größe
++   Dynamisch erweiterbar
++   Passthrough
++   Differenzierung
+
+
+F16:Überlegungen hinsichtlich virtueller Festplattenformate und -typen
++   Erstellen Sie .VHDX virtuelle Festplatten,
+    außer wenn Sie eine Abwärtskompatibilität mit Windows Server 2008
+    oder Windows Server 2008 R2 benötigen.
++   Eine dynamisch erweiterbare virtuelle Festplatte im VHDX-Format
+    eignet sich für Produktionsarbeitsauslastungen.
++   Der von dynamisch erweiterbaren virtuellen Festplatten
+    angezeigte freie Speicherplatz ist nicht mit physischem freiem
+    Speicherplatz gleichzusetzen.
++   Mehrere Ebenen mit differenzierenden Datenträgern
+    mindern die Leistung.
++   Wird der übergeordnete Datenträger geändert, ist der
+    differenzierende Datenträger nicht mehr gültig.
++   Sie können einen differenzierenden Datenträger mit
+    einem übergeordneten Datenträger neu verknüpfen.
+
+
+F17:Fibre-Channel-Unterstützung in Hyper-V
+Der virtuelle Fibre Channel-Adapter:
++   Ermöglicht die direkte Verbindung eines virtuellen Computers
+    mit einem Fibre-Channel-SAN.
++   Erfordert, dass der Hyper-V-Host einen
+    Fibre-Channel-HBA aufweist.
++   Erfordert, dass der Fibre-Channel-HBA-Treiber
+    virtuellen Fibre Channel unterstützt.
+=   Erinnern Sie die Kursteilnehmer daran,
+    dass der Hyper-V-Host bereits über einen
+    Fibre-Channel-Hostbusadapter (HBA) verfügen muss und
+    der Treiber virtuellen Fibre Channel unterstützen muss.
+=   Fragen Sie die Kursteilnehmer,
+    ob Sie Fibre Channel oder Internet SCSI (iSCSI)
+    zur Verbindung mit ihrem Storage Area Network (SAN) verwenden
+
+F18:Wo sollten virtuelle Festplatten gespeichert werden?
+=   Die Speicherleistung ist ein wichtiger Faktor für die
+    Leistung eines virtuellen Computers.
+=   Beachten Sie bei der Planung der Speicherleistung für Hyper-V Folgendes:
++   Leistungsfähige Konnektivität für Speicher
++   Redundanter Speicher
++   Hochleistungsfähiger Speicher
++   Ausreichender Platz für die Dateivergrößerung
+
+F19:Speichern von virtuellen Computern in SMB 3.0-Freigaben
+=   SMB 3.0 ist in Windows Server 2012 und höher verfügbar.
+=   Hyper-V kann Folgendes auf einer SMB 3.0-Dateifreigabe speichern:
+    +   Konfigurationsdateien
+    +   Virtuelle Festplatten
+    +   Prüfpunktdateien
+=   Dateiserver mit horizontaler Skalierung:
+    +   Stellt Dateifreigaben mit hoher Verfügbarkeit bereit
+    +   Verfügt über Richtlinien für Speicher-QoS
+
+F20:Vorführung: Speicherverwaltung in Hyper-V
+=   Vorbereitungsschritte
+    Für diese Vorführung müssen Sie LON-HOST1 ausführen und
+    sollten die vorherige Vorführung abgeschlossen haben.
+=   Vorführungsschritte
++   Klicken Sie auf LON-HOST1 in der Taskleiste auf Datei-Explorer.
++   Gehen Sie im Datei-Explorer zu E:\Programme\Microsoft Learning\21740\Drives.
+=   Hinweis: Der Laufwerkbuchstabe in diesem Pfad
+    hängt von der Konfiguration des physischen Hosts ab.
++   Klicken Sie auf die Registerkarte Start und klicken Sie
+    dann zweimal auf das Symbol Neuer Ordner,
+    um zwei neue Ordner zu erstellen. Klicken Sie mit der
+    rechten Maustaste auf jeden Ordner, um diese umzubenennen:
+        LON-GAST1
+        LON-GAST2
++   Schließen Sie den Internet Explorer.
++   Wechseln Sie zu Hyper-V-Manager.
++   Klicken Sie im Aktionsbereich auf Neu und dann auf Festplatte.
++   Klicken Sie auf der Seite Vorbemerkungen des Assistenten für neue virtuelle Festplatten auf Weiter.
++   Wählen Sie auf der Seite Datenträgerformat auswählen VHD aus und klicken Sie dann auf Weiter.
++   Wählen Sie auf der Seite Datenträgertyp auswählen die Option
+    Differenzierung aus und klicken Sie auf Weiter.
++   Machen Sie auf der Seite Name und Speicherort
+    angeben die folgenden Angaben und klicken Sie auf Weiter:
+    Name: LON-GAST1.vhd
++   Standort: E:\Programme\Microsoft Learning\21740\Drives\LON-GAST1\
++   Geben Sie auf der Seite Datenträger konfigurieren E:\Programme\Microsoft Learning\Base\Base17C-WS16-1607_DE.vhd als Speicherort ein und klicken Sie dann auf Fertig stellen.
+
+F21:
++   Klicken Sie auf Start und dann auf das Symbol Windows PowerShell.
++   Geben Sie den folgenden Befehl in die Eingabeaufforderung in der Windows PowerShell-Befehlszeilenschnittstelle ein, um einen neuen differenzierenden Datenträger zu erstellen, der mit LON-GAST2 verwendet werden soll, und drücken Sie die Eingabetaste:
++   New-VHD “E:\Programme\Microsoft Learning\21740\Drives\LON-GAST2\LON-GAST2.vhd”
+        -ParentPath “E:\Programme\Microsoft Learning\Base\Base17C-WS16-1607_DE.vhd”
++   Schließen Sie das Windows PowerShell-Fenster.
++   Klicken Sie im Aktionsbereich der
+    Hyper-V-Manager-Konsole auf Datenträger überprüfen.
++   Gehen Sie im Dialogfeld Öffnen
+    zu E:\Programme\Microsoft Learning\21740\Drives\LON-GAST2\, klicken Sie auf LON-GAST2.vhd und dann auf Öffnen.
++   Überprüfen Sie im Dialogfeld Eigenschaften der virtuellen Festplatte, ob LON-GAST2.vhd als eine differenzierende virtuelle Festplatte mit E:\Programme\Microsoft Learning\Base\Base17C-WS16-1607_DE.vhd als übergeordnetes Element konfiguriert ist und klicken Sie dann auf Schließen
+
+=== Lektion 4: Konfigurieren des Netzwerks auf Hyper-V-Hostservern
+
+F22:Hyper-V-Netzwerktypen
+Verwenden Sie den Manager für virtuelle Switches zum
+    Erstellen verschiedener Arten von virtuellen Netzwerken:
++   Extern
++   Intern
++   Privat
+Sie können auch:
++   VLANs konfigurieren
++   Daten erfassen, die einen Switch durchlaufen
++   Daten filtern, die einen Switch durchlaufen
+
+F23:Vorführung: Konfigurieren von Hyper-V-Netzwerken
+....
+
+F24:Bewährte Methoden zur Konfiguration von virtuellen Hyper-V-Netzwerken
+Beim Konfigurieren virtueller Netzwerke:
++   Verwenden Sie den "NIC-Teamvorgang" auf dem Hyper-V-Host,
+    um beim Ausfall eines Adapters die Verbindung zu virtuellen Computern
+    sicherzustellen
++   Aktivieren Sie das "Bandbreitenmanagement", um sicherzustellen,
+    dass kein einzelner virtueller Computer die Netzwerkschnittstelle
+    für sich beansprucht
++   Verwenden Sie Netzwerkadapter, die VMQ unterstützen
++   Verwenden Sie Netzwerkvirtualisierung,
+    um virtuelle Computer ohne die Nutzung von VLANs zu isolieren
+
+F27:Neue Hyper-V-Netzwerkfeatures in Windows Server 2016
++   Qos für Software-Defined Networking
++   VMMQs
++   RDMA für virtuelle Switches
++   Switch-Embedded Teaming:
+    +   Adapter müssen identisch sein
+    +   New-VMSwitch -Name “ExternalTeam” -NetAdapterName “NIC1”,”NIC2”
++   Virtueller NAT-Switch:
+    New-VMSwitch -Name “NATSwitch” -SwitchType
+    NAT -NATSubnetAddress 172.16.1.0/24
+
+
+=== Lektion 5: Konfigurieren von virtuellen Hyper-V-Computern
+
+F28:!
++   Was sind Konfigurationsversionen des virtuellen Computers?
++   Generationsversionen von virtuellen Computern
++   Vorführung: Erstellen eines virtuellen Computers
++   Das Hot Add-Feature in Hyper-V
++   Abgeschirmte virtuelle Computer
++   Einstellungen des virtuellen Computers
++   Bewährte Methoden zur Konfiguration von virtuellen Computern
+=   Zum Hinzufügen eines virtuellen Netzwerkadapters muss der
+virtuelle Computer ein virtueller Computer der 2. Generation sein.
+
+F29:Was sind Konfigurationsversionen des virtuellen Computers?
+Konfigurationsversionen ermöglichen eine Kompatibilität
+für virtuelle Computer zwischen:
++   Windows Server 2012 R2 (Version 5.0)
++   Windows Server 2016 (Version 5.0 oder 8.0)
++   Virtuelle Computer müssen manuell von Version 5.0 auf
+    Version 8.0 aktualisiert werden:
+    psh>Update-VMVersion “VMName”
+
+F30:Generationsversionen von virtuellen Computern
+Virtuelle Computer der 2. Generation bieten die folgende Funktionalität:
++   Sicherer Start
++   Startvorgang von einer virtuellen Festplatte,
+    die mit einem virtuellen SCSI-Controller verbunden ist
++   Startvorgang von einer virtuellen DVD, die mit einem
+    virtuellen SCSI-Controller verbunden ist
++   PXE-Start durch Nutzung eines standardmäßigen Hyper-V-Netzwerkadapters
++   UEFI-Firmwareunterstützung
+=   Betonen Sie bei der Besprechung der Vorteile von
+virtuellen Computern der 2. Generation,
+dass viele Funktionen von virtuellen Computern der 1. Generation noch vorhanden sind,
+um die bestehende Funktionalität der physischen Hardware zu replizieren.
+Ein virtueller Computer der 2. Generation ist jedoch nur auf eine Ausführung
+in einer virtuellen Umgebung ausgelegt und nicht auf die Replizierung
+eines bestehenden physischen Computers.
+
+F31:Vorführung: Erstellen eines virtuellen Computers
+In dieser Vorführung wird die Erstellung eines virtuellen Computers
+über den Hyper-V-Manager und Windows PowerShell gezeigt....
+
+F33:Das Hot Add-Feature in Hyper-V
++   Das Hot Add-Feature erfordert virtuelle Computer der 2. Generation.
++   Arbeitsspeicher:
+    Virtuellen Computern mit statischem Arbeitsspeicher während
+    der Ausführung Arbeitsspeicher hinzufügen
++   Netzwerkadapter:
+    Netzwerkadapter auf ausgeführten virtuellen Computern hinzufügen
+    oder entfernen
+
+F34:Abgeschirmte virtuelle Computer
+=   Ein abgeschirmter virtueller Computer ist:
++   Vor jedem Benutzer mit Zugriff auf den Hyper-V-Host geschützt
++   Ein virtueller Computer der 2. Generation mit einem virtuellen TPM
++   Durch BitLocker geschützt
+=   Der Host-Überwachungsdienst verfügt über zwei Nachweismodi:
++   Admin-basierter Nachweis
++   TPM-basierter Nachweis
+
+F35:Einstellungen des virtuellen Computers
++   Integrationsdienste ermöglichen virtuellen Computern den
+    Zugriff auf Hyper-V-Dienste.
++   Smart Paging ermöglicht eine vorübergehende Nutzung von Datenträgern
+    während des Starts eines virtuellen Computers,
+    wenn dies dringend notwendig ist.
++   Die Ressourcenmessung überwacht den Ressourceneinsatz
+    von virtuellen Computern zu Planungszwecken.
++   Discrete Device Assignment ermöglicht
+    direkten Zugriff auf PCIe-Geräte.
++   Virtuelle Computer der 2. Generation von Linux und FreeBSD
+    können einen sicheren Start verwenden.
+
+
+F36:Bewährte Methoden zur Konfiguration von virtuellen Computern
++   Verwenden Sie dynamischen Arbeitsspeicher,
+    es sei denn, eine Anwendung unterstützt diesen nicht.
++   Verwenden Sie wenn möglich keine differenzierenden Datenträger.
++   Verwenden Sie mehrere Netzwerkadapter,
+    um physische Netzwerke für eine hohe Verfügbarkeit zu trennen.
++   Speichern Sie die Dateien jedes virtuellen
+    Computers auf einem separaten Volume.
+
+=== Lektion 6: Verwalten von virtuellen Computern
+F37:!
++   Verwalten des Status von virtuellen Computern
++   Verwalten von Prüfpunkten
++   Vorführung: Erstellung von Prüfpunkten
++   Importieren und Exportieren von virtuellen Computern
++   PowerShell Direct
++   Vorführung: Verwenden von PowerShell Direct
+=   Ein Produktionsprüfpunkt verhält sich mehr wie eine Sicherung.
+Wenn Sie einen Produktionsprüfpunkt wiederherstellen,
+befindet sich der virtuelle Computer im Zustand „Beendet“.
+=   Sie können PowerShell Direct nur auf dem Hyper-V-Host verwenden,
+    auf dem der virtuelle Computer ausgeführt wird.
+
+F38:Verwalten des Status von virtuellen Computern
+Status des virtuellen Computers legen fest, welche Ressourcen verwendet werden:
++   Aus
++   Wird gestartet
++   Wird ausgeführt
++   Angehalten
++   Gespeichert
+
+F39:Verwalten von Prüfpunkten
++   Prüfpunkte ermöglichen Administratoren,
+    an einem bestimmten Zeitpunkt eine Momentaufnahme
+    eines virtuellen Computers zu machen.
++   Prüfpunkte ersetzen keine Datensicherungen
++   "Standardprüfpunkte" erstellen AVHD-Dateien (differenzierende Datenträger),
+    die bei einer Löschung des Prüfpunktes wieder mit dem vorherigen Prüfpunkt
+    zusammengelegt werden.
++   "Produktionsprüfpunkte" werden über VSS erstellt
+    und müssen aus einem Offlinezustand gestartet werden.
+
+F40:Vorführung: Erstellung von Prüfpunkten
++   "Standardprüfpunkte"
++   "Produktionsprüfpunkte"
+...
+
+F41:Importieren und Exportieren von virtuellen Computern
+=   Importoptionen:
+    +   Virtuellen Computer direkt registrieren (die vorhandene eindeutige ID verwenden)
+    +   Virtuellen Computer wiederherstellen (die vorhandene eindeutige ID verwenden)
+    +   Virtuellen Computer kopieren (neue eindeutige ID erstellen)
+=   Exportoptionen:
+    +   Einen Prüfpunkt exportieren
+    +   Einen virtuellen Computer mit Prüfpunkten exportieren
+=   Verschieben des Speichers eines virtuellen Computers:
+    +   Alle Daten des virtuellen Computers an einen einzelnen Ort verschieben
+    +   Daten des virtuellen Computers an verschiedene Speicherorte verschieben
+    +   Die virtuellen Festplatten des virtuellen Computers verschieben
+
+F42:PowerShell Direct
+=   PowerShell Direct:
+    +   Erfordert keine Netzwerkverbindung
+    +   Kann nur vom Host zum virtuellen Computer verwendet werden
+=   Anforderungen:
+    +   Der Host muss Windows Server 2016 oder Windows 10 ausführen
+    +   Der Gast muss Windows Server 2016 oder Windows 10 ausführen
+    +   Windows PowerShell muss als Administrator ausgeführt werden
++   Sie müssen zur Authentifizierung des virtuellen Computers
+    Anmeldeinformationen verwenden
+=   Öffnen Sie eine Sitzung oder rufen Sie einen Befehl auf:
+    psh>Enter-PSSession –VMName <VM1>
+    psh>Invoke-Command –VMName <VM1>–Scriptblock {<commands>}
+
+F43:Vorführung: Verwenden von PowerShell Direct...
+
+F45:Übungseinheit: Installieren und Konfigurieren von Hyper-V
++   Virtuelle Computer:     21740B-LON-HOST1
++   Benutzername:       Administrator
++   Kennwort:           Pa55w.rt
+
+
+
+===============================================================================
+=*= !M06:Hyper-V-Containern und Docker
+===============================================================================
+
+#   Folie:21740B_06.PPT
+*** Thema:  Bereitstellen und
+            Verwalten von Windows- und Hyper-V-Containern
+
+F02:Übersicht
++   Übersicht über Container in Windows Server 2016
++   Vorbereiten für Container
++   Installieren, Konfigurieren und Verwalten von
+    Containern mithilfe von Docker
+
+=== Lektion 1: Übersicht über Container in Windows Server 2016
+
+F03:x
++   Übersicht über Windows Server-Container
++   Übersicht über Hyper-V-Container
++   Verwendungsszenarien
++   Installationsanforderungen
+
+
+F04:Übersicht über Windows Server-Container
+Lokales Repository => Sandbox => Container-Ansicht
+
+F05:Übersicht über Hyper-V-Container
++   Windows Container
++   Hyper-V-Container
+
+F06:Verwendungsszenarien
+=   Einige gängige Nutzungsfälle für Windows-Container sind:
+=   Windows Server-Container für:
+    +   Hosting von statusfreien Apps
+    +   Schnelle Testbereitstellungen
+=   Hyper-V-Container für:
+    +   Mehrere Mandanten
+    +   Einzelne Mandanten
+    +   Unabhängiges Lebenszyklusmanagement
+
+F07:Installationsanforderungen
+=   Bei der Planung von Windows-Containern sollten Sie die folgenden Aspekte
+    in Betracht ziehen:
++   Hostanforderungen für Windows-Container
++   Hostanforderungen für virtualisierte Container
++   Unterstützte Szenarien
+=   HostOs <=> Windows-Server-Container <=> Hyper-V-Container
+
+
+=== Lektion 2: Vorbereiten für Container
++   Vorbereiten von Windows Server-Containern
++   Vorbereiten von Hyper-V-Containern
++   Bereitstellen von Paketanbietern
+
+F09:Vorbereiten von Windows Server-Containern
+=   So bereiten Sie einen Nano-Server vor:
+    1.  Erstellen Sie eine virtuelle Nano-Server-Festplattendatei
+        (VHD-Datei) für Container
+    2.  Fahren Sie mit den folgenden Schritten fort...
+=   Führen Sie die folgenden Schritte aus, um
+    Ihren Windows Server-Host für Container vorzubereiten:
+    1.   Containerfunktion installieren
+    2.   Virtuellen Switch erstellen
+    3.  NAT-Einstellungen konfigurieren
+    4.  Spoofing von MAC-Adressen konfigurieren
+
+F10:Vorbereiten von Hyper-V-Containern
+=   Führen Sie die folgenden Schritte aus,
+um Ihren Windows Server-Host für Container vorzubereiten:
+    1.  Containerfunktion installieren*
+    2.  Hyper-V-Rolle aktivieren*
+    3.  Verschachtelte Virtualisierung aktivieren
+    4.  Virtuelle Prozessoren konfigurieren
+    5.  Virtuellen Switch erstellen
+    6.  NAT-Einstellungen konfigurieren
+    7.  Spoofing von MAC-Adressen konfigurieren
+    *   Schritt ist bei einer Implementierung auf
+    einem Nano-Server nicht erforderlich
+
+
+F11:Bereitstellen von Paketanbietern
++   End User
++   PackageManagementCore
++   PackageManagementProviders
++   PackageSources
+
+
+=== Lektion 3: Installieren, Konfigurieren und
+    Verwalten von Containern mithilfe von Docker
+
+F12:x
++   Was ist Docker?
++   Docker-Unterstützung in Windows Server 2016
+    Docker-Komponenten
++   Verwendungsszenarien
++   Installieren und Konfigurieren von Docker
++   Übersicht der Verwaltung mit Docker
++   Übersicht über Docker Hub
++   Docker mit Azure
++   Vorführung: Bereitstellen von Containern mit Docker
+Frage:Docker ist ein grafisches Verwaltungstool,
+    mit dem Sie Hyper-V-Container in Windows Server 2016 verwalten können.
+    => falsch
+
+F13:Was ist ein Docker ?
+AppX- Bin/Libs - DockerEngine - Betriebssystem - HW-Infrastruktur
+
+F14:Docker-Unterstützung in Windows Server 2016
+=   Das Docker-Modul für Windows Server erfordert Windows Server 2016
+    und beinhaltet folgende Hauptaspekte:
++   Keine plattformübergreifende Containerisierung
++   Zwei Möglichkeiten zur Verwaltung von Containern unter Windows
+
+F15:Docker-Komponenten
+Docker-Terminologie:
++   Image, Container, Dockerfile, Build
+Docker-Toolbox:
++   Docker-Engine, Docker-Compose,
+    Docker-Machine, Docker-Client, Kitematic,
+    Docker-Registrierung, Docker-Swarm
+Docker-Lösungen:
++   Docker-Hub, Docker-Trusted-Registry,
+    Universelle Systemsteuerung, Docker-Cloud, Docker-Rechenzentrum
+
+F16:Verwendungsszenarien
+Einige gängige Nutzungsfälle von Docker schließen ein:
++   Container-Orchestrierung
++   DevOps
++   Microservices
+
+F17:Installieren und Konfigurieren von Docker
+=   Installieren von Docker unter Windows Server 2016:
+    +   Installieren Sie das "OneGet-Provider" PowerShell Modul
+    +   Installieren Sie "Docker" mit OneGet
+    +   Starten Sie den "Container-Host" neu
+=   Installieren von Docker unter Nano-Server:
+    +   Erstellen Sie eine 'PowerShell-Remotesitzung'
+    +   Installieren von Windows-Updates
+    +   Docker installieren
+    +   Sicherheitseinstellungen konfigurieren
+    +   Installieren Sie den Docker-Client
+
+F18:Übersicht der Verwaltung mit Docker
+Mit Docker können Sie:
++   Container erstellen
++   Container entfernen
++   Container verwalten
++   Docker Hub durchsuchen, um auf vorgefertigte Images
+    zuzugreifen und diese herunterzuladen
+In den meisten Organisationen werden u. a. die
+    folgenden Docker-Management-Aufgaben am häufigsten eingesetzt:
++   Automatisieren der Erstellung von Containerimages
+    durch Nutzung von Dockerfile unter Windows
++   Verwalten von Containern mit Docker
++   Verwenden von docker run
+
+F19:Übersicht Docker Hub
+=>  grafisches Tool
+
+F20:Docker mit Azure
+
+F21:Vorführung: Bereitstellen von Containern mit Docker
+Im Rahmen dieser Vorführung wird Folgendes gezeigt:
++   OneGet PowerShell Providermodul installieren
++   Docker installieren
++   Ein Image herunterladen
++   Einen neuen Container bereitstellen
++   Den Container verwalten
+
+F26:Übungseinheit: Installieren und Konfigurieren von Containern
+
+F27:Szenario für die Übungseinheit
+Das DevOps-Team der A. Datum Corporation möchte sich Container ansehen,
+um herauszufinden, ob sich mithilfe dieser
+Technologie Implementierungszeiten für neue Anwendungen verkürzen
+und Übertragungen von Anwendungen in die Cloud vereinfachen lassen.
+Das Team hat sich dafür entschieden, Windows-Server-Container
+zu evaluieren und sich IIS in einem Container anzusehen.
+
+F28:Lernzielkontrolle
+Fragen zur Lernzielkontrolle
++   Frage1: Wann verwenden Sie beim Erstellen einer
+        virtuellen Festplatte für Nano-Server mithilfe
+        des Windows PowerShell-Cmdlets New-NanoServerImage den
+        Schalter -Guestdrivers?
+Antwort:
+Verwenden Sie den Schalter -Guestdrivers,
+    wenn Sie den Nano-Server als virtuellen Computer
+    unter Hyper-V ausführen möchten.
++   Frage2:
+Welche zwei grundlegenden Komponenten
+können Sie bei der Verwendung der
+Nano-Server-Wiederherstellungskonsole konfigurieren?
+Antwort :
+Sie können auf dem Nano-Server mithilfe der
+Nano-Server-Wiederherstellungskonsole
+ausschließlich Netzwerk- und Firewalleinstellungen konfigurieren.
++   Frage3:
+Welche Windows PowerShell-Cmdlet verwenden Sie beim
+Konfigurieren von Windows Server-Containern zum
+Erstellen eines Containers?
+Wie lautet der entsprechende Docker-Befehl?
+Antwort:
+Verwenden Sie zur Erstellung eines Containers das
+Windows PowerShell-Cmdlet New-Container;
+der entsprechende Befehl in Docker lautet "docker run".
+
+===============================================================================
+=*= !M07:Hohe Verfügbarkeit und Notfallwiederherstellung
+===============================================================================
+
+#   Folie:21740B_07.PPT
+07  :  Übersicht über hohe Verfügbarkeit
+        und Notfallwiederherstellung
+
+F02:Überblick
++   Festlegen von Verfügbarkeitsebenen
++   Hochverfügbarkeits- und Notfallwiederherstellungslösungen
+    mit virtuellen Hyper-V-Computern planen
++   Sicherung und Wiederherstellung mit Windows Server-Sicherung
++   Hohe Verfügbarkeit mit Failoverclustering in Windows Server 2016
+
+=== Lektion 1: Festlegen von Verfügbarkeitsebenen
+
+F03:*
++   Was ist hohe Verfügbarkeit?
++   Was ist fortlaufende Verfügbarkeit?
++   Was ist Geschäftskontinuität?
++   Erstellen eines Notfallwiederherstellungsplans
++   Hoch verfügbare Netzwerke
++   Hoch verfügbarer Speicher
++   Hoch verfügbare Compute- oder Hardwarefunktionen
+
+F04:Was ist hohe Verfügbarkeit?
+Alle Teile einer Anwendung und die Infrastruktur,
+auf die sie angewiesen ist, müssen hoch verfügbar sein.
++   Rechenzentruminfrastruktur
++   Serverhardware
++   Speicherung
++   Netzwerkinfrastruktur
++   Internet
++   Netzwerkdienste
+
+F05:Was ist fortlaufende Verfügbarkeit?
+=   So stellen Sie fortlaufende Verfügbarkeit her:
+    +   Führen Sie eine Analyse der Geschäftsauswirkungen durch.
+    +   Führen Sie eine Risikoanalyse durch.
+    +   Führen Sie eine anwendungsspezifische Analyse durch.
+    +   Erstellen Sie für unterschiedliche Anwendungen verschiedene Strategien zur
+        fortlaufenden Verfügbarkeit.
+
+F06:Was ist Geschäftskontinuität?
+=   Anforderungen für Geschäftskontinuität sollten Folgendes umfassen:
+    +   SLAs für die IT-Systeme
+    +   Kontaktinformationen und den technischen Hintergrund der
+        Wiederherstellungsverantwortlichen
+    +   Einen sekundären Standort
+    +   Umgehungslösungen
+    +   Maximal für Ihre Anwendungen erlaubte Ausfallzeiten
+
+F07:Geschäftskontinuitätstechnologie und Datensammlung
+=   Sie können Geschäftskontinuitätsdaten aus folgenden Quellen sammeln:
+    +   Analyse der Geschäftsauswirkungen
+    +   Risikoanalyse
+=   Technologien für die Geschäftskontinuität sind unter anderem:
+    +   NLB
+    +   Failoverclustering auf physischen oder virtuellen Computern
+    +   Anwendungsbezogene hohe Verfügbarkeit
+    +   Herkömmliche Datensicherungen
+    +   Onlinesicherungen
+    +   Sicherungen von virtuellen Computern
+
+F08:Erstellen eines Notfallwiederherstellungsplans
+=   Zum Entwickeln eines Wiederherstellungsplans gehört:
+    +   Durchführen einer Risikoanalyse
+    +   Festlegen, welche Daten wiederhergestellt werden sollen
+    +   Festlegen, wo Daten wiederhergestellt werden sollen
+    +   Festlegen, wann Daten wiederhergestellt werden sollen
+=   Der Wiederherstellungsplan sollte regelmäßig getestet werden.
+=   Der Wiederherstellungsplan sollte regelmäßig bewertet werden.
+
+F09:SLA-Komponenten
+=   Zu den SLA-Komponenten kann Folgendes gehören:
+    +   Betriebsstunden
+    +   Dienstverfügbarkeit
+    +   Wiederherstellungspunktziel (RPO)
+    +   Wiederherstellungszeitziel (RTO)
+    +   Aufbewahrungsziele
+    +   Systemleistung
+Sprechen Sie über die Komponenten einer Vereinbarung zum
+    Servicelevel (Service Level Agreement, SLA).
+Bitten Sie die Kursteilnehmer, über ihre Ideen zu sprechen,
+wie SLA-Komponenten in ihrer Organisation umgesetzt werden könnten.
+
+F10:Hoch verfügbare Netzwerke
+=   Die Planung für hohe Verfügbarkeit in Netzwerken sollte Redundanz für Folgendes umfassen:
+    +   Netzwerkadapter
+    +   Mehrfachpfad-E/A
+    +   LAN
+    +   WAN
+    +   Internetkonnektivität
+
+F11:Hoch verfügbarer Speicher
+=   Berücksichtigen Sie beim Planen von hoher Verfügbarkeit für Speicher folgende Technologien:
+    +   RAID
+    +   DAS
+    +   NAS
+    +   SAN
+    +   Clouddienste
+
+F12:Hoch verfügbare Compute- oder Hardwarefunktionen
+=   Erwägen Sie, die im Betriebssystem integrieren Hochverfügbarkeits-Features zu nutzen:
+    +   Failoverclustering
+    +   Netzwerklastenausgleich
+    +   RAID
+=   Befolgen Sie die Leitfäden und Empfehlungen
+    bewährter Methoden für die jeweilige Anwendung
+
+
+===============================================================================
+=*= !M08:Failoverclustering
+===============================================================================
+
+#   Folie:21740B_08.PPT
+
+T08:Implementieren von Failoverclustering
+
+F02:Überblick
+L1: Planen eines Failoverclusters
+L2: Erstellen und Konfigurieren eines neuen Failoverclusters
+L3: Warten eines Failoverclusters
+L4: Problembehandlung für einen Failovercluster
+L5: Implementieren von hoher Verfügbarkeit mit Stretched-Clustering
+        für einen Standort
+
+=== L1
+
+F03:Planen eines Failoverclusters
+Implementieren von Failoverclustering
++   Vorbereiten der Failoverclustering-Implementierung
++   Failovercluster-Speicher
++   Hardwareanforderungen für eine Failovercluster-Implementierung
++   Netzwerkanforderungen für eine Failovercluster-Implementierung
++   Vorführung: Überprüfen der RSS- und RDMA-Kompatibilität einer Netzwerkkarte auf einem SMB-Server
++   Infrastruktur- und Softwareanforderungen für einen Failovercluster
++   Sicherheitsüberlegungen
++   Quorum in Windows Server 2016
++   Planen von Migration und Upgrades für Failovercluster
+
+F04:Vorbereiten der Failoverclustering-Implementierung
+Zu den Funktionsmerkmalen des Failoverclusterings zählen:
++   Hohe Verfügbarkeit
++   Zustandsbehaftete Anwendung
++   IP-basierte Protokolle
+
+F05:Vorbereiten der Failoverclustering-Implementierung2
+Berücksichtigen Sie bei der Planung der Knotenkapazität
+    in einem Failovercluster die folgenden Richtlinien:
++   Verteilen der hochverfügbaren Anwendungen von einem
+        ausgefallenen Knoten.
++   Sicherstellen, dass jeder Knoten über ausreichend Kapazität verfügt.
++   Verwenden von Hardware mit ähnlicher Kapazität für
+        alle Knoten in einem Cluster.
+
+F06:Failovercluster-Speicher
++   Failovercluster erfordern gemeinsamen Speicher,
+        damit für einen virtuellen Server nach dem Failover konsistente Daten bereitstehen
++   Zu den gemeinsam genutzten Speicheroptionen zählen:
+    +   SAS
+    +   iSCSI
+    +   Fibre Channel
+    +   Gemeinsam genutzte .vhdx
+    +   Dateiserver mit horizontaler Skalierung
++   Sie können auch Clusterspeicherplätz implementieren,
+    um auf der Speicherebene Hochverfügbarkeit zu erzielen
+
+F07:Hardwareanforderungen für eine Failovercluster-Implementierung
+Zu den Hardwareanforderungen für eine Failoverimplementierung zählen:
++   Sie müssen für Windows Server zertifizierte
+        Serverhardware nutzen
++   Die Serverknoten sollten alle über dieselbe
+            Konfiguration verfügen und
+            die gleichen oder ähnliche Komponenten enthalten
++   Alle Server müssen die Tests im
+    Konfigurationsüberprüfungs-Assistenten bestehen
+
+F08:Netzwerkanforderungen für eine Failovercluster-Implementierung
+Zu den Netzwerkanforderungen für eine Failoverimplementierung zählen:
++   Ihr Server sollte mit mehreren Netzwerken verbunden sein,
+    damit für die Kommunikation Redundanz sichergestellt ist,
+    oder bei redundanter Hardware mit einem einzigen Netzwerk
+    verbunden sein, um einzelne Fehlerquellen zu vermeiden
++   Sie sollten sicherstellen,
+    dass die Netzwerkadapter identisch sind und dieselben
+    IP-Protokollversionen,
+    Geschwindigkeiten, Duplex- und Flusssteuerungsfunktionen verwenden
++   Ihre Netzwerkadapter sollten mit RSS und RDMA kompatibel sein
+
+
+F09:RSS und RDMA...
+In dieser Vorführung erfahren Sie,
+wie Sie die RSS- und RDMA-Kompatibilität
+auf einem SMB-Server überprüfen können.
+
+F10:Infrastruktur- und Softwareanforderungen für einen Failovercluster
+Zu den Infrastrukturanforderungen für eine Failoverimplementierung zählen:
+    +   Auf Active Directory-Domänencontrollern sollte
+            Windows Server 2008 oder neuer ausgeführt werden
+    +   Auf Domänen- und Gesamtstruktur-Funktionsebene
+            sollte Windows Server 2008 oder neuer ausgeführt werden
+    +   Die Anwendung muss Hochverfügbarkeit von Windows Server
+            2016 unterstützen
+Die bewährten Softwaremethoden für eine
+Failovercluster-Implementierung stellen folgende Anforderungen:
+    +   Alle Knoten verwenden dieselbe Edition von
+        Windows Server 2016 und dasselbe Service Pack und dieselben Updates
+
+
+F11:Sicherheitsüberlegungen
+Die Sicherheitsüberlegungen für Failoverclustering schreiben unter anderem Folgendes vor:
++   Eine Methode für Authentifizierung und Autorisierung
++   Nicht autorisierte Benutzer dürfen keinen
+        physischen Zugriff auf Failoverclusterknoten haben
++   Die Verwendung von Malwareschutz
++   Kommunikation zwischen den Clustern authentifiziert
+        mit Kerberos Version 5
+Wenn Sie einen von Active Directory getrennten Cluster verwenden:
++   Werden AD DS-Objekte für Netzwerknamen nicht erstellt
++   Der Clusternetzwerkname, den Sie in einem DNS registrieren,
+        ist für das Erstellen neuer Objekte in AD DS nicht erforderlich
++   Wir empfehlen dies nicht für Szenarien,
+        die Kerberos-Authentifizierung erfordern
++   Sie müssen Windows Server 2012 R2 oder neuer
+        auf allen Clusterknoten ausführen
+
+
+F12:Sicherheitsüberlegungen 2
+Windows Server 2016 führt verschiedene Clustertypen ein. Welchen davon Sie benutzen, hängt von Szenario der Domänenmitgliedschaft ab:
+    +   Einzeldomänen-Cluster
+    +   Arbeitsgruppen-Cluster
+    +   Aus mehreren Domänen bestehende Cluster
+    +   Arbeitsgruppen- und Domänen-Cluster
+
+F13:Quorum Tabelle
+
+F14:Quorum in Windows Server 2016
++   Dynamisches Quorum:
+        Datenträgerzeuge
+        Dateifreigabenzeuge
+        Azure Cloud Witness
++   Wir empfehlen Ihnen die Verwendung eines dynamischen Quroms,
+    das ist auch die Standardkonfiguration
+    Sie sollten alle anderen Quorumsformen nur in spezifischen
+    Nutzungsfällen verwenden
++   Zeugen-Datentäger erstellt das Ungleichgewicht!
+
+F15:Planen von Migration und Upgrades für Failovercluster
+=   Das Upgrade jedes Knotens im Cluster beinhaltet die folgenden Schritte:
++   Den Clusterknoten pausieren und alle Clusterressourcen ausgleichen
++   Clusterressourcen auf einen anderen Knoten im Cluster migrieren
++   Das Betriebssystem des Clusterknotens durch Windows Server 2016 ersetzen und den Knoten wieder zum Cluster hinzufügen
++   Alle Knoten auf Windows Server 2016 upgraden
++   Das Cmdlet "Update-ClusterFunctionalLevel" ausführen
+
+=== L2
+
+F16:Erstellen und Konfigurieren eines neuen Failoverclusters
++   Der Überprüfungs-Assistent und die Anforderungen der Cluster-Supportrichtlinie
++   Der Prozess zur Erstellung eines Failoverclusters
++   Vorführung: Erstellen eines Failoverclusters
++   Vorführung: Informationen zum Überprüfungs-Assistenten
++   Konfigurieren von Rollen
++   Vorführung: Erstellen eines allgemeinen Dateiserver-Failoverclusters
++   Verwalten von Failoverclustern
++   Konfigurieren von Clustereigenschaften
++   Konfigurieren von Failover und Failback
++   Speicher wird konfiguriert
++   Konfigurieren des Netzwerks
++   Konfigurieren von Quorumoptionen
++   Vorführung: Konfigurieren des Quorums
+
+F18:Der Überprüfungs-Assistent und die Anforderungen der Cluster-Supportrichtlinie
+=   Der Validierungsassistent führt verschiedene Tests durch,
+    unter anderem:
+    +   Clusterkonfiguration
+    +   Inventar
+    +   Netwerk
+    +   Speicher
+    +   Systemkonfiguration
+=   Sie können die Überprüfung mit dem
+    Konfigurationsüberprüfungs-Assistenten oder mit dem
+    Test-Cluster Windows PowerShell-Cmdlet ausführen.
+
+F19:Der Prozess zur Erstellung eines Failoverclusters
+1.  Das Failoverclustering-Feature installieren
+2.  Die Konfiguration überprüfen und ein Cluster erstellen
+3.  Die Rolle auf allen Clusterknoten mithilfe von
+    Server-Manager installieren
+4.  Eine geclusterte Anwendung mithilfe des
+    Failovercluster-Verwaltungs-Snap-ins erstellen
+5.  Die Anwendung konfigurieren
+6.  Test des Failover
+
+F20:Vorführung: Erstellen eines Failovercluster
+
+F26:Vorführung: Informationen zum Überprüfungs-Assistenten
+=   In dieser Vorführung wird die Überprüfung und
+    Konfiguration eines Failoverclusters veranschaulicht.
+
+F27:Konfigurieren von Rollen
+Die Konfiguration einer Clusterrole beinhaltet:
++   Auswählen einer Clustering-Rolle
++   Installieren einer Rolle
++   Überprüfen des Status (Wird ausgeführt) für alle Clusterknoten
+Die Konfiguration einer Clusterrolle ist folgendermaßen möglich:
++   Mit der Cluster-Manager-Konsole
++   Mit dem Windows PowerShell-Cmdlet "New-Cluster"
+
+F29:Vorführung: Erstellen eines allgemeinen Dateiserver-Failoverclusters
+In dieser Vorführung wird gezeigt,
+wie Sie eine Dateiserverrolle in Cluster aufteilen
+
+F31:Verwalten von Failoverclustern
+Zu den wichtigsten Verwaltungsaufgaben zählen:
++   Verwalten von Knoten
++   Verwalten von Netzwerken
++   Verwalten von Berechtigungen
++   Konfigurieren von Clusterquorumeinstellungen
++   Migrieren von Diensten und Anwendungen in einen Cluster
++   Konfigurieren neuer Dienste und Anwendungen
++   Entfernen des Clusters
+
+F32:Konfigurieren von Clustereigenschaften
+Die folgenden drei Aspekte gehören zur Verwaltung von Cluster-Knoten:
++   Hinzufügen von Knoten nach dem Erstellen eines Clusters
++   Anhalten von Knoten, wodurch ein Ausführen von Ressourcen
+    auf diesem Knoten verhindert wird
++   Entfernen eines Knotens aus einem Cluster,
+    wodurch der Knoten aus der Clusterkonfiguration entfernt wird
+Konfigurationsaufgaben sind hier zugänglich:
++   Im Aktionsbereich der Konsole Failover-Clusterverwaltung
++   Windows PowerShell
+
+F33:Konfigurieren von Failover und Failback
++   Bei einem Failover werden die geclusterte Instanz
+    und alle zugehörigen Ressourcen von einem Knoten
+    auf einen anderen verschoben
++   Zu einem Failover kommt es in folgenden Fällen:
+    +   Der Knoten, auf dem die Instanz gehostet wird,
+        wird aus einem bestimmten Grund inaktiv
+    +   Eine der Ressourcen in der Instanz fällt aus
+    +   Ein Administrator führt einen Failover durch
++   Der Clusterdienst kann das Failback durchführen,
+    nachdem der Offlineknoten wieder online geschaltet wurde
++   Ein Failover kann geplant oder ungeplant sein
+
+F34:Speicher wird konfiguriert
+Zu den Speicherkonfigurationsaufgaben beim Failoverclustering zählen:
++   Hinzufügen von Cluster-Speicherplätzen
++   Hinzufügen eines Datenträgers zum verfügbaren Speicher und zum CSV
++   Offlineschalten eines Datenträgers
++   Onlineschalten eines Datenträgers
+
+F35:Konfigurieren des Netzwerks
+=   Übersicht der 3 Netzwerke
+    +   Öffentliches Netzwerk
+    +   Privates Netzwerk
+    +   Öffentliches und privates Netzwerk
+=   Anmerkung
++   Ein Netzwerk kann sowohl Client- als auch Knotenkommunikation
+    unterstützen
++   Mehrere Netzwerkadapter werden für eine
+    höhere Leistung und Redundanz empfohlen
++   iSCSI-Speicher sollte über ein dediziertes Netzwerk verfügen
+
+F36:Konfigurieren von Quorumoptionen
+Zu den Quorumkonfigurationsoptionen im Assistenten zum
+    Konfigurieren des Clusterquorums und in Windows PowerShell zählen:
++   Typische Einstellungen verwenden
++   Den Quorumzeugen hinzufügen oder ändern
++   Erweiterte Quorumkonfiguration und Zeugenauswahl
+
+F37:Überlegung dynam.Quorum
+=   Dynamische Quorumverwaltung:
+    +   Der Failovercluster verwaltet die Votumszuweisung zu den Knoten dynamisch
+    +   Ermöglicht die Ausführung eines Clusterknotens auf dem letzten funktionierenden Clusterknoten
+    +   Übersteht nicht den gleichzeitigen Ausfall der Mehrzahl votierender Knoten
+    +   Wenn Sie ein Votum ausdrücklich von einem Knoten entfernen, kann der Cluster dieses Votum nicht dynamisch hinzufügen oder entfernen
+=   Zu den Überlegungen für die Quorumkonfiguration zählen:
+    +   Überprüfung der Quorumkonfiguration mit dem Konfigurationsüberprüfungs-Assistenten oder mit dem Test-Cluster Windows PowerShell-Cmdlet
+    +   Änderung der Quorumskonfiguration nur bei spezifischen Szenarien:
+    +   Hinzufügen oder Entfernen von Knoten
+    +   Ausfall eines Knotens oder Zeugen und keine schnelle Wiederherstellung möglich
+    +   Wiederherstellung eines Clusters in einem Notfallwiederherstellungsszenario mit mehreren Standorten
+
+F38:Vorführung: Konfigurieren des Quorums...
+
+F42:Zusammenfassung
++   Welche Informationen benötigen Sie zur Planung einer
+    Failovercluster-Implementierung?
++   Wie können Sie nach dem Ausführen des
+    Konfigurationsüberprüfungs-Assistenten die einzelne Fehlerquelle
+    in der Netzwerkkommunikation beseitigen?
++   In welchen Situationen könnte es wichtig sein,
+    das Failback einer Clusteranwendung für einen
+    bestimmten Zeitraum zu aktivieren?
+
+=== L3:Warten eines Failoverclusters
+
+F43:
++   Überwachen von Failoverclustern
++   Sichern und Wiederherstellen der Failovercluster-Konfiguration
++   Warten von Failoverclustern
++   Verwalten des Taktdatenverkehrs im Clusternetzwerk
++   Was ist clusterfähiges Aktualisieren?
++   Vorführung: Konfigurieren von CAU
+
+F44:Überwachen von Failoverclustern
+Zu den Tools, die Sie für die Überwachung von Clustern verwenden können, zählen:
++   Ereignisanzeige
++   Tracerpt.exe
++   MHTML-formatierte Berichte für die Clusterkonfiguration
++   Leistungsüberwachung und Zuverlässigkeitsüberwachung
+
+F45:Sichern und Wiederherstellen der Failovercluster-Konfiguration
+=   Denken Sie bei der Sicherung von Failoverclustern an Folgendes:
++   Windows Server-Sicherung ist ein Feature von Windows Server 2016
++   Tools anderer Anbieter sind für die Durchführung von
+    Sicherungen und Wiederherstellungen verfügbar
++   Sie müssen Systemstatussicherungen durchführen
+=   Eine nicht autorisierende Wiederherstellung stellt einen einzigen Knoten im Cluster vollständig wieder her
+=   Eine autorisierende Wiederherstellung stellt die
+    gesamte Clusterkonfiguration auf den Zustand eines
+    bestimmten Zeitpunkts wieder her
+
+F46:Warten von Failoverclustern
+Zu den Methoden zur Problembehandlung von Failoverclustern zählen:
++   Verwenden des Konfigurationsüberprüfungs-Assistenten
++   Überprüfen von Ereignissen in Protokollen (Cluster, Hardware, Speicher)
++   Definieren eines Prozesses zur Problembehandlung bei Failoverclustern
++   Überprüfen der Speicherkonfiguration
++   Überprüfen von Gruppen- und Ressourcenfehlern
+
+F47:Verwalten des Taktdatenverkehrs im Clusternetzwerk
+=   Arten der Netzwerküberwachung:
++   Aggressiv
++   Entspannt
++   Einstellungen der Parameter für die Netzwerküberwachung:
+    +   Verzögerung
+    +   Schwellenwert
+=   Beispiele für Windows PowerShell-Cmdlets:
+        Get-Cluster | fl *subnet*
+        (Get-Cluster).SameSubnetThreshold=10
+
+F48:Was ist clusterfähiges Aktualisieren?
++   Automatisiertes Feature in Windows Server 2016
++   Aktualisiert Knoten in einem Cluster ohne oder
+    mit nur minimalen Ausfallzeiten
++   Vorteile:
+    +   Die Aktualisierung erfolgt automatisch
+    +   Planung möglich
+    +   Keine Ausfallzeit
+
+F49:CAU
+CAU funktioniert in zwei Modi:
+1.  Modus für Remoteupdates:
+    +   Konfigurieren Sie einen separaten Computer als Orchestrator
+    +   Installieren Sie die Verwaltungstools für Failoverclustering
+    +   Stellen Sie sicher, dass der als Orchestrator verwendete Computer 
+        kein Clustermitglied ist.
+2.  Modus für die Selbstaktualisierung:
+    +   Konfigurieren Sie die CAU-Clusterrolle als Arbeitslast
+    +   Stellen Sie sicher, dass kein dedizierter Computer als
+        Orchestrator verwendet wird.
+    +   Denken Sie daran, dass der Cluster sich selbst aktualisiert.
+
+F50:Konfigurieren von CAU..
+
+=== L4
+
+F52:Problembehandlung für einen Failovercluster
++   Kommunikationsprobleme
++   Reparieren des Clusternamensobjekts in AD DS
++   Starten eines Clusters ohne Quorum
++   Vorführung: Überprüfen der Clusterprotokolldatei
++   Überwachen der Leistung mit Failoverclustering
++   Verwenden der Ereignisanzeige mit Failoverclustering
++   Windows PowerShell-Cmdlets für die Problembehandlung
+
+F53:Kommunikationsprobleme
+Die folgenden Ursachen können beim Failoverclustering zu Kommunikationsproblemen führen:
++   Netzwerklatenz
++   Netzwerkausfälle
++   Treiberprobleme des Netzwerkadapters
++   Firewallregeln
++   Sicherheitssoftware
+Sie können mithilfe des Cmdlets Get-ClusterLog
+    die Datei Cluster.log für die Problembehandlung generieren.
+    Sie finden diese Datei unter C:\Windows\Cluster\Reports
+
+F54:Reparieren des Clusternamensobjekts in AD DS
+=   Der CNO-Reparaturprozess:
+    +   Verwenden Sie die Option Active Directory-Objekt reparieren
+        im Failovercluster-Manager
+    +   Sie müssen für das CNO-Computerobjekt über die Berechtigung
+        zum Zurücksetzen des Kennworts verfügen
+=   Der VCO-Reparaturprozess:
+    +   Verwenden Sie die AD-Papierkorb-Funktion,
+        um gelöschte Computerobjekte wiederherzustellen,
+        und die Reparieren-Funktion als letzte Wiederherstellungsaktion
+    +   Das CNO setzt das Kennwort zurück und repariert sich selbst
+        automatisch
+    +   Das CNO muss für die Organisationseinheit des VCOs die
+        Berechtigung zum Erstellen von Computerobjekten besitzen
+
+F55:Starten eines Clusters ohne Quorum
++   Clusterknoten müssen für die Funktion des Clusters das Quorum
+    beibehalten
++   Wenn das Quorum verloren geht, versuchen Sie,
+    das Quorum wiederherzustellen
++   Kann das Quorum über einen längeren Zeitraum nicht wiederhergestellt
+    werden, starten Sie den Cluster im Modus ForceQuorum
++   Nachdem Sie den Cluster im ForceQuorum-Modus gestartet haben,
+    können sich andere Knoten wieder dem Cluster anschließen
++   Nach der Wiederherstellung des Quorums ändert sich der
+    Clustermodus automatisch von ForceQuorum zu normal
++   Beim Verbinden von Knoten mit dem Cluster,
+    der sich im ForceQuorum-Modus befindet,
+    sollten Sie andere Knoten mit einer Einstellung starten,
+    die das Quorum verhindert
+
+F56:Vorführung: Überprüfen der Clusterprotokolldatei
++   In dieser Vorführung wird die Überprüfung der Datei
+    "Cluster.log" veranschaulicht
+
+F57:Überwachen der Leistung mit Failoverclustering
+Zu einigen Leistungsindikatoren für das Clustering zählen:
+    +   Clusternetzwerkmeldungen
+    +   Erneute Clusternetzwerkverbindungen
+    +   Globaler Aktualisierungs-Manager
+    +   Datenbank
+    +   Ressourcensteuerung
+    +   API
+    +   Freigegebene Clustervolumes
+
+F58:Verwenden der Ereignisanzeige mit Failoverclustering
+Unter anderem folgende Ereignisse werden in der Ereignisanzeige aufgeführt und erfordern die Problembehandlung von Clustern:
++   Clusterressource in Clusterdienst oder -anwendung fehlgeschlagen
++   Clusternetzwerkschnittstelle für Clusterknoten im Netzwerk
+    fehlgeschlagen
++   Dateifreigabenzeugen-Ressource konnte die Dateifreigabe nicht vermitteln
++   Clusterknoten wurde aus der aktiven Failovercluster-Mitgliedschaft
+    entfernt
++   Der Clusterdienst konnte vom Clusterdienst nicht vollständig
+    online oder offline geschaltet werden
++   Clusternetzwerknamenressource konnte mindestens einen
+    der zugeordneten DNS-Namen nicht registrieren
++   Die Clusternetzwerknamenressource kann nicht online
+    geschaltet werden
+
+F59:Psh
+Unter anderem folgende Cmdlets werden häufig für die Problembehandlung von Failoverclustering verwendet:
++   Get-Cluster
++   Get-ClusterAccess
++   Get-ClusterDiagnostics
++   Get-ClusterGroup
++   Get-ClusterLog
++   Get-ClusterNetwork
++   Get-ClusterResourceDependencyReport
++   Get-ClusterVMMonitoredItem
++   Test-Cluster
++   Test-ClusterResourceFailure
+
+=== L5
+
+F60:Implementieren von hoher Verfügbarkeit mit Stretched-Clustering
+        für einen Standort
++   Was ist ein Stretched-Cluster?
++   Voraussetzungen für die Implementierung eines Stretched-Clusters
++   Synchrone und asynchrone Replikation
++   Übersicht über das Speicherreplikat-Feature
++   Vorführung: Implementieren des Server-zu-Server-Speicherreplikats
++   Auswahl eines Quorummodus für einen Stretch-Cluster
++   Konfigurieren eines Stretched-Clusters
++   Herausforderungen bei der Bereitstellung eines Stretched-Clusters
++   Failover- und Failback-Überlegungen bei mehreren Standorten
+
+F62:Was ist ein Stretched-Cluster?
+=   Bei einem "Stretched-Cluster" handelt es sich um einen Cluster,
+    der so erweitert wurde,
+    dass sich verschiedene Knoten im selben Cluster an
+    <separaten physischen Standorten> befinden.
+    Standort-A <=> Standort-B
+
+F63:Voraussetzungen für die Implementierung eines Stretched-Clusters
+So implementieren Sie einen Stretched-Failovercluster:
++   Zusätzliche Hardware zur Unterstützung einer ausreichenden
+    Anzahl an Knoten an jedem Standort einplanen
++   Dieselben Betriebssysteme und Sevice Packs auf jedem
+    Knoten installieren
++   Mindestens eine zuverlässige Netzwerkverbindung mit
+    niedriger Latenz zwischen den Standorten einrichten
++   Einen Mechanismus für die Speicherreplikation konfigurieren
++   Speicherinfrastrukturdienste an jedem Standort konfigurieren
+
+F64:Synchrone und Asynchrone Replikation
++   Bei der synchronen Replikation empfängt der Host
+    eine Antwort vom primären Speicher,
+    dass der <Schreibvorgang abgeschlossen> ist,
+    nachdem die Daten erfolgreich auf =beide Speicherstandorten=
+    geschrieben wurden.
++   Bei der asynchronen Replikation empfängt der
+    Host eine Antwort vom primären Speicher,
+    dass der <Schreibvorgang abgeschlossen> ist,
+    nachdem die Daten erfolgreich in den =primären Speicher=
+    geschrieben wurden.
+    => schneller, aber Daten können inkonsistent sein
+
+F65:Übersicht Speicherreplikat-Feature
++   Für die Notfallwiederherstellung oder zur Bereitschaft verwenden
++   Über den Failovercluster-Manager oder Windows PowerShell
+    konfigurieren
++   Die drei Implementierungsszenarien sind:
+        Stretched-Cluster
+        Server-zu-Server
+        Cluster-zu-Cluster
++   Repliziert synchron oder asynchron
++   Erfordert Windows Server 2016 Datacenter Edition
++   Erfordert GPT-initialisierte Datenträger
+
+F66:Speicherreplikat
++   Synchrone und Asynchrone Replikation <Bild>
+
+F67:Storage Replica
++   Hyper-V stretch cluster supports synchronous replication only
+
+F68:Storage Replica 2
++   Server-to-server supports both synchronous and
+    asynchronous replication
+
+F69:Storage Replica 3
+Cluster-to-cluster supports synchronous replication only
++   nicht für normale Firma
+
+F70:Vorführung: Implementieren des Server-zu-Server-Speicherreplikats...
+
+F73:Auswahl eines Quorummodus für einen Stretch-Cluster
+=   Dateifreigabenzeuge:
+    +   Erfordert mindestens drei Rechenzentrumsstandorte
+    +   Ist in Windows Server 2012 R2 und Windows Server 2016 verfügbar
+=   Azure Cloud Witness:
+    +   Erfordert zwei Rechenzentrumsstandorte
+    +   Erfordert eine Internetverbindung für alle Knoten
+    +   Ist nur in Windows Server 2016 verfügbar
+=   Kein Zeuge:
+    +   Wird nicht empfohlen
+    +   Manuelles Failover (Notfallwiederherstellungs-Standort)
+
+F74:Konfigurieren eines Stretched-Clusters
+=   Standortabhängige Failovercluster-Dienste bieten:
+    +   Failover-Affinität
+    +   Standortübergreifender Takt
+    +   Bevorzugte Standortkonfiguration
+
+F75:Herausforderungen bei der Bereitstellung eines Stretched-Clusters
+Bei der Implementierung von Stretched-Clustern:
++   Sicherstellen, dass die geschäftlichen Anforderungen
+    erfüllt werden
++   Speicherreplikation zwischen Standorten verwenden:
+    +   Hardwareanbieter (Windows Server 2012 R2 oder früher)
+    +   Speicherreplikat (Windows Server 2016)
++   Den korrekten Quorumzeugen auswählen,
+    um die Funktion bei Ausfällen aufrechtzuerhalten
++   Die korrekte Speicherreplikationslösung auswählen,
+    damit die Anforderungen an Speicherreplikate erfüllt werden
+
+F76:Failover- und Failback-Überlegungen bei mehreren Standorten
+Berücksichtigen Sie bei der Implementierung von Stretched-Clustern
+    in Szenarien mit Notfallwiederherstellung Folgendes:
++   Zeitbedarf für das Failover
++   Dienste für das Failover
++   Quorumpflege
++   Speicheranbindung
++   Veröffentlichte Dienste und Namensauflösung
++   Clientkonnektivität
++   Failbackverfahren
+
+F79:Zusamenfassung
+>>> Frage
+    Warum sollten Sie einen Clusterknoten aus einem
+    Failovercluster entfernen?
+<<< Antwort
+    Sie können einen Knoten entfernen,
+    wenn er beschädigt ist und durch einen neuen Knoten
+    ersetzt werden muss. Sie können dies auch in der Änderungsstruktur Ihrer Organisation tun, etwa eine Senkung der Knotenanzahl im Cluster von 4 auf 3. In diesem Fall müssen Sie einen der Knoten aus dem Cluster entfernen.
+>>> Frage
+    Führen Sie auf Windows Server-Failoverclustering
+    basierende Fehlerszenariotests für Ihre hoch
+    verfügbaren Anwendungen aus?
+<<< Antwort
+    Es sind unterschiedliche Antworten möglich.
+    Jede Organisation muss regelmäßig ihre
+    Hochverfügbarkeitskonfiguration überprüfen.
+    Tests helfen Ihnen sicherzustellen,
+    dass die hohe Verfügbarkeit für das Failoverclustering korrekt
+    konfiguriert wurde und dass Anwendungen,
+    Dienste und Daten in verschiedenen praxisorientierten
+    Szenarien verfügbar sind.
+
+F80:Fragen zur Lernzielkontrolle
+>>> Frage
+    Welche Verbesserungen bietet das Windows Server
+        2016-Failoverclustering?
+<<< Antwort
+    Neue Features in Windows Server 2016 sind u. a.:
+    +   Cluster Operating System (OS) Rolling Upgrades
+    +   Speicherreplikat
+    +   Cloudzeuge
+    +   VM-Resilienz
+    +   Standortabhängige Cluster
+    +   Arbeitsgruppe und Cluster mit mehreren Domänen
+>>> Frage
+    Wieso ist es in der Regel keine gute Idee,
+    eine reine Datenträger-Quorumkonfiguration zu verwenden?
+<<< Antwort
+    Der Failovercluster funktioniert nicht mehr,
+    wenn die logischen Gerätenummern (LUNs) ausfallen,
+    die für den Quorumdatenträger verwendet werden.
+    Auch wenn alle anderen Ressourcen verfügbar sind,
+    einschließlich des Datenträgers für die Anwendungen,
+    stellen Knoten keinen Dienst bereit,
+    wenn der Quorumdatenträger nicht verfügbar ist.
+    Er wird zur einzelnen Fehlerquelle.
+>>> Frage
+    Welchem Zweck dient CAU?
+<<< Antwort
+    CAU ermöglicht Administratoren die automatische Aktualisierung
+    von Clusterknoten mit geringem oder ohne Verfügbarkeitsverlust
+    während des Updatevorgangs.
+
+
+
+===============================================================================
+=*= !M09:Failoverclustering mit Windows Server 2016 Hyper-V
+===============================================================================
+
+#   Folie:21740B_09.PPT
+Thema9: Implementieren von Failoverclustering mit Windows Server 2016 Hyper-V
+
+
+F01:
+
+F02:Überblick
+    L1: Übersicht über die Integration von Hyper-V Server 2012 mit
+        Failoverclustering
+    L2: Implementieren von virtuellen Hyper-V-Computern auf Failoverclustern
+    L3: Schlüsselfeatures für virtuelle Computer in einer Clusterumgebung
+
+=== L1
+
+F03:*
+    Übersicht über die Integration von Hyper-V Server 2012 mit Failoverclustering
+    Implementieren von virtuellen Hyper-V-Computern auf Failoverclustern
+    Schlüsselfeatures für virtuelle Computer in einer Clusterumgebung
+
+F04:Optionen, mit denen Anwendungen und Dienste
+        hochverfügbar gemacht werden können
+    +   Host-Clustering
+        • Virtuelle Computer sind hoch verfügbar
+        • Erfordert nicht, dass das Betriebssystem des
+            virtuellen Computers oder die Anwendung clusterfähig ist
+    +   Guest-Clustering
+        •   Virtuelle Computer sind Failoverclusterknoten
+        •   Anwendungen virtueller Computer müssen
+            clusterfähig sein
+        •   Erfordert eine iSCSI- oder eine virtuelle
+            Fibre Channel-Schnittstelle für freigegebene Speicherverbindungen
+    +   NLB
+        •   Virtuelle Computer sind NLB-Clusterknoten
+        •   Für webbasierte Anwendungen verwenden
+
+
+F05:Wie funktioniert ein Failovercluster mit Hyper-V-Knoten?
+    +   iSCSI Verbindung
+    +   dediziertes Netzwerk
+    +   Clusterspeicher
+
+F06:Failoverclustering mit Windows Server 2016-Hyper-V-Features
+=   Features von Failoverclustering mit Windows Server 2016-Hyper-V:
+    +   Unterstützung maximaler Anzahl von Knoten und virtuellen Computern
+    +   Dateifreigabespeicher:
+        .vhdx (nur Windows Server 2012 R2 und Windows Server 2016)
+        .vhds (nur Windows Server 2016)
+    +   Freigegebener virtueller Datenträger
+    +   Parallele Hyper-V-Cluster-Upgrades
+    +   Konfigurationsversion des virtuellen Computers
+
+F07:Bewährte Methoden...
+Bewährte Methoden für die Implementierung von hoher
+    Verfügbarkeit in einer virtuellen Umgebung:
++   Failoverszenarien planen
++   Das Netzwerkdesign für Failoverclustering planen
++   Den gemeinsam genutzten Speicher für Failoverclustering planen
++   Den Standard-Failovercluster-Quorummodus nutzen
++   Standardisierte Hyper-V-Hosts bereitstellen
++   Standardverwaltungspraktiken entwickeln
+
+=== L2
+
+F08:Implementieren von virtuellen Hyper-V-Computern auf Failoverclustern
+•   Komponenten von Hyper-V-Clustern
+•   Voraussetzungen für die Implementierung von Hyper-V-Failoverclustern
+•   Implementieren von virtuellen Hyper-V-Computern auf einem Failovercluster
+•   Konfigurieren von CSVs
+•   Konfigurieren einer freigegebenen virtuellen FestplatteImplementieren
+        von Dateiservern mit horizontaler Skalierung für virtuelle Computer
+•   Überlegungen hinsichtlich der Implementierung von Hyper-V-Clustern
+•   Warten und Überwachen von virtuellen Computern in Clustern
+•   Vorführung: Implementieren von Failoverclustering mit Hyper-V
+
+
+F09:
+=   Hyper-V-Cluster-Komponenten sind:
++   Clusterknoten
++   Clusternetzwerke
++   Virtuelle Netzwerke
++   Speicher für virtuelle Computer
++   Virtuelle Computer
+
+F10:Voraussetzungen für die Implementierung von
+    Hyper-V-Failoverclustern
+Hardwareanforderungen für Clusterknoten und Speicher sind:
+    •   Serverhardware
+    •   Netzwerkadapter
+    •   Speicheradapter
+    •   Speicher
+Softwareempfehlungen für Clusterknoten sind:
+    •   Ausführen von Windows Server 2016 Standard-, Datacenter- oder
+        Hyper-V-Editionen
+    •   Fordern derselben Softwareupdates und Service Packs
+    •   Muss entweder eine vollständige Installation oder eine
+        Server-Core-Installation sein
+Zu den Anforderungen an die Netzwerkinfrastruktur gehören:
+    •   Netzwerkeinstellungen und IP-Adressen
+    •   Private Netzwerke
+    •   DNS
+    •   Domänenrolle
+    •   Konto zur Verwaltung des Clusters
+
+F11:Implementieren von virtuellen Hyper-V-Computern auf einem Failovercluster
+So implementieren Sie einen virtuellen Hyper-V-Computer in einem Failovercluster:
+1.  Installieren und konfigurieren Sie Windows Server 2016.
+2.  Konfigurieren Sie gemeinsam genutzten Speicher.
+3.  Installieren Sie Hyper-V und Failoverclustering-Features.
+4.  Überprüfen Sie die Clusterkonfiguration.
+5.  Erstellen Sie den Cluster.
+6.  Erstellen Sie einen virtuellen Computer auf einem der Clusterknoten.
+7.  Machen Sie den virtuellen Computer hoch verfügbar (für eine vorhandene VM).
+8.  Testen Sie das Failover des virtuellen Computers.
+
+F12:Konfigurieren von CSV "Cluster Shared Volumes"
++   CSV-Vorteile:
+    •   Weniger LUNs erforderlich
+    •   Bessere Nutzung des Speicherplatzes
+    •   Dateien der virtuellen Computer befinden sich an einem Ort
+    •   Keine besondere Hardware erforderlich
+    •   Erhöhte Resilienz
++   So implementieren Sie CSV:
+    •   Erstellen und formatieren Sie Volumes auf gemeinsam
+            genutztem Speicher.
+    •   Fügen Sie die Datenträger dem Failovercluster-Speicher hinzu.
+    •   Fügen Sie den Speicher dem CSV hinzu.
+
+F13:Konfigurieren einer freigegebenen virtuellen Festplatte
++   Failovercluster wird in virtuellen Computern ausgeführt
++   Als gemeinsamer Speicher genutzter freigegebener virtueller Datenträger:
+    •   Virtuelle Computer benötigen keinen Zugang zu
+            iSCSI- oder Failoverclustering-SAN
+    •   Präsentiert als virtueller SAS-Datenträger (Serial-Attached SCSI)
+    •   Kann nur für Daten genutzt werden
++   Anforderungen für freigegebene virtuelle Festplatten:
+    •   Müssen im .vhdx- oder .vhds-Format sein
+    •   Durch virtuellen SCSI-Adapter angeschlossen
+    •   Gespeichert auf einem Dateiserver mit horizontaler Skalierung oder CSV
++   Windows Server 2012 oder höher ist das unterstützte Betriebssystem
+    auf dem virtuellen Computer
+
+F14:Implementieren von Dateiservern mit horizontaler Skalierung
+für virtuelle Computer
++   Unter Windows Server 2016 können Sie Dateien virtueller Computer auf
+    einer SMB-3.0-Dateifreigabe speichern.
++   Auf Dateiservern muss Windows Server 2012 oder höher installiert sein.
++   Ein Dateiservercluster muss als Dateiserver mit horizontaler
+    Skalierung für Anwendungsdaten konfiguriert sein.
++   Nutzen Sie den Hyper-V-Manager,
+    um Dateien virtueller Computer zu erstellen oder auf
+    eine SMB-Dateifreigabe zu verschieben.
+
+F15:Überlegungen hinsichtlich der Implementierung von Hyper-V-Clustern
++   Identifizieren Sie die folgenden empfohlenen Failoverclusteringanforderungen:
+    •   Anwendungen, die hohe Verfügbarkeit erfordern
+    •   Anwendungskomponenten, die hoch verfügbar sein müssen
+    •   Anwendungseigenschaften
+    •   Gesamtkapazitätsanforderungen
++   Erwägungen bezüglich Windows Server 2016-Hyper-V-Livemigration:
+    •   Grundlegende Anforderungen überprüfen
+    •   Einen dedizierten Netzwerkadapter oder virtuellen
+            Netzwerkadapter konfigurieren
+    •   Gleich Hosthardware verwenden
+    •   Netzwerkkonfiguration überprüfen
+
+F16:Warten und Überwachen von virtuellen Computern in Clustern
+=   Bei Windows Server 2016-Failoverclustering können Sie die
+    folgenden Technologien für die Wartung und Überwachung
+    virtueller Computer implementieren:
+•   Überwachen von Diensten und des Status der virtuellen Computer
+•   Netzwerkzustandserkennung (nur Windows Server 2012 R2 und höher)
+•   Ausgleich virtueller Computer beim Herunterfahren
+    (nur Windows Server 2012 R2 und höher)
+
+F17:Vorführung: Implementieren von Failoverclustering mit Hyper-V
+Im Rahmen dieser Vorführung wird Folgendes gezeigt:
++   VM-Speicher auf das iSCSI-Ziel verschieben
++   Den virtuellen Computer als hoch verfügbar konfigurieren
+
+=== L3
+
+F20:Schlüsselfeatures für virtuelle Computer in einer Clusterumgebung
++   Übersicht über den Netzwerkintegritätsschutz
++   Übersicht über durchgeführte Aktionen auf
+        virtuellen Computern im Falle eines Hostausfalls
++   Übersicht über Ausgleich beim Herunterfahren
++   Vorführung: Ausgleich beim Herunterfahren konfigurieren
+
+
+F21:Übersicht über den Netzwerkintegritätsschutz
++   Eingeführt unter Windows Server 2012 R2 und verfügbar
+        unter Windows Server 2016
++   Clusterressourcenprüfungen für Ressourcen virtueller Computer verfügbar
++   Netzwerkintegritätsschutz für jeden virtueller Netzwerkadapter
+    separat gesteuert
+
+F22:Übersicht über durchgeführte Aktionen auf virtuellen Computern
+    im Falle eines Hostausfalls
++   Automatische Stoppaktionsoptionen:
++   Status des virtuellen Computers speichern
++   Virtuellen Computer ausschalten
++   Gastbetriebssystem herunterfahren
+
+F23:Übersicht über Ausgleich beim Herunterfahren
++   Ein angehaltener Failoverclusterknoten verwendet Livemigration
+    von virtuellen Computern, wodurch keine Ausfallzeit entsteht.
++   Ein heruntergefahrener Failoverclusterknoten mit einer
+    älteren Version als Windows Server 2012 R2 nutzt Schnellmigration,
+    wodurch eine gewisse Ausfallzeit entsteht.
++   Ein heruntergefahrener Failoverclusterknoten mit
+    einer neueren Version als Windows Server 2012 R2 nutzt Livemigration,
+    wodurch keine Ausfallzeit entsteht.
+
+
+F24:Vorführung: Ausgleich beim Herunterfahren konfigurieren
+In dieser Vorführung werden Sie sich mit folgenden Themen vertraut machen:
++   Livemigration eines virtuellen Computers
++   Ausgleich beim Herunterfahren konfigurieren
+
+F25:Übungseinheit: Implementieren von Failoverclustering mit
+        Windows Server 2016 Hyper-V
+
+F26:Szenario...
+
+F27:Zusamenfassung
++   In welcher Situation würden Sie „Geschütztes Netzwerk“ für
+    einen virtuellen Netzwerkadapter nicht aktivieren wollen?
++   Was ist der Unterschied zwischen Livemigration und
+    Speichermigration?
+
+F28:Frage zur Lernzielkontrolle
++   Tools
++   Bewährte Methoden
++   Verbreitete Probleme und Tipps zur Problembehandlung
+
+
+
+===============================================================================
+=*= !M10:Netzwerklastenausgleich (NLB)
+===============================================================================
+
+#   Folie:21740B_10.PPT
+10 :   Implementieren von Netzwerklastenausgleich
+
+F02:Überblick
+L1:Übersicht über NLB
+L2:Konfigurieren eines NLB-Clusters
+L3:Planen einer NLB-Implementierung
+
+F03:Übersicht über NLB
+1   Was ist NLB?
+2   Wie NLB funktioniert
+3   Wie NLB mit Serverausfällen und -wiederherstellung umgeht
+4   NLB-Features in Windows Server 2016
+
+Frage:  Wie viele Knoten unterstützt NLB in Windows Server 2016?
+Antwort:<=32
+
+=== L1
+
+F04:L1.1:Was ist NLB?
++   Skalierbare Hochverfügbarkeitstechnologie
++   Ermöglicht Lastenausgleich von Datenverkehr basierend auf Knotenauslastung:
+    *   Neuer Datenverkehr wird an den am geringsten ausgelasteten Knoten geleitet
+    *   Sie können NLB so konfigurieren, dass bestimmte Knoten bevorzugt werden.
++   Eignet sich für statusfreie Anwendungen wie:
+    *   Webebenen von Mehrere-Ebenen-Anwendungen
++   Erkennt Ausfälle
++   Eignet sich nicht für statusbehaftete Anwendungen wie:
+    Herkömmliche Dateiserver
+    Datenbankserver
+
+F05:Wie NLB funktioniert...
+
+F06:Wie NLB mit Serverausfällen und -wiederherstellung umgeht...
++   NLB-Clustertakte werden jede Sekunde zwischen den Knoten in einem Cluster übertragen
++   Konvergenz tritt auf, wenn:
+    *   Ein Knoten fünf aufeinanderfolgende Takte auslässt,
+        woraufhin er automatisch vom NLB-Cluster entfernt wird
+    *   Ein Knoten, der Mitglied eines Clusters war,
+        wieder funktionsfähig wird
+    *   Ein Administrator Knoten manuell hinzufügt oder entfernt
+
+
+F07:Features in NLB - Windows Srever 2016
++   Nutzen Sie 35 NLB Windows PowerShell Cmdlets zur Verwaltung
+    aller Aspekte der NLB-Konfiguration:
+    *   Verwenden Sie NlbCluster Substantiv zur Verwaltung des Clusters
+    *   Verwenden Sie NlbClusterNode Substantiv zur Verwaltung einzelner Knoten
++   Andere NLB-Features:
+    *   Erfordert keine Hardwareänderungen
+    *   Erfordert keine Anwendungssoftware-Änderungen
+    *   Hosts können mehreren Clustern angehören
+    *   Host können ohne Auswirkungen auf den restlichen
+        Cluster hinzugefügt/entfernt werden
+
+
+=== L2
+
+F08:L2:Konfigurieren eines NLB-Clusters
++   Bereitstellungsanforderungen für NLB
++   Bereitstellen von NLB
++   Konfigurationsoptionen für NLB
++   Vorführung: Konfigurieren von NLB-Affinität und Portregeln
++   Netzwerküberlegungen bezüglich NLB
+
+>>> Frage
+    Beschreiben Sie eine Situation,
+    in der nur eine einzige Affinitätseinstellung zweckmäßig wäre.
+<<< Antwort
+    Eine „einfache“ Affinität ist in einer E-Commerce-Webanwendung angemessen,
+    in der sichergestellt werden muss, dass eine getrennte Clientverbindung
+    für dieselbe Sitzung wiederhergestellt wird.
+>>> Frage
+    Wann würden Sie von der Standardportregel abweichende Portregeln verwenden?
+<<< Antwort
+    Sie können mithilfe von Portregeln einen Lastenausgleich
+    für verschiedene Anwendungen vornehmen,
+    indem Sie denselben Hostsatz verwenden.
+    Sie können beispielsweise über sämtliche Knoten im Cluster
+    hinweg einen Lastenausgleich für eingehende Anforderungen
+    auf Port 80 vornehmen und alle eingehenden Anforderungen auf Port 5678
+    an einen einzelnen Host leiten.
+
+F09:Bereitstellungsanforderungen für NLB
++   Stellen Sie sicher, dass sich alle Hosts im gleichen Subnetz befinden
++   Konfigurieren Sie alle Adapter entweder als Unicast oder Multicast
++   Verwenden Sie ausschließlich das TCP/IP-Protokoll auf Adaptern
++   Konfigurieren Sie alle Adapter, die in NLB verwendet werden,
+    mit statischer IP-Adresse
+
+
+F10:Vorführung Bereitstellen von NLB...
+
+F12:Konfigurationsoptionen für NLB
++   Portregeln bestimmen,
+    wie Datenverkehr je nach TCP- oder UDP-Port an Clusterknoten gerichtet wird.
++   Um Anforderungen über Knoten im Cluster zu verteilen,
+    konfigurieren Sie eine der folgenden Filtermodi:
+    *   Mehrfachhosts
+    *   Einzelhost
+    *   Portbereich deaktivieren
++   Affinitätseinstellungen bestimmen,
+    wie die erneute Herstellung der Verbindung erfolgt:
+    *   Keine
+    *   Einfach
+    *   Klasse C
+
+F13:Vorführung: Konfigurieren von NLB-Affinität und Portregeln
++   Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    Die Affinität für NLB-Clusterknoten konfigurieren
+    NLB-Portregeln konfigurieren
+
+F14:Netzwerküberlegungen bezüglich NLB
++   Unicast:
+    Geeignet für Cluster mit mehreren Netzwerkadaptern
++   Multicast:
+    Geeignet für Cluster mit einem Netzwerkadapter
+    Netzwerkgeräte müssen Multicast-MAC-Adressen unterstützen
++   IGMP-Multicast:
+    Verbessert die Switchleistung
+    Erfordert einen Netzwerkswitch, der diese Funktionalität unterstützt
+
+F16:Netzwerküberlegungen bezüglich NLB
++   Unicast:
+    Geeignet für Cluster mit mehreren Netzwerkadaptern
++   Multicast:
+    Geeignet für Cluster mit einem Netzwerkadapter
+    Netzwerkgeräte müssen Multicast-MAC-Adressen unterstützen
++   IGMP-Multicast:
+    Verbessert die Switchleistung
+    Erfordert einen Netzwerkswitch, der diese Funktionalität unterstützt
+
+=== L3
+
+F17:L3:Planen einer NLB-Implementierung
+
++   Entwerfen von Anwendungs- und Speichersupport für NLB
++   Überlegungen hinsichtlich der Bereitstellung eines
+    NLB-Clusters auf virtuellen
++   Computern Überlegungen hinsichtlich der NLB-Sicherheit
++   Überlegungen hinsichtlich der NLB-Skalierung
++   Überlegungen hinsichtlich des Upgrades von NLB-Clustern
+
+
+F18:Entwerfen von Anwendungs- und Speichersupport
++   Alle Knoten in einem NLB-Cluster müssen auf
+    gleiche Weise konfiguriert sein
++   Alle Knoten benötigen Zugriff auf die gleichen,
+    konsistenten Anwendungsdaten
++   Nutzen Sie IIS-Freigabekonfiguration um sicherzustellen,
+    dass die Webanwendungskonfiguration für alle NLB-Knoten konsistent ist
++   Verwenden Sie CSV zum Hosten von freigegebenen
+    Anwendungs- und Konfigurationsdaten für NLB-Anwendungen
++   NLB-Hosts benötigen typischerweise keine lokale Speicherredundanz
+
+
+F19:Überlegungen hinsichtlich der Bereitstellung
+    eines NLB-Clusters auf virtuellen Computern
++   Konfigurieren Sie virtuelle Computer mit mehrfachen Netzwerkadaptern
++   Konfigurieren Sie einen Netzwerkadapter auf
+    jedem Knotenmitglied,
+    um einen freigegebenen privaten Netzwerkswitch zu verwenden
++   Konfigurieren Sie den NLB-Cluster zur Nutzung des
+    Unicastmodus und aktivieren Sie Spoofing von MAC-Adressen
+    auf dem Hyper-V-Host
++   Nutzen Sie den freigegebenen privaten Netzwerkswitch
+    zur Clusterkommunikation
++   Verwenden Sie Netzwerkvirtualisierung,
+    um das Clusternetzwerk zu trennen,
+    wenn NLB-Knoten mehrere Standorte umfassen
+
+F20:Überlegungen hinsichtlich der NLB-Sicherheit
++   Verwenden Sie NLB-Cluster-Portregeln, um Datenverkehr zu verwerfen,
+    der nicht mit Clusteranwendungen zusammenhängt
++   Verwenden Sie Firewallregeln, um Datenverkehr zu verwerfen,
+    der nicht mit Clusteranwendungen oder Knotenverwaltung zusammenhängt
++   Konfigurieren Sie Anwendungen, um nur den Datenverkehr zu bearbeiten,
+    der an das Cluster adressiert ist
++   Verwenden Sie SANs, um Zertifikate zu erstellen,
+    die Anwendungsnamen und Knotennamen unterstützen
++   Implementieren Sie das Prinzip der geringsten Berechtigung,
+    damit nur autorisierte Benutzer Berechtigungen für Knoten erhalten
++   Nutzen Sie Privileged Access Management,
+    um die JIT-Administration zu implementieren
+
+F21:Überlegungen hinsichtlich der NLB-Skalierung
++   NLB-Cluster können bis zu 32 Knoten umfassen
++   Verwenden Sie DNS-Roundrobin,
+    um Datenverkehr zwischen NLB-Clustern zu verteilen
+
+F22:Überlegungen hinsichtlich des NLB-Upgrades
+=== NLB-Cluster können verschiedene Betriebssysteme ausführen:
+    +   NLB-Cluster mit Windows Server 2016 interagieren mit:
+        +   Windows Server 2008 und Windows Server 2008 R2
+        +   Windows Server 2012 und Windows Server 2012 R2
+=== Schrittweises Upgrade:
+    +   Fügen Sie Cluster-Knoten unter Windows Server 2016 hinzu
+    +   Entfernen Sie Knoten, die frühere Betriebssysteme ausführen
+=== Upgrade für ein Cluster:
+    +   Entfernen Sie den Knoten vom NLB-Cluster
+    +   Führen Sie ein Upgrade auf Windows Server 2016 durch
+    +   Nehmen Sie den Knoten wieder in das NLB-Cluster auf
+
+F23:Übung
+    Übung 1: Implementieren eines Netzwerklastenausgleich(NLB)-Clusters
+    Übung 2: Konfigurieren und Verwalten des NLB-Clusters
+    Übung 3: Überprüfen der Hochverfügbarkeit des NLB-Clusters
+
+F25:Zusammenfassung
+>>> Frage
+    Wie viele zusätzliche Knoten können Sie zum Cluster LON-NLB hinzufügen?
+<<< Antwort
+    Der LON-NLB-Cluster kann bis auf 32 Knoten skalieren.
+>>> Frage
+    Welche Schritte würden Sie unternehmen, um sicherzustellen,
+    dass Anfragen für Webdatenverkehr von LON-SVR1 immer über Port 5678
+    laufen werden?
+    Grundlage sind die Portregeln,
+    die am Ende dieser Übungsreihe aufgestellt wurden.
+<<< Antwort
+    Sie werden die Hostpriorität konfigurieren.
+    Sie werden außerdem die Regel zur Verwendung des
+    Einzelhost-Filtermodus festlegen.
+>>> Frage
+    Was ist der Unterschied zwischen einem Beenden-
+    und einem Ausgleich beenden-Befehl?
+<<< Antwort
+    „Beenden“ beendet sofort alle aktiven Verbindungen.
+    „Ausgleich beenden“ blockiert neue Verbindungen,
+    lässt aber den normalen Abschluss vorhandener Verbindungen zu.
+
+F26:Fragen zur Lernzielkontrolle
+>>> Frage
+    Sie haben einen Windows Server 2016 NLB-Cluster
+    mit vier Knoten erstellt.
+    Der Cluster hostet eine Website, die auf IIS gehostet ist.
+    Was passiert mit dem Cluster,
+    wenn Sie auf einem der Knoten den WWW-Publishingdienst herunterfahren?
+<<< Antwort
+    Es geschieht nichts weiter,
+    da NLB ausschließlich Serverausfälle und keine Ausfälle
+    einer bestimmten Anwendung erkennt.
+    Darüber hinaus wird ungefähr jede vierte Client-Anforderung
+    an die Anwendung nicht verarbeitet.
+>>> Frage
+    Sie wollen die Websites www.contoso.com, www.adatum.com
+    und www.fabrikam.com auf einem NLB-Cluster mit vier Knoten hosten.
+    Die Cluster-IP-Adresse ist eine öffentliche IP-Adresse und
+    jeder vollqualifizierte Domänenname (FQDN) ist in DNS
+    mit der öffentlichen IP-Adresse des Clusters verknüpft.
+    Welche Schritte sollten Sie auf jedem Knoten unternehmen,
+    um eine Weiterleitung des Datenverkehrs an die
+    richtige Site sicherzustellen?
+<<< Antwort
+    Sie müssen Hostheader für jede einzelne Website
+    an jedem einzelnen Knoten konfigurieren.
+    Darüber hinaus müssen Sie sicherstellen,
+    dass die Hostheader-Konfiguration identisch ist.
+>>> Frage
+    Sie haben einen Windows NLB-Cluster mit acht Knoten,
+    auf dem eine Webanwendung gehostet wird.
+    Sie möchten sicherstellen, dass der Datenverkehr
+    eines Clients bei der Verwendung des Clusters für die
+    Dauer der Sitzung im selben Knoten bleibt,
+    aber dass der Datenverkehr von unterschiedlichen Clients
+    gleichmäßig auf alle Knoten verteilt wird.
+    Welche Option konfigurieren Sie, um dieses Ziel zu erreichen?
+<<< Antwort
+    Hierzu müssen Sie Affinitätseinstellungen festlegen
+
+
+
+===============================================================================
+=*= !M11:Bereitstellungsimages
+===============================================================================
+
+#   Folie:21740B_11.PPT
+11  :  Erstellen und Verwalten von Bereitstellungsimages
+
+F02:Übersicht
+L1:Einführung zu Bereitstellungsimages
+L2:Erstellen und Verwalten von Bereitstellungsimages mit MDT
+L3:Virtuelle Computerumgebungen für verschiedene Arbeitsauslastungen
+
+==  L1: Einführung zu Bereitstellungsimages
+
+F03:*
++   Übersicht über Images
++   Übersicht über imagebasierte Installationstools
++   Erstellen, Aktualisieren und Warten von Images
++   Windows ADK für Windows 10
++   Windows-Bereitstellungsdienste
++   Microsoft Deployment Toolkit 2013 (Update 2)
++   Vorführung: Vorbereiten eines Windows Server 2016-Image in MDT
+
+
+F04:Übersicht über Images
++   WIM-Dateien enthalten alle Dateien und Informationen
+    für ein oder mehrere Datenträgerimages
++   WIMBoot-Dateien ermöglichen,
+    dass ein Computer direkt von einer WIM-Datei ausgeführt werden kann
+    und reduzieren die Speicherplatzanforderungen für Windows-Installationen
+=   WIM=WindowsImageFile
++   Stellen Sie klar, dass jedes Betriebssystem, das in einer VHD-Datei
+    ausgeführt werden kann, auch in einer VHDX-Datei ausgeführt werden kann.
+    Die Vorteile des VHDX-Formats treffen auf die Plattform zu,
+    auf der der virtuelle Computer gehostet wird,
+    nicht jedoch auf den virtuellen Computer selbst.
+
+
+F05:Übersicht über Images 2
+=   Thin-Image
+    Enthält lediglich das Betriebssystem und möglicherweise einige Agenten,
+    z. B. der Konfigurations-Manager 2012 Agent
+=   Thick-Image
+    Enthält alle vom Endbenutzer benötigten Anwendungen
+=   Hybridimage
+    Enthält einige der von meisten Benutzern benötigten Anwendungen
+
+F06:Übersicht über Images 3
+=   Startimage
+    +   Windows PE
+    +   Auf Installationsmedien, boot.wim
+    +   32-Bit- und 64-Bit-Plattformunterstützung
+    +   Dient zum Aufzeichnen und Bereitstellen von Betriebssystemen
+=   Installationsimage
+    +   Betriebssystem
+    +   Auf Installationsmedien, install.wim
+    +   Basiert üblicherweise auf einem aufgezeichneten Referenzcomputer
+
+F07:Übersicht über imagebasierte Installationstools
+=   Zu den imagebasierten Installationstools zählen:
+    +   Setup.exe:
+        Führt Windows-Installationen anhand interaktiver oder
+        unbeaufsichtigter Installationsmethoden durch.
+        Kann mit Antwortdateien und Katalog mit Windows SIM verwendet werden
+    +   Windows-Bereitstellungsdienste
+        Ein Rollendienst auf Windows Server 2016
+    +   Windows ADK
+        Neue, aktualisierte Version von Windows AIK,
+        die Windows PE-Images enthält
+    +   DISM
+        Befehlszeilen- und Windows PowerShell-Tool für
+        die Wartung von Windows-Betriebssystemimages
+    +   System Center Configuration Manager
+        Umfassende Suite zur Bereitstellung und Verwaltung auf Unternehmensniveau
+
+F08:Erstellen, Aktualisieren und Warten von Images
+=   Das Verfahren zum Erstellen eines Installationsimage kann
+    wie folgt zusammengefasst werden:
+    +   Aufzeichnungsimage erstellen
+    +   Windows auf einem Referenzcomputer installieren
+    +   Einstellungen auf dem Referenzcomputer anpassen
+    +   Referenzcomputer generalisieren
+    +   Referenzimage aufzeichnen
+
+F09:*
+=   DISM zur Wartung und Verwaltung von Images nutzen u. a.:
+    +   Anwenden von Updates, Treibern und Sprachpaketen
+    +   Hinzufügen, Entfernen oder Auflisten von Paketen und Treibern
+    +   Aktivieren oder Deaktivieren von Windows-Features
+    +   Konfigurieren lokaler Einstellungen
+    +   Ausführen eines Upgrades für ein Image auf eine
+        andere Windows-Edition
+
+F10:Windows ADK
+=   Windows ADK für Windows 10 umfasst:
+    +   Anwendungskompatibilitäts-Toolkit (ACT)
+    +   Imageverwaltung für die Bereitstellung (DISM)
+    +   Flashing-Tools
+    +   User State Migration Tool (USMT)
+    +   Tool für die Volumenaktivierungsverwaltung (VAMT)
+    +   Windows-Bewertungstoolkit
+    +   Windows-Designer für die Imageerstellung und -konfiguration (Windows ICD)
+    +   Windows Preinstallation Environment (PE)
+    +   Windows-Leistungstools
+    +   Windows System Image Manager (SIM)
+
+F11:Windows-Bereitstellungsdienste
+=   Windows-Bereitstellungsdienste ist eine Serverrolle,
+    die mit Windows Server 2016 zur Verfügung gestellt wird
+=   Windows-Bereitstellungsdienste:
+    +   Ermöglicht Ihnen, netzwerkbasierte Installationen vorzunehmen
+    +   Vereinfacht den Bereitstellungsprozess
+    +   Unterstützt die Bereitstellung für Computer ohne Betriebssystem
+    +   Verwendet bestehende Technologien wie Windows PE,
+        WIM-, VHD- und VHDX-Dateien sowie imagebasierte Bereitstellung
+
+F12:Microsoft Deployment Toolkit (MDT) 2013 - update 2
+=   MDT 2013 Update 2
+    +   Update 2 umfasst Unterstützung für Windows 10
+    +   Bietet End-to-End-Anleitungen für die Planung, Erstellung und
+    Bereitstellung von Windows-Betriebssystemen
+    +   Ermöglicht die Bereitstellung von Windows-Betriebssystemen
+        anhand von LTI oder ZTI
+
+F13:Vorführung: Vorbereiten eines Windows Server 2016-Image in MDT
+=   Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    +   Erstellen einer MDT-Bereitstellungsfreigabe
+    +   Eigenschaften der MDT-Bereitstellungsfreigabe untersuchen
+    +   Windows Server 2016-Betriebssystemdateien in eine
+        MDT-Bereitstellungsfreigabe importieren
+
+=== L2:Erstellen und Verwalten von Bereitstellungsimages mit MDT
+
+F16:*
++   Erstellen von Images in MDT
++   Bereitstellen von Images in MDT
+
+>   Frage:
+    Welches der folgenden Betriebssysteme kann MDT 2013 Update 2 bereitstellen?
+    Wählen Sie alle passenden Optionen.
+Antwort:
+<   Windows7, Windows10, Windows Server 2012 R2
+
+F17:Erstellen von Images in MDT
+...
+
+F18:Erstellen von Images in MDT
+=   Zu den verfügbaren MDT-Vorlagen für Tasksequenzen zählen:
+    +   Sysprep und Aufzeichnung
+    +   Standardmäßige Client-Tasksequenz
+    +   Standardmäßige Tasksequenz zum Ersetzen eines Clients
+    +   Standardmäßige Tasksequenz für das Upgrade eines Clients
+    +   OEM-Tasksequenz mit geringem Interventionsbedarf
+    +   Standardmäßige Server-Tasksequenz
+    +   Standardmäßige Tasksequenz für das Upgrade eines Servers
+    +   Tasksequenz im Anschluss an die Betriebssysteminstallation
+    +   Tasksequenz für die Bereitstellung auf einem VHD-Client
+    +   Tasksequenz für die Bereitstellung auf einem VHD-Server
+    +   Benutzerdefinierte Tasksequenz
+
+F18:Bereitstellen von Images in MDT
+1   Die Datei Bootstrap.ini wird verarbeitet.
+2   Die Willkommensseite wird angezeigt.
+3   Die Seite Anmeldeinformationen wird angezeigt.
+4   Die Datei CustomSettings.ini wird verarbeitet.
+5   Die Seite Tasksequenz wird angezeigt.
+6   Die Seite Computerdetails wird angezeigt.
+7   Die Seite Daten und Einstellungen verschieben wird angezeigt.
+8   Die Seite Benutzerdaten (Wiederherstellen) wird angezeigt.
+9   Die Seite Gebietsschema und Zeitzone wird angezeigt.
+10   Die Seite Bereit wird angezeigt.
+
+F19:<Fortsetzung>
+    1.Processing Bootstrap Settings
+
+F20:<Fortsetzung>
+    2.Microsoft Deployment Wizard
+
+F21:<Fortsetzung>
+    3.User Credentials
+
+F22:<Fortsetzung>
+    4.Processing Custom Settings
+
+F23:<Fortsetzung>
+    5.Task Sequence
+
+F24:<Fortsetzung>
+    6.Computerdetails
+
+F25:<Fortsetzung>
+    7.Move and Data Settings
+
+F26:<Fortsetzung>
+    8.User Data Restore
+
+F27:<Fortsetzung>
+    9.Local and Time
+
+F28:<Fortsetzung>
+    10.Ready
+
+
+=== L3:Virtuelle Computerumgebungen für verschiedene Arbeitsauslastungen
+
+F29:*
++   Bewertungsfaktoren
++   Übersicht über die Virtualisierungsoptimierung
++   Bewertungsfunktionen des MAP-Toolkits
++   Vorführung: Bewertung der Computerumgebung mittels des MAP-Toolkits
++   Entwerfen einer Lösung für die Servervirtualisierung
+
+F30:Bewertungsfaktoren
+=   Bei der Bewertung der Servervirtualisierung sollten Sie Folgendes erwägen:
+    +   Projektumfang
+    +   Ressourcen und Leistung
+    +   Kompatibilität
+    +   Anwendungen und Dienste
+    +   Unterstützbarkeit
+    +   Lizenzierung
+    +   Verfügbarkeitsanforderungen
+
+F31:Übersicht über die Virtualisierungsoptimierung
+=   Zu den Virtualisierungs-Solution Accelerators zählen:
+    +   MAP
+    +   Nicht von Microsoft stammende Tools (Importzuordnung-Ausgabe)
+    +   Leitfäden für Infrastrukturplanung und -entwurf
+    +   Virtualisierungsleitfaden für Windows Server
+
+F32:Bewertungsfunktionen des MAP-Toolkits
+    +   Ermittlung
+    +   Bestandsaufnahme
+        +   Hardwarekonfiguration
+        +   Server
+    +   Infrastruktur (freigegebener Speicher und Netzwerk)
+    +   Assistent zur Konsolidierung von virtuellen Servern
+    +   Assistent für Private Cloud Fast Track
+*   Microsoft Assesment and Planing Toolkit (MAP)
+
+F33:Vorführung
+=   Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    +   MAP zur Erfassung von Bestandsdaten verwenden
+    +   MAP zur Sammlung von Leistungsdaten verwenden
+    +   Eine Hardwarekonfiguration erstellen
+    +   Die gesammelten Daten überprüfen
+
+F37:Entwerfen einer Lösung für die Servervirtualisierung
+    +   Projektumfang festlegen
+    +   Zu virtualisierende Arbeitsauslastungen aufführen
+    +   Datensicherung und Fehlertoleranz entwerfen
+    +   Speicher und Netzwerk entwerfen
+    +   Bereitstellung und Verwaltungstechnologie festlegen
+
+F41:Lernzielkontrolle und Kernpunkte der Unterrichtseinheit
+>   Frage
+    Wie können Sie umgehen, dass Sie für die Verbindung mit der
+    Implementierungsfreigabe Anmeldeinformationen eingeben müssen?
+<   Antwort
+    Sie sollten die Datei Bootstrap.ini bearbeiten,
+    um den Pfad zur Bereitstellungsfreigabe festzulegen und die korrekten Anmeldeinformationen anzugeben.
+=   Bewährte Methoden
+        +   Erstellen Sie Ihr Referenzsystem mithilfe eines virtuellen Computers.
+            Dadurch wird kein Image mit hardwarespezifischen Konfigurationen integriert.
+        +   Erstellen Sie Ordner im Knoten Separate Treiber,
+            um alle hersteller- oder modellspezifischen Treiber zu organisieren.
+        +   Verwenden Sie Profilauswahl,
+            um ausschließlich die erforderlichen Treiber für eine
+            bestimmte Hardwarekonfiguration bereitzustellen
+        +   Erstellen Sie Thin-Images und wenden Sie Anwendungen
+            nach Bedarf über den Anwendungsknoten an.
+            Auf diese Weise bleibt die Anwendung mit der Veröffentlichung von
+            Updates und Patches auf dem aktuellen Stand und Sie müssen das
+            Image nicht wieder neu erstellen.
+>>> Verbreitete Probleme und Tipps zur Problembehandlung
+        Häufig auftretendes Problem: Versionskonflikt zwischen MDT und
+        Windows AIK oder Windows ADK.
+<<< Tipp zur Problembehandlung
+    Wenn Sie MDT 2013 Update 2 installieren,
+    stellen Sie sicher, dass Sie auch die Version von Windows ADK für Windows 10 installieren.
+    Sie müssen die alte Version nicht deinstallieren.
+    Durch die Ausführung des ADK-Setups werden die bestehenden Komponenten
+    der ADK-Installation aktualisiert.
+>>> Häufig auftretendes Problem:
+    Lite-Touch-Startmedien können im Startordner der Implementierungsfreigabe
+    nicht gefunden werden.
+<<< Tipp zur Problembehandlung: Zuerst müssen Sie den Assistenten für
+    die Aktualisierung von Bereitstellungsfreigaben ausführen.
+        Dabei werden alle Elemente in den verschiedenen Bereitstellungsfreigabeordnern erzeugt.
+>>> Häufig auftretendes Problem:
+    Wenn Sie in MAP auf die meisten Vorgänge klicken, erhalten Sie eine Warnmeldung,
+    die angibt, dass die Aufgabenverarbeitung derzeit beschäftigt sei.
+    Sie können diesen Vorgang nicht durchführen,
+    während die Aufgabenverarbeitung läuft.
+    Sie müssen warten, bis die Aufgabenverarbeitung abgeschlossen ist oder den
+    Task-Prozess abbrechen,
+    bevor Sie diesen Vorgang erneut versuchen können.
+<<< Tipp zur Problembehandlung: Unten links in der MAP-Konsole,
+    neben dem Datenbanknamen, wird der Name einer ausgeführten Aufgabe angezeigt.
+    Klicken Sie auf das Dropdownlistenfeld und sehen Sie sich dann entweder
+    den Status der ausgeführten Aufgabe an oder beenden Sie sie.
+
+
+===============================================================================
+=*= !M12:Virtuelle Computer
+===============================================================================
+
+#   Folie:21740B_12.PPT
+=== 12  :  Verwalten, Überwachen und Warten von Installationen virtueller Computer
+
+F02:Überblick Lektionen
+L1: WSUS-Übersicht und Bereitstellungsoptionen
+L2: Updateverwaltungsprozess mit WSUS
+L3: Übersicht über Windows PowerShell DSC
+L4: Übersicht über Windows Server 2016-Überwachungstools
+L5: Verwenden der Leistungsüberwachung
+L6: Überwachen von Ereignisprotokollen
+
+=== L1: WSUS-Übersicht und Bereitstellungsoptionen
+
+F03:*
++   Was ist WSUS?   "Windows Server Update Services"
++   WSUS-Serverbereitstellungsoptionen
++   Das Updateverwaltungsverfahren mit WSUS
++   Serveranforderungen für WSUS
++   Konfigurieren von Clients für die Nutzung von WSUS
+
+
+F04:Was ist WSUS?
++   TestClients
++   Autom.Updates
++   Server betreibt WSUS
++   Microsoft Update Webseite
+
+F05:WSUS-Serverbereitstellungsoptionen
+=   WSUS-Implementierung:
+    +   Einzelner Server
+    +   Mehrere Server
+    +   Getrennte Server
+=   WSUS-Hierarchien:
+    +   Autonomer Modus
+    +   Replikatmodus
+=   WSUS-Datenbank:
+    +   Interne Windows-Datenbank
+    +   SQL Server-Datenbank
+
+F06:Das Updateverwaltungsverfahren mit WSUS
++   Phase1: bewerten
++   Phase2: identifizieren
++   Phase3: Evaluieren
++   Phase4: bereitstellen
+
+F07:Serveranforderungen für WSUS
+=   Softwareanforderungen:
+    +   IIS
+    +   Microsoft .NET Framework 4.6 oder neuer
+    +   Microsoft Report Viewer Redistributable 2008 oder neuer
+    +   SQL Server 2012 SP1, SQL Server 2012, SQL Server 2008 R2 SP2, SQL Server 2008 R2 SP1 oder WID
+=   Hardwareanforderungen:
+    +   x64-Prozessor mit mindestens 1,4 GHz
+    +   Mindestens 2 GB RAM
+    +   10 GB verfügbarer Speicherplatz (mindestens 40 GB empfohlen)
+
+
+F08:Konfigurieren von Clients für die Nutzung von WSUS
+=   Verwenden Sie ein Gruppenrichtlinienobjekt zum:
+    +   Konfigurieren automatischer Updates
+    +   Geben Sie den internen Pfad für den Microsoft Updatedienst an
+=   Für Computer, die Windows 8 und Windows Server 2012 ausführen,
+    können Sie "Automatische Wartung" zur Steuerung des Updateprozesses verwenden.
+=   Für Computer, die ältere Betriebssysteme ausführen, sollten Sie:
+    +   Updates automatisch herunterladen
+    +   Updates automatisch installieren
+=   Ab Windows 10 können Sie Updates bis zu einem Monat zurückstellen.
+
+
+=== L2: Updateverwaltungsprozess mit WSUS
+
+F09:*
++   WSUS-Verwaltung
++   Was sind Computergruppen?
++   Genehmigen von Updates
++   Konfigurieren automatischer Updates
++   Vorführung: Bereitstellen von Updates mit WSUS
++   WSUS-Berichterstellung
++   WSUS-Problembehandlung
+
+F10:WSUS-Verwaltung
+=   Sie können die WSUS-Administrationskonsole für Folgendes nutzen:
+    +   Updates verwalten
+    +   Computergruppen konfigurieren
+    +   Computerstatus anzeigen
+    +   Synchronisierungsinformationen anzeigen
+    +   WSUS-Berichte konfigurieren und anzeigen
+    +   WSUS-Einstellungen und -Optionen konfigurieren
+=   In Windows Server 2016 enthält WSUS außerdem Windows PowerShell-Cmdlets für die Verwaltung
+
+F11:Was sind Computergruppen?
+=   Sie können Computergruppen zum Organisieren von WSUS-Clients verwenden
+Zu den standardmäßigen Computergruppen zählen:
++   Alle Computer  .- Nicht zugewiesene Computer
+=   Sie können benutzerdefinierte Computergruppen erstellen,
+    um die Anwendung von Updates zu steuern.
+
+F12:Genehmigen von Updates
+=   Updates können:
+    +   Automatisch genehmigt werden, dies ist jedoch nicht empfehlenswert
+    +   Abgelehnt werden, wenn sie nicht benötigt werden
+    +   Entfernt werden, wenn sie Probleme verursachen
+=   Sie sollten Updates testen, bevor sie zur Anwendung in der Produktion genehmigt werden
+
+F13:Konfigurieren automatischer Updates
+=   Sie müssen die Clientcomputer so konfigurieren,
+    dass sie den WSUS-Server als Quelle für Updates verwenden.
+=   Sie können Gruppenrichtlinie zum Konfigurieren von Clients verwenden,
+    u. a. mit folgenden Einstellungen:
+    +   Updatehäufigkeit
+    +   Update-Installationszeitplan
+    +   Automatisches Neustartverhalten
+    +   Standardcomputergruppe in WSUS
+
+F14:Vorführung: Bereitstellen von Updates mit WSUS
+=   Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    +   Ein Update genehmigen
+    +   Ein Update bereitstellen
+
+F15:WSUS-Berichterstellung
+=   Updateberichte:
+    +   Updatestatus-Zusammenfassung
+    +   Detaillierter Updatestatus
+    +   Tabellarische Updatestatus
+    +   Tabellarische Updatestatus für genehmigte Updates
+=   Computerupdates:
+    +   Computerstatus-Zusammenfassung
+    +   Detaillierter Computerstatus
+    +   Tabellarischer Computerstatus für genehmigte Updates
+=   Synchronisierungsupdates:
+    +   Synchronisierungsergebnisse
+
+F16:WSUS-Problembehandlung
+=   Clients werden nicht in WSUS angezeigt:
+    +   Prüfen Sie das Gruppenrichtlinienobjekt und die Clienteinstellungen
+=   Wenn der WSUS-Server beendet wird, sollten Sie Folgendes tun:
+    +   Datenbankserver überprüfen
+    +   WSUS erneut installieren
+=   Wenn Sie keine Verbindung mit WSUS herstellen können, sollten Sie Folgendes tun:
+    +   Netzwerkkonnektivität von
+    +   Telnet zu HTTP- und HTTPS-Ports überprüfen
+=   Bei Auftauchen anderer Probleme sollten Sie Folgendes nutzen:
+    +   Serverdiagnosetool
+    +   Clientdiagnosetool
+
+F17:Übungseinheit A: Implementieren von WSUS und Bereitstellen von Updates...
+>   Frage
+    Sie haben eine Gruppe für die Abteilung „Forschung“ erstellt.
+    Warum würden Sie eine separate Gruppe für einige Computer
+    Ihres Unternehmens konfigurieren?
+<   Antwort
+    Für die Abteilung „Forschung“ gelten möglicherweise
+    spezielle Erwägungen oder Sicherheitsmaßnahmen,
+    für die ein anderer Vorgang zum Testen und Genehmigen von Updates
+    als für das restliche Unternehmen erforderlich ist.
+    Darüber hinaus sind Administratoren in anderen Abteilungen möglicherweise
+    für die Verwaltung des Updategenehmigungsverfahrens verantwortlich.
+>   Frage
+    Was ist der Vorteil der Konfiguration eines WSUS-Downstreamserver?
+<   Antwort
+    Wenn der WSUS-Hauptserver und der Downstreamserver über eine
+    langsame WAN-Verbindung verbunden sind,
+    lädt der WSUS-Downstreamserver die Updates nur einmal für die von
+    ihm versorgten Clientcomputer herab.
+    Andernfalls würde jeder Clientcomputer das Update gesondert über die WAN-Verbindung
+    vom WSUS-Hauptserver herunterladen.
+
+F18:Szenario für die Übung
+
+=== L3: Übersicht über Windows PowerShell DSC
+
+F19:*
++   Vorteile von Windows PowerShell DSC
++   Anforderungen für Windows PowerShell DSC
++   Implementieren von Windows PowerShell DSC
++   Problembehandlung von Windows PowerShell DSC
+DSC=Desired State Configuration (DSC):
+
+F20:Vorteile von Windows PowerShell DSC
+=   Erweitert Windows Management Framework v4
+    +   Verfügbar ab Windows PowerShell 4.0 auf
+        Windows Server 2012 R2 und Windows 8.1
+=   Ermöglicht Verwaltung und Wartung von Systemen anhand von deklarativen Konfigurationen
+=   Nutzt Ressourcen zum Erstellen von Konfigurationen für spezifische
+        Anwendungen oder Komponenten auf einem System
+    +   Kann von Community-Sites heruntergeladen oder selbst verfasst werden
+=   Kann Konfiguration automatisch erneut anwenden,
+    wenn ein System vom gewünschten Zustand abweicht
+=   Ist standardbasiert und heterogen
+    +   Kann jedes Betriebssystem mit einem OMI-kompatiblen CIM-Server verwalten
+
+
+F21:Vorteile von Windows PowerShell DSC 2...
++   Windows PowerShell  : Skript legt fest, wie eine Aufgabe durchgeführt werden soll
++   DSC                 : Konfigurationen legen fest, was getan werden soll
+
+F22:Anforderungen für Windows PowerShell DSC
+1.  Windows-Remoteverwaltung aktivieren:
+    +   psh>Set-WsManQuickConfig
+    +   AD DS Gruppenrichtlinien für in Domänen eingebundene Systeme
+2.  Lokalen Konfigurations-Manager (bei Bedarf) auf Zielsystemen konfigurieren:
+3.  Die gewünschten Module installieren:
+    +   psh>Install-Module –Name xComputerManagement
+4.Eine Konfiguration in Windows PowerShell ISE erstellen und kompilieren
+5.Die Konfiguration (anhand des Push-Verfahrens) bereitstellen:
+    +   psh>Start-DscConfiguration
+
+
+F23:Implementieren von Windows PowerShell DSC
+Sie erstellen eine DSC-Konfiguration als eine PS1-Datei
+mit drei erforderlichen Elementen:
++   Configuration identifiziert die Datei als eine Konfigurationsdatei
++   Node identifiziert den Computer oder virtuellen Computer, für den die Konfiguration gilt
++   Ressource block identifiziert die zu konfigurierenden Eigenschaften
+Bsp:
+Configuration 21740DscConfiguration {
+    Node "LON-SVR1" {
+        WindowsFeature MyFeatureInstance {
+            Ensure = "Present"
+            Name =    "RSAT"
+        }
+        WindowsFeature My2ndFeatureInstance {
+            Ensure = "Present"
+            Name = "Bitlocker"
+        }
+    }
+}
+
+
+F24:Problembehandlung von Windows PowerShell DSC
+=   Nutzen Sie die Windows PowerShell DSC-Protokolle zur Problembehandlung
+    +   Das Betriebsprotokoll enthält alle Fehlermeldungen
+    +   Das analytische Protokoll kann aufzeigen, wo Fehler entstanden
+    +   Das Debugprotokoll kann Ihnen helfen zu verstehen, auf welche Weise die Fehler entstanden
+=   xDscDiagnostics für DSC-Diagnose
+    +   psh>Get-xDscOperation findet die Ergebnisse der DSC-Vorgänge
+    +   psh>Trace-xDscOperation gibt ein Objekt zurück,
+            das eine Sammlung an Ereignissen,
+            deren Ereignistypen und die von einem bestimmten DSC-Vorgang
+            generierte Ausgabemeldung enthält
+
+
+=== L4: Übersicht über Windows Server 2016-Überwachungstools
++   Übersicht über den Task-Manager
++   Übersicht über die Leistungsüberwachung
++   Übersicht über den Ressourcenmonitor
++   Übersicht über Zuverlässigkeitsüberwachung
++   Übersicht über die Ereignisanzeige
++   Überwachen eines Servers in Server-Manager
+
+F26:Task-Manager
+
+F27:Task-Manager:Registerkarte App-Verlauf
+F28:Task-Manager:Registerkarte Autostart
+
+F29:Leistungsüberwachung
+    Die Leistungsüberwachung ermöglicht Ihnen,
+    entweder aktuelle Leistungsstatistiken oder historische Daten anzuzeigen,
+    die von Datensammlersätzen gesammelt wurden
+
+F30:Leistungsüberwachung
++   Primäre Prozessorindikatoren
++   Primäre Netzwerkindikatoren
++   Primäre Datenträgerindikatoren
++   Primäre Arbeitsspeicherindikatoren
+
+F31:Ressourcenmonitor
+=   Der Ressourcenmonitor bietet einen detaillierten Einblick
+    in die Echtzeitleistung Ihres Servers
+
+F32:Zuverlässigkeitsüberwachung
+C|Windows|System und Sicherheit|Sicherheit und Wartung | Zuverlässigkeitsüberwachung
+Überwacht Hardware- und Softwareprobleme
+Stellt Stabilitätsindexzahl zur Verfügung (1 bis 10):
++   1 stellt geringste Stabilität dar
++   10 stellt höchste Stabilität dar
+Das Fenster Zuverlässigkeitsüberwachung enthält:
++   Historische Berichte zum Stabilitätsindex
++   Zuverlässigkeitsdetails
++   Durchzuführende Aktion: speichert historische Daten,
+    startet die Konsole Problemberichte,
+    sucht online nach einer Lösung für ein spezifisches Problem
+
+F33:Zuverlässigkeitsüberwachung 2
+Die Zuverlässigkeitsüberwachung verfolgt Hardware- und Softwareprobleme,
+die sich auf das System ausgewirkt haben
+
+F34:Ereignisanzeige
+=   Die Ereignisanzeige stellt kategorisierte Listen
+mit essenziellen Windows-Protokollereignissen für einzelne
+installierte Anwendungen und spezifische Windows-Komponentenkategorien bereit
+
+F35:Ereignisanzeige 2
+=   Mit der Ereignisanzeige können Sie:
+    +   Mehrere Protokolle anzeigen
+    +   Benutzerdefinierte Ansichten erstellen
+    +   Aufgaben konfigurieren, die als Reaktion auf Ereignisse ausgeführt werden
+    +   Ereignisabonnements erstellen und verwalten
+=   Die Ereignisanzeige verfügt über viele integrierte Protokolle wie:
+    +   Anwendungsprotokoll
+    +   Sicherheitsprotokoll
+    +   Installationsprotokoll
+    +   Systemprotokoll
+    +   Weitergeleitete Ereignisse
+
+F36:Überwachen eines Servers in Server-Manager
+=   Server-Manager-Konsole:
++   Standardmäßig in Windows Server 2016 installiert und kann in Windows 10 installiert werden
++   Unterstützt die Überwachung von Windows Server-Betriebssystemen
++   Stellt ein zentrales Überwachungs-Dashboard zur Verfügung
++   Analysiert verschiedene Arten von Problemen und behebt sie
++   Identifiziert kritische Ereignisse
++   Überwacht den Status des Best Practices  Analyzer Tools
+
+=== L5: Verwenden der Leistungsüberwachung
+
+F37:*
++   Übersicht über Basislinie, Trends und Kapazitätsplanung
++   Was sind Datensammlersätze?
++   Vorführung: Erfassen von Indikatordaten mit einem Datensammlersatz
++   Vorführung: Eine Warnung konfigurieren
++   Vorführung: Anzeigen von Berichten in der Leistungsüberwachung
++   Überwachen von Netzwerkinfrastrukturdiensten
++   Überlegungen hinsichtlich der Überwachung virtueller Maschinen
+
+F38:Übersicht über Basislinie, Trends und Kapazitätsplanung
+=   Durch Berechnung der leistungsbezogenen Basislinien für Ihre Serverumgebung
+    können Sie echtzeitbasierte Überwachungsdaten präziser interpretieren
+=   Durch Einrichten einer Basislinie können Sie:
+    +   Leistungstrends interpretieren
+    +   Kapazitätsplanung durchführen
+    +   Engpässe identifizieren
+=   Leistungstrends analysieren, um vorhersagen,
+    zu welchem Zeitpunkt die vorhandenen Kapazitäten
+    sehr wahrscheinlich ausgeschöpft sein werden
+=   Die Kapazitäten für die wichtigsten Hardwarekomponenten einplanen:
+    Prozessor, Datenträger, Arbeitsspeicher und Netzwerk
+
+F39:Was sind Datensammlersätze?
+=   Mit Datensammlersätzen können Sie leistungsbezogene und andere
+    Systemstatistikdaten zur Analyse sammeln
+=   Datensammlersätze können die folgenden Datensammlertypen umfassen:
+    +   Leistungsindikatoren
+    +   Daten der Ereignisablaufverfolgung
+    +   Systemkonfigurationsinformationen
+
+F40:Vorführung: Erfassen von Indikatordaten mit einem Datensammlersatz
+=   Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    +   Erstellen eines Datensammlersatzes
+    +   Eine Datenträgerlast auf dem Server erstellen
+    +   Die ausgegebenen Daten in einem Bericht analysieren
+
+F44:Vorführung: Eine Warnung konfigurieren
+=   Im Rahmen dieser Vorführung wird Folgendes gezeigt:
+    +   Einen Datensammlersatz mit einem Warnungsindikator erstellen
+    +   Eine Serverlast erstellen, die den konfigurierten Schwellenwert überschreitet
+    +   Das Ereignisprotokoll auf das resultierende Ereignis überprüfen
+
+F46:Vorführung: Anzeigen von Berichten in der Leistungsüberwachung...
+
+F47:Überwachen von Netzwerkinfrastrukturdiensten
+=   Eine Überwachung ist erforderlich zur:
+    +   Optimierung der Leistung von Netzwerkinfrastrukturservern
+    +   Problembehandlung von Servern
+Internet : Umkreisnetzwerk : DHCP-Server : AD-DS : DND Server
+
+F48:Überlegungen hinsichtlich der Überwachung virtueller Maschinen
++   Virtuellen Computern müssen ausreichende Ressourcen für ihre
+    Arbeitsauslastung zugewiesen werden
++   Wenn mehrere virtuelle Computer auf einem Host ausgeführt werden,
+    stellen Sie sicher, dass der Host über ausreichend Ressourcen verfügt
++   Ressourcen werden gemeinsam genutzt,
+    d. h. die Leistung eines virtuellen Computers kann
+         sich auf die Leistung der anderen auswirken
++   Vergessen Sie nicht, die Ressourcennutzung auf dem Host und den Gästen zu überwachen
+
+=== L6:Überwachen von Ereignisprotokollen
+
+F49:*
++   Verwenden von Server Manager zum Aufrufen von Ereignisprotokollen
++   Was ist eine benutzerdefinierte Ansicht?
++   Vorführung: Erstellen einer benutzerdefinierten Ansicht
++   Was sind Ereignisprotokollabonnements?
++   Vorführung: Konfigurieren eines Ereignisabonnements
+
+F50:Verwenden von Server Manager zum Aufrufen von Ereignisprotokollen
+=   Server-Manager bietet einen zentralen Speicherort für
+    Ereignisprotokolle von Remoteservern
+=   Ereignisprotokollierung
+    +   Standardmäßig aktiviert
+    +   Nach Technologie kategorisiert: AD DS, DNS und Remotezugriff
+=   Benutzerdefinierte Ansichten
+    +   Erstellen Sie Abfragen für spezifische Ereignistypen,
+        die angezeigt werden müssen
+    +   Konfigurieren Sie Ereignisdaten, die angezeigt werden müssen
+
+F51:Was ist eine benutzerdefinierte Ansicht?
+=   Mit benutzerdefinierten Ansichten können Sie nur
+    solche Ereignisse abfragen und sortieren,
+    die Sie tatsächlich analysieren möchten
+
+F52:Vorführung: Erstellen einer benutzerdefinierten Ansicht...
+
+F53:Was sind Ereignisprotokollabonnements?
+=   Mit Ereignisabonnements können Sie Ereignisprotokolle
+    von mehreren Servern erfassen und sie dann lokal speichern.
+
+
+F54:Vorführung: Konfigurieren eines Ereignisabonnements
+
+F57:Übungseinheit B:
+    Überwachung von Windows Server 2016
+
+F59:Zusammmenfassung
+>   Frage
+    Während der Übungseinheit haben Sie Daten in einem Datensammlersatz erfasst.
+    Welchen Vorteil bringt die Datenerfassung auf diese Art und Weise?
+<   Antwort
+    Durch die Sammlung von Daten in Datensammlersätzen
+    können Sie diese analysieren,
+    mit den Verlaufsdaten vergleichen und dann Rückschlüsse
+    auf die Serverkapazität ziehen.
+
+F60:Lernzielkontrolle
+>   Frage
+    Ihr Vorgesetzter hat Sie gefragt,
+    ob alle Updates für das Betriebssystem Windows automatisch
+    nach der Veröffentlichung installiert werden sollen.
+    Empfehlen Sie einen alternativen Prozess?
+<   Antwort
+    Sie sollten alle Updates testen,
+    bevor sie in einer Produktionsumgebung angewendet werden.
+    Sie sollten Updates also zuerst mithilfe von WSUS auf einer
+    Reihe von Testcomputern bereitstellen.
+>   Frage
+    Ihr Unternehmen implementiert verschiedene Anwendungen,
+    die nicht von Microsoft stammen.
+    Ein Kollege hat vorgeschlagen, WSUS zur Bereitstellung von
+    Anwendungs- und Betriebssystemupdates zu verwenden.
+    Kann der Einsatz von WSUS potenziell zu Problemen führen?
+<   Antwort
+    Ja. WSUS ist ein hervorragendes Tool zur Bereitstellung von
+    Updates für Microsoft Anwendungen wie Microsoft Office
+    und das Windows-Betriebssystem.
+    Mit WSUS können jedoch nicht für alle Microsoft-Anwendungen und
+    auch nicht für Microsoft-fremde Anwendungen Updates bereitgestellt werden.
+    System Center 2012 Configuration Manager ist die bessere Wahl,
+    wenn Sie Updates für Microsoft-fremde Anwendungen bereitstellen müssen.
+>   Frage
+    Warum lässt sich WSUS einfach in einer
+    AD DS-Domäne (mit Active Directory-Domänendiensten) verwalten?
+<   Antwort
+    WSUS nutzt die Organisationseinheiten(OU-)Struktur von
+    AD DS für die Bereitstellung von Clienteinstellungen
+    über die Gruppenrichtlinie.
+    Sie können die Gruppenrichtlinieneinstellungen auch zur Konfiguration
+    einer clientseitigen Zielgruppenadressierung zur Bestimmung der WSUS-Gruppenmitgliedschaft
+    eines Clientcomputers nutzen.

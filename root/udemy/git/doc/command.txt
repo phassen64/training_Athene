@@ -1,0 +1,141 @@
+=== git commands
+
+=== UNIX <cmd>=:c
+
+•   $>  cat <file>                      *   show file content
+    $>  clear                           *   clear screen
+    $>  ls -al                          *   list
+
+•   c:remove
+    $>  rm ls -al                       *   list
+    $>  rm --force --recursive tutor_git    *   rmDir
+
+=== git <cmd>=:c
+    Legende:    ID:=cmmID,brnID,tagID
+    standard {
+        cmmID:='head'
+        brnID:='master' (or 'main')
+    }
+
+•   c:  add
+    $>  git add <file>                  *   add single file into STASH einchecken
+    $>  git add <file1> <file2>...      *   copy local files into STASH
+    $>  git add --all                   *   add incl.subDir into STASH
+    $>  git add .                       *   sämtliche neue Dateien => stash
+
+•   c:  blame               #  Wer ist verantwortlich ?
+    $>  git blame <file1>               *   Vom wem Änderungen an Datei
+
+•   c:  branch
+    $>  git branch                      *   view all branches and the active one
+    $>  git branch <brnID>              *   create new branch, but no switch
+    $>  git branch -a                   *   show local and remote branches
+    $>  git branch -d <brnID>           *   remove branch and perform merge-check
+    $>  git branch -D <brnID>           *   force remove branch
+    $>  git branch -m <bId1> <bId2>     *   rename branch <bId1> into <bId2>
+
+•   c:  checkout
+    $>  git checkout -b <brnID>         *   switch+create  into newBranch brnID
+    $>  git checkout <brnID>            *   restore+switch into branch:brnID
+    $>  git checkout HEAD .             *   alle lokalen Änderungen verwerfen
+    $>  git checkout HEAD <file>        *   lokales File zurücksetzen - not committed
+    $>  git checkout <tagID||brnID>     *   switch BRANCH or TAG
+
+•   c:  clone
+    $>  git clone https://github.com/phassen64/tutor_git.git [myDir]
+
+
+•   c:  commit
+    $>  git commit                      *   commit merge conflict
+    $>  git commit -m <comment> <file>  *   update modified singleFile in Repository
+    $>  git commit -m <comment> -a      *   update multiple files of Repository
+    $>  git commit -m <comment> .       *   ... dito
+    $>  git commit -m <comment> --all   *   ... dito2
+    $>  git commit –-amend              *   show toBe committed files in vi
+
+•   c:  diff
+    $>  git diff master <brnID>         *    difference master<=>branchID
+
+•   c:  discard - no git command
+
+•   c:  fetch
+    $>  git fetch           * download server changes into memory - don't change local
+
+•   c:  init
+    $>  git init  <newGitRepository>    * neues projekt
+
+•   c:  log
+    $>  git log                         *   alle Commits sehen - ohne Datei-Zuordnung
+    $>  git log --abbrev-commit         *   commits mit short-commitID sehen
+    $>  git log --pretty=online --grap  *   pretty log
+    $>  git log --raw                   *   alle Commits sehen - MIT Datei-Zuordnung
+    $>  git log -n<i>                   *   nur die letzten i Commits
+    $>  git log <file>                  *   log einer existierenden Datei
+    $>  git log -- <file>               *   log einer eventuell gelöschten Datei
+    $>  git log -p <file>               *   log einer bestimmten Datei + diff command
+
+•   c:  merge
+    $>  git merge <brnID>               *    HEAD==master imports branch <brnID>
+    $>  git merge master                *    HEAD==bTmp; branch bTmp imports master
+    $>  git merge --abort               *    cancel a merge
+    $>  git mergetool                   *    merge tool
+
+•   c:  mv * rename
+    $>  git mv [-v] <source> <destination>  * rename a file
+
+•   c:  pull
+    $>  git pull            * download server changes into local => fetch
+
+•   c:  push
+    $>  git push                            * lokale Version auf den remote-Server kopieren
+    $>  git push origin master                          * remote branch aktualisieren
+    $>  git push origin HEAD                            * remote branch mit akuellem HEAD
+    $>  git push origin --delete <brnID>    * remote branch löschen
+    $>  git push --tags                     * push tags
+
+•   c:  rebase      #   special merge
+    $>  git rebase master               *   auf einem Feature-Branch den Master importieren
+    $>  git rebase <brnID>              *   Feature => Master
+    $>  git rebase --about              *   undo rebase
+
+•   c:  rm * remove
+    $>  git rm <file>                   * remove a file
+
+•   c:  reset
+    $>  git reset --hard HEAD       *   lokales File zurücksetzen - not committed
+    $>  git reset –-hard <cmmID>    *   reset myBranch TO commit
+    $>  git reset <cmmID>           *   ... unstaged changes left
+
+•   c:  restore
+    $>  git restore .               *   restore repository.local after push/pull
+    $>  git restore <file>          *   restore uncommitted File == history cleared
+
+•   c:  revert
+    $>  git revert <cmmID>          *   revert a special commit -  history untouched                                    *   before and after unchanged
+    $>  git revert HEAD~3
+
+•   c:  show
+    $>  git show <ID>               *   ID={cmmID|tagID} * show changes
+
+•   c:  stash                       *   stapel-Speicher über den Commit hinweg
+
+    $>  git stash                   *   => git stash push
+    $>  git stash push              *   *stash++ := mem; mem:=0
+    $>  git stash clear             *   memset(stash,0,sizeof(stash))
+    $>  git stash apply             *   mem:=*stash
+    $>  git stash drop              *   --stash
+    $>  git stash pop               *   mem := *stash--   ==> git apply&&drop
+    $>  git stash list              *   print STASH-list
+    $>  git stash show              *   print *stash
+
+•   c:  status
+    $>  git status                      *   wichtigstes Kommando ?uptodate?
+
+•   c:  switch
+    $>  git switch <brnID>          *   set branch:=<brnID> active  git checkout ...
+
+•   c:  tag
+    $>  git tag                     *   show my tags
+    $>  git tag <tagId>             *   add lightweight tag tagId="tTmp"
+    $>  git tag -a <tagId> -m "annotad tag"    * annotated
+    $>  git tag --delete <tagId>    *   delete tag with tagId

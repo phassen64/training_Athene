@@ -1,0 +1,2998 @@
+=== MCSA und MCCE Kurs  3.1.2020
+
+*** Prüfung: 13.2.2020
+
+<<< Di, 7.1.2020
+
+
+MCA Kursleiter: Phillip Hartmann
+Aktueller Kurs 744
+
++   loging PC
+        usr:"user"
+        pwd:"user"
++   loging ecampus
+        usr:"phassen"
+        pwd:"!samba2020"
++   loging WBS learnspace 3D
+        usr:"phassen@learnspace"
+        pwd:"kennwort2"
++   login CertBase
+        usr:"WBS-06"
+        pwd:"Minute64!"
+        Ihre Kundennummer: 82092
++   login myVM
+        usr:"Administrator"  | "Administrator@boondock.ltd"
+        pwd:"!wbs2020"
++   login myVM
+        usr:"Administrator"
+        pwd:""Pa55w.rd"
+
+
++   Kursmitglieder:
+    Herr Erler
+    Herr Sharivar
+
+
+
++   Voucher = Gutscheinkurs
+    4 Wochen vor der Prüfung beantragen
+
+=== !tag:0107
++   3 Prüfungen
+
++   skillpipe bücher - Offizilles Material
++   kopieren auf dem POD
+    mit STR+C und STRG-V
+
++   Ordner :
+        HyperV
+        HyperV vorlagen
+        backup
+    erstellen
+
++   HyperV Einstellungen ändern
+        +   Virtuelle Festplatten: C:VM\Hyper-V
+        +   Virtuelle Computer: C:VM\Hyper-V
+        +   Richtlinien für erw.Sitzungsmodues zulassen:=yes
+        +   Benutzer.ErweiterSitzungsmodus:=yes
+
+
++   Microsoft Konto ?
+    Wo sind die Pears & View Testcenter
+
++   Prüfungen : Bausteinende
+        17.2
+
++   PDF Bücher fehlen noch....
+
++   Speed
+        Latenzzeit:         <100 ms
+        FramesPerSecond:    max 30 FPDs ?!
+
++   CertBase Pensum
+    https://www.certbase.de/User/Register.aspx
+    usr:phassen
+    pwd:<!scifi>
+    Ihre UserID / Kundennummer: 95371
+    => Kontostatus: Testkonto
+
++   21740B-LON-CL1
+    21740B-LON
+    21740B
+    +   ...
+
+
+<<< Mi, 8.1.2020
+
+    Eval Center:
+        http://www.microsoft.com/de-de/evalcenter
++   sw licensemanager => license erweitern
+
++   3 säulen für eine VM
+        Cpu, network, compute storage(RAM)
++   VM erstellen
+        +   2 Generationen BIOS || UEFI
+            Wir nehmen Generation 2:=UEFI
+        +   vhdx
+            vorhadene Festplatte=pathThrough vs
+            virt Festplatte
+        + standard festplatte groesse 4 GB
+        +   Arbeitsspeicherpuffer setzt prio fest 20%
+        +   HyperV =>Threads=Prozessor
+    +   VM Numa Knoten
+            NUMA Topologie
+            ein NUMA Knoten ist immer: "CPU und Arbeitsspeicher"  !PRF
+            per default lassen
+            NUMA:="Non-Uniform Memory Architecture"
+
+    +   Kompabilität
+            APEC vs XEONs vs AMD
+            SPOF : single point of failure
+            checkbox: YES
+    +   SCSI Controller
+
++   wir sind im WBS netzwerk
+        DHCP server, Proxy
+
++   HyperVManager|ManagerFuerVirtuelleSwitches
+    1 Netzwerkkarte kann nur 1x für einen Switch verwendet werden
+        wir verbinden mit switches
+            intern : nur VM+Host  : baut auf einem HOST eine Brücke
+            private: nur VM  "Testnetzwerk"
+            extern:  virtuelle masc "WBS-internet" => VM können frei ins Internet
+
++   KENNWORT Server 2016
+        usr:"Administrator"
+        pwd:"!wbs2020"   || "Pa55w.rd"
+
++   Server 2016
+        ip= 192.168.10.1
+            255.255.255.0
+        +   kein GATEWAY
+        +   DHCP - no - kein DNS
+        +   Auflüsung 1440x900
+
++   wir benutzen uns in einer RDP Sitzung
+        => Rechte kostet Geld
+
++   DataCenter besser
+
++   Core Server : Win ohne Desktop SW
+        => PSH oder CMD
+        +   cmd>powershell  # cmd => psh
+        +   Ausgabe von powershell ist ander als bei der CMD :
+                bsp:psh>dir
+    psh>sconfig
++   in derVM
+        STRG+ALT+ENDE  => TaskManager
+
++   psh>netsh interface ip show config
+
++   Client virtuelle Maschine ohne Netzwerkkarte installieren -
+                    Konto ist nicht notwendig
+    usr;peter
+    pwd:!wbs2020
+
++   ServerGUI
+        Verwalten | Rollenbasierte  oder feature basierte
+        => DNS Rolle
+
++   ServerCore
+        cmd>dism        * Imagevorbereitung
+        cmd>dism /online /get-currentedition
+
+    cmd>dism /online /enable-feature /featurename:DHCpServer
+    psh>get-windowsFeature
+    psh>install-windowsFeature DNS  * use Feature.Name
+
++   Das Dynamic Host Configuration Protocol (DHCP) ist ein
+Kommunikationsprotokoll in der Computertechnik. Es ermöglicht die Zuweisung der
+Netzwerkkonfiguration an Clients durch einen Server. DHCP wurde im RFC 2131
+definiert und bekam von der Internet Assigned Numbers Authority die UDP-Ports 67
+und 68 zugewiesen.
+
++   DISM
+    Alleskönner: Das Windows-Tool DISM im Überblick.
+    Der Kommandozeilen Befehl DISM ist – seit Windows 7 Vista – Bestandteil des Microsoft Betriebssystems Windows.
+    Der Befehl dient zur Reparatur und Administration verschiedener Windows Komponenten und der Vorbereitung
+    und Bereitstellung von Windows PE-Images.01.12.2015
+
++   RSAT: Remote Server Administration Tools
+    Nachdem ein Domänencontroller eingerichtet wurde,
+    möchte man am liebsten gleich an die Arbeit um den Domänencontroller einzurichten.
+    Natürlich könnte man theoretisch alle anfallenden Arbeiten direkt
+    auf dem Domänencontroller ausführen.
+    Wie sieht die Arbeit in der Praxis aus?
+    In der Praxis sind Domänencontroller meistens in einem abgesicherten Gebäude,
+    das klimatisiert,
+    geschützt und womöglich noch weit entfernt ist.
+    Keine guten Voraussetzungen für den Administrator, effektiv zu arbeiten.
+    Es muss also eine Lösung her, die es den Administratoren ermöglicht,
+    ihre Tätigkeiten von ihrem normalen Arbeitsplatz aus durchzuführen.
+    In früheren Server Versionen von Windows wurden sogenannte
+    Verwaltungstools installiert.
+    Auf der Server CD befand sich das Tool adminpak.msi.
+    Darüber konnten Administraton ihre Verwaltungsaufgaben von ihrem
+    Arbeitsplatz aus durchführen.
+    Mittlerweile hat sich die Technik auch hier weiter entwickelt.
+    Um Verwaltungsaufgaben auf einem Domänencontroller von einem Windows7
+    Rechner durchführen zu können,
+    gibt es die Remote Server Administration Tools for Windows 7
+    (DE: Remoteserver Verwaltungstools für Windows 7),
+    kurz RSAT genannt.
+    Sie können RSAT direkt von der Microsoft Homepage herunterladen und installieren.
+
++   Vorlage Client
+        Name wählen der nichtbenötgt
+        "user1" "user1"
++   Windows32/Sysprep/sysprep.exe
+        usr "Administrator"
+        pwd: "!wbs2020" || "Pa55w.rd"
+        => setzt Lizenzzeiträume zurück
+
++   psh>get-WMHostSupportedVersion
+
++   wbs standort ip proxy
+    psh>netsh winhttp reset proxy
+    psh>netsh winhttp show proxy
+
++   Neue Features und Verbesserungen – eingeführt in Windows Server 2016: [ppt.01]
+    +   Nano-Server
+    +   Container
+    +   Unterstützung für Docker
+    +   Parallele Upgrades für Hyper‑V und Speichercluster
+    +   Hinzufügen und Entfernen von virtuellem Speicher und Netzwerkkarten im laufenden Betrieb
+    +   Verschachtelte Virtualisierung
+    +   PowerShell Direct
+    +   Abgeschirmte virtuelle Computer
+    +   Endpoint Protection
+    +   Storage Spaces Direct
+    +   Speicherreplikat
+    +   Remotedesktopdienste
+    +   Microsoft Passport
+    +   Unterstützung für Azure AD Join
+    +   Privileged Access Management
+
++   Lizenzierung und Aktivierung von Microsoft Server 2016 [ppt.01]
+    Unternehmen können zwischen zwei Aktivierungsstrategien wählen :
+            +   manuell     : für wenig Server
+            +   automatisch : für viele Server
+
++   Lizenzzeiträume
+        psh>slmgr -dli
+    Rechner fährt in einen Shutdown nach 10 Tagen| 180 Tagen
+        psh>slmgr -dlv => rea<ktivierung von lizenzen
+        psh>slmgr -rearm =>sofort reakitivieren
+
++   AVMA = Automatic Virtual Activation
+        virtuelle Lizenzen werden automatisch dem HOST gleich gesetzt
+
++   Generation1 vs 2
+    +   Generation1 hat keinen SCSI
+    +   IDE Controller
+    +   COM1 named pipes
+            => Generation2 ejected pipes
+            => Integrations.Gastdienste
+            Aufgabe: vom HOST in die VM kopieren
+
++   Hardwarebeschleinigung
+    +   E/A Virtualisierung mit Einzelstamm
++   Erweiterte Features
+        +   Spoofing:=erlaubt MAC fake Adreese
+        +   Portspiegelung
+
++   Prüfung Dashboard beim Microsoft Konto
+    70-740  Installation Storage
+    11.02-17.02 Prüfungswoche
+                spätester Tag: 17.02
+                Stoff ist am 10.2. fertig
+    10.02. WBS Prüfung
+    14.02. Microsoft Prüfung
+
+
++
+    https://philipphartmann-my.sharepoint.com/:f:/g/personal/philipp_hartmann_vip/ElSiUJKeQYpOmlFclnbnxXwBTpLLK3XFwZEE_v-LypcYdQ?e=1qKLxr
+
++   Virtuelle Festplatte - Differenzierung über den Parent
+
++   Vorlagen Festplatten halten nur 6 fach
+    psh>slmgr -dlv
+    Verbleibende Anzahl von Rearm Anzahl
+    +   hne Internet 10 Tage sonst 180 Tage
+    +   rearm: wiederholungen der Lizenzneuanforderung 6x10Tage oder 6x180Tage
+
++   DomainController (vm.DC01)
+        + statische IP 172.16.0.10
+        + Achtung DNS:172.16.0.10  * wird überschrieben manchmal 127.0.0.1
+        + Gesamtstrukturebene / Domänenfunktionsebene
+            pwd:=!wbs2020
+        + Rolle Active Directory
+
++   Anmeldung 2x fach
+            Administrator@bondock.ltd oder
+            boondock/Administrator
+
++   Windows Firewall Profil
+            Öffentlich: das meiste gesperrt
+            Private, Domaine
+
++   Domain Controller => NLA neu starten
+        Network
+        psh>restart-service NLAsvc -Force
+        setzt das Profil des Rechners
+
+====    FRAGE: wie mache ich eine DOMÄNE ????
+
++   URL:https://skillpipe.com/
+    usr:<email>
+    pwd:<chess11>
+
+
+<<< Mo, 13.1.2020
+
+
++   Welche VMs habe ich ?
+    psh>get-vm * | format-table name,version
+
++   VM: nHyperV  13.1.2020
+    Der lokale PC lässt VMs nicht zu - daher muss ein PowerShell Befehle durchgeführt
+    werden.
+    psh>Set-VMProcessor -VMName "nHyperV Host1a"  -ExposeVirtualizationExtensions $true
+
++   Spoofing aktivieren : MAC adressen werden kopiert
+
++   Core vs Desktop Server
+    Der Server hat zusätzlich noch eine grafische Benutzeroberfläche
+    +   CoreServer : Server ohne graf. Oberfläche
+
++   RSAT = Remote Server Administration
+        wir verwalten unsere Server von unserem Client aus
+
++   die Domäne ist ein logisches Verwaltungskonstrukt
+
+
+<<< TAG:Di,14.1.2020
+
++   sharepoints
+
+https://philipphartmann-my.sharepoint.com/:f:/g/personal/philipp_hartmann_vip/ElSiUJKeQYpOmlFclnbnxXwB5lxOhD_pGtCynP3pGPNMoA?e=SlszTm
+
+https://philipphartmann-my.sharepoint.com/:f:/g/personal/philipp_hartmann_vip/EkVi3dzRbDFGkxRB18a24NgBZEF6nhUkdYrkNPmY8SyVYQ?e=00cBfA
+
+
++   win10 default switch
+            Standardardisierter Externer Switch
+
++   BIOS vs UEFI
+    BIOS macht einen kleinen Selbsttest
+    UEFI kann bestimmte Merkmale im Boot Process prüfen - Signatur
+        +   der SecureBoot kann herausfinden ab Quell-Code injected wurde.
+        +   phys.Chipsatz auf dem Mainboard - überprüft die SeNr
+            => TPM Boot verhindert kopieren von VM's auf andere Rechner
+
++   DC ip addr: 172.16.0.10
+
++   vm-DC01 : Gesamtstrukturebene = kleinster geimeinsamer Nennner
+
+    der Domänen Controller hat beim Hochfahren ein Problem
+        => windows Firewall
+        => es ist öffentlich, der NLA Dienst steuert das Profile der Firewall
+        => das Domänen Profil ist auch noch nicht da
+           => man kann bei win2020 den NLA verzögert starten , dann würde das Domänen Profil
+
+    "Grundsatz: immer der den DomainController" zuerst starten und zuletzt beenden"
+
+    "Grundsatz: der erste DomainController" muss den NLA Dienst neu starten
+        psh>restart-service NLAsvc -Force
+
+
++   vm-nHypV
+    +   "Es soll hier auch die HyperVManage Conssole"
+    psh>whoami  # wo bin ich angemeldet
+
+    +   Fehlermeldung
+        => BIOS der Virtuellen Maschine gibt es nicht -
+        muss auf dem HOST gelöst werden
+
+    +   psh>get-vm
+        psh>set-vmProcessor -vmName "nHypVHost1"
+         Set-VMProcessor -VMName "nHypVHost1" -ExposeVirtualizationExtensions $true
+    => physischer CPU Kern0 darf virtualisiert werden
+
+    +   neue HypevM Konsole
+
++   vmClient
+        +   psh>Test-ComputerSecureChannel
+        +   Computername: CL01
+            Domäne: zuordnen
+        +   WindowsTH-RSAT_WS2016-x64 installieren
+            => Console beim Client
+        +   ServerManager|Rolle|Server hinzufügen
+                kann Dc1,nHyp hinzufügen
+
++   Learnspace3D :: "push to talk"
+
+
+<<< TAG:Mi, 15.1.2020
+    9:30 Frühstücksebene
+
++   NLA   "Network Location Awareness"
+    https://www.msxfaq.de/netzwerk/grundlagen/network_location_awareness.htm
+    Aktiv wird er aber nur zu zwei Zeiten.
+    +   Wenn ihr Computer startet
+            (oder aus dem Suspend/Himernation-Mode zurück kommt)
+    +   Wenn sich "etwas" am Netzwerk ändert.
+
++   NLA Änderung
+    kann kann ganz klassisch "Kabel gezogen" sein,
+    d.h. ein echter "Link Loss".
+    Aber auch eine Änderung bezüglich der WLAN-SSID triggert den
+    NLASVC wieder an,
+    seine Umgebung zu befragen und die Firewall-Zonen auf den Verbindungen ggfls.
+    anzupassen.
+    Auch ein VPN sollte über eine virtuelle Netzwerkkarte o.ä.,
+    Windows bescheid sagen, dass es aufgebaut wurde.
+    Auch eine Netzwerk-Authentifizierung (8021.x) kann den
+    NLASVC antriggern.
+    Es könnte sich ja nun die Erreichbarkeit bestimmter Dienste geändert haben.
+    Wie sie schon an der Firewall sehen können,
+    gibt es drei Bereiche für Netzwerke
+
++   vmLondonDC1
+        +   PWD:Pa55w.rd
+        +   psh>restart-service NLAsvc -Force       # jedes mal neu st
+
++   vm-Befehle um die vm zu testen und die Lizenz hochzusetzen
+        psh>ping lon-DC1
+        psh>slmgr -rearm
+        psh>stop-computer
+
++   NIC "Network Information Center"
+    Ein Network Information Center (NIC) oder eine Domain Name Registry (Pl. Registries)
+    verwaltet eine oder mehrere Top-Level-Domains im Domain Name System.
+    Zu den Aufgaben gehört der Betrieb der Nameserver,
+    die Verwaltung des Namensraums und der Betrieb der Whois-Server
+    mit Kontaktdaten der Domaininhaber.
+    Registries vergeben Domains unterhalb einer Top-Level-Domain,
+    allerdings nicht direkt an Endkunden,
+    sondern über Registrare.
+    Hintergrund hierzu ist,
+    dass dem Endkunden (Domain-Registrant) ein Markt mit
+    konkurrierenden Registraren eröffnet wird.
+    Einige NICs bieten neben ihren Registry-Aufgaben auch
+    Registrar-Dienstleistungen an, zum Beispiel DENIC.
+
++   NIC Teaming: "Bündelung von Netzwerkkarten"
+
++   NIC Teaming mit 2 Netzwerkadaptern in vmHypHost
+    Switch embedded Teaming: 1 Team aus mehreren Adaptern (by psh>)
+    a.Teamingmodus: Frage "wie werden die Netzwerkkarten" zusammengefasst ?
+        switch-unabhängig
+        switch-abhängig
+    b.Lastenausgleichsmodus => dynam.Modus  !PRF
+
+    #   siehe: Systemsteuereung|Netzwerk&Internet|Netzwerkverbindungen
+
++   shielded VM's
+    nach der Aktivierung kann die VM nicht mehr betrachtet werden
+        => abgeschirmter virtueller Computer
+        => die Funktion kann nur mit dem TPM Chip genutzt werden
+            TPM=TrustedPlatformModule
+    Anm; im HyperVM-Manager kann nicht mehr einzelne Benutzer frei- oder sperren
+        => Deaktivieren nach dem Ausschalten der VM möglich
+
++   Checkpoint == Prüfpunkt == Snapshot
+        +   Vorlage Festplatte im base-Verzeichnis
+        +   Child-Festplatte
+        +   AHVD
+    => beim Rollback: beim Knoten "anwenden" eingeben
+
++   MSCA Prüfungen
+        +   60 Fragen aus fast allen Pools
+        +   70% bestanden 700 Punkte von 1000 Punkten
+        +   Block mit Einzelfragen - Reihenfolge erforderlich -
+            andere Fragen können durcheinander beantwortet werden
+
++   Psh.ISE vsPSH.Std
+        +   Powershell ist modular
+        +   ISE kann nicht alles - nur bekannte module
+        +   Get-Service | fl  # format list
+        +   Befehle AD,VM,...
+            psh>get-command *ad*
+        +   psh>get-service -?          # HELP
+        +   psh>get-command *adu* > $HOME\log.txt
+        +   psh>get-aduser -Filter { name -eq "administrator" }
+        +   psh>get-aduser -Filter { name -like "administrato*" }
+        +   get-history -count 10
+        +   clear-history # löscht nur Verlaufshistory - Sesion
+        +   Get-Content (Get-PSReadlineOption).HistorySavePath
+            => remove-item (Get-PSReadlineOption).HistorySavePath
+            # Anm: History - nicht nur Session-History löschen
+
++   PSh remote mit einer VM arbeiten
+        1. starten der vm.DC01
+        2.  psh>Enter-PSSession -VMName DC01
+            login
+                USR:boondock\Administrator
+                PWD:<std>
+        3.  psh>stop-computer oder
+            psh>shutdown -s -t 0
+        4.  ... die VM  wurde gestartet und beeandet
+
++   $cred = get-credential
+    $ps = new-session -ConfigurationName Microsoft.Exchange -ConnectionUri http://outlook.office365.com/powershell
+    get-mailbox
+    import-pssession $ps
+    remove-pssession $ps
+
++   New-Session
+    Creates a persistent connection to a local or remote computer.
+    The New-PSSession cmdlet creates a PowerShell session (PSSession)
+    on a local or remote computer.
+    When you create a PSSession,
+    PowerShell establishes a persistent connection to the remote compute
+
+    New-PSSession -HostName UserA@LinuxServer01:22 -KeyFilePath c:\<path>\userAKey_rsa
+
++   New-Session, Enter-PSSession
+    PS> $s = New-PSSession -ComputerName Server01
+    PS> Enter-PSSession -Session $s
+    [Server01]: PS>
+
+<<< Do, 16.1.2020
+
++   vmLON.psh>get-aduser -Filter { department -eq "it" }
+
++   Das Handbuch
+    Buch OReiley / A: Thomas Joos
+    Microsoft Windows Server 2016
+
++   CertBase
+MS 70740-Frage:5
+Installation, Speichertechnologien und Computing mit Windows Server 2016
+Ihr Netzwerk umfasst eine Active Directory-Domänendienste (AD DS) Domäne mit dem Namen certbase.de. Die Computer im Netzwerk werden mithilfe der Windows-Bereitstellungsdienste (WDS) installiert.
+Die Domäne enthält einen Mitgliedserver mit dem Namen Server1. Auf Server1 ist das Betriebssystem Windows Server 2016 installiert. Server1 ist als Hyper-V Host konfiguriert. Virtuelle Maschinen (VMs), die auf Server1 bereitgestellt sind, sind mit einem externen Switch namens vSwitch1 verbunden.
+Sie erstellen auf Server1 eine neue virtuelle Maschine mit dem Namen V1. Für das Erstellen verwenden Sie die folgenden PowerShell Cmdlets:
+
++   New-VM VM1
++   Add-VMHardDiskDrive –VMName VM1 –ControllerType IDE –Path C:\VMs\Disk1.vhd
++   Add-VMNetworkAdapter –VMName VM1
+
+Sie müssen sicherstellen, dass Sie das Betriebssystem auf VM1 mithilfe der Windows-Bereitstellungsdienste (WDS) installieren können.
+
+Wie gehen Sie vor?
+    <=: AntwortA: ältere Netzwerkkarte
+
++   Bücher
+        +   3 skillpipe bücher
+        +   email von oReilley
+
++   andere Server als NanoServer...
+            +   CoreServer
+            +   Graf.Server
+
++   Thema: NanoServer
+    +   pendent zu vmware
+    +   kleiner WindowsServerKern
+    +   compilierte Information mit Rollen
+    +   kann verschiedene Rollen halten
+
++   Ein Nano-Server erstellen wir mittels der
+        vm:21740B-LON-DC1
+    mit
+        der ISO-Dvd "WinServer2016 DvD"
+    Dazu muss in
+        HyperVEinstellungen|Medien
+    die Windows Server Dvd gewählt werden.
+    Im Dvd-Verzeichnis d:\NanoServer finde ich dann sämtlich Informationen
+
++   Nanoserver lässt sich bereitstellen als:
+        a.  Virtuelle Festplatte (VHD) auf einem Hyper-V-Host
+        b.  Per VHD startbares Laufwerk auf einem physischen Computer
+        c.  WIM-Datei auf einem physischen Computer
+
+
++   PSH commands in vmLondonDC1 : 21740B-LON-DC1
+    psh>cd c:\
+    psh>mkdir c:\Nano       # Verzeichnis erstellen
+
+    #   die vmLondonDC1 hat ein Laufwerk D:
+    psh>copy D:\NanoServer\NanoServerImageGenerator\*.ps* C:\Nano\  # copy der
+    psh>Import-Module C:\Nano\NanoServerImageGenerator.psm1
+    psh>Get-NanoServerPackage  <<< fehler
+
+    psh>New-NanoServerImage
+        -Edition Standard
+        -MediaPath d:\
+        -BasePath C:\Nano
+        -TargetPath C:\Nano\nano-svr1.vhdx
+
+    PS C:\> New-NanoServerImage
+        -Edition Standard
+        -MediaPath d:\
+        -BasePath C:\Nano
+        -TargetPath C:\Nano\nano-svr1.vhdx
+        -DeploymentType Guest -ComputerName Nano-SVR1
+        -Package Microsoft-Nanoserver-IIS-Package
+    AmM:
+        -DeploymentType Guest   : guest == vm || "host" == lokaler PC
+
++   Nach diesem Aufruf New-NanoServerImage... wird die Datei "C:\Nano\nano-svr1.vhdx" in der
+    vmLondonDC1 erstellt.
+    Diese kopiere ich auf den HOST in
+        c:\<Benutzer>\VM\Hyper-V\NANO
+
++   wie eine VM ist auch ein NANO Server vor-compiliert
+        "computer"-"storage"-"network"
+
++   ein Nano-Server ist eine eigenständige Lizenz - OpenLizenz
+            ist keine DataLizenz
+
++   dism : ist Tool zur Image-Bereitstellung
+    Das Windows-Tool DISM im Überblick.
+        Der Kommandozeilen Befehl DISM ist – seit Windows 7 Vista –
+            Bestandteil des Microsoft Betriebssystems Windows.
+    Der Befehl dient zur Reparatur und Administration verschiedener Windows Komponenten
+    und der Vorbereitung und Bereitstellung von Windows PE-Image
+
++   Nano-Server
+        >>> Login
+            usr:Administrator
+            pwd:<std>
+        <<< Nano Server Recovery Console
+        IP Adresse:172.16.0.165
+        MAC:00-15-5d-3d-8c-7e
+    #   USR: "Administrator"
+    #   PWD: "Pa55w.rd"
+    #   DOM: "Adatum.com"
+
++   Der NanoServer "21740B-NANO-SVR1" ist im "Testnetzwerk"
+    und kann über "21740B-LON-SVR1" erreicht werden durch
+    http://172.16.0.165
+
++   Anm: Öffentliches Netzwerk (Firewall) : Ports nach innen gesperrt
+    Ports müssen freigegeben werden
+
++   Offline Image
+    The traditional offline image backup "prevents" write access
+    to the volume by other system applications during the operation.
+
+    ===========================================================================
++   Offline Domain Join (ODJ) durchführen
+    ===========================================================================
+
+    + Gültigkeitsdauer == maximal 30 Tage
+
+    VM:= 21740B-LON-DC1
+    Wir erstellen Provisionierungsdatei
+        psh>djoin.exe /provision /domain adatum /machine nano-srv1 /savefile .\blob.cmd
+    Eine blob-Datei hat keine definierte Größe.
+    Trusted Host im LON-DC01  eingeben
+        psh>set-item wsMan:\\localhost\Client\trustedHosts "172.16.0.165"
+    # Anm:
+    Auslesen der Trusted Hosts Liste
+        psh>get-item wsMan:\\localhost\Client\trustedHosts
+        <<< PS C:\Users\Administrator> get-item wsMan:\\localhost\Client\trustedHosts
+        <<< WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Client
+        <<< Type            Name                           SourceOfValue   Value
+        <<< System.String   TrustedHosts                                   172.16.0.165
+
+    WS-Management-Remoting
+    $vIp="172.16.0.165"
+
+    psh>Enter-PSSession -ComputerName $vIp -Credential $vIp\Administrator
+
+    #   remote Firewall freigeben
+
+    psh>netsh advfirewall firewall set rule group="Datei- und Druckerfreigabe" new enable=yes
+    psh>Exit-PsSession
+
+    # jetzt Festplatte mounten
+    psh>net use z: "\\172.16.0.165\c$"
+
+    #   jetzt blob-Datei auf den Nano-Server kopieren
+    psh>copy...
+
+    #   jetzt Nano-Server in die Festplatte "D"
+    psh>PS C:\> djoin /requestodj /loadfile C:\blob.cmd /windowspath C:\Windows /localos
+
+    psh>shutdown -r -t 30
+    psh>Exit-PsSession
+
+    #   Nano Server zuordnen
+    #   Freigabe SMB
+
+    #   Webseite aufrufen
+        http://nano-srv1/
+
+    #
+    psh>Install-WindowsFeature fs-fileserver -ComputerName Nano-Srv1
+
+<<< Fr, 17.1.2020
+
++   CertBase NanoServer
+
++   WIM
+    In Dateien mit der Endung .wim stecken Abbilder (Images) von Windows-Installationen.
+    Daher auch der Name WIM, der für Windows IMaging steht.
+    Während einer Windows-Installation macht das Setup-Programm schon seit Vista im Wesentlichen nichts anderes mehr,
+    als so ein Image aus einer WIM-Datei auf die Festplatte/SSD zu kopieren und mit einem Bootloader zu versorgen.
+    Die WIM-Datei liegt dabei auf dem Installationsmedium im Ordner „sources“ und trägt den Namen „Install.wim“.
+    Sie ist üblicherweise mehrere GByte groß.
+    Solche Dateien kommen aber auch zu anderen Zwecken als zur Windows-Installation zum Einsatz.
+    Wenn Sie von einem Windows-Installationsmedium booten, startet davon ein Mini-Betriebssystem namens Windows PE,
+    unter dem die eigentliche Installation abläuft.
+    Dieses PE (Preinstallation Environment) steckt ebenfalls in einer WIM-Datei,
+    nämlich in der boot.wim ebenfalls im Ordner Sources. Von Wiederherstellungsdatenträgern startet eine
+    auf PE basierende Wiederherstellungsumgebung (RE, Recovery Environment) aus einer Winre.wim.
+    Diese Datei findet sich normalerweise auch auf der Festplatte/SSD.
+    Unser c’t-Notfall-Windows steckt ebenfalls in einer WIM-Datei.
+    Details zu RE haben wir in [1], zu PE in [2] und zum Notfall-Windows in [3] veröffentlicht.
+
++   Thema Integrationsdienste in der Generation2
+    # COM ist nicht da
+
++   In HyperV Manager Integrationsdienste.Gastdienst:=J
+
++   in vmDC01 testen ob der Gastdienst aktiviert ist bzw aktivieren
+
++   psh@Host>Copy-VMFile dc01 -SourcePath C:\Users\User\TestGast.txt -DestinationPath C:\TestGast.txt -FileSource Host -CreateFullPath -Force
+    #   "dc01"  Name der object-VM
+    #   der copy-VMFile Befehl kopiert immer vom HOST in die VM, nicht anders herum
+    #   das kopieren geht auch mit dem erweiterten Sitzungsmodus
+    #   "CreateFullPath" ist implizit mkdir
+    +   Anm: Die Einsicht in unsere VM ist eine RDP-Sitzung - das ist nur beschränkt möglich
+        Dieser Befehl Copy-VMFile unterliegt nicht diesen Einschränkungen
+
++   Thema : Ressourcenmessung
+
+    #   messungen werden an- und ausgeschaltet
+
+    #   einfache Messung
+    psh@host>   Enable-VMResourceMetering -VMName dc01
+    psh@host>   Measure-VM -VMName DC01
+    psh@host>   Disable-VMResourceMetering -VMName dc01
+    psh@host>   Reset-VMResourceMetering -VMName dc01
+
+    #   mit ACL : ipaddr
+    psh@host>   Enable-VMResourceMetering -VMName dc01
+    psh@host>   Measure-VM -VMName DC01
+    psh@host>   Add-VMNetworkAdapterAcl -VMName dc01 -Action Meter -RemoteIPAddress 10.0.0.0/8 -Direction Outbound
+    psh@host>   Get-VMNetworkAdapterAcl -VMName dc01
+    psh@host>   Disable-VMResourceMetering -VMName dc01
+
+    # extended  ACL => ports
+    psh@host>   Enable-VMResourceMetering -VMName dc01
+    psh@host>   Add-VMNetworkAdapterExtendedAcl -VMName dc01 -Action Allow -Direction Inbound -LocalPort 12345 -Weight 10
+    psh@host>   Get-VMNetworkAdapterExtendedAcl -VMName dc01
+    psh@host>   Disable-VMResourceMetering -VMName dc01
+    psh@host>   Reset-VMResourceMetering -VMName dc01
+
++   HyperVM.Netzwerkkarte.Portspiegelung
+    +   kann immer in einer VM geändert werden
+    +   dadurch kann der Traffic gut überwacht werden
+    +   Bsp: WireShark oder MsNetmon
+
++   Aufgaben
+        1.VM per powershell
+        2.Infrastruktur per powershell hyperV,Client,Domain
+        3.NanoInfrastruktur
+            !NLA Dienst
+
++   Montag Unterricht2
+
++   Windows Server Editionen
+        Windows Server 2016 : Essentials, Standard, DataCenter
+        Microsoft Hyper-V Server 2016
+        Windows Storage Server 2016 Workgroup
+        Windows Storage Server 2016 Standard
+
+<<< Mo, 20.1.2020
+    Thema: Lokaler Speicher [PPT.21740B_03]
+
++   zum booten muss IDE-1
++   Virtuelle Empfangs seitige Skalierung ((vrss))
++   genestete Virtualisierung
+    => nicht im AMD
+    => ExposeVirtualizationExtensions auf dem HOST
++   lokaler Speicher
+
++   Eigenschaften von Datenträgern :
+    MBR vs GPT (>2TB)
+        +   MBR kann bis zu 2 TB beschreiben
+        +   GPT: Global Partition File Table > 2TB
+
++   Basisdatenträger : Grundkonfiguration
+    Dynam.Datenträger:
+        ohne Neustart des BS änderbar
+
++   Auswahl des FileSystems
+    FAT:kann wenig
+    NTFS: Metadaten, Überwachung & Journalling
+    ReFS: Abwärtskompatibel zu NTFS
+            Verbesserte Datenüberprüfung
+
++   Auswahl des Datenträgertyp
+    EIDE - SATA - SCSI - SAS - SSD
+
++   SCSI Adapater haben SCSI-Festplatten verbunden
+    SAS = Serial Attached SCSI
+
++   RAID-0 : Stripset ohne Parität und keine Spiegelung
+    RAID-1 : gespiegelter Datenträger -
+            Schreibleistung reduziert sich zu 2%
+            Lesegeschwindikeit erhöht sich aber
+    paritätsbildende RAIDs Bsp: RAID-5:
+            5x200GB => 800GB + Paritätssicherung
+            "ich verliere 1 Festplatte"
+            Ich kann aber jede beliebige Festplatte wieder rekonstruktieren
+    RAID-6 : wie RAID-5 aber es werden 2 Paritäten gesichert -
+            also 2 Festplatten rekonstruiert werden
+
++   RAID nimmt die kleinste gemeinsame Festplattengröße
+
++   Aufgabe
+    +   LON-DC und LON-SRV1 starten
+    +   SRV1>diskpart
+    +   Partition vs Volume
+        Partition   : ist ein physischer Bereich auf einem Datenträger
+        Volume      : ist ein log.Bereich, der auf mehreren Datenträger sein können
+
++   Volumetypes:
+        +   einfach
+        +   übergreifend "spanned"
+        +   stripset
+        +   gespiegelt
+        +   RAID-5
+
++   powershell Verwalten von disks
+        psh>Get-Disk
+        psh>Get-Volume
+        psh>Initialize-Disk
+        psh>Clear-Disk
+        psh>Format-Volume
+
++   vmLON-SRV1 mit RAID Festplatten mit PowerShell und diskpar erstellen
+
+    svr1>diskpart
+    diskpart<   Datenträger|Status|Größe|Frei|Dyn|GPT
+
+    #   1.test volume "Y"
+    diskpart>list disk
+    diskpart>select disk 2      # 0,1 ist schon belegt
+    diskpart>online disk
+    diskpart>convert dynamic <<< Fehler
+    diskpart>attributes disk clear readonly
+    diskpart>detail disk
+    diskpart>convert dynamic        # dynamisch, kein BASIS Datenträger
+    diskpart>create volume simple size=1000
+        # <simple>:1 Datenträger
+        # <raid>...
+    diskpart>list volume
+    diskpart>select volume 4        # explizit das neue Volume wählen
+    diskpart>format quick fs=ntfs
+    diskpart>assign letter "y"      # Laufwerksbuchstaben zuweisen
+
+    #   2.tes volume "Z"
+    diskpart>select disk 3
+    diskpart>online disk
+    diskpart>attributes disk clear readonly
+    diskpart>convert dynamic
+    diskpart>create volume simple size=1000
+    diskpart>assign letter "z"
+
+    #   RAID erstellen
+    diskpart>create volume mirror disk = 2,3        # oder Parameter RAI
+    diskpart>select volume 6
+    diskpart>list volume
+    diskpart>detail volume
+
++   ein dynamischer Datenträger hat erweiterte Speicherfeatures
+
++   diskpart script dateien vewrwenden im vmLON-SRV1
+    cmd>cd Dokumente\cmd    # hierher kopieren
+    cmd>diskpart /s .\p04_Diskpart.cmd
+
++   vmLON-SRV1 mit RAID Festplatten mit GUI.Datenträgerverwaltung
+    +   manuell in der GUI 4,5,6 "online" schalten
+    +   dann alle zusammen Datenträgerinitialisierung
+        - wir nehmen nur MBR, nicht GPT
+        - NTFS"
+    +   müssen wir auch hier den Schreibschutz entfernen
+    +   "Neues gespiegeltes Volume"
+    +   bei es lässt sich kein OS booten
+
++   SwRaid vs HwRaid
+    +   HwRaid erfordert einen HW-Controller
+    +   HwRaid verwendet Info auf der Platte
+    +   SwRaid wird durch das OS durchgeführt => kostet viel Zeit
+    +   SwRaid => IOPs langsam
+        => ist das OS beschädigt, kein RAID mehr
+    +   SwRaid in der Praxis bitte nicht verwenden
+    +   SwRaid kann nicht booten, denn der Treiber für die RAID's
+        müssen geladen werden
+
++   vmLON-SRV1RAID Festplatten erstellen mit GUI.WindowsServerManager2016
+    +   manuell mit neuer GUI erstellen
+    +   RAIDs sind im Speicherpool
+    +   RAID-0,1,5 geht
+
++   bei "RAID" ist Grundlage der Datenträger, bei "Volume" ist Grundlage des Fs
+
++   ReFS (Resilient File System; deutsch Robustes Dateisystem)
+    ist ein Dateisystem von Microsoft.
+    Es wurde mit den Betriebssystemen Windows 8 und
+    Windows Server 2012 eingeführt.
+    => https://www.giga.de/downloads/windows-server-2012/specials/was-ist-refs-was-sind-die-vorteile-nachteile-des-dateisystems/
+
++   NTFS vs ReFs
+
++   Mit "fsutil" ein ReFs formatieren in vmLON-SRV1
+
+    psh>get-volume
+    psh>fsutil      # Datenträger anzeigen und auslesen
+    psh>fsutil fsinfo ntfsinfo f:
+    psh>fsutil fsinfo volumeinfo f:
+    psh>Format-Volume -DriveLetter F -FileSystem ReFS
+
++   Cluster ist hier Zusammenschluss von mehreren Sektoren
+    Anm: virtuelle Sektorsize sollte mit der physischen übereinstimmen
+
++   Anm: Kopiere ich von ComputerA auf ServerB, wird die Last auf ComputerA
+        gefordert
+    => ODX-kompatibler Speicher
+    => ReFs kann blockbasierte Clone-Vorgänge durchführen
+    => Zuordnungsdatei in der GPT wird schnell geschrieben
+    => der Client musste (früher) die Copy Aktion durchführen, selbst dann,
+        wenn der physische Speicher im Netzwerk sich befindet
+
+<<< TAG:Di, 21.1.2020
+
++   Anm: ReFs kann nur vergrößert werden,
+    nicht verkleinert werden. => Fehlermeldung Datenträgerverwaltung
+
++   Eine virtuelle Maschine ist eine Datei auf dem pyhischen Host
+    Genestete Virtuelle Maschinen sind Speicherbereiche in einer Datei
+
++   Datenträger erstellen...
+
+    vmLON-SRV1>New-VHD -Path C:\Testdisk.vhdx -Dynamic -SizeBytes 20GB
+    <<< Fehler: Rolle HyperV nicht vorhanden
+
+    *   nur bei Herrn Hartmann
+        HOST>New-VHD -Path C:\Testdisk.vhdx -Dynamic -SizeBytes 20GB
+        HOST>Get-Disk
+        HOST>Initialize-Disk 6
+        HOST>New-Partition -DiskNumber 6
+        HOST>Format-Volume -DriveLetter I | -FileSystem NTFS
+
+    +   VHD:="Virtual-Hard-Disk"-Format
+    +   shared-VHDX => mehrere VM mit dem gleichen Storage ausstatten
+    +   differenzierende Festplatte
+    +   man kann durch diese Festplatte einen verschlüsselten Container
+        aufbauen
+
++   NAS
+    Network Attached Storage (NAS, englisch für netzgebundener Speicher)
+    bezeichnet einfach zu verwaltende Dateiserver.
+    Allgemein wird ein NAS eingesetzt,
+    um ohne hohen Aufwand unabhängige Speicherkapazität
+    in einem Rechnernetz bereitzustellen.
+    => gemappte Laufwerke verwenden
+    => verwendete Protokoll "SMB"
+    => Diese Funktionalität wird durch dateibasierte Netzwerkprotokolle wie SMB/CIFS
+        und NFS oder blockbasierte Netzwerkprotokolle wie iSCSI und FCoE bereitgestellt
+
++   SMB Server Message Block
+    oder Common Internet File System (CIFS)(UrVersion)
+    +   sperrt die gesamte Datei => schlecht bei DB
+    +   Freigabe als Netzwerkadresse
+
++   SMB
+    Es gibt drei SMB-Freigabeprofile:
+        +   Schnell
+        +   Erweitert
+        +   Anwendungen
+
++   Windows PowerShell-Cmdlets für die Verwaltung von SMB-Freigaben:
+        New-SmbShare
+        Set-SmbShare
+        Remove-SmbShare
+        Get-SmbShare
+        Get-SmbSession
+        Get-SmbOpenFile
+        Set-SmbBandwidthLimit
++   iSCSI vs FibreChannel HBA
+    iSCSI (internet Small Computer System Interface)
+    Rollen:
+        +   initiator:  Speicher-Anforderer
+        +   target:     Speicher-Bereitsteller  <Ziel-Server>
+    + HW wird als lokaler Datenträger angezeigt
+
++   vmLON-DC1 soll ein Ziel-Server sein     # auch vmLON-SRV1 sein
+
++   NAS ist Speicher, der mit einem dedizierten Speichergerät
+    verbunden und über Netzwerkfreigaben aufrufbar ist.
+
++   iSCSI.Speicher wird über "Ziele" bereitsgestellt
+    iSCSI Disk bekommt eine LUN - ID 0
+            logical unit number "0"
+    Sie kann mit dem WinServer.Rolle hochgesetzt werden
+
++   iSCSI.Identifizierungsmethoden
+    + DNS, IpAdresse,...
+    +   vmLON-DC1 172.16.0.21
+
++   vmLON-DC1
+    +   Zielserver
+    +   ServerManager|Datei&Speicherdienste|iSCSI
+    +   Datei & Speicherdienste
+    +   erst Virtuellen iSCSI Datenträger erstellen
+    +   Assistent f. neue virt.Disk
+    +   Identifizierungsmethoden
+
++   vmLON-SRV1
+        172.16.0.21
++   vmLON-SRV2
+        172.16.0.22
+
++   iSCSI Scenarien Server:Initiator
+        1:1
+        1:n
+        n:1 : geht nicht
+
++   Der iSCSI-Zielserver:
+    +   Steht in Windows Server 2016 als Rollendienst zur Verfügung
+    +   Stellt folgende Funktionen bereit:
+            - Netzwerkstart oder Start ohne Datenträger
+            - Serveranwendungsspeicher
+            - Heterogener Speicher
+            - Laborumgebungen
+    +   Weist folgende Features auf:
+            - Authentifizierung
+            - Abfrageinitiatorcomputer für ID
+            - Virtuelle Festplatten (VHDs)
+            - Skalierbarkeit
+            - Verwaltbarkeit
+
++   Der iSCSI-Initiator:
+    +   Wird als Dienst im Betriebssystem ausgeführt
+    +   Wird in Windows Vista und Windows Server 2008
+        sowie neueren Betriebssystemen standardmäßig installiert
+    +   Muss lediglich gestartet und so eingerichtet werden,
+        dass sich der Computer mit dem iSCSI-Ziel verbindet
+
++   Es sollten Speichernetzwerke von Webnetzwerken getrennt werden
+
++   londonDC1hat bereits 3 Netzwerke
+        172.16.0.10,
+        10.100.100.3
+        10.200.100.3
++   Server1
+        10.100.100.2
+        10.200.100.2
++   Server2
+        10.100.100.4
+
++   iSCSI Verbindung
+    1) vmDC1
+        +   vmDC1:   Rolle iSCSI Zielserver installieren
+        +   vmDC1:   Speicherort iSCSIDisk1 auf C festelegen
+        +           Größe 5 GB
+        +   iSCSI-Ziel := LON-SRV1
+        +   vmDC1:  Zugriffsserver IP-Addr: 172.16.0.21
+                => C:\iSCSIVirtualDisk1.vhdx
+        +   VMDC1:  LUN==:0 LUN ist 0
+    2) vmSRV1
+        +   iSCSI Initiator starten
+        +   => Dienst:=Microsoft ISCI-Initiator-Dienst
+        +   Initiatorname ist iqn.....adtatum.com
+        +   Ziel: "lon-dc1"
+        +   Datenträgerverwaltung : jetzt neue Festplatte 5 GB
+    3) vmDC1
+        +   neue Festplatte
+        +   iSCSI-Ziel := LON-SRV2
+            Zugriffsserver IP-Addr: 172.16.0.22
+                => C:\iSCSIVirtualDisk2.vhdx
+        +   iSCSI-Ziel := LON-SRV3-MULTI
+    4) vmSRV1 & vmSRV2
+        +   neues Feature MultiPfad E/A
+        +   => Eigenschaften von MPIO nach dem REBOOT
+        +   CheckBox.UnterstützungiSCSI:="ON" => reboot
+        +   Zielportal ermitteln 10.100.100.2 & 10.200.100.2 ...
+        +   EigenschafteniSCSIInitiator.Ziele.Sitzungen 2x HexCode
+
++   Command:
+    New-VHD -Path C:\Testdisk.vhdx -Dynamic -SizeBytes 20GB
+
++   MPIO
+    This reference provides cmdlet descriptions and syntax for all
+    Multipath I/O (MPIO)-specific cmdlets.
+    MPIO wurde für die Kommunikation eines iSCSI- oder
+    Fibre-Channel-Initiators mit einem Target konzipiert.
+    Daher ist es auch in der Lage, die I/O-Anforderungen einer einzelnen Applikation
+    auf mehrere Pfade zu verteilen.
+    MPIO arbeitet protokollunabhängig und lässt sich auch mit Serial Attached SCSI (SAS) nutzen,
+    etwa um ein Multiport-JBOD anzubinden.
+
++   MCS.RoundRobin
+    iSCSI Datenträger verteilen sich auf Netzwerkkarten -
+    Traffic wird verteilt [pic:mem-54]
+    => beim kopieren verteilt sich der Traffic auf 2 Netzwerken
+
+
+<<< TAG:Mi, 22.1.2020
+    Thema: Implementieren von Speicherplätzen und Datendeduplizierung
+
++   Verwenden Sie Speicherplätze zu folgenden Zwecken:
+    Physische Datenträger beliebiger Typen und Größe
+        zu einem Speicherpool hinzufügen
+    Hochverfügbare virtuelle Datenträger aus dem Pool erstellen.
+
+=*= Speicherpool
+
++   Speicherpool fasst Speicher zusammen
+
++   Für die Erstellung eines virtuellen Datenträgers benötigen Sie:
+        +   Mindestens einen physischen Datenträger
+        +   Einen Speicherpool, der die Datenträger enthält
+        +   Virtuelle Datenträger (oder Speicherplätze),
+             die mit Datenträgern aus dem Speicherpool erstellt werden
+        +   Laufwerke, die auf virtuellen Laufwerken basieren
+
++   RAID0: stripe
+    RAID1: mirror   - auf 2 Datenträger
+    RAID5: parität
+
++   Speicheranordnung : einfach, Zwei-Drei-Wege-Spiegelung, Parität
+    Sektorgröße : 512, 4KB
+    Laufwerkszuordnung: Datenspeicher, manuell, Hot-Spare
+
++   Inhalt eines Laufwerks geht verloren,
+    sobald dieser in einen Speicherpool eingeführt wird.
+    => nicht so bei RAID
+
++   Sektorsize muss identisch sein ,
+    auch logische Sektorsize sollte pyhsische Sektorsize sein
+
++   Fibre Channel und iSCSI werden nicht unterstützt
+
++   Auf den Ausfall mehrerer Datenträger eingestellt
+
++   Es wird nicht festgelegt, wo der Speicher angelegt ,
+        Datenträger x eventuell größer Datenträger y
+
+
++   Get-StoragePool
+    Repair-VirtualDisk
+    Get-PhysicalDisk Where...
+    Reset-PhysicalDisk
+    Get-VirtualDisk
+    Get-PhysicalDisk
+    Optimize-Volume
+    psh>Get-VirtualDisk | Format-List
+
+
+=*= Speicherpool:Datendeduplizierung
+
++   Datendeduplizierung:
+    Erkennt und entfernt Datenduplikate,
+    ohne die Integrität oder Genauigkeit der Daten zu beeinträchtigen.
+    Ziel ist, mehr Daten auf geringerem Speicherplatz zu speichern.
+
++   Beim Aktivieren der Datendeduplizierung auf einem Volume
+    wird eine Hintergrundaufgabe mit niedriger Priorität ausgeführt.
+    Diese: Unterteilt Daten in kleine Blöcke unterschiedlicher Größe
+        Erkennt doppelte Blöcke
+    Ersetzt redundante Kopien durch eine Referenz
+    Komprimiert Datenblöcke
+
++   Datendeduplizierung kann in der Praxis bis zu 30% einbringen
++   Das Depluzieren ist das entfernen von doppelten Datenblöcken
+
++   Datendeduplizierung überwachen durch:
+        Windows PowerShell-Cmdlets
+        Ereignisanzeige-Protokolle
+        Leistungsüberwachungsdaten
+        Datei-Explorer
+
++   Einer der Vorteile, den die Datendeduplizierung in der Regel bietet,
+    besteht in schnelleren Sicherungs- und Wiederherstellungsvorgängen.
+
+=>  Gut bei der Standard-Windows-Installation, Treibern...
+=>  bei Backup-Funktionen
+=>  bei Benutzerdaten, nicht bei Systemdaten?!
+
+=*= Anlegen eines Storage Pools....
+
++   vmLON-SRV1 mit :
+    ServerManager|Datei&Speicherdienste|Volumes|Speichrpools
+
++   AnM: Zuordnung "HotSpare" sollte nicht verwendet werden
+
++   Datenträger fehlen in der Übersicht
+        logisches Bild <> physisches Bild
+
++   Problem : doppelte uniqId's
+    psh>Get-PhysicalDisk
+    psh>Get-PhysicalDisk msft* | Format-List *
+    psh>Get-PhysicalDisk msft* | Format-Table uniqueid,physi*,deviceId -AutoSize
+    Problem: 2 Datenträger haben gleiche uniqId'=> Dadurch nicht für den Datenpool verwendbar
+    # die Festplatten des SRV1 sind wahrscheinlich nur mit psh copy erstellt worden
+
++   Wir müssen die Festplatten mit HyperV Manager entfernen
+
++   Speicherpool arbeitet als virtueller Datenträger?
+
++   StorageTearing
+    Daten, die ich sehr häufig brauche, werde auf den schnellen Speicher gespeichert. =
+    => Hot-Data-Bereich(SSD)
+    Die anderen Daten wandern in den Cold-Data-Bereich, wenn Zeit da ist.
+
++   EnclosureAwareness => auf getrennten Speichern speichern => JBODs
+
++   Speicheranordnung
+        Simple : RAID-0 => stripe
+        Mirror : Datenträger 2 oder (5 Datenträger = 3 Wege-Spiegelung)
+        Parität: RAID-5/6 => 5 Datenträger=>RAID-5, ab 7 Datenträger RAID-6
+
++   dünne Bereitsstellung "thin provisioning"
+        => einen Datenträger bereitstellen, der über die physisische Größe liegt
+        => maximal 64TB
+
+        +   die Datenträgerverwelatung zeugt nur 1 DT an
+
++   vmSrv1:
+    psh>Get-StoragePool
+    psh>Get-StoragePool Speicherpool1 | Format-List
+        #   PhysicalDisk<->Volume
+        #   VirtualDisk<->StoragePool
+    psh<...
+        SupportedProvisioningTypes        : {Thin, Fixed}
+        ThinProvisioningAlertThresholds   : {70}
+        Version                           : Windows Server 2016
+        ResiliencySettingNameDefault      : Mirror
++   psh>Get-VirtualDisk
+    <<< Access                            : Read/Write
+        NumberOfAvailableCopies           :
+        NumberOfColumns                   : 5  * siehe RAID
+        NumberOfDataCopies                : 1
+        NumberOfGroups                    : 1
+        OperationalStatus                 : OK
+    #   alle VDisks werden benutzt
+
++   psh>New-VirtualDisk -StoragePoolFriendlyName SpeicherPool1 -FriendlyName Data -Size 2GB
+<   FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
+    ------------ --------------------- ----------------- ------------ -------------- ----
+    Data         Mirror                OK                Healthy      False          2 GB
+
++   Vorteil der Speicherpools
+    Platten austauschen oder dazufügen geschieht automatisch,
+        alles ohne den Betrieb zu unterbrechen
+
++   Datenträger kaputt machen und den Ausfall prüfen
+    +   zuerst Disk retire
+    +   danach remove
+    psh>Get-PhysicalDisk -FriendlyName msft* | Format-Table uniqueid, *status*,usage,canpool
+    psh>Set-PhysicalDisk -UniqueId 60022480330FF1B1110F37BA38113DBB -Usage Retired
+    psh>$x = Get-PhysicalDisk -UniqueId 60022480330FF1B1110F37BA38113DBB
+    psh>Remove-PhysicalDisk -PhysicalDisks $x -StoragePoolFriendlyName Speicherpool1
+
++   Nach der Entfernung der PhysicalDisk....
+    psh>$x = Get-PhysicalDisk -CanPool $true
+
+=*= Tiered Storage <gemischter Speicher>
+
+    HOT und COLD Data-Bereich Speicherebene
++   psh>Get-StoragePool *tier* | Get-PhysicalDisk
+    psh>Set-PhysicalDisk -FriendlyName PhysicalDisk1 -MediaType SSD
+    psh>Set-PhysicalDisk -FriendlyName PhysicalDisk1 -MediaType HDD
+    #   wir verwenden "Simple", nicht "Mirror"
+
++   "Tiered Storage" nur anwendbar bei
+
++   Datendeduplizierung geht auf dem Laufwerk
+    +   mindesten 32KB?
+    +   Alter in Tage 3
+
++   Datendeduplizierung sofort, und nicht nach Zeitplan anstossem
+    psh>Get-DedupStatus | Format-List
+    psh>Start-DedupJob D: -Type Optimization -Memory 50
+    psh>Start-DedupJob D: -Type Optimization -Memory 50
+    psh>Get-DedupJob
+    psh>Get-DedupStatus | Format-List
+
++   Datendeduplizierung
+    => auch auf StoragePool und TieredStorage  durchführbar
+    => jetzt aber Backup muss durchgefüht werden
+
++   weitere Kommandos
+    psh>Get-DedupVolume     #   welche Volumes unterstützen DeDup?
+    psh>Set-DedupSchedule   #   Dedup starten
+    psh>ddpeval.exe f:      #   Tool für die Auswertung der Einsparungen
+
+<<< Fr, 24.1.2020
+
++   Prüfpunkttypen
+    Standardprüfpunkt   :
+        im aktuellen Zustand, mit aktueller Rolle
+    Produktionsprüfpunkt:
+        GB wurde geleert,im ausgeschalteten Zustand
+
++   Ein Prüfpunkttyp kann nicht mehr geändert werden.
+    Die Prüfpunkte stehen einer Kette !
+
++   Gastdienste dazu da,
+    Daten vom HOST in die VM zu kopieren; nicht anders herum
+
++   Hot-Spare
+    Hot-Spare sind redundante Systemkomponenten,
+    die als Ersatz (RU) in Computersystemen fest eingebaut sind,
+    und auf die im Falle eines Fehlers durch Auto-Swap vollautomatisch
+    umgestellt wird.
+    Diese Hot-Spare-Komponenten werden auch Hot-Standby-Komponenten genannt.
+    Solche Hot-Standby-Komponenten können beispielsweise Festplattenlaufwerke,
+    Bandlaufwerke oder Controller sein.[1]
+    Eine Hot-Spare-Festplatte ist eine in einem System in
+    Reserve (spare) gehaltene (normalerweise nicht verwendete) Festplatte.
+
++   Pass-Through
+    Der Einsatz von SCSI-Pass-Through-Festplatten
+    bietet die Möglichkeit, eine durch Hyper-V virtualisierte
+    Maschine mit physikalischem Storage zu verbinden.
+    Das steht im Gegensatz zur Verwendung von virtuellen Festplatten.
+    Allerdings gibt es einige Beschränkungen bei der Benutzung von
+    Pass-Through-Festplatten, über die Sie sich im Klaren sein sollten.
+
++   HBA "Host-Bus-Adapter"
+    Ein Host-Bus-Adapter (HBA) –
+    auch Hostadapter genannt – ist eine Hardwareschnittstelle,
+    die ein Computersystem mit internen oder externen Geräten
+    wie beispielsweise Speicher- oder Netzwerkgeräten verbindet.
+    Er erweitert die Fähigkeiten des Computers um die
+    Hardware-Kompatibilität zu einem bestimmten Bus-System.
+    Der HBA ist seinerseits an einem internen Bus des Computers
+    angeschlossen (z.B. dem PCI-Bus) und ermöglicht so
+    den Austausch von Daten mit Geräten oder anderen Computern
+    über mehrere Bus-Systeme hinweg.
+    Der Begriff wird vorrangig im Zusammenhang mit den Bus-Systemen
+    SCSI, ATA (IDE), SATA und Fibre Channel verwendet.
+    Im Prinzip ist aber auch eine Netzwerkkarte ein HBA.
+
++   NIC Teaming
+    Unter Teaming versteht man in der Informatik
+    eine logische Netzwerkkarte (NIC),
+    die mehrere physische Netzwerkkarten zu einer Gruppe zusammenfasst
+    und so eine Redundanz von Netzwerkkarten erlaubt.
+    Bei Ausfall einer physischen Netzwerkkarte ist die Verbindung
+    nach einer Unterbrechung ohne größere Verzögerung sofort wieder verfügbar.
+    Es fällt im Schnitt höchstens ein Ping ab, meistens wird aber nichts bemerkt.
+    Diese logische Netzwerkkarte besitzt eine IP-Adresse und DHCP-Konfiguration.
+    Es wird quasi eine virtuelle MAC-Adresse generiert,
+    mit der dieser logische Adapter eindeutig zu erkennen ist.
+    Teaming wird auch "Fehlertolerante Einrichtung" genannt.
+
++   Spoofing
+    Spoofing (englisch für Manipulation, Verschleierung oder Vortäuschung)
+    nennt man in der Informationstechnik verschiedene Täuschungsmethoden
+    in Computernetzwerken zur Verschleierung der eigenen Identität.
+    Personen werden in diesem Zusammenhang auch gelegentlich als „Spoofer“ bezeichnet.
+    Früher stand Spoofing ausschließlich für den Versuch des Angreifers,
+    IP-Pakete so zu fälschen, dass sie die Absenderadresse eines anderen
+    (manchmal vertrauenswürdigen) Hosts trugen.
+    Später wurde diese Methode jedoch auch auf andere Datenpakete angewendet.
+    Heutzutage umfasst Spoofing alle Methoden,
+    mit denen sich Authentifizierungs- und Identifikationsverfahren untergraben lassen,
+    welche auf der Verwendung vertrauenswürdiger Adressen
+    oder Hostnamen in Netzwerkprotokollen beruhen.
+
++   QoS "Quality of Service" (QoS) oder Dienstgüte bezeichnet
+    die Güte eines Kommunikationsdienstes aus der Sicht der Anwender.
+    Das heißt, wie stark die Güte des Dienstes mit deren Anforderungen übereinstimmt.
+    Formal ist QoS eine Menge von Qualitätsanforderungen an das
+    gemeinsame Verhalten beziehungsweise Zusammenspiel von mehreren Objekten.
+    =   In IP-Netzen wird der Einfluss auf die QoS üblicherweise mit
+        Hilfe der folgenden Parameter erfasst:
+    +   Latenzzeit  : die Verzögerung der Ende-zu-Ende-Übertragung
+    +   Jitter      : die Abweichung der Latenzzeit von ihrem Mittelwert
+    +   Paketverlustrate
+                    : die Wahrscheinlichkeit, dass einzelne IP-Pakete
+                        bei der Übertragung verloren gehen
+                        (oder – bei Echtzeitdiensten – ihr Ziel zu spät erreichen)
+    +   Durchsatz   : die pro Zeiteinheit im Mittel übertragene Datenmenge
+
++   SLA "Service Level Agreement"
+    =>  MSN-07
+
++   NLB "Network Load Balancer"
+    =>  MSN-07
+
++   CSV="ClusterSharedVolumes"
+    =>  MSN-07
+
++   WSU="Windows Server Update Services"
+    =>  MSN-12
+
++   Powershell DSC  =Desired State Configuration (DSC):
+    =>  MSN-12
+
++   storage tiering := Speicherebene
++   resilenz := psychische Widerstandskraft;
+    Fähigkeit, schwierige Lebenssituationen ohne anhaltende Beeinträchtigung zu überstehen
+
+
+<<< Docker , 27.01.2020
+https://hub.docker.com/
+
+
++   wir arbeiten nicht mit FAT clients,
+        sondern mit Ressourcen , eine Applikation
+
++   Container vs. VM
++   Container are isolated, but share OS
++   Container Instanz kann sehr schnell aufgebaut werden
+    bsp: Amazon
+
+
++   Festplatte vorlage Server, reales Internet
+
++   Spoofing anschalten
+HOST>Set-VMProcessor -VMName ContainerHost -ExposeVirtualizationExtensions $true
+HOST>Get-VMNetworkAdapter -VMName ContainerHost | Set-VMNetworkAdapter -MacAddressSpoofing 0
+
++   Vm-Proxy testen
+vm>netsh winhttp show proxy         #   testen kein Proxy
+
++   Container installieren in der VM-Container
+vm>Install-WindowsFeature containers
+vm>Install-PackageProvider -Name NuGet -Force
+vm>Install-Module -Name DockerMsftProvider -Repository psgallery -Force
+vm>Install-Package -Name Docker -ProviderName DockerMsftProvider
+vm>Restart-Computer
+vm>Get-Service docker
+vm>docker info                  #   < json-Datei
+vm>docker version               #   < kleine Info
+vm>docker search microsoft      #   < public packages
+vm>docker pull microsoft/windowsservercore:ltsc2016 # Gross/Klein!
+vm>docker images        # welche Images ?
+vm>docker pull microsoft/iis:windowsservercore      # welche Images ?
+
+#   REM:   Der IIS basisert auf dem WindowServerCore
+vm>docker run       # neuen Container starten
+vm>docker run -d -it
+        # -d: im Hintergrund starten
+        # -i: interaktiv
+        # -t: Terminal
+        # -p: netzwerk-technisch => auf einem Port den Datentransfer bereitstellen
+                Bsp: Port:80
+docker.cmd>hostname <
+
++   Docker exit
+docker>exit
+
+#   Docker unterbrechen
+docker><STRG><P>+<Q>
+
+# Container verlassen: STRG+PQ
+
++   Container erstellen:
+    docker run -it microsoft/windowsservercore cmd
+    -d sorgt dafür, dass der Container im Hintergrund weiterläuft (Daemonmode).
+    -i sorgt dafür, dass der Container interaktiv ist. Das bedeutet, wir können während der Laufzeit damit interagieren
+    -t bindet unsere Ein- und Ausgaben an diesen interaktiven Container
+    -p bindet Ports von unserem Host an den Container.
+    -v linkt ein Verzeichnis auf unserem Hostrechner zu einem Verzeichnis innerhalb des Containers.
+    –name gibt unserem Container einen Namen.
+
+#   Docker exit
+docker>exit
+
+#   Alle Docker betrachten
+psh>docker ps -a
+
++   Docker Port Forwarding
+docker run -d -p 80:80 microsoft/iis:windowsservercore
+
++   WebSeite betrachten auf dem Host
+    +   http://192.168.178.29/
+    oder direkt c:\inetpub\wwwroot\iisstart.htm
+
++   Der Docker wird in der VM gespeichert in
+        ::  C:\Programme\Docker
+    seine Konfiguration in:
+        ::  C:\ProgramData\docker\config\key.json
+                            =
++   docker login
+    verbinden zum eignen Container
+    >docker start <adr>
+    >docker stop <dr>
+    >docker login <hub>
+
+
+<<< Di, 28.01.2020 Hochverfügbarkeit
+
++   Testprüfung am Fr,7.2
+    Antwort muss komplett richtig sein, bei Multiple Choice
+    - keine Teilpunkte
+    Soll: 80%
+
++   Genestete Virtualisierung ist gesperrt
++   Private Network => Domäne
+
++   Übungsaufgabe
+    +   vm erstellen
+        vmNVHost1   :   nestedVM, privateNetwork, iSCSI-Initiator:nested, inkl. vmvmNanoServer (nested)
+        vmNVHost2   :   nestedVM, privateNetwork, iSCSI-Initiator:nested,
+        vmISCSI     :   Rolle:iSCSI-Zielserver:Ziel1, 172.16.0.201,172.16.0.202
+    +
+
+Microsoft-Hyper-VMicrosoft-Hyper-V
++   Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All"
+
+
+<<< Mi, 29.01.2020
+
++   Volumenschattenkopie (VSS)
+
++   Hohe Verfügbarkeit auf Basis der Live-Migration
+
++   HyperV|Livemigration|Erweiterte Features
+    Authorizierungsprotkolle
+        a. Security Support Provider (CredSSP)
+        b. Kerberos
+
++   CredSSP
+    manuell, Ausgangshost und Zielhost;
+    Tunnel oft erforderlich, damit gleiches Ticket verwendet wird
+
++   Kerberos erstellt Ticket aus; Anm: Rechte hängen am Object
+    "Ticket granted Ticket" wird bei jedem Objekt geprüft
+
++   Ticket
+
++   Migration ist ein "Verschieben" im lebenden Zustand -
+    beim Kopieren darf kein aktiver Zustand bestehen
+
+=*= Migration =================================================================
+
++   HyperV Replikation: RechnerA nach B
+
++   Vorführung1:mit Remote Desktop (CredSSP/Kerbos)
+    +   NvH1 und NvH2 starten
+    +   bei beiden vm LiveMigration aktivieren
+    +   dann Remotedesktop bei beiden
+    +   von NVH2 eine EDP-Sitzung auf NvH1 ausführen
+    +   NVH2.NVH1.HyM starten
+    +   dort die vmNano "verschieben" nach NVH2
+
++   Vorführung2:mit DC1.DA
+    +   NvH1 und NvH2 starten
+    +   im DomainServer AD Rechte Setzen
+    +   Dienste "CIF" und "Microsoft Virtual System Migration Service"
+    +   NICHT nur Kerber wählen
+    +   löschen alter Rechte; klist purge -li 0x3e7
+    +   in vmNanoServer .... "verschieben" wählen
+    +   die vmNanoServer wird live nach NVH1 zurückgeschoben
+
+=*= Replikation ===============================================================
+
++   Get-NetFirewallRule -DisplayGroup hyper-v-repl*
++   Invoke-Command -ComputerName
+            NVHost1-own,NVHost2-own -ScriptBlock
+            { Enable-NetFirewallRule Hyper-V-Repl* }
++   grundsätzlich zeitversetzte Replikation
++   es können 2 virtuelle Maschinen gestarten
+
++   Failover
+    +   geplantes Failover
+    +   macht erst bei einem Fehler einen Sinn
+
++   Replikation.GeplantesFailover...
++   bei Failover muss die Quelle ausgeschaltet werden
+
++   Replikation sichert nur das Delta
+
+
+>>> Ende.
+
+<<< Do, 30.01.2020
+
++   Cluster ist eine Rolle
++   3 physische Netzwerkinstanzen => Thema YouTube
+
+=   Failover
+    Ein Failover-Cluster oder Aktiv/Passiv-Cluster ist ein Verbund
+    von mindestens zwei Computern (Cluster),
+    in dem bei einem Ausfall eines Rechners ein zweiter Rechner
+    dessen Aufgaben übernimmt.
+    Das aktive System ist das Primärsystem,
+    die wartenden passiven Systeme sind die Backup- oder Standby-Systeme.
+
+P08-F35:
++   Netzwerktyp:
+Öffentliches
+
++   Einzel-Domänen-Cluster
+    Arbeitsgruppen-Cluster
+
++   Windows Server 2016 führt verschiedene Clustertypen ein.
+    Welchen davon Sie benutzen, hängt von Szenario der Domänenmitgliedschaft ab:
+    +   Einzeldomänen-Cluster
+    +   Arbeitsgruppen-Cluster
+    +   Aus mehreren Domänen bestehende Cluster
+    +   Arbeitsgruppen- und Domänen-Cluster
+
++   Quorum: Stimmgewalt eines Clusters
+        Grenze bei exakt 50% - Problem 4 Rechner die 50% Regel
+        Am Leben: 50+x%
+
++   Zeugen-Datentäger erstellt das Ungleichgewicht!
+
++   Konfigurationsassstent oder
+    psh>Test-Cluster
+
++   Sie können mithilfe des Cmdlets Get-ClusterLog die Datei Cluster.log
+    für die Problembehandlung generieren.
+    Sie finden diese Datei unter C:\Windows\Cluster\Reports
+    (Get-Cluster).SameSubnetThreshold=10
+
++   Speicherreplikation
+    +   synchrone
+    +   asynchrone
+
++   CAU: Cluster Aware Updating
+
++   Dc1
+    Get-NetAdapater
+    und Streched-Cluster
+    >restart-service NLAsvc -Force
+    >slmgr -rearm
+
++   Jede Rolle identisch
+
+Philipp Hartmann:</b>
+(11:43)
+Invoke-Command -ComputerName LON-SVR2,LON-SVR3 -Command
+{Install-WindowsFeature Failover-Clustering,RSAT-Clustering -IncludeAllSubFeature}
+
++   Server1: stellt 3 ISCSCI-Festplatten bereit
+    Ziele Server2 und Server3
+    Server1: 172.16.0.21
+    Server2: 172.16.0.22
+    Server3: 172.16.0.23
+
++   Invoke-Command -ComputerName LON-SVR2,LON-SVR3 -Command
+        {Install-WindowsFeature Failover-Clustering,RSAT-Clustering
+         -IncludeAllSubFeature}
+
++   ServerMananer|Failovercluser-Manager
+    +   HostServer der erste Server in Invoke-Command...
+
++   1 Cluster hat immer 3 Netzwerke
++   Eigenschaften Clusternetzwerk Kommunikationsdienstarten
+        a) Heartbeat,....
+
++   SAN   "Storage-Area-Network"
+    Als Storage-Area-Network (SAN) bzw. Speichernetzwerk
+    bezeichnet man im Bereich der Datenverarbeitung ein Netzwerk
+    zur Anbindung von Festplattensubsystemen (Disk-Array)
+    und Tape-Libraries an Server-Systeme.
+    Storage Area Networks sind für serielle,
+    kontinuierliche Hochgeschwindigkeitsübertragungen
+    großer Datenmengen konzipiert worden.
+    Sie basieren heute für hochverfügbare,
+    hochperformante Installationen auf der Implementierung
+    des Fibre-Channel-Standards,
+    bei KMU aus Kostenüberlegungen auch auf IP.
+
++   http://aclouda.com/install-and-configure-iscsi/
+
+<<< Fr, 31.01.2020
+
++   Hausaufgabe
+*** lernen 31.01.2020
+10  Hyper-V Netzwerk / NIC-Team / SET: 15,24,36,49,72,148,153,154,156,184,186,189,220,222,264,288,310,313,344,
+
++   NIC-Team  #
+
+
++   Psh Cluster Commands
+Get-Cluster cluster1 | Format-List
+psh>Get-Cluster cluster1 | Format-List *dynam*
+psh>$x=(Get-Cluster)
+psh>$x.DynamicQuorum=0          => OK
+psh>$x.WitnessDynamicWeight=0   => Fehler Zeuge ist immer dynamisch
+
++   Der Quorum-Zeuge ist nur dazu da, um eine 50:50 Situation zu vermeiden.
+
++   RSAT hat ClusterAwareUpdating
+
++   Replikation vs Storage Direct
+    a) Ausserhalb des Clusters
+
++   Replikationsbefehle
+
+    psh>mkdir c:\Temp * für Logfiles
+
+    psh>PS C:\Users\Administrator.ADATUM>
+        Test-SRTopology
+        -SourceComputerName LON-SRV1
+        -SourceVolumeName M:
+        -SourceLogVolumeName N:
+        -DestinationComputerName LON-SRV4
+        -DestinationVolumeName M:
+        -DestinationLogVolumeName N:
+        -DurationInMinutes 2
+        -ResultPath C:\Temp\
+
+<<< Fehler
+#   WARNUNG: WMI v2.0 konnte keine CIM-Sitzung für LON-SRV1 erstellen.
+#   Mögliche Ursachen:
+#   Sie haben einen falschen NetBIOS-Namen oder vollqualifizierten
+#   Domänennamen für den Zielcomputer angegeben.
+#   Sie haben eine IP-Adresse für den Zielserver angegeben.
+#   Es sind nur NetBIOS-Namen oder vollqualifizierte Domänennamen
+#   zulässig.
+#   Die Firewall des Zielcomputers blockiert den Zugriff auf PowerShell- oder WMI-Remoting.
+#   Sie sind als lokaler Benutzer auf dem Quellcomputer angemeldet.
+#   Sie müssen ein Domänenbenutzer sein.
+#   Bei der Remoteausführung des Test-SRTopology-Cmdlets von einem Verwaltungscomputer aus haben Sie keine
+#   CREDSSP-Anmeldeinformationen verwendet.
+#   Der Zielcomputer wird nicht ausgeführt oder ist über das Netzwerk nicht erreichbar.
+#   Auf dem Zielcomputer wird kein WMI-Dienst ausgeführt.
+#   WARNUNG: System.Exception
+#   WARNUNG:    bei Microsoft.FileServices.SR.Powershell.MIConnection.GetNamespace(String namespaceName, String computerName
+#      bei Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand.GetNetBiosName(String ComputerName)
+#      bei Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand.BeginProcessing()
+#   Test-SRTopology : WMI v2.0 konnte keine CIM-Sitzung für LON-SRV1 erstellen.
+#   Mögliche Ursachen:
+#   Sie haben einen falschen NetBIOS-Namen oder vollqualifizierten Domänennamen für den Zielcomputer angegeben.
+#   Sie haben eine IP-Adresse für den Zielserver angegeben. Es sind nur NetBIOS-Namen oder vollqualifizierte Domänennamen
+#   zulässig.
+#   Die Firewall des Zielcomputers blockiert den Zugriff auf PowerShell- oder WMI-Remoting.
+#   Sie sind als lokaler Benutzer auf dem Quellcomputer angemeldet. Sie müssen ein Domänenbenutzer sein.
+#   Bei der Remoteausführung des Test-SRTopology-Cmdlets von einem Verwaltungscomputer aus haben Sie keine
+#   CREDSSP-Anmeldeinformationen verwendet.
+#   Der Zielcomputer wird nicht ausgeführt oder ist über das Netzwerk nicht erreichbar.
+#   Auf dem Zielcomputer wird kein WMI-Dienst ausgeführt.
+#   In Zeile:1 Zeichen:1
+#   + Test-SRTopology -SourceComputerName LON-SRV1 -SourceVolumeName M: -So ...
+#   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#       + CategoryInfo          : InvalidArgument: (:) [Test-SRTopology], Exception
+#       + FullyQualifiedErrorId : TestSRTopologyFailure,Microsoft.FileServices.SR.Powershell.TestSRTopologyCommand
+
+
+    psh>New-SRPartnership
+            -SourceComputerName LON-SVR1
+            -SourceRGName RG01
+            -SourceVolumeName M:
+            -SourceLogVolumeName N:
+            -DestinationComputerName LON-SVR4
+            -DestinationRGName RG02
+            -DestinationVolumeName M:
+            -DestinationLogVolumeName N:
+
++   Replikation ist keine Cluster
+
++   Storage Spaces Direct
+
+
+<<< Sa, 01.02.2020
+
++   RDMA "Remote Direct Memory Access"
+    Remote Direct Memory Access (RDMA) ist eine Technologie,
+    mit der Computer in einem Netzwerk Daten im Hauptspeicher
+    ohne Beanspruchung von Prozessor, Cache oder Betriebssystem
+    des Computers austauschen können.
+
++   PowerShell Feature Desired State Configuration (DSC)
+    Configuration EnvironmentVariable_Path
+    {
+        param ()
+        Import-DscResource -ModuleName 'PSDscResources'
+        Node localhost
+        {
+            Environment CreatePathEnvironmentVariable
+            {
+                Name = 'TestPathEnvironmentVariable'
+                Value = 'TestValue'
+                Ensure = 'Present'
+                Path = $true
+                Target = @('Process', 'Machine')
+            }
+        }
+    }
+    EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
+
+    Configuration 21740DscConfiguration {
+
+        Node "LON-SVR1" {
+            WindowsFeature MyFeatureInstance {
+                Ensure = "Present"
+                Name =    "RSAT"
+            }
+            WindowsFeature My2ndFeatureInstance {
+                Ensure = "Present"
+                Name = "Bitlocker"
+            }
+        }
+    }
+
+
+<<< Mo, 03.02.2020
+
++   Thema: "Host-Cluster"
+    +   OS des Virtualisierungssystem
+    +   fast jedes OS sind Cluster-fähig
+
++   HOST
+        HyperV, FailOverClustering
+        wir brauchen 2 Festplatten
+        alle 3 Netzwerkkarten
+            Switch:private, ISCSI, Clusternetwerk
+        im HyperV nested private erstellen
+
++   Netzwerke ISCSI/Cluster
+        DNS nicht einstellen
+        DNS ist überflüssig
+
++   in der Vm
+            f_vm_feature "Hyper-V"
+            f_vm_feature "ISCI"
+            f_vm_feature "Failover-Clustering"
+
++   Überwachung einstellen
+
+<<< Di, 04.02.2020
+
++   CAU
+Cluster-Aware Updating is an automated feature that enables you to update servers
+in a failover cluster with little or no loss in availability during the update process. During an Updating Run, Cluster-Aware Updating transparently performs the following tasks:
+    Puts each node of the cluster into node maintenance mode.
+    Moves the clustered roles off the node.
+    Installs the updates and any dependent updates.
+    Performs a restart if necessary.
+    Brings the node out of maintenance mode.
+    Restores the clustered roles on the node.
+    Moves to update the next node.
+For many clustered roles in the cluster,
+the automatic update process triggers a planned failover.
+This can cause a transient service interruption for connected clients.
+However, in the case of continuously available workloads,
+such as Hyper-V with live migration or file server with SMB Transparent Failover, Cluster-Aware Updating can coordinate cluster updates with no impact to the service availability.
+
+=== Überwachung in einer genesteten VM
+
++   Überwachen von Cluster-Ereignissen
+    => die VM muss dem Cluster die Möglichkeit geben, dieses durchzuführen
++   Get-NetAdapater => zunächst den Namen des Et-Domänen Switch ermitteln
++   MAC Spoofing aktiveren => mit Externem Switch
++   Copy-VMFile => Daten in eine VM kopieren
+        C:\Users\User\VM\ISO
++   unsere VM haben keinen Kontakt nach aussen ins Internet
++   Gastdienste anschalten, dann geht Copy-VMFile
+    => die ISO in die VM kopieren
+
++   VM erstellen "ServerGUI"
++   VM in die Domäne bringen
++   nach dem Restart Set-NetFirewallRule...
+    => Freigabe in der genesteten VM
++   Wir möchten einen Dienst starten
+    => FOM-VM-Überwachung einstellen (Firewall-Regel ?)
+    => Druckerwarteschlange
++   Fehler-Ereignis erzeugen
+    psh>    Stop-Process SpoolSv #  3x
+    Nach dem 3.mal wird der Rechner restartet
+
+=== mein MOC2
+
++   domain controller
+IP-Konfiguration: 182.16.0.10
+Subnetz: 255.255.0.0
+
++   vm1
+vm1:182.16.10.1
+
+<<< Mi, 05.02.2020
+
++   "Hohe Verfügbarkeit" bedeutet "virtuelle Maschine" im Cluster
+
++   NLB nicht der Computer, sondern nur die Netzwerkkarte ist Teil des ClusterSharedVolumes
+
+
++   Packages
+    psh>Invoke-Command -Computername LON-SVR1,LON-SVR2 -command {Install-WindowsFeature NLB,RSAT-NLB}
+    Name "SVR" und nicht "SRV"
+
++   GetNetIPAddress
+    Get-NetIPAddress | where {$_.IPAddress -like "172.16.*"}
+    Get-Netadapter | Rename-NetAdapter -NewName "Private Network"
+
+
++   Einen NLB-Cluster erstellen
+    New-NlbCluster -InterfaceName "Private Network" -OperationMode Multicast -ClusterPrimaryIP 172.16.0.42 -ClusterName LON-NLB
+
+
++   Einen Knoten zum Cluster hinzufügen
+SVR1:Add-NlbClusterNode -InterfaceName "Private Network" -NewNodeName "LON-SVR2" -NewNodeInterface "Private Network"
+
++   1 Port kann nur 1x gemanaged werden
++   Portregel sins quantitativ nicht qualitativ :
+    Anfrage:X
+
++   Behandlungspriorität bezogen auf den Host 1-31
++   Port 80, 5678, 8080
+
++   IE PrivateBrowsing (ohne Chache)
+
++   Wir können über NLB verschieden Webseiten erreichen
+    m.h der Affinität
+    http://lon-nlb => Server1|Server2
+    http://lon-nlb:5678 => port
+    http://lon-nlb:8080 => Server mit höherer Priorität
+
++   nlb drainstop ==
+        Suspend-NlbClusterNode
+
+<<< Do, 06.02.2020
+
++   The Set-VMFirmware cmdlet sets the firmware configuration of a
+    Generation 2 virtual machine.
+
++   Updates müssen spätestens alle 30 Tage getestet werden
+
++   WSUS-Server.port : 8530
+
++   Themen:
+        WSUS und Ereignisanzeige
+
+
+<<< Fr, 07.02.2020 WDT: nicht prüfungsrelevant
+
+
++   Portzuordnung:
+https://faq.webspace-verkauf.de/article/wie-lauten-die-standard-ports.html
+    •   20      => ftp.Daten
+    •   21      => ftp.Steuerung
+    •   80      => http
+    •   110     => http
+    •   389     => LDP, AD
+    •   443     => https
+    •   8530    => WSUS.x
+    •   8531    => WSUS.SSL
+    •   3389  =>    RDS : RemoteDesktopServer
+    •   49443   => https Webanwendungsproxy
+    •   UDP     => 3544
+
+freie:
+    •   8080    => Alternativ
+
+
+<<< Thema WDS-Infrastruktur
+
+<<< Mo, 10.02.2020
+
++ MMC
+
+MMC heist Microsoft Managment Console das ist ein Progamm womit man
+diverse einstellungen in System machen kann.
+Snap-in sind die enzelnen Erweiterungen der MMC.
+Snap-in gibt es für viele windows einstellungen.
+weiterhin gibt es bei vielen Programmen von Dritt anbieter.
+Gehe doch einfach mal in die MMC und dann auf datei un dann auf
+Snap-in Hinzufügen/Entfernen und seh dir mal an was es alles für erweiterungen gibt. Wenn du schon mal in der Verwaltung; Computerverwaltung warst dann hast du schon mal die MMC benutzt mit den Snap-in Computerverwaltung.
+
++   FSMO
+    Flexible Single Master Operations (FSMO) oder
+    operations masters (Betriebsmaster) sind spezielle Aufgaben,
+    die Domain Controller innerhalb des Active Directorys der
+    Firma Microsoft übernehmen.
+    Die Aufgaben können auf verschiedene Server verteilt werden,
+    jedoch darf keine dieser Rollen von mehreren Servern gleichzeitig
+    übernommen werden.
+
++   IPAM => "IP-Adressverwaltungsserver"
+            "Ich penne am meisten"
+
++   MOC Domänen Controller neu einrichten
+    1.  psh>Slmgr -rearm                    # Lizenzen neu setzten  => 10 Tage
+    2.  psh>Restart-Service NLAsvc -Force   # Firewall Domäne setzen
+    3.  Snapshot erstellen
+
+
++   S2D Software Deﬁned Storage für Windows Server
+Mit Storage Spaces Direct (S2D) besitzt Microsoft Windows Server eine
+leistungsfähige „eingebaute“ Lösung für Software Deﬁned Storage. Sie macht
+zusätzliche Storage Arrays und komplexe Software von Drittanbietern überﬂüssig,
+nutzt kostengünstige Standard-Server und spart Administrationskosten.
+
+„Direkte Speicherplätze“ verwendet branchenübliche Server mit lokal
+angeschlossenen Laufwerken, um hoch verfügbare, hoch skalierbare
+softwaredefinierte Speicher zu einem Bruchteil der Kosten von herkömmlichen SAN-
+oder NAS-Arrays zu erstellen.
+Die konvergierte oder hyperkonvergierte
+Architektur vereinfacht die Beschaffung und Bereitstellung, während Features wie
+    Caching, Speicherebenen und Löschung Coding
+zusammen mit den neuesten Hardware
+Innovationen wie RDMA-Netzwerk und nvme-Laufwerke, Bereitstellung nicht über
+rivalisierte Effizienz und Leistung.
+
+<<< Di, 18.02.2020
+
+unnekantes Netzwerk:
+0.0.0.0
+
+CIDR:ClassInter-Domain-Routing
+
+Route1: 0.0.0.0                 => Default-Route für Internet => Adresse des Routers (GW)
+Route2: 255.255.255.255         => Broadcast, alle Rechner auf meiner Netzwerkseite
+
++   Adressenschreibweise
+    ::1/128 => 0.0.1
+
++   psh>route add 1.1.1.0 mask 255.255.255.0 10.0.0.1
+
++   falsch
+    route add  1.1.1.0 mask 255.0.0.0 10.0.0.1
+
+<<< Mi, 19.02.2020 : ipv4
+
++   https://de.wikipedia.org/wiki/IPv4
+
++   Halten Sie das Netz so klein wie möglich
+
++   IpAddr  10.12.2.6
+    SubNet  255.248.0.0
+    NetId:  10.8.0.0
+    BcId:   10.15.255.255
+
++   IP Ranges
+
+    IT  5 User
+    Hostbits            : 3         000,001,010,011
+    IPs verfügbar       : MAX-2 = 6 =  2**3-2  ; 2:NetId;BroadcastId
+
+    +   8 User  => Hostbits:4,      IpAddr: 2**4-2=14
+    +   12 User => Hostbits:4;      IpAddr: 14; SubNet:255.255.255.240
+    +   15 User => Hostbits:5;      IpAddr: 2**5-2=30; SubNet:255.255.255.244
+    +   563 User => Hostbits:10;    IpAddr: 1024-2=1022; SubNet:255.255.252.0
+
+    => die FirmenSubnetmask muss alle Adressaten enthalten,
+    also : 255.255.252.0
+
+
++   Anstelle von Subnetzen kann VLAN verwendet werden
+
++   Eine Subnetzmaske identifiziert,
+    welche Teile einer IPv4-Adresse die Netzwerk-ID und die Host-ID sind.
+    Bsp:
+            IP-Adresse:     172.16.0.10
+            Subnetzmaske:   255.255.0.0
+            Netzwerk-ID:    172.16.0.0
+            Host-ID:        0.0.0.10
+
++   Klassen
+    A/8 =>  NetzId:8Bits,  HostId:24Bits
+    B/16 => NetzId:16Bits, HostId:16Bits
+    C/24 => NetzId:24Bits, HostId:8Bits
+
+http://jodies.de/ipcalc?host=10.25.12.100&mask1=16&mask2=255.255.0.0
+
++   Beispiele:
+    10.25.12.100/16 =>
+        NetzId      : 10.25.0.0
+        BroadcastId : 10.25.255.255
+        HostMin     : 10.25.0.1
+        HostMax     : 10.25.255.254
+        Hosts       : 65534
+
+
+<<< Mi, 19.02.2020 : DHCP
+
++   DHCP: Dynamic Host Configuration
+
++   Lease-Generierung
+    => Grundrauschen
+    Die DHCP Adresse kann gespeichert werden in einer DB
+
++   DHCP Leasedauer sollte nicht zu lang sein.
++   Vor Ablauf der Leasedauer sendet der DHCP-Server eine Anfrage
+
++   DHCP Relay Agent ist kein DHCP Server,
+        er hört direkt den Broadcast vom Client ab
+
++   DC1. EURT, dann SVR1
+    psh>Restart-Service NLAsvc -Force
+
++   MAC Adressen haben keinen Wildcard
+
++   DHCP Tools Server Ebene geht vor Bereichsebene
+
++   Server-Konfiguration schlagen ...
++   IPv6 haben keinen Filter, haben Multicast statt Broadcast
+
++   Unterschiede https://de.wikipedia.org/wiki/Unicast
+    Unicast     1:1
+    Broadcast   1:nMAX  ; nMAX:=alle
+    Multicast   1:n     ; n<nMAX  n=Gruppe
+    Anycast     1:?
+
++   Der DHCP Server hat nichts Namen, sondern mit IP-Bereichen
+
++   Sw Rollouts
+
++   DHCP Relay
+    Bei DHCP-Relay und BOOTP-Relay handelt es sich prinzipiell
+    um den gleichen Mechanismus.
+    Die beiden Bezeichnungen werden oft synonym verwendet,
+    besonders wenn es um Router-Eigenschaften geht.
+
+    Ein Router, der DHCP-Relay bzw. BOOTP-Relay beherrscht (ein sogenannter RFC 1542-kompatibler Router),
+    kann DHCP-Rundsendungen (Broadcasts) aus einem seiner angeschlossenen Segmente
+    an einen DHCP Server weiterleiten,
+    der in einem anderen Segment arbeitet.
+    So können Rechner ihre IP-Adressen und -Parameter dynamisch übers Netzwerk erhalten,
+    auch wenn kein DHCP Server im gleichen Segment steht
+    (normalerweise würden die Broadcasts einen Router nicht überqueren).
+    Wenn der Router diese Technik nicht beherrscht,
+    kann als Alternative auch auf einer NT- oder Windows 2000 -Maschine der DHCP-Relay-Agent-Dienst
+    aktiviert werden.
+    Der Rechner mit diesem Dienst fängt dann DHCP-Broadcasts in seinem Segment
+    auf und kann sie an einen DHCP-Server in einem anderen Segment weiterleiten.
+
+<<< Do, 20.02.2020 : DHCP
+
+https://de.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol
+
+
+psh>Add-DhcpServerv4Scope
+psh>Set-DhcpServerv4OptionValue
+psh>Get-DhcpServerv4Scope
+
+
+<<< Fr, 21.02.2020 : DNS
+
++   Routing & RAS  Routing and Remote Access Server
+    Der Routing and Remote Access Server ist eine Komponente des Windows 2003 Servers und enthält,
+    wie der Namen schon sagt, einen Software-Router, einen Remote-Access Server
+    und eine Dial-On-Demand Komponente.
+    Außerdem kennt der RRAS auch NAT die Netzwerkadressübersetzung und verfügt über
+    eine Firewall mit Paketfilter. Das macht den RRAS Server im Windows 2003 Server zu einem perfekten Internet-Gateway für LANs.
+
++   Kommnikation nur IP basiert, niemals namensbasiert
+
++   https://de.wikipedia.org/wiki/Root-Nameserver
++   https://de.wikipedia.org/wiki/Domain_Name_System
+
+
++   Namensraum  mit "." am Ende
+
++   DNS-Richtlinien
+    => neues Thema, nicht in der GUI
+
+
+<<< Mo, 24.02.2020 : DNS
+
++   Forward LookupZone : Name=>ip
+        Reverse LookupZone: ip=>Name
+
++   primäre und sekundäre Zone
++   Eine Zone hate immer einen Namen ohne ".net"
+    Domäne ".topLevelDomain"
+
++   Zone
+    Eine Zone besteht aus Resource Records,
+    die in einer Zonendatei gespeichert sind.
+    Die Originaldatei befindet sich auf dem Primary Nameserver (auch „Master“ genannt).
+    Von dort wird sie bei Änderungen per Zonentransfer zu den
+    Secondary Nameservern (auch „Slave“ genannt) übertragen.
+    Die Begriffe Zone und Zonendatei sind in fast allen Situationen austauschbar.
+
+
++   Records    SOA             : Source...
+                    NS              : nameServer
+    SVR, TXT
+
++   Der GlobaleKatalogServer ist ein Server beinhaltet Schnittstelle
+    aus allen Domänen der Gesamtstruktur => "Forrest"
+
++   Die AD wird aktiv repliziert - neue Records können geschrieben werden.
+
+*******************************************************************************
+===  !IpAdressen Schreibweise
+*******************************************************************************
+
++   ipv4
+    /0      0.0.0.0
+    /4      240.0.0.0   ==  F.0.0.0
+    /8      255.0.0.0   ==  FF.0.0.0
+    /16     255.255.0.0 === FF.FF.0.0
+    /32                 => FF.FF.FF.FF
+
++   ipv6
+    FE80::/64   => FE80.0000.0000.0000  Prefix:64bits
+    2000::/3    => 01011111101;0;0;0;0;0
+
++   A typical glboal unicast address has a 48 bit global routing prefix followed by 16 bit subnet and 64 bit interface ID as illustrated below.
+
+
+
+*******************************************************************************
+
+<<< Di, 25.02.2020 : DNS
+
++   Der SubZonen Halter kann nicht autotrisierend
+    antworten.
+
++   Der Hostname ist ein Computername, der einem Domänennamen und einer Domäne der
+    obersten Ebene hinzugefügt wird,
+    um einen vollqualifizierten Domänennamen (Fully Qualified Domain Name, FQDN) zu erhalten.
+
++   Rootserver wissen alles , behandeln auch Weiterleitungen
+
++   normal Weiterleitung  und bedingte Weiterleitung
+    Die einzige Bedingung: der Namensraum
+
++   Der DNS Cache wächst
+    Aufräumvorgang => löscht die Records nach N Tagen
+
++   Zonen
+    •   primär
+        Nicht schreibgeschützte Kopie einer DNS-Datenbank
+    •   sekundär
+        Schreibgeschützte Kopie einer DNS-Datenbank
+    •   Stub
+        Kopie einer Zone,
+        die nur zum Auffinden von Namenserver verwendete Einträge
+        enthält.
+    •   Active Directory-integriert
+        Zonendaten werden in AD DS anstatt in Zonendateien gespeichert
+
++   Weiterleitungen
+
+    Verweist an einen anderen Domänennamen
+        Name kann sich auch in einer anderen oberen Ebene befinden
+        Wenn alle Namensauflösungen für diesen Namen über einen bestimmten Pfad verlaufen sollen
+
++   Records
+    =   forward lookup
+    •   SOA:=SourceOfAuthority
+    •   Nameserver(NS)
+    •   Host(A)
+    •   ipV6 (AAA)
+    •   CName ist ein Alias-Record
+    =   backwards lookup
+    •   PTR
+
++   Stubzonen
+    Üblicherweise,
+    wenn sich der Domänenname unterhalb einer höheren Ebene befindet
+    Delegierung unter einer Delegierung
+
++   Namensraum
+    psh>ping lon-dc1.adatum.com      # DNS full qualified name
+    psh>ping lon-dc1                 # Dem Kurznamen wird ".adatum.com" automatisch angefügt
+                                     #  das DNS-Suffix, wenn man in der Zone ist.
+    psh>ping trey-svr1.treyresearch.net
+                                     # OK
+
++   Die AD besteht aus mehreren Datenbankpartitionen
+
++   WAC MMC und ServerManager
+
++   Domain Controller und SchemaMaster
+    psh>regsvr32.exe  schmgmt.dll           # Schema Access in MMC
+    psh>mmc                                 # MMC
+    psh>netdom query fsmo                   # SchemaMaster ist DC1
+
+
+<<< Mi, 26.02.2020 : DNS Richtlinien
+
++   Richtlinie: Steuerunf von Datenfluss
+
++   in Dc1
+Add-DnsServerClientSubnet -Name "UKSubnet" -IPv4Subnet "172.16.0.0/24"
+Add-DnsServerClientSubnet -Name "CanadaSubnet" -IPv4Subnet "172.16.18.0/24"
+Add-DnsServerZoneScope -ZoneName "Adatum.com" -Name "UKZoneScope"
+Add-DnsServerZoneScope -ZoneName "Adatum.com" -Name "CanadaZoneScope"
+Add-DnsServerResourceRecord -ZoneName "Adatum.com" -A -Name "www" -IPv4Address "172.16.0.41" -ZoneScope "UKZoneScope"
+Add-DnsServerResourceRecord -ZoneName "Adatum.com" -A -Name "www" -IPv4Address "172.16.18.17" -ZoneScope "CanadaZoneScope"
+
++   Filter: Allow,Deny,Ignore
+Add-DnsServerQueryResolutionPolicy -Name "UKPolicy" -Action ALLOW -ClientSubnet "eq,UKSubnet" -ZoneScope "UKZoneScope,1" -ZoneName "Adatum.com"
+Add-DnsServerQueryResolutionPolicy -Name "CanadaPolicy" -Action ALLOW -ClientSubnet "eq,CanadaSubnet" -ZoneScope "CanadaZoneScope,1" -ZoneName Adatum.com
+
++   Info: Die Policies können weder in der Gui noch in Psh
+    ausgelesen werden.
+
++   dnsPort ist 53
+
++   dns Socket-Poolsize ändern
+    psh>dnscmd /config /socketpoolsize 10000
+    psh>dnscmd /info /socketpoolsize
+
++   The socket pool enables a DNS server to use source port
+    randomization when issuing DNS queries.
+    This provides enhanced security against cache poisoning attacks.
+    The socket pool is enabled with default settings on computers that
+    have installed Security Update MS08-037
+    You can also customize socket pool settings
+
+
+<<< Do, 27.02.2020  IPAM
+
++   Aufgabe
+
++   vm-DcDns:      eigene IP:178.16.16  .10
+                Subnetmask:255.255.255.0
+                    Netzwerk:PrivateNetzwerk
+    Domain:     "wbs.ltd"
+
++   vm-Clnt:      eigene IP:178.16.16.
+
+Install-WindowsFeature AS-HTTP-Activation,
+Desktop-Experience,
+NET-Framework-45-Features, RPC-over-HTTP-proxy,
+RSAT-Clustering, RSAT-ADDS, Web-Mgmt-Console, WAS-Process-Model,
+Web-Asp-Net45, Web-Basic-Auth, Web-Client-Auth, Web-Digest-Auth, Web-Dir-Browsing, Web-Dyn-Compression, Web-Http-Errors, Web-Http-Logging, Web-Http-Redirect, Web-Http-Tracing, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Lgcy-Mgmt-Console, Web-Metabase, Web-Mgmt-Console, Web-Mgmt-Service, Web-Net-Ext45, Web-Request-Monitor, Web-Server, Web-Stat-Compression, Web-Static-Content, Web-Windows-Auth, Web-WMI, Windows-Identity-Foundation -Restart
+
+
+<<< Fr, 28.02.2020  Testaufgabe
+
++   Firewall setzen per PSH
+
+<<< Mi, 04.03.2020
+
++   VLAN vs Netzwervirtualisierung
+    Netzwervirtualisierung dupliziert Adressen
+
++   VPN vs DirectAccess
+
++   VPN wird vom Endgerät gestartet, vom Benutzer
+    DirectAccess wird vom Computer-Konto aufgebaut
+
++   DirectAccess fünktioniert über NRPT
++   durch das Einloggen bekomme ich keine Rechte
+
++   anhand des WMI Filters kann ich feststellen, ob ich
+    ein NB oder einen PC habe.
+    => Nur ein NB hat einen Akku
+
++   Namensauflösungsrichtlinie NRPT
+
++   VPN Zertifikate enden beim Gateway,
+    doppelte Zertifikate erforderlich.
+
++   Port 88 und Port445
+    Kerberos und...
+
++   WBS einloggen
+https://itsupport.wbstrainig.de/tnlogin/3dlogin.html
+
+<<< Mi, 11.03.2020
+
++   L2TP    => Schlüssel
++   SSTP    => TcpPort443, SSL  über Webserver
++   iKEV2   => UDP
+
+<<< Do, 12.03.2020
+
++   Dns Richtlinien, die in Psh erstellt werden,
+    werden nicht in der GUI dargestellt werden.
+
+
++   BrancheCache bedeutet Zweigstellen-Cache
+
+
+https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE2PjDI
+https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4q70G
+
+
+<<< Fr, 13.03.2020
+
+*** Netzwerkcontroller nur mit PSh nutzbar  - keine Gui
+
++   Servervirtualisierung vs Netzwerkvirtualisierung
+    a: Mehrere virtuelle Computer auf demselben physischen Server
+        Jeder virtuelle Computer ist von den anderen isoliert
+    b: Mehrere virtuelle Netzwerke auf demselben physischen Netz
+        Jedes virtuelle Netzwerk ist von den anderen isoliert
+
+
+<<< Sa 14.03.2020
+
+
++   NPS:=Network Policy Server
+
+=   NPS allows you to centrally configure and manage network access authentication,
+    authorization, and accounting with the following features:
+
+•   RADIUS server & RADIUS client
+    NPS performs centralized authentication, authorization, and accounting for
+    wireless, authenticating switch, remote access dial-up and virtual private
+    network (VPN) connections.
+    When you use NPS as a RADIUS server,
+    you configure network access servers,
+    such as wireless access points and VPN servers, as RADIUS clients in NPS.
+    You also configure network policies that NPS uses to authorize connection requests,
+    and you can configure RADIUS accounting so that NPS logs accounting
+    information to log files on the local hard disk or in a Microsoft SQL Server
+    database. For more information, see RADIUS server.
+
+•   RADIUS proxy
+    When you use NPS as a RADIUS proxy, you configure connection request
+    policies that tell the NPS which connection requests to forward to other
+    RADIUS servers and to which RADIUS servers you want to forward connection
+    requests. You can also configure NPS to forward accounting data to be logged
+    by one or more computers in a remote RADIUS server group. To configure NPS
+    as a RADIUS proxy server, see the following topics. For more information,
+    see RADIUS proxy. ◦Configure Connection Request Policies
+
+•   RADIUS accounting
+    You can configure NPS to log events to a local log file or to a local or
+    remote instance of Microsoft SQL Server. For more information, see NPS
+    logging.
+
+
++   Der NPS steht im Zusammenhang mit RRAS
+
+
+=   Lokale Sicherheitsrichtlinie LSP
+    The local security policy editor is a great tool for setting numerous
+    security settings on your Windows 10 computer. And, by utilizing the
+    import/export feature, you can replicate group policy functionality by
+    applying a standard security configuration across many workgroup
+    computers.04
+
+=   Group Policy Object GPO
+    GPOs linked to an organizational unit at the highest level in Active
+    Directory are processed first, followed by GPOs that are linked to its child
+    organizational unit, and so on. This means GPOs that are linked directly to
+    an OU that contains user or computer objects are processed last, hence has
+    the highest precedence
+    Ein Group Policy Object (GPO), deutsch Gruppenrichtlinienobjekt, ist unter
+    Microsoft Windows 2000 und dessen Nachfolgern eine digitale Richtlinie für
+    verschiedene Einstellungen. In diesem Zusammenhang ist eine Group Policy
+    eine auf bestimmte Gruppen oder Arten von Einstellungen begrenzte System
+    Policy.[1] Eine solche Gruppenrichtlinie nennt man auch
+    Gruppenrichtlinienobjekt.[2]
+    +   Gruppenrichtlinien können mit verschiedenen Objekten verknüpft werden:
+    •   Site (Standort)
+    •   Domain (Domäne)
+    •   OU (Organizational Unit, Organisationseinheit)
+
+
+<<< So 15.03.2020
+
+
+•   RSS := Receive Side Scaling
+    ist eine Skalierungstechnologie, die den empfangenen Netzwerkverkehr auf
+    mehrere Prozessoren verteilt, indem ein Hash des Headers eingehender Pakete
+    generiert wird. Ohne RSS wird eingehender Netzwerkverkehr vom ersten
+    Prozessor verarbeitet, der schnell die Kapazitätsgrenzen des
+    Netzwerkdurchsatz erreichen kann. Der folgende Befehl aktiviert RSS auf dem
+    Netzwerkadapter namens MyAdapter und startet den Netzwerkadapter
+    anschließend neu.
+    psh>Enable-NetAdapterRss -Name "MyAdapter"
+
+•   SR-IOV
++   Single root I/O virtualization =:SR-IOV
+Single-Root I/O-Virtualisierung, oder SR-IOV, kann auf Hyper-V-VMs Latenzen
+verringern und I/O-Durchsatz erhöhen. So funktioniert die Technik
+    Viele Administratoren virtueller Maschinen sind noch nicht mit
+Single Root I/O-Virtualisierung (SR-IOV) vertraut,
+die Microsoft seit Windows Server 2012 Hyper-V anbietet.
+Die Spezifikation von SR-IOV stammt vom PCI-SIG-Konsortium und
+ermöglicht es einem PCI-Gerät, als mehrere physische Geräte zu erscheinen,
+wodurch Latenzen verringert und I/O-Durchsätze erhöht werden können. Einfacher
+ausgedrückt können SR-IOV-fähige PCI-Geräte an SR-IOV-fähige Treiber mehrere
+virtuelle Kanäle zur direkten Kommunikation melden.
+
+
+<<< Mo 23.03.2020
+
++   Prüfung
+Bausteinprüfung Mi, 22.4.2020
+MSCA Prüfung    23.-29.4. Zeit für Prüfung
+
+
+=   GPO
++   Gruppenrichtlinien Objekt erstellen
+    1.  gpmc.msc starten
+    2.  Snap-In : "Gruppenrichtlinienverwaltung"
+    oder: direkt Windows.Start|Gruppenrichtlinienverwaltung
+
+<<< Di 24.03.2020
+
++   SID:500 ist die ID des Administrators
++   Betriebsmaster
+        => PDC primäre DC
+        => bei uns ist der Dc1 der PDC
++   früher sekundäre Dc (SDC)
+
++   FSMO = Flexible Single Master of Operation
+
++   Betriebsmaster :  Gui-Position
+        RID,            =>  AD-User
+        PDC,            =>  AD-User
+        Infrasktruktur  =>  AD-User
+        Domänen-Master  =>  AD-Domänen&Vetrauensstellung
+        Schemamaster    =>  registry, mmc
+
+<<< Mi 25.03.2020
+
++   Dc clonen
++   User erstellen
++   Gruppen, verschachtelte Grp.~
++   Gruppenverteilung => email
++   Gruppenbereiche: lokal, global=>AD, universal=>globalerKatalog
+    Reihenfolge: lokal,universell,global
++   mit der universellen Gruppe kann ich wechseln
+
++   wichtige Befehle:
+
+Get-ADUser -Filter *
+New-ADGroup -name HelpDesk -Path "ou=IT,DC=adatum,dc=com" -GroupScope Global
+Get-ADUser -Filter "Department -eq 'IT'" | foreach {Add-AdGroupMember "HelpDesk" -Members $_}
+Get-ADUser -Filter "Department -eq 'Research'" | Set-ADUser -PostalCode 10707 -City "Berlin"
+Get-ADUser -Filter "Department -eq 'Research'" | % { $_.DistinguishedName }
+
+<<< Do 26.03.2020
+
++   ntdsutil: Transfer PDC
+
+psh>ntdsutil
+ntdsutil>roles
+fsmo maintenance>Connect to Server lon-dc2
+server connections>q
+fsmo maintenance>Transfer PDC
+fsmo maintenance>q
+ntdsutil>q
+
+psh>"ntdsutil" "roles" "Connections" "Connect to Server lon-dc1" "quit" "Transfer PDC" "quit" "quit"
+
++ PhHam
+
+NTDSUTIL
+roles
+connections
+connect to server SERVERNAME
+seize schema master (für den Schema Master)
+seize naming master (für den Domänennamen-Master)
+seize RID master (für den RID-Pool-Manager)
+seize PDC (für den PDC)
+seize Infrastructure master (für den Infrastrukturmaster)
+quit
+
+
+=   sAMAccountName
+Im Active Directory Attribut sAMAccountName wird der Anmeldename für das Konto
+eines Benutzers gespeichert -
+und zwar in der herkömmlichen Form eines "NT Logon Names" ,
+so wie es in der Namensangabe "Domäne\Anmeldename" zusammengesetzt wird
+sAMAccountName: Hans.EinGanzLangerNa (gekürzt 20char)
+
+=   User Principal Names (UPN; deutsch Benutzerprinzipalnamen)
+können im Kerberos-Authentifizierungs-System,
+wie es etwa von Microsofts Active Directory benutzt wird,
+als Alias für den Realm-basierten Benutzernamen konfiguriert werden.[1]
+Sie erlauben z. B. die bequemere Anmeldung an Windows Computern und Servern
+auch unter einem Benutzernamen, der eher einer E-Mail-Adresse gleicht, unabhängig von technischen Details wie dem exakten Namen der benutzten Active Directory Domäne. Der UPN ist mit dem Benutzerkonto verknüpft.[2] Das Format des UPN ähnelt typischerweise einer RFC 822 E-Mail-Adresse.[3]
+Ein Kerberos-Prinzipalname besteht aus zwei Teilen, dem Anmeldenamen des Benutzers (z. B. michael) und dem Benutzerprinzipalnamen-Suffix (User Principal Name Suffix, UPN-Suffix). Getrennt werden beide Teile beim Windows-Login durch ein "@"-Zeichen (also hier z. B. michael@beispielfirma.xy). Das Benutzerprinzipalnamen-Suffix ist ein Alias für längere Domänennamen, um übersichtlicher und kürzer zu sein (z. B. nur beispielfirma.xy anstatt von kundenbetreuung.koeln.deutschland.beispielfirma.xy), bzw. um bei mehreren Domänen nur einen, griffigen Namen zu vergeben, der für alle Domänen gilt. Sie werden in der Active-Directory-Verwaltung unter den Eigenschaften von "Active-Directory-Domänen und -Vertrauensstellungen" eingegeben.
+
+=   Übersicht der Namen
++   Domänenname         :   "AD" (NetBIOS) "ad.Domain.com" (DNS)
++   NetBIOS-Anmeldename :   "AD\Hans.EinGanzLangerNa"
++   sAMAccountName      :   "Hans.EinGanzLangerNa" (gekürzt 20char)
++   userPrincialName    :   "Hans.EinGanzLangerNachname@ad.Domain.com"
+
+=   Distinguished Names
+    DC = domainComponent
+    CN = commonName
+    OU = organizationalUnitName
+    O  = organizationName
+    L = localityName
+    C = countryName
+    UID = userid
+
++   AD-Schemamaster freischalten
+    psh>regsvr32.exe schmmgmt.dll
+
++   Mit dem VbScript erstelle ich mir eine ObjectId
+    1.2.840.113556.1.8000.2554.64179.24607.8537.19063.40765.2994202.5100066
+
++   Get-ADUser -Filter { departement -eq "IT" } | Set-ADUser -Identity JDoe -replace @{Kaffeepause = $true}
++   Set-ADUser -Identity JDoe -replace @{Kaffeepause = $true}
+
++   Prefix für Felder in der AD: "msDs" => AttributeEditor
+
++   SnapShot erstellen
+    psh>ntdsutil "snapshot" "activate instance ntds" "create" "quit" "quit"
+    => der Punkt den wir haben
+
++   SnapShots listen
+    psh>ntdsutil "activate instance ntds" "snapshot" "list all" "quit" "quit"
+
++   SnapShots mount
+    psh>ntdsutil "activate instance ntds" "snapshot" "list all" "mount 2" "quit" "quit"
+
++   Snapshot laden
+    NICHT PowerShell
+    cmd>dsamain /dbpath C:\$SNAP_202003261358_VOLUMEC$\windows\ntds\ntds.dit /ldapport 40000
+    "logische Verzeichnispfad"
+
++   SnapShots mount
+    psh>ntdsutil "activate instance ntds" "snapshot" "list all" "umount 2" "quit" "quit"
+
++   DB Integrity
+    psh>net stop ntds
+    psh>ntdsutil "activate instance ntds" "files" "integrity" "quit" "quit"
+    psh>net start ntds
+
+
+<<< Mo 30.03.2020
+
++   AD.Usr immer mit "Erweiterten Ansicht" anzeugen
+
++   Container Vs OU
+    Container sind vordefinierte Active Directory Objekte.
+    Sie können nicht gelöscht werden und werden in der Datenbank mit CN= definiert.
+    Die Anwendung von Gruppenrichtlinien auf Container ist nicht möglich.
+
++   Container können sehr wohl auch in der Gui erstellt werden.
+    AttributeEditor|defaultHidingValue:=False
+
++   Container sind:
+        Computer, BuiltIn, Users,Keys
+
++   Container kann ich als Sammelinformationen verwenden.
+    Sie können nicht geändert werden, sowie die OU.
+    Ich kann nur Container gesamt ändern oder nicht.
+
+
+
++   Gesamtstruktur
+Eine Gesamtstruktur ist eine Sammlung von Domänen, die einen gemeinsamen AD DS-
+Stamm sowie ein gemeinsames Schema haben, welche über eine gegenseitige
+Vertrauensstellung verfügen.
+
+
+Dieser hät die so genannten FSMO-Rollen:
+
+=   Gesamtstruktur
+
+    •   Schemamaster
+        bezogen auf die Gesamtstruktur (ein Schemamaster pro Gesamtstruktur).
+        Der Inhaber dieser Funktion ist berechtigt, das Schema einer Active
+        Directory-Gesamtstruktur zu erweitern oder den Befehl adprep /domainprep
+        auszuführen.
+
+    •   Domänennamen-Master
+        bezogen auf die Gesamtstruktur (ein Domänennamen-Master pro
+        Gesamtstruktur).
+        Der Inhaber dieser Funktion ist berechtigt, einer
+            Gesamtstruktur Domänen oder Anwendungspartitionen hinzuzufügen oder
+        diese aus der Gesamtstruktur zu entfernen.
+
+=   Domäne
+
+    •   RID-Master
+        für die gesamte Domäne zuständig (ein RID-Master pro Domäne).
+        Der Inhaber dieser Funktion ist für die Zuweisung des RID-Pools zuständig,
+        um vorhandenen Domänencontrollern die Möglichkeit einzuräumen,
+        Benutzerkonten, Computerkonten oder Sicherheitsgruppen zu erstellen.
+        *   Pool-Verwaltung
+
+    •   PDC-Emulator
+        für die gesamte Domäne zuständig (ein PDC-Emulator pro Domäne).
+        Diese Funktion muss dem Domänencontroller zugewiesen werden,
+        der Datenbankaktualisierungen an Windows NT-Sicherungsdomänencontroller
+        sendet.
+        Der Domänencontroller, der Inhaber dieser Funktion ist,
+        ist auch das Ziel bestimmter Verwaltungsprogramme und Aktualisierungen für die
+        Kennwörter von Benutzerkonten und Computerkonten.
+        *   Zeitsynchronisation, GPO
+
+    •   Infrastrukturmaster
+        für die gesamte Domäne zuständig (ein Infrastrukturmaster pro Domäne).
+        Domänencontroller müssen Inhaber dieser Funktion sein,
+        um den Befehl adprep /forestprep erfolgreich ausführen und SID-Attribute sowie die
+        Attribute definierter Namen für Objekte aktualisieren zu können,
+        auf die domänenübergreifend verwiesen wird.
+        *   bei Replikation
+
+
+=   Gesamtstruktur
+
+
+<<< Di 31.03.2020
+
+Vertrauensstellung / UE03:Infrastruktur
+
+<<< Mi 01.04.2020: UE04: Replikationen
+
+Trainerhandbücher
+https://ntfiles.de/index.php/s/8WqFbjK9abHKyzS?path=%2FB%C3%BCcher
+USR:Pa55w.rd
+
++   Globaler Katalog
+Ein globaler Katalog ist eine Datenspeicherquelle des Active Directory,
+die einen Teil der Objekt-Daten einer Multidomänen-Active Directory-Domänenumgebung enthält.
+Der globale Katalog ist auf Domänencontrollern konfiguriert,
+dabei handelt es sich dabei nicht um einen dedizierten Server,
+sondern um speziell als globale Katalogserver konfigurierte Domänencontroller.
+Er speichert Objekte jeder Domäne,
+ohne den tatsächlichen Domänen-Namen zu kennen.
+Der erste Domänencontroller einer Active Directory-Gesamtstruktur ist automatisch ein globaler Katalog,
+zusätzlich können weitere konfiguriert werden.
+
+<<< Do 02.04.2020
+
+GUID:"definierten Namens"
+SID: "Sicherheitskennung"
+SAM: "Sicherheitskontenmanagers"
+
+<<< Fr 03.04.2020
+
+Regel:Local - Standort - Domain - OU
+Verarbeitungsreihenfolge: von unten nach oben
+Verererbung deaktivieren bedeutet alle deaktivieren
+Erzwungene PO ergänzt die Reihenfolge
+GPO fix
+Sicherheitsfilter ergänzt eine GPO
+BenutzerGpo werden erst immer nach ComputerGpo ausgeführt
+Loopback Verarbeitung: ComputerGpo soll immer funktionieren
+    => Computer-Einstellungen und nicht die Benutzer-Einsatellungen sollen
+        gewinnen
+
++   MOC zurückgesetzt
++   2 Gpo
++   Es gibt auch temporäre Registry-DB Umsetzungen
+
+https://www.msxfaq.de/
+https://social.technet.microsoft.com/Forums/de-de/home
+https://www.it-zeugs.de/betriebsmasterrollen-fsmo.html#schema-master
+https://www.faq-o-matic.net/
+
++   Loopback-Mechanismus
+    ComputerKonto > BenutzerKonto > ComputerKonto
+
+
+<<< Mo 06.04.2020
+
++   AD Dienste
+    Active Directory Lightweight Directory Services (AD LDS)
+    Active Directory-Rechteverwaltungsdienste (AD RMS)
+    Active Directory-Verbunddienste (AD FS)
+    Active Directory-Zertifikatdienste (AD CS)
+
+
++   Skripte
+    Start-Skripte   :  bei Start des Computers
+    Anmelde-Skripte :   bei der Benutzer-Anmeldung
+
+<<< Di 07.04.2020
+
++   RODC
+    +   read only DC
+
++   PSO
+    +   Passing Object - werden auf Benutzerkonten angewendet
+    +   PSO vor GPO
+    +   Kennwortlänge und Komplexität kann geändert werden
+
++   GSM
+    Add-KdsRootKey
+    New-ADServiceAccount
+
++   SPN:ServicePrincipalName
+            für nicht Kerberos-Authenntifizierung
+    psh>setspn -s
+
+<<< Mi 08.04.2020
+    RMS
+
+<<< Do 09.04.2020
+
++   gpresult.exe
+    Zeigt die Richtlinien Ergebnissatz-Informationen (RSoP) für einen Remote Benutzer und-Computer an.
+    Um die RSoP-Berichterstellung für Remote Zielcomputer über die Firewall verwenden zu können,
+    müssen Sie über Firewallregeln verfügen,
+    die eingehenden Netzwerk Datenverkehr für die Ports zulassen.
+
++   secedit.exe
+    Konfiguriert und Analysiert die Systemsicherheit,
+    indem es Ihre aktuelle Konfiguration mit festgelegten Sicherheitsvorlagen vergleicht.
+
+<<< Mo 09.04.2020
+
+    psh>gpudate.exe /force  # Aktuelle gpo's auf dem Server/Client abrufen
+    psh>gpedit.msc          # lokale GPO aufrufen
+    psh>gpresult /R         # GPO Bericht
+    psh>get-gpo             # gpo anzeigen RSAT installiert ?
+        get-gpo "gpo01_tmp" # meine gpo
+    psh>Invoke-GPUpdate -Computer Computer1 -Target Computer
+
+    psh>secpol.msc          # Untermenge von gpedit.msc
+    psh>get-gpo -all        # alle Gpo anzeigen
+
+Aufgabe:
+    + gpo erstellen :
+            1. Notepad auf dem Desktop
+            2. Ausführung eines Psh-Scripts beim Anmelden
+               Dieses Script soll loggen, auf dem PC.
+            3.
+
+
+
+    + gpo anzeiggen auf Server1
+
+<<< Di 10.04.2020
+
+    +   wo brauche ich Zertifikate
+    +   wie zertifiziere ich
+    +   eine Stamm-CA(ROOT-CA) und eine Austellende ZS
+    +   Root-CA und Unternehmens CA
+    +   eigenständige CA nicht Mitglied der Domäne
+
+    +   Zertifikate prüfen nur "nicht ungültig"
+    +   standardmäßig alle Zertifikate sind "ungültig"
+    +   Sperrlistenverteilpunkte
+    +   wie tauschen LON Sv1 und LON Ca1
+    +   Ca1 soll RootCA(StammCA) werden
+        => eigenständige CA ohne Domäne
+
+<<< Mi 11.04.2020
+
+    +   eine Zertifizierungsstelle vergisst niemals
+
+<<< Do 12.04.2020 ADFS
+    +   Prüfung am Mittwoch
+    +   Zertifikate austauschen
+    +   Ablaufdaten von Zertifikaten
+
+    +   PSH
+        Get-ADFSCertificate         : Ablaufdaten von Zertifikaten betrachten
+        Update-MsolFederatedDomain
+        Set-AdfsSyncProperties : primäre
+
+    +   WID =WindowsInternalDataBase
+        Aus dem Englischen übersetzt-Die interne Windows-Datenbank ist eine Variante
+        von SQL Server Express 2005–2014, die in Windows Server 2008,
+        Windows Server 2008 R2, Windows Server 2012,
+        Windows Server 2012 R2 und Windows Server 2016 ...
+
+    +   WSUS nutzt WID
+
+<<< Fr 13.04.2020
+    +   Active Directory Federation Services =: AD FS
+        AD FS ist das Identitätsverbundprodukt von Microsoft,
+            das anspruchsbasierte Authentifizierung verwenden kann.
+    +   AD FS ist LDAP kompatibel
+    +   in Azure kann man nich löschen => Papierkorb installieren
+    +   keine GPO
+    +   AD FS Komponenten:
+            Externer Client, Verbundienstproxy, Webserver,
+                    Unternehmensnetzwerk
+
+<<< Mo 20.04.2020
+    +   gMSA = group Managed Service Account
+        => AD-FS
+
+
+•   Vertrauenswürdige Benutzerdomänen
+    Das Hinzufügen einer vertrauenswürdigen
+    Benutzerdomäne ermöglicht dem AD RMS-Stammcluster die Verarbeitung von
+    Anforderungen für Client-Lizenzgeberzertifikate oder Nutzungslizenzen von
+    Benutzern, deren Rechtekontozertifikate (Rights Account Certificate, RACs)
+    von einem anderen AD RMS-Stammcluster ausgestellt wurden.
+    Vertrauenswürdige Benutzerdomänen werden durch Importieren des Server-Lizenzgeberzertifikats
+    des AD RMS-Clusters hinzugefügt, dem vertraut werden soll.
+
+ •  Vertrauenswürdige Veröffentlichungsdomänen
+    Das Hinzufügen einer vertrauenswürdigen Veröffentlichungsdomäne ermöglicht einem AD RMS-Cluster
+    die Ausstellung von Nutzungslizenzen für Veröffentlichungslizenzen, die
+    durch einen anderen AD RMS-Cluster ausgestellt wurden. Vertrauenswürdige
+    Veröffentlichungsdomänen werden durch Importieren des Server-
+    Lizenzgeberzertifikats und des privaten Schlüssels des Servers hinzugefügt,
+    dem vertraut werden soll.
+
+
++   dsmgmt.exe
+    Dsmgmt is a command-line tool that is built into Windows Server 2008.
+    It is available if you have the AD LDS server role installed.
+    To use dsmgmt, you must run the dsmgmt command from an elevated command prompt.
+    To open an elevated command prompt, click Start, right-click Command Prompt,
+    and then click Run as administrator.
+    => ähnlich ntdsutil.exe
+
+
+<<< Di 21.04.2020
+
+    LDIFDE - Exportieren / Importieren von Daten aus Active Directory - LDIFDE-Befehle
+    LDIFDE-Befehle:
+        1. Befehl zum Exportieren des Benutzers mit einem bestimmten Namen SAM Account
+            psh$>Ldifde -f "Exportuser.ldf" im s - Computername - R (Samaccountname = SAMLNAME)
+        2. Befehl Organisationseinheiten exportieren:
+            dieser Befehl exportiert alle Organisationseinheiten außer den Domänencontrollern in einer Datei namens "Exportou.ldf" im.
+            psh$>Ldifde -f "Exportou.ldf" im -s Server1 -d "dc = Export, dc = com" subtree -p - R "
+                (objectClass=organizationalUnit)" -l "Cn, Objectclass, Organisationseinheit
+
++   loopback verarbeitungsmodus
+        ersetzen || zusammenführen
+        bei ersetzen: sobald eine konkurriende Eigenschaft in einer
+         davorliegenden GPO steht, werden die weiteren nicht angewendet
+
+===============================================================================
+=   Standardgruppen, die Verwaltungsrechte bereitstellen §Skillpipe:[2-17]
+===============================================================================
+
+•   Organisations-Admins (im Container Users der Gesamtstruktur-Stammdomäne). Diese Gruppe ist ein
+    Mitglied der Administratorgruppe in jeder Domäne der Gesamtstruktur, sodass sie vollständigen
+    Zugriff auf die Konfiguration aller Domänencontroller hat. Sie besitzt außerdem die
+    Konfigurationspartition des Verzeichnisses und volle Kontrolle über den Namenskontext von
+    Domänen in sämtlichen Domänen der Gesamtstruktur.
+
+•   Schema-Admins (Container Users der Gesamtstruktur-Stammdomäne)
+    Diese Gruppe besitzt und hat die volle Kontrolle über das Active Directory-Schema.
+
+•   Administratoren (Builtin Container jeder Domäne)
+    Mitglieder dieser Gruppe haben volle Kontrolle
+    über alle Domänencontroller und Daten im Namenskontext einer Domäne.
+    Sie können die Mitgliedschaft aller anderen administrativen Gruppen in der Domäne ändern;
+    die Administratorgruppe in der Stammdomäne der Gesamtstruktur kann die Mitgliedschaft von
+    Organisations-Admins, Schema-Admins und Domänen-Admins modifizieren. Die
+    Administratorgruppe in der Stammdomäne der Gesamtstruktur gilt im Allgemeinen als die
+    leistungsstärkste Verwaltungsgruppe in der Gesamtstruktur.
+
+•   Domänen-Admins (Container Users jeder Domäne).
+    Diese Gruppe wird der Administratorgruppe der
+    eigenen Domäne hinzugefügt. Sie erbt daher alle Merkmale der Gruppe „Administratoren“. Sie wird
+    standardmäßig auch der lokalen Administratorgruppe der einzelnen Mitgliedscomputer einer
+    Domäne hinzugefügt, sodass Domänen-Admins Besitz über alle Computer in der Domäne erhalten.
+
+•   Server-Operatoren (Builtin Container jeder Domäne). Mitglieder dieser Gruppe können auf
+    Domänencontrollern Wartungsaufgaben ausführen. Sie haben das Recht, sich lokal anzumelden,
+    Dienste zu starten und anzuhalten, Sicherungs- und Wiederherstellungsaufgaben zu erledigen,
+    Datenträger zu formatieren, Freigaben zu erstellen oder zu löschen und Domänencontroller
+    herunterzufahren.
+    Diese Gruppe hat standardmäßig keine Mitglieder.
+
+•   Konten-Operatoren (Builtin Container jeder Domäne).
+    Mitglieder dieser Gruppe können Konten für Benutzer, Gruppen und Computer,
+    die sich in beliebigen Organisationseinheiten der Domäne (mit
+    Ausnahme der Organisationseinheit Domänencontroller) und den Containern Users und Computer
+    befinden, erstellen, ändern und löschen.
+    Mitglieder der Gruppe „Konten-Operatoren“ können keine
+    Konten ändern, die Mitglieder der Gruppen „Administratoren“ oder „Domänen-Admins“ sind. Das
+    Gleiche gilt auch für diese Gruppen. Mitglieder der Gruppe „Konten-Operatoren“ können sich
+    außerdem lokal bei Domänencontrollern anmelden.
+    Diese Gruppe hat standardmäßig keine Mitglieder.
+
+
+•   Sicherungs-Operatoren (Builtin Container jeder Domäne). Mitglieder dieser Gruppe können
+    Sicherungs- und Wiederherstellungsaufgaben für Domänencontroller ausführen, sich lokal anmelden
+    und Domänencontroller herunterfahren. Diese Gruppe hat standardmäßig keine Mitglieder.
+
+•   Druck-Operatoren (Builtin Container jeder Domäne). Mitglieder dieser Gruppe können auf
+    Domänencontrollern Druckwarteschlangen verwalten. Außerdem können sie sich lokal anmelden und
+    Domänencontroller herunterfahren. Diese Gruppe hat standardmäßig keine Mitglieder.
+
+•   Zertifikatherausgeber (Container Users jeder Domäne).
+    Mitglieder dieser Gruppe dürfen Zertifikate im
+    Verzeichnis veröffentlichen.
+    Diese Gruppe hat standardmäßig keine Mitglieder.
+
+===============================================================================
+
+
++   Benutzerprinzipalname (User Principal Name, UPN)
+    Beispiel : abbi@adatum.com
+
++   AD Gruppen
+    •   Gruppentyp: {"Sicherheit" | "Verwaltung"}
+    •   Gruppenbereich:{"lokal", "universal", "global"}
+
+
+1. Externe Vertrauensstellung
+Bei einer externen Vertrauensstellung kann eine uni- oder bidirektionale
+Vertrauensstellung zu einer einzelnen Domäne (in einer separaten Gesamtstruktur)
+eingerichtet werden. Diese Art einer Vertrauensstellung, ist nie transitiv. Eine
+externe Vertrauensstellung kann notwendig sein, wenn Benutzer Zugriff auf
+Ressourcen einer „fremden“ Domäne einer anderen Gesamtstruktur brauchen und
+keine Gesamtstrukturvertrauensstellung besteht. Dadurch wird eine explizite
+Vertrauensstellung nur zu dieser einen Domäne erstellt. Wenn diese Domäne
+weiteren Domänen vertraut, bleibt der Zugriff auf die weiteren Domänen verwehrt
+
+2. Gesamtstrukturvertrauensstellung
+In einer Active Directory-Gesamtstruktur, sind alle Domänen durch eine
+transitive Zweiweg- Kerberos-Vertrauensstellung miteinander verbunden.
+Gesamtstrukturvertrauensstellungen haben den Vorteil, das diese vollständige
+Kerberos-Integration zwischen Gesamtstrukturen bieten, nämlich bidirektional und
+transitiv.  Bei einer Fusion zweier Unternehmen, wobei jedes Unternehmen seine
+eigene Windows Server 2003 Gesamtstruktur hat, könnte eine
+Gesamtstrukturvertrauensstellung in Frage kommen. Denn damit könnten die
+Benutzer der Gesamtstruktur1, auf die Ressourcen der Gesamtstruktur2 zugreifen
+(Zugriffsberechtigung vorausgesetzt), egal in welcher Domäne sich die Ressourcen
+befinden.

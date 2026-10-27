@@ -1,0 +1,2208 @@
+=== log.PythonPro
+
+### !date:<2024-03-18>:Mo
+
++   Beginn
+
+=== !chapter:1: Einleitung
+
++   Was lernen wir ?
++   CodeGuideLines GoodPractise PEP8
++   Erstellen eigener Packages
++   CythonCode
++   Debugging
++   Python C-API
+
++   Jupiter
+    url: https://jupyter.org/
+
++   Kurs Bedingungen
+    Wir benötigen im Kurs Python 3.11 (Stand November 2023).
+    Python 3.10 w�re auch noch f�r die meistens Videos okay!
+
+    Github Repository:
+        https://github.com/franneck94/UdemyPythonPro
+
+    Python Project Template (am Ende des Kurses):
+        https://github.com/franneck94/Python-Project-Template
+
+    Hier ist der Link zu meinem Discord Server (optional):
+        https://discord.gg/vHzfaPz62H
+
+    Anleitung für den Discord Server (optional):
+        https://www.youtube.com/watch?v=2TExRoc4N_w
+
+    Liste von praktischen Shortcuts in VSCode:
+        https://github.com/franneck94/VSCodeGuide/blob/master/usefulShortcuts.md
+
+    Kostenloser Einführungs-Kurs in VSCode:
+        https://www.udemy.com/course/4137272
+
++   Discord-Server
+
+=== Was ist ein Discord-Server?
+    In einem Discord-Server können Gruppen-Mitglieder
+    Chatten, Videotelefonieren, Untergruppen (sogenannte �Channels�) erstellen,
+    Emojis und Gifs, Bilder und Dateien versenden oder Bots programmieren, die
+    bestimmte Aktionen ausführen (z. B. neue Mitglieder begrüßen). Discord kommt
+    eigentlich aus der Gaming-Szene.
+
++   Visual Studio Code
+    https://code.visualstudio.com/docs/?dv=win64user
+
++   vor dem Kurs ein Update auf Python durchf�hren
+    *   Pakete installieren
+        wps$> pip install -r .\cfg\pip\requirements.txt
+    *   Welche Pakete habe ich ?
+        wps$> pip list
+    *   $>python.exe -m pip install --upgrade pip
+
++   Visual Studio Packages installieren
+    +   Coding Tools Extension Pack
+    +   Python Dev Extension Pack
+    +   C Python Extension Pack
+    und
+    +   VisualStudioCode|View|CommandPalette|
+        Python Config
+        installieren
+        <<< neuen Dateien werden erstellt
+
++   View Command Palette
+
+### !date:<2024-03-19>:Di
+
++   Dateien erstellen
+    +   Python
+    +   Jupiter Notebook Dateien
+
++   Jupiter
+    url: https://jupyter.org/
+
++   Chapter1
+    main.py
+    main.ipynb
+
+### !date:<2024-03-20>:Mi
+
+=== !chapter:2: Python Profi Tipp
+
+=== Thema : Function Annotation &&
+                String Format Methods
+    url: https://www.tutorialspoint.com/python/python_function_annotations.htm#:~:text=The%20function%20annotation%20feature%20of,also%20the%20return%20data%20type.
+    url: https://realpython.com/python-f-strings/
+
+&&& function annotation
+
+    def func(a, b):
+        return a + b
+
+    def myfunction(a: int, b: int) -> int:
+        c = a+b
+        return c
+
+&&& string formats
+
++   Classic-Python - The Modulo Operator, %
+    >>> name = "Jane"
+    >>> age = 25
+        "Hello, %s! You're %s years old." % (name, age)
+
++   C-Method
+    >>> "The personal info is: %s" % (("John", 35),)
+        "The personal info is: ('John', 35)"
+
++   str.Format Method
+    >>> name = "Jane"
+    >>> age = 25
+    >>> "Hello, {}! You're {} years old.".format(name, age)
+        "Hello, Jane! You're 25 years old."
+
+    >>> "Balance: ${:.2f}".format(5425.9292)
+        'Balance: $5425.93'
+
++   F-str
+    F-strings make the string interpolation process intuitive,
+        quick, and concise.
+    The syntax is similar to what you used with .format(),
+        but it’s less verbose.
+    You only need to start your string literal with a
+        lowercase or uppercase f and then embed your values, objects,
+        or expressions in curly brackets at specific places:
+    >>> name = "Jane"
+    >>> age = 25
+    >>> f"Hello, {name}! You're {age} years old."
+        'Hello, Jane! You're 25 years old.'
+
+
+=== !chapter:3: Numerische Werte Integer & Float
+
++   Int-Klasse
+    my_value = 42
+    print(f"Integer size: {sys.getsizeof(my_value)}")
+
++   Size of DataType
+    size(Float) = 8 = 64 bit
+    size(int)   >= 28 !
+
++   int. runden
+    my_float2 = 2.7
+    print(my_float2)
+    my_int2 = math.floor(my_float2)
+    print(my_int2)
+    my_int3 = math.ceil(my_float2)
+    print(my_int3)
+
++   a=10; b=10
+    >>> beide verweisen auf das gleiche Objekt
+
++   def float_print(value: float) -> None:
+        print(f"{value:.32f}")
+
++   Float und Pretty Float Ausgabe
+    a=10; b=5; x=a/b = 2.0 !
+
++   import math
+    a = -4.2
+    result = math.floor(a)
+    <<< -5
+
++   Kein exakter float-Vergleich ist nicht möglich
+
++   Vergleich
+    math.isclose(
+        my_fraction2,
+        my_fraction3,
+        abs_tol=1e-15,
+        rel_tol=1e-09,
+    )
+
++   float.runden
+    my_float_rounded = round(my_float)
+    float_print(my_float_rounded)
+
++   Nachkommastellen +N
+    my_float_rounded2 = round(my_float, 4)
+    float_print(my_float_rounded2)
+    print(my_float_rounded2)
+
++   Mantisse runden mit -N
+    my_float_rounded3 = round(my_float, -1)
+    float_print(my_float_rounded3)
+
+### !date:<2024-03-27>:Mi ?
+
+=== !chapter:4: Booleans
+
++   Size
+    my_bool = False
+    print(sys.getsizeof(my_bool))
+    <<< 28 bytes
+
++   Ein Bool ist Kinderklasse von int
+    print(issubclass(bool, int))
+
++   True && False
+    print(isinstance(True, bool))
+    print(isinstance(False, bool))
+    <<< True
+    +   nicht aber 0 oder 1
+
++   Is vs. Equal
+    -   'is' and 'is not': memory (address) equality
+    -   '==' and '!=': value equality
+    -   Is:     Identity operator (memory adresses)
+    -   Value Equality: Operator to compare object values
+    +   my_bool = True
+        my_int = 1
+        print(my_bool == my_int)        # gleicher Wert ?
+        <<< True !!!
+    +   print(my_bool is my_int)        # gleiches Objekt ?
+        <<< False
+
++   Boolean Evaluation
+    Every object of a built-in type has a Truth Value.
+    An instance is True if it is not:  { None, False, 0, or empty } .
+    def print_truth_value(var: Any) -> None:
+        print(bool(var))
+    value1 = None
+    value2 = 0
+    value3 = False
+    value4 = []
+    print_truth_value(value1)   <<< False
+    print_truth_value(value2)   <<< False
+    print_truth_value(value3)   <<< False
+    print_truth_value(value4)   <<< False
+    print_truth_value(1)        <<< True
+
++   Operator order
+    1.) () - Paranthesis
+    2.) Comparison operators
+    3.) not
+    4.) and
+    5.) or
+    +   check2 = ((a > b) and (c == a)) or ((not a) and c)
+        print(check2)
+
+
++   Match Anweisung
+    +   Komplexer als Switch in C++
+    +   Beispiel
+        def guessing_game(guess: int) -> None:
+            match guess:
+            case guess if guess < 0:
+                print(f"{guess} is not valid!")
+            case 2:
+                print(f"{guess} close!")
+            case 4:
+                print(f"{guess} you won!")
+            case 7 | 8 | 9:
+                print(f"{guess} close!")
+            case _:
+                print(f"{guess} not the correct value!")
+    guessing_game(5)
+    <<< guessing_game(5)
+
+=== !chapter:5: Speicherverwaltung
+
++   MemoryReference
+    def print_memory_address(var: Any) -> None:
+        print(hex(id(var)))
+    my_value = 10
+    print_memory_address(my_value)
+
++   InPlace
+    inplace is if used if we want to make changes
+        to the original df or not.
+    def f_addList1(l:list[int],i:int) -> None:      ## NOK
+        for x in l:
+            x = x + i
+    def f_addList2e(l:list[int],i:int)->None :      ### OK
+        for x in range(len(l)) :
+            l[x] = l[x] + i     # access direct
+
++   Mutability
+    +   immutable :  { int, float, bool, str, tuple, none }
+           variables corresponds to their <value>
+               and not to their <name>
+        n1 = None
+        n2 = None
+        Adresse &n1 == &n2
+    +   mutable   : { list, dict, set ... }
+            variables corresponds to their <name> only
+
+
+
+### !date:<2024-04-04>:Do
+
+=== !chapter:6: Py Internals
+
++   get SyntaxTree
+    AST = Abstract Syntax Tree
+    $>  python -m ast syntax_tree.py
+
+
++   ein dissassemble durchführen
+    $>  python .\disassembled.py
+    <<< 0 RESUME                    0
+        2 LOAD_CONST                1 ('{} {}')
+        4 LOAD_ATTR                 1 (NULL|self + format)
+        24 LOAD_CONST               2 ('Jan')
+        26 LOAD_CONST
+        ....
+    REM: Der Code enthält ein import dis
+
+
+--- CPython
+    is the reference implementation of the Python programming language.
+    Written in C and Python, CPython is the default and most widely
+    used implementation of the Python language.
+    CPython can be defined as both an interpreter and a compiler as it
+        compiles Python code into bytecode before interpreting it.
+    It has a foreign function interface with several languages, including C,
+        in which one must explicitly write bindings in a language other than Python.
+    <<< is written in C
+
+
+--- Jython
+    The Jython project provides implementations of Python in Java,
+        providing to Python the benefits of running on the JVM and access
+        to classes written in Java. The current release (a Jython 2.7.x)
+            only supports Python 2 (sorry).
+    There is work towards a Python 3 in the project’s GitHub repository.
+    <<< is written in Java
+
+--- IronPython
+    is an open-source implementation of the Python programming language which is
+    tightly integrated with .NET. IronPython can use .NET and Python libraries,
+    and other .NET languages can use Python code just as easily.
+    https://ironpython.net/
+    https://de.wikipedia.org/wiki/IronPython
+    <<< is written in C#
+
+=== !chapter:7: Container
+
++   Container Datentypen sind
+    String, List, Tuple, Dictionary, Set
+
++   Adresse einer Liste ausgeben
+    def memory_address(var: Any) -> str:
+         return hex(id(var) % 0xFFFF)
+
++   List Comprehension
+    #   change ListValues
+    lTmp = [i if i > 2 else -1 for i in range(5)]
+    g.f_text("lRange =:'%s'" % (lTmp))      #   [-1, -1, -1, 3, 4]
+
++   NumPy
+    https://de.wikipedia.org/wiki/NumPy
+    Der für Python standardmäßig installierte Interpreter CPython führt
+        Kommandos als unoptimierten Bytecode aus.
+    Mathematische Algorithmen sind in dieser Python-Variante oft langsamer
+        ls eine äquivalente kompilierte Umsetzung.
+    NumPy stellt hier eine performante Alternative dar. Bestehende iterative
+        Algorithmen müssen dazu gegebenenfalls für mehrdimensionale
+        Array-Operationen umgeschrieben werden.
+    NumPys Operatoren und Funktionen sind optimiert für derartige Arrays
+        und ermöglichen so eine besonders effiziente Evaluation.
+    Die Handhabung von NumPy-Arrays in Python ist damit vergleichbar zu MATLAB
+
++   Tuple
+    Sind immutable
+    Man kann neuen Wert zuweisen
+    --- (un)Packing
+    tMix = ('alpha',3.14,True,123)
+    Unpacking and
+        s,f,b,i = tMix
+    Packing
+        s,f,*tMixEnd = tMix
+    +   kein Item-Assignment
+
++   Dictionary
+    Types for the keys: bool, int, float, str, tuple, None (immutable types)
+    Types for the values: any type
+    For each item, the dictionary calculates a hash of the key based on its content.
+    If the value changes, the hash wil change.
+    For immutable objects that's not a problem -
+        their content can't change - but mutable objects could.
+    +   Comprehension
+        -   standard
+        my_dict1 = {}
+        for i in range(5):
+            my_dict1[i] = i**2
+        print(my_dict1)
+        -   compact
+        my_dict2 = {i: i**2 for i in range(5)}
+        print(my_dict2)
+    +   merge
+        d1 = {"a": 1, "b": 2}
+        d2 = {"a": 3, "d": 4}
+        d3 = {"e": 5, "f": 6}
+        hTmp =  { **d1, **d2, **d3 }
+        hTmp =  d1 | d2 | d3        *** since python 3.9
+        Achtung: einer der beiden Keys wird überschrieben
+                    i.d.R. der erste Wert
+    Begriff hashable
+        nur immutable dataTypes
+
++   Set (enum)
+    Types for the set values:
+            bool, int, float, str, tuple, None (immutable types)
+    +   Comprehension
+        eVal = set(range(10))
+
+=== !chapter:8: Strings, Fles, Format
+
++   String
+    +   auch Strings sind immutable
+    +   ist eine Liste aus Pointern, die auf Char zeigen
+    +   kein Item-Assignment
+    +   man muss immer ein neues String-Objekt anlegen,
+        wenn man etwas ändern will
+        => durch Replace
+        => durch Concate +=
+    +   formatting
+        my_int = 10
+        my_float = 42.123456789
+        my_name = "Jan Schaffranek"
+        my_str = f"my_name: {my_name}, my_int: {my_int:10d}, my_float: {my_float:.32f}"
+    +   F-String && Dictionary  aufpassen
+        my_dict = {"a": 1}
+        my_str2 = f"{my_dict['a']}" # Zugriff mit '' anstelle von ""
+
++   FString Teil2
+
++   FilePath
+    alte Funktionen
+        +   os.path.join()
+        +   os.path.abspath()
+    besser
+    PathClass
+    +   example
+        from pathlib import Path
+        p = Path('.')
+        list(p.glob('**/*.py'))
+    +   url:
+        https://pathlib.readthedocs.io/en/pep428/
+        https://docs.python.org/3/library/pathlib.html
+
++   FileScope
+    +   es wird i.d.R kein close verwendet
+    +   Beispiel
+        with open("test.txt", "r") as f:
+            ....
+        #   Hier wird der with-scope verlassen
+        #   Die Datei wird geschlossen
+        #   Die Variable kann wieter verwendet werden
+
+
+
++   Quiz
+    --- 1
+        name = 'Jan'
+        age  = 25
+        my_str = '{1} {0}'.format(name, age)
+        <<< 25 Jan
+    --- 2
+        p = Path("C:/Users/Jan/text.txt")
+        p.parent
+        <<< C:/Users/Jan
+
+
+
+### !date:<2024-04-08>:Mo
+
+=== !chapter:9: Funktionen
+
++   nameing default arguments
++   eine Funktion gibtr immer ein return zurück
++   function return None oder Exception
+    Beispiel:
+    def append_list(
+        my_list: list[int],
+        value: int,
+    ) -> None:
+    lst = [1, 2]
+    lst = append_list(lst, 3)
+    print(lst)
+    <<< None !
+    Die Funktion gibt keine Liste, sondern None zurück
+
++   FunctionPtr
+    pFct = append_list
+    type(pFct) -> function
+
++   test
+    +   Python Warnings
+        To enable warnings run python with the -Wdefault or -Wd switch
+    +   only run
+        python -m py_compile script.py
+        python -m compileall <options> <args>.
+
++   python dunder attributes
+    https://medium.com/@nimritakoul01/dunder-methods-in-python-9f32f2e6103b
+    https://docs.python.org/3.12/reference/datamodel.html#specialnames
+    https://docs.python.org/3.12/library/stdtypes.html#definition.__name__
+    print(f_test.__name__)
+    print(f_test.__defaults__)
+    print(f_test.__code.__.co_argcount)
+    print(f_test.__code.__.co_varnames)
+
++   Probleme bei Default-Argumenten
+    ListPtr[] wird einmalig angelegt und immer weiter verwendet
+    >>> Lösung
+    def grow_list(
+        val: Any,
+        my_list: Optional[list] = None,  ### NONE verwenden
+    ):
+
++   *args vs **kwargs {dict}
+    * args   : variable Argumentenlist
+    **kwargs : keyWord Argument List
+
++   Argument-Order-Regel
+        positional  : { normal args; *args; default args }
+        kewyword    : { <positional>; **Kwargs }
+
++   Special Parameter / *
+    +   positional only argument /
+        def pos_only_arg(a: Any, /) -> None:
+        print(a)
+        my_val = 5
+        pos_only_arg(1)
+        pos_only_arg(my_val)
+        --- error pos_only_arg(a=1)   * f(a=1) wäre keyword eingabe
+    +   keyword only argument *
+        def kwd_only_arg(*, a: Any) -> None:
+        print(a)
+        kwd_only_arg(a=3)
+        --- error  kwd_only_arg(3)     # f(1) wäre posional eingabe
+    +   poskey defined
+    +   beispiel : sorted(iterable, /, *, key=None, reverse=False)
+
+
++   Beispiel Standard Libarry sort
+    https://docs.python.org/3/howto/sorting.html
+    https://docs.python.org/3/library/functions.html#sorted
+    sorted(iterable, /, *, key=None, reverse=False)
+        Return a new sorted list from the items in iterable.
+        Has two optional arguments which must be specified as keyword arguments.
+    key specifies a function of one argument that is used to extract a comparison key from each element in iterable (for example, key=str.lower).
+        The default value is None (compare the elements directly).
+    reverse is a boolean value. If set to True, then the list elements are sorted as if each comparison were reversed.
+
+
+=== !chapter:9: Funktionen.argparse
+
++   argparse
+    $>commandlineargument --name Jan --age 29
+    +   optionale Argumente
+        parser.add_argument(
+            "-v",
+            "--verbose",
+            help="Verbose print",
+            action="store_true",
+        )
+    +  listen als Argumente
+        parser.add_argument(
+            "-a",
+            "--ages",
+            help="Enter the ages",
+            nargs="+",
+            type=int,
+            r equired=True,
+        )
+        command_line_argument2.py
+    +   subparser für pip tool
+        command_line_argument3.py
+            +   install
+            +   list
+
+### !date:<2024-04-09>:Di
+
+=== !chapter:10: Closure & Decorator
+
+### Closure
+
+A closure is an inner function that has access to variables in the local
+    scope of the outer function
+
++   example
+    def outer_fn(message: str) -> Any:
+        outer_message = "Outer: " + message
+        current_time = time.time()
+        def inner_fn() -> None:
+            print("Inner: '" + outer_message + "'")
+            print("Current time: ", current_time)
+            return inner_fn()
+    outer_fn("Hello World!")
+
+url: https://www.programiz.com/python-programming/closure
+Python closure is a nested function that allows us to access variables
+    of the outer function even after the outer function is closed.
+
+### Decorators
+-   wraps a function by another function
+-   takes a function as an argument, returns a closure
+-   the clousure runs the previous passed in function with the \*args and \*\*kwargs arguments
+
++   Ein Decorator ist ein Wrapper
+        der Closure ist die eingebettete Funktion
+
++   Beispiel Decorator
+    def outer_fn(fn: Callable) -> Callable:
+        def inner_fn() -> Any:
+            return fn()
+    return inner_fn
+    def print_hello_world() -> None:
+        print("Hello World!")
+
++   stacked decorator
+    @timing - A
+    @debug - B
+    def my_function(name: str) -> None:
+        print(f"Hello: {name}")
+    +   der Decorator  A  wird von dem Decorator B eingeschlossen
+
++   wraps decorator sichert die META Information
+    sollte verwendet werden
+
++   Decorator Factory
+    Ist eine normale Funktion mit einem Code Decorator
+    Für Parameterm die verwendet werden sollen
+
+
+### !date:<2024-04-10>:Mi
+
+=== !chapter:11: Objektorietierung
+
++   Dunder  "double underscore" methods
++   The __init__ method is often referred to as double underscores init or dunder init for it has two
+        underscores on each side of its name. These double underscores on both the sides of init
+        imply that the method is invoked and used internally in Python,
+        without being required to be called explicitly by the object.
+
++   url: https://www.geeksforgeeks.org/dunder-magic-methods-python/
+
++   wrapper vs dunder method
+    str() vs __str__
+
+#### Basic Customizations
+
+-   __new__     :: return a new object (an instance of that class).
+-   __init__    :: is called when the object is initialized.
+-   __del__     :: for del() function. Called when the object is to be destroyed.
+-   __repr__    :: for repr() function. It returns a string to print the object.
+-   __str__     :: for str() function. Return a string to print the object.
+-   __bytes__   :: for bytes() function. Return a byte object which is the byte string representation.
+-   __format__  :: for format() function. Evaluate formatted string literals.
+
+#### Comparison Operators
+
+-   __lt__( obj) :: < operator.
+-   __le__( obj) :: <= operator.
+-   __eq__( obj) :: == operator.
+-   __ne__( obj) :: != operator.
+-   __gt__( obj) :: > operator.
+-   __ge__( obj) :: >= operator.
+
+#### Arithmetic Operators
+
+-   __add__( obj) ::    + operator.
+-   __sub__( obj) ::    – operation on object.
+-   __mul__( obj) ::    \* operation on object.
+-   __matmul__( obj)    :: @ operator (numpy matrix multiplication).
+-   __truediv__( obj)   :: simple / division operation on object.
+-   __floordiv__( obj)  :: // floor division operation on object.
+
+#### Type Conversion
+
+-   __abs__     :: make support for abs() function.
+-   __int__     :: support for int() function. Returns the integer value.
+-   __float__   :: for float() function support. Returns float equivalent.
+-   __complex__     :: for complex() function support. Return complex value.
+-   __round__ (nDigits) ::  for round() function.
+-   __trunc__   :: for trunc() function of math module.
+-   __ceil__    :: for ceil() function of math module.
+-   __floor__   :: for floor() function of math module.
+
+#### Emulating Container Types
+
+-   __len__     :: for len() function.  Returns the total number in any container.
+-   __getitem__(key) to support index lookup.
+-   __setitem__(key, value) to support index assignment
+-   __delitem__(key) for del() function. Delete the value at the index.
+-   __iter__ :: returns an iterator when required that iterates all values in the container.
+
+#### Summary
+
+-   Dunder Methods makes our class compatible with inbuilt functions like abs(), len(), str() and many more.
+
+
++   Code: vector2d.ipynb
+
+
+### !date:<2024-04-15>:Mo
+
+&&& theme: class and static methods
+
++   class method
+    kann instancePtr zurückgeben
+    Can only modify the state of the class, not a single instance
+
++   static methods ändert nichts am Objekt
+    Can neither modify the object state of an instance nor the class state itself
+    It is rather a way to namespace your methods
+
++   class Date
+class Date2:
+    def __init__(
+        self,
+        year: int,
+        month: int,
+        day: int,
+    ) -> None:
+        self.year = year
+        self.month = month
+        self.day = day
+
+    def __repr__(self) -> str:
+        return f"{self.day}.{self.month}.{self.year}"
+
+    def print_date(self) -> None:
+        print(self)
+
+    @classmethod
+    def get_todays_date(cls):
+        date = cls.__new__(cls)
+        time = localtime()
+        date.year = time.tm_year
+        date.month = time.tm_mon
+        date.day = time.tm_mday
+        return date
+
+    @staticmethod
+    def is_todays_date(date) -> bool:
+        time = localtime()
+        return bool(
+            date.year == time.tm_year
+            and date.month == time.tm_mon
+            and date.day == time.tm_mday
+        )
+
++   static und classmethods verwenden kein "self"
+
+&&& theme: property
+
++   es gib kein private, protected
+
+class User2:
+    def __init__(self, name: str, user_id: int) -> None:
+        self._name = name
+        self._user_id = user_id
+
+    def __repr__(self) -> str:
+        return f"{self._name}, {self._user_id}"
+
+    @property
+    def name(self) -> str:
+        return self._name
+
+    @name.setter
+    def name(self, new_name: str) -> None:
+        self._name = new_name
+
+    @name.deleter
+    def name(self) -> None:
+        self._name = ""
+
+
+&&& theme: abstractClass
+
++   abc AbstractBaseClass
+    import abc
+    import math
+    class Base(metaclass=abc.ABCMeta):
+        @abc.abstractmethod
+        def m1() -> None:
+            return
+
++   The baseClass can't be call directly
+    It defines methods like virtual methods in C++
+
+
+
+&&& theme: init vs new
+
++   new brauch man eigentlich nicht
+    Die new Methode ruft die init Methode
++   zuerst new dann init
++   new erstellt eine Instanz der Klasse
++   Die Klasse object ist die SuperKlasse für alle anderen Klassen
+
++   Anwendung für explizite new
+    useCaseSingleTon Object
+    Nur ein Objekt, auch wenn die Klasse aufgerufen wird
+
++   Beispiel
+    class Singleton:
+        _instance = None  # Keep instance reference
+       def __new__(cls, *args, **kwargs):
+            if not cls._instance:
+                cls._instance = object.__new__(cls, *args, **kwargs)
+            else:
+                print("Object already created!")
+        return cls._instance
+
+&&& theme: inheritance
+
++   mro  = method resolution order
+    class A
+    class B(A)
+    class C(A)
+    class D(B,C)
+    $>  D.mro()
+    $<  [__main__.D, __main__.B, __main__.C, __main__.A, object]
+
++   mro
+    Die Reihenfolge der  Aufrufreihenfolge
+
++   super() ohne Inhalt
+    Immer nur 1x super Aufruf für die abgeleitete Klasse
+    -- auch im Fall Class B(B,C)
+
+&&& theme: type vs isinstance
+
++   type(X)         :   ermittelt die direkte Klasse von X
++   isinstance(X)   :   auch abgeleitete Klassen
++   super(X)        :   Oberklasse
+
++   Jede Klasse erbt von base Objektclass
+
+if type(b) == B:
+    print("equal")
+else:
+    print("not equal")
+
+
+&&& theme: class decorator
+
+Beispiel:
+
+from pprint import pformat
+from typing import Any
+
+def betterrepr(cls: Any) -> Any:
+    """Improve representation of a class"""
+    print("decorating...")
+
+    def custom_repr(self):
+        return (
+            f"Instance of {type(self).__name__}, vars = {pformat(vars(self))}"
+        )
+
+    cls.__repr__ = custom_repr
+
+    return cls
+
+@betterrepr
+class MyClass:
+    def __init__(self, instance_variable: str) -> None:
+        print("Init the instance")
+        self.instance_variable = instance_variable
+
+obj = MyClass("I am an instance variable")
+print(obj)
+
++   hier wird die Klasse m.h. der Funktion betterrepr dekoriert
+
+&&& theme: iterator && generator
+
++   einfacher Listen Iterator
+    my_list = [1, 2, 3, 4]
+    for val in my_list:
+        print(val)
+
++   erster Iterator auf eine Liste
+    i = iter(L)
+
++   Ein Iterator ist eine Klasse,
+        ein Generator ist eine Funktion
+
+    class PowerOfTwo:
+        def __init__(self, n: int) -> None:
+            self.n = n
+
+        def __iter__(self) -> PowerOfTwo:
+            self.current_n = 0
+            return self
+
+        def __next__(self) -> Any:
+            if self.current_n <= self.n:
+                current_result = 2**self.current_n
+                self.current_n += 1
+                return current_result
+            raise StopIteration
+
+    p = PowerOfTwo(10)
+    p_iter = iter(p)
+    for i in p:
+        print(i)
+
+    +   ferner geht auch
+    power_of_twos = list(PowerOfTwo(10))
+    print(power_of_twos)
+
+
+
++   Ein Generator beinhaltet ein yield() - bereithalten
+    und ist eine lazy Funktion
+    -   Generator: function with at least one yield statement
+    -   Easy to implement, memory efficient, represents infinite stream
+
+    def power_of_two_generator(n: int) -> Any:
+        current_n = 0
+        while current_n <= n:
+            yield 2**current_n
+            current_n += 1
+
+    g = power_of_two_generator(10)
+    for i in g:
+        print(i)
+
+
++   es wird nur 1x durchlaufen
+        und der innere Zustand wird gemerkt
+
++   bei einfachen UseCase sollte ein Generator,
+        bei komplexen  Aufgaben ein Interator verwendet werden
+
+
+
+### !date:<2024-04-17>:Mi
+
+&&& collection abc indizierbar
+
+    url: https://docs.python.org/3/library/collections.abc.html
+
++   eigene Mutable Sequence
++   -> eigene List Klasse
+
++   Generator ABC Class
+
+&&& enum
+
++   enum == set
++   from enum import Enum
+    from enum import IntEnum
+    from enum import auto
+
++   enum is keine subclass von int
+
++   enums sollten gross geschrieben werden
+
++   class Colors(Enum):
+        RED = 1
+        GREEN = 2
+        BLUE = 3
+    $>  print(issubclass(Colors, int))
+    <$  False
+
++   class Colors2(IntEnum):
+        RED = 1
+        GREEN = 2
+        BLUE = 3
+    color2 = Colors2.RED
+    $>  print(issubclass(Colors2, int))
+    $<  True
+
++   class Colors3(Enum):
+        RED = auto()
+        GREEN = auto()
+        BLUE = auto()
+    <<<  python zählt automatische hoch ,
+        beginnend mit 1
+    color3 = Colors3.RED
+    $>  print(list(Colors3))
+    $<  [<Colors3.RED: 1>, <Colors3.GREEN: 2>, <Colors3.BLUE: 3>]
+
+&&& named tuple
+
++   Tuple subclasses with named fields
+    +   immutable
+    +   hashable
+    +   __repr__ && __str__ and compare is defined
+    - Support indexing
+
++   Code
+    from collections import namedtuple
+    from pprint import pprint
+    User = namedtuple("User", ["firstname", "lastname", "birthday"])
+    user_jan = User(firstname="Jan", lastname="Schaffranek", birthday="24.02.1994")
+    user_peter = User(firstname="Peter", lastname="Peterson", birthday="01.01.1990")
+
+&&& DataClass and Slots
+
++   DataClass ist ein Decorator
++   in der __dict__ Methode werden dynamische Instanz-Attribute gespeichert
++   Ein Slot kann diese dynamischen Instanz-Attribute fixieren
++   eine default-factory list vermeidet die leere Liste L=[]
++   ordering bool==true
++   frozen
+
+&&& DataClass and Slots
+
+### !date:<2024-04-22>:Mo
+
+-   PEP Python
+    url: https://peps.python.org/pep-0008/
+
++   PEP stands for "Python Enhancement Proposal".
+    A PEP is a design document providing information to the Python community,
+        or describing a new feature for Python or its processes or environment
+
++   DocStr
+        für HTML String
+
++   es gibt verschiedene Tools
+
++   Python Dev Extension Pack im MsVS Code enthält...
+    +   Black Formatter
+    +   isort
+    +   Ruff : Ruff löst eigentlich alles
+
++   in MsVsCode die settings sehen
+    main|manage|Settings|Extension|PythinConfig
+        PythonVersion minimum := 3.10
+        FormattingTool := black (or ruff)
+        AggressiveSettins:=False
+
++   Ordner vsCode
+    maim::Explorer|.vscode| settings.json
+
++   settings.json missing
+    The path you mention %APPDATA%\Code\User\settings.json is user settings, not workspace settings,
+    workspace settings are located under the folder you have opened at <folder>\.vscode\settings.json.
+    They don't exist by default but will be created when you open workspace settings and make some changes.
+    To open settings pres
+    s ctrl+,, select the workspace settings button and change some settings:
+    +   Ok, ich öffne die settings
+        wechsel von den Bereich "User" in den Bereich "Workspace"
+        gehe nach Workspace Formatter
+        und setze
+            Workspace_Formater_Close_After_Save := false  und wieder retoure
+            Workspace_Formater_Close_After_Save := true
+
++   Settings global ändern in :
+    C:\Users\peter\AppData\Roaming\Code\User\settings.json
+
+&&& Tool: Linter Flake8
+    url: https://pypi.org/project/flake8/
+
++   what is installed ?
+    $>  pip list
+
++   Flake8 ist ein statisches Auswertetool,
+    welches vor der Ausführung des Python Scripts aufgerufen wird
+    >>> Statische Analyse
+
++   neben Flake8 gint es auch PyLint
+
++   Ruff führt Flake8 und PyLint intern aus
+
++   Nutzen von Flake8
+    $>  pip list        #   list all modules and version
+    $>  pip freeze      #   dito but module==version - requests==2.31.0
+    *   check eines Paketes
+    $>  pip show regex
+        <<< info
+    $>  pip show dummy
+        <<< Package(s) not found: dummy
+    $>  pip uninstall <package>
+    $>  pip install flake8
+    $>  pip show flake8
+
+    *   Aufruf
+    $>  flake8 myFile.py
+    $>  flake8 myFolder
+
+    *   run
+    $>  cd D:\repository\GIT\udemy\PythonPro\workshop\Chapter06_CodingGuidelines\PEP8
+    $>  flake8 .\test_isort.py
+
+    *   MyLib
+    $>  _cdy
+    $>  flake8 .\y44_dummy.py
+
+    *   aktivieren/deaktievieren von checks
+    $>  flake8 --select E702,W503 <source>
+    $>  flake8 --extend_ignore E702,W503 <source>
+
+    *   Kennung einer Warnung
+        E???    : E702
+
++   Config Datei für flake8  ".flake8" Inhalt
+<<<
+[flake8]
+exclude=.git,__pycache__,docs,old,build,dist
+max-complexity=10
+max-line-length=80
+# E261: at least two spaces before inline comment
+# E266: too many leading ‘#’ for block comment
+# W504: line break after binary operator
+# E402: module level import not at top of file
+ignore=E261,E266,W504,E402
+
++   Dokumentation von flake8
+    url: https://flake8.pycqa.org/en/latest/
+    *   error codes
+    https://flake8.pycqa.org/en/latest/user/error-codes.html
+
++   Ruff
+    https://pypi.org/project/ruff/0.0.122/
+    Rules for Flake8
+
++   Pakete von Ruff for Flake8
+    +   PyFlakes
+    +   PyCodeStyle
+    +   mccabe
+
+&&& Tool: Linter Pylint
+    url:    https://pypi.org/project/pylint/
+
++   install
+    $>  pip install pylint
+
++   Static Code Analyser
+
++   pylint ist sehr langsam
++   in Python und nicht in Ruff implenetiert
+
++   pylint checks sehr umfangreich
+
++   Rust
+    https://de.wikipedia.org/wiki/Rust_(Programmiersprache)
+
++   Auch Pylint hat eine Config Datei
+    .pylintrc
+
++   aber Flake8 Pylint und Ruff können eine
+    einzige Datei verwenden
+
+&&& Config Files
+
++   gemeinsame Datei
++   ~\workshop\Chapter06_CodingGuidelines\Configs\pyproject.toml
+
++   In Zukuft nur noch Tools ...
+    ruff
+    mypy
+
++   mypy
+    Mypy is an optional static type checker for Python that aims to combine the
+    benefits of dynamic (or "duck") typing and static typing.
+    Mypy combines the expressive power and convenience of Python with a
+    powerful type system and compile-time type checking.
+    Mypy type checks standard Python programs; run them using any Python VM with basically no runtime overhead.
+
+### !date:<2024-04-23>:Di
+
+&&& Tool: ruff
+
++   ab Tool 3.7 verfügbar
++   ruff ist in rust implementiert
+
++   ersetzt zum Teil:
+    +   Flak8
+    +   isort
+    +   Black - ist ein Formatter
+
++   Ruff kann ...
+    +   static code linting
+    +   Formatting
+
++   >= 700 built-in rules
+
++   VSCode set scrollback:=10.000
+
++   Verarbeitungszeit mit Psh messen
+    $ps1> Measure-Command { flake8 . }
+    #   führt $>flak8 . attributes
+
++   DOC
+    url: https://docs.astral.sh/ruff/
+    +   rules
+        url: https://docs.astral.sh/ruff/rules/
+
++   kann auch fixen
+
++   installieren
+    $>  pip install ruff
+
++   verwenden
+    $>  ruff check .
+    $>  ruff check --fix .   # auch beheben
+    $>  ruff --watch
+
++   config datei pyproject.toml
+    [tool.ruff]
+        ignore = ... # keine Überprüfung
+        unfixable = ... # lint ja aber kein fix
+    line-length
+
++   Wo steht die Config-Datei
+    <<< in der topDir
+
++   ruff ausführen
+    a)  in der command-line
+    b)  in der Erweiterung in VSCode in settings.json
+
++   github config files
+    https://github.com/astral-sh/ruff-vscode/blob/main/.vscode/settings.json
+    https://github.com/astral-sh/ruff-vscode/blob/main/pyproject.toml
+
++   VS Code Erweiterung des "Terminals" bei Ausführung von rust
+    =>  direktes Springen in den Code bei Warnungen -
+    -   nicht diekt in der native PS  möglich
+    +   hyperlink markieren + STRG+Click
+
++   flag preview bezieht auf not stable python versionen
+    $>  ruff check . --preview --unsafe_fixes
+
+
+### !date:<2024-04-24>:Mi
+
+&&& Tool: isort
+
++   ein allein stehendes Tool,
+    aber auch innerhalb in ruff
+
++   Home isort
+    url: https://pycqa.github.io/isort/
+
++   Description
+    Isort is a Python utility / library to sort imports alphabetically,
+        and automatically separated into sections and by type.
+    It provides a command line utility,
+        Python library and plugins for various editors to quickly sort all your imports.
+    It requires Python 3.7+ to run but supports formatting Python 2 code too.
+
++   sortiert die import Anweisungen
+
++   install
+    $>pip install insort
+
++   run
+    $>isort <file> -diff
+
++   config datei ".isort.cfg"
+    # .isort.cfg
+    [settings]
+    sections =
+        FUTURE,
+        STDLIB,
+        THIRDPARTY,
+        FIRSTPARTY,
+        LOCALFOLDER
+    ....
+
++   Kategorien
+    +   FUTURE
+    +   StandardLibrary
+    +   THIRDPARTY
+    +   FIRSTPARTY
+    +   LOCALFOLDER
+
+
++   zuerst Future,StandardLibrary,dann eigene Dateien
+
++   apply resursively
+    $>  isort .
+
++   view proposed changes
+    $>  isort mypythonfile.py --diff
+
++   atomic isolated
+    $>  isort --atomic .
+
++   help
+    $>  isort --help
+
+&&& Tool: formatter.black
+
++   Hauptziel:
+    Automatische Codeformatierung
+
++   The most popular Python formatters are:
+        Black
+        isort
+        autopep8
+        YAPF
+    url:  https://deepsource.com/blog/python-code-formatters
+
++   1 Industriestandard
+
++   Code
+    https://github.com/psf/black
+
++   Doc
+    https://pypi.org/project/black/
+    https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html
+
++   installieren
+    $>pip install black
+    oder current
+    $>pip install git+https://github.com/psf/black
+
++   usage
+    $>black --help
+    $>black --diff --color <file.py>
+
++   Was kann man ändern ?
+    line-length = 80
+    skip-string-normalization = false
+    skip-magic-trailing-comma = false
+
+&&& Tool: formatter.ruff
+
++   verwendet black
+
++   usage
+    $>ruff format <file>|<folder>
+    $>ruff format --help
+
++   Einstelluungen in pyproject.toml in...
+    [tool.ruff.format]
+        quote-style = "double"
+        indent-style = "space"
+        skip-magic-trailing-comma = false
+        line-ending = "auto"
+        preview = false
+        docstring-code-format = true
+
++   Siehe in VsCodev settings.json
+
++   Jypiter NB Dateien formatieren mit ruff
+    $>ruff format **/**.ipynb
+
+
+&&& Theme:  docString
+
+
+- VS Code Extension: Autodocstring
+- PEP 257: <https://www.python.org/dev/peps/pep-0257/>
+- Google: <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>
+- NumPy: <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy>
+
++   docString.google und docString.NumPy
+
++   docString:
+    +   beschreibt oder Klasse
+    +   für automatische HTML docu
+
+
++   docString.Google
+    def function_with_types_in_docstring_google(param1, param2):
+        """Example function with types documented in the docstring.
+        `PEP 484`_ type annotations are supported. If attribute, parameter, and
+        return types are annotated according to `PEP 484`_, they do not need to be
+        included in the docstring:
+        Args:
+            param1 (int): The first parameter.
+            param2 (str): The second parameter.
+        Returns:
+            bool: The return value. True for success, False otherwise.
+        .. _PEP 484:
+            https://www.python.org/dev/peps/pep-0484/
+        """
+
++   docString.NumPy
+    def function_with_types_in_docstring_NumPy(param1, param2):
+        """Example function with types documented in the docstring.
+        `PEP 484`_ type annotations are supported. If attribute, parameter, and
+        return types are annotated according to `PEP 484`_, they do not need to be
+        included in the docstring:
+        Parameters
+        ----------
+        param1 : int
+            The first parameter.
+        param2 : str
+            The second parameter.
+        Returns
+        ----------
+        bool
+            True if successful, False otherwise.
+        .. _PEP 484:
+            https://www.python.org/dev/peps/pep-0484/
+        """
+
++   Vorteile docString.Google vs docString.NumPy
+        -~NumPy ist ausführlicher, verbraucht mehr Zeilen
+
++   Erweiterung in VsCode1
+    autoDocstring
+    url: https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
+
++   Zennmode
+    Wenn Sie an Ihren Programmen schreiben,
+        brauchen Sie nicht immer alle Funktionalitäten von VSCode.
+            Die Balken an den Seiten und unten können stören,
+            wenn Sie sich nur auf den aktuellen Code konzentrieren wollen.
+    Dazu können Sie den Zen Mode von VSCode aktivieren.
+    Aktivieren/Dekativieren
+        Drücken Sie Ctrl + K und dann Z .
+
++   VsTheme
+    CTRL+K CTRL+T
+
++   VsCode:
+    readOnly ?
+
+### !date:<2024-04-30>:Di
+
+&&& Abschnitt 13 - Kapitel 6 - Type Annotation
+    workshop.Chapter6.TypeAnnotation
+
++   typing
+    https://docs.python.org/3/library/typing.html
+
++   None vs NoReturn
+    from typing import NoReturn
+    def function1() -> None:
+        print("Hello World")
+    def function2() -> NoReturn:
+        print("Hello World")
+        sys.exit(-1)
+
++   Python Änderungen
+    +   Type Annotation
+    +   Union
+
++   typeing module
+    from typing import Dict
+    from typing import List
+    from typing import Tuple
+    <<< typeing module defines UpperCase List - not list
+
++   type:Any
+    => myPy prüft nicht mehr
+
+****  my supported releases
+
++   Python 3.8.0
+    Release Date: Oct. 14, 2019
+    https://www.python.org/downloads/release/python-380/
+
++   Python 3.9.0
+    Release Date: Oct. 5, 2020
+    https://www.python.org/downloads/release/python-390/
+
++   Python 3.10.0
+    Release Date: Oct. 4, 2021
+    https://www.python.org/downloads/release/python-3100/
+
++   Python 3.11.0
+    Release Date: Oct. 24, 2022
+    https://www.python.org/downloads/release/python-3110/
+
++   Python 3.12.0
+    Release Date: Oct. 2, 2023
+    https://www.python.org/downloads/release/python-3120/
+
++   pyEnv
+    https://github.com/pyenv-win/pyenv-win
+    +   install
+    Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+    +   changes pathes
+        $sHomeDir = "$env:HOMEDRIVE$env:HOMEPATH"
+        $sDirPyEnv = "$sHomeDir\.pyenv\pyenv-win"
+        $pyEnvBin = "$sDirPyEnv\bin"
+        $pyEnvShm = "$sDirPyEnv\shims"
+        $aDir += "$pyEnvBin"    :: add to our path
+        $aDir += "$pyEnvShm"
+    +   pyenv version
+        $>  pyenv --version
+    +   what can we install ?
+        $>  pyenv install -l
+    +   install
+        $>pyenv install 3.9.0
+    +   welche versionen wurden installiert ?
+        $>pyenv versions
+    +   aktivieren einer pyEnv pyVersion in der aktuellen Shell
+        $>pyenv shell 3.9.0
+        $>python -V
+    +   global für auch kommende Shells
+        $>pyenv global 3.9.0
+    +   lokal testen
+        $>pyenv local 3.10.b3
+
++   mixed.annotated
+    def f_append_list(
+        p_List: list[float] | list[int], p_tValue: float | int) -> None:
+        p_List.append(p_tValue)     # type: ignore
+    #   --- eof
+    #   use any list
+    Lval: list[int | float] = [1, -2.9, 3]
+    g.f_text("L : %s" % str(Lval))
+
++   type:List
++   type:Tuple
++   type:Dict
+        -> mapping
+
++   type:None
+    +   jede Funktion gibt zumindest None zurück,
+    also ein Objekt
+
+
+### !date:<2024-05-01>:Mi
+
++   kap69: seit py 3.10 args und kwargs
++   kap70: newType
++   kap70: Protocol
+
++   gererischer Typ
+    Eine Variable kann mit DatenTypen definiert werden
+    L : list[str]
+
++   https://www.tutorialspoint.com/python/python_generics.htm
+    In Python, generics is a mechanism with which you to define functions,
+        classes, or methods that can operate on <multiple types>
+        while maintaining type safety.
+    With the implementation of Generics enable it is possible to write
+        reusable code that can be used with different data types.
+    It ensures promoting code flexibility and type correctness.
+    <<< die DatenTypen können dennoch geprüft werden
+        im Gegensatz zu any
+
++   generic function
+    #   Funktionen mit veränderlichen Datentypen,
+    #       welche aber geprüft werden können,
+    #       im Gegensatz zur Verwendung von any.
+
++   Codeline Appendix '#noqa'
+
+    noqa most likely stands for "no quality assurance".
+    It tells code-analysis software to ignore warnings. –
+
+    Adding # noqa to a line indicates that
+        the linter (a program that automatically checks code quality)
+        should not check this line.
+    Any warnings that code may have generated will be ignored.
+    That line may have something that "looks bad" to the linter,
+        but the developer understands and intends it to be there for some reason.
+
++   generic function und
+        generic class  [ in C++ template ]
+
++   TypeGuard
+    Code nur ausführen,
+        wenn ein bestimmter Typ gefunden wird
+
++   py 3.11 mit TypeAnnotation
+    from typing import Generic
+    from typing import NewType
+    from typing import TypeVar
+    from typing import TypeVarTuple     # neu
+    T = TypeVar("T")
+    Shape = TypeVarTuple("Shape")
+
++   Python Angabe "..."
+    In that particular case though,
+        I think they're just using ...
+    to indicate that other code will likely be there. ...
+    is often used as a placeholder when the exact content doesn't matter.
+    The important part is Field, not the arguments.
+    https://www.pytut.com/ellipsis/
+    The Ellipsis constant is returned when typing a literal ellipsis ...
+        (three dots) or by typing the keyword Ellipsis:
+
++   py11 Literral String
+    #   Hard codierter String vs Variable vom Typ str
+    from typing import LiteralString
+    s1: str = "Jan"
+    s2: LiteralString = "Jan"
+    s3 = "Jan"
+    n1 = 10
+
+
+### Python 3.12 Features
+    +   Angabe des generieschen Typs direkt bei der Funktion
+        def min2[T](a: T, b: T) -> T:
+             return a if a < b else b
+    +   Type Alias
+        class Expected[T, Err]:
+        type IntOrErrCode = Expected[int, str]
+        type ResultOrErrCode = Expected[T, str]
+    +   typed Dict
+        from typing import TypedDict
+        from typing import Unpack
+        class Data(TypedDict):
+            verbose: bool
+            size: float
+        def f2(**kwargs: Unpack[Data]) -> None:  # noqa
+            pass
+
+&&& Abschnitt 14 - Kapitel 6-3: Advanced Tooling
+
++   PyRight
+    https://microsoft.github.io/pyright/#/
+    Pyright is a full-featured, standards-compliant static
+        type checker for Python. It is designed for high performance and can be used with large Python source bases.
+    Pyright includes a command-line tool, a language server, and an extension for Visual Studio Code.
+    <<< braucht aber länger als mypy
+    +   is in VsCode eingebaut
+    +   bei pyproject.toml
+        steht es unter:
+            "python.analysis"
+        bzw unter: python.languageServer: Pylance
+
++   Settings in der PyProject.toml
+
++   MyPy
+    url: https://mypy-lang.org/
+    Mypy is an optional static type checker for Python
+        that aims to combine the benefits of dynamic (or "duck") typing
+            and static typing.
+    Mypy combines the expressive power and convenience of Python
+        with a powerful type system and compile-time type checking.
+    Mypy type checks standard Python programs;
+        run them using any Python VM with basically no runtime overhead.
+    +   install
+    $>  pip install mypy
+
++   Tool pre-commit
+    url: https://pre-commit.com/
+    Git hook scripts are useful for identifying simple issues before submission to code review.
+        We run our hooks on every commit to automatically point out issues in code such as
+        missing semicolons, trailing whitespace, and debug statements.
+    By pointing these issues out before code review,
+        this allows a code reviewer to focus on the architecture of a change while
+        not wasting time with trivial style nitpicks.
+    +   install
+        $>pip install pre-commit
+    +   Version
+        $>pre-commit --version
+    +   vor jedem commit wird ein pre-commit ausgeführt
+    +   auf alle Dateien anwenden
+        $>pre-commit run --all-files
+    +   vorher ausführen git init
+        $>git init
+    +   ein Yaml Datei
+        .pre-commit-config.yaml
+
++   Precommit.Hook
+    einzelner Schritt
+
++   Pre-Commit läuft bei mir nicht
+    An unexpected error has occurred: CalledProcessError: command: ('d:\\my\\tools\\Git\\bin\\git.EXE', 'fetch', 'origin', '--tags')
+    return code: 128
+    stdout: (none)
+    stderr:
+
++   SciKit learn
+    url:    https://scikit-learn.org/stable/
+    url:    https://github.com/scikit-learn/scikit-learn
+    scikit-learn is a Python module for machine learning built on top of SciPy and
+        is distributed under the 3-Clause BSD license.
+
+### !date:<2024-05-02>:Do
+
++   Debugging mit VsCode
+https://www.youtube.com/watch?v=b4p-SBjHh28
+
++   PyDebug:CurrenFile
+    "Python Debugger": Debug Python File
+
++   Jupyter Notebook
+    Man kann nur eine Zelle debuggen
+
+&&& Tasks in VsCode
+    Die Ausführung steuern mit der tasks.json Datei
+    oder die
+    launch.json ...
+    {
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PythonDebug: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [],
+            "justMyCode": true
+        }
+    ]
+}
+
++   tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Python: Current File",
+            "type": "shell",
+            "command": "${command:python.interpreterPath} ${file}",
+            "args": [],
+            "group": "build"
+        },
+        {
+            "label": "Python: Main File",
+            "type": "shell",
+            "command": "${command:python.interpreterPath} ${workspaceFolder}/main.py",
+            "args": [],
+            "group": "build"
+        }
+    ]
+}
+
+### !date:<2024-05-03>:Fr
+
+
+&&& kap 86: logger
++   eigener logger
++   logger der Standard Library
+# Mode: DEBUG: Detailed debug information
+# Mode: INFO: Things working as intended
+# Mode: WARNING: Something unexpected happened
+# Mode: ERROR: The software cannot perform some function
+# Mode: CRITICAL: Program crashes for example
+
++   timing
+@timing
+def test_addition_own_implementation() -> None:
+    for _ in range(100_000):
+        v1 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
+        v2 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
+        r = v1 + v2  # noqa
+
++   timing - gesamte Programm-Zeit wird untersucht
+
++   Probleme VsCode && pyEnv
+
++   import  CProfile
+    <<<  welche Zeilen brauchen welche Zeit ?
+    +   snakeviz für die
+
++   $>pyenv
+    $>ls python -m venv .venv
+
+
++   VsCode
+https://www.youtube.com/watch?v=d_GPxwXB4wA
+
+
+### !date:<2024-05-04>:Sa
+
++   UnitTesting mit Python
+    url: https://docs.python.org/3/library/unittest.html
+
++   jede Datei mit Namen
+    "test_ " wird als Testdatei betrachtet
+
++   unittest
+    setup() : bei start
+
++   $>pip install pytest
+
++   VsCode öffnen
+    $v_VSCODE="C:\Users\peter\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+    <<< nur pytest  und nicht unittest verwenden
+
++   https://code.visualstudio.com/docs/python/testing
+
++   View test explorer
+    VS:View|Testing
+
+&&& kap92: Unittesting mit pytest
+
+    url: https://docs.pytest.org/en/8.2.x/
+    +   ist ein Module
+    +   $>pip install pytest
+    +   hat einne eigene Implementierung von unittest neben der stdlib
+
++   deco:
+    @pytest.mark.parametrize
+    "wie oft etwas ausführen"
+
++   @pytest.mark.skip(reason="Not implemented")
+    überspringen diesen Test
+
++   MonkeyPatch
+    => mock
+
+&&& Abschnitt16 : Packages
+
++   D:\repository\GIT\udemy\PythonPro\workshop\Chapter08_Packages\1_Packages\main.py
+    ,,,
+    from my_package.computations import addition
+    from my_package.computations import subtraction
+    from my_package.printing import hello_world
+    <<< my_package muss relativ zu main.py liegen !
+
+
++   es kann die gesamte Funktionalität des Packags in
+        __init__
+    erstellt werden
+
++   oder :
+    a) Unterordner mit jeweiligen __init__ Dateien
+    b) alles in py Dateien
+
++   in der __init__ kann selektiert werden,
+    was nach aussen gegeben werden soll odre auch nicht .
+    ... from .intern import addition
+    ... from .intern import subtraction
+
++   ein paar Tricks
+    D:\repository\GIT\udemy\PythonPro\workshop\Chapter08_Packages\2_Packaging\fastvector\__init__.py
+    from .vector import Vector2D    # vector.py importieren
+    __all__ = ["CVector2D"]          # mit import * nur CVector2D importieren
+
++   besondere Dateien für pip
+    +   setup.py        : früher
+        setup.cfg       : danach
+        pyproject.toml  : heute für die Tools und die Pakete
+
++   Die pyproject.toml ist eine INI-Datei
+    Sie definiert das Build-System
+    > hier scm
+    > es gibt auch poetry
+
++   Alles installieren, was durch "pyproject.toml" definiert wird
+    $>pip install -e .
+    . : toml ist local
+    -e: editorMode
+    <<< erstellt *.whl wheel Datei, welches Python enthält
+
++   Anaconda AI
+    https://www.anaconda.com/
+    https://www.anaconda.com/products/data-science-ai-workbench
+    https://www.anaconda.com/download/
+
++   Conda Environment
+    https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+&&& Abschnitt16 : Packages.HTML
+
+$>pip install mkdocs
+
++   install doc packages
+    $>pip install -r .\requirements-dev.txt
+    $>pip install mkdocs-material
+    $>pip install mkdocsstrings
+    $>pip install mkdocstrings[python]
+    $>pip install Pygments
+
++   add 2 files
+    api.md
+    index.md
+
++   mldocs.yml anlegen
+    +   wichtige Einträge
+        plugins:
+            - search
+            - mkdocstrings
+
++   build erstellen
+    $>mkdocs build
+
++   Webseiten anzeigen
+    $>mkdocs serve
+
++   Quiz:
+    +   Das Attribute __all__ steht für alle Teile eines
+        Paketes, die von einem Wildcard importiert werden können
+    +   jede Python Datei ist ein Module
+
+    +   Ein Package ist eine Sammlungvon Modulen
+
+&&& Abschnitt 18.96 Repository
+
++   Code Coverage
+    Wieviel Code wude mit meinem unitTest abgedeckt ?
+
++   Coverage
+    $>pytest --cov=fastvector tests --cov-report=html
+    $>pytest --benchmark-column=min,max,mean,stddev --benchmark-sort=mean benchmarks
+
++   GitHub Actions
+    https://github.com/features/actions
+    +   YAML Datei erstellen
+
+    GitHub Actions ist eine Plattform für Continuous Integration und Continuous Delivery (CI/CD),
+    mit der du deine Build-, Test- und Bereitstellungspipeline automatisieren kannst.
+    Du kannst Workflows erstellen,
+        mit denen du alle Pull Requests für dein Repository erstellen und
+        testen sowie gemergte Pull Requests für die Produktion bereitstellen kannst.
+    GitHub Actions ist nicht auf DevOps beschränkt und kann auch für andere Ereignisse
+        in deinem Repository Workflows ausführen.
+    So kannst du z. B. einen Workflow für das automatische Hinzufügen geeigneter Bezeichnungen ausführen,
+        sobald in deinem Repository ein neues Issue erstellt wird.
+    GitHub stellt virtuelle Linux-, Windows- und macOS-Computer für die Ausführung deiner Workflows bereit.
+    Alternativ dazu kannst du eigene selbstgehostete Runner in deinem Rechenzentrum oder
+        deiner Cloudinfrastruktur hosten.
+    Workflows werden im Verzeichnis .github/workflows in einem Repository definiert,
+        und ein Repository kann mehrere Workflows aufweisen.
+
++   Stichwort: pre-commit
+    +   Analyse der Code Qualität
+    +   Formatierung
+
++   Zusammenfassung
+    +   Projekt ist Blaupause
+    +   jede SubDir mit __init__ file
+    +   TestOrdner ist ausserhalb des Projektes
+
+### !date:<2024-05-05>:So
+
+### theme:Cython
+
++   url
+    https://cython.org/
+    Cython is an optimising static compiler for both the Python programming
+        language and the extended Cython programming language (based on Pyrex).
+    It makes writing C extensions for Python as easy as Python itself.
+
++   Intro
+    Python Interpreter ruft C auf
+
++   Idee
+    Ein Array mit Werten
+        [-2,-1,-4.1,6,8]
+    soll auf den Wertebereich [-1,1]  getestet werden.
+    Falsche Werte sollen ersetzt werden
+
++   Es gibt cpython und cython
+
++   cython:
+    +   python file convert into c file
+    +   *.pyx Extension
+    +   clipping bedeutet :
+        for idx in range(len(vector_in)):
+            vector_out[idx] = min(max(vector_in[idx], min_value), max_value)
+
++   Es gibt eine Datei
+        computations.py - in Python
+    und
+        cython_computation.pyx  - in Cython
+
++   In Cython Programmen wird zu 95% nur in Python geschrieben.
+
++   $>pip install -e .
+    #   cython library installieren
+
++   Es wird die Datei :
+        cython_computation.c
+    generiert
+    und compiliert in
+        cython_computation.cp310-win_amd64.pyd
+    Datei, die wiederum von
+    Python aufgerufen werden kann.
+
++   In Cython TypeAnnotation ist Pflicht und keine
+        Information wie in Python
+    Beispiel: loat[:] vector_in
+
++   benchmark erstellen
+    def test_numpy_clip(benchmark: Any) -> None:
+    benchmark.pedantic(
+        np.clip,
+        args=(NP_ARR, -1.0, 1.0, NP_ARR),
+        rounds=NUM_ROUNDS,
+        iterations=NUM_ITERATIONS,
+    )
+
++   Ein/eine Benchmark (von englisch benchmark oder bench mark) ist ein Vergleichsmaßstab.
+    Benchmarking (sinngemäß „Maßstäbe vergleichen“)
+    bezeichnet die vergleichende Analyse
+        on Ergebnissen oder Prozessen mit einem
+            >festgelegten Bezugswert< oder >Bezugsprozess<.
+
++   numpy ist langsamer als cython
+
+
+### theme:CPython
+
++   url
+    https://gpt5.blog/cpython/
+    CPython ist nicht nur eine Implementierung von Python in der Programmiersprache C,
+        sondern dient auch als Referenzimplementierung,
+    an der sich andere Python-Interpreter orientiert.
+n
+
++   direkt in C wird der Code geschrieben
+
++   Reset Code
+    #define PY_SSIZE_T_CLEAN
+
++   https://docs.python.org/3/c-api/list.html
+
+### theme:PybindC11+
+
++   pybind11 ist eine Library
+    $>pip install pybind11
+    url:
+        https://pybind11.readthedocs.io/en/stable/basics.html
+
+
+### info NumPy
+
++   NumPy
+    https://numpy.org/
+    https://numpy.org/doc/stable/user/quickstart.html
+
+### theme:Numba
+
+    url: https://numba.pydata.org/
+    Numba is an open source JIT compiler that translates
+        a subset of Python and NumPy code into fast machine code.
+
++   Numba translates Python functions to optimized machine code at
+    runtime using the industry-standard LLVM compiler library.
+    Numba-compiled numerical algorithms in Python can approach the speeds of C or FORTRAN.
+    You don't need to replace the Python interpreter,
+        run a separate compilation step, or even have a C/C++ compiler installed.
+        Just apply one of the Numba decorators to your Python function,
+            and Numba does the rest.
+
++   Grundidee ähnlich wie Cython,
+    doch anstelle von Cython-Code wird
+    Python-Code mit einem Decorator verwendet.
+
++   Numba kann auch mit NumPy verwendet werden.
+    https://numba.pydata.org/
+
++   jit = just-in-time
+    Code wird erst compiliert, wenn er ausgeführt wird.
+    Dadurch u. Umständen langsam
+
++   setup.py
+    setup.py is a python file,
+    the presence of which is an indication that the module/package
+    you are about to install has likely been packaged and distributed with Distutils,
+    which is the standard for distributing Python Modules.
+    This allows you to easily install Python packages. Often it's enough to write:
+    $> pip install .
+
+### theme:MyPyc
+    https://mypyc.readthedocs.io/en/latest/introduction.html
+    Mypyc compiles Python modules to C extensions.
+        It uses standard Python type hints to generate fast code.
+    The compiled language is a strict, gradually typed Python variant.
+        It restricts the use of some dynamic Python features to gain performance,
+        but it’s mostly compatible with standard Python.
+    Mypyc uses "mypy" to perform
+            type checking and type inference.
+    Most type system features in the stdlib typing module are supported.
+    <<< langsamer als Cython oder Numba
+
+### theme:final Benchmark
+
++   test_parallel am schnellsten
++   mypyc schneller als numba
+
+
+### !date:<2024-05-06>:Mo
+
+### theme:
++   Multi-Threadding,
+    Multi-Processing && Async Programming
+
++   Multi-Threadding
+    +   gemeinsamer Speicher
+    +   schneller Start
+
++   CPU-bound := Begrenzung
+    In computer science, a task,
+        job or process is said to be CPU-bound (or compute-bound)
+        when the time it takes for it to complete is determined
+        principally by the speed of the central processor.
+
++   IO-bound
+    In computer science,
+    I/O bound refers to a condition in which the time
+        it takes to complete a computation is determined principally
+        by the period spent waiting for input/output operations
+        to be completed,
+    which can be juxtaposed with being CPU bound.
+    This circumstance arises when the rate at which data is requested
+        is slower than the rate it is consumed or,
+        in other words, more time is spent requesting data
+                than processing it.[1]
+
++   Threading (Concurrently):
+    - A new thread is spawned within the existing process
+    - Starting a thread is faster than starting a process
+    - Memory is shared between all threads
+    - Mutexes often necessary to control access to shared data
+
++   Multiprocessing (Parallel):
+    - A new process is started independent from the first process
+    - Starting a process is slower than starting a thread
+    - Memory is not shared between processes
+
++   Async:
+    - Refers to the occurence of events independent
+        of the main program flow
+    - Waiting for an event from the outside of our program
+    - Concurrent programming is the ability to
+        release the CPU during waiting periods
+        so that other tasks can use it
+
++   Thread Make
+#   include
+import time
+from threading import Thread
+#   my thread function
+def worker(sleep_time: float) -> None:
+    print("Start worker")
+    time.sleep(sleep_time)
+    print("End worker")
+#   create thread
+t1 = Thread(target=worker, name="t1", args=(2.0,))
+#   check
+print(f"Ident: {t1.ident}")         #   None
+print(f"Alive: {t1.is_alive()}")    #   False
+print(f"Name: {t1.name}")           #   t1
+#   start des threads t1
+t1.start()
+#   check2
+print(f"Ident: {t1.ident}")     #   10476
+print(f"Alive: {t1.is_alive()}")    # True
+print(f"Name: {t1.name}")           # t1
+#   warten auf Beendigung
+t1.join()
+
+### theme: GIL: Global Interpreter Lock
+
++   CPython
+    Threadding keine Verbesserung, da GIL gilt
+
++   GIL
+    https://en.wikipedia.org/wiki/Global_interpreter_lock
+    A global interpreter lock (GIL) is a mechanism
+        used in computer-language interpreters to synchronize
+        the execution of threads so that only
+            one native thread (per process)
+    can execute basic operations
+        (such as memory allocation and reference counting)
+    at a time.[1]
+    As a general rule,
+        an interpreter that uses GIL will see only one thread
+        to execute at a time,
+    even if runs on a multi-core processor,
+    although some implementations provide
+    for CPU intensive code to release the GIL,
+    allowing multiple threads to use multiple cores.
+    Some popular interpreters that have GIL are :
+        CPython and Ruby MRI.
+
+### theme: multi-Processing
+
++   Aufruf wie bei Threadding
++   ist etwa 2x schneller
+#   m:  process
+g.f_menu("process")
+#   m:  create.process
+tPrc = [Process(target=g.f_isPrime, args=(n,)) for n in g.C_LIST_number]
+#
+#   start
+iStart = time.perf_counter_ns()
+[p.start() for p in tPrc]
+   #   join
+[p.join() for p in tPrc]
+iStopp = time.perf_counter_ns()
+assert (iStopp > iStart)
+#   close
+[p.close() for p in tPrc]
+#   calc
+fTime = (iStopp - iStart) / 1000000.0
+g.f_text(f"calcPrimeTime.Prc : {fTime} [ms]")
+
+### theme: vergleich und pools
+
+pool = Process-based parallelism
+https://docs.python.org/3/library/multiprocessing.html
+
++   exeCutor
++   proess pool
+
+### theme: aync tasks
+    import asyncio
+    import sys
+    async def foo() -> int:
+        print("start foo")
+        await asyncio.sleep(2.0)
+        print("end foo")
+        return 0
+    async def main_await() -> int:
+        print("before await foo")
+        await foo()
+        print("after await foo")
+        return 0
+
++   "future" Wert erst in der Zukunft verfügbar
+
++   warten bis alle 3 funktionen beendet sind
+    L = await asyncio.gather(f("A"), f("B"), f("C"))  # noqa: N806

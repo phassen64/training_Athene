@@ -1,0 +1,14 @@
+# PSStyle (nur ab PowerShell 7.2)
+$PSStyle
+$PSStyle.BlinkOff
+$PSStyle.Underline
+
+$msg = "Could not find part of path: {0}{1}{2}{3}" -f $psstyle.Italic,$psstyle.Background.Cyan,"c:\work",$psstyle.Reset
+Write-Warning $msg
+
+ <# Progress Bar in PowerShell 5.1 und PowerShell 7 ist grafisch unterschiedlich.
+ $PSStyle.Progress (Standard PS7: Minimal)
+ $PSStyle.Progress.View = 'Classic' (Ansicht wie bei PS5.1)
+ #>
+
+# https://4sysops.com/archives/using-powershell-with-psstyle/
