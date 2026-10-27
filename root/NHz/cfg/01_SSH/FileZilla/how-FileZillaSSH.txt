@@ -1,0 +1,19 @@
+--- how.FileZilla-2-SSH
+
+4.Connect via Site Manager:
+Establish SFTP connection.
+
+In FileZilla, 
+    go to File > Site Manager and click New site.
+
+Set the following properties:
+    Protocol: SFTP - SSH File Transfer Protocol
+    Host: Your VM's External IP Address
+    Port: 22
+    Logon Type: Key file or Interactive
+    User: your_username "phassen64"
+    Key File: 
+    "D:\repository\framework\tux\ssh\keyPair\260923\kpTrixie.ppk"
+        =:<sshKey.ppk> * private key*
+            
+    Click Connect.

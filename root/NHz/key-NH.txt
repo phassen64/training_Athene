@@ -1,0 +1,92 @@
+--- rme.key.NH
+
+
+&&& key.id.credentials
+
+    •   $:<pwd>
+        <!mate>     :=  "!mATe64.me"
+        <!peace>    :=  "!Peace.Of.Me.2017"    <17z>
+        <!samba>    :=  "!Samba2020"            <10z>
+        <!surf>     :=  "!Silversurfer2022"     <17z>
+
+    •   $:<pin>
+        <#dtm6>     :=  "090764"
+
+    •   $:<eml>.org
+        <@google>       :=  "phassen64@gmail.com"
+        <@msn>          :=  "phassen64@outlook.de"
+        <@1&1>          :=  "phassen64@online.de"
+        <@job2022>      :=  "peter.hassen.n.90489.2022@online.de"
+        <@mate.me>      :=  "peter.hassen@mate64.me"
+        <@pluto>        :=  "pluto64@e-mail.de"
+
+
+### !date:<2026-08-31>:Mo 
+
+
++   Kontakt
+    New Horizons Nürnberg
+    https://www.newhorizons.de/standorte/nuernberg    
+        New Horizons Nürnberg 
+        Königstraße 73
+        90402 Nürnberg
+        D-0911 
+        Tel: 0911-51 77 80 70
+    nuernberg@newhorizons.de
+    >>> 15-16 Uhr vor Ort
+
++   Schulungsvertrag
+    Scheurer GmbH
+    Stahlgruberring 11a
+    81829 München
+
++   Schulungsablauf
+    Weiterbildungsbeginn: 31.08.2026
+    Weiterbildungsende: 18.11.2026
+    Die Schulungszeiten sind:
+        Vollzeit: 09:00 Uhr – 17:00 Uhr
+        Teilzeit: 09:00 Uhr – 13:00 Uhr oder 13:00 Uhr – 17:00Uhr
+(Remote) WalkInTM 
+    Schulungen enden um 16:30 Uhr bzw. 12:30 Uhr
+
+
+### !date:<2026-09-01>:Di
+
++   Kurs:   
+    Ninja Training
+        url     :   https://digital.ninja-training.de/
+        usr     :   newhorizons2026082002
+        🔑 pwd   :  g65484hjHHgg~fMy;bJ
+
+
+### !date:<2026-09-17>:Do 
+
++   Kurs:   AI Foundation
+    url:    https://learn.aicerts.ai/
+    usr:    <@msn>
+    pwd:    <!samba>
+
+
+### !date:<2026-09-18>:Fr
+
++   keys:
+    url:    https://lochoice.com/
+    GenAIBIZ: APMA8NSLCT
+    ETBIZ: APKGOUVQC7
+
++   Kurs:   GenAIBIZ ETBIZ
+    url:    https://lochoice.com/
+    usr:    <@msn>
+    pwd:    <!samba>
+
+
++   email-address 
+        "phassen64@outlook.de"
+        "mazen.nehme@nhacademy.de"        
+
+
+### !date:<2026-10-16>:Certificat 
+    url:    https://certifications.certnexus.com/
+    usr:    <@msn>
+    pwd:    <!samba>
+

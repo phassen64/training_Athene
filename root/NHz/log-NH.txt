@@ -1,0 +1,858 @@
+###############################################################################
+--- !log.2026.NH
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
++   Kontakt
+    New Horizons Nürnberg
+    https://www.newhorizons.de/standorte/nuernberg    
+        New Horizons Nürnberg 
+        Königstraße 73
+        90402 Nürnberg
+        D-0911 
+        Tel: 0911-51 77 80 70
+    nuernberg@newhorizons.de
+
++   login Microsoft 
+    usr:    <@msn>      := "phassen64@outlook.de"
+    pwd:    <!prior>    := "!Prerogative"  
+
++   VGN 
+    https://www.vgn.de/netz-fahrplaene/linien/
+
+
++   Examen
+    📩   Ihren Prüfungsvoucher-Code 
+        für das EXIN Cloud Computing erhalten Sie von 
+   
+    Frau 
+        Martina Tabti: testcenter@newhorizons-muenchen.de
+
+    Meeting ID 
+    Meeting passcode
+
+    
+
+--- readme.NH	EXIN_Cloud_FND
+		Cloud Fundation
+	now:2026-09-01,15:34
+
++   Credentials.AWS        
+    url:    https://aws.amazon.com/console/
+    pwd:    <!surf>
+    eml:    <@pluto>
+    account ID:"4323-4242-1362"     *   IAM userName
+    account name:"phassen64"        *   IAM password
+
+
++   Credentials.Google
+    url:    https://www.google.de/
+    usr:    <@google>
+    pwd:    <!mate>
+    tel:    01702803354
+
++   Credentials.MSN 
+    url:    https://login.microsoftonline.com/
+    usr:    <@msn>
+    pwd:    <!prior>
+    pin:    <#dtm6>
+
+
++   Credentials.NH 
+    a)  MSN
+        url     :   https://teams.cloud.microsoft/
+    b)  Ninja Training
+        url     :   https://digital.ninja-training.de/
+        usr     :   newhorizons2026082002
+        🔑 pwd   :  g65484hjHHgg~fMy;bJ
+
+
+###############################################################################
+m:  logbook
+###############################################################################
+
+### !date:<2026-08-31>:Mo 
+
++   NH Teams Intro
+    https://www.youtube.com/watch?v=fD9wOc7K0NI&feature=youtu.be
+
+
+### !date:<2026-09-01>:Di 
+
++   im Trainingscenter
+    
++   Schulungsablauf
+    Weiterbildungsbeginn: 31.08.2026
+    Weiterbildungsende: 18.11.2026
+    Die Schulungszeiten sind:
+        Vollzeit: 09:00 Uhr – 17:00 Uhr
+        Teilzeit: 09:00 Uhr – 13:00 Uhr oder 13:00 Uhr – 17:00Uhr
+(Remote) WalkInTM 
+    Schulungen enden um 16:30 Uhr bzw. 12:30 Uhr
+
+
+### !date:<2026-09-02>:Mi 
+
++   login AWS
+    url:    https://aws.amazon.com/console/
+    usr:    "phassen64"
+    eml:    <@pluto>=:"pluto64@e-mail.de"
+    pwd:    <!surf>=:"!Silversurfer2022"
+    account ID:"4323-4242-1362"
+    account name:"phassen64"
+
+
+>>> xpr::XE.AWS [260902]
+
+    url:    https://aws.amazon.com/console/
+    
++   besondere AWS Services 
+    
+    <   Compute 
+        •   EC2 (Virtuelle Maschinen)
+    
+    <   Storage
+        •   S3 
+    
+    <   Datenbanken
+        •   RDS
+    
+    <   Network
+        •   VPC
+        •   Route S3
+        
+    <   Security, Identity & Complience 
+        •   IAM
+    
+    <   Internet Of Things
+        •   IoT Core
+    
+    <   Machine Learnings
+        •   Amazon Translate
+
++   Amazon Compute EC2
+    •   Instances
+    •   Images
+    •   Elastic Block Store 
+    •   Network & Security
+        +   Elastic IP -> fixe IP
+    •   Load Balancing
+        +   VM Last verteilen
+    •   Auto Scaling
+        +   automatisch neue Instanz bei Überlast erstellen
+    
++   Amazon Storage S3
+    *   Datenablage, wie virtuelle Festplatte
+    
++   Amazon Datenbanken Aurora & RDS
+
+<<< xpr::XE.AWS.
+
+
+### !date:<2026-09-04>:Fr 
+
++   Antwort von der BA
+
++   Trainer Cloud Fundation
+    Marc Schachteli
+    Waldemar Lange
+
+
+
+    
+### !date:<2026-09-07>:Mo 
+
+
+>>> xpr::AWS.EC2 [260907]
+
++   AWS for absolute beginners 
+    https://www.youtube.com/watch?v=UQ5_9G7q-ec
+
++   AMI = Amazon Machine Image (AMI) 
+    Amazon Linux Kernal 
+    MAC 
+    Windows 
+    Linux RedHat 
+    Linux Debian
+    Linux Unbunto
+
++   Instance Type 
+    t2.micro 
+
++   Key pair 
+    RSA / SSH 
+    .ppk -> Putty
+    
++   apply Network Settings 
++   launching AMI 
++   watch Instance ID 
+
++   now connect via SSH 
+
++   run putty
++   copy Public DNS (DemoKey)
+
++   login with 
+    usr:ec2-user@...
+
+
++   now 
+        bash $> ls 
+        bash $> pwd
+
+        
+<<< xpr::AWS.EC2.
+
+
+
++   Azure AI
+https://azure.microsoft.com/en-us/products/virtual-machines/
+https://portal.azure.com/#view/Microsoft_Azure_Billing/FreeServicesBlade
+
+
+### !date:<2026-09-08>:Di 
+
+
++   Prüfung wo ?
+
+    
+<<< Frau Kammscheck 
+
++   voucher 
+        email 
+        video aufzeichnung
+
++   online   
+
++   im gruppenchat den Voucher beauftragen
+
++   Test 
+    15 Fehler
+
+
+### !date:<2026-09-10>:Do
+
++   AWS Identity and Access Management (IAM) 
+    is a web service that controls authentication (who can sign in) and 
+        authorization (what permissions they have) across your AWS resources. 
+    It forms the foundation of cloud security in AWS and 
+        is provided at no extra cost.
+
++   MFA eingerichten für das Device "tron3"
+    Confirm your account recovery information
+    If you lose access to this MFA device, we will use the following information for account recovery. Please verify that your email and phone number, including country code, are correct.
+    Email address:
+    pluto64@e-mail.de
+    Edit
+    Phone number:
+    +49 09119321576
+
+
++   AWS.login
+    url:    https://aws.amazon.com/console/
+    eml:    <@pluto>=:"pluto64@e-mail.de"
+    pwd:    <!surf>=:"!Silversurfer2022"
+    
+    Ein einloggen mit der AccountID 
+        ist nicht möglich,
+    aber es ist möglich über die root email möglich.
+    
++   AWS login nach Passkey
+    Account ID      "4323-4242-1362"
+    Account name    "phassen64"
+    Days remaining  "174 days"
+    Credits remaining "$119.62 USD"
+
++   Meine Zone ist  
+    "eu-central-1"
+
++   Arbeiten in der AWS CloudShell
+    +   Es kann ein Upload gemacht werden.
+    https://docs.aws.amazon.com/cloudshell/latest/userguide/welcome.html
+
+
+>>> xpr ::  AWS Cloud Services & Praxistipp
+
++   Intro Services der AWS Management Console 
+    
+    •   Compute     |   EC2 
+    •   Storage     |   S3
+    •   Database    |   Aurora & RDS
+    •   Networking  |   VPC 
+    •   Developer Tools  |   AWS CloudShell
+
+    "EC2"   : Amazon Elastic Compute Cloud 2
+
++   Route 53
+
+<<  xpr ::  AWS Cloud Services & Praxistipp.
+
+
++   Neuer Versuche einloggen AWS Console
+
+    url:            https://aws.amazon.com/de/console/
+    Account ID      "432342421362"
+    Account name    "phassen64"
+    pwd             "!Silversurfer2022"
+    +   nur als "Root User" mit MFA
+    eml:            "pluto64@e-mail.de"
+
+
++   Eine AWS Instanz erstellen in AWS EC2
+    anhand von AWS beginner 
+    url:    https://www.youtube.com/watch?v=UQ5_9G7q-ec
+
+    Name:   "MyAmazonLinuxServer"
+    AMI OS: "Amazon Linux"
+    Architektur : "64-Bit" 
+    Instanz-Typ : "t3-micro"    * 2vCPU, 1GBit RAM
+    Schlüsselpaar erstellen :
+        Name : "DemoKeyPair"
+        Typ des Schlüsselpaars : "RSA"
+        Dateiformat privater Schlüsel ".ppk" 
+    
++   jetzt launch Instance 
+    Erfolg
+    Der Start der Instance wurde erfolgreich initiiert (i-0c80df3710dccfd3e)
+
++   Anm. der PublicKey wurde steht bereits im Download 
+
+
++   Putty öffnen
++   SSH Key 
+        Putty.HostName =
+    "ec2-52-57-80-138.eu-central-1.compute.amazonaws.com"
+
++   key laden    
+    
++   SSH User "ec2-user"    
+
+>   ifconfig
+<   my Ip Address
+[ec2-user@ip-172-31-35-127 ~]$ ls
+    172.31.35.127
+ 
+
++   setze mein Passwort 
+    Bash
+    bash$>  sudo passwd ec2-user
+    bash$>  "!amazon0"
+
++   putty SSH connection
+    name :  "ec2-52-57-80-138.eu-central-1.compute.amazonaws.com"
+        
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1t47VeLnYvZjZHnulQum44iOyAI8jvYGJ76HL1mMzjVfNHyGgon2OZK98RXv7I3Ug4FgDXBBhphbslCH1E4c6tQLfxcGKBSpDxavp6oH/dx1BZ+fTOi7chcDnYBwRMXLwgiqBM3PkLXndr2VrUwDHaCLFve8afXkvhxFP8Rlt1UBe1yvYUPE9/1bhYm0zQVojQzAA4MpDEQNhl0Hk4eUv2s440fk+I5nrzufn4H6oGy7DL+xaEgYRV0jQ4dhu27mNB7D2pucBz5c6/j9M8sOnJwYfAlO0Hlr9YYFVPdadBQ0yHi9GuI4B3WViuq/O75NXrdUdpaKlXHjFp+36KGq5 DemoKeyPair
+
+
+### !date:<2026-09-11>:Fr 
+
++   AWS login (Root User)
+    eml:            "pluto64@e-mail.de"
+    pwd             "!Silversurfer2022"
+
+
++   AWS account 
+    https://aws.amazon.com/de/console/
+    Verbleibendes Guthaben  $139.54 USD
+    Verbleibende Tage       172 (March 2, 2027)
+
++   kill old aws instance
+    CloudShell  $>  aws ec2 terminate-instances --instance-ids i-0c80df3710dccfd3e
+
++   kill aws ssh pair 
+    CloudShell  $>  aws ec2 delete-key-pair --key-name MyKeyPair
+ 
+-------------------------------------------------------------------------------
+>>> xpr ::  AWS EC erstellen [260911]
+-------------------------------------------------------------------------------
+    +   perform AWS  login 
+        https://aws.amazon.com/de/console/
+    +   goto  AWS EC  dash board
+    +   choose "Instance-Type" * not needed, everything is default
+    +   choose "Instances"
+    +   Instance erstellen durch 
+        button_InstanceStarten
+    +   Name: "iBritney"
+    +   Betriebssystem AMI="Debian"
+    +   InstanceType (vorbelegt) =: "t3.micro"
+    +   Schlüssel-Paar =: "KeyPair_Britney"   
+        *   .ppk
+        *   Nach dem Auswählen wird der Key in <user>\Download erstellt
+    +   "Instance Starten"
+    +    goto  AWS EC  dash board
+    +   choose "Instances
+    <   neue Instanz "i-05ffe9daf23d353ed"
+    <   öffentlicher IPv4-DNS "ec2-3-127-247-213.eu-central-1.compute.amazonaws.com"
+    <   öffentliche IPv4 Adresse "3.127.247.213"
+    +   abwarten bis die Instanz gestartet wurde
+    +   psh test:
+        psh $>  ping    3.127.247.213
+        psh $>  *   timeout  
+    +   putty 
+        login : "ec2-user"        
+    +   status: fail ???
+<<< xpr ::  AWS EC erstellen.
+    
++   Intro EC2 
+    url:    https://www.youtube.com/watch?v=UQ5_9G7q-ec
+    
+-------------------------------------------------------------------------------
+>>> xpr ::  aws.Demo2 [260911]
+-------------------------------------------------------------------------------
+
++   Meine neue Demo-Instance 
+
+    nam:    "MyDemo"
+    usr:    "ec2-user"
+    iId:    i-08c8edbbeb17b4d6e
+    dns:    ec2-18-196-178-132.eu-central-1.compute.amazonaws.com
+    os:     AWS Linux 
+    status:     putty.OK
+    SSH KeyPair:    DemoKeyPair2
+    putty:  access 
+    winScp: access
+    status: ok 
+    
+[ec2-user@ip-172-31-42-244 ~]$ ifconfig
+
+<<< xpr ::  aws.Demo2 
+
+-------------------------------------------------------------------------------
+>>> xpr ::  aws.Britney [260911]
+-------------------------------------------------------------------------------
+
+    nam:    "iBritney"
+    usr:    "admin"    
+    iId:    i-05ffe9daf23d353ed
+    ssh:    KeyPair_Britney.ppk
+    os:     Debian Linux
+
+    vpc:    vpc-0d163baf104445fe3
+    ip-172-31-47-140.eu-central-1.compute.internal
+    subnet-0c70a7ae1e326b3ff
+    dns:    ec2-3-73-75-51.eu-central-1.compute.amazonaws.com
+    ami:    debian-13-amd64-20260316-2418
+
+--- update  mini
+    
++   add.python 
+    +   install 
+        $>  sudo apt update
+        $>  sudo apt install python3 python3-pip python3-venv -y
+    +   test 
+        $>  python3 --version
+        $>  pip3 --version
+
++   add.ruby 
+        $>  sudo apt install ruby
+
+<<< xpr ::  aws.Britney.
+
+-------------------------------------------------------------------------------
+>>> xpr ::  Powershell 2 DebianLinux [260911]
+-------------------------------------------------------------------------------
+
+1.  Install Prerequisites    
+    $>  sudo apt update && sudo apt install -y curl gnupg apt-transport-https lsb-release
+    
+2.  Import the Microsoft GPG Key    
+    $>  curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/microsoft.gpg   
+
+3.  Add Microsoft APT Repository
+
+    $>  echo "deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/debian/13/prod trixie main" | sudo tee /etc/apt/sources.list.d/microsoft.list
+
+4.  Update Package Index
+    $>  sudo apt update
+
+5.  Verify Package Availability
+    $>  apt-cache policy powershell
+
+6.  Install PowerShell
+    $>  sudo apt update && sudo apt install -y powershell
+
+7.  Launch PowerShell
+    $>  pwsh 
+    
+8.  exit PowerShell
+    $>  exit
+
+<<< xpr ::  Powershell 2 DebianLinux
+
+
++   AWS.Britney TAG
+    name :  "Schedule"
+	value:  "run-1-hour-daily"
+
+
++   AWS.Ceasar 
+    ec2-3-75-183-198.eu-central-1.compute.amazonaws.com
+
+
+
+### 17:35
+
++   Die DNS Namen ändern sich ständig,
+        nicht aber die SSH keys.
+    
++   Instant-Namen & user
+    aws i1-a61x-Demo    key:MyDemoKeyPair2.ppk      "ec2-user"
+    aws i2-d13x-Britney key:KeyPair_Britney.ppk     "admin"
+    aws i5-s25e-Ceasar  key:keyPair_i5_windows.pem  "..."
+
++   kein putty für windows sondern 
+    RDP 
+    Aber das Administrator Password muss ermittelt werden-
+    Nicht *.ppk sonder *.pem verwenden
+    
+    2.Option A: Connect via standard RDP (Recommended):
+    GUI Access.On your Windows   machine, press Win + R, type mstsc, and press Enter.Enter your EC2 instance's Public  IP address in the Computer field and click Connect.Enter the username Administrator and paste the decrypted password.
+    
++   How to connect
+1. Open or install a remote desktop client
+2. Download the RDP shortcut file
+3. Open the RDP client and run the shortcut file
+4. Retrieve password
+5. Enter username and password
+6. Connect
+
+RDP shortcut file
+    Download
+
+    
+### 19:35 aws i5-s25e-Ceasar
+
+=== windows instance 
+
+    i-0d058a9d193d7ce9a
+    63.180.70.161
+    172.31.42.150
+    ec2-63-180-70-161.eu-central-1.compute.amazonaws.com
+    ami-0288c9b131a0c7082
+
+=== i5
+    i-0d058a9d193d7ce9a (i5-s25e-Ceasar)
+    172.31.42.150    
+    usr:    "Administrator"
+    pwd:    "N-hnFALOeghvUN*HaBPMx(j)4accnUQ."
+
+
+===	about
+
+Device name	EC2AMAZ-VKHPU8V
+Processor	Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz (2.50 GHz)
+Installed RAM	1.00 GB (880 MB usable)
+Device ID	6B6B0CFE-2F20-4F1F-AA9F-39C8BF40B981
+Product ID	00491-50000-00001-AA041
+System type	64-bit operating system, x64-based processor
+Pen and touch	No pen or touch input is available for this display
+
+Edition	Windows Server 2025 Datacenter
+Version	24H2
+Installed on	‎9/‎10/‎2026
+OS build	26100.33296
+Experience	Windows Feature Experience Pack 1000.26100.275.0
+
+
+
+### 19:50 Microsoft Azure
+
++   Global web icon
+    Microsoft Azure
+    https://portal.azure.com
+    https://portal.azure.com/#home
+    usr:    <@msn>
+    
++   seperator Edge
+    https://separator.mayastudios.com/
+
++   Azure Intro 
+    https://www.youtube.com/watch?v=nr-HQN9nIxM
+
++   erste VM 
+    usr:    "azureuser"
+    pwd:    <!surf>=:"!Silversurfer2022" 
+    
+### !date:<2026-09-12>:Sa
+
++   google Cloud
+https://de.wikipedia.org/wiki/Google_Cloud_Platform
+https://cloud.google.com/
+>   Compute Engine 
+    *   leistungsstarke VM
+
+<   client ID
+    1091043239637-97s53edu3fqbdjirsocehsot6lssot4i.apps.googleusercontent.com
+    
+https://console.cloud.google.com/compute/instances?facet_url=https:%252F%252Fcloud.google.com%252Ffree&project=project-68c60724-c4b1-4335-a65
+
+
+### !date:<2026-09-13>:So
+
++   Steps to Create a Google Cloud VM
+
+    Sign in and Select Project: 
+        Open the Google Cloud Console and select or 
+        create your active project (ensure billing is linked).
+    
+    Navigate to Compute Engine: 
+        Use the left-side navigation menu, 
+            go to Compute Engine, and click on VM instances.
+    
+    Create Instance: 
+        Click the Create instance button at the top of the page.
+    
+    Configure Basics: 
+        Assign a Name to your virtual machine, and select your preferred Region and Zone.
+    
+    Choose Machine Type: 
+        Select a machine configuration 
+        (such as General purpose E2 or N1 series) depending on your required CPU and memory workloads.
+        
+    Select Boot Disk: 
+        Choose your operating system image 
+        (like Ubuntu, Debian, or Windows Server) and adjust the storage size if needed.
+    
+    Configure Firewalls: 
+        Check options to allow HTTP/HTTPS traffic if you plan 
+        to host a web server.
+        
+    Launch and Connect: 
+        Click Create, 
+            wait a moment for deployment, 
+        and click the SSH button next to 
+            your instance name to connect directly inside your browser. [1] 
+            
++   What is Google Cloud ?
+https://www.youtube.com/watch?v=XwrX5AnCf1A
+
++   Google Cloud Introduction [5h]
+https://www.youtube.com/watch?v=lvZk_sc8u5I        
+
++   Google Cloud VM 
+https://www.youtube.com/watch?v=G-NRWgAjToA&t=104
+<<< nur Linux VM
+
+
++   Olympic
+https://de.wikipedia.org/wiki/Griechische_Mythologie
+
+
++   FinOps (Abk. für Financial Operations) 
+    Die effektive Verwaltung der Cloud-Kosten ist zu einer wesentlichen Herausforderung geworden. Schließlich ist es nicht nur wichtig, 
+    die Ausgaben im Auge zu behalten – es muss auch dafür gesorgt werden, 
+    dass sie im Einklang mit den geschäftlichen Zielen stehen und einen optimalen Return on Investment bieten. 
+    Genau hier setzt das Konzept von FinOps an.
+
++   meine VM instances 
+    gryphos-1       :   debian13
+    harpyien-2      :   linux AI
+    zone: "us-central1-a"
+
++   GCloud
+    CloudShell$>    glcoud compute ssh harpyien-2 ...
+    CloudShell$>    sudo apt update
+    
++   TPU 
+    A TPU (Tensor Processing Unit) is a custom microchip designed by Google specifically to accelerate artificial intelligence and machine learning workloads.  
+    Unlike general-purpose computer chips (CPUs) 
+        or graphics cards (GPUs), 
+    a TPU is an ASIC (Application-Specific Integrated Circuit). 
+    It was built from the ground up for the 
+    specific math operations that power deep learning.  
+
+
++   Tensor 
+    Ein Tensor ist der mathematische und informatikbezogene Oberbegriff für 
+        Daten-Container, 
+        die Zahlen in einer bestimmten Dimensionalität anordnen.  
+    Die leichteste Metapher ist ein Baukastensystem von Dimensionalitäten: 
+        Ein Skalar ist ein einzelner Punkt, 
+        ein Vektor eine Reihe von Punkten, 
+        eine Matrix eine Fläche – 
+    und ein Tensor verallgemeinert dieses Konzept auf beliebig viele Dimensionen.
+
++   Tensor in Python 
+    import torch
+    # 0D Tensor (Skalar)
+    scalar = torch.tensor(5)
+    # 1D Tensor (Vektor)
+    vector = torch.tensor([1.0, 2.0, 3.0])
+    # 2D Tensor (Matrix - 2 Zeilen, 3 Spalten)
+    matrix = torch.tensor([[1, 2, 3], 
+                       [4, 5, 6]])
+    # 3D Tensor (Form: 2x2x3)
+    tensor_3d = torch.zeros((2, 2, 3))
+
+
+### !date:<2026-09-14>:Mo 
++   lernen
+
+### !date:<2026-09-15>:Di 
++   examen
+
+### !date:<2026-09-16>:Mi 
++   vm 
+
+### !date:<2026-09-17>:Do 
+
++   Kurs:   AI Foundation
+    url:    https://learn.aicerts.ai/
+    usr:    <@msn>
+    pwd:    <!samba>
+
+
+### !date:<2026-09-18>:Fr
+
+
++   Kurs:   GenAIBIZ
+    url:    https://lochoice.com/
+    usr:    <@msn> 
+    pwd:    <!samba>
+
++   Kurs:   ETBIZ
+    url:    https://lochoice.com/
+    
+
+https://lochoice.com/Default.aspx?ClientId=1
+
+
+### !date:<2026-09-23>:Mi 
+
++   BIZ alle Kapitel vorbereitet
+
+### !date:<2026-09-25>:Fr 
+
++   BA freischalten
+
+### !date:<2026-09-28>:Mo 
+
++   Wiederholung 
+    AI Certs 2-4
+
+### !date:<2026-09-29>:Di 
+
++   Wiederholung 
+    AI Certs letzte Kapitel 5
+
+### !date:<2026-10-02>:Fr 
+
+<   login von AI Certs 
+    für AI+ Cloud Practitioner™ 
+>   Quiz GenAiBiz 
+
+
+email:
+    mazen.nehme@nhacademy.de
+
+Hello Mazen...
+
+My Quiz is finished.
+I got 23/25 points.
+
+Some questions differs from yours !
+
+I would like to try my improvements,
+    but I think it is not possible to repeat the quiz.
+
+My ideas and ScreenShots I have send you in my zip.
+
+The zip contains 
+
++   Gemini Info about LLM 
+
++   QuizLog 
+    with 2 improvements fileName:[<name-!>.png].
+    
+    <   Question 17:
+            Option1: The <time> and not the score is a typical
+            KPI.
+    <   Question 22:
+            Option1: LLM splits into <words> and not <units>.
+
+How you think about my solutions ?    
+
+    
+### !date:<2026-10-12>:Mo 
+
++   prepare Examen
+
+### !date:<2026-10-13>:Di 
+
++   do Examen
+    17/30
+
+
+### !date:<2026-10-14>:Mi
+
++   ETBIZ   
+    score 19/30
+
+### !date:<2026-10-15>:Do 
+
++   ETBIZ   
+    score 28/30
+
+    
+
+### !date:<2026-10-23>:Fr 
+
+
+    
+Hello Peter,
+
+Please find the credentials below for your reference to access the AI+ Cloud Practitioner Lab.
+
+URL
+ Users
+ TAP
+ Password
+    url:    "https://portal.azure.com/"
+    usr:    "Student170914@aicertscloud.onmicrosoft.com"
+    tap:    "htd7*8@@"
+    pwd:    "Learn@646"
+
+Please let us know, if you need any further assistance.
+
+Warm regards,
+Support Team.
+ 
+ 
+### !date:<2026-10-26>:Mo 
+
++   Winterzeit
+
++   Module 2
+    und ebook
+
+
+--- table.greek
+    letter      Name        Unicode (Hex)	        UTF-8 Hex
+    α / Α	    Alpha	    U+03B1 / U+0391	        CE B1 / CE 91
+    β / Β	    Beta	    U+03B2 / U+0392	        CE B2 / CE 92
+    γ / Γ	    Gamma	    U+03B3 / U+0393	        CE B3 / CE 93
+    δ / Δ	    Delta	    U+03B4 / U+0394	        CE B4 / CE 94
+    ε / Ε	    Epsilon	    U+03B5 / U+0395	        CE B5 / CE 95
+    θ / Θ	    Theta	    U+03B8 / U+0398	        CE B8 / CE 98
+    λ / Λ	    Lambda	    U+03BB / U+039B	        CE BB / CE 9B
+    μ / Μ	    My (Mu)	    U+03BC / U+039C	        CE BC / CE 9C
+    π / Π	    Pi	        U+03C0 / U+03A0	        CF 80 / CE A0
+    ρ / Ρ	    Rho	        U+03C1 / U+03A1	        CF 81 / CE A1
+    σ / Σ	    Sigma	    U+03C3 / U+03A3	        CF 83 / CE A3
+    τ / Τ	    Tau	        U+03C4 / U+03A4	        CF 84 / CE A4
+    φ / Φ	    Phi	        U+03C6 / U+03A6	        CF 86 / CE A6
+    ψ / Ψ	    Psi	        U+03C8 / U+03A8	        CF 88 / CE A8
+    ω / Ω	    Omega	    U+03C9 / U+03A9	        CF 89 / CE A9
+
+
+
+### !date:<2026-10-27>:Di 
+
++   Kursdauer:
+    aiP: 22.Oktober-18.November 2026
+
+
++   about
+AI CERTs is a global, vendor-neutral certification and credentialing platform that provides role-based training and exams in artificial intelligence (AI) and blockchain technologies.

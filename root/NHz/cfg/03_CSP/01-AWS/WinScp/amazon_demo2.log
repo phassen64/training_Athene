@@ -1,0 +1,125 @@
+. 2026-09-11 12:56:53.037 --------------------------------------------------------------------------
+. 2026-09-11 12:56:53.042 WinSCP Version 6.5.7 (Build 16562 2026-09-09) (OS 10.0.26200 – Windows 11 Pro)
+. 2026-09-11 12:56:53.043 Configuration: C:\Users\peter\Documents\WinSCP.ini
+. 2026-09-11 12:56:53.043 Log level: Normal
+. 2026-09-11 12:56:53.043 Local account: tron3\peter
+. 2026-09-11 12:56:53.043 Working directory: C:\Users\peter\AppData\Local\Programs\WinSCP
+. 2026-09-11 12:56:53.043 Process ID: 6156
+. 2026-09-11 12:56:53.049 Ancestor processes: explorer, ...
+. 2026-09-11 12:56:53.050 Command-line: "C:\Users\peter\AppData\Local\Programs\WinSCP\WinSCP.exe" 
+. 2026-09-11 12:56:53.050 Time zone: Current: GMT+2, Standard: GMT+1 (W. Europe Standard Time), DST: GMT+2 (W. Europe Daylight Time), DST Start: 29/03/2026, DST End: 25/10/2026
+. 2026-09-11 12:56:53.050 Login time: Friday, 11 September 2026 12:56:53
+. 2026-09-11 12:56:53.050 --------------------------------------------------------------------------
+. 2026-09-11 12:56:53.050 Session name: amazon_demo2 (Site)
+. 2026-09-11 12:56:53.050 Host name: ec2-18-196-178-132.eu-central-1.compute.amazonaws.com (Port: 22)
+. 2026-09-11 12:56:53.050 User name: ec2-user (Password: No, Key file: Yes, Passphrase: No)
+. 2026-09-11 12:56:53.050 Tunnel: No
+. 2026-09-11 12:56:53.050 Transfer Protocol: SFTP
+. 2026-09-11 12:56:53.050 Ping type: Off, Ping interval: 30 sec; Timeout: 15 sec
+. 2026-09-11 12:56:53.050 Disable Nagle: No
+. 2026-09-11 12:56:53.050 Proxy: None
+. 2026-09-11 12:56:53.050 Send buffer: 262144
+. 2026-09-11 12:56:53.050 Compression: No
+. 2026-09-11 12:56:53.050 Bypass authentication: No
+. 2026-09-11 12:56:53.050 Try agent: Yes; Agent forwarding: No; KI: Yes; GSSAPI: Yes
+. 2026-09-11 12:56:53.050 GSSAPI: KEX: No; Forwarding: No; Libs: gssapi32,sspi,custom; Custom: 
+. 2026-09-11 12:56:53.050 Ciphers: aes,chacha20,aesgcm,3des,WARN,des,blowfish,arcfour; Ssh2DES: No
+. 2026-09-11 12:56:53.050 KEX: ntru-curve25519,mlkem-curve25519,mlkem-nist,ecdh,dh-gex-sha1,dh-group18-sha512,dh-group17-sha512,dh-group16-sha512,dh-group15-sha512,dh-group14-sha1,rsa,WARN,dh-group1-sha1
+. 2026-09-11 12:56:53.050 SSH Bugs: Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto
+. 2026-09-11 12:56:53.050 Simple channel: Yes
+. 2026-09-11 12:56:53.050 Return code variable: Autodetect; Lookup user groups: Auto
+. 2026-09-11 12:56:53.050 Shell: default
+. 2026-09-11 12:56:53.050 EOL: LF, UTF: Auto
+. 2026-09-11 12:56:53.050 Clear aliases: Yes, Unset nat.vars: Yes, Resolve symlinks: Yes; Follow directory symlinks: No
+. 2026-09-11 12:56:53.050 LS: ls -la, Ign LS warn: Yes, Scp1 Comp: No; Exit code 1 is error: No
+. 2026-09-11 12:56:53.050 SFTP Bugs: Auto,Auto
+. 2026-09-11 12:56:53.050 SFTP Server: default
+. 2026-09-11 12:56:53.050 Local directory: C:\Users\peter\Documents\$\temp, Remote directory: /home/ec2-user, Update: Yes, Cache: Yes
+. 2026-09-11 12:56:53.050 Cache directory changes: Yes, Permanent: Yes
+. 2026-09-11 12:56:53.050 Recycle bin: Delete to: No, Overwritten to: No, Bin path: 
+. 2026-09-11 12:56:53.050 DST mode: Unix
+. 2026-09-11 12:56:53.050 --------------------------------------------------------------------------
+. 2026-09-11 12:56:53.087 Looking up host "ec2-18-196-178-132.eu-central-1.compute.amazonaws.com" for SSH connection
+. 2026-09-11 12:56:53.141 Connecting to 18.196.178.132 port 22
+. 2026-09-11 12:56:53.162 Connected to 18.196.178.132 (from 192.168.178.61:59127)
+. 2026-09-11 12:56:53.198 We claim version: SSH-2.0-WinSCP_release_6.5.7
+. 2026-09-11 12:56:53.198 Connected to 18.196.178.132 (from 192.168.178.61:59127)
+. 2026-09-11 12:56:53.198 Remote version: SSH-2.0-OpenSSH_9.9
+. 2026-09-11 12:56:53.198 Using SSH protocol version 2
+. 2026-09-11 12:56:53.200 Have a known host key of type ssh-ed25519
+. 2026-09-11 12:56:53.219 Enabling strict key exchange semantics
+. 2026-09-11 12:56:53.221 Doing ECDH key exchange with curve Curve25519, using hash SHA-256
+. 2026-09-11 12:56:53.303 Server also has ecdsa-sha2-nistp256 host key, but we don't know it
+. 2026-09-11 12:56:53.303 Host key fingerprint is:
+. 2026-09-11 12:56:53.303 ssh-ed25519 255 SHA256:IdXOujXvlKlnSGyO0IgJcoJGZcUFROwM2qQpsbk7hYM
+. 2026-09-11 12:56:53.325 Host key matches cached key
+. 2026-09-11 12:56:53.326 Initialised AES-256 SDCTR (AES-NI accelerated) [aes256-ctr] outbound encryption
+. 2026-09-11 12:56:53.326 Initialised HMAC-SHA-256 outbound MAC algorithm
+. 2026-09-11 12:56:53.326 Initialised AES-256 SDCTR (AES-NI accelerated) [aes256-ctr] inbound encryption
+. 2026-09-11 12:56:53.326 Initialised HMAC-SHA-256 inbound MAC algorithm
+. 2026-09-11 12:56:53.345 Reading key file "C:\Users\peter\Downloads\MyDemoKeyPair2.ppk"
+! 2026-09-11 12:56:53.348 Using username "ec2-user".
+. 2026-09-11 12:56:53.375 Server offered these authentication methods: publickey,gssapi-keyex,gssapi-with-mic
+. 2026-09-11 12:56:53.375 Offered public key
+. 2026-09-11 12:56:53.394 Offer of public key accepted
+! 2026-09-11 12:56:53.394 Authenticating with public key "MyDemoKeyPair2"
+. 2026-09-11 12:56:53.496 Sent public key signature
+. 2026-09-11 12:56:53.556 Access granted
+. 2026-09-11 12:56:53.556 Opening main session channel
+. 2026-09-11 12:56:53.816 Remote debug message: /home/ec2-user/.ssh/authorized_keys:1: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+. 2026-09-11 12:56:53.885 Remote debug message: /home/ec2-user/.ssh/authorized_keys:1: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+. 2026-09-11 12:56:53.885 Opened main channel
+. 2026-09-11 12:56:53.906 Started a shell/command
+. 2026-09-11 12:56:53.918 --------------------------------------------------------------------------
+. 2026-09-11 12:56:53.918 Using SFTP protocol.
+. 2026-09-11 12:56:53.918 Doing startup conversation with host.
+. 2026-09-11 12:56:53.935 Well known server, allowing SFTP version 6.
+> 2026-09-11 12:56:53.935 Type: SSH_FXP_INIT, Size: 5, Number: -1
+< 2026-09-11 12:56:53.955 Type: SSH_FXP_VERSION, Size: 318, Number: -1
+. 2026-09-11 12:56:53.955 SFTP version 3 negotiated.
+. 2026-09-11 12:56:53.955 Supports extension posix-rename@openssh.com="1"
+. 2026-09-11 12:56:53.955 Supports statvfs@openssh.com extension version 2
+. 2026-09-11 12:56:53.955 Unknown server extension fstatvfs@openssh.com="2"
+. 2026-09-11 12:56:53.955 Supports hardlink@openssh.com extension version 1
+. 2026-09-11 12:56:53.955 Unknown server extension fsync@openssh.com="1"
+. 2026-09-11 12:56:53.955 Unknown server extension lsetstat@openssh.com="1"
+. 2026-09-11 12:56:53.955 Supports limits@openssh.com extension version 1
+. 2026-09-11 12:56:53.955 Unknown server extension expand-path@openssh.com="1"
+. 2026-09-11 12:56:53.955 Supports extension copy-data="1"
+. 2026-09-11 12:56:53.955 Unknown server extension home-directory="1"
+. 2026-09-11 12:56:53.955 Unknown server extension users-groups-by-id@openssh.com="1"
+. 2026-09-11 12:56:53.955 We believe the server has signed timestamps bug
+. 2026-09-11 12:56:53.955 We will use UTF-8 strings until server sends an invalid UTF-8 string as with SFTP version 3 and older UTF-8 strings are not mandatory
+> 2026-09-11 12:56:53.955 Type: SSH_FXP_EXTENDED, Size: 27, Number: 200
+< 2026-09-11 12:56:53.973 Type: SSH_FXP_EXTENDED_REPLY, Size: 37, Number: 200
+. 2026-09-11 12:56:53.973 Limiting packet size to server's limit of 262144 + 4 bytes
+. 2026-09-11 12:56:53.973 Changing directory to "/home/ec2-user".
+. 2026-09-11 12:56:53.973 Getting real path for '/home/ec2-user'
+> 2026-09-11 12:56:53.973 Type: SSH_FXP_REALPATH, Size: 23, Number: 272
+< 2026-09-11 12:56:53.992 Type: SSH_FXP_NAME, Size: 49, Number: 272
+. 2026-09-11 12:56:53.992 Real path is '/home/ec2-user'
+. 2026-09-11 12:56:53.992 Trying to open directory "/home/ec2-user".
+> 2026-09-11 12:56:53.992 Type: SSH_FXP_LSTAT, Size: 23, Number: 519
+< 2026-09-11 12:56:54.011 Type: SSH_FXP_ATTRS, Size: 37, Number: 519
+. 2026-09-11 12:56:54.011 Getting current directory name.
+. 2026-09-11 12:56:54.084 Listing directory "/home/ec2-user".
+> 2026-09-11 12:56:54.084 Type: SSH_FXP_OPENDIR, Size: 23, Number: 779
+< 2026-09-11 12:56:54.103 Type: SSH_FXP_HANDLE, Size: 13, Number: 779
+> 2026-09-11 12:56:54.103 Type: SSH_FXP_READDIR, Size: 13, Number: 1036
+< 2026-09-11 12:56:54.122 Type: SSH_FXP_NAME, Size: 785, Number: 1036
+> 2026-09-11 12:56:54.122 Type: SSH_FXP_READDIR, Size: 13, Number: 1292
+< 2026-09-11 12:56:54.141 Type: SSH_FXP_STATUS, Size: 28, Number: 1292
+< 2026-09-11 12:56:54.141 Status code: 1
+> 2026-09-11 12:56:54.141 Type: SSH_FXP_CLOSE, Size: 13, Number: 1540
+. 2026-09-11 12:56:54.141 ..;d;0;2026-09-11T10:29:50.000Z;4;"root" [0];"root" [0];rwxr-xr-x;0
+. 2026-09-11 12:56:54.141 .bash_logout;-;18;2023-01-28T22:29:06.000Z;4;"ec2-user" [1000];"ec2-user" [1000];rw-r--r--;2
+. 2026-09-11 12:56:54.141 .bash_profile;-;141;2023-01-28T22:29:06.000Z;4;"ec2-user" [1000];"ec2-user" [1000];rw-r--r--;2
+. 2026-09-11 12:56:54.141 .bashrc;-;492;2023-01-28T22:29:06.000Z;4;"ec2-user" [1000];"ec2-user" [1000];rw-r--r--;2
+. 2026-09-11 12:56:54.141 .ssh;d;0;2026-09-11T10:29:50.000Z;4;"ec2-user" [1000];"ec2-user" [1000];rwx------;2
+. 2026-09-11 12:56:54.141 .bash_history;-;17;2026-09-11T10:36:41.000Z;4;"ec2-user" [1000];"ec2-user" [1000];rw-------;2
+. 2026-09-11 12:56:54.178 Startup conversation with host finished.
+. 2026-09-11 12:56:56.070 Closing connection.
+. 2026-09-11 12:56:56.070 Sending special code: 1
+. 2026-09-11 12:56:56.114 Session sent command exit status 0
+. 2026-09-11 12:56:56.114 Main session channel closed
+. 2026-09-11 12:56:56.114 All channels closed

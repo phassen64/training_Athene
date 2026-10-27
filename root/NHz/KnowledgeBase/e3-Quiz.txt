@@ -1,0 +1,422 @@
+###############################################################################
+--- !sem.ETBIZ                  [Oktober-2026]
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Legende
+        Question X* bedeutet gelöst
+                
+--- Kurs:    
+        Name:   ETBIZ - Exam ETZ-210
+        Dauer:  01.Oktober 2026 - 21.Oktober 2026
+
+
+=== Question 1:*     
+    
+    You are evaluating a system that monitors 
+        the location, movement, status, 
+    and behavior of your fleet vehicles. 
+    
+$>  Which type of system are you evaluating? 	 	 	  	 	
+
+x   Option 1: 	Telematics 	 	
+-   Option 2: 	Telemetry 	 	 
+    Option 3: 	DCS 	 	
+    Option 4: 	Data dashboard
+  	  	
+=== Question 2:*  	
+
+$>  A database schema is an example of which type of data model? 	
+
+    Option 1: 	Conceptual 	 	 
+-   Option 2: 	Logical
+x   Option 3: 	Physical
+    Option 4: 	Distributed    
+    
+
+=== Question 3:  	
+
+You work for a hospital that wants to identify patients 
+    who are likely to be re-admitted. 
+You have a dataset that includes health information 
+    for patients that have been treated by the hospital in the recent past. 
+This dataset indicates whether or not each patient was re-admitted. 
+
+$>  What type of AI learning would be most appropriate 
+        to predict the likelihood of new patients 
+    being re-admitted to the hospital? 	
+ 	 	  	 	 
+    Option 1: 	Deep learning 	 	 
+    Option 2: 	Reinforcement learning 	 	 
+x   Option 3: 	Supervised learning 	 	 
+    Option 4: 	Unsupervised learning
+    
+    
+=== Question 4:  	
+
+$>  Which of the following data science related roles 
+    is primarily responsible for the design of data-management systems? 	
+ 	 	  	 	 
+    Option 1: 	Data analyst
+x   Option 2: 	Data architect
+    Option 3: 	Database administrator
+    Option 4: 	ML engineer
+  	   
+       
+=== Question 5:*
+
+$>  Which of the following is an example of transactional data? 	
+ 	 	  	 	 
+x   Option 1:   Information extracted from a CRM database.
+    Option 2: 	Information derived from a Twitter account.
+    Option 3: 	Information gathered automatically from industrial equipment.
+-   Option 4: 	Information that tracks visits to a web page.
+
+  	  	
+=== Question 6:  	
+
+$>  Which of the following is an example of generative AI? 	
+ 	 	 
+ 	 	 
+    Option 1: 	A system that can generate electricity effectively 
+                    and safely for large-scale operations.
+    Option 2: 	A system that can produce a new, 
+                    more advanced AI model that retains some 
+                    properties of the original model.
+?   Option 3: 	A system that takes a user's text-based input and 
+                    creates a unique image from it. {DALL-E3}
+x   Option 4: 	A system that can listen to an audio file of a 
+                    song and identify the name of the song.  	      
+      	  	 
+Question 7:  	
+
+$>  Which of the following are feasible{"durchführbar"} methods for 
+        upholding{"aufrechterhalten"} fairness 
+    and non-discrimination in data science projects? 
+    (Choose two.) 	
+ 	 	 
+x   Option 1: 	Scrub all data that contains informatioin
+                pertaining{"betreffend"} to 
+                    race, gender, creed, and other protected attributes.
+x ? Option 2: 	Address disparities in how specific groups of 
+                    people are represented in the data.
+  ? Option 3: 	Minimize the reinforcement of stereotypes within 
+                    the data.
+    Option 4:   Avoid the use of public data.
+ 	 	 
+  	     
+=== Question 8:*  	
+
+$>  Which of the following business goals is most important for 
+        an AI solution to meet? 	
+ 	 	 
+-   Option 1:   Solving a specific problem
+x   Option 2: 	Achieving digital transformation
+-   Option 3: 	Improving operational efficiency
+-   Option 4: 	Gaining customer approval
+  	 
+
+=== Question 9:*  	
+
+    A company sells an exercise machine that connects 
+        to the company's cloud services, 
+    enabling customers to track their exercise sessions, 
+    "compete" against other customers, 
+    and download customized workout plans. 
+    In return, 
+        the company obtains useful data on how the machine is used and 
+    when it requires maintenance or service parts. 
+
+$>  Which of the following terms describes the business model 
+    the company is using? 
+ 	 	 
+x   Option 1:   Planned innovation
+-   Option 2: 	Planned obsolescence{"Veralterung,Überalterung"}
+    Option 3: 	Telematics
+ 	Option 4: 	Connected services
+    
+    
+=== Question 10:  	
+
+$>  Which of the following aspects of a dataset is NOT 
+        provided to an unsupervised learning algorithm? 	
+ 	 	  	 	
+    Option 1:   Examples
+x   Option 2: 	Labels 	 	 
+    Option 3: 	Features 	 	 
+    Option 4: 	Test data
+  	 
+
+=== Question 11:  	
+    
+$>  In which of the following IoT lifecycle phases should you first consider 
+        how to properly deal with the confidential data held 
+    in the system in order to 
+        maintain the privacy of all users whose data is in the system? 	
+ 	 	 
+    Option 1:   Plan
+x	Option 2: 	Design
+    Option 3: 	Integrate and Test
+    Option 4: 	Dispose
+  	 
+
+=== Question 12:  	
+
+$>  Which of the following are examples of biases that could 
+        negatively affect a machine learning model's training? 
+    (Choose two.) 	
+ 	 	 
+x   Option 1: 	Using training data that focuses too heavily on 
+                the behaviors of a specific gender.
+x   Option 2: 	Using training data that was generated by 
+                asking leading questions in a survey.
+    Option 3: 	Using training data that only represents a 
+                sample of the population.
+    Option 4:   Using training data whose features are 
+                not all useful in predicting the label.
+ 	 	 
+  	 
+=== Question 13:  	
+
+    A device supports two types of communication: 
+        using lightweight protocols for local communication and 
+        using normal protocols 
+            (such as TCP/IP with Transport Layer Security [TLS]) 
+    for Internet communication. 
+
+$>  Which of the following devices is most likely to be configured 
+    this way? 	
+ 	 	 
+ 	 	 
+x   Option 1:   IoT gateway
+    Option 2: 	IoT device
+    Option 3: 	End-user client computer
+    Option 4: 	Sensor device
+  	 
+
+=== Question 14:  	
+    
+$>  What type of analytics answers the question, "What has happened?" 	
+ 	 	  	 	 
+    Option 1: 	Predictive analytics
+x   Option 2: 	Descriptive analytics
+    Option 3: 	Historical analytics
+    Option 4: 	Prescriptive analytics
+  	 
+
+=== Question 15:  	
+
+$>  Which of the following are examples of data cleaning? 
+    (Choose three.) 	
+ 	 	 
+x ? Option 1:   Fixing typos{"Tippfehler"}
+x   Option 2: 	Scraping web pages
+x ? Option 3: 	Removing duplicates
+  ? Option 4: 	Removing formatting
+    Option 5: 	Appending new data
+ 	 	 
+  	  	  	 
+=== Question 16:  	
+    
+$>  Which of the following are essential "ingredients" of IoT? 
+    (Choose three.) 	
+ 	 	 
+x   Option 1:   Sensors
+x   Option 2: 	Actuators{"Antrieb/Servomotor"}
+    Option 3: 	Battery power
+x   Option 4: 	Network
+    Option 5: 	Artificial intelligence
+ 	 	 
+
+=== Question 17:  	
+
+$>  Which of the following terms describes a sensor device 
+    in a remote location
+        that takes measurements and transmits them 
+    for monitoring and analysis at a central location? 	
+ 
+x   Option 1:   Telemetry
+    Option 2: 	Smart pig
+    Option 3: 	Data dashboard
+    Option 4: 	Telematics
+  	 
+  	  	
+=== Question 18:  	
+
+$>  What is the process of updating existing datasets called? 	
+ 	 	 
+    Option 1:   Munging
+    Option 2: 	Analyzing
+    Option 3: 	Cleaning
+x   Option 4: 	Appending
+  	 
+  	  	 
+=== Question 19:  	
+
+    Your organization wants to develop an AI that will recommend 
+        products to online shoppers.
+
+$>  Which of the following features would be most appropriate 
+        in helping the AI make its recommendations? 
+    (Choose two.) 	
+ 	 	 
+    Option 1:   The shopper's sentiment toward the organization.
+x   Option 2:   The shopper's sentiment toward a product.
+x   Option 3: 	The shopper's purchase history.
+    Option 4: 	The shopper's name and address.
+ 	 	 
+  	 
+=== Question 20:  	
+
+$>  Which of the following scenarios requires the use 
+        of AI in natural language processing (NLP)? 	
+ 	 	  	 	 
+x   Option 1: 	A user submits text to the program, 
+                and the program determines the overall mood the text.
+    Option 2: 	A user speaks their name to the program, 
+                and the program repeats what the user said in 
+                a digitized voice.
+    Option 3: 	A user submits text to the program, 
+                and the program determines the reading level of the text.
+    Option 4: 	A user submits text to the program, 
+                and the program highlights words that are misspelled.
+  	      
+=== Question 21:  	
+
+$>  Which of the following technologies is designed to detect 
+    cracks, defects, and corrosion inside 
+        a pipe using magnetic and ultrasound detection? 	
+ 	 	 
+x   Option 1:   Smart pig
+    Option 2: 	Telematics
+    Option 3: 	RFID
+    Option 4: 	BLE
+  	 
+     
+=== Question 22:  	
+
+$>  Which of the following components within an industrial 
+    control system 
+            is often located in remote locations, 
+    where it primarily monitors and controls remote assets 
+    and supports telemetry functions? 	
+ 	 	  	 	 
+x   Option 1:   RTU
+    Option 2: 	DCS
+    Option 3: 	PAC
+    Option 4: 	PC
+  	 
+  	  	 
+=== Question 23:*  	
+    
+$>  Which of the following is the most important ability for a 
+    machine learning algorithm to have? 	
+ 	 	 
+x   Option 1:   Its ability to make useful predictions.
+-   Option 2: 	Its ability to process large datasets.
+    Option 3:   Its ability to cull noisy (irrelevant) data.
+    Option 4: 	Its ability to make decisions quickly.
+  	 
+
+=== Question 24:  	
+
+$>  Which of the following are considered benefits of data science? 
+    (Choose two.) 	
+ 	 	 
+x   Option 1:   Reducing data breaches
+  ? Option 2:   Identifying the target audience
+    Option 3: 	Ensuring data privacy
+x   Option 4: 	Detecting fraudulent activity
+ 	 
+
+=== Question 25:*  	
+
+$>  Which of the following data science benefits 
+    is most closely related to customer loyalty systems? 	
+ 	 	 
+x	Option 1:   Enhancing customer experience
+-   Option 2: 	Mitigating operational risk
+ 	Option 3: 	Detecting fraudulent behavior
+    Option 4:   Identifying the target audience
+  	 
+        
+=== Question 26:  	
+
+$>  Which of the following data science use cases are commonly 
+        associated with the sales and marketing function? 
+    (Choose two.) 	
+ 	 	 
+    Option 1:   self-service support via chatbots
+x   Option 2: 	Targeted advertising
+x   Option 3:   Campaign optimization
+    Option 4: 	Talent acquisition
+ 	 	 
+  	     
+=== Question 27*:  	
+
+$>  Which of the following industries 
+    would most likely utilize{"nutzen"} demand prediction as a use case? 	
+ 	 	  	 	 
+x   Option 1:   Transportation and logistics
+- 	Option 2: 	Finance and economics
+-   Option 3: 	Manufacturing
+ 	Option 4: 	Healthcare
+  	 
+
+=== Question 28:*  	
+
+$>  Which of the following is an example of how 
+    a clustering model can help you perform targeted marketing? 	
+ 	 	 
+x   Option 1:   You determine the number of customers in 
+                Cluster A that should receive Campaign A, 
+                and likewise for the other clusters.
+-   Option 2: 	You extract the label from each cluster that indicates 
+                which campaign is most appropriate for which cluster.
+    Option 3: 	You analyze the features of customers in 
+                each cluster and look for commonalities 
+                with which to build a customer profile.
+    Option 4: 	You evaluate the rank of each cluster and 
+                use that to prioritize how much money to spend 
+                on campaigns that target each cluster.
+
+
+=== Question 29:  	
+
+$>  Which of the following cybersecurity concerns are generally 
+        more applicable to IoT devices than to client computers, 
+        cloud services, and IoT gateways? 
+    (Choose three.) 	
+ 	 	 
+ 
+  ? Option 1: 	Because they need to conserve energy, 
+                they may have minimal encryption capability.
+x ? Option 2: 	Because they often rely on wireless connections, 
+                they may be subject to communication jamming.
+    Option 3: 	Because they store large amounts of data, 
+                they are valuable targets.
+x ? Option 4: 	Because they are often mobile or located in 
+                remote locations, 
+                it may be challenging to provide them with physical 
+                protection from attackers.
+x    Option 5: 	Because they process personal data, 
+                they are subject to strict data-protection regulations.
+
+
+=== Question 30:*  	
+
+$>  Which of the following terms describes a production system 
+    that automates measurement and 
+    analysis functions so the system itself can determine just in time 
+    when maintenance or repair is needed, 
+        possibly prioritizing those tasks over other 
+    tasks that are scheduled to be performed? 	
+ 	 	  	 	 
+-   Option 1:   Proactive maintenance
+x   Option 2: 	Prescriptive maintenance
+- 	Option 3: 	Preventive maintenance
+-	Option 4: 	Predictive maintenance
+  	 
+     

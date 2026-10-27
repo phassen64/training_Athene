@@ -1,0 +1,166 @@
+###############################################################################
+--- !sem.GenAIBIZ:myTools
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+
+===============================================================================
+m:  Generating:<Images & Videos> Using AI [ov3]:c
+===============================================================================
+
+$>  Image Generation Tools
+
+    •   FLUX.1 
+        https://flux1ai.com/
+        Discover the power of FLUX AI image generator and 
+            watch as your text prompts transform into incredible, 
+            high-quality images.
+        Image-generation model by Black Forest Labs. 
+            Publicly accessible.
+
+$>  Video-Generation Tools
+
+    •   Veo 
+        https://aistudio.google.com/models/veo      :!url
+        Google DeepMind's video generator. 
+            Available in Gemini, including to free users.
+        Google Veo ist ein fortschrittliches KI-Modell zur 
+            Videogenerierung von Google DeepMind, 
+        das realistische, 
+        hochauflösende Videos und synchrone Audios aus Textprompts erstellen kann.
+
+
+$>  Website and App Styling    
+    •   Caffeine 
+        https://caffeine.ai/
+        Describe the software you need, and Caffeine builds it. 
+        Then you run it by talking: 
+        asking what's working, changing what isn't.
+            
+$>  Virtual Travelling
+    https://www.youtube.com/watch?v=SQWe5gGHVfg&t=6
+    •   AirPano 
+        https://www.airpano.com
+        https://www.airpano.com/list-all-virtual-tours.php
+        https://www.youtube.com/watch?v=PY1d8RelwNc
+        is the world's largest online resource for 
+        high-resolution 360° aerial panoramas, 
+        virtual tours, and 360° videos shot from a bird's-eye view.    
+    Price in EUR *
+    8800 px (75 cm, 30 inches)	400€
+
+
+$>  AirPano utilities
+$<  1. AirPano Web & VR Viewer Utilities
+    2. Vrap (AirPano Desktop Utility)
+
+
+$>  VR Glasses
+
+$<  Google Cardboard 
+    https://arvr.google.com/cardboard/
+    https://www.youtube.com/watch?v=SxAj2lyX4oU
+        is an 
+        ultra-low-cost virtual reality platform developed by 
+        Google in 2014 to make VR accessible to anyone with a smartphone.
+    Amazon: €15.90
+        
+$<  Meta Quest 3S of :Meta Quest
+        https://www.meta.com/de/en/
+    Amazon: €439.90
+    
+$<  VITURE Pro 2 XR/AR    of :VITURE 
+    https://www.viture.com
+    https://www.viture.com/de/product/viture-pro-2-xr-glasses?farbe=Jet+Black
+    Amazon: €329.00
+    
+===============================================================================
+m:  Generating:<Audio> Using AI [ov4]:d
+===============================================================================
+
+$>  Audio-Generation Tools 
+
+    •   ElevenLabs
+        https://join.elevenlabs.io/studio
+        Generate together voice, music, video, and visuals in minutes.   
+        Audio-generation tool by company of same name. 
+        Primarily focuses on >speech generation<. 
+        Paid subscription and limited free tier.
+
+    •   Murf Studio 
+        https://murf.ai/
+        https://www.youtube.com/watch?v=EQ3IYVbyVmc
+        Build production-ready conversational agents, 
+            power real-time conversations with the fastest 
+            TTS API, 
+        and create customizable AI voiceovers on a 
+        platform trusted by 10 million+ developers, 
+        businesses, and creators.
+        --- Audio-generation tool by Murf AI. 
+        Primarily focuses on speech generation. 
+        Paid subscription and limited free tier.
+        Murf Studio ist eine webbasierte Murf AI Plattform 
+            zur Erstellung lebensechter KI-Sprachaufnahmen und Voiceovers.
+   
+    •   MusicGen
+        https://musicgen.com/
+        https://github.com/facebookresearch/audiocraft
+        Meta's music generator. 
+        No official app yet, but open source.
+        Introducing MusicGen: 
+            a powerful single Language Model (LM) redefining 
+        the boundaries of conditional music generation, 
+            with the ability to create high-quality 
+        music by taking cues from text descriptions or melodies.
+    
+    •   Suno
+        Music generator by company of same name. 
+            Free and paid plans.
+        https://suno.com/de
+        "Mach einen House-Song darüber, deinen Job zu kündigen."
+    
+    •   Udio
+        Music generator by company of same name. 
+            Free and paid plans.
+        https://www.udio.com/
+        Create any song. Just imagine it.
+
+
+===============================================================================
+m:  Generating:<Code> Using AI   [ov5]:5
+===============================================================================
+    
+    $>  Code-Generation Tools 
+
+    •   Gemini Code Assistant        
+        https://codeassist.google/   
+        https://www.youtube.com/watch?v=APH41U55hos        
+        Integrated/agentic AI that supports <Google Cloud> and IDEs. 
+        Paid subscription.
+        Gemini Code Assist ist ein KI-gestützter Programmierassistent 
+        von Google zur Unterstützung im gesamten Softwareentwicklungszyklus.
+        Wichtigste Funktionen
+            Code-Vervollständigung: 
+                Bietet automatisierte Inline-Vorschläge während des Programmierens.
+            Codetransformation: 
+                Generiert ganze Codeblöcke oder Funktionen aus Textprompts.
+            Fehlerbehebung: 
+                Analysiert Code und schlägt direkte Korrekturen vor.
+            Unit-Tests & Reviews: 
+                Hilft beim Erstellen von Tests und unterstützt 
+                bei Pull-Request-Reviews.
+        +   Extension for VsCode
+ 
+    •   GitHub Copilot
+        https://github.com/features/copilot
+        Integrated/agentic AI that supports various IDEs. 
+        Paid subscription
+        An agent-driven desktop experience built natively on GitHub.
+        Übersicht mit KI
+        Yes, GitHub Copilot offers a 
+            free tier for individual developers with limited monthly usage. 
+    
+
+

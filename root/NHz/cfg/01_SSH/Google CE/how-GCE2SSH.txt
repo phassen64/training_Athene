@@ -1,0 +1,20 @@
+--- how.GoogleCloudEngine-2-SSH
+
+add Public Key to Google Cloud:
+
+Register the key with your Compute Engine instance.
+
+Open and copy the entire text inside 
+    "kpTrixie.pub"  =:<sshKey.pub>
+using a text editor.
+
+Go to Google Cloud Console > VM instances.
+
+Click your VM instance name and 
+    click Edit at the top bar.
+
+Scroll down to SSH Keys, 
+    click Add Item, 
+    and paste the copied public key.
+
+Click Save at the bottom of the page.

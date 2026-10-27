@@ -1,0 +1,164 @@
+###############################################################################
+--- !sem.AICert.Practitioner™   :   Detailed Curriculum
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+AI+ Cloud Practitioner
+Program Detailed Curriculum
+
+
+Executive SummaryThe AI+ Cloud Practitioner certification provides learners with foundational and practical knowledge of cloud
+computing, artificial intelligence, machine learning, data engineering, generative AI, and cloud-based AI solutions. The
+course covers cloud platforms, AI workloads, LLM deployment, RAG systems, fine-tuning, Agentic AI, evaluation,
+security, and responsible AI practices. Learners gain hands-on experience through use cases, case studies, and a
+capstone project focused on designing and deploying scalable AI solutions using cloud technologies. This certification
+prepares professionals to understand modern AI ecosystems and apply cloud-enabled AI capabilities across diverse
+business and industry environments.
+
+
+Prerequisites :
+Cloud Computing Awareness: Understand basic cloud concepts and services.
+AI Fundamentals Knowledge: Familiarity with artificial intelligence concepts and applications.
+Programming Basics: Understand fundamental programming logic and concepts.
+Data Understanding Skills: Read and interpret basic data concepts.
+Technical Learning Mindset: Explore AI, cloud, and emerging technologies
+
+
+===============================================================================
+b:  details
+===============================================================================
+
+
+Module 1: Cloud Fundamentals
+
+    m:  [1.1]   Cloud Computing Models
+    m:  [1.2]   Core Cloud Services
+    m:  [1.3]   Identity & Access Management (IAM), Security & Compliance Basics
+    m:  [1.4]   Billing, Cost Optimization, and Cloud Economics
+    m:  [1.5]   Multi-cloud Concepts
+    m:  [1.6]   Infrastructure as Code (IaC) Basics with Terraform
+    m:  [1.7]   Use Cases
+    m:  [1.8]   Case Studies
+    m:  [1.9]   Hands-On Activity
+
+
+Module 2: AI Fundamentals and Python Fundamentals
+
+    m:  [2.1]   Introduction to Artificial Intelligence, Machine Learning Types
+    m:  [2.2]   Neural Networks and Deep Learning Fundamentals
+    m:  [2.3]   Python Programming
+    m:  [2.4]   Essential Libraries
+    m:  [2.5]   Mathematics for AI
+    m:  [2.6]   Data Preprocessing, Exploration, and Visualization Techniques
+    m:  [2.7]   Use Cases
+    m:  [2.8]   Case Studies
+
+Module 3: Data Engineering for AI
+
+    m:  [3.1]   Data Collection, Storage, and Processing Pipelines (ETL/ELT)
+    m:  [3.2]   Big Data Technologies
+    m:  [3.3]   Data Lakes, Data Warehouses, and Feature Stores
+    m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
+    m:  [3.5]   Real-Time Data Streaming
+    m:  [3.6]   Use Cases
+    m:  [3.7]   Case Studies
+
+Module 4: Cloud with AI
+
+    m:  [4.1]   Managed AI/ML Platforms
+    m:  [4.2]   Model Training, Deployment, and Inference on Cloud
+    m:  [4.3]   Containerization with Docker and Orchestration with Kubernetes
+    m:  [4.4]   Serverless AI Architectures
+    m:  [4.5]   Scaling and Monitoring AI Workloads
+    m:  [4.6]   Use Cases
+    m:  [4.7]   Case Studies
+
+Module 5: Generative AI and LLM Models
+
+    m:  [5.1]   Transformer Architecture, Attention Mechanism, and Tokenization
+    m:  [5.2]   Major LLM Families: GPT, Llama, Gemini, Claude, Mistral
+    m:  [5.3]   Prompt Engineering Techniques
+    m:  [5.4]   Generative Model Lifecycle
+    m:  [5.5]   Multimodal Generative AI
+    m:  [5.6]   Use Cases
+    m:  [5.7]   Case Studies
+
+
+Module 6: Cloud with Generative AI and LLM Models
+
+    m:  [6.1]   Deploying and Hosting LLMs on Cloud Platforms
+    m:  [6.2]   Inference Optimization Techniques
+    m:  [6.3]   Integration with Cloud-Native Services
+    m:  [6.4]   Cost Governance for GenAI Workloads
+    m:  [6.5]   Hybrid and Edge Deployment Strategies
+    m:  [6.6]   Use Cases
+    m:  [6.7]   Case Studies
+
+Module 7: AI Workloads on Cloud
+
+    m:  [7.1]   MLOps Lifecycle and Best Practices
+    m:  [7.2]   Experiment Tracking (MLflow), Model Versioning, and CI/CD Pipelines
+    m:  [7.3]   Model Monitoring and Performance Drift Detection
+    m:  [7.4]   Orchestration Tools: SageMaker Pipelines, Vertex AI Pipelines, Kubeflow
+    m:  [7.5]   Use Cases
+    m:  [7.6]   Case Studies
+
+Module 8: Retrieval-Augmented Generation (RAG)
+
+    m:  [8.1]   RAG Architecture and Components
+    m:  [8.2]   Vector Databases and Embeddings
+    m:  [8.3]   Advanced RAG Patterns
+    m:  [8.4]   Evaluation Metrics for RAG Systems
+    m:  [8.5]   Cloud-Native Vector Search Services
+    m:  [8.6]   Use Cases
+    m:  [8.7]   Case Studies
+
+Module 9: Fine-Tuning and Optimization on Cloud
+
+    m:  [9.1]   Full Fine-Tuning vs. Parameter-Efficient Fine-Tuning (PEFT)
+    m:  [9.2]   Distributed Training and Hyperparameter Optimization
+    m:  [9.3]   Model Compression, Distillation, and Quantization
+    m:  [9.4]   Domain Adaptation and Continual Learning
+    m:  [9.5]   Cloud Tools for Efficient Fine-Tuning
+    m:  [9.6]   Use Cases
+    m:  [9.7]   Case Studies
+
+Module 10: Agentic AI on Cloud
+
+    m:  [10.1]  AI Agents Fundamentals
+    m:  [10.2]  Distributed Frameworks: LangGraph, CrewAI, AutoGen, Semantic Kernel
+    m:  [10.3]  Multi-Agent Systems and Orchestration
+    m:  [10.4]  Autonomous Workflows and Decision Engines
+    m:  [10.5]  Cloud Deployment of Agentic Systems
+    m:  [10.6]  Use Cases
+    m:  [10.7]  Case Studies
+
+Module 11: Evaluation, Monitoring, Security & Responsible AI
+
+    m:  [11.1]  Comprehensive LLM and GenAI Evaluation Frameworks
+    m:  [11.2]  Bias Detection, Fairness, and Explainability
+    m:  [11.3]  Security Threats
+    m:  [11.4]  Guardrails, Content Moderation, and Compliance (GDPR, SOC2)
+    m:  [11.5]  Responsible AI Governance and Audit Practices
+    m:  [11.6]  Use Cases
+    m:  [11.7]  Case Studies
+
+Module 12: Capstone Project
+
+    m:  [12.1]  Problem Identification and Solution Planning
+    m:  [12.2]  AI Model Development and Cloud Deployment
+    m:  [12.3]  Deliverables
+
+Optional Module: AI Agents for Cloud
+
+    m:  [o1]    What Are AI Agents?
+    m:  [o2]    Examples of AI Agents for Cloud Services
+    m:  [o3]    Significance of AI Agents in Cloud Services
+    m:  [o4]    Trends in AI Agents for Cloud Services
+    m:  [o5]    Importance of AI Agents
+    m:  [o6]    Types of AI Agents
+    m:  [o7]    Case Studies
+    m:  [o8]    Hands-On Activity
+

@@ -1,0 +1,28 @@
+--- how.xRdp 
+
+
+*   Es muss ein Password für xRdp gesetzt sein.
+    Ansonsten verweigert GCE den Zugriff
+
+<   using <gce> :  "i-260922-eros"
+    <usr>       :   "phassen64"
+    <pwd>       :   "!tron0"
+
++   set root password
+    $>  sudo passwd root
+        <pwd>
+
++   add me to sudoers group
+    user$>  su -    * short for su root
+    root$>  usermod -aG sudo <usr>
+
++   check me
+    root$>  groups <usr>
+
++   leave me
+    root$>  exit
+
++   set my password
+    user$>  sudo passwd $USER
+
+

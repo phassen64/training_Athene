@@ -1,0 +1,1081 @@
+###############################################################################
+--- !sem.GenAIBIZ:background    [September-2026]
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Kurs:    
+        Name:   GenAiBIZ - Generate AI 
+        Dauer:  
+
+--- Legende 
+        Gem$*   gemini AI Prompt mit 
+                $>  input
+                $<  für Reply
+--- key : important URL or important txt 
+            [!] {url,txt}
+--- content:
+    •   m:  Personen
+    •   m:  AI Fundamentals                             [ov1]:a
+    •   m:  Generating:<Text>               Using AI    [ov2]:b
+    •   m:  Generating:<Images & Videos>    Using AI    [ov3]:c
+    •   m:  Generating:<Audio>              Using AI    [ov4]:d
+    •   m:  Generating:<Code>               Using AI    [ov5]:e
+    •   m:  Identifying Challenges of Generative AI     [ov6]:f
+    •   m:  Implementing Business Strategies for Generative AI [ov7]:g
+
+    
+===============================================================================
+m:  Personen
+===============================================================================
+
+
+    https://de.wikipedia.org/wiki/Alan_Turing   
+    https://de.wikipedia.org/wiki/Marvin_Minsky
+
+
+===============================================================================
+m:  AI Fundamentals [ov1]:a
+===============================================================================
+
+
+$>  BigData
+    Big Data refers to datasets so 
+        large, complex, and fast-growing 
+    that traditional data-processing software cannot 
+        capture, store, or analyze them within a reasonable timeframe. 
+    Rather than a single technology, 
+        it represents an ecosystem of modern data architectures, 
+        distributed systems, and modern analytics practices.
+    The Core Characteristics (The "5 Vs")
+    •   Volume
+        Massive quantities of data measured in 
+        petabytes or exabytes (e.g., social media activity, 
+        transaction logs, device sensors).
+    •   Velocity
+        The rapid speed at which data is generated and must be processed in 
+        real-time or near-real-time.
+    •   Variety
+        Diverse formats ranging from 
+            structured (relational databases)   to 
+            semi-structured (JSON, XML)         and 
+            unstructured (video, audio, text).
+    •   Veracity:
+        The accuracy, quality, and trustworthiness of 
+                messy, noisy raw data.    
+    •   Value
+            The ultimate goal of turning raw data into actionable insights 
+                for decision-making.
+
+$>  GPU 
+    A Graphics Processing Unit (GPU) is a specialized electronic circuit designed 
+        to rapidly manipulate and alter memory to accelerate the creation of 
+        images, video, and 3D graphics in a frame buffer. 
+    Unlike a Central Processing Unit (CPU)—which contains a 
+        few powerful cores optimized for sequential, single-threaded processing — 
+    a GPU consists of thousands of smaller, highly efficient cores 
+        designed to perform mathematical operations 
+        simultaneously (massively parallel architecture).
+    example:
+        ASUS Radeon RX 9060 XT PRIME OC 16GB, Grafikkarte
+
+
+$>  AI projects
+    
++   openAi
+    https://openai.com/
+    OpenAI is an American artificial intelligence research organization 
+    best known for creating ChatGPT and the GPT series of 
+        large language models. 
+    Founded in December 2015 by 
+        Sam Altman, Elon Musk, and other tech leaders, 
+    its stated mission is to ensure that 
+    artificial general intelligence (AGI) benefits all of humanity.
+    
++   deepMind 
+    https://deepmind.google/
+    Google DeepMind is a British artificial intelligence research laboratory 
+    that serves as a subsidiary of Alphabet Inc. 
+    Founded in London in 2010 by 
+        Demis Hassabis, Shane Legg, and Mustafa Suleyman, 
+    it was acquired by Google in 2014 and 
+    combined with Google Brain in 2023 to 
+    form Google DeepMind. 
+    The organization focuses on advancing 
+        artificial intelligence, 
+        neuroscience, and 
+        deep reinforcement learning 
+    to build safe 
+    artificial general intelligence (AGI) and 
+    solve major scientific challenges.
+
++   M365 Copilot 
+    https://copilot.microsoft.com/                  :!url
+    Microsoft 365 Copilot (M365 Copilot) is an 
+        AI-powered productivity assistant developed 
+    by Microsoft that integrates large language models 
+        (primarily from OpenAI) 
+    directly into Microsoft 365 applications like 
+    Word, Excel, PowerPoint, Outlook, and Teams. 
+    It connects these AI capabilities with your 
+    organization's internal data 
+    using Microsoft Graph to automate tasks, 
+    summarize information, and generate content.
+
+$>  Neuronales Netzwerk 
+    https://de.wikipedia.org/wiki/K%C3%BCnstliches_neuronales_Netz
+    englisch : artificial neural network, ANN
+
+$<  Aufbau eines neuronalen Netzwerks
+    Ein typisches Netzwerk ist in 
+        mehreren Schichten (Layers) organisiert:
+    Eingabeschicht (Input Layer): 
+        Nimmt die Rohdaten auf (z. B. Pixel eines Bildes, Zahlenwerte oder Wörter).
+    Verborgene Schichten (Hidden Layers): 
+        Hier findet die eigentliche Datenverarbeitung statt. Bei Netzwerken mit vielen verborgenen Schichten spricht man von Deep Learning.
+    Ausgabeschicht (Output Layer): 
+        Liefert das Endergebnis (z. B. die Entscheidung: 
+        „Das Bild zeigt eine Katze“).
+
+$>  Model Checkpoints
+$<  In der KI-Entwicklung bezeichnet ein "Checkpoint"
+        eine gespeicherte Momentaufnahme (ein Snapshot) 
+        der Gewichte und Parameter 
+    eines KI-Modells zu einem bestimmten Zeitpunkt 
+        während des Trainings.   
+
+$>  Maschinelles Lernen (Machine Learning oder kurz ML) 
+    https://de.wikipedia.org/wiki/Maschinelles_Lernen
+
+$<  ~   ist ein Teilbereich der Künstlichen Intelligenz (KI), 
+    bei dem Computer mithilfe von Daten selbstständig Muster und 
+    Regeln erkennen, 
+    statt starr nach festen Programmierbefehlen zu arbeiten.
+
+    Datengrundlage: 
+        Ein Algorithmus wird mit vielen Beispieldaten gefüttert.
+    Mustererkennung: 
+        Das System sucht nach Zusammenhängen in den Daten.
+    Modellbildung: 
+        Aus den Beispielen entsteht ein trainiertes Modell.
+    Vorhersage: 
+        Das fertige Modell bewertet neue, 
+        unbekannte Daten und trifft eigenständig Vorhersagen oder Entscheidunge
+        
+    Beispiele:
+    https://de.wikipedia.org/wiki/Backpropagation
+    
+
+$>  Deep Learning 
+    https://de.wikipedia.org/wiki/Deep_Learning
+    
+$<  ~   ist ein Teilbereich des Machine Learning 
+        – während klassisches Machine Learning 
+    stark auf von Menschen aufbereiteten Merkmalen basiert, 
+    lernt Deep Learning komplexe Muster mithilfe tief 
+    verschachtelter neuronaler Netzwerke eigenständig direkt aus den Rohdaten.
+    
+    Der Begriff „tief“ kommt daher, 
+        dass die Daten durch viele aufeinanderfolgende 
+        Schichten (hidden layers) geleitet werden. 
+    Jede Schicht verfeinert die Information ein Stück mehr, 
+        um am Ende eine präzise Entscheidung oder Vorhersage zu treffen.
+
+    Beispiele:
+    https://de.wikipedia.org/wiki/AlphaGo
+    AlphaGo ist ein Computerprogramm, das das Brettspiel Go spielt und 
+        von DeepMind entwickelt wurde und 
+    sich auch gegen professionelle Spieler durchsetzen konnte. 
+    AlphaGo kombiniert Techniken des maschinellen Lernens und der Traversierung.
+    
+
+$>  Supervised Learning vs Unsupervised Learning
+    https://en.wikipedia.org/wiki/Supervised_learning
+    
+$<  Supervised Learning: 
+        „Hier sind Bilder von Katzen und Hunden mit den 
+        entsprechenden Beschriftungen. Lerne, sie zu unterscheiden.“
+    
+$<  Unsupervised Learning: 
+        „Hier sind 10.000 Bilder ohne Beschreibung. 
+        Gruppe sie nach Ähnlichkeiten und zeige mir, 
+        welche zusammengehören.“
+
+$>  Reinforcement Learning
+    https://en.wikipedia.org/wiki/Reinforcement_learning
+
+$<  Reinforcement Learning (Bestärkendes Lernen) ist ein 
+        Teilbereich des Machine Learning, 
+    bei dem ein virtueller Agent durch Interaktion 
+    mit einer Umgebung (Environment) selbstständig lernt, 
+    optimale Entscheidungen zu treffen.
+
+    Anstatt wie beim Supervised Learning mit vorgegebenen 
+        Lösungen zu trainieren, 
+    lernt der Agent nach dem Prinzip von 
+        :   Versuch und Irrtum (Trial and Error).   * !REM
+
+    Er erhält für jede Aktion eine positive Belohnung (Reward) oder 
+        ein negatives Signal (Penalty). 
+    Ziel des Agenten ist es, 
+        die Gesamtsumme aller Belohnungen über die Zeit zu maximieren.
+
+
+$>  Generative AI
+    https://en.wikipedia.org/wiki/Generative_AI
+
+$<  Generative AI (Generative Künstliche Intelligenz) ist ein 
+        Teilbereich der Künstlichen Intelligenz, 
+    der darauf spezialisiert ist, 
+        neue, originäre Inhalte zu >erzeugen<,      * !REM 
+    anstatt vorhandene Daten lediglich 
+        zu analysieren, 
+        zu klassifizieren oder 
+        zu bewerten.
+    Basierend auf gelernten Mustern aus 
+        riesigen Datensätzen 
+    generiert GenAI eigenständig :
+        •   Texte, 
+        •   Bilder, 
+        •   Programmiercode, 
+        •   Audio, 
+        •   Videos oder 
+        •   3D-Modelle.
+
+$>  Narrow AI {NAI}
+
+$<  ~   (also known as Artificial Narrow Intelligence or Weak AI) 
+    refers to artificial intelligence systems designed 
+        and trained to perform a specific, 
+            well-defined task or set of tasks. 
+    Unlike humans, these systems 
+        lack general cognitive abilities, 
+        self-awareness, and the ability 
+        to apply their knowledge 
+    to tasks outside their programmed domain.
+
+    Virtually all artificial intelligence deployed today 
+        is Narrow AI.
+
+$<  url 
+    https://www.coursera.org/articles/what-is-artificial-narrow-intelligence
+
+$<  examples:
+    ANI models, 
+        such as ChatGPT, Amazon Alexa, 
+            or Siri, don’t reason or learn new tasks.
+
+$>  Multimodales Maschinelles Lernen (Multimodal Machine Learning) 
+    https://en.wikipedia.org/wiki/Multimodal_learning
+    ~   bezeichnet KI-Systeme, 
+    die verschiedene Arten von Daten (Modalitäten) gleichzeitig verarbeiten.
+
+
+$>  Prompt Engineering 
+    https://de.wikipedia.org/wiki/Prompt-Engineering
+
+    ~   ist der gezielte Entwurf und die Optimierung von 
+        Anweisungen (sogenannten „Prompts“) 
+    in natürlicher Sprache, 
+    um von Systemen der künstlichen Intelligenz präzise und 
+    relevante Ergebnisse zu erhalten.
+
+$>  In-Context Prompting 
+    ~   is a technique where you provide examples, 
+        background context, or explicit formatting guidelines directly 
+        within the prompt to guide 
+        a large language model's (LLM) output 
+        without updating its underlying weights (fine-tuning).
+    Instead of retraining the model, 
+    you leverage its short-term "in-context learning" ability 
+        through the input text.
+
+    +   Zero-Shot Prompting
+        Concept:    Direct instruction without prior examples.
+        Example:    "Translate 'hello' to French."
+
+    +   Few-Shot Prompting
+        Concept: Providing one or more target 
+            input-output pairs to demonstrate the desired structure, 
+            tone, or format before giving the actual query.
+    
+        Example:
+            Input: Happy    -> Output: Positive
+            Input: Terrible -> Output: Negative
+            Input: Alright  -> Output: Neutral
+            Input: Fantastic -> Output:  Positive
+
+
+$>  Large Language Model (LLM)
+    https://en.wikipedia.org/wiki/Large_language_model
+    https://de.wikipedia.org/wiki/Large_Language_Model
+    
+    A large language model (LLM) is an AI model (typically a neural network) 
+        trained on a vast amount of text for natural 
+    language processing tasks, 
+        especially language generation. 
+    LLMs can typically generate, summarize, translate, 
+        and analyze text in many contexts.[1] 
+    They are the basis for many modern 
+        chatbots, such as ChatGPT, 
+            Claude, Gemini, Grok, and DeepSeek.
+
+    Es handelt sich um ein sogenanntes 
+        computerlinguistisches Wahrscheinlichkeitsmodell, 
+    das statistische Wort- und Satzfolge-Beziehungen 
+    aus einer Vielzahl von Textdokumenten durch 
+    einen rechenintensiven Trainingsprozess erlernt hat und 
+    diese Fähigkeiten seinem Benutzer oder 
+    einer anderen Anwendung zur Verfügung stellt.[3]
+
+    example:
+    +   Chat GPT
+            https://de.wikipedia.org/wiki/ChatGPT
+    +   DepL  DE - Köln
+            https://www.deepl.com/en
+
+
+$>  AI Agent
+
+    https://en.wikipedia.org/wiki/AI_agent
+    https://www.youtube.com/watch?v=Zqno_vux6d8&vl=de-DE
+
+    An AI Agent (or Agentic AI) is an autonomous software system 
+        that uses a Large Language Model (LLM) as its reasoning engine 
+    to perceive its environment, 
+    plan multi-step workflows, 
+    invoke external tools, and adapt its behavior 
+    to accomplish complex goals with minimal human intervention.
+
+    Unlike traditional chatbots that simply respond to a prompt 
+        in a single back-and-forth interaction, 
+    an AI agent functions as a goal-oriented execution engine. 
+    You give it an objective 
+        (e.g., "Analyze our top 3 competitors and build a financial comparison table"), 
+    and it breaks the goal down into tasks, 
+    executes them over multiple steps, 
+        evaluates its own progress, and self-corrects along the way.
+
+
+
+===============================================================================
+m:  Generating:<Text> Using AI [ov2]
+===============================================================================
+
+$>  Sentiment{"Meinung/Stimmung"} Analysis 
+    *   (also known as opinion mining) 
+    is a Natural Language Processing (NLP) 
+        technique used to 
+        •   identify, 
+        •   extract, 
+        •   and quantify 
+    affective states, 
+        opinions, and emotional tones 
+    from unstructured text. 
+    It converts qualitative subjective expressions—such 
+        as 
+    •   customer reviews, 
+    •   social media posts, and 
+    •   support tickets—
+    into structured quantitative data.
+
+$>  LLM Text Completion 
+    ~ is the foundational mechanism behind Large Language Models (LLMs). 
+    At its core, an LLM operates as an autoregressive token predictor: 
+        given a sequence of input text (the prompt), 
+        the model evaluates statistical patterns learned 
+    during training to calculate probability distributions and predict 
+    the single most likely next token. 
+    It appends that token to the context and repeats the 
+    process until a stopping criterion is met.
+
+$>  Chatbots
+    https://de.wikipedia.org/wiki/Chatbot
+    https://de.wikipedia.org/wiki/Liste_von_Chatbots
+
+    Ein Chatbot ist ein technisches Dialogsystem, 
+    das eine Unterhaltung mit menschlichen Nutzern 
+        per Text oder Sprache simuliert.
+    Regelbasierte Chatbots: 
+        Arbeiten mit festen Skripten, Entscheidungswäumen oder 
+            vordefinierten Schlüsselwörtern für einfache, vorhersehbare Fragen.
+    KI-basierte Chatbots: 
+        Nutzen künstliche Intelligenz, maschinelles Lernen und 
+        große Sprachmodelle (LLMs wie ChatGPT), 
+        um natürliche Sprache zu verstehen und 
+        dynamische, kontextbezogene Antworten zu generieren.
+
+    example:
+        https://de.wikipedia.org/wiki/Amazon_Alexa
+        https://de.wikipedia.org/wiki/Google_Assistant
+    
+
+$>  Reasoning Model (RLM)
+    https://en.wikipedia.org/wiki/Reasoning_model
+    
+    A ~ is an AI system designed to spend additional 
+        computational power during inference (at response time) to 
+            think,
+            plan, and 
+            evaluate 
+        intermediate steps 
+    before outputting a final answer.   
+    
+    While standard Large Language Models (LLMs) generate 
+        immediate responses token-by-token in a single forward pass, 
+    reasoning models generate a 
+        private or internal Chain-of-Thought (CoT) trace. 
+    This allows them to explore multiple solution strategies, 
+        check intermediate logic, 
+        backtrack from dead ends, 
+        and correct their own errors prior to showing the answer.   
+
+
+$>  Fine-Tuning Text Models 
+    https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)
+
+    ~ is the process of taking a 
+    pre-trained Large Language Model (LLM)—which 
+        already understands general grammar, concepts, 
+            and language patterns—and continuing its training 
+    on a tailored dataset.   
+    Instead of spending millions of dollars to pre-train 
+        a base model from scratch, 
+    fine-tuning updates the model’s parameters to 
+        master specific tasks, 
+        output formats, domain terminologies, or behavioral styles.
+
+$>  Retrieval-Augmented{de.zunehmen} Generation (RAG)        
+    ~ is an architectural pattern in AI that enhances 
+        Large Language Model (LLM) responses by 
+    dynamically fetching relevant context from 
+    external authoritative knowledge bases before generating an answer.
+    Instead of relying solely on static facts learned during pre-training, 
+        RAG grounds the model's output in up-to-date, 
+            proprietary, 
+            or domain-specific data, 
+    drastically reducing hallucinations and eliminating the 
+    need for constant model fine-tuning.   
+
+$>  Text-generation 
+    ~   tools leverage{"Hebel","in Schwung bringen"} 
+        Large Language Models (LLMs) to 
+    automatically 
+        write, rewrite, expand, or format text 
+    based on natural language instructions. 
+    Modern text-generation tools fall into 
+    four distinct categories based on their target workflows...
+
+$>  AI Customer Service 
+    leverages artificial intelligence—including 
+    Large Language Models (LLMs), machine learning, 
+    natural language processing (NLP), and speech 
+    recognition—to deliver immediate, 
+    24/7 customer support across multiple channels.   
+    <   example:    
+        https://deepsearch.net/
+        https://www.cognigy.com/
+
+$>  AI Helpdesk Service 
+    An ~ uses autonomous AI agents, machine learning, 
+    and natural language processing (NLP) to handle 
+        IT support, 
+        HR requests, and customer service operations. 
+    Modern platforms operate as agentic systems—moving 
+        beyond rigid,
+        keyword-matched chatbots to independently parse complex requests, 
+    execute actions across software stacks, 
+    and resolve end-to-end tickets without human handoff.
+    <   example:
+        https://www.zendesk.de
+    
+$>  AI online ordering systems 
+    ~   automate order taking, processing, and fulfillment across 
+        digital and voice channels. 
+    Driven by Natural Language Processing (NLP) and Machine Learning, 
+    these platforms replace static web forms and 
+    manual entry with interactive, personalized ordering workflows.
+
+$>  AI research assistants 
+    accelerate evidence gathering, literature reviews, 
+    document synthesis, and quantitative analysis. 
+    Modern AI research relies on a specialized 
+    ecosystem of tools designed for specific phases of the research lifecycle.
+
+
+===============================================================================
+m:  Generating:<Images & Videos> Using AI [ov3]:c
+===============================================================================
+
+
+$>  Text to Image 
+    https://davinci.ai/     :!url
+    "Type your idea, pick your style, and watch it transform into stunning art in seconds. No design skills needed, just your imagination"
+    
+$>  Text + Image to Image
+    https://www.tapicsai.com/
+    KI Bildgenerator und KI Fotobearbeitung
+    Verwandeln Sie Ihre Ideen in Sekundenschnelle in 
+        Avatare, Anime-Kunst, Porträts, Poster und Produktbilder.
+
+$>  Image Inpainting & Outpainting
+    https://en.wikipedia.org/wiki/Inpainting
+
+$<  Image Inpainting ist eine digitale Bildbearbeitungstechnik, 
+    bei der beschädigte, 
+        fehlende oder unerwünschte Bereiche eines Bildes 
+    anhand der umliegenden Pixel nahtlos rekonstruiert oder ersetzt werden.
+
+$>  Image Outpainting
+    https://openart.ai/
+    Expand any photo past its original edges with 
+    OpenArt's AI image extender. 
+    The AI generates new surroundings that match your image, 
+        so you can uncrop shots, 
+        switch aspect ratios, 
+    and add space without stretching a single pixel.
+
+$>  Image Control
+    In the context of AI image generation, 
+        Image Control refers to techniques that allow 
+    users to 
+        direct, guide, or constrain the output of a generative model 
+        beyond what is possible through a simple text prompt.
+    These methods are designed to solve the inherent 
+        unpredictability of standard text-to-image synthesis, 
+    enabling precise control over an image's structural composition, 
+    spatial arrangement, style, or specific elements.
+
+$>  Image Upscaling 
+    https://www.qvuxo.com/
+    Bilder verbessern und hochskalieren
+    
+$>  Negative Prompting    
+
+$<  Negative prompting is essentially 
+        the opposite of how prompts thus far have 
+        been shown—
+    instead of instructing the model what to create, 
+        it instructs the model what not to create. 
+    This enables you to constrain the image output more 
+        because the negative prompt helps to remove or
+        reduce the presence of unwanted elements. 
+    Some models are more sensitive to negative prompting than others.
+
+$<  Ein Negative Prompt (negativer Prompt) ist eine 
+    Anweisung an ein KI-Bildgenerierungsmodell, 
+    die festlegt, welche Elemente, Stile oder Fehler im generierten Bild 
+        <vermieden> oder 
+        <ausgeschlossen> 
+    werden sollen.
+    Während der normale (positive) Prompt beschreibt, 
+        <was> im Bild zu sehen sein soll 
+        (z. B. „Ein magischer Wald mit leuchtenden Pflanzen“), 
+        steuert der Negative Prompt gezielt das, was 
+        <ausgeblendet> oder 
+        <korrigiert> 
+    werden soll.
+
+$>  Image Interrogation {"ausfragen"}
+    Bildverhör (Image Interrogation) bezeichnet in der 
+        Künstlichen Intelligenz und Bildverarbeitung den Prozess, 
+    bei dem ein Bild von einem System analysiert wird, 
+    um detaillierte Beschreibungen, 
+        Beschriftungen (Captions) oder Prompts zu generieren.
+
+$>  Frame interpolation
+    Frame interpolation (also known as motion-interpolated temporal 
+        upsampling) 
+    is a video processing technique that generates 
+    intermediate frames between existing frames 
+        to increase the frame rate (FPS).
+    It converts lower frame rate media (e.g., 24 FPS or 30 FPS) 
+    into smoother, 
+    higher frame rate video (e.g., 60 FPS, 120 FPS, or higher), 
+    creating fluid motion and enabling slow-motion effects.
+
+$>  Fine-tuning 
+    https://www.ibm.com/think/topics/fine-tuning
+    in machine learning is the process of adapting 
+    a pre-trained model for specific tasks or use cases. 
+    It has become a fundamental deep learning technique, 
+    particularly in the training process of foundation models used for generative AI.
+
+$>  Fine Tuning Image and Video Models
+    Fine-tuning image and video models adapts pre-trained 
+        diffusion models (e.g., FLUX, Wan 2.1, HunyuanVideo, Mochi 1) 
+        or vision-language models to learn specific characters, 
+    artistic styles, camera movements, or domain-specific features.
+    Rather than training a multi-billion parameter model from scratch, 
+    fine-tuning injects new knowledge using a small, 
+    specialized dataset (often 10–100 images or 5–20 short video clips).
+
+$>  Image Generation Tools
+    
+    •   Adobe Firefly 
+        https://www.adobe.com/de/products/firefly/    
+        Generiere und bearbeite 
+            Bilder, Videos, Audio und Designs 
+        mit den führenden KI-Modellen von 
+            Adobe, Google, OpenAI, Kling AI und 
+            weiteren Anbietern. 
+        Starte jetzt kostenlos.
+        +   Adobe's image generator. 
+        Available through Photoshop and other CC apps
+    
+    •   DALL·E 
+        https://deevid.ai/de/model/dall-e
+        +   Developed by OpenAI. 
+            In the past, it powered image generation in ChatGPT and Copilot   
+        Dall-E 3 AI Bildgenerator
+        Dall-E 3 ist ein leistungsstarker KI-Bildgenerator von OpenAI, 
+            mit dem Sie hochwertige Bilder aus einfachen Text- oder Bild-Eingabeaufforderungen erstellen, 
+        bearbeiten und remixen können und so jedem in 
+        nur wenigen Klicks Studio-Qualitäts-Visuals bietet.
+
+        https://de.wikipedia.org/wiki/DALL-E
+        DALL·E ist eine von OpenAI entwickelte KI-Technologie, 
+        die Bilder aus Textbeschreibungen (Prompts) erstellt.
+    
+    •   FLUX.1 
+        https://flux1ai.com/
+        Discover the power of FLUX AI image generator and 
+            watch as your text prompts transform into incredible, 
+            high-quality images.
+        Image-generation model by Black Forest Labs. 
+            Publicly accessible.
+
+    •   Midjourney      :!url
+        https://de.wikipedia.org/wiki/Midjourney
+        Midjourney ist eine Anwendung von künstlicher Intelligenz (KI), 
+        die in der Lage ist, 
+            KI-Kunst zu erschaffen.
+        Midjourney wird vollständig durch 
+            Befehle an einen Discord-Bot gesteuert. 
+        Um ein neues Bild zu erschaffen, 
+            wird der Befehl „/imagine“ verwendet, 
+            gefolgt von einer Beschreibung des gewünschten Bildes 
+            (vgl. Prompt-Engineering). 
+        Dabei können prinzipiell verschiedene Sprachen verwendet werden, 
+        darunter auch Deutsch. 
+            Anstelle von Text-Befehlen (Midjourney als Text-Bild-Generator) 
+        können zur Bilderzeugung auch 
+            Bild-Befehle (image prompts) verwendet werden 
+            (Stand Version 5.2: Entweder mindestens 
+            zwei Bilder oder ein Bild kombiniert mit 
+            einem Text-Befehl). 
+        Midjourney funktioniert somit auch als Bild-zu-Bild-Generator.
+
+    •   Stable Difussion
+        https://stability.ai/stable-image
+        https://en.wikipedia.org/wiki/Stable_Diffusion
+        Stable Diffusion is a deep learning, 
+        text-to-image model released in 2022 based on diffusion 
+            techniques. 
+        The generative AI technology is the premier product of Stability AI 
+        and is considered to be a part of the ongoing AI boom.
+    
+    
+$>  Video-Generation Tools
+    
+    •   Runway
+        https://artlist.io/ai/video-generator
+        Artlist's AI Video Generator lets 
+            creators, marketers, and filmmakers generate 
+            videos from text, image, video, 
+        and audio inputs, free to try. 
+        Every major AI model for text-to-video and image-to-video, 
+        in one place, under one commercial license.
+    
+    •   Sora
+        https://soar2.ai/
+        OpenAI's video generator. 
+            Available to paid >ChatGPT< subscribers only.
+        Soar 2 is your gateway to premium AI video and image generation. 
+        Try leading models including Sora 2, 
+        Veo 3, Seedance 2.0, 
+        Nano Banana —all through one unified creative platform. 
+        No multiple subscriptions needed.
+
+    •   Synthesia
+        https://www.synthesia.io/de
+        Erstelle Videos in Studioqualität mit KI Avataren und 
+            Voiceovers in über 160 Sprachen. 
+        Spare bei der Videoproduktion bis zu 90 % Zeit und Kosten.
+    
+    •   Veo 
+        https://aistudio.google.com/models/veo      :!url
+        Google DeepMind's video generator. 
+            Available in Gemini, including to free users.
+        Google Veo ist ein fortschrittliches KI-Modell zur 
+            Videogenerierung von Google DeepMind, 
+        das realistische, 
+        hochauflösende Videos und synchrone Audios aus Textprompts erstellen kann.
+  
+
+$>  Visual Assets for Promotional Materials
+    Microsoft Advertising
+    https://ui.ads.microsoft.com/campaign/
+    
+    
+$>  Website and App Styling
+    Business Website is a ready-made app on the Caffeine App Market. 
+    You install it, swap in your services, prices, 
+    and hours, 
+        and booking requests land in your admin inbox.
+    
+    •   Caffeine 
+        https://caffeine.ai/
+        Describe the software you need, and Caffeine builds it. 
+        Then you run it by talking: 
+        asking what's working, changing what isn't.
+            
+$>  Virtual Travelling
+    ~ uses immersive technology, 
+        360-degree media, and interactive streaming to let you 
+        explore real-world locations, 
+        cultural landmarks, and nature reserves from anywhere.
+    https://www.youtube.com/watch?v=SQWe5gGHVfg&t=6
+    Vorteile und MöglichkeitenKostengünstig und barrierefrei: 
+        Entdecken Sie die Welt ohne Flugtickets, 
+        Jetlag oder finanzielle und körperliche Hürden.
+    Umweltfreundlich: 
+        Reisen Sie komplett emissionsfrei und nachhaltig.
+    Beliebte Plattformen: 
+        Nutzen Sie Angebote wie AirPano für 
+            Luftaufnahmen, Virtual Vacation für 
+            Live-Inhalte oder City Walks Live für Stadtspaziergänge.
+    
+    •   AirPano 
+        https://www.airpano.com
+        https://www.airpano.com/list-all-virtual-tours.php
+        is the world's largest online resource for 
+        high-resolution 360° aerial panoramas, 
+        virtual tours, and 360° videos shot from a bird's-eye view.
+    
+    Price in EUR *
+    8800 px (75 cm, 30 inches)	400€
+
+    
+===============================================================================
+m:  Generating:<Audio> Using AI [ov4]:d
+===============================================================================
+
+
+$>  Audio-Generation Tools 
+
+    •   Adobe Firefly  [s.o.]
+        Offers sound-effects generation as part of suite.
+
+    •   ElevenLabs
+        https://join.elevenlabs.io/studio
+        Generate together voice, music, video, and visuals in minutes.   
+        Audio-generation tool by company of same name. 
+        Primarily focuses on >speech generation<. 
+        Paid subscription and limited free tier.
+
+    •   Murf Studio 
+        https://murf.ai/
+        https://www.youtube.com/watch?v=EQ3IYVbyVmc
+        Build production-ready conversational agents, 
+            power real-time conversations with the fastest 
+            TTS API, 
+        and create customizable AI voiceovers on a 
+        platform trusted by 10 million+ developers, 
+        businesses, and creators.
+        --- Audio-generation tool by Murf AI. 
+        Primarily focuses on speech generation. 
+        Paid subscription and limited free tier.
+        Murf Studio ist eine webbasierte Murf AI Plattform 
+            zur Erstellung lebensechter KI-Sprachaufnahmen und Voiceovers.
+   
+    •   MusicGen
+        https://musicgen.com/
+        https://github.com/facebookresearch/audiocraft
+        Meta's music generator. 
+        No official app yet, but open source.
+        Introducing MusicGen: 
+            a powerful single Language Model (LM) redefining 
+        the boundaries of conditional music generation, 
+            with the ability to create high-quality 
+        music by taking cues from text descriptions or melodies.
+    
+    •   Suno
+        Music generator by company of same name. Free and paid plans.
+        https://suno.com/de
+        "Mach einen House-Song darüber, deinen Job zu kündigen."
+    
+    •   Udio
+        Music generator by company of same name. Free and paid plans.
+        https://www.udio.com/
+        Create any song. Just imagine it.
+
+
+===============================================================================
+m:  Generating:<Code> Using AI   [ov5]:5
+===============================================================================
+
+
+$>  Code-Generation Tools 
+
+    •   Amazon Q Developer
+        https://aws.amazon.com/de/q/developer/   
+        Integrated/agentic AI that supports <AWS> and IDEs. 
+            Paid subscription
+        Der leistungsfähigste auf generativer KI basierende Assistent 
+        für die Softwareentwicklung.
+    
+    •   Codex
+        https://chatgpt.com/de-DE/codex/ 
+        Code assistant/agentic AI accessible through <ChatGPT>. 
+            Paid subscription.
+
+    •   Gemini Code Assistant        
+        https://codeassist.google/   
+        https://www.youtube.com/watch?v=APH41U55hos        
+        Integrated/agentic AI that supports <Google Cloud> and IDEs. 
+        Paid subscription.
+        Gemini Code Assist ist ein KI-gestützter Programmierassistent 
+        von Google zur Unterstützung im gesamten Softwareentwicklungszyklus.
+        Wichtigste Funktionen
+            Code-Vervollständigung: 
+                Bietet automatisierte Inline-Vorschläge während des Programmierens.
+            Codetransformation: 
+                Generiert ganze Codeblöcke oder Funktionen aus Textprompts.
+            Fehlerbehebung: 
+                Analysiert Code und schlägt direkte Korrekturen vor.
+            Unit-Tests & Reviews: 
+                Hilft beim Erstellen von Tests und unterstützt 
+                bei Pull-Request-Reviews.
+        +   Extension for VsCode
+ 
+    •   GitHub Copilot
+        https://github.com/features/copilot
+        Integrated/agentic AI that supports various IDEs. 
+        Paid subscription
+        An agent-driven desktop experience built natively on GitHub.
+        Übersicht mit KI
+        Yes, GitHub Copilot offers a 
+            free tier for individual developers with limited monthly usage. 
+    
+    •   Tabnine
+        https://www.tabnine.com/
+        Tabnine provides the context enterprises need to make 
+            Al reliable, safe, 
+        and effective-through our Al Coding Suite or the 
+        standalone Enterprise Context Engine.   
+        Integrated/agentic AI that supports various IDEs. 
+        Paid subscription.
+
+
+$>  Firebase 
+
+    https://firebase.google.com/
+    https://de.wikipedia.org/wiki/Firebase
+
+    Firebase is a platform of services to help you and AI 
+        agents build and run intelligent apps with more speed, 
+        security, and scalability.
+    Designed for the complete app development lifecycle, 
+        backed by Google, and trusted by millions of businesses around the world.
+    Firebase ist eine von Google bereitgestellte Entwicklungsplattform 
+        für Web- und Mobilanwendungen, 
+    die als "Backend-as-a-Service" (BaaS) fungiert.
+
+    Hauptfunktionen von Firebase
+        •   Datenbanken: 
+            Bietet skalierbare NoSQL-Datenspeicher wie 
+            Cloud Firestore und 
+            die Realtime Database für die Echtzeit-Synchronisation von Daten.
+        •   Authentifizierung: 
+            Ermöglicht die einfache Verwaltung von 
+            Benutzerlogins 
+            (z. B. per E-Mail, Google oder Apple).
+        •   Hosting und Speicher
+            Unterstützt sicheres Dateihöschen (Cloud Storage) und 
+            das Hosting von Web-Assets (Firebase Hosting).
+        •   Analysen und Überwachung: 
+                Enthält Tools wie Crashlytics zur Fehlerverfolgung 
+                und Performance-Überwachung.
+    
+$>  GitHub Copilot vs Gemini Code Assistant        
+    The choice between GitHub Copilot and 
+        Google’s Gemini Code Assist comes down to where 
+        your code lives and how much repository-wide context you need.
+    While both offer real-time inline auto-completion, 
+        multi-file generation, 
+        chat, 
+        and CLI terminal integrations, 
+    their underlying design philosophies and 
+        target ecosystems diverge significantly.
+
+$>  Computer Economic Environment
+    Depending on context it means...
+    1.  The Economic Impact of the Computing Industry 
+        (How computers affect macroeconomics, jobs, and the environment).
+    2.  The Business/Macro Environment for Computer 
+        Hardware & Software Companies 
+        (The economic factors that shape the tech industry).
+
+$>  Computer Ecosystem
+    A computer ecosystem is a complex, 
+        interconnected network of 
+        hardware, software, network infrastructure, data, 
+        and human actors. 
+    Much like a biological ecosystem, 
+        no single component operates in isolation; 
+        every layer relies on the others to function, scale, and evolve.
+
+
+===============================================================================
+m:  Identifying Challenges of Generative AI     [ov6]:f
+===============================================================================
+
+
+$>  Confabulation/Hallucination
+    Unter Konfabulation bzw. konfabulieren 
+        (wie lat. confabulatio, ‚Erzählung‘, von fabula, ‚Fabel‘, ‚Geschichte‘, ‚Märchen‘) 
+    versteht man in der Psychopathologie die 
+        Produktion objektiv falscher Erinnerungen. 
+    Diese beruhen auf falschen Wahrnehmungen oder 
+        Fehlfunktionen des Gedächtnisses, 
+    z. B. wenn jemand mehr Informationen aus 
+        seinem Gedächtnis abzurufen versucht, 
+        als tatsächlich gespeichert sind (sog. provozierte Konfabulationen).
+
+$>  Fabulieren
+    Davon abzugrenzen ist Fabulieren, 
+        das nicht im Zusammenhang mit Störungen gebraucht wird. 
+    Es beschreibt das „normale“ phantasievolle Erzählen, 
+    Geschichten erfinden und ausschmücken.
+
+$>  Governance  
+    Unter Governance versteht man den Rahmen, 
+    von dem eine Organisation geleitet und gelenkt wird, 
+    einschließlich aller 
+        Regeln, 
+        Strukturen und 
+        Prozesse 
+    zur Steuerung und Kontrolle.
+
+
+===============================================================================
+m:  Implementing Business Strategies for Generative AI [ov7]:g
+===============================================================================
+
+$>  AI Transformation 
+    ~is the process of embedding artificial intelligence into 
+        core business operations, strategies, and customer touchpoints. 
+    While traditional digital transformation focuses 
+        on digitizing manual workflows 
+        (like moving from paper forms to cloud software), 
+    AI transformation shifts systems from static to 
+        adaptive, predictive, and autonomous.   
+   
+    Key Operational Shift
+
+
+$>  Generative AI Modality
+    Als Generative AI Modalities (Modalitäten der Generativen KI) 
+        werden die verschiedenen Eingabe- und Ausgabeformate bezeichnet, 
+        mit denen ein KI-System Informationen verarbeiten und neu erstellen kann.
+    Während traditionelle Modelle oft auf eine einzige Datenart 
+        spezialisiert waren (unimodal), 
+    arbeiten moderne Systeme zunehmend multimodal. 
+    Sie verknüpfen unterschiedliche
+        Formate miteinander (z. B. Text-zu-Bild oder Bild-zu-Text).
+        
+        
+===============================================================================
+m:  misc
+===============================================================================
+
+
+$>  AI A/B text testing        
+    AI text generation A/B testing generally refers 
+        to two distinct practices depending on your objective:
+    1.  Testing AI-Generated Text vs. Human Text 
+        (Marketing & Product Copy): 
+            Using Generative AI to produce text variations 
+            (headlines, subject lines, ad copy, CTAs) 
+            and running A/B tests against human-written 
+            copy or baseline messaging to optimize conversion rates.   
+    2.  A/B Testing LLM System Outputs
+        (AI Engineering & Product Development): 
+        Comparing two AI text generation models, 
+        prompts, or configurations 
+        (e.g., GPT-4o vs. Claude 3.5 Sonnet, or Prompt V1 vs. Prompt V2) 
+        to see which produces better user engagement, accuracy, or conversion.
+
+    Group A (Control / Variant A): 
+        Receives the human-generated response.
+    Group B (Treatment / Variant B): 
+        Receives the AI-generated response.
+
+$<  url    
+    https://www.pagent.ai/
+
+
+$>  AI Key Performance Indicator (KPI)
+    An AI Key Performance Indicator (KPI) is a quantifiable 
+        metric used to evaluate the efficiency, 
+        output quality, user acceptance, 
+        economic impact, or safety of an artificial intelligence system.
+    Because AI systems range from classic machine 
+        learning models to large language models (LLMs) 
+    and generative agents, AI KPIs are categorized into five distinct layers:...
+
+$<  AI A/B text testing        
+    AI text generation A/B testing generally refers 
+        to two distinct practices depending on your objective:
+    1.  Testing AI-Generated Text vs. Human Text 
+        (Marketing & Product Copy): 
+            Using Generative AI to produce text variations 
+            (headlines, subject lines, ad copy, CTAs) 
+        and running A/B tests against human-written 
+            copy or baseline messaging to optimize conversion rates.   
+    2.  A/B Testing LLM System Outputs
+        (AI Engineering & Product Development): 
+        Comparing two AI text generation models, 
+        prompts, or configurations 
+        (e.g., GPT-4o vs. Claude 3.5 Sonnet, or Prompt V1 vs. Prompt V2) 
+        to see which produces better user engagement, accuracy, or conversion.
+
+$<  https://www.pagent.ai/
+
+
+$>  AI Human-in-the-Loop (HITL) 
+    ~is a design pattern and 
+    system architecture where human intelligence is 
+    integrated into the AI lifecycle—from data labeling and 
+    model training to real-time decision approval and ongoing oversight.
+$<  An auditor periodically reviews the outputs of 
+        an agentic AI model to detect issues.
+    That is an example of keeping 
+        "humans in the loop" (HITL)—specifically, Human-on-the-loop (HOTL) oversight or human auditing.
+
+$>  AI Multimodal Approach
+    An ~ refers to building artificial intelligence models or 
+        systems that can process, understand, 
+        combine, and generate information across 
+    multiple distinct "modalities"—
+    such as text, images, audio, video, sensor data, and 3D spatial representations.
+    Unlike traditional unimodal models 
+        (e.g., text-only Large Language Models or standalone 
+        Computer Vision models), 
+        multimodal systems correlate data from different sources simultaneously, 
+    mirroring how human perception works.
+
+
+$>  In-Context Code Debugging 
+    ~ is an AI technique where a Large Language Model (LLM) detects, 
+    explains, and fixes bugs in software by processing the 
+    problematic code, environment logs, 
+    and instructions directly inside its prompt context—without 
+    updating or retraining its underlying model parameters.   
+    Instead of relying on weight adjustments (like fine-tuning), 
+    the model leverages its In-Context Learning (ICL) 
+    ability to perform 
+    static code analysis, trace execution paths, 
+    and synthesize fixes on the fly.
