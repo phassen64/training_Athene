@@ -1,0 +1,31 @@
+Lösungsvorschläge Kapitel 9
+===========================
+
+==> Programmierung siehe Datei "Meine Funktionen.ps1" im selben Verzeichnis
+
+1.	Die gespeicherte Datei kann in der PowerShell unter "$HOME\Meine Funktionen.ps1" 
+	angesprochen werden. 
+	Wollen Sie die Datei ausführen, geben Sie an der Konsole folgenden Befehl ein:
+	& "$HOME\Meine Funktionen.ps1"
+
+2.	siehe Datei "Meine Funktionen.ps1"
+	Aufruf an der Konsole: Get-MyProcess
+
+3.	siehe Datei "Meine Funktionen.ps1"
+	Aufruf an der Konsole, z.B.: 
+	Get-MyProcess2 
+	Get-MyProcess2 -FilterName power*
+	Get-MyProcess2 -FilterName power* -Liste
+	
+4.	siehe Datei "Meine Funktionen.ps1"
+	Aufruf an der Konsole, z.B.: Get-MyProcess3 | Liste
+		
+5.	siehe Datei "Meine Funktionen.ps1"
+	Aufruf an der Konsole, z.B.: Get-Process | Optimize-Output
+	
+6.	siehe Datei "Meine Funktionen.ps1"
+	Aufruf an der Konsole, z.B.: 
+	Get-Help Get-MyProcess2
+	Get-Help Get-MyProcess2 -Full
+	Get-Help Get-MyProcess2 -Parameter *
+	Get-Help Get-MyProcess2 -Examples

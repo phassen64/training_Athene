@@ -1,0 +1,49 @@
+Kapitel 5: kompletter Code 
+==========================
+
+Get-PSProvider [-PSProvider]
+Get-PSDrive
+Get-PSDrive –Name Daten
+Get-PSDrive -Name Daten | Select-Object -Property *
+Get-PSDrive –PSProvider FileSystem
+New-PSDrive –Name Daten –PSProvider FileSystem –Root \\Fileserver1\Daten
+New-PSDrive –Name Z –PSProvider FileSystem –Root \\Fileserver1\Daten -Persist
+New-PSDrive –Name Microsoft –PSProvider –Root HKLM:\SOFTWARE\Microsoft
+Remove-PSDrive –Name Daten
+Remove-PSDrive –Name Microsoft –Force
+Get-Location –PSProvider Registry
+Get-Location –PSDrive HKLM
+Push-Location C:\ -StackName wichtig
+Push-Location –StackName wichtig
+Pop-Location –StackName wichtig
+Invoke-Item –Path .\update.exe
+Invoke-Item –Path "C:\Meine Dateien\Bearbeiten\rechnung.xlsx"
+Copy-Item –Path C:\Windows\Logs\DISM\dism.log –Destination C:\MeineLogs
+Copy-Item –Path C:\Windows\Logs –Destination C:\MeineLogs -Recurse
+Get-ChildItem –Path C:\Test –Include *.tmp | Remove-Item 
+Get-ItemProperty –Path C:\Users\Administrator\test.txt | Select-Object -Property *
+Set-ItemProperty –Path .\fertig.pptx –Name IsReadOnly –Value $true
+Get-Content –Path .\notiz.txt
+Get-ChildItem -Path C:\ *.txt -Recurse | Get-Content -TotalCount 2
+Get-Process | Select-Object –Property Id, Name | Set-Content -Path .\prozesse.txt
+Set-Content -Path .\notiz.txt -Value "Wichtiger Termin 14 Uhr!" -PassThru
+Add-Content –Path .\notiz.txt –Value (Get-Date)
+Add-Content -Path .\neu.txt -Value (Get-Content -Path .\notiz.txt)
+Clear-Content –Path C:\Protokolldateien –Filter *.log -Force
+Clear-Content –Path * -Include abc* -Exclude *234*
+Set-Location -Path HKLM:\SOFTWARE
+New-Item -Path  "Meine Software" -ItemType Container
+New-ItemProperty -Path "HKLM:\SOFTWARE\Meine Software " -Name Version -Value "5.02 Professional " -PropertyType String
+New-ItemProperty -Path "HKLM:\SOFTWARE\Meine Software" -Name Hexwert -Value 0xABC -PropertyType DWORD
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Meine Software" -Name Version -Value "5.23 Professional"
+Remove-ItemProperty -Path "HKLM:\SOFTWARE\Meine Software" -Name Hexwert
+Get-ChildItem –Path Env:\
+$Env:<Variablenname>
+
+
+
+
+
+
+
+

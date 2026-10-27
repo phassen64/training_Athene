@@ -1,0 +1,2 @@
+Konstanten können im Programm nicht mit einem neuen Wert belegt werden. 
+Der Wert der Konstanten ist bis zum Programmende gleich. 

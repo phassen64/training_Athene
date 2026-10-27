@@ -1,0 +1,22 @@
+Kapitel 3: kompletter Code 
+==========================
+
+Verb-Substantiv [-Parameter [Wert]]
+<Cmdlet> –Parameter Wert
+Get-Command –Noun service 
+<Cmdlet> –Parameter
+Get-ChildItem –Recurse 
+<Cmdlet> [–Parameter] Wert
+Get-Process [-Name] powershell 
+Copy-Item [-Path] c:\alt [-Destination] c:\neu 
+Get-ChildItem –Path C:\Users\Public\Documents –Force –Recurse
+Get-ChildItem –Path C:\Users\Public\Documents –Force –Recurse –ErrorAction SilentlyContinue
+Get-Service | Get-Member
+Show-Command –Name Get-Command
+Get-Help 
+Get-Help –Name <Cmdlet> -Online
+Update-Help –UICulture en-US 
+Get-Help –Name <Cmdlet/Konzept> [-Parameter]
+Get-Help –Name process | Out-GridView
+Get-Help –Name * -Paramter Wert
+Get-Help –Name about_*

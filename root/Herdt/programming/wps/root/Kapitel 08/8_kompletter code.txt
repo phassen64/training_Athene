@@ -1,0 +1,126 @@
+Kapitel 8: kompletter Code 
+==========================
+
+Get-Variable [-Name]
+Get-ChildItem –Path Variable:
+Get-Variable –Name PSUICulture | Format-List –Property *
+$test = 45.3
+$test
+New-Variable -Name ps_test
+New-Variable –Name ps_test2 –Value "Herdt-Verlag"
+$<Variablenname> = (neuer) Wert
+Set-Variable –Name ps_test2 –Value "Bodenheim"
+Clear-Variable –Name a
+$a = $null
+Remove-Variable –Name b
+Remove-Item Variable:\b
+[int]$zahl = 42
+[int]$zahl = "42"
+[int]$zahl = "Tokio"
+$a_var = 2, 66, 43, 5.4, 13, "Wolpertinger", 307
+New-Variable –Name a_var –Value 2, 66, 43, 5.4, 13, "Wolpertinger", 307
+$<name> = @([Wert])
+$a = @()
+$a = @("Hallo")
+$a = @(Get-Process –Name notepad)
+$a[7] = 25
+$a.SetValue(25,7)
+$a += 19
+New-Variable –Name <Name> -Value <Wert> -Option Constant
+New-Variable -Name PI -Value 3.14159265 -Option Constant
+
+$a = "Dies wird"
+$b = "komplett"
+$a + " ein " + $b + "er Satz. "
+
+If ($x –eq 27) { Write-Host "Der Wert der Variablen x ist 27." }
+
+$x = 27		# Wert zum Testen anpassen
+If ($x –eq 27) 
+	{ 
+		Write-Host "Der Wert der Variablen x ist 27." 
+	}
+Else
+	{
+		Write-Host "Der Wert von x – sofern vorhanden - ist nicht 27."
+	}
+
+If (Bedingung 1) 
+	{
+		Anweisungsblock 1
+	}
+ElseIf (Bedingung 2)
+	{
+		Anweisungsblock 2
+	}
+[ElseIf (Bedingung n)
+	{
+		Anweisungsblock n
+	}]
+Else
+	{
+		Anweisungsblock Else
+	}
+
+$x = 19		# Wert zum Testen anpassen
+If ($x –gt 27) 
+	{ 
+		Write-Host "Der Wert der Variablen x ist größer als 27." 
+	}
+ElseIf ($x –eq 27)
+	{
+		Write-Host "Der Wert der Variablen x ist genau 27."
+	}
+Else
+	{
+		Write-Host "Der Wert von x – sofern vorhanden - ist kleiner als 27."
+	}
+
+switch ($variable) 
+	{
+	Wert-1	{
+			Anweisungsblock 1
+			break
+		}
+	Wert-2	{
+			Anweisungsblock 2
+			break
+		}
+	Default {
+			Anweisungsblock 3
+		}
+	}
+
+$a = 3		# Wert zum Testen anpassen
+Switch ($a)
+    {
+        1 { Write-Host "A = 1" }
+        2 { Write-Host "A = 2" }
+        3 { Write-Host "A = 3" }
+        Default { Write-Host "Nicht 1, nicht 2, nicht 3." }
+    }
+
+$a = 0		# Wert zum Testen anpassen
+While ($a –le 3)
+    {
+	Write-Host $a
+	$a = $a + 1		# alternativ: $a++ oder $a += 1
+    }
+
+$a = 0		# Wert zum Testen anpassen
+Do
+    {
+	Write-Host $a
+	$a = $a + 1		# alternativ: $a++ oder $a += 1
+    }
+While ($a –le 3)
+
+for ($a = 1; $a -le 5; $a++) 
+	{
+		Test-Connection -ComputerName 127.0.0.$a -Count 1
+	}
+
+$array = 2, 4, 6, 8, 10
+ForEach ($wert in $array) { $wert * 5 }
+
+Get-Process | ForEach {$count = 0} {$_.Name; $count++} {"Gesamt: $count Prozesse."}

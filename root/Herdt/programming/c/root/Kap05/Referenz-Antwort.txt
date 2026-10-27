@@ -1,0 +1,3 @@
+Da mit der Übergabe einer Referenz die Speicheradresse einer Variablen bekannt ist, 
+kann der Wert an dieser Speicheradresse gelesen und geschrieben werden. Der Wert
+der Variablen, von der die Referenz ist, wird somit verändert. 

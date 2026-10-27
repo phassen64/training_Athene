@@ -1,0 +1,35 @@
+Lösungsvorschläge Kapitel 12
+============================
+
+1.	Vorbereitung:
+	New-ADUser -Name "Corinna Cremer" -SamAccountName "corinna.cremer" -AccountPassword (ConvertTo-SecureString -AsPlainText "Kennw0rt!" -Force) -Enabled:$True
+	New-ADUser -Name "Willi Wagner" -SamAccountName "willi.wagner" -AccountPassword (ConvertTo-SecureString -AsPlainText "Kennw0rt!" -Force) -Enabled:$True
+	New-ADGroup -GroupCategory Security -GroupScope Global -Name "GG_Forschung"
+	New-ADGroup -GroupCategory Security -GroupScope Global -Name "GG_Chefetage"
+	Add-ADGroupMember -Identity GG_Forschung -Members "CN=Corinna Cremer,CN=Users,DC=herdt,DC=ps"
+	Add-ADGroupMember -Identity GG_Chefetage -Members "CN=Willi Wagner,CN=Users,DC=herdt,DC=ps"
+	
+	a) New-ADFineGrainedPasswordPolicy -Name:"PSO_Forschung" -Precedence:"100" -MaxPasswordAge:"21:00:00:00" -MinPasswordAge:"5:00:00:00" -MinPasswordLength:"14" -ComplexityEnabled:$True -LockoutDuration:"12:00:00" -LockoutObservationWindow:"03:00:00" -LockoutThreshold:"3"
+	b) New-ADFineGrainedPasswordPolicy -Name:"PSO_Chefetage" -Precedence:"200" -MaxPasswordAge:"50:00:00:00" -MinPasswordAge:"1:00:00:00" -MinPasswordLength:"6" -ComplexityEnabled:$True -LockoutThreshold:"0"
+	c) Add-ADFineGrainedPasswordPolicySubject -Identity PSO_Forschung -Subjects "corinna.cremer", GG_Chefetage
+	d) Add-ADFineGrainedPasswordPolicySubject -Identity PSO_Chefetage -Subjects "willi.wagner"
+	e) Set-ADFineGrainedPasswordPolicy -Identity PSO_Forschung -Description "Richtlinie für die Forschungsabteilung"
+	f) Get-ADFineGrainedPasswordPolicy -Filter {Name -eq "PSO_Forschung" -or Name -eq "PSO_Chefetage"} | Format-Table -Property Name, Precedence, MinPasswordLength, MaxPasswordAge
+	g) Get-ADUserResultantPasswordPolicy -Identity "CN=Willi Wagner,CN=Users,DC=herdt,DC=ps" // Es ist die Richtlinie PSO_Chefetage, weil es die einzige Richtlinie ist, die direkt auf den Benutzer angwednet wird. (Lassen Sie sich nicht von den Prioritätswerten verwirren!)
+	h) Add-ADFineGrainedPasswordPolicySubject -Identity PSO_Forschung -Subjects "willi.wagner"
+	Get-ADUserResultantPasswordPolicy -Identity "CN=Willi Wagner,CN=Users,DC=herdt,DC=ps"
+	
+2.	a) Search-ADAccount -LockedOut
+	b) Search-ADAccount -AccountExpiring -DateTime "31.12.2016"
+	c) Search-ADAccount -AccountInactive -TimeSpan "14.00:00:00"
+	
+3.	a) Set-ADAccountPassword –Identity "corinna.cremer" –NewPassword (Read-Host –Prompt "Neues Kennwort eingeben" -AsSecureString) -Reset
+	(Auswirkungen von Übung 1: Auf Corinna wird eine Richtlinie angewendet, die ein Kennwort mit mindestens 14 Zeichen erfordert.)
+	b) Set-ADAccountExpiration -Identity "willi.wagner" -TimeSpan "42.00:00:00"
+	c) Disable-ADAccount -Identity "corinna.cremer"
+	Get-ADUser -Identity "corinna.cremer" -Properties Enabled
+	Enable-ADAccount -Identity "corinna.cremer"
+	
+4. a) Get-ADDomain | Format-List -Property InfrastructureMaster, PDCEmulator, RIDMaster
+	b) Get-ADForest | Format-List -Property DomainNamingMaster, SchemaMaster
+	c) Move-ADDirectoryServerOperationMasterRole -Identity Server1 -OperationMasterRole PDCEmulator

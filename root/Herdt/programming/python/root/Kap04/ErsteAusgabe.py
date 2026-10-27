@@ -1,0 +1,1 @@
+print("Python-Programme können auch aus Klassen bestehen.")

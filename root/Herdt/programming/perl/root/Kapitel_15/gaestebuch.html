@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<title>Mein Gästebuch</title>
+	</head>
+
+	<body>
+		<h3>Eintrag ins G&auml;stebuch</h3>
+		<form action="/cgi-bin/Kapitel_15/gaestebuch_db.cgi" method="get">
+			<table>
+				<tr>
+					<td>Ihr Name:</td>
+					<td><input type="text" name="name" size="30"></td>
+				</tr>
+				<tr>
+					<td>Ihre E-Mail-Adresse:</td>
+					<td><input type="text" name="email" size="30"></td>
+				</tr>
+				<tr>
+					<td>Ihr Wohnort:</td>
+					<td><input type="text" name="ort" size="30"></td>
+				</tr>
+				<tr>
+					<td valign="top">Ihre Nachricht:</td>
+					<td><textarea name="text" cols="40" rows="6"></textarea></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Speichern"></td>
+				</tr>
+			</table>
+		</form>
+		<p><a href="/cgi-bin/Kapitel_15/gaestebuch_db.cgi">Eintr&auml;ge lesen</a></p>
+	</body>
+
+</html>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SimpleEditor.exe" version="1.0.0.4" publicKeyToken="05777a8b452bdb1e" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SimpleEditor" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SimpleEditor.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC-Manifestoptionen
+          Wenn Sie die Zugangsebene für das Windows-Benutzerkonto ändern möchten, ersetzen Sie den 
+          requestedExecutionLevel-Knoten durch eines der folgenden Elemente.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Löschen Sie den requestedExecutionLevel-Knoten, wenn Sie 
+         zum Gewährleisten der Abwärtskompatibilität die Datei- und Registrierungsvirtualisierung verwenden möchten.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimpleEditor.exe" size="9640">
+      <assemblyIdentity name="SimpleEditor" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>uBmhMOpKZuU1s5gYuai287QoCCLUy0TE+mUoTAGxRmA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="SimpleEditor.exe.config" size="161">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1SR2HBfPDeqUEJ8/zazS7LZ1UBFf+eAwf3jAUFVBnv4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=xeon6\ralph" issuerKeyHash="95173a65cfb6ea6ca1b9df2251c35360838b64df" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>SFp+i6xHZfTytKfCbS/tHuyFheiRJ2s6o81n+dQ6JCs=</DigestValue></Reference></SignedInfo><SignatureValue>zt/VRtK7SGyFfH7Ey2tQc/gabT78OeyxF3TnYC3fP2IFVbgHCqxS5axd2XP3FMVVbHYVyAyGeQgv/6jEcbfKLV6Ngl/jk+yJeEq9bDJwWhgbml6PRHMkKA8mkEHsiof13q5GawkLX0qRlrUnwTXHtv5baXfkEJKoiWJHkVc9gM4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0daCoJiETeWVIIcDa+2WuOjZp10D3BkVAslqiDprSJZI1yrICuDcDsGXSGqmQqcosZZuAQhEnbwt+xRUOHb4PtI7kou8HqLng1dmNGNMj1oXVYwX5EHgewB5KCCfvX9Gd7jPG5jPlc3cUfsawKy8I0aZYe2pl9ZlK3SkGSpljjU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="2b243ad4f967cda33a6b2791e88585ec1eed2f6dc2a7b4f2f46547ac8b7e5a48" Description="" Url=""><as:assemblyIdentity name="SimpleEditor.exe" version="1.0.0.4" publicKeyToken="05777a8b452bdb1e" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=xeon6\ralph</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>NFus2YjgGU3hkM6ppoRvWSo15GnOB+87LSh3MExfDI4=</DigestValue></Reference></SignedInfo><SignatureValue>i0BMG2Izgg2m1WFGY3ZMR3mzyR8Q62CstEvebmCHhmnq113zf7QldWYrvCebug4NC/pySzfJsJiMjYz57RZXSOUHS9zd/j6iDHueUqqfEt0UfEbyUPTqAMA5jqry5YKEjrXVn7/TAPaz0is0exFEY/mKPaygg3ALh1PNtpRCuQE=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0daCoJiETeWVIIcDa+2WuOjZp10D3BkVAslqiDprSJZI1yrICuDcDsGXSGqmQqcosZZuAQhEnbwt+xRUOHb4PtI7kou8HqLng1dmNGNMj1oXVYwX5EHgewB5KCCfvX9Gd7jPG5jPlc3cUfsawKy8I0aZYe2pl9ZlK3SkGSpljjU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBxTCCAS6gAwIBAgIQGWJQfD+qlZpAuemSs/PtmDANBgkqhkiG9w0BAQsFADAhMR8wHQYDVQQDHhYAeABlAG8AbgA2AFwAcgBhAGwAcABoMB4XDTIwMDMxMjA3MTkyN1oXDTIxMDMxMjEzMTkyN1owITEfMB0GA1UEAx4WAHgAZQBvAG4ANgBcAHIAYQBsAHAAaDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA0daCoJiETeWVIIcDa+2WuOjZp10D3BkVAslqiDprSJZI1yrICuDcDsGXSGqmQqcosZZuAQhEnbwt+xRUOHb4PtI7kou8HqLng1dmNGNMj1oXVYwX5EHgewB5KCCfvX9Gd7jPG5jPlc3cUfsawKy8I0aZYe2pl9ZlK3SkGSpljjUCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCqGfWgDyGsGrSDomW3sFJJCk8PgkvH5kkYCPSQPV09QwpDEZzU/ZzgR40WfclYNLtwcA7O7RdjsVMkGGDfVkx9yGH6d2bA+YY2VR8SJfaPyOxnRFTg8t4vZVioeVKq/VhwGGe2Z4Gx7671oUeGMtkqupzqQ4KaRxW2mYqeuWW8Ig==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

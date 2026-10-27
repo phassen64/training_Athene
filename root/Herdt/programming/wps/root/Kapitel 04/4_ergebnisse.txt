@@ -1,0 +1,23 @@
+Lösungsvorschläge Kapitel 4
+===========================
+
+1.	Get-Service -Name s* | Where-Object { $_.Status -EQ "Stopped" }
+	oder
+	Get-Service -Name s* | Where Status -EQ Stopped
+
+2.	Get-ChildItem C:\Windows -File | Sort-Object -Property Length -Descending | 
+	Export-Csv -Path .\dateien.csv
+
+3.	a) Datei -1- verwendet als Listentrennzeichen das Zeichen ",".
+	   Datei -2- verwendet als Listentrennzeichen das Zeichen ";".
+	   Datei -3- verwendet als Listentrennzeichen das Zeichen ";" (deutsch).
+	b) Im deutschen Sprachraum ist kein Unterschied zu sehen. Abhängig vom Standard-Listentrennzeichen können in anderen Kulturen andere Trennzeichen verwendet werden. Wenn Sie ein bestimmtes Zeichen erzwingen wollen, verzichten Sie auf den Parameter -UseCulture.
+	
+4.	Get-ChildItem $env:windir  | Where-Object { $_.Extension -EQ ".exe" } | 
+	Measure-Object -Property Length -Sum -Average
+	
+	$env:windir ist die in der PowerShell verwendete Umgebungsvariable für das Windows-Verzeichnis. Sie können natürlich auch C:\Windows verwenden.
+	
+5.	a) 1..10 | ForEach-Object { notepad.exe }
+	b) Get-Process -Name notepad
+	   Get-Process -Name notepad | Stop-Process

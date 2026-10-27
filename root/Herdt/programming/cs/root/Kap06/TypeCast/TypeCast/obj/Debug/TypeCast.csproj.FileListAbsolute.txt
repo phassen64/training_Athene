@@ -1,0 +1,7 @@
+D:\orga\Herdt\csh\root\Kap06\TypeCast\TypeCast\bin\Debug\TypeCast.exe.config
+D:\orga\Herdt\csh\root\Kap06\TypeCast\TypeCast\bin\Debug\TypeCast.exe
+D:\orga\Herdt\csh\root\Kap06\TypeCast\TypeCast\bin\Debug\TypeCast.pdb
+D:\orga\Herdt\csh\root\Kap06\TypeCast\TypeCast\obj\Debug\TypeCast.csproj.AssemblyReference.cache
+D:\orga\Herdt\csh\root\Kap06\TypeCast\TypeCast\obj\Debug\TypeCast.csproj.CoreCompileInputs.cache
+D:\orga\Herdt\csh\root\Kap06\TypeCast\TypeCast\obj\Debug\TypeCast.exe
+D:\orga\Herdt\csh\root\Kap06\TypeCast\TypeCast\obj\Debug\TypeCast.pdb

@@ -1,0 +1,24 @@
+Kapitel 6: kompletter Code 
+==========================
+
+Get-Alias
+Get-Alias [–Name] <string>
+Get-Alias –Name gal 
+Get-Alias gcm 
+Get-Alias –Definition Get-Service 
+Get-Alias –Definition Get-ChildItem 
+dir Alias:
+start notepad.exe
+Get-Alias | Group-Object -Property definition | Sort-Object -Property count
+Set-Alias [-Name] <String> [-Value] <String>
+New-Alias [-Name] <String> [-Value] <String>
+Set-Alias -Name hilf -Value Get-Help
+New-Alias paint C:\Windows\System32\mspaint.exe
+Export-Alias
+Export-Alias -Path alias-export.csv
+Export-Alias -Path alias-export.ps1 -As Script –NoClobber
+Import-Alias
+Import-Alias -Path alias-export.csv -Force
+Get-Command –Noun *alias*
+Remove-Item –Path Alias:\<Name>
+Get-Alias | Where-Object Options -Match "ReadOnly" | Select-Object –Property Name, Options

@@ -1,0 +1,31 @@
+Lösungsvorschläge Kapitel 6
+===========================
+
+1.	Get-Alias -Name h*
+
+2.	Get-Alias -Definition Remove-Item
+
+3.	Set-Alias -Name aaa -Value Get-Process
+	Set-Alias -Name bbb -Value Get-Random
+	Set-Alias -Name ccc -Value Get-Service
+	
+	Nein, es macht keinen Unterschied, solange diese Aliase noch nicht 
+	definiert wurden. In dem Fall bricht New-Alias mit einer Fehlermeldung ab.
+	
+4.	Export-Alias -Path .\eigene-aliase.txt -Name aaa, bbb, ccc
+
+5.	Set-Alias -Name ddd -Value Get-PSProvider
+
+6.	Export-Alias -Path .\eigene-aliase.txt -Name ddd -Append
+
+7.	Die PowerShell wird geschlossen und erneut geöffnet, damit vom Anwender
+	definierte Aliase nicht mehr vorhanden sind.
+	
+	Import-Alias -Path .\eigene-aliase.txt
+	
+	Get-Alias -Name aaa, bbb, ccc, ddd
+	
+8.	Remove-Item -Path Alias:\aaa
+	Remove-Item -Path Alias:\bbb
+	Remove-Item -Path Alias:\ccc
+	Remove-Item -Path Alias:\ddd

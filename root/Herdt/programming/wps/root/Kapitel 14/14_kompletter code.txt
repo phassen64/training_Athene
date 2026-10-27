@@ -1,0 +1,22 @@
+Kapitel 14: kompletter Code 
+===========================
+
+Import-Module ServerManager
+Uninstall-WindowsFeature Server-Gui-Shell
+Uninstall-WindowsFeature Server-Gui-Mgmt-Infra -Restart
+Get-Command –Noun Net*
+Get-Command –Noun Net* | Group-Object –Property ModuleName
+Get-NetAdapter | Format-List
+Get-NetAdapter | Select-Object –Property *
+Get-NetIPConfiguration –InterfaceAlias "Ethernet" –Detailed
+Set-NetIPInterface –InterfaceAlias "Ethernet" –Dhcp Enabled
+Set-NetIPInterface –InterfaceAlias "Ethernet" –Dhcp Disabled
+New-NetIPAddress -IPAddress 192.168.100.10 –PrefixLength 24 –DefaultGateway 192.168.100.254 –InterfaceAlias "Ethernet"
+Set-DnsClientServerAddress –InterfaceAlias "Ethernet" -ServerAddresses 192.168.100.254
+Set-DnsClientServerAddress –InterfaceAlias "Ethernet" -ServerAddresses 192.168.100.254,192.168.100.253
+Set-DnsClientServerAddress –InterfaceAlias "Ethernet" –ResetServerAddresses
+Get-DnsClientServerAddress
+Get-DnsClientServerAddress –InterfaceAlias "Ethernet"
+Get-DnsClientServerAddress –InterfaceAlias "Ethernet" –AddressFamily IPv4
+start powershell.exe
+. .\Get-PSShell.ps1

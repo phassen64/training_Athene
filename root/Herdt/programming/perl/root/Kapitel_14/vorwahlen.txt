@@ -1,0 +1,13 @@
+Berlin;030
+Hamburg;040
+München;089
+Stuttgart;0711
+Frankfurt;069
+Leipzig;0341
+Düsseldorf;0211
+Köln;0221
+Rostock;0381
+Dresden;0351
+Wiesbaden;0611
+Hannover;0511
+Erfurt;0361

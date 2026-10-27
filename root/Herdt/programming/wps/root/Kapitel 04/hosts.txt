@@ -1,0 +1,13 @@
+produktion-client-07
+test-client-17
+produktion-server-04
+test-server-14
+produktion-client-07
+localhost
+test-server-14
+produktion-server-04
+localhost
+produktion-server-04
+test-server-14
+test-server-14
+produktion-client-07

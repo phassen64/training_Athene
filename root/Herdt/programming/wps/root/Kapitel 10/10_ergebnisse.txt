@@ -1,0 +1,51 @@
+Lösungsvorschläge Kapitel 10
+============================
+
+1.	Get-Module
+
+2.	Ja, das ist möglich.
+	Get-Command -Module DnsServer
+	Im Anschluss an die Ausführung des Befehls ist das Modul DnsServer 
+	automatisch geladen. Dies können Sie mit Hilfe des Befehls Get-Module 
+	überprüfen.
+
+3.	Welche Module zur Verfügung stehen, hängt vom Betriebssystem und von
+	installierten Komponenten ab. So bietet (a) z.B. das Modul ActiveDirectory,
+	das auf (b) und (c) nicht zur Verfügung steht.
+	
+4.	Durch Eingabe von Get-Command <Cmdlet> für ein spezielles Cmdlet erhalten Sie 
+	eine vorformatierte Tabelle als Ausgabe. Diese beinhaltet
+	die Spalten CommandType, Name und Source (Name des Moduls).
+	
+5.	Get-Command -Module DnsClient
+	Es handelt sich um die Befehle:
+		Add-DnsClientNrptRule
+		Clear-DnsClientCache
+		Get-DnsClient
+		Get-DnsClientCache
+		Get-DnsClientGlobalSetting
+		Get-DnsClientNrptGlobal
+		Get-DnsClientNrptPolicy
+		Get-DnsClientNrptRule
+		Get-DnsClientServerAddress
+		Register-DnsClient
+		Remove-DnsClientNrptRule
+		Set-DnsClient
+		Set-DnsClientGlobalSetting
+		Set-DnsClientNrptGlobal
+		Set-DnsClientNrptRule
+		Set-DnsClientServerAddress
+		Resolve-DnsName
+	
+6.	Remove-Module -Name DnsClient
+
+7.	Get-DisplayResolution
+	Set-DisplayResolution -Width 1024 -Height 768 (Beispielwerte; 
+	bitte individuell anpassen)
+	
+8.	b) Import-Module -Name ActiveDirectory
+	c) Nein. Module werden automatisch geladen, wenn ein Befehl aufgerufen wird, 
+	der Bestandteil des Moduls ist. 
+	
+9.	Set-Location -Path "dc=herdt,dc=ps"
+	Auf diesem Laufwerk müssen definierte Namen verwendet werden.

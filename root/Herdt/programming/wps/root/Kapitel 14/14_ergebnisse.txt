@@ -1,0 +1,9 @@
+Lösungsvorschläge Kapitel 14
+============================
+
+1.	siehe Kapitel
+
+2.	siehe Ergebnisdatei ip-konfiguration.ps1
+
+3.	a) siehe Ergebnisdatei Get-Set-PSShell.ps1
+	b) siehe Ergebnisdatei Get-Set-PSShell.ps1

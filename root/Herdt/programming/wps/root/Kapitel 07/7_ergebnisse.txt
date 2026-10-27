@@ -1,0 +1,23 @@
+Lösungsvorschläge Kapitel 7
+===========================
+
+1.	Get-ExecutionPolicy [-List]
+
+2.	a) Beenden der aktuellen PowerShell-Sitzung (sofern nötig).
+	b) Starten einer neuen PowerShell-Sitzung (optional als ADMINISTRATOR).
+	c) Eingabe: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+	d) Eingabe: Get-ExecutionPolicy [-List]
+
+3.	a) Test-Path –Path $PROFILE.CurrentUserCurrentHost
+	b) New-Item –Path $PROFILE.CurrentUserCurrentHost -Type file -Force
+	   notepad.exe $PROFILE.CurrentUserCurrentHost
+	c) Nach Ihrem Ermessen (bei fehlenden Ideen verwenden Sie die 
+	   Beispieldatei dieses Kapitels: profil.txt)
+	d) PowerShell neu starten und Definitionen aus der Profildatei verwenden
+	
+4.	Auf der Windows-Oberfläche: Windows-Taste+R drücken, in den 
+	Ausführen-Dialog eingeben: powershell.exe -NoProfile
+	
+5.	Sie erhalten pro verwendeter Profildatei die Fehlermeldung, dass Ihre 
+	Profildatei nicht geladen werden kann, da die Ausführung von Skripten 
+	auf diesem System deaktiviert ist.

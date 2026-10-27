@@ -1,0 +1,5 @@
+In diesem Fall sind beide Konstanten mit int definiert worden. 
+Der Compiler kann prüfen, ob wie im Beispiel 288 in Zahlenbereich von int liegt.
+Wenn der Konstanten temp = 288.5 zugewiesen wird, 
+dann gibt der Compiler eine Fehlermeldung bzw. eine Warnung aus, 
+weil die Zahl 288.5 nicht im Bereich von int liegt. 

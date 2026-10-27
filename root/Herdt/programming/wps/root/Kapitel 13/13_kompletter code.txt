@@ -1,0 +1,34 @@
+Kapitel 13: kompletter Code 
+===========================
+
+Get-ADForest –Identity herdt.ps
+(Get-ADForest –Identity herdt.ps).ForestMode
+Set-ADForestMode –ForestMode Windows2008R2Forest –Identity herdt.ps –Confirm:$False
+
+If ((Get-ADForest –Identity herdt.ps).ForestMode –gt 3)
+{
+	Write-Host "Die Funktionsebene ist bereits auf Windows 2008 R2 oder höher.
+	Es sind keine weiteren Aktionen nötig."
+}
+Else
+{
+	Set-ADForestMode –ForestMode Windows2008R2Forest –Identity herdt.ps 
+	–Confirm:$False 
+}
+
+Get-ADOptionalFeature –Filter *
+Enable-ADOptionalFeature  -Identity "Recycle Bin Feature" –Scope ForestOrConfigurationSet –Target herdt.ps 
+Get-ADObject –Filter {<String>} -IncludeDeletedObjects
+Get-ADObject –Filter * -IncludeDeletedObjects –SearchBase "CN=Deleted Objects, DC=herdt, DC=ps"
+Get-ADObject -Filter {sAMAccountName -eq "petra.muster"} –IncludeDeletedObjects 
+–Properties LastKnownParent
+Get-ADObject –Filter {<String>} –IncludeDeletedObjects | Restore-ADObject
+Get-ADObject -Filter {givenName -eq "Hans"} –IncludeDeletedObjects | Restore-ADObject
+Get-ADObject -Filter {givenName -eq "Hans"} –IncludeDeletedObjects | Restore-ADObject –TargetPath "cn=Users,dc=herdt,dc=ps"
+Get-ADObject -Filter * -SearchBase "cn=Deleted Objects,dc=herdt,dc=ps" -IncludeDeletedObjects | Where-Object {$_.objectClass -eq "OrganizationalUnit"}
+<…> | Where-Object {$_.objectClass -eq "OrganizationalUnit" –and $_.Name –like "Meine Benutzer*"}
+<…> | Restore-ADObject
+Get-ADObject -Filter {(objectClass –eq "OrganizationalUnit") –and (Name -like "Bremen*")} –IncludeDeletedObjects | Restore-ADObject
+Get-ADObject -SearchBase "CN=Deleted Objects,DC=herdt,DC=ps" -IncludeDeletedObjects -Filter {LastKnownParent -eq "OU=Hamburg,DC=herdt,DC=ps"}
+Get-ADObject -SearchBase "CN=Deleted Objects,DC=herdt,DC=ps" -IncludeDeletedObjects -Filter {LastKnownParent -eq "OU=Hamburg,DC=herdt,DC=ps"} –Properties LastKnownParent
+Get-ADObject -SearchBase "CN=Deleted Objects,DC=herdt,DC=ps" -IncludeDeletedObjects -Filter {LastKnownParent -eq "OU=Hamburg,DC=herdt,DC=ps"} –Properties LastKnownParent | Restore-ADObject

@@ -1,0 +1,33 @@
+Lösungsvorschläge Kapitel 13
+============================
+Beispielstammdomäne bzw. -gesamtstruktur: herdt.ps
+
+1.	(Get-ADForest –Identity herdt.ps).ForestMode
+	Set-ADForestMode –ForestMode Windows2008R2Forest -Identity herdt.ps
+	oder alternativ beide Aktionen in einem kleinen Skript:
+	If ((Get-ADForest –Identity herdt.ps).ForestMode –lt 3)
+	{
+		Set-ADForestMode –ForestMode Windows2008R2Forest –Identity herdt.ps 
+		–Confirm:$False 
+	}
+	
+2.	Ja, das ist möglich.
+	a) Eine Herabstufung der Ebene von Windows Server 2008 R2 ist nur auf 
+	Windows Server 2008 möglich.
+	b) Sie müssen das Serverbetriebssystem (mind.) Windows Server 2008 R2 verwenden. Für diese Aktion können Sie zudem ausschließlich die PowerShell verwenden.
+	c) Set-ADForestMode –ForestMode Windows2008Forest -Identity herdt.ps
+	
+3.	a) Enable-ADOptionalFeature  -Identity "Recycle Bin Feature" –Scope ForestOrConfigurationSet –Target herdt.ps 
+	b) Get-ADOptionalFeature -Filter *
+	c) Disable-ADOptionalFeature // nein, da sich der Sctive Directory-Papierkorb nicht deaktivieren lässt (Eigenschaft IsDisableable, Wert False)
+	
+4.	a) Get-ADObject, da es als einziges Get-Cmdlet dieses Themenfeldes den Parameter -IncludeDeletedObjects unterstützt.
+	b) Ohne diesen Parameter werden gelöschte Objekte nicht angezeigt. Eine Suche nach gelöschten Objekten ohne diesen Parameter ist sinnlos.
+	
+5.	a) Get-ADObject -Filter {sn -eq "English"} –IncludeDeletedObjects 
+	b) Get-ADObject -Filter {givenName -eq "Mary"} –IncludeDeletedObjects 
+	c) Get-ADObject -Filter * -SearchBase "cn=Deleted Objects,dc=herdt,dc=ps" -IncludeDeletedObjects | Where-Object {$_.objectClass -eq "OrganizationalUnit"}
+	d) Get-ADObject -Filter * -SearchBase "cn=Deleted Objects,dc=herdt,dc=ps" -IncludeDeletedObjects | Where-Object {$_.objectClass -eq "OrganizationalUnit" -and $_.Name -like "Anwender*"}
+	e) Ja, gibt es. Es sind zwei Benutzer und ihr übergeordnetes Objekt gelöscht worden. Das übergeordnete Objekt ist die Organisationseinheit, in der sie sich befanden. Zuerst muss das übergeordnete Objekt wiederhergestellt werden. Erst danach können die beiden Benutzer wiederhergestellt werden. 
+	f) Zuerst: Get-ADObject -Filter * -SearchBase "cn=Deleted Objects,dc=herdt,dc=ps" -IncludeDeletedObjects | Where-Object {$_.objectClass -eq "OrganizationalUnit" -and $_.Name -like "Anwender*"} | Restore-ADObject
+	Danach: Get-ADObject -Filter {sn -eq "English"} –IncludeDeletedObjects | Restore-ADObject

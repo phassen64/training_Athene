@@ -1,0 +1,33 @@
+Kapitel 10: kompletter Code 
+===========================
+
+$Env:PSModulePath
+Get-Module
+Get-Module –ListAvailable
+Get-Command –CommandType <Cmdlet>
+Import-Module –Name <Modulname>[, <Modulname2>]
+Remove-Module –Name <Modulname>[, <Modulname2>]
+Get-Command –Module <Modulname>[, <Modulname2>]
+Get-WindowsFeature
+Get-WindowsFeature | Where-Object {$_.Installed -eq $true}
+Get-WindowsFeature –Name Web-* | Install-WindowsFeature –ComputerName Server3
+Install-WindowsFeature –Name Web-Server –IncludeAllSubFeature –ComputerName Server3
+Get-Command –Module DnsServer
+Get-DnsServer
+Get-DnsServerResourceRecord -ZoneName <Zone> | Where-Object {$_.RecordType –eq "A" }
+Get-DnsServerZone –ComputerName Server3 | Format-List
+Export-DnsServerZone -Name goettingen.ad -FileName export-goettingen.ad.dns
+Get-DisplayResolution
+Set-DisplayResolution –Width 1024 –Height 768
+Import-Module –Name ActiveDirectory
+Set-Location –Path AD:
+Get-ChildItem
+Set-Location –Path "dc=herdt,dc=ps"
+
+
+
+
+
+
+
+

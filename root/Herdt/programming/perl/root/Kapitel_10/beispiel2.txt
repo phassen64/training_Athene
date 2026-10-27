@@ -1,0 +1,3 @@
+Dies ist ein Beispieltext, der die Verwendung der Substitution mit regulären Ausdrücken erläutert.
+HEUTE ist heute. Sie können auf diese Weise Platzhalter in Dateien einfügen, die durch einen neuen Wert ersetzt werden sollen, z.B. Mittwoch.
+Für Mittwoch fügt das Perl-Script den aktuellen Wochentag ein.

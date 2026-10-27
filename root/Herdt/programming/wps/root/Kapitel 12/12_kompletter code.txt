@@ -1,0 +1,71 @@
+Kapitel 12: kompletter Code 
+===========================
+
+New-ADFineGrainedPasswordPolicy `
+	-Name:"Sicher" `
+	-Description:"sichere Einstellungen für sicherheitsrelevante Bereiche" `
+	-Precedence:"100" `
+	-MaxPasswordAge:"28.00:00:00" `
+	-MinPasswordAge:"1:00:00:00" `
+	-MinPasswordLength:"12" `
+	-PasswordHistoryCount:"100" `
+	-ReversibleEncryptionEnabled:$False `
+	-ComplexityEnabled:$True `
+	-LockoutDuration:"1:00:00:00" `
+	-LockoutObservationWindow:"12:00:00" `
+	-LockoutThreshold:"3" 
+New-ADFineGrainedPasswordPolicy -Name:"Mittel" -Description:"mittlere Sicherheitseinstellungen " -Precedence:"200" -MaxPasswordAge:"42:00:00:00" -MinPasswordAge:"1:00:00:00" -MinPasswordLength:"7" -PasswordHistoryCount:"24" -ComplexityEnabled:$True -ReversibleEncryptionEnabled:$False -LockoutDuration:"00:30:00" -LockoutObservationWindow:"00:30:00" -LockoutThreshold:"5"
+New-ADFineGrainedPasswordPolicy -Name:"Unsicher" -Description:"Lasch - für wenig sicherheitsrelavante Bereiche" -Precedence:"300" -MaxPasswordAge:"90:00:00:00" -MinPasswordAge:"00:00:00" -MinPasswordLength:"5" -PasswordHistoryCount:"0" -ComplexityEnabled:$False -ReversibleEncryptionEnabled:$False -LockoutDuration:"00:30:00" -LockoutObservationWindow:"00:30:00" -LockoutThreshold:"0"
+Set-ADFineGrainedPasswordPolicy –Identity Unsicher –ComplexityEnabled:$True -MaxPasswordAge "60:00:00:00" -Description "Richtlinie für wenig sicherheitsrelevante Bereiche"
+Get-ADFineGrainedPasswordPolicy -Filter * | Set-ADFineGrainedPasswordPolicy -ComplexityEnabled:$false
+Rename-ADObject –Identity "CN=Mittel,CN=Password Settings Container,CN=System,DC=herdt,DC=ps" –NewName "Standard"
+Get-ADFineGrainedPasswordPolicy –Filter * | Select-Object –Property Name
+Get-ADFineGrainedPasswordPolicy –Filter * | Format-Table –Property Name, Precedence, MinPasswordLength, MaxPasswordAge -AutoSize
+Get-ADFineGrainedPasswordPolicy -Filter {MinPasswordLength -gt 7}
+Get-ADFineGrainedPasswordPolicy –Identity Sicher
+Get-ADFineGrainedPasswordPolicy –Identity "CN=Sicher,CN=Password Settings Container,CN=System,DC=herdt,DC=ps"
+Get-ADFineGrainedPasswordPolicy –Identity Mittel –Properties *
+Remove-ADFineGrainedPasswordPolicy –Identity Sicher -WhatIf
+Remove-ADFineGrainedPasswordPolicy –Identity "CN=Sicher,CN=Password Settings Container,CN=System,DC=herdt,DC=ps" -WhatIf
+Get-ADFineGrainedPasswordPolicy -Filter {Name -eq "Sicher"} | Remove-ADFineGrainedPasswordPolicy -WhatIf
+Get-ADFineGrainedPasswordPolicy –Filter * | Remove-ADFineGrainedPasswordPolicy -Confirm
+Add-ADFineGrainedPasswordPolicySubject -Identity Sicher -Subjects "Harald Herdt"
+Add-ADFineGrainedPasswordPolicySubject -Identity "CN=Sicher,CN=Password Settings Container,CN=System,DC=herdt,DC=ps" -Subjects "CN=Harald Herdt, OU=Bremen, DC=herdt, DC=ps"
+Get-ADFineGrainedPasswordPolicySubject –Identity Sicher
+Remove-ADFineGrainedPasswordPolicySubject -Identity Sicher -Subjects "Harald Herdt" –Confirm:$False
+Get-ADUserResultantPasswordPolicy -Identity "Harald Herdt"
+Disable-ADAccount –Identity "CN=Client42,CN=Computers,DC=herdt,DC=ps"
+Enable-ADAccount –Identity "Harald Herdt"
+Enable-ADAccount –Identity "CN=Harald Herdt,OU=Bremen,DC=herdt,DC=ps"
+Get-ADUser –Filter {Name –like "Student-*"} | Disable-ADAccount
+Set-ADAccountExpires –Identity Praktikant-23 –DateTime "26.11.2014"
+Set-ADAccountExpires –Identity "CN=Praktikant-23,OU=Praktikum,DC=herdt,DC=ps" –DateTime "26.11.2014"
+Get-ADGroupMember -Identity HH-Mitarbeiter | Where-Object {$_.objectClass -eq "User"} | Set-ADAccountExpiration -timespan 60.00:00:00
+Clear-ADAccountExpires –Identity Praktikant-23
+Search-ADAccount -AccountDisabled | Select-Object Name, objectClass
+Search-ADAccount -AccountExpired
+Search-ADAccount –AccountExpiring –TimeSpan 14.00:00:00
+Search-ADAccount –AccountExpiring –DateTime "22.02.2014"
+Search-ADAccount –PasswordExpired
+Search-ADAccount -PasswordNeverExpires
+Search-ADAccount -LockedOut
+-New-Password (ConvertTo-SecureString –AsPlainText "Kennw0rt!" -Force)
+-New-Password (Read-Host –Prompt "Neues Kennwort eingeben" –AsSecureString)
+Set-ADAccountPassword –Identity "Harald Herdt" –NewPassword (ConvertTo-SecureString –AsPlainText "Test123" -Force) -Reset
+Set-ADAccountPassword –Identity "Harald Herdt" –NewPassword (Read-Host –Prompt "Neues Kennwort eingeben" -AsSecureString) -Reset
+Set-ADAccountPassword –Identity "Harald Herdt"
+Unlock-ADAccount –Identity "Harald Herdt"
+Unlock-ADAccount –Identity "CN=Harald Herdt,OU=Bremen,DC=herdt,DC=ps"
+Search-ADAccount –LockedOut | Unlock-ADAccount
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole DomainNamingMaster, SchemaMaster, InfrastructureMaster, PDCEmulator, RIDMaster
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole 0, 1, 2, 3, 4
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole DomainNamingMaster
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole 4
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole SchemaMaster
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole 3
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole InfrastructureMaster
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole 2
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole PDCEmulator
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole 0
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole RIDMaster
+Move-ADDirectoryServerOperationMasterRole -Identity <Ziel> -OperationMasterRole 1

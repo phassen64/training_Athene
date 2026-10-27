@@ -1,0 +1,167 @@
+Kapitel 9: kompletter Code 
+==========================
+
+.\EigenesSkript.ps1
+C:\Daten\EigenesSkript.ps1
+"C:\Daten\Eigenes Skript.ps1"
+& "C:\Daten\Eigenes Skript.ps1"
+'$HOME\Eigenes Skript.ps1'
+"$HOME\Eigenes Skript.ps1"
+
+Function <Name>
+{
+	<Anweisungsblock>
+}
+
+Function Get-Message
+{
+	Write-Host "Hallo, dies ist eine neue Funktion."
+}
+
+<Funktionsname> [-Parameter1 [Wert1]] [-Parameter2 [Wert2]] [-ParameterN [WertN]]
+
+Function <Name> 
+{
+	Param ($Parameter1[, $Parameter2])
+	<Anweisungsblock> 
+}
+
+Function <Name> [($Parameter1[, $Parameter2])]
+{ 
+	<Anweisungsblock> 
+}
+
+Function Get-LargeFiles ($length)
+{
+	Get-ChildItem C:\Windows | Where-Object {$_.length -ge $length}
+}
+
+Get-LargeFiles 500
+Get-LargeFiles 1MB
+Get-LargeFiles
+
+Function Get-LargeFiles ($location = "C:\Windows", $length = 1MB)
+{
+	Get-ChildItem $location | Where-Object {$_.length -ge $length}
+}
+
+Get-LargeFiles 
+Get-LargeFiles –location C:\Users\Administrator
+Get-LargeFiles –location F:\Daten –length 100kb
+
+Function Test-Switch ([switch]$AnAus)
+{
+	If ($AnAus)
+	{
+		Write-Host "Eingeschaltet…"
+	}
+	Else
+	{
+		Write-Host "Ausgeschaltet…"
+	}
+}
+
+Function Get-LargeFiles2 ($location = "C:\Windows", $length = 1MB, [switch]$subdir)
+{
+	$schalter=$False
+	If($subdir)
+	{
+		$schalter=$True
+	}
+	Get-ChildItem $location -Recurse:$schalter | Where-Object 
+	{$_.length -ge $length}
+}
+
+Function <Name> 
+{ 
+	Begin 
+	{
+		<Anweisungsblock>
+	}
+	Process 
+	{
+		<Anweisungsblock>
+	}
+	End
+	{
+		<Anweisungsblock>
+	}
+}
+
+Function Get-Pipe1
+{
+	Process
+	{
+		Write-Host "Wert des Pipeline-Objekts: $_."
+	}
+}
+
+1, 2, 3, 4, 5, 6, 7, 8 | Get-Pipe1
+
+Function Get-Pipe1a
+{
+	Begin
+	{
+		Write-Host "Pipeline-Funktion (Werte: $input)"
+	}
+	End
+	{
+		Write-Host "Verarbeitete Werte: $input"
+	}
+}
+
+1, 2, 3, 4, 5, 6, 7, 8 | Get-Pipe1a
+
+Function Get-Pipe2
+{
+	Begin
+	{
+		Write-Host "Pipeline-Funktion"
+	}
+	Process
+	{
+		Write-Host "Wert des aktuellen Pipeline-Objekts: $_."
+	}
+	End
+	{
+		Write-Host "Verarbeitete Werte: $input."
+	}
+}
+
+Get-ChildItem C:\Windows | .\pipescript.ps1
+
+Filter <Name>
+{
+	<Anweisungsblock>
+}
+
+Filter NewFiles ([int]$tage)
+{
+	$jetzt = Get-Date
+	$_ | Where-Object { ($jetzt - $_.LastWriteTime).Days –lt $tage}
+}
+
+Get-ChildItem <Pfad> | NewFiles 20
+
+Get-ChildItem Function:
+
+(Get-ChildItem Function:\<Funktionsname>).Definition
+
+<#
+  .SYNOPSIS
+  Kurzbeschreibung
+  .DESCRIPTION
+  Ausführliche Beschreibung
+  .PARAMETER <ParameterName-1>
+  Beschreibung des ersten Parameters
+  .PARAMETER <ParameterName-N>
+  Beschreibung des n. Parameters
+  .EXAMPLE
+  Beispielanwendung und -erläuterung
+  .EXAMPLE
+  Weitere Beispielanwendung und -erläuterung
+  .NOTES
+  Weitere Hinweise
+  .LINK
+  Angabe von URLs oder ähnlichen Cmdlets
+#>

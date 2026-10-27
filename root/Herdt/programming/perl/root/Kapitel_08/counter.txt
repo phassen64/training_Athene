@@ -1,0 +1,3 @@
+hilfe.html;1;
+index.html;4;
+faq.html;1;

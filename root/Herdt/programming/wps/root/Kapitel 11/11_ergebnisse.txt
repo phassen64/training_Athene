@@ -1,0 +1,26 @@
+Lösungsvorschläge Kapitel 11
+============================
+
+1.	Benutzer: Add-ADUser, Get-ADUser, Set-ADUser, Remove-ADUser
+	Computer: Add-ADComputer, Get-ADComputer, Set-ADComputer, Remove-ADComputer
+	Gruppen: Add-ADGroup, Get-ADGroup, Set-ADGroup, Remove-ADGroup
+	Organisationseinheiten: Add-ADOrganizationalUnit, Get-ADOrganizationalUnit, Set-ADOrganizationalUnit, Remove-ADOrganizationalUnit
+	
+2.	a) Get-ADUser -Filter * -SearchBase "CN=Users,DC=herdt,DC=ps"
+	b) Get-ADGroup -Filter {Name -like "Domäne*"}
+	c) Get-ADOrganizationalUnit -Identity "OU=Domain Controllers,DC=herdt,DC=ps"
+	
+3.	a) New-ADComputer -Name Client42 -PassThru | Set-ADObject -ProtectedFromAccidentalDeletion:$True
+	b) New-ADOrganzisationalUnit -Name "Bremen" -Path "DC=herdt,DC=ps"
+	   New-ADGroup -Name "HB-Mitarbeiter" -GroupCategory Security -GroupScope Global -Path "OU=Bremen,DC=herdt,DC=ps"
+	c) New-ADUser "Harald Herdt" -Path "OU=Bremen,DC=herdt,DC=ps"
+	d) Add-ADGroupMember -Identity "CN=HB-Mitarbeiter,OU=Bremen,DC=herdt,DC=ps" -Members "CN=Harald Herdt,OU=Bremen,DC=herdt,DC=ps"
+	
+4.	Set-ADUser -Identity "CN=Harald Herdt,OU=Bremen,DC=herdt,DC=ps" -Description "Mitarbeiter aus Bremen" -Company "Herdt-Verlag"
+
+5.	a) Get-ADGroupMember -Identity "CN=Abgelehnte RODC-Kennwortreplikationsgruppe,CN=Users,DC=herdt,DC=ps" | Select-Object -Property Name
+	b) Get-ADGroupMember -Identity "CN=Abgelehnte RODC-Kennwortreplikationsgruppe,CN=Users,DC=herdt,DC=ps" -Recursive | Select-Object -Property Name
+	
+6.	Move-ADObject -Identity "CN=HB-Mitarbeiter,OU=Bremen,DC=herdt,DC=ps" -TagetPath "CN=Users,DC=herdt,DC=ps"
+
+7.	Get-ADUser -Filter * | Set-ADObject -ProtectedFromAccidentalDeletion:$True

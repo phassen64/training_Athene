@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\orga\\Herdt\\csh\\root\\Kap03\\MeineMappe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{636526B6-ED3B-4609-ACC2-19EA19F14DBB}|WinAnwendung\\WinAnwendung.csproj|d:\\orga\\herdt\\csh\\root\\kap03\\meinemappe\\winanwendung\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{636526B6-ED3B-4609-ACC2-19EA19F14DBB}|WinAnwendung\\WinAnwendung.csproj|solutionrelative:winanwendung\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\orga\\Herdt\\csh\\root\\Kap03\\MeineMappe\\WinAnwendung\\Program.cs",
+              "RelativeDocumentMoniker": "WinAnwendung\\Program.cs",
+              "ToolTip": "D:\\orga\\Herdt\\csh\\root\\Kap03\\MeineMappe\\WinAnwendung\\Program.cs",
+              "RelativeToolTip": "WinAnwendung\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T04:47:51.809Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

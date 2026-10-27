@@ -1,0 +1,26 @@
+Lösungsvorschläge Kapitel 5
+===========================
+
+1.	Get-PSDrive -PSProvider FileSystem
+
+2.	a) New-Item -Path C:\Testdaten -ItemType Container
+	b) New-PSDrive -Name Testdaten -PSProvider FileSystem -Root C:\Testdaten
+	c) Set-Location Testdaten:
+
+3.	a) New-Item -Path .\notiz.txt -ItemType File
+	b) Get-Process -Name s*, w* | Select-Object Name, ID | Set-Content -Path .\prozesse.txt
+	
+4.	a) Add-Content -Path .\notiz.txt -Value (Get-Date)
+	b) Get-ChildItem -Path Testdaten: -Recurse | Add-Content -Path .\notiz.txt
+	(Da Sie wissen, dass im Laufwerk nur zwei Dateien vorhanden sind, ist der
+	Parameter -Recurse nicht unbedingt nötig.)
+		
+5.	Set-ItemProperty -Path .\prozesse.txt -Name IsReadOnly -Value $true
+		
+6.	Clear-Content -Path .\prozesse.txt -Force
+		
+7.	Set-Location C:
+	Remove-PSDrive -Name Testdaten -PSProvider FileSystem
+	(Die PowerShell kann das aktuelle Laufwerk nicht löschen, daher müssen Sie
+	es zuvor verlassen.)
+	

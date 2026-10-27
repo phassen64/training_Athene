@@ -1,0 +1,68 @@
+Kapitel 11: kompletter Code 
+===========================
+
+Get-ADUser –Filter *
+Get-ADGroup –Filter *
+Get-ADOrganziationalUnit –Filter *
+Get-ADComputer –Filter *
+Get-ADOrganizationalUnit –Identity "OU=Hamburg,OU=Benutzer,DC=herdt,DC=ps"
+Get-ADOrganizationalUnit –Filter {Name –eq "Hamburg"}
+Get-ADUser –Filter {cn –eq "Hans Dampf"}
+Get-ADUser –Identity hans.dampf
+Get-ADUser –Identity " CN=Hans Dampf,OU=Hamburg,OU=Benutzer,DC=herdt,DC=ps"
+Get-ADComputer –Identity Core03
+Get-ADComputer –Identity "CN=Core03,CN=Computers,DC=herdt,DC=ps"
+Get-ADComputer –Filter {Name –eq "Core03"}
+Get-ADGroup –Filter {Name –eq "HH-Verwaltung"}
+Get-ADGroup –Identity HH-Verwaltung
+Get-ADGroup –Identity "CN=HH-Verwaltung,OU=FirmaX,DC=herdt,DC=ps"
+New-ADUser -Name max.mustermann
+New-ADUser –Name "Doug Adams"
+New-ADUser –Name "Doug Adams" –sAMAccountName "doug.adams" -Path "OU=Benutzer,DC=herdt,DC=ps"
+New-ADUser -Path "OU=Meine Benutzer,DC=herdt,DC=ps" -Name "Doug Adams" -Surname "Adams" -GivenName "Doug" -SAMAccountName "doug.adams" -UserPrincipalName "doug.adams@herdt.ps" -Description "IT-Beauftragter Zweigstelle II" -Company "Herdt-Verlag" -Department "IT" -Office "Bodenheim" -AccountPassword (ConvertTo-SecureString -AsPlainText "Pa$$w0rd23456" -Force) -ChangePasswordAtLogon:$True -Enabled:$True
+New-ADGroup –Name "GG_HH-Mitarbeiter" –GroupScope Global
+New-ADGroup –Name "LG_HH-Einkauf" –GroupCategory Security –GroupScope DomainLocal –Path "OU=Hamburg,DC=herdt,DC=ps"
+New-ADOrganizationalUnit –Name "HH-Mitarbeiter"
+New-ADOrganizationalUnit –Name "Meine Mitarbeiter" –Path "OU=Meine Firma, DC=herdt,DC=ps" –ProtectedFromAccidentalDeletion:$False
+New-ADOrganizationalUnit –Name "Bamberg" –Path "OU=Meine Firma,DC=herdt,DC=ps" –City "Bamberg" –Country "DE" –PostalCode 96047 –State "Bayern" –Description "Firmenressourcen in der Bamberger Filiale"
+New-ADComputer –Name "Client75"
+New-ADComputer –Name "Server23" –Path "OU=Hamburg,DC=herdt,DC=ps"
+Set-ADComputer –Identity "CN=Client1,CN=Computers,DC=herdt,DC=ps" –Location "Stratford-upon-Avon"
+Get-ADGroup -Filter * -SearchBase "OU=Hamburg,DC=herdt,DC=ps" | Set-ADGroup -ManagedBy "CN=Hans Dampf,CN=Users,DC=herdt,DC=ps"
+Set-ADOrganizationalUnit –Identity "OU=Hamburg,DC=herdt,DC=ps" –Description "In dieser Organisationseinheit sind alle Benutzer und Gruppen des Standorts Hamburg."
+Set-ADUser –Identity "CN=Hans Dampf,CN=Users,DC=herdt,DC=ps" –LogonWorkstations "Client1","Client2"
+Set-ADUser –Identity "CN=Hans Dampf,CN=Users,DC=herdt,DC=ps" –Add @{otherTelephone=987654321;url="herdt.ps"} –Clear Description –Replace @{Title="Chef";telephoneNumber=12345678}
+Add-ADGroupMember –Identity <DN Gruppe> -Members <DN Mitglied1>[, <DN Mitglied2>]
+Add-ADGroupMember –Identity "CN=LG_Drucker3_Drucken,OU=Hamburg,DC=herdt,DC=ps" -Members "CN=Client1,CN=Computers,DC=herdt,DC=ps", "CN=Hans Dampf,CN=Users,DC=herdt,DC=ps", "CN=HH-Mitarbeiter,OU=Hamburg,DC=herdt,DC=ps"
+Add-ADGroupMember LG_Drucker3_Drucken -Members hans.dampf, HH-Mitarbeiter, "CN=Client1,CN=Computers,DC=herdt,DC=ps"
+Get-ADGroupMember –Identity "CN=LG_Drucker3_Drucken,OU=Hamburg,DC=herdt,DC=ps"
+Get-ADGroupMember LG_Drucker3_Drucken
+Get-ADGroupMember –Identity "CN=LG_Drucker3_Drucken,OU=Hamburg,DC=herdt,DC=ps" -Recursive
+Get-ADGroupMember –Identity "CN=LG_Drucker3_Drucken,OU=Hamburg,DC=herdt,DC=ps" | Select-Object –Property Name
+Remove-ADGroupMember –Identity "CN=LG_Drucker3_Drucken,OU=Hamburg,DC=herdt,DC=ps" –Members "CN=Hans Dampf,CN=Users,DC=herdt,DC=ps"
+Remove-ADGroupMember LG_Drucker3_Drucken hans.dampf 
+Remove-ADGroupMember –Identity "CN=LG_Drucker3_Drucken,OU=Hamburg,DC=herdt,DC=ps" –Members "CN=Hans Dampf,CN=Users,DC=herdt,DC=ps" -WhatIf
+Remove-ADGroupMember –Identity "CN=LG_Drucker3_Drucken,OU=Hamburg,DC=herdt,DC=ps" –Members "CN=Hans Dampf,CN=Users,DC=herdt,DC=ps" –Confirm:$False
+Get-ADUser –Filter {cn –eq "Hans Dampf"} | Remove-ADUser
+Remove-ADUser –Identity "CN=Hans Dampf,OU=Hamburg,OU=Benutzer,DC=herdt,DC=ps"
+Remove-ADUser –Identity hans.dampf
+Get-ADOrganizationalUnit -Filter {Name -eq "Hamburg"} | Set-ADOrganizationalUnit -ProtectedFromAccidentalDeletion $False | Remove-ADOrganizationalUnit  -Confirm:$False
+Move-ADObject –Identity "CN=Hans Dampf,OU=Hamburg,OU=Benutzer,DC=herdt,DC=ps" –TargetPath "OU=AlleUser,DC=herdt,DC=ps"
+Rename-ADObject –Identity "CN=Hans Dampf,OU=AlleUser,DC=herdt,DC=ps" –NewName "Hans-Peter Dampf-Hesse"
+Get-Command -ParameterName ProtectedFromAccidentalDeletion
+Get-ADGroup -Filter * -SearchBase "CN=Users,DC=herdt,DC=ps"
+Get-ADGroup -Filter * -SearchBase "CN=Users,DC=herdt,DC=ps" | Set-ADObject -ProtectedFromAccidentalDeletion:$True
+Get-ADObject -Filter * -SearchBase "CN=Users,DC=herdt,DC=ps"
+-Filter {(objectClass –eq "User") –or (objectClass –eq "Group")}
+… | Set-ADObject -ProtectedFromAccidentalDeletion:$True
+Get-ADObject -Filter {(objectClass -eq "User") -or (objectClass -eq "Group")} -SearchBase $Path | Set-ADObject -ProtectedFromAccidentalDeletion:$schalter -PassThru | Select-Object -Property Name | Sort-Object -Property Name
+
+
+
+
+
+
+
+
+
+

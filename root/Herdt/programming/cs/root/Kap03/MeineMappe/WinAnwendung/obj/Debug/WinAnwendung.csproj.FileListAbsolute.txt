@@ -1,0 +1,10 @@
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\bin\Debug\WinAnwendung.exe.config
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\bin\Debug\WinAnwendung.exe
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\bin\Debug\WinAnwendung.pdb
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\obj\Debug\WinAnwendung.csproj.AssemblyReference.cache
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\obj\Debug\WinAnwendung.Form1.resources
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\obj\Debug\WinAnwendung.Properties.Resources.resources
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\obj\Debug\WinAnwendung.csproj.GenerateResource.cache
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\obj\Debug\WinAnwendung.csproj.CoreCompileInputs.cache
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\obj\Debug\WinAnwendung.exe
+D:\orga\Herdt\csh\root\Kap03\MeineMappe\WinAnwendung\obj\Debug\WinAnwendung.pdb

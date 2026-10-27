@@ -1,0 +1,67 @@
+Lösungsvorschläge Kapitel 8
+===========================
+
+Mit Variablen, Konstanten und Arrays arbeiten
+ 
+1.	a) $geld = 68
+	b) $geld /= 4
+	c) New-Variable -Name c_euro -Value "Euro in meiner Geldbörse" -Option Constant
+	d) Write-Host "Ich habe $geld $c_euro."
+
+2.	a) $prozesse = (Get-Process | Select-Object -Property Name)
+	b) $prozesse[5]
+
+3.	a) "Hans" -eq "hans"
+	   "Hans" -ceq "hans"
+	b) (74 / 3) -ge 24.6	# Klammersetzung empfohlen
+	c) $HOME -match "o"
+	
+
+Mit Bedingungen und Schleifen arbeiten
+
+1.	a) $var = 7
+	   If ($var -gt 5) 
+		{
+			"Wert ist größer als 5"
+		}
+	b) If ($var -gt 5) 
+		{
+			"Wert ist größer als 5"
+		}
+	   ElseIf ($var -eq 5)
+		{
+			"Wert ist gleich 5"
+		}
+	c) If ($var -gt 5) 
+		{
+			"Wert ist größer als 5"
+		}
+	   ElseIf ($var -eq 5)
+		{
+			"Wert ist gleich 5"
+		}	
+	   Else
+		{
+			"Wert ist kleiner als 5"
+		}
+		
+2.	# Tipp: Verwenden Sie die PowerShell ISE.
+	$note = 1    # mit verschiedenen Werten experimentieren
+	Switch ($note)
+		{
+		1 {"Note: sehr gut"}
+		2 {"Note: gut"}
+		3 {"Note: befriedigend"}
+		4 {"Note: ausreichend"}
+		5 {"Note: mangelhaft"}
+		6 {"Note: ungenügend"}
+		}
+		
+3.	$var = 10
+	While ($var -le 100)
+		{
+			Write-Host $var
+			$var = $var + 10
+		}
+		
+4.	For ($zahl = 5; $zahl -le 100; $zahl = $zahl + 5) {Write-Host $zahl} 

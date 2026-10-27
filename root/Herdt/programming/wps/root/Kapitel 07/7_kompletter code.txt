@@ -1,0 +1,13 @@
+Kapitel 5: kompletter Code 
+==========================
+
+$a = 1
+$a
+Test-Path –Path $PROFILE.CurrentUserCurrentHost
+New-Item –Path $PROFILE.CurrentUserCurrentHost -Type file -Force
+notepad.exe $PROFILE.CurrentUserCurrentHost
+Get-ExecutionPolicy
+Get-ExecutionPolicy -List
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+powershell.exe –NoProfile
+Get-Help –Name about_PowerShell.exe

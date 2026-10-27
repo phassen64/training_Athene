@@ -1,0 +1,19 @@
+Temperaturen in Grad Celsius
+----------------------------
+22  22  27  22  27  32  Durchschnitts-Temperatur: 25
+31  23  25  29  23  27  Durchschnitts-Temperatur: 26
+23  23  25  34  33  29  Durchschnitts-Temperatur: 27
+30  30  22  23  33  24  Durchschnitts-Temperatur: 27
+27  26  20  26  21  34  Durchschnitts-Temperatur: 25
+28  27  33  24  20  30  Durchschnitts-Temperatur: 27
+31  27  24  22  33  23  Durchschnitts-Temperatur: 26
+34  33  28  33  24  31  Durchschnitts-Temperatur: 30
+33  29  24  21  27  32  Durchschnitts-Temperatur: 27
+33  23  20  34  27  22  Durchschnitts-Temperatur: 26
+30  29  21  29  32  25  Durchschnitts-Temperatur: 27
+24  33  25  22  31  27  Durchschnitts-Temperatur: 27
+32  33  20  26  34  28  Durchschnitts-Temperatur: 28
+21  21  29  24  27  28  Durchschnitts-Temperatur: 25
+Gesamt-Durchschnitts-Temperatur: 26
+Erstellt am 12.03.2021 um 15:42:37
+unter Windows 10 Version 10.0

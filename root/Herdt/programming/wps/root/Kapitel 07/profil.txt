@@ -1,0 +1,5 @@
+# sehr einfache Beispielprofildatei zum Kopieren
+
+Write-Host –Object "Hallo und viel Spaß mit der PowerShell, $env:username!`n" -ForegroundColor blue -BackgroundColor yellow
+Set-Alias -Name paint C:\Windows\System32\mspaint.exe
+# und etliche weitere Definitionen
