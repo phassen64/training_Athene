@@ -1,0 +1,37 @@
+--- support 261026
+
+
+to:
+    mazen.nehme@nhacademy.de
+from:
+    phassen64@outlook.de 
+
+copy:
+    "Nazia Kayani in Teams" <no-reply@teams.mail.microsoft>
+    
+
+>   Good Morging Mazen,
+        long time ago out last conversation. 
+    Now I have a new question regarding my 
+        new course:
+        AI+ Cloud Practitioner™ 
+
+>   I got Azure access credentials from the portal:
+        "KAR" <support@helpdesk.aicerts.ai>
+
+>   data
+    url:    "https://portal.azure.com/"
+    usr:    "Student170914@aicertscloud.onmicrosoft.com"
+    tap:    "htd7*8@@"
+    pwd:    "Learn@646"
+
+>   Are you familiar with the kind of access ?
+    I am NOT able to login to microsoft with these credentails.
+    What is wrong ?
+    
+>   Best regards 
+    Peter.
+    
+    
+
+
