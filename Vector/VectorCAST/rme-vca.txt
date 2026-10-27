@@ -1,0 +1,174 @@
+********************************************************************************
+--- readme vectorCAST
+********************************************************************************
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+!$@€ƒ„…†‡‰ŠŒŽ“”•—™šœžŸ¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÑÖØÜÞßäæçîðñôö÷üýþÿ·
+
+--- legende 
+    vca :   vectorCAST tool 2024
+    men :   Menu-Leiste 
+    tba :   Tool-Bar 
+    sta :   Status-Bar
+    TC  :   Test Case
+    HAL :   Hrdware Abstraction Layer
+
+--- doc:        
+    doc:[vcaSem]:VectorCAST-c-unit-testing.pdf      *   Seminar Flyer
+    doc:[vcaWrk]:VectorCAST_Training_AllInOne.pdf   *   WorkBook pages:567 * this 
+    doc:[vcaUsr]:VectorCAST C++ User's Guide.pdf    *   noCover  pages:567
+    doc:[vcaHlp]:vecchelp.pdf   * UserGuideC++ 2022 Seitenzahl:808
+
+--- content 
+    m:  overview.lectures
+    m:  overview.lab
+    m:  Lection
+    m:  Laboratory
+
++   gdb Commands 
+    url: https://www.tutorialspoint.com/gnu_debugger/gdb_commands.htm
+    b           breakpoint at current line 
+    b main      puts a breakpoint at the beginning of the program 
+    b <N>       puts a breakpoint at line N
+    b +<N>      puts a breakpoint N lines down from the current line
+    bt          prints a stack trace
+    c           Continues running the program until the next breakpoint or error
+    d           Goes down a level in the stack
+    d <N>       delete breakpoint <N>
+    f           runs until the current function is finished
+    info break  list breakpoints
+    l           list current 5? code lines 
+    n           like s, but it does not step into functions  - STEP.over
+    p <v>       prints the current value of the variable "v"
+    q           Quits gdb
+    r           runs the program until a breakpoint or error
+    s           "step" runs the next line of the program - STEP.into
+    s <N>       Runs the next N lines of the program
+    u           goes up a level in the stack
+    u <N>       runs until you get N lines in before the current line
+    <ENTER>     like STEP s
+
++   gdb Workflow
+    a) run (r) Start program execution from beginning. It should stop at main()
+    b) next (n) Execute next line of code. Will not enter function.
+    c) step (s) Step to next line of code. Will step into function.
+    d) continue (c) Continue executing until next breakpoint. Should stop at Place_Order()
+    e) Continue stepping until the segfault occurs
+    f) quit (q) Exit GDB debugger
+
+
+### date:2024-08-26:Do 
+
++   VectorCAST Share Check 
+    1.  Explorer starten
+    2.  url:="\\hdhappvectorcastvtlic\License\VectorCast"
+    3.  Und jetzt die Dateien 
+            ListAllLicences.bat
+            ListActiveLicences.bat
+        aus dem aus Explorer aufrufen 
+    Alternativ mit dem WinCMD verbinden über Netzlaufwerk verbinden.
+    
++   TC specialized [docHlp]:387
+    +   Problem: nur 1 *.tst je TestCase 
+    +   Aufgabe: 
+        int foo() {
+            #ifdef __USE_SPEC 
+                return 5;
+            #else   
+                return 1;
+            #endif  
+        }
+        TC.001 : expected: return 1;
+        
+        Das PP "__USE_TEST_SPECIAL" kann in manage.Options zwar je 
+            Compiler verschieden gesetzt werden,
+        aber der TC gibt immer gleiche Resultate aus. 
+        Wenn CompilerA __USE_SPEC setzt, 
+            so würde result(TC.001)=:error  sein.
+        Soll ein Test je Compiler verschieden sein,
+            muss TC.001 als 
+        allgemeiner TC entfernt werden.
+        Dasgeht mit dem Attribut "Specialized".
+        
++   Compiler-Error && ProbePoint     
+    #define DEVICE_REG ((unsigned char*)0x80008000)
+    #define RX_ERROR_BIT 0x04
+    int check_rx_err_bit(void)
+    {
+        unsigned char reg_value;
+        #if 0   ### probe-point before-line 
+        reg_value = *DEVICE_REG;
+        #endif ### probe-point after-line 
+        if (reg_value & RX_ERROR_BIT)
+            return(1);
+        else
+            return(0);
+    }
+    <<< Idee :
+        Eine ganze Zeile mit #if 0 ... #endif entfernen
+    
+
+### date:2025-07-28:Mo 
+
++   VectorCAST/QA
+
+    <<< coverage tool
+    <<< kann mit CanOE im SIL verwendet werden 
+        Extra Tools:
+            SystemTesting 
+            CoverageEnvironment
+
++   VectorCAST zip Datei 
+        EndResults.zip 
+    auspacken,
+    die vcm Datei öffnen.
+    Eventuell vorher die 
+    Lizenz in EndResult.vcm ändern.
+
+
+### date:2025-07-29:Di 
+
++   TestCase Data 
+        a) "SBF" vs b) "Stubbed Subprograms"
+    Im TestCase steht oben SBF und weiter unten 
+        Stubbed Subprograms.
+    
+    zu a)  
+    Es bedeutet :   "SBF"
+            Stub By Function
+    Hier stehen die implementierte Funktionen, welche 
+        in der Unit stehen (der Source, 
+            C-File oder includiertes H-File ).
+    VectorCAST ruft normalerweise alle Funktionen in einer 
+        Unit auf.
+    Ist das nicht erwünscht, und soll nur der return-Wert
+        betrachtet werden,
+        so muss die SBF-Funktion markiert und der return-Wert 
+        bestimmt werden.
+
+    zu b)
+        Hier stehen, die Funktionen, die ausserhabl des Codes (Unit)
+        implementiert werden, oder nur als Stub zur Verfügung stehen. 
+        Parameter und Return-Werte können <nur> auf der Input-Seite 
+            angegeben werden.
+       
+
+### date:2025-08-18:Mo 
+
++   Stub-Value Eingabe 
+    +   selektiere Stub return value 
+    +   properties
+    +   Reiter "ListValues"
+
++   Stub List-Values funktionieren nur in Kombination mit 
+    Tools|Options MultiSpan
+
++   im Coverage-Editor kann ermittelt werden,
+    welcher TestCase welche Code-Zeile durchlaufen hat.    
+    +   cover-editor öffnen
+    +   selektieren der Zeile
+    +   es wird im PopUp der betreffende TestCase angezeigt
+    
+        
+### EOF
+
+

@@ -1,0 +1,419 @@
+###########################################################################
+--- you.InterBase YouTube
+###############################################################################
+
+=== encoding:DOS&&ASCII
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+key:<!IBc>=:
+        IBc:  credentials.IB
+        usr:    "SYSDBA"
+        pwd:    "masterkey"
+pgm:Document by Program
+
+--- content
+
+by  program introduction {pgm}
+•   you "Introduction to IB Console"
+•   you "Creating a DataBase"
+•   you "Creating a new table Using Domains"
+•   you "Introduction to Stored Procedures"
+•   you "Triggers"
+•   you "Generators"
+
+by  program {web}
+•   you "IBc Bootcamp 2023"
+•   you "InterBase 2020"
+•   you "IB backup encrypted DataBase"     
+•   you "IB && VCL"     
+•   you "introInterbase" [1:23h]
+
+
+*********************************************************************
+>>> you "Introduction to IB Console":{pgm}      who::[us,fe]
+*********************************************************************           
+&   https://www.youtube.com/watch?v=6n7rnpBScqs   
+
++   where is IB console installed 
+
++   InterBase Server 
+    add, login
+
++   Server Properties
+
++   refresh server status
+
++   server login with 
+    key:<!IBc>
+
++   Performance Monitor 
+
++   View Metadata 
+
++   Interactive SQL
+    sql>    select * from sales;
+    +   roll back
+    +   domains
+
+<<< you.
+
+
+*********************************************************************
+>>> you "Creating a DataBase":{pgm}     who::[de,wb]
+*********************************************************************
+
+&   https://www.youtube.com/watch?v=cNTyUUZFRM8
+
++   Datenbank mit der GUI erstellen
+
++   2 ways
+    a)  mit IB console 
+    b)  mit Interactive-SQL
+
++   create DB with multiple files
++   pageSize
++   Default Character Set 
+    depends how many OS 
++   SQL Dialect
+    3: new - separate Datum&Uhrzeit Angaben
+
++   Embedded User Authentification (EUA)
+    Password in der DB hinterlegen,
+    damit diese nicht einfach kopiert werden kann
+    
+<<< you.
+
+*********************************************************************
+>>> you "Creating a new table Using Domains":{pgm}     who::[us,fe]
+*********************************************************************           
+
+&   https://www.youtube.com/watch?v=eNES4az929E
+    
++   Domain Editor 
+
+<<< you.    
+
+*********************************************************************
+>>> you "Introduction to Stored Procedures":{pgm}   who::[us,m]
+*********************************************************************           
+
+&   https://www.youtube.com/watch?v=a5QV_V63Q8Y
+
++   who:=Stephan Ball [us,m]
+
++   language reference guide
+
++   why use stored procedures
+    +   reduce network traffic 
+    +   fast - pre-optimized 
+    +   centralized logic 
+    +   User Security - protect to access data
+
++   structure of a stored procedure 
+
++   example :
+        GETE_MP_PROJ
+        ORG_CHART
+    nur output, daten vorher eingeben
+    
+<<< you.    
+
+*********************************************************************
+>>> you "Triggers":{pgm}   who::[us,m]
+*********************************************************************           
+
+&   https://www.youtube.com/watch?v=NQCkwsbczGA
++   who:=Stephan Ball [us,m]
+
++   what 
+    +   fast - pre-optimized 
+    +   centralized logic 
+    +   called automatically on data change
+    +   no Parameter
+    +   no Return Parameter
+
++   when 
+    +   before:     insert-update-delete 
+    +   after:      insert-update-delete 
+
++   syntax
+    +   SET TERM ^;
+        CREATE TRIGGER "name" for "table"
+        ACTIVE before insert POSITION 0 ... 
+        SET TERM ^;
+
++   alter trigger :  "Inactive" || "Active"
+
+<<< you.    
+    
+*********************************************************************
+>>> you "Generators":{pgm}   who::[us,m]
+*********************************************************************           
+
+&   https://www.youtube.com/watch?v=81imsDWYTs4
++   who:=Stephan Ball [us,m]
+
++   Generators are...
+    +   dataBase specific sequential value 
+    +   CREATE/SET/SHOW Generators
+
++   ops
+    $>create generator <name>
+    $>set generator <name1> to <newValue>
+    $>ShowGenerators;
+
++   example Generator with Trigger
+
+<<< you.    
+
+*********************************************************************
+>>> you "IBc Bootcamp 2023"         who::[us,m]
+*********************************************************************
+&   https://www.youtube.com/watch?v=_-i5WtKj3ZI
+
++   who:=Stephan Ball [us,m]
+        
+--- Agenda  :
+    •   Databases and their use 
+    •   What is Interbase ?
+    •   Supported Platforms & Languages
+    •   Developer Edition
+    •   IB Console
+    •   basics: SQL Tables, Fields, Triggeres, Generators
+    •   Licensing
+    •   Deployment
+    
++   def:DB 
+    +   Structured information of data 
+    +   Controlled by DBMS, like
+            InterBase 
+            PostGres
+
++   env:Client+Server
+    +   client uses protocol to the server 
+    +   the server interacts with the DB and 
+        has installed the DBMS
+    
++   env:DeeplyEmbedded   
+    +   IB runs inside each application
+    +   only APP can access data 
+    +   no server is installed 
+    +   fast, lightweigth, adminFree, secure
+
++   env:Multi-Tier 
+    +   client - midTier - DBMS
+    +   with REST or JSON
+    +   data is transparent to the client
+
++   IB - embeddable DBMS
+    +   an embedded DB can be deployed inside or 
+        alongside your app 
+    +   embedded DB should be 
+        •   fast 
+        •   small footprint
+        •   adminFree 
+        •   full SQL
+        •   secure
+
++   IB versions
+    +   IB Server       :   1-100 network users using REST
+    +   IB Desktop      :   1 computer 8 connections
+    +   IB ToGo/IBLite  :   deeplyEmbedded - optimized for single app
+
++   Dynamic User Mix 
+    +   OpisCapita 
+    +   Siemens Medical
+    +   Electrolux
+
++   Connection to IB 
+    +   doc in 
+        https://docwiki.embarcadero.com/
+    +   GitHub
+        https://github.com/Embarcadero/InterBasePython
+    +   ... IB.NETDataProvider
+
++   IB Basic    
+    +   in RAD die IB Developer Edition installieren
+    +   die IB Developer Edition kann auch OHNE RAD installiert
+        werden
+    +   auf den Server einloggen 
+            dann die DB öffnen
+    +   Tables: Employee
+    +   table.properties
+            .metadata
+    +   Triggers 
+            werden aktiv, wenn bestimmte bedingungen
+            zutreffen
+    +   Exceptions
+    +   Generators
+    +   Blob Filters
+            images...
+    +   Roles 
+    +   User Permission 
+        
++   using IB with app
+    +   create a blank delphi app
+    +   using FireDAC
+    +   Live Binding designer
+    +   Live Binding designer
+    +   FireDAC Connection Editor
+
++   licensing
+    +   Developement (20 users)
+    +   Internal Testing / Demo 
+    +   Trial / POC (20 uses max 90 days)
+    +   UAT / Trial / POC   :   Server 8 cores    unlim.Users
+    +   Production          :   dito    
+
+    +   ToGo Trial 
+    +   ToGo Subscritption
+    +   IBLite : same as ToGo but limited features, 
+                200mb dBase, no admin API, no Change Views
+
+<<< you.
+
+           
+*********************************************************************
+>>> you "InterBase 2020"    who::Matthias Eißing[de,m]
+*********************************************************************
+
+&   https://www.youtube.com/watch?v=htcz90YwTpY
+
++   who 
+    Matthias Eißing [de,m]
+        Senior Sales Consulting    
+        matthias.eissing@embarcadero.com
+
+
+    
++   Vorgänger Versionen und  
+    die Beta Version Linux
+
+--- Agenda  :   
+    •   IB 2017 today
+    •   IB for developers
+    •   MiseEnPlace
+    •   FeatureThemes
+    •   new OS platforms
+    •   signUp for Beta!
+
++   IB today 
+    +   secure 
+    +   deployment 
+        kann einfach installiert werden
+        Automatismen
+    +   Anwendung sehr breit skalierbar
+    +   Server vs Desktop-Variante (ist nur lokal, nicht netzwerkfähig)
+    +   os: 32/64 bit Windows / Linux / MacOs / Arm
+
++   IB 2017
+    +   Nero-Zero Administration
+        •   highly scalable
+        •   small memory
+        •   simple installation / deployment
+        •   encryption
+        •   self-tuning engine
+        •   low TCO
+    +   Security/Encryption
+        •   embedded user & role based 
+        •   authentication
+        •   full db && table column encryption
+            +   DES (weak)
+            +   AES (strong,256bit)    
+    +   Disaster Recovery
+        •   journalling & point-in-time recovery
+        •   data dumps
+        •   incremental data dumps
+    +   Devolper Friendly
+        •   Embarcadero Developement Tools
+        •   Visual Studio, Eclipse
+        •   Full-featured SQl complient        
+    +   Self-Tuning 
+        •   multi-version architecture
+        •   automatic crash recovery
+        •   SMP multi-core support
+        •   ACID complient
+    +   Change Views
+        •   powerful change tracking
+    
++   IB 2017 Integration for Developers 
+    +   RX RAD Studio 10.3
+        +   Developer Edition && ToGo Edition licensed with RAD Studio 
+        +   IB Lite 
+            •   kostenfrei
+            •   kleine IB ToGo Version
+            •   keine Verschlüsselung       
+        +   RAD Studio Enterprise/Architecture uses IB ToGo License
+        +   RAD Server uses IB2017 behind the scenes (Windows/Linux) 
+    +   Aquafold (Firma) => Aqua Data Studio IDE 
+        •   premier DB developement && admin IDE
+        •   unterstützt viele DBMS
+        •   url: https://www.aquafold.com 
+        
++   IB 2020 Features (neu)
+    +   Database TableSpace 
+        =>  Tabellen können indivuell auf verschiedene Speichermedien
+            verteilt werden können; z.B. SSD            
+    +   Performance Monitoring
+    +   Data Dictionary (DDL)
+    +   SQL optimizations
+    +   Security enhancement - OpenSSL update
+    +   new platforms: Android 64-bit, macOs 64-bit
+
++   IB 2020 Feature:TableSpace
+        primary tableSpace (hdd-base)
+            und secundary tableSpace (hdd-x)
+    
+    
++   Häufige Fragen zu InterBase 
+    +   Events
+        https://www.embarcadero.com/events
+
+<<< you.        
+
+
+*********************************************************************
+>>> you "IB backup encrypted DataBase"  who::Mary Kelly   [us,fe]
+*********************************************************************
+
+&   https://www.youtube.com/watch?v=38yJ3PWA6V8
+
++   DB backup durchführen
+    Encryption
+
++   SEP Password
+    Set password for Endpoint Protection client
+
++   EUA user
+    Embedded User Authentication (EUA)
+ 
+
+<<< you.
+
+*********************************************************************
+>>> you "IB && VCL"  who::[us,ma]
+*********************************************************************
+
+&   https://www.google.com/search?q=Interbase+2020+with+VCL&sca_esv=61a9446aba78e5ee&source=hp&ei=tU05adyjJLuL7NYPkrSAsQk&iflsig=AOw8s4IAAAAAaTlbxe9Zhe1aqDAgO2LR3zQY3_ETDikQ&ved=0ahUKEwic0oCQ6rKRAxW7BdsEHRIaIJYQ4dUDCBE&uact=5&oq=Interbase+2020+with+VCL&gs_lp=Egdnd3Mtd2l6IhdJbnRlcmJhc2UgMjAyMCB3aXRoIFZDTDIFEAAY7wUyBRAAGO8FMgUQABjvBTIFEAAY7wUyCBAAGKIEGIkFSOVDUABYvUFwAngAkAEAmAGlAaAB_xOqAQUxMi4xM7gBA8gBAPgBAZgCG6AC2hTCAgoQABiABBhDGIoFwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxjRAxjHAcICERAuGIAEGLEDGMcBGI4FGK8BwgIIEAAYgAQYsQPCAgsQLhiABBjHARivAcICCxAuGIAEGLEDGIMBwgIFEAAYgATCAg4QABiABBixAxiDARiKBcICCBAuGIAEGLEDwgIOEC4YgAQYxwEYjgUYrwHCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGNEDGMcBwgIHEAAYgAQYCsICBBAAGB7CAgcQABiABBgTwgIIEAAYExgWGB7CAgUQIRigAcICBBAhGBWYAwCSBwUxMy4xNKAH9ZwBsgcFMTEuMTS4B9QUwgcGNy4xNi40yAc6gAgA&sclient=gws-wiz#fpstate=ive&vld=cid:2c8aef61,vid:ab-zloIerkI,st:0
+
++   TAB employee
+
++   TDBGrid 
+
++   DataSource 
+        DataSet && rep 
+
++   TDBNavigator
+
+<<< you.
+
+*********************************************************************
+>>> you "introInterbase"  who::[us,ma]   [1:23h]
+*********************************************************************
+
+&   https://www.youtube.com/watch?v=uvzx2qchS74
+
++   who:=Stephan Ball
+
+<<< you.
+

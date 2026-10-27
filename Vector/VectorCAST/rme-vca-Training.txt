@@ -1,0 +1,4861 @@
+********************************************************************************
+--- readme vectorCAST.Training
+********************************************************************************
+
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+!$@€ƒ„…†‡‰ŠŒŽ“”•—™šœžŸ¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÑÖØÜÞßäæçîðñôö÷üýþÿ·
+
+--- legende 
+    vca :   vectorCAST tool 2024
+    men :   Menu-Leiste 
+    tba :   Tool-Bar 
+    sta :   Status-Bar
+    TC  :   Test Case
+    HAL :   Hrdware Abstraction Layer
+
+--- doc:        
+    doc:[vcaSem]:VectorCAST-c-unit-testing.pdf      *   Seminar Flyer
+    doc:[vcaWrk]:VectorCAST_Training_AllInOne.pdf   *   WorkBook pages:567 * this 
+    doc:[vcaUsr]:VectorCAST C++ User's Guide.pdf    *   noCover  pages:567
+    doc:[vcaHlp]:vecchelp.pdf   * UserGuideC++ 2022 Seitenzahl:808
+
+--- content 
+    m:  overview.lectures
+    m:  overview.lab
+    m:  Lection
+    m:  Laboratory
+
+===============================================================================
+!   m:  overview.lectures
+===============================================================================
+
+>>> lecPtr 
+
+=   Lec#01:Building Test Environments       [*]:032-041
+    +   VectorCAST Pre-Requisites           [*]:034
+    +   White Box Testing                   [*]:036
+    +   Steps to Build an Environment       [*]:037
+    +   Configuring Environments            [*]:041
+
+=   Lec#02:Creating Test Cases              [*]:047-059
+    +   Test Case Overview                  [*]:047
+    +   Entering Values into Parameters     [*]:051
+    +   Def of an Execution “Event”         [*]:055
+    +   Execution Report                    [*]:056
+
+=   Lec#03:Test Case Fundamentals               [*]:061-082
+    +   Special Value Tags                  [*]:062
+    +   Floating Point Tolerance            [*]:064
+    +   Symbolic Constants                  [*]:065
+    +   Verifying Expected Values           [*]:067
+    +   Accessing Arrays                    [*]:069
+    +   Setting Multiple Array Elements     [*]:070
+    +   Pointer Types                       [*]:072
+    +   Range and List Expressions          [*]:074
+    +   Common Test Case Options            [*]:076
+    +   Displaying/Accessing Globals        [*]:077
+
+=   Lec#04:Compound Tests                   [*]:084-092
+    +   Compound Tests                      [*]:085
+    +   Initialization of Data              [*]:087
+    +   Stub By Function (SBF) and UUT      [*]:089
+
+=   Lec#05:Code Coverage Basics             [*]:094-114
+    +   Code Coverage Types                 [*]:095
+    +   Coverage By Analysis (CBA)          [*]:099
+    +   CBA Report                          [*]:101
+    +   Industry Specific Cov.Types         [*]:103
+    +   Cyclomatic Complexity               [*]:105
+    +   Basis Paths                         [*]:106
+    +   Code Coverage Viewer                [*]:108
+    +   Code Coverage Summary               [*]:109
+    +   Code Coverage Reports               [*]:110
+
+=   Lec#06:Test Reports                     [*]:116-134
+    +   VectorCAST Project Report           [*]:117
+    +   Test Reports Overview               [*]:119-120
+    +   Report Configuration Options        [*]:121
+    +   Test Case Data Report               [*]:122
+    +   Test Case Execution Report          [*]:123
+    +   Full Report                         [*]:124
+    +   Test Case Management Report         [*]:125
+    +   Aggregate Coverage Report           [*]:126
+    +   Metrics Coverage Report             [*]:127 
+    +   Coverage By Analysis Report         [*]:128
+    +   Capturing Standard Output           [*]:129
+    +   Controlling the Printing of DAT     [*]:130
+
+=   Lec#07:Regression Testing               [*]:136-149
+    +   Regression Testing Topics           [*]:136
+    +   vca Command Line Utilities          [*]:141... !
+    +   Regression Results                  [*]:143
+    +   Test Script Structure               [*]:145
+    +   Saving Your Work * backup !         [*]:147
+
+=   Lec#08:TC and Parameter User Code       [*]:151-161
+    +   What is User Code?                  [*]:152
+    +   Parameter User Code Editor          [*]:156
+    +   Test Case User Code Editor          [*]:157
+    +   User Code Syntax                    [*]:158
+    +   User Code Examples                  [*]:159
+
+=   Lec#09:Environment User Code            [*]:163-173
+    +   User Globals                        [*]:164
+    +   Void Pointers                       [*]:165
+    +   Environment User Code               [*]:166
+    +   Environment User Code Editor        [*]:167
+    +   Unit Prefix|Appendix User Code      [*]:168
+    +   Harness Architecture Pseudo Code    [*]:169
+    +   User Code Order of Execution        [*]:170
+    +   User Code Script Syntax             [*]:171
+
+=   Lec#10:Stubbing Fundamentals            [*]:175-184
+    +   Stubbing Topics                     [*]:175
+    +   Understanding Stubs                 [*]:176
+    +   Library Stubs                       [*]:177
+    +   Additional Stubs                    [*]:178
+    +   Suppressing Stubs                   [*]:179
+    +   Configure Stubs User Code           [*]:180     *
+    +   Return Data List Options            [*]:182
+
+=   Lec#11:C++ Testing                      [*]:186-194
+    +   C++ Testing Overview                [*]:187
+    +   Creating Class Instances            [*]:188
+    +   Templates and Abstract Classes      [*]:191
+    +   C++ Options                         [*]:192
+
+=   Lec#12:Include Paths                    [*]:196-208
+    +   Include Paths Topics                [*]:196
+    +   Search Directories                  [*]:198
+    +   Library Include Directories         [*]:199
+    +   The Include Path Widget             [*]:201
+    +   Adding IncPaths and BaseDirs        [*]:202
+    +   Handling Duplicate Filenames        [*]:205
+
+=   Lec#13:MC/CD Coverage                   [*]:210-218
+    +   Accessing the MC/DC Pair Tables     [*]:214
+
+=   Lec#14:Target Testing Concepts          [*]:220-229
+    +   Run-Time Support Package (RSP)      [*]:221
+    +   Options for Test Harness Co...      [*]:222
+    +   Configuring Test Harness I/O        [*]:223
+    +   RSP Connection Example: VxWorks     [*]:226
+
+=   Lec#15:CSV Importing                    [*]:231-240
+    +   CSV Screenshots                     [*]:234
+    +   CSV Data Mapping                    [*]:235
+    +   Map CSV Columns to parameters       [*]:236
+    +   CSV Screenshots 2                   [*]:237
+    +   Example CSV Test                    [*]:238
+
+=   Lec#16:Probe Points                     [*]:242-249
+    +   Probe Points Overview               [*]:242
+    +   Built-In Utilities                  [*]:244
+    +   Probe Point Screenshot              [*]:245
+    +   Screenshot Detail                   [*]:246
+    +   Probe Point Icons                   [*]:247
+
+=   Lec#17:Abstract Classes and Templates   [*]:251-259
+    +   Using Appendix User Code            [*]:255
+    +   Abstract Subclasses                 [*]:256
+    +   Testing Templates                   [*]:257
+
+=   Lec#18:Troubleshooting Build Issues     [*]:261-270
+    +   Speeding Up the Build Process       [*]:262
+    +   Log Messages Window                 [*]:263
+    +   The Jobs Window                     [*]:264
+    +   The Jobs Status Window              [*]:265
+    +   Build Interactive                   [*]:268
+    +   Troubleshooting Summary             [*]:270
+
+=   Lec#19:Debugging Test Execution Issues  [*]:272-283
+    +   Primary Debug Methods               [*]:272
+    +   Analysis of Execution Report        [*]:273
+    +   Code Coverage Results               [*]:274
+    +   Test Harness Execution Structure    [*]:275
+    +   Board Init/ OS Init Code            [*]:276
+    +   Harness Init                        [*]:277
+    +   FUT: Function Under Test            [*]:278
+    +   The Debugging Process               [*]:280
+    +   Debugging Summary                   [*]:283
+
+=   Lec#20:System Testing with VCA/QA       [*]:285-297
+    +   VectorCAST/QA                       [*]:285
+    +   System Testing Overview             [*]:287
+    +   What is Code Coverage?              [*]:288
+    +   Code Coverage Examples              [*]:289
+    +   Coverage Industry Modes             [*]:290
+    +   Coverage I/O Files                  [*]:292
+    +   Building an Instrumented Exe1       [*]:293
+    +   Integrating Coverage...             [*]:295
+
+=   Lec#21:Additional Test Case Options     [*]:299-307
+    +   Find and Filter Bar                 [*]:300
+    +   Duplicating Test Cases              [*]:301
+    +   Min/Mid/Max Test Cases              [*]:302
+    +   Partitioned Test Cases              [*]:303
+    +   Control Flow                        [*]:304
+    +   Global Data Cross Referencing       [*]:305
+
+=   Lec#22:Environment Building Errors      [*]:309-319
+    +   Error Summary                       [*]:309
+    +   Test Script Log                     [*]:317
+
+=   Lec#23:Code Coverage Options            [*]:321-328
+    +   Code Coverage Options Topics        [*]:321
+    +   I/O Mechanisms                      [*]:322
+    +   Animation Control                   [*]:323
+    +   Coverage Report Options             [*]:324
+    +   Coverage in Header Files            [*]:325
+    +   Additional Coverage Options         [*]:326
+
+=   Lec#24:Best Coding Practices            [*]:330-343
+    +   Key Concepts                        [*]:331
+    +   Review                              [*]:343
+
+=   Lec#25:VectorCAST Workflow Overview     [*]:345-349
+    +   Unit Testing                        [*]:346
+    +   System Testing                      [*]:347
+    +   Code Coverage                       [*]:348
+    +   Lua Source Code                     [*]:349
+
+=   Lec#26:Workflow Preparation             [*]:351-360
+    +   Working Folder Structure            [*]:354
+    +   Start-up Scripts                    [*]:356
+    +   Windows Batch                       [*]:357
+    +   Redirect Standard Output            [*]:360
+
+=   Lec#27:Unit Test Workflow               [*]:363-374
+    +   Execute Command                     [*]:366
+    +   ParseCommandLine && TestSettings    [*]:367,368
+    +   Parser Flags                        [*]:369
+    +   Misc. Tab                           [*]:370
+    +   Create VectorCAST Project           [*]:372
+    +   Promote and Demote Options          [*]:373
+    +   Column Options                      [*]:374
+
+=   Lec#28:System Test Workflow             [*]:378-388
+    +   What is VectorCAST/QA ?             [*]:378
+    +   Terminology                         [*]:380
+    +   QA Environment Creation             [*]:382
+    +   I/O Mechanism 2                     [*]:383
+    +   Regression Scripts                  [*]:386
+    +   Building an Instrumented Exe2       [*]:387
+    +   Applying Coverage to SrcTree        [*]:388
+
+=   Lec#29:Configuration Management         [*]:391-399
+    +   Folder Structure                    [*]:392
+    +   Start VectorCAST                    [*]:398
+
+=   Lec#30:Continuous Integration           [*]:401-404
+    +   What is Continuous Integration?     [*]:401
+
+=   Lec#31:Building Test Environments       [*]:406-410
+    +   Creating a VectorCAST Project       [*]:406
+    +   Configuring a VectorCAST Project    [*]:407
+    +   Creating an Environment             [*]:408
+    +   Environment Options                 [*]:409
+    +   Environment within a vcaProject     [*]:410
+
+<<< 33 Lections <<< lecPtr
+    
+===============================================================================
+!   m:  overview.lab
+===============================================================================
+    
+=   Lab#01:Building Test Environments       [*]:406-410
+=   Lab#02:Creating Test Cases              [*]:412-414 
+=   Lab#03:Test Case Fundamentals           [*]:416-422
+    +   Floating Point Tolerance            [*]:416
+    +   Character Strings                   [*]:418
+    +   Arrays                              [*]:419
+    +   Additional TC Features              [*]:420
+=   Lab#04:Compound Tests                   [*]:424-428
+    +   Whitebox Testing
+    +   Stub by Function (SBF)
+    +   Blackbox Testing
+=   Lab#05:Code Coverage Basics             [*]:430-433
+    +   Statement Coverage                  [*]:430
+    +   Transitioning && BasisPathTestCase  [*]:431
+    +   Using Coverage to Debug Test Cases  [*]:432
+    +   Coverage by Analysis (CBA)          [*]:433
+=   Lab#06:Test Reports                     [*]:435-439
+=   Lab#07:Regression Testing               [*]:441-443
+=   Lab#08:Case and Parameter User Code     [*]:445-448
+=   Lab#09:Environment User Code            [*]:450-452
+=   Lab#10:Stubbing Fundamentals            [*]:454-459
+=   Lab#11:C++ Testing                      [*]:461-466
+=   Lab#12:Include Paths                    [*]:468-470
+=   Lab#13:MC/DC Coverage                   [*]:472-475
+=   Lab#14:Advanced User Code               [*]:477-482
+=   Lab#15:CSV Importing                    [*]:484,485
+=   Lab#16:Probe Point Example              [*]:487-491
+=   Lab#17:Abstract Class and Templates     [*]:493-497
+=   Lab#18:Testing C++ Classes              [*]:499-505
+    +   Class Visibility                    [*]:502
+    +   Compound Testing                    [*]:504
+=   Lab#19: Trouble Shooting Build Issues   [*]:507
+=   Lab#20:Debugging Test Execution Issues  [*]:509-512
+=   Lab#21:Requirements Gateway (RGW)       [*]:514-517
+=   Lab#22:System Testing with vCAST/QA     [*]:519-527
+    +   Instrumenting the Code              [*]:521
+    +   Using Python to do the Build        [*]:522
+    +   Scripting System Tests              [*]:524
+=   Lab#23:Additional Test Case Options     [*]:529-532
+    +   Partitioned Test Cases              [*]:530
+    +   Control Flow Testing                [*]:531
+=   Lab#24:Environment Building Errors      [*]:534,535
+=   Lab#25:Code Coverage Options            [*]:537-540
+    +   Coverage Animation                  [*]:537
+=   Lab#26:Testing Hardware Interfaces      [*]:542-543
+=   Lab#27:Workflow Preparation             [*]:545-550
+    +   Edit setup_env.bat                  [*]:546
+    +   Screenshot of EnvVariables          [*]:549
+    +   Create a Build Log                  [*]:550
+=   Lab#28: Unit Test Workflow              [*]:552-560
+    +   Enter Prep/Comp/Linker Commands     [*]:555
+    +   Configuration Editor                [*]:560
+=   Lab#29: System Test Workflow            [*]:562-567
+    +   Building and Running Lua
+    +   Create VectorCAST/QA Environment
+    +   Instrument Source Code and Append c_cover_io.c
+    +   Edit system_tests.py Script
+    +   View Coverage Information
+    
+===============================================================================
+!   m:  Lection
+===============================================================================
+
+>>> beg.Lec#01:Building Test Environments   [*]:032-041
+
+### dtm:2025-04-14:Mo 
+
++   Disk directory containing files used during testing
+
++   VectorCAST Pre-Requisites
+        A Compiler on Your Path
+        Some Source Code That Compiles Cleanly
+
++   White Box Testing
+        C: Allows access to static global variables and static functions
+        C++: Allows access to private / protected members
+
++   Steps to Build an Environment
+    
+    1.  Create a VectorCAST Project
+           gui::File->New->vectorCASTProject
+    2.  Create a Test Environment from Project Tree
+           Select a Group Node
+           RightMouse->CreateNewEnvironment
+
+    The VectorCAST Project will have a Parent Relationship 
+        to the Test Environment
+           Both The VectorCAST Project and the Test Environment 
+            will be open and accessible within the GUI
+           Only one Environment can be open at any one time
+           To Close an Environment
+            >   gui::File->Close Environment
+           To Close the VectorCAST Project 
+                (all Environments must be closed first)
+            >   gui::File->Close Project
+
++   Project and Environment View    [*]:038
+
++   New Environment Wizard
+       Right Mouse on Group->Create Unit Test Environment->Interactive
+       8 Step Process
+       Usually only 2 steps are needed
+       Name the Environment
+       Choose UUTs & Stubs
+
++   Environment View    [*]:040
+
++   Configuring Environments at the Project Level
+    *   Test Environments can be configured at any level (except the Group Level) in the
+        VectorCAST Tree   
+           Select any node and do RightMouse->OpenConfiguration
+           Make sure no Environment is open when configuring from VectorCAST
+    *   Configuration can be shared across multiple environments
+           Compiler options
+           Parser/harness generation options
+           Code coverage options
+           Target execution options
+           Default search directories list for new environments
+    *   Configuration Options are stored in 2 places
+           Project .vcm file: For options that are used by more 
+                than one Environment
+           Environment Directory: For options unique to one Environment
+
+?   Quiz: Requirements
+    What are the VectorCAST Requirements ?
+        <<< B: Source Code that Compiles
+        <<< C: a C/C++ Compiler on your default PATH
+
+?   Quiz: BlackBox {status:open}
+    Which of the following would not be accessible with Blackbox ?
+            A   int i1;
+            B   const int i2=1;
+            C   static int i3;
+            D   volatile int i4;    
+    <<< ?PHA 
+
+<<< eof.Lec#01  sta:request
+
+>>> beg.Lec#02:Creating Test Cases          [*]:047-059
+
+### dtm:2025-04-15:Di 
+
+    +   What is a Test Case?
+    +   Creating a Test Case
+    +   Setting up Input and Expected Values
+        Using Based Numbers and Scientific Notation
+    +   Adding Notes to a Test
+    +   Executing a Test
+
+    +   Two types of VectorCAST test cases:
+        1.Simple Test: Call to One Function from One UUT
+        2.Compound Test: Collection of simple tests invoked in sequence
+
+    +   Using Based Numbers 
+         Standard C/C++ notation for based numbers
+            > Hex: 0x3a
+            > Octal: 072
+         Changing the “base” used in a report
+
+    +   Definition of an Execution “Event”
+        All Test cases will have at least 2 events:
+             Initial Event: Calling the UUT
+             Final Event: Returning from the UUT
+        Each Stub call will create one Event
+        For Compound & Range Tests, 
+            there will be multiple pairs of Initial & Final Events
+    +   Global Data can be accessed when an Event occurs
+             Global data can be written to, or
+             Global data can be checked as an Expected Value
+
+    +   Execution Report
+
+?   Quiz: How Can You Create a Test?
+        <<< A: Right Clicking on a Sub-Program Name
+
+?   Quiz: Stubs&&Events 
+    Running a Test that Calls 2 Stubs. How Many Events?
+        <<< B:4
+
+<<< eof.Lec#02  sta:done
+
+>>> beg.Lec#03:Test Case Fundamentals       [*]:061-082
+
+### dtm:2025-04-16:Mi
+    
+    +   Test Case Fundamentals Topics
+    
+    +   Special Value Tags
+        Example: “unsigned short Object;  ”
+             Can set value of 0 or 2**16-1, but
+         Accessed by right-clicking on field that accepts scalar value
+        <<MAX>> <<MIN>>
+    
+    +   Floating Point Values
+         123.456
+             1.23556E+2
+        Controlling format in reports 
+        gui::Tools->Options->Report
+            Digits of Precision – total number of digits
+    
+    +   Floating Point Tolerance
+        a) env ->   gui::Tools->Options->Execute(env)
+        b) tc ->    Test case window – Options tab 
+        c) Parameter Specific -> 
+            Use “+/-<number>” to indicate range around expected value
+            example: 1.1+/-10%
+
+    +   Symbolic Constants
+        -   Often, source code uses Symbolic Constants or Macros
+                #define LIST_SIZE 5000
+        -   VectorCAST has a “Dictionary” of these constants
+        -   Drag and drop tags
+
+    +   Copying/Duplicating Data Values
+        a)  Normal Copy (ctrl-c) and Paste (ctrl-v) Shortcuts
+        b)  Copy structure and Paste structure  
+
+    +   Verifying Expected Values
+        Execution Report View
+             Passing Values in Green
+             Failing Values in Red
+             Use Arrow Icons for easy navigation         
+        Environment View: Test Case Tree
+        Test Case Editor also shows expected values in Green/Red
+
+    +   Accessing Arrays        
+        Enter Range in Input Value Column
+
+    +   Setting Multiple Array Elements
+        Range” applies value to a sub-set of elements
+            > Range Expression can be: 1..10, or 1,5,10
+
+    +   Using Enumerated Values as Indices
+        BOS..MIA 
+
+    +   Pointer Types
+        You control memory allocation
+             Enter 1 for pointer to object
+             Enter > 1 for array of objects
+             Enter 0 for null pointer
+    +   Character Pointers
+        Character Pointers have a special handling in VectorCAST
+             char* types can be treated as “strings” or arrays of characters
+             Right Click on a “String” type, and choose the String Display Mode
+
+    +   Range and List Expressions
+        Parameters are varied in parallel by default
+             gui::Tools->Options->Execute:CombinationTesting:=true
+             Test Case Options
+        RightMouse->Properties on any Scalar Parameter
+
+    +   Common Test Case Options
+        All these options can be set “Globally” in 
+            gui::Tools–>Options
+
+    +   Displaying/Accessing Global Data
+        Gui::TC|Option|checkGlobalDataAfter controls when global 
+                data is checked & displayed
+         Each Event – at the end of each event
+         Each Range Iteration - at end of each “vary” loop
+         Each Slot Iteration - at end of each compound slot iteration
+         Each Test Case (default) - at end of simple test case
+
+?   Quiz: range 
+    Which Range specification is syntactically incorrect?
+            A   1..10/1
+            B   10..1/-1
+            D   1..10/3
+    <<< C 
+
+?   Quiz: char* 
+    How does VectorCAST treat “char *” data items?
+    <<< D   "string"
+
+?   Quiz: range2 {status:open}
+    Which of the following is invalid?
+            A   1,2,3,4
+            B   1:10/1
+            C   1..10/20
+            D   (3)2,7,(5)1,9
+    <<< ?PHA
+    
+<<< eof.Lec#03  sta:done
+
+>>> beg.Lec#04:Compound Tests               [*]:084-092
+
+### dtm:2025-04-17:Do 
+
++   Section Overview
+       What is a Compound Test?
+       What is an Initialization <<INIT>> Test
+       Automatic Initialization and Termination Tests
+       What does “Stub By Function” mean?
+
++   Compound Tests
+    *   A VectorCAST simple test calls one function once or in a range/list
+    *   A Compound test calls a sequence of simple tests
+           Each row in the compound sequence is called a slot
+           The slot has an iteration count to control the number of times the 
+                slot is executed
+           A slot can contain other compound tests!
+           Global objects persist between slots, 
+            this includes parameters used for function calls and 
+                member function class instances
+    *   Can be used as an integration test
+         Slots can call functions from different files or classes
+    *   Compound Only Flag
+           A test that is not intended to be executed outside of a compound test
+           The name is displayed in in italics as a visual indication
+           A compound test can be Compound Only!
+
++   Compound Test Screenshot    *:[086]
+
++   Initialization of Data
+    *   An <<INIT>> test case:
+           calls no testable function
+           is used to set and test global objects
+           can be used to setup C++ Class Object
+                > Instantiate class instances that will later 
+                    be used in other test cases for member functions
+    *   Often are used as the first slot of Compound tests
+    *   Automatic Initialization and Finalization Tests
+           Special kind of <<INIT>> test cases, 
+            used to setup/tear down for ALL tests
+    
++   Initialization of Data
+       One <<INIT>> test case can be marked 
+            “automatic initialization” 
+        and this will be run before each simple test case and 
+        at the start of each compound
+       One <<INIT>> test case can be marked 
+            “automatic finalization” 
+        and this will be run after each simple test case and 
+            at the end of each compound
+       Auto-Initialize or Auto-Finalize tests will 
+            show up in the Execution Report
+       When selected as Auto-Initialization or Auto-Finalization, 
+        test names are underscored
+
++   Stub By Function (SBF)
+    *   Stub By Function = Conditional Stubbing within a UUT
+           Can make testing easier (fewer pre-conditions)
+           Can make unreachable code reachable
+    *   Stub By Function Details
+           VectorCAST creates a modified copy of the 
+                UUT in which functions are reengineered for
+                run time switching between a stub and the real implementation
+           Reengineering means it may not be acceptable !
+                for certain certification levels
+    *   Environment Wizard
+           Toggle sbf/uut to enable/disable
+
+?   Quiz: Init TestCase
+    Which function(s) does an Init Test Case call?
+    a:  The first function defined in the UUT
+    b:  A “main” function, from the UUT
+    c:  No functions from the UUT
+    d:  All functions from the UUT in order
+    <<< d
+
+?   Quiz: SBF event
+    If SBF is selected for a function, 
+            does it show up as an Event?
+        A   yes 
+        B   no 
+    <<< A 
+    
+<<< eof.Lec#04  sta:done
+
+>>> beg.Lec#05:Code Coverage Basics     [*]:094-114
+
+### dtm:2025-04-18:Fr
+
++   Code Coverage Types
+        Statement
+             a = 123;
+             b = 234;
+        Decision or Branch
+             if (condition)
+        Modified Condition/Decision Coverage
+             if (a || b || c || d)
+
++   Statement Coverage
+    Determines if each executable statement has been executed at least once
+    Inadequate to catch all errors
+    if (condition)
+        normalize (c);
+    foo (c);
+
++   Branch Coverage
+    Determine if each branch point has taken each possible outcome at least once
+    Inadequate to catch all errors
+    if (a || b || c || d)
+        foo (d);
+
++   Modified Condition/Decision Coverage (MC/DC)
+    Branch coverage, plus
+    Ensures that each component of a conditional can independently affect 
+        the outcome
+    example: 
+        if (a || b || c || d)
+        foo (d);
+       Total combinations are 2^n, 16 in this case.
+       Static analysis can show you the cases (truth tables)
+
++   Coverage By Analysis (CBA)
+        Allows Users to Augment the Coverage Metrics
+         An analysis must be added to explain the augmentation
+         Handles cases where code is hard to reach, or impossible to reach
+         CBA Coverage is reported on a separate line item from standard coverage
+         Can be aggregated to show 100% coverage where normally that 
+            would not be possible.
+
++   CBA Screenshot   [*]:100
+    *   Note CBA lines selected in Blue and corresponding notes
+
++   CBA Report       [*]:101
+    “Analysis” line shows CBA Metrics
+    
++   Collecting Coverage Data
+    VectorCAST uses source code instrumentation
+       We take the original source file, and change it *!PHA
+       Define a bit for each statement and/or decision point
+        > These bits get flipped in memory as program runs
+       Instrumentation is highly optimized for size and speed
+
++   How do you enable Coverage?
+    *   Project Configuration 
+    *   Environment Wizard
+    *   Coverage Menu
+    *   watch Status Bar working dir 
+
++   Cyclomatic Complexity
+       Metrics report also shows the cyclomatic complexity V(g) 
+            value for each sub-program.
+       Cyclomatic Complexity refers to the number of unique 
+        paths through the code.
+       Based on research done by Tom McCabe in the 1970’s
+       In general, a number less than 10 is considered “maintainable” code
+
++   Basis Paths  [*]:106
+       A Basis Path identifies a unique path through the code
+       Basis Paths correlates to Cyclomatic Complexity
+       Basis Path Tests can be auto generated
+       To View Basis Path Analysis, go to:
+        gui::Tools->BasisPath->ViewAnalysisReport
+
++   Code Coverage Viewer     [*]:108
+    *   Expand/Collapse Controls
+    *   Sub-program number Statement number
+    *   Asterisk / Green = Covered
+    *   ToolBar Controls
+    *   Hover Over
+
++   Code Coverage Summary (from Coverage Menu)  [*]:109
+       Each column is Sortable
+       Reflects the current contents of the Coverage Database
+       Vg stands for the Complexity Metric
+       Each Column can be filtered
+        E.g., enter “>10” at the top of the Vg column to 
+            see functions greater than 3
+    
++   Code Coverage Reports   [*]:110
+
++   Executing Tests with Coverage on or off
+    *   Use the Coverage Menu to Disable/Enable Coverage
+    *   Remember the status bar at bottom of Coverage Viewer
+    
+?   Quiz: Cyclomatic Complexity
+    The Cyclomatic Complexity Value Correlates to:
+        a:  Number of unique paths through the code
+    <<< a
+
+?   Quiz: Coverage Data
+    How does VectorCAST collect Coverage Data?
+        a:  Object Code Instrumentation
+        b:  Object Code Analysis
+        c:  Source Code Analysis
+        d:  Source Code Instrumentation
+    <<< d 
+    
+<<< eof.Lec#05  sta:done
+
+>>> beg.Lec#06:Test Reports     [*]:116-134
+    
++   gui::EnvView.Test->View
+
++   Reports are context sensitive for selected Test Cases for:
+         Test Case Data
+         Execution Results
+         Full Report
+
++   Each Report has a Table of Contents with Hyperlinked Sections
+
++   Report Configuration Options
+            gui::Tools->Options->Report
+         Applies to all Tests in this Environment
+        +   Some options can be overridden in
+                individual Test Cases
+
++   ReportTypes
+        a)  Test Case Data Report   
+             All Input and Expected Values for Globals and
+                Input Parameters on both the FUT & Stubs
+             All test case and parameter user code
+             All Probe Points 
+                +   Notes
+        b)  Test Case Execution Report  
+            ... contains
+             Execution Report for all selected tests
+             Shows Event and Data flow through the entire Test
+             Same Report as “Execution Results Tab”
+        c)  Full Report
+            +Note that the Contents are Hyperlinked
+        d)  Test Case Management Report :
+             Test Case Management
+                > Execution date and time
+                > Pass/fail status for test cases
+                > Test case notes
+                 Metrics
+                > Percentage of coverage
+        e)  Aggregate Coverage Report 
+            Coverage Viewer and Metrics
+            Report for all Units
+        f)  Metrics Coverage Report
+                :   Summary Coverage Report for all Units
+        g)  Coverage By Analysis Report
+
++   Capturing Standard Output
+        Some application code may have “printf” or “cout”
+        calls
+             You might want to capture this output to the
+                Execution Report
+        > Use Tools->Options->Execute Tab
+            Output gets appended to the Test Execution Report
+
++   Controlling the Printing of Data Items
+        +   Show in Report
+
++   Display Global Data After
+        Used to Control the Frequency of:
+             Displaying Global Data
+             Comparing Expected Results of Global Data
+        A global data item can be displayed/checked at:
+             After each event
+             At the end of each Range Iteration
+             At the end of a Compound Slot
+             The end of the test (default)
+
+?   Quiz: Execution Report
+    Where can you find the Execution Report?
+        <<< A Test->View Menu
+        <<< C Execution Report Tab after Executing a Test
+
+?   Quiz: Test Note
+    In What Report do the Test Notes appear?
+        <<< A : Test Case Data Report
+        <<< x : Full Report
+
+<<< eof.Lec#06  sta:done
+
+>>> beg.Lec#07:Regression Testing       [*]:136-149
+
++   What is Regression Testing?
+        Regression Testing is taking existing tests and running them against 
+        new versions of the application software
+        Re-Use of Tests is the goal
+
++   Why is Regression Testing Important?
+        Testing once makes no sense
+             Testing constantly improves quality
+             Bugs are easiest to fix on the day that they are introduced
+             Code can be re-factored over time
+             Test cases are kept in sync with code
+
++   How does VectorCAST facilitate Regression Testing?
+        Batch execution of tests
+        Command Line Scripting Interface
+        > CLICAST- for Individual Environments
+        > MANAGE– for VectorCAST Projects
+    
++   Change Based Testing (CBT)
+        CBT – Intelligent Testing
+         Only those Environments that have changed will be Rebuilt
+            > Source Code or Config Changes
+         Only those Tests that are affected by a change will be executed
+            > Granularity is down to the function level
+         Analogous to “Make” vs “Make all”
+    
++   VectorCAST Command Line Utilities
+        Three(oder 2= Different Scripting Engines:
+             CLICAST – for Individual Environments
+             MANAGE for VectorCAST Projects
+    
++   Command Line Examples
+        Rebuild an Environment:
+             clicast -e mgr_ut1 ENvironment RE_Build
+        Execute all Tests in an Environment:
+             clicast -e mgr_ut1 EXecute Batch
+        Build & Execute all Tests in a VectorCAST Project
+             manage --project TestCampaign --build-execute
+        Incrementally Build & Execute all Tests in a VectorCAST Project
+             manage --project TestCampaign --build-execute --incremental
+        Generate a Full Report
+             manage --project TestCampaign --full-status=full_report.html
+    
++   Regression Results
+        gui.ProjectView::Right Mouse -> Reporting
+    
++   Test Scripting Overview
+        Test Script Characteristics
+             Plain ASCII File
+             Easy to understand Syntax
+        Test Scripting is One of the Key Features of VectorCAST
+             Decouples Test Harness and Test Data
+             Format allows for Easy CM Diffs
+             Simple syntax allows for easy import from other sources
+             Create / Modify tests without using GUI
+             Share test cases between environments
+             Cloning of similar cases quickly using text editor
+        gui.Enviroment::Test->Scripting->Template
+             If you want to create tests in an editor, 
+                the template will show all available commands
+
++   Test Script Structure
+        -- VectorCAST 22.sp11 (05/21/23)
+        -- Test Case Script
+        --
+        -- Environment    : 01_INC
+        -- Unit(s) Under Test: main
+        --
+        -- Script Features
+        TEST.SCRIPT_FEATURE:C_DIRECT_ARRAY_INDEXING
+        TEST.SCRIPT_FEATURE:CPP_CLASS_OBJECT_REVISION
+        TEST.SCRIPT_FEATURE:MULTIPLE_UUT_SUPPORT
+        TEST.SCRIPT_FEATURE:REMOVED_CL_PREFIX
+        TEST.SCRIPT_FEATURE:MIXED_CASE_NAMES
+        TEST.SCRIPT_FEATURE:STANDARD_SPACING_R2
+        TEST.SCRIPT_FEATURE:OVERLOADED_CONST_SUPPORT
+        TEST.SCRIPT_FEATURE:UNDERSCORE_NULLPTR
+        TEST.SCRIPT_FEATURE:FULL_PARAMETER_TYPES
+        TEST.SCRIPT_FEATURE:STRUCT_DTOR_ADDS_POINTER
+        TEST.SCRIPT_FEATURE:STRUCT_FIELD_CTOR_ADDS_POINTER
+        TEST.SCRIPT_FEATURE:STATIC_HEADER_FUNCS_IN_UUTS
+        TEST.SCRIPT_FEATURE:VCAST_MAIN_NOT_RENAMED
+        --
+        -- Unit: main
+        -- Subprogram: main
+        -- Test Case: main.001
+        TEST.UNIT:main
+        TEST.SUBPROGRAM:main
+        TEST.NEW
+        TEST.NAME:main.001
+        TEST.EXPECTED:main.main.return:12
+        TEST.END
+        ...
+        -- COMPOUND TESTS
+        TEST.SUBPROGRAM:<<COMPOUND>>
+        TEST.NEW
+        TEST.NAME:<<COMPOUND>>.001
+        TEST.SLOT: "1", "main", "main", "1", "main.001"
+        TEST.SLOT: "2", "main", "main", "1", "main.002"
+        TEST.SLOT: "3", "main", "main", "1", "main.003"
+        TEST.END
+        --
++   Customizing Test Scripts
+        Test Name is Auto Assigned if script does not provide name
+             Auto-names are just like the names created, 
+                when adding tests in the IDE
+                > Function_Name.serial_number: PlaceOrder.001
+        TEST.NEW || TEST.ADD || TEST.REPLACE
+             When a script is created, we always use TEST.NEW
+             When in TEST.NEW mode
+                > If a TEST_NAME already exists when a script is imported, 
+                        an auto name will be assigned
+             When in TEST.REPLACE or TEST.ADD mode
+                > If a TEST_NAME already exists, TEST will be replaced, 
+                        or extended
+                > Test Script Log give details
+
++   Saving Your Work
+        Three Things to Save
+        1.The VectorCAST Project File (*.vcm)
+        2.The Directory Structure
+        3.Entire contents of the Environment Directory (1 Subdirectory per Environment)
+        All other files can be generated
+        --- File Extensions
+            *.vcm 
+            *.cfg
+            *.env 
+            *.mfg 
+            *.tst
+
+?   Quiz: Test Script
+    VectorCAST Test Scripting is useful for:... ?
+        A:  Putting Test Cases into CM
+        B:  Sharing Tests between Test Environments
+        C:  Importing Test Data from other Tools
+        D:  All the above
+    <<< D
+
+<<< eof.Lec#07  sta:done
+
+>>> beg.Lec#08:UserCode                 [*]:151-161
+
++   What is User Code?
+    A way to extend the functionality of the test harness   
+    Allows extension of any part of the test harness
+    Added code is written in the native code of the UUT
+    User Code Supports:
+        > Setting Test Pre-Conditions
+        > Checking Test Post-Conditions
+    UseCode.Types 
+         Environment   -> [Lec#09]
+         Test Case
+         Parameter
++   Why User Code?
+    In some cases, it is easier to write code
+        > Preset an array of structures with the same values
+    In some cases, it is required
+        > Setting a Data Item value to an expression:
+    User code is regressionable
+        > It gets compiled in on subsequent environment builds
+    Common uses:
+        > Setup of Complex Pre- and Post-Conditions
+        > Complex setup of parameter values
+
++   Test Harness Components
+     VectorCAST-generated Global Objects
+     Test Driver
+     Test Stubs
+
++   UserCode : TestCase vs Parameter 
+    User code to set or check data items
+    Available for any parameter in the parameter tree
+    Some uses:
+        > Set parameter / object dynamically rather than statically
+        > Input to one function can be based on return from previous call
+        > Perform complex comparisons of parameters / objects
+        > Pass/fail if one parameter equals another
+
++   User Code Syntax
+     Full C and C++ syntax is supported
+     Additional VectorCAST specific syntax is supported
+         Double Curly Braces {{ }}
+         Symbol Tags <<name>>
+     Understanding Tags:
+        <<unit_name.function_name.parameter_name>>
+     Tag Examples:
+        <<communication.ProcessMessage.msg_type>> = 77;
+        {{ <<communication.ProcessMessage.msg_type>> == 77 }}
+        
++   UserCode Examples
+    Dynamic assignment
+         Calculations
+            > <<io_wrapper.WriteFloat.value>> = MyPrice * MyQuantity;
+         Function calls
+            > <<io_wrapper.WriteFloat.value>> = sqrt(123456);
+         Other parameters (chaining)
+            > <<io_wrapper.CloseFile.fp>> = <<io_wrapper.OpenFile.return>>;   
+    Dynamic comparison
+         {{ <<io_wrapper.WriteInteger.value>> <= MyQuantity }}
+
++   Assignment of a pointer to a singleton object
+         <<io_wrapper.processValue.Param>> = ( &intObject );
+
+?   How can you access Parameter User Code Tags?
+    A:  User Code Icon
+    B:  Right click in the Parameter tree and Copy
+    C:  Type it in manually
+    D:  All the above
+    <<< D 
+
+<<< eof.Lec#08  sta:done
+
+
+>>> beg.Lec#09:Environment User Code    [*]:163-173
+
+### dtm:2025-06-27:Fr
+
++   Environment User Code Topics
+     User Globals
+     Handling Void Pointers
+     Environment User Code
+     How is User Code Edited?
+     Harness Architecture
+     Order of Execution
+
++   User Globals
+    +   User Globals are used as “scratch pad” area
+         Seeded with integers, floats, strings, buffer
+         Used for:
+            > void pointers
+            > loop counters
+            > Stub hit counters
+    +   New Entries Must have the Following Syntax
+         VCAST_USER_GLOBALS_EXTERN int VECTORCAST_INT1;
+         VCAST_USER_GLOBALS_EXTERN is a macro that prevents multiple definition
+    +   When new entries are added, you must rebuild environment   
+    +   Template file GLOBALS.C can be modified
+         DATA subdirectory of installation directory
+
++   Void Pointers
+     void * types are generally cast to a specific type inside a function
+     VectorCAST needs to know what object actually looks like
+     “void *” data item value is selected from list of user global objects
+        > Driver passes address of the object as the parameter value
+
++   Environment User Code
+     Executed for all Test Cases
+     Common Uses:
+        > Adding header files
+        > Adding support functions
+        > Data initialization
+     Different Varieties allow access to any part of harness
+        > Beginning / end of harness execution
+        > Before / after UUT call
+       Saved as part of the Environment Script
+
++   Environment User Code Editor
+    gui:: Environment->EnvironmentUserCode->UserCodes
+     Click on the type of user code that you want to edit
+        on the left column
+        > The Current Type is displayed at the top of the column
+            on the right
+     Insert user code in the column on the right
+     Test compile button is in top left corner
+
++   Unit Prefix and Unit Appendix User Code
+    gui::Environment->UnitUserCode
+    +   Unit Prefix and Unit Appendix User Code is
+            code that becomes part of the specified unit
+     Unit Prefix User Code
+        > Code that is inserted at the beginning of the unit
+        > Useful for #undef-ing
+     Unit Appendix User Code
+        > Code that is appended to the end of the unit
+        > Useful for #include-ing
+
++   Harness Architecture Pseudo Code
+    for each slot in a compound test
+        vCAST_READ_COMMAND_DATA
+        for each slot iteration
+            for each test case (range/list iteration)
+                Setup parameters and global data items
+                    Call the subprogram under test
+                        Capture Stub Parameters
+                        Set stub return data
+                Capture Output Parameters and Global Data
+
++   User Code Order of Execution
+    (E)Harness Initialization
+    (E)Test Case Initialization
+    (T)Input User Code*
+    (P)Input User Code*
+    Timer Start
+    Invocation of a Unit Under Test
+    Timer Stop
+    (E) Test Case Termination
+    (P)Expected User Code*
+    (T)Expected User Code*
+    (E)Harness Termination
+    Legende: 
+    (E) = Environment User Code
+    (T) = Test Case User Code
+    (P) = Parameter User Code
+
+
++   User Code Script Syntax
+    User code in regression scripts
+       Environment Script:
+        ENVIRO.UNIT_APPENDIX_USER_CODE:
+        ENVIRO.UNIT_APPENDIX_USER_CODE_FILE:manager
+        /* Add some code to the manager UUT */
+        int a_needed_global = 0;
+        ENVIRO.END_UNIT_APPENDIX_USER_CODE_FILE:
+        ENVIRO.END_UNIT_APPENDIX_USER_CODE:
+       Test script:
+        TEST.VALUE_USER_CODE:manager.Place_Order.Seat
+            <<manager.Place_Order.Seat>> = ( ++VECTORCAST_INT1 );
+        TEST.END_VALUE_USER_CODE:
+        TEST.EXPECTED_USER_CODE:manager.Place_Order.Seat
+            {{ <<manager.Place_Order.Seat>> == ( VECTORCAST_INT1 ) }}
+        TEST.END_EXPECTED_USER_CODE:
+
+?   What type of User Code requires a rebuild?
+    A:  Parameter User Code
+    B:  Environment User Code
+    C:  Test Case User Code
+    <<< B
+
+
+<<< eof.Lec#09  sta:done
+
+>>> beg.Lec#10:Stubbing Fundamentals            [*]:175-184
+
++   Stubbing Topics 
+     Understanding Stubs
+     Library Stubs
+     Additional Stubs
+     Suppressed Stubs
+     Configure Stubs
+     Stubbed Constant Objects
+     Return Data List Options
+
++   Understanding Stubs
+    A Stub is a function definition that replaces the real definition.
+    VectorCAST creates several different types of stubs
+         Automatic Stub: based on prototype of dependent function, 
+            replaces dependency
+         Stub-by-Function: based on internal UUT function, 
+            can be switched on and off
+         Library Stub: allows stubbing of clib functions like malloc
+         Additional Stubs: user defined (coded) stubs that are managed 
+                by VectorCAST
+
++   a)  Automatic Stubs are generated when:
+         Function is a dependency
+         Function is declared in a file in a search directory
+         Function definition is not in a UUT or not-stubbed unit
+
++   b)  Stub-by-Function (SBF) Stubs are created when UUT type is set to “SBF”
+         Real code and Stub code co-exist in memory, 
+        with an optional run-time switch
+
++   c)  Library Stubs
+        Sometimes it is necessary to stub functions that are defined 
+            in the standard library
+            or other libraries
+        “Standard Stubbing Technique” will not work
+             Standard Stubbing would result in multiple definitions at link time
+             Test harness needs to use “real” OS or cLib functions (e.g., malloc)
+        Solution: 
+            Macro transforms UUT calls of the library function into 
+                calls of a stub with a different name
+        Library Stubs are chosen at environment build time, 
+            but can enabled/disabled at run-time, similar to SBF.
+
++   d)  Additional Stubs
+        Forces VectorCAST to Stub Specific Functions
+             Forces generation of stubs for particular functions 
+            that would not be normally stubbed
+        Potential Uses
+             External library is missing a function
+             Harness code introduces dependency on a function 
+                    not normally needed by UUT
+                > example: C++ template instantiation
+             Want to stub a function for use in user code
+                > example: stub to be passed as a function pointer value
+
++   Suppressing Stubs
+    Prevents VectorCAST from Stubbing Specific Functions
+         Prevents generation of stubs for particular functions that 
+                would normally be stubbed
+    Potential Use:
+         Function prototype is defined in header which exists 
+                in search directory
+            > But the function is defined in a library that 
+                is being linked into the harness
+
++   Configure Stubs User Code                   [*]:180
+    Allows you to insert custom code into the generated stub    
+         Is not test case specific
+         Available for all types of stubs that we have been discussing
+         “Beginning of stub” type is executed before capturing parameters
+         “End of stub” type is executed before return to caller    
+    Potential Uses:
+         Count calls to a stub
+         Setup global data
+         Dynamically Compute Outputs based on Inputs
+         Set a Global Variable Value when a Stub is called
+
++   Stubbing of Global Data Objects
+    VectorCAST defines Global Data Objects that are undefined
+         E.g., If we find an External Data Declaration and no corresponding 
+            Definition
+         Like functions, 
+            only Globals that are externed in a file in a search directory 
+                get stubbed automatically
+    Object Initialization User Code allows you to control initialization
+         Especially important for const types, 
+            as their value can’t be set after initialization
+         For most built-in types, no default initialization value is specified, 
+            resulting in the object getting the zero-value for 
+                the type (0, 0.0, NULL)    
+    Potential Uses:
+         Provide correct value of extern const objects used in UUT
+         Initialize stubbed global variables once at static initialization 
+            time rather than per test case
+
+### dtm:2025-06-30:Mo 
+
++   Return Data List Options
+    When you provide a “list” for stub returns …
+       The List of Return Values gets “reset” at the start of each 
+        range iteration
+            > Each call to the UUT
+       Options control how stub return values are handled
+            > Located on Test Case Options tab
+
+       Example:
+        int foo (int param) { return param + bar (); }
+       Assume a simple test case with a range iteration
+        > A range of values for “param”, maybe 1..10 by 1
+        > A list of values to be returned by “bar”, 
+                maybe 100, 200, 300, etc.
+
+?   How could you avoid inadvertent stubbing of a function?
+    A   Additional stubs
+    B   Suppressed stubs
+    C   Stub by function
+    D   Library stubs
+    <<< &B
+    
+<<< eof.Lec#10  sta:done
+
+
+>>> beg.Lec#11:C++ Testing                      [*]:186-194
+
+
+### dtm:2025-07-01:Di
+
++   C++ Testing Topics
+
++   Three Approaches to Create Class Instances
+        1. Create Instance as part of a Test for a Class Method
+        2. Create a Test for a Constructor, and use that as a slot in a Compound Test
+        3. Create an “Auto-Initialization” Test
+
++   Creating Class Instances
+      Choose Subclass
+      Choose Constructor
+      Set Constructor Parameters
+      Set Member Variable Values
+
++   Testing With Inheritance
+       A class Instance can be used to invoke
+        its own or inherited member functions
+     Class instance pointer can be initialized
+        by instantiating the pointed-to type or
+        any visible subclass
+     Virtual functions treated the same as non-virtual
+
++   C++ Options 
+    Tools->Options->Builder
+         Test all member inlines
+         Test all non-member inlines
+
++   Custom Stubbing
+         Controlling visibility of units within the UUT
+
+?   What happens when no Class Instance is specified?
+    <<< report seg-fault
+    
+<<< eof.Lec#11  sta:done
+
+### date:2025-07-01:Di
+
+>>> beg.Lec#12:Include Paths                    [*]:196-208
+
++   What are Include Paths?
+    <<< Include Paths are simply the paths (i.e. the –I options) 
+            for compiling a file outside of
+        VectorCAST.
+
++   Why does VectorCAST need to know All the Include Paths?
+         To be able to parse & preprocess the source code for the Unit
+         To be able to build the harness executable
+         To know how to handle typedefs in the Parameter Tree
+         To know what dependent functions to stub
+        
++   For the purposes of stubbing and type handling, VectorCAST categorizes Include
+    Paths as:
+         Search Directories
+         Library Include Directories
+         Type-Handled Directories
+
++   Search Directories
+        An Include Path should be a “Search Directory” if:
+         It contains Source Files that you want to test
+            > .c and .cpp files that exist in “Search Directories” can be 
+            chosen as UUTs
+         It contains Header Files that define prototypes that you want to Stub
+            > Unresolved calls to functions from these headers will be stubbed
+         It contains Header Files with data types that you want to 
+            set in the Test Case Editor
+            > Type Handling Code will be built for all structs/classes from t
+
++   Library Include Directories
+    An Include Path should be a “Library Include Directory” if:
+         It contains Header files for Object Modules will be used 
+            during testing
+    VectorCAST will not generate code for
+         Stubs will NOT be created for these functions
+         Type Handling Code will NOT be created for these structs/classes
+    Test Case Editor will be NOT be “aware” of these types
+         If these types are used by a UUT parameter, 
+            the types will show up as “User” in the
+            parameter tree
+    What type of Code is in a “Library Include Directory”?
+         API for a Library: CORBA, Boost, etc
+         API for an RTOS
+         Headers for C/C++ Run Time (generally are implicit)
+
++   Type Handled Directories
+    A “Type Handled Directory” is a hybrid of Search and Library
+    An Include Path should be a “Type Handled Directory” if:
+         It does NOT contain function prototypes that you want to stub
+         It contains Header Files with data types that you want 
+                to set in the Test Case Editor
+            > Type Handling Code will be built for all structs/classes 
+                    from these headers
+            > Test Case Editor will be “aware” of these types
+    What type of Code is in a “Type Handled Directory”?
+         Similar types of files as Library Includes
+            > RTOS or Libraries like Boost or CORBA
+
++   The Include Path Widget
+    There are two places to enter “Include Paths”
+     Create New Environment Wizard->Locate Source Files (Step 5)
+     From the VectorCAST Project: RightMouse->OpenConfiguration
+
++   Adding Include Paths and Base Directories
+    Paths will automatically be converted to use Base Directories
+        > Base directories top-most directory of testable source
+        > Can also point to compiler executables
+        > Edit from Configuration editor (i.e.: TestCampaign->OpenConfiguration)
+
++   Specifying and Editing Include Paths
+       Text can be pasted directly into a field
+            > File path must fall within a base directory
+       An existing path can be edited directly to make minor changes
+       Hover Cursor over a directory to see the content
+
+<<< eof.Lec#12  sta:difficult
+
+>>> beg.Lec#13:MC/CD Coverage               [*]:210-218
+
++   url:MC/DC 
+    https://en.wikipedia.org/wiki/Modified_condition/decision_coverage
+
++   MC/DC Topics
+    What is MC/DC, and why is it used?
+     “Each Condition in a decision independently affects the outcome”
+     How to access the VectorCAST MC/DC Pair Tables?
+     VectorCAST Options that affect MC/DC
+
++   MC/DC Background
+    +   What is MC/DC?
+         A complex coverage requirement used on the most critical software systems
+         Think of it like “Super Branch Coverage”
+    +   Who uses MC/DC?
+         Widely used in the development of avionics software 
+                (required by DO-178 B/C)
+         Often adopted by other industries for safety critical testing
+    +   What is Required by MC/DC?
+         Each decision tries every possible outcome
+         Each condition in a decision takes on every possible outcome
+         Each condition in a decision independently affects the outcome
+
++   MCDC vs TruthTable
+    # Rows in Truth Table (2**N)        2 4 8 16 32     ; N=1..5
+    # Rows to Satisfy MC/DC (N+1)       3 3 4 5   6
+
++   Options that affect MC/DC
+    Use static memory allocation on the target
+         Controls amount of memory reserved for coverage information
+         Useful for targets with no dynamic memory allocation available
+    Maximum MC/DC Sub-conditions
+         Limit on complexity of conditionals to instrument for MC/DC
+    Abort Instrumentation when max MC/DC conditions is exceeded
+
+?   Quiz: Truth Table 
+    With 4 subconditions, how many rows are in the Truth Table?
+    &&& A:16
+
+?   Quiz: MCDC
+    With 4 subconditions, how many tests are required to satisfy MC/DC?
+    &&& C:5
+
+<<< eof.Lec#13  sta:done
+
+>>> beg.Lec#14:Target Testing Concepts      [*]:220-229
+
++   Target Testing Topics
+     What is a VectorCAST/RSP?
+     Options that affect Test Harness Construction
+     Configuring Test Harness I/O
+     Configuring Target Test Execution
+
++   Run-Time Support Package (RSP)
+     Provides abstraction for interface between VectorCAST 
+        and the Test Harness
+     Allows the core VectorCAST functionality to 
+        be compiler and target neutral
+
++   RSP Considerations
+     Language Extensions
+     Linking (Start-up Code, RTOS, Stack, Heap)
+     Download
+     Results Capture
+
++   Info needed for Building new RSPs
+     EXACT version of the compiler
+     Identification of MINIMAL start-up code
+     How can I run a “hello world” program on your target?
+
++   Options that affect Test Harness Construction
+    In some cases, we cannot use the C/C++ Standard Library
+         Options are located in
+            > Target Options
+            > Builder Options
+
++   Configuring Test Harness I/O
+    Multiple ways for VectorCAST to communicate with Harness
+     Text Files
+        > Default mechanism, used in all Native testing, some targets
+     stdin and stdout
+        > Harness is still data driven, input file is serialized into a data stream
+     stdout only
+        > Input Data Stream is converted into a static character array
+
++   Configuring Target Test Execution [gui::Options::C++]
+       Special Case Flag Commands << >>
+       Direct access to the Compiler or Debugger
+       Shell Script
+
++   RSP Connection Example: VxWorks,...
+
+?   Quiz: Which of the following options can affect the RSP
+    a:  Extra Keywords Specific to the Compiler
+    b:  The debug connection to the target
+    c:  The I/O Capabilities of the target
+    d:  All the above
+    &&& d
+
+<<< eof.Lec#14  sta:done
+
+>>> beg.Lec#15:CSV Importing                    [*]:231-240
+
++   CSV Data Topics
+       CSV Feature Overview
+       Using the Map to Create Tests
+       Creating a CSV Template
+
++   CSV Feature Overview
+    +   CSV Files Use Cases
+         Existing Test Vectors in Excel
+         Automatic Generation of Test Vectors from Modeling Tools
+    +   CSV File Format Assumptions
+         Each Row is a Test Vector
+         Each column is either an input of expected scalar value 
+            (or a list of values: 1,2,3)      
+         Optional header rows for titles
+
++   VectorCAST CSV Workflow
+     User creates a CSV Map
+        > Map is specific to a function
+        > Specifies the association between columns and data items
+     Map is added to the Test Tree
+     Right Click on Map to create tests
+     Tests are automatically created, and named with the File Row
+
++   CSV Template
+     After creating the Map a CSV Template can be created automatically
+
++   CSV Screenshots
+       Insert Tc 
+            Generate CSV map
+       Environment View 
+        Test Case name has special “(MAP)” Prefix
+
++   CSV Data Mapping
+    Map CSV Columns to parameters
+
++   Example CSV Test
+
+?   Quiz: True or False? 
+    Each Row of the CSV data represents 1 test
+    &&& True 
+    
+<<< eof.Lec#15  sta:done
+
+### dtm:2025-07-07:Mo
+
+>>> beg.Lec#16:Probe Points             [*]:242-249
+
++   Probe Points Overview
+     Allows modification of the code under test, 
+        without actually changing the source code
+     Similar to a patching mechanism
+     Can be used in Unit Testing, 
+        as well as System Testing with VectorCAST/QA.
+
++   Requirements:
+     Code Coverage Needs to be enabled
+     Probe Points need to be compiled into the Test Harness, 
+        similar to Environment User Code
+     For Printed Output, 
+        Enable “Redirect Standard Output” (Tools->Options->Execute)
+
++   Caveats:
+     Documentation may be required for certification purposes
+     Buyer beware! Probe Points are very powerful, 
+        but can also be dangerous if written incorrectly
+
++   Probe Point Applications
+    Common Uses
+     Capturing/displaying local variables during execution
+     Injecting spurious errors to test error handling code
+     Patching faulty code to test a fix prior to committing the change
+     Grey Box Testing
+        > Access to code that is normally hidden, even in White-Box Testing
+     Can be used in Unit, Integration, and System Testing
+
++   Built-In Utilities
+    vcast_probe_print(char *)
+        > Print an ASCII String
+    vcast_probe_assert(char *, boolean)
+        > Adds a Pass/Fail status depending on the value of the boolean
+    vcast_probe_print_int(int)
+        > Print an Integer
+    vcast_probe_print_unsigned(unsigned int)
+        > Print an Unsigned Integer
+    vcast_probe_print_float(float)
+        > Print a Float
+    vcast_test_name_equals(char *)
+        > Allows for Test Case Specific Code
+
++   Probe Point Screenshot   [*]:245
+
++   Screenshot Detail   [*]:246
+    Probe Point used to break out of infinite loop
+     Original code on the left
+     Probe Point on right, before call to “sleep()”
+     Probe Point Identified by Function/Statement number (i.e. “3 5”)
+     Probe Point View also shows Code Coverage
+
++   Probe Point Icons
+     Probe Point Window is launched from Toolbar
+     Probe Points can be individually Activated/Deactivated by 
+        clicking on Green Circle:
+     Probe Points are built into the Test Harness by selecting button 
+        in upper left corner
+
+<<< eof.Lec#16  sta:done
+
+
+>>> beg.Lec#17:Abstract Classes and Templates   [*]:251-259
+
+### dtm:2025-07-09:Mi
+
++   Module Overview
+       Abstract class testing concepts
+       Auto Generated Concrete Classes
+       Testing abstract classes with Appendix User Code
+       Testing user-defined templates
+
++   Abstract Class Review
+    An abstract class in C++ is one that contains one or more pure virtual functions
+       Or in code, a class that has one or more member 
+            functions defined like:
+        class Shape {
+            public:
+            virtual float getArea(void) = 0; /* a pure virtual function */
+            /* ...other class code... */
+        };
+
+    Can be used to implement an interface or a common base class (where the base
+        class isn’t complete by itself)
+       Consider the following hierarchy (pseudo code):
+            class Shape; /* abstract base class */
+            class Rectangle : public Shape; /* concrete subclass */
+            class Square : public Rectangle; /* another concrete subclass */
+
+       The Shape class can implement logic common to all  shapes, 
+            but concepts like “area”
+    
+    
++   How to Test Abstract Classes
+    C++ does not allow instances of abstract classes
+       Pointers to abstract classes must point to instances of 
+            concrete subclasses
+    Must test against a concrete subclass instead
+       Can use a concrete subclass that exists within the translation unit
+       VectorCAST also automatically creates concrete subclasses with stubbed 
+        versions of all pure virtual functions
+
++   Auto Generated Concrete Classes
+    Use automatic concrete subclasses to instantiate and test abstract class objects
+       Automatic subclasses will be named “vcast_concrete_*”
+       Subclass allows testing of any logic contained inside the abstract class,
+        >   For example, “getX” for our Shape class
+        >   Abstract (i.e. pure virtual) class methods like “getArea” 
+                must be tested in real subclasses
+       In automatic subclass, any pure virtual functions are replaced by stubs
+        >   This allows control of behavior through parameter tree 
+                or user code (if necessary)
+    Other option:
+     Use another concrete subclass that is part of the translation unit
+
++   Using Appendix User Code
+    Unit Appendix User Code is …
+       C or C++ code that is inserted at file scope
+       Treated as if it were part of the Unit Under Test
+       Compiled into test environment
+    Many applications
+       Abstract Classes
+       Testing user-defined templates
+    gui::Environment->UnitUserCode
+
++   Using Appendix User Code            [*]:255
+    +   Abstract Subclasses                 [*]:256
+    +   Testing Templates                   [*]:257
+
++   Methods for defining/using Abstract Subclasses  [*]:256
+    Use Appendix User Code to include or define a concrete subclass:
+       Method 1:
+        >   #include existing subclass
+       Method 2:
+        >   Manually enter new subclass
+       Method 3:
+        >   Or just use Auto-generated concrete
+
++   Testing Templates    [*]:257
+       VectorCAST provides full support for templates
+       Like abstract classes, templates must be tested via specific instances
+       Instances which exist within the UUT appear as testable automatically
+       Unit appendix user code can be used to create additional template instances
+        >   Method 1: Define object of template type
+        >   Method 2: Template instantiation directive
+
+?   Quiz: VectorCAST can use concreate subclasses from ...
+    a:  Existing subclasses in the UUT
+    b:  New subclasses defined in appendix user code
+    c:  Automatic concrete classes defined by VectorCAST
+    d:  All the above
+    &&& d see:[*]:257
+
+<<< eof.Lec#17  sta:done
+
+
+>>> beg.Lec#18:Troubleshooting Build Issues     [*]:261-270
+
+### dtm:2025-07-10:Do
+
++   Troubleshooting Build Process Topics
+       Code Coverage & Range Test Options
+       Log Messages Window
+       The Jobs Window
+       The Job Status Window
+       Running commands outside of VectorCAST
+       Searching the Harness Directory
+
++   Speeding Up the Build Process
+    When Diagnosing Build problems, 
+        you may find that you have to do multiple rebuilds. 
+    Disabling these options can speed up the process and 
+        reduce the number of variables related to the problem.
+    --- 
+    Disable Range Check
+           gui::Tools->Options->Execute->RangeCheck->None
+    Disable Code Coverage
+           gui::Environment->UpdateEnvironment
+           Go to step # 4 and set Coverage Type to None
+           Select Update
+    --- 
+    Note 1: Disabling Code Coverage typically does not affect 
+        the underlying build problem.
+        However, if it does, it is a clue that 
+            instrumenting the code is related to the problem.
+    Note 2: Make sure to re-enable these options after resolving 
+        the build problem. 
+
++   Log Messages Window *:[263]
+       The Log Messages Window shows a report of the functional 
+            operations that VectorCAST is performing
+     To see the window 
+
++   The Jobs Window     *:[264]
+     The Jobs Window shows the exact commands that VectorCAST runs at the shell
+     Find the Jobs tab at the bottom left of the GUI and pin it open
+     Double click on the last line to get the detailed command 
+        line and its output in a larger window
+
++   The Jobs Status Window *:[265]
+     The Jobs Status Window appears when you double click on 
+        a line in the Jobs Window
+     You should see the exact command line and its output
+
++   Running Commands Outside of VectorCAST
+    If the Log Messages or the Jobs Window doesn’t narrow down the problem,
+        sometimes it helps to run the command outside of VectorCAST.
+     DoubleClick on the last line of the Jobs Window
+     Copy the contents of the Job Status Command Window
+     Open a shell (DOS window) from VectorCAST
+        > Find the DOS Window Icon, or do Tools->CustomTools->CommandPrompt
+     Paste the command and run it there
+
++   Searching the Harness Files for Clues
+     Sometimes, it’s helps to diagnose build problems by looking at the 
+        generated Harness Files.
+     By using grep or findstr, you can quickly find 
+        the specific file that contains the offending
+        code, or clues to the problem
+     For example, 
+        let’s say you get a linker error saying that “foobar” is undefined.
+     The command below would show what modules contain “foobar”
+
++   Build Interactive
+     When Building at VectorCAST Project level, 
+        you cannot open an Environment until the Build is successful
+     To Diagnose Build Problems from a VectorCAST Project, do 
+        gui::Build->Interactive
+    
++   Troubleshooting Summary
+       Disable Code Coverage & Range Test
+       Analyze the Log Messages Window
+       Analyze the Jobs Window
+       Analyze the specific command in the Job Status Window
+       Run the command outside of VectorCAST
+       Search the Harness Directory for Clues
+
+<<< eof.Lec#18  sta:done
+
+
+>>> beg.Lec#19:Debugging Test Execution Issues  [*]:272-283
+
+### dtm:2025-07-11:Fr
+
++   Primary Debug Methods
+    1.  Analysis of Execution Report
+           Look at the events leading up to the end of execution
+    2.Code Coverage
+        Make Sure Code Coverage Results match your expectations
+    3.Source Code Debugger
+       When all else fails, 
+        the Test Harness can be debugged just like any other application.
+
++   Analysis of Execution Report
+    -   The Execution Report shows all details of the test
+         Parameter Values at beginning & end of Test
+         An Event for each Stub Call
+         Contents of Global Data
+    -   The following options may give additional clues:
+           Deselect 
+            gui::Tools->Options->Report->ShowOnlyDataWithExpectedResults
+           Deselect 
+            gui::Tools->Options->Report->ShowOnlyEventsWithExpectedResults
+
+    -   Display Global Data at additional points
+        Display checkGlobalDataAfter
+        x   each Event 
+        x   each Range iteration 
+        x   each Slot iteration 
+        x   each TestCase
+
++   Code Coverage Results
+    Code Coverage Results show execution history
+       At top of Environment View, RightMouse->DeselectCoverage
+       Select the Coverage box for the Test of Interest
+       Use Green/Red arrows to quickly find 
+            the next executed/non-executed line
+       Important Note:
+        >   In the case of abnormal execution (segfault, abort, etc…), 
+            the coverage data may not be accurate.
+
++   Test Harness Execution Structure
+    Before jumping into the Debugger, 
+        it’s good to understand the execution structure
+    of the Test Harness:
+       Board Init/OS Init Code (pre main)
+       Harness Init Code (starting at main)
+        >   FUT Entry
+        >   (conditionally) Stub Processing Code
+        >   FUT Exit
+       Harness Exit Code (after FUT)
+
+    Note 1:     FUT stands for Function Under Test
+    Note 2:     By setting key breakpoints in debugger, 
+                    you can narrow down the location of the problem.
+    Note 3:     Most Execution Problems occur in the actual FUT.
+
++   Board Init/ OS Init Code
+    Potential causes of problems before “main()”:
+       Hardware Problems
+       Static Constructor issues (in C++)
+       Improperly formatted download image
+       Improperly Built Harness Executable
+        >   Is the Linker Control File correct?
+        >   Are the compiler/linker options correct?
+       The Debugger may not help with problems in this area, 
+            other than examining memory.
+        >   It’s too early in the game to step thru the code.
+        >   Source code may not be available
+
++   Harness Init
+    Potential causes of problems in harness initialization:
+       Harness Configuration
+       Stack Corruption
+       Heap Exhaustion
+       Source Code Debugging should work for this code
+       May need to contact VectorCAST Tech Support for help in this area
+
++   FUT: Function Under Test
+    This is the actual code under test ...
+       Usual culprit for most execution problems
+       Source Code Debugging should allow you to step thru this code
+       Common Problems:
+        >   Global Data not set up properly
+        >   Pointers not Allocated
+        >   Hardware Dependencies
+
++   Stub Processing
+    Stub Processing Code will only get executed if the FUT calls a stub
+       Potential Problems:
+        >   Stub Parameter User Code
+        >   Environment User Code
+       From the Source Code Debugger, 
+        you can set break points or step thru the Stub Code.
+
++   The Debugging Process
+    1.  Click on the affected Test Case
+    2.  RightMouse::ExecuteWithDebug
+        >   If Coverage is on, 
+            RightMouse::ExecuteWithDebug->WithoutCoverage
+    3.  From the Debugger, set a break at main() & the FUT, and Go
+    
+    -   Results:
+       If execution does not reach main, 
+        then there is a Board/OS Init problem (see earlier slide).
+       If execution does not reach the FUT, 
+            then there is a problem in the Harness Init Code
+       If execution reaches the FUT, 
+        normal debug techniques can be used to step thru the code
+
++   Caveats
+    Code Coverage can affect execution behavior
+       Run the test with & without coverage to see  
+        if the behavior is consistent, 
+        before trying to debug the problem
+    Using a debugger can affect problem behavior
+       Run the test case with & without the debugger to see 
+            if the behavior is consistent    
+
+    -   Is the problem deterministic?
+       Once the problem is characterized, make sure it’s repeatable
+       Some issues can cause inconsistent behavior. E.g.:
+        >   Watch Dog Timers
+        >   Memory Corruption
+        >   Hardware Problems
+
+=== Debugging Summary
+    
+    Primary Debug Methods:
+    1.  Analysis of Execution Report
+           Look at the events leading up to the end of execution
+    2.  Code Coverage
+           Make Sure Code Coverage Results match your expectations
+    3.Source Code Debugger
+           When all else fails, 
+            the Test Harness can be debugged just like 
+                any other application
+    
+<<< eof.Lec#19  sta:done
+
+>>> beg.Lec#20:System Testing with VCA/QA       [*]:285-297                 ;
+
+### dtm:2025-07-14:Mo
+
++   Anm: 
+    VectorCAST/QA ist ein eigenes Produkt.
+
+?   Was ist VectorCAST/QA?
+    Vorhersagbare Qualität für die Embedded-Entwicklung
+    VectorCAST/QA bietet einen integrierten Workflow für White-Box 
+        Systemtests. 
+    Die Anwendungsinterna können überwacht, 
+        und Fehler durch Probe Points injiziert werden. 
+    Das Änderungsbasierte Testen von VectorCAST/QA reduziert 
+        die benötigte Testzeit, 
+    da nur Tests durchgeführt werden, 
+    welche auch durch Codeänderungen beeinflusst werden.
+    VectorCAST/QA erlaubt Teams die effiziente Zusammenarbeit bei 
+        Testaktivitäten, beschleunigt die Testausführung, 
+    und bietet aktuelle Metriken über den Release-Status. 
+        VectorCAST/QA integriert sich im Buildsystem und der existierenden 
+    Testinfrastruktur. 
+    Im Hintergrund sammelt es Schlüsselmetriken, 
+        wie z.B. Testfallstatus und Code Coverage – Daten. 
+    VectorCAST/ QA adaptiert den vorhandenen Workflow und vorhandene 
+        Werkzeuge wodurch keine weiteren Änderungen notwendig sind.
+
+!   Im Gesamtpakt von VectorCAST ist VectorCAST/QA der Anteil,
+    welcher die Coverage Erstellung abdeckt.
+
+=== VectorCAST/QA
+
+    +   Code Coverage
+           C/C++ , ADA
+           Statement, Branch/Decision, MC/DC
+           Code-complexity analysis, Basis-path analysis
+
+    +   System / Functional Test Verification
+           Running your existing tests to see what code is being executed
+           System tests can be executed different ways:
+            > from scripts, manually through GUI, simulator,…
+         Change Based Testing (CBT)
+
+    +   Standards
+           DO-178 B/C (Avionics)
+           ISO-26262 (Automotive)
+           IEC-61508 (Industrial)
+           EN-50128 (Railway)
+           IEC-62304 (Medical)
+
++   Where VectorCAST/QA Fits into Your Development Process
+    +   System Testing 
+    +   Integration Testing 
+    +   Unit Testing 
+
++   System Testing Overview    
+       What is Code Coverage
+       VectorCAST/QA
+       Building a VectorCAST Cover Environment
+       Instrumenting Source Code
+        Anm: Dem Code wird die Coverage hinzugefügt.
+       Customizing Output Collection
+       Building an Executable
+       Generating Coverage Data
+       Coverage Analysis
+       Command Line Automation
+       Reporting
+
++   What is Code Coverage?
+    Indicates how much code has been executed
+       Where the CPU Program Counter has gone
+    Different types
+       Statement – executable lines reached
+       Branch – conditions satisfied
+       MC/DC (Modified Condition/Decision Coverage ) - 
+            conditions and sub conditions satisfied
+    Combining types
+       Statement and Branch
+       Statement and MC/DC
+
++   Code Coverage Examples  [*]:289
+    if( Entree == Lobster )     * branch
+    {
+        Dessert = Pie;          * statement
+    }
+    else if ( Entree==Steak && Salad==Green ) * MC/DC
+    {
+        Order->Dessert = Cake;
+    }
+
++   Coverage Industry Modes
+    Support for Industry Standards
+           DO-178 B/C
+           ISO-26262,
+           IEC-61508,
+           EN-50128,
+           IEC-62304
+    Mapping of Generic Coverage Terms to Industry Specific Terms
+    Switch Modes
+       gui::Tools->Industry Mode and then select
+        the specific Industry Mode
+
+=   QA Build and Environment Directory
+
+    +   QA Build Directory is a disk directory containing VectorCAST working 
+            files specific to a System Test Environment
+           Location is in the “build” directory
+            >   Database files describing structure of units
+            >   Coverage functions
+            >   Results files
+
+        <<< example 
+            $env:v_WSP\~\~\00_academy_legacy\_wsp\4098997643
+            S0000003.cpp
+            E409_MATH_overview_report.txt
+    
+    +   QA Environment Directory is a 
+            disk directory containing VectorCAST/QA environment
+            specific files
+        <<< example:    
+            E409_MATH.cfg
+            E409_MATH.env  
+            E409_MATH.mfg
+            E409_MATH.tst
+            dir =: 
+            $env:v_WSP\~\~\00_prjAcademy\environment\E409_MATH
+        
+           Location is in the “environment” directory
+            >   Contains configuration files needed to rebuild environment
+            >   This folder and all its contents need to be checked 
+                into Configuration Management
+
+    +   Created with a 4-Step Process
+           Name The Environment
+           Configure the Language
+           Locate the Source Files
+           Set Coverage Options
+
+=   Coverage I/O Files
+    +   VectorCAST Cover I/O files
+           The I/O files are in the environment directory and are called:
+            >   c_cover_io.c for C source files
+            >   c_cover_io.cpp for C++ source files
+            >   vcast_c_options.h, c_cover.h included by the above
+            >   vcast_cover_io.adb, for Ada source files
+            >   vcast_cover_io.ads
+           I/O files contain the Data Structures & Functions needed to record 
+            the Coverage Information
+    +   When compiling/linking the instrumented source files, you must 
+        include the appropriate I/O file (for “c”, e.g., link in c_cover_io.c)
+           Add to your compile command:
+            >gcc -g -c manager_driver.c manager.c database.c %COVER_ENV%\c_cover_io.c
+           Append through the GUI
+        IMPORTANT: 
+            Note that you may need to customize the 
+            I/O files to support the particular I/O mode 
+                and I/O API that exists on your target.
+    
+=   Building an Instrumented Executable
+    Two Methods
+    1.  Use Normal Build Mechanism to build your application
+        >   e.g,, makefile, Visual Studio Project, Eclipse Project. etc…
+        >   Add c_cover_io.c to your project
+        >   Add the include path for vcast_c_options.h & c_cover.h
+        *   Note that vcast_c_options.h changes 
+            if instrumentation options change.
+    2.  Use the System Test Script in VectorCAST     !PHA: not in my VCA 
+        > RightMouse on Environment->SystemTesting->EditScript           
+        > Add Build Command to Python Script
+        > Optionally, add Execution Scripts
+        
+=   Collecting Coverage Results
+
+    Once the Executable is Built:
+       Running the code will execute the Instrumented Code
+       Code Coverage Results will be stored in TESTINSS.DAT
+       File is overwritten at each execution
+
+    Coverage Results are Imported Into VectorCAST/QA
+       ENVIRONMENT->ADD TEST RESULT
+       Point to TESTINSS.DAT
+       Give descriptive name to the results
+
+    Results are listed in Test Results Pane
+       Checking box indicates coverage for test situation should be displayed
+
+    Double-click on source file to bring up Coverage Viewer
+
++   Integrating Coverage Between System & Unit Testing [*]:295
+    System & Unit Coverage can be combined in one view
+
++   VectorCAST/QA in Review
+
+    -   Code Coverage
+           C/C++ , ADA
+           Statement, Branch/Decision, MC/DC
+           Code-complexity analysis, Basis-path analysis
+
+    -   System / Functional Test Verification
+           Running your existing tests to see what code is being executed
+           System tests can be executed different ways:
+            > from scripts, manually through GUI, simulator,…
+           Change Based Testing (CBT)
+
+
+
+<<< eof.Lec#20  sta:done
+
+>>> beg.Lec#21:Additional Test Case Options     [*]:299-307
+
+### dtm:2025-07-15:Di 
+
++   Additional Test Case Options Topics
+       Find and Filter Bar
+       Duplicating a Test Case
+       Min/Mid/Max Test Cases
+       Partitioned Test Cases
+       Control Flow as an Expected Result
+       What Global Variables are Referenced by a Function?
+
++   Duplicating Test Cases
+
+    *   Right Click to Duplicate a Test Case
+
+    *   Duplicates the following data
+        >   Global data
+        >   Input and expected values
+        >   Linked Requirements
+        >   Test case notes
+        >   Test case options
+        >   Test case user code ?PHA
+        >   Control flow
+
++   Min/Mid/Max Test Cases
+    *   What are Min, Mid, and Max Test Cases?
+           Automatically generated tests
+           Used for Robustness Testing
+           Based on the base type of parameters of the function being tested
+
+    *   Special Characteristics
+           Names are hard-coded to <<MIN>>, <<MID>>, or <<MAX>>
+           Tests cannot be edited
+           If you “open” the test, it will generate a “clone”, 
+                    or “derived” test
+            >   Auto name: function_MIN_.001 for example
+    
+    *   Script Syntax
+           The Script for a MIN, MID, MAX test will key off the name
+           The Script for a “Clone” or “Derived” Test will 
+            have the special TEST.VALUE line:
+
++   Partitioned Test Cases
+
+       Insert using the right-click context menu
+        >   Automatic Name will have –PARTITIONS suffix
+        >   PLACE_ORDER-PARTITIONS
+    
+       Number of Partitions, 
+            Controlled by Test Case Option
+
+       Input values will vary from MIN to MAX for each parameter
+        >   Number of values for each parameter will be based 
+            on Number of Partitions
+        >   (MAX – MIN) / Number of Partitions
+        >   So, an unsigned char with 5 partitions, 
+                will result in values: 0, 51, 102, 153, 204, 255
+        >   Actual Test value is set to: 
+                <<MIN>>..<<MAX>>/<<PARTITION>>
+        >   <<PARTITION>> is dynamically computed based on type
+
++   Control Flow as an Expected Result
+
+    What is Control Flow?
+       The sequence of calls from between the UUT and any Stubbed Functions
+
+    Common Use Cases
+       Testing Executives where there are no parameters passed
+       Testing algorithms where the order of calls are critical
+
+    Saving/Clearing Control Flow
+       Use Test Menu->Control Flow->Save or Clear
+
++   Global Data Cross Referencing
+
+    *   VectorCAST “knows” what globals are used by a function
+           Click on a function under test, 
+                and the globals that are referenced are high-lighted
+           Click on a global variable, and the functions 
+                that reference that variable are high-lighted
+
+    *   “Display Referenced Items Only” checkbox
+           Useful if you have a “lot” of Global Variables.
+           Will “filter” Parameter Tree to Only Show 
+                those globals that are referenced
+
+?   Quiz: Partitions {status:open}
+    A Partition Test Case with 5 Partitions. 
+        How many Iterations will execute?
+        a:  6 
+        b:  5
+        c:  12 
+        d:  1
+    <<< 5 ?PHA
+    
+<<< eof.Lec#21  sta:done
+
+>>> beg.Lec#22:Environment Building Errors      [*]:309-319
+
+### dtm:2025-07-16:Mi
+
+=   Error Summary
+    *   Preprocess Errors
+           VectorCAST must pre-process the code under test, 
+                using your compiler
+    *   Parse Errors
+           VectorCAST must parse the output of the pre-processor
+
+    *   Harness Compile Errors
+           Sometimes, the auto-generated code might not compile
+
+    *   Harness Link Errors
+           Sometimes the test harness might not link
+
++   Preprocessor Error
+    •   Missing Include File
+    •   Undefined Macro
+
++   Parser Errors
+    •   No two compilers are alike
+           Even between versions of the same compiler things change
+           Different keyword and extensions
+           Compiler Bugs
+    •   Parser Flags 
+        As a Result, “Parses Flags” are needed
+           If the Template or Parse Flags are wrong …
+
++   Conflicting Header Files *:[313]
+    When multiple search directories contain the same header file
+       Compiler will generally use the “first” one it sees
+       If first occurrence is incorrect instance, 
+            need to reorder Source Directories * !PHA
+       Can cause parser or linker errors, 
+            depending on how incompatible the headers are
+
++   Linker Errors 
+    •   Missing Prototype
+        Call to stub without prototype
+               gui::Environment->View->Undefined Entities Log
+                >   List of all symbols and reason VectorCAST 
+                    did not stub a symbol
+                >   Will automatically be opened if there is a link error
+
+    •   Missing Symbols
+        Missing Symbol Defined in a “Library Include Directory”
+           If you want this stubbed, change the directory type to: 
+                “Search Directory”
+           If you want to use real code, 
+                add the path to the .obj or .a to the linker options
+
++   UUT Modifications
+    •   Changing a Data Item Name (parameter/global object/function)
+           Rebuild environment
+            >   Script log will be displayed on re-open
+            >   Search for error messages and re-enter values
+           From scripts
+            >   Use text editor to change appropriate names in test script
+    •   Deleting an object
+           When test script is read, 
+                view error messages to confirm messages about missing objects
+    •   Adding an object
+           New tests may need to be added
+    •   Options
+           “Strict test case importing”
+            > Test Case is considered “failed” if errors 
+                    during script read
+            >   “Fail” cannot be cleared until the Test Case is Edited and Saved
+           “Only show errors in script log”
+            >   Useful when reading very large script files
+
++   Test Script Log *:[317]
+    example: C:\workspace\prj\00_academy_legacy\_tst\math.tst
+
+?   Quiz: Macro
+    Macros in the UUT can be defined ...
+        a   In the VectorCAST Compiler Options
+        b   In a header or source file
+        c   Either A or B
+        d   Neither A nor B
+    <<< c 
+    
+    
+<<< eof.Lec#22: sta:done
+
+
+>>> beg.Lec#23:Code Coverage Options            [*]:321-328
+
+### dtm:2025-07-28:Mo
+
++   Code Coverage Options Topics
+       I/O Mechanisms
+       Coverage Animation Control
+       Coverage Report Options
+       Coverage In Headers
+       Other Coverage Options
+        >   Uncovered Line Indicator
+        >   Boolean Coverage outside of decisions
+        >   Missing “default” in case statement
+
++   I/O Mechanisms
+    Coverage Tab Option:
+           Controls amount and frequency of data dump to host
+    Coverage I/O Type Options:
+           Real Time<std> 
+                – coverage output interlaced with test execution
+            >   Might slow test execution, 
+                but not usually important for Unit Test
+           Buffered - coverage data output at end of test
+            >   Might lose coverage data if test aborts
+           Animation – allows single-step through coverage results
+            >   Every instrumentation line dumps 
+                    data (there will be duplicates)
+            >   Allows post run an alysis of the control flow
+    Changing I/O Mode requires re-instrumentation of environment
+
++   Animation Control
+       Right-click on Test Case and select: 
+            Activate Coverage Animation
+       Animation Toolbar Appears
+        >   Go to Beginning of Test
+        >   Step Back
+        >   Run / Pause (Step-by-step)
+        >   Step Forward
+        >   Go to End of Test
+        Go to Breakpoint Location
+        >   Set breakpoint
+        >   Remove breakpoint
+        >   Status slider
+
++   Coverage Report Options
+    Content controlled by Report Tab: 
+        “Coverage Report Options"
+        --> Metrics Report
+
++   Coverage in Header Files
+    Provide code coverage in header files”
+           Example: in-line functions
+    “Show in-lines as covered in all units”
+
++   Additional Coverage Options
+       Empty Statements are Coverable
+       “Uncovered line indicator”
+        >   Flag used at beginning of uncovered lines in 
+                Coverage Viewer/Report
+        >   Allows searching for uncovered lines in large source files
+       Undefined default case for “switch” statements
+        >   Report on implicit “default” case for switch-case blocks”
+       Provide Code Coverage in Declarations in C
+        >   Instrumentation inserted before object declarations
+    
+    *   All options := off|on
+
+
+?   Quiz: Coverage Output 
+    To reduce the amount of Coverage Output, select:
+        a.  Real Time I/O
+        b.  Buffered I/O
+        c.  Neither A nor B
+        d.  Animation
+    <<< b
+
+<<< eof.Lec#23  sta:done
+
+
+>>> beg.Lec#24:Best Coding Practices            [*]:330-343
+
+### dtm:2025-07-28:Mo
+
++   Cost of Finding and Resolving Bugs
+
++   Best Coding Practices: Key Concepts
+    •   Separation of System from Application
+               Can you replace your Application with “Hello, World”?
+               Make sure System Files don’t depend on Application Files
+               Adding Applications & Peripherals should be consistent
+    •   Separation of Control from Function
+               Control: Timing, Looping, OS/Tasking Dependencies
+               Function: Algorithms, Data Processing, etc…
+    •   Abstraction of External Interfaces
+               With Well Defined, Non-Overloaded, Logical Interfaces
+    
+    *   Testing with Pointer Arguments
+
++   Separation of System from Application
+    Hierarchische Gliederung der Module !
+    One-way dependencies are easy to
+        break apart & unit test
+
++   Separation of Application from System
+    // 1-Way Dependency
+
++   Separation of Function from Control
+    Bsp:    (GetMsg & PutMsg) <=> ProcessMessage()
+        get & put trennen von der Verarbeitung
+
++   Code Example  *:[338-339]
+
++   Testing with Pointer Arguments
+    What are some typical problems with pointer arguments?
+           Pointers are usually not tested for correctness
+            >   Other than a Null Pointer
+           Passing pointer values tightly couples the underlying data
+                between caller/callee
+    Potential Alternative Solutions
+           Integer IDs
+           Array Indexes
+           Handles (hidden pointers)
+
++   Using Pointer Handles: Coding Example *:[341]
+
+<<< eof.Lec#24  sta:done
+
+
+>>> beg.Lec#25:VectorCAST Workflow Overview     [*]:345-349
+
+### dtm:2025-07-28:Mo
+
++   Comparing VectorCAST Workflow and C/C++ Training
+
+    VectorCAST C/C++ Training
+           How to use the tools supplied with VectorCAST
+        >   Create Unit Test Environments
+        >   Simple, Compound and Basis Path Test Cases
+        >   Environment, Test Case and Parameter User Code
+        >   Create System Test Environments
+        >   Instrument Source Code
+        >   Collect Coverage Data
+        >   Probe Points, Requirements Gateway, 
+                Cover By Analysis, CSV Import
+
+    VectorCAST Workflow Training
+           How to implement VectorCAST
+        >   From Nothing to Something
+        >   Create Testing Solution from Beginning to End
+        >   VectorCAST Start-up Scripts
+        >   Collecting Build Information
+        >   Set Up Complete Working Solution
+        >   Implement with Your Project
+
++   Unit Testing
+    This style of testing isolates an individual function or procedure 
+        of an application and
+    ensures that the unit behaves as designed.
+       Units are the smallest testable part of any software
+        >   Usually at the function level but modules can be tested as well
+       Stubs assist in unit testing
+        >   Control input
+        >   Expected values on parameters
+    Anm:    In VectorCAST ist eine "unit" eine c-Datei.
+
++   System Testing
+    Often referred to as integration testing, 
+        V&V, or application testing. 
+    This style of testing is characterized by its focus on 
+        executing and evaluating a standalone
+    application (i.e. one that can be built independent of the test tool).´
+       Tests are run against a complete “system”
+        >   As opposed to the component-level focus used with unit testing
+       The code under test is a standalone binary
+        >   Not wrapped by a “test harness” (as in unit testing)
+        >   However, the binary under test can be anything – 
+                even 3rd party unit tests
+
++   Code Coverage
+    Answers the question: 
+        “When I ran my code, what actually executed?”
+       Identifies gaps in test coverage
+       Each result shows what occurred during one run
+        >   Multiple runs aggregate to show overall coverage
+       Coverage is NOT proof that the code is correct!
+        >   Good test pass/fail criteria show correctness
+
++   Lua Source Code
+    :=  Lua Source Code used as source base for lab exercises
+       Lua is an open source embeddable scripting language
+        >   Written in C
+        >   Compiles with gcc via make
+        >   Runs on Linux and Windows
+        >   Suite of system test scripts
+        >   Contains challenging code. Great for practicing VectorCAST!!!!
+       Download site
+        >   Source Code
+            https://www.lua.org/download.html
+        >   System test script suite
+            https://www.lua.org/tests/
+
+<<< eof.Lec#25  sta:done
+
+
+>>> beg.Lec#26:Workflow Preparation             [*]:351-360
+
+### dtm:2025-07-28:Mo
+
++   Workflow Preparation Overview
+       Set up folder structure
+       Set up environment variables
+       Collecting Build information
+
++   Importance of Preparation
+    Preparation Saves Headaches Later
+       Know how to use your application’s development tools
+        >   Quickly find build settings
+        >   Quickly find variable declarations
+        >   Debugger commands
+       Identify spaces in paths to build tools and source code
+        >   If there are spaces in your paths and they are unavoidable, 
+            short file name format (DOS 8.3) 
+            must be used to access these paths
+        >   Can be converted via scripting
+       Set up VectorCAST working folder structure
+       VectorCAST startup scripts
+       Collect build information
+
++   VectorCAST Working Directory Structure
+    
+    •   Store all VectorCAST artifacts in one folder
+            Create a VectorCAST working directory in the base directory of 
+            your source code
+            >   Check out source code from CM, VectorCAST artifacts are 
+                    already available
+            >   VectorCAST start up scripts will not need to be edited
+    •   VectorCAST Startup Scripts
+             Stored in the VectorCAST working directory
+             Used to set up environment variables useful for automation and 
+                portability
+    •   VectorCAST Support Files Folder
+               Used to store files that are essential to VectorCAST and 
+                your project
+            >   Custom linker scripts
+            >   Custom header files
+
++   VectorCAST Working Folder Structure *:[354]
+
++   VectorCAST Start-up Scripts
+    VectorCAST is started via two .bat/.sh scripts
+       setup_env.bat/.sh
+        >   Establishes environment variables used for 
+            automation and portability
+        >   Specifies VectorCAST installation directory and license file
+        >   Directories containing executables for build tools and 
+            VectorCAST executables
+        >   Placed on default PATH environment variable
+       Start_VectorCAST.bat/.sh
+        >   Calls setup_env.bat/.sh
+        >   Starts VectorCAST
+    
+    ?   Why have two scripts? Why not set up environment variables in
+        Start_VectorCAST.bat/.sh?
+    <<< verschiedene envs so möglich
+
++   Windows Batch   *:[357]
++   Linux Shell     *:[358]
+
++   Collecting Build Information
+    •   VectorCAST uses the same preprocess, 
+            compile and link commands that are used with your 
+                existing project
+               Preprocess to expand macros
+               -I options
+               -D options
+               Optimizations
+    •   Two methods for collecting build information
+             Redirect the standard output to a file
+             Use build log supplied from system developmental tools
+
++   Redirect Standard Output
+       make generic > build_log.txt
+        >   Redirects standard output to build_log.txt
+       make generic >> build_log.txt
+        >   Redirects standard output and appends to build_log.txt
+       make generic 1> build_log.txt 2>&1
+        >   Standard output is redirected to build_log.txt 
+                identified by output 1
+        >   Standard error output (2) is redirected and 
+            appended to build_log.txt
+    
+<<< eof.Lec#26  sta:done
+
+>>> beg.Lec#27:Unit Test Workflow               [*]:363-374
+
+### dtm:2025-07-28:Mo
+
++   Unit Test Workflow Overview
+       Template Unit Test Environment
+       Create a VectorCAST Project based off template environment
+       Promote/demote configuration settings
+
++   Template Unit Test Environment
+    •   Create a stand-alone unit test environment
+           Start off with a relatively “simple” file
+    •   Runtime Support Package (RSP) development
+           Ensure that VectorCAST can:
+            >   Load instrumented code on the target
+            >   Receive coverage information from target
+            >   Target can be a simulator or host environment
+    •   Support files
+           Directory containing supplementary files
+            >   Custom linker files
+            >   Intrinsics
+    •   Create a VectorCAST Project based off template environment
+           Import compiler and RSP settings using the template environment
+
++   Runtime Support Package (RSP)
+
+    Provides an interface layer of communication when testing on 
+        an embedded target
+       Test case execution can be done on an embedded target environment
+       Test software that cannot be tested on host due to target dependencies
+    
+    Target can be:
+       Host machine
+       Simulator – vVIRTUALtarget, TRACE32, uVision, etc.
+       Remote target platform
+
+    Architecture of target is not important
+       VectorCAST only needs a mechanism to send and retrieve 
+        ASCII test data to and from the test harness
+
++   Execute Command *:[366]
+    Controls how VectorCAST interfaces with
+        specific compiler and target
+    Automatically filled out by VectorCAST
+           Scripts in VCAST/DATA
+            >   Windows and Linux scripts
+    Two types of entries:
+           Actual
+            >   GHS: simarm
+           “Flag”
+            > IAR ARM9 ver 5: <<iar_5x_tgt>>
+
++   Parse Command Line and Test Settings Utilities  *:[367-368]
+    Parse Command Line
+       Automatically extract include paths (-I)
+        and defined variables (-D)
+       Convenient for complex compiler options
+        Test Settings
+       Used to determine if these compiler
+        settings will work when building an environment
+       Reasons why compiler settings won’t work
+        >   Missing defined variables
+        >   Source directories not in correct order
+        >   Missing library include directories
+
++   Parser Flags    *:[369]
+    VectorCAST uses 3rd party parser (EDG)
+    Flags are acquired from VectorCAST support
+    •   Common flags
+           --define_macro=
+           --64_bit_target
+    •   Mixture of C and C++
+           C parser flags are entered on Mixed C/C++ tab
+           C++ entered on Language tab
+
++   Misc. Tab   *:[370]
+    
+    What does the preprocessor do?
+       Processes commands that begin with ‘#’
+        known as directives
+        >   Expands macros and included files
+        >   Replaces symbolic constants with actual values
+       Removes comments unless –C option is used 
+   
+    Post-preprocess command
+       Specify a custom script that transforms 
+        non-standard code constructs into code suitable for the parser
+       VectorCAST passes 3 arguments
+        >   Original file path
+        >   Preprocessor output file path
+        >   Path to an output file that does not yet exist
+
++   MMisc. Tab cont.  *:[371]
+
+    Collapse expanded header files
+       #include’s are expanded so that the
+        compiler can find the header files
+        >   System header files are the interface between application code and 
+                system calls
+            and libraries
+        >   User created header files are the interface between the source 
+            files for the application
+
+       During preprocessing the paths to
+        header files and macros are expanded
+        >   Header files are copied into build directory
+        >   #include’s are collapsed to original statement
+        >   To save preprocessed output use --savetemps
+
+    This option is set by the chosen template
+
++   Create VectorCAST Project
+    Save the configuration file from the template environment in 
+        the Support Files folder
+       Used as a backup
+
+    The template environment is used to create a VectorCAST Project
+       Compiler node created with all configuration settings
+
+    Once the project is created based off the template environment, 
+        the environment will need to be migrated to the workspace
+       Permanently migrates the selected nodes to the new project
+
++   Promote and Demote Options
+    •   Options and settings can easily be promoted/demoted 
+            to another configurable node
+           Configure options that are common to a particular node
+           Open the configuration editor for a node
+           Right click in the editor window and select Column Options
+    •   The column options will be displayed at the bottom of 
+        the configuration editor
+           Each column is a configurable node
+           Each node’s settings can be compared and promoted/demoted
+           Cells highlighted in yellow denote settings inheritance
+           Grey cells are not configured
+
++   Column Options  *:[374]
+
+<<< eof.Lec#27  sta:done
+
+
+>>> beg.Lec#28:System Test Workflow             [*]:378-388
+
+### dtm:2025-07-28:Mo
+
++   System Test Workflow Overview
+       Where does VectorCAST/QA fit?
+       What is VectorCAST/QA?
+       Terminology
+       How the pieces fit together?
+       Steps to setup VectorCAST/QA
+
++   What is VectorCAST/QA ?
+    
+    VectorCAST/QA is a system testing automation tool that 
+        provides code coverage.
+•   Unit testing
+       Instrument one file or a subset of files
+       Stub external dependencies
+       Set input and expected values
+•   System testing
+       Entire application is instrumented
+       Simplifies running tests with automation control
+       Exercise the application with scripts or manual testing procedures
+       Reduces test time with Change-Based Testing (CBT)
+
++   Where VectorCAST/QA Fits into Your Development Process
+
+=   Terminology ===============================================================
+
+•   System Testing
+    Testing methodology that’s applied to a Software Project (Drivers, 
+        Interfaces, Application, etc.).
+    Tools to develop system tests are CANoe, vTestStudio, 
+        NI Test Stand, Python Scripts,
+    debuggers, etc.
+
+•   Preprocessor
+    Compiler mechanism to breakdown macros, header files, 
+        and tag for compilation
+
+•   Translation Unit
+    Output of the preprocessor (*.tu.c, *.tu.cpp)
+
+•   Instrumentation
+    Code added to your source code by >>>VectorCAST<<< to keep track 
+        of what statements and branches have been executed
+
+•   System Testing Environment
+    VectorCAST environment that lists the source files to instrument 
+        for code coverage. 
+    Formally VectorCAST/Cover
+
+•   VectorCAST/QA
+    VectorCAST platform that consists of a 
+        System Testing Environment and the automation of
+    System Test Verification with code coverage.
+
+
++   Build Log and VectorCAST/QA Preparation
+    Build log is used to set options in VectorCAST/QA environment 
+        and to choose compiler template
+    Once compiler template is determined create test suite and 
+        group for system testing
+       Separate from unit test environments
+       May be options unique to system testing
+
++   VectorCAST/QA Environment Creation
+    Create system test environment
+       Right click on system test group node
+       Select CreateSystemTestEnvironment->Interactive
+
++   I/O Mechanism
+    Real Time
+       Writes results to file as test is executing
+        >   Can significantly slow down test execution
+    Buffered
+           Store coverage data in a buffer
+           Call VCAST_DUMP_COVERAGE_DATA() to retrieve coverage data
+            > Can be called from a Probe Point so that source does 
+                not need to be edited
+    Animation
+           Play back coverage results in coverage viewer (unit test only
+
++   Coverage Output API
+
+    Cover I/O Type set to “Buffered”
+       Coverage data written to buffer on target
+
+    VectorCAST provides API function 
+        VCAST_DUMP_COVERAGE_DATA()
+       Writes out coverage data from buffer to a file
+       Default file name is TESTINSS.DAT
+       Can be called in a probe point
+        >   Source does not need to be edited
+
++   Coverage IO Files
+    VectorCAST Cover I/O files
+           The I/O files are in the environment directory and are called:
+            >   c_cover_io.c For C source files
+            >   c_cover_io.cpp For C++ source files
+            >   vcast_c_options.h, c_cover.h Included by the above
+            >   vcast_cover_io.adb, For Ada source files
+            >   vcast_cover_io.ads
+           I/O files contain the Data Structures & Functions needed 
+                to record the Coverage Information
+           When compiling/linking the instrumented source files, you must include the appropriate
+            I/O file (for “c”, e.g., link in c_cover_io.c)
+            >   Add to your compile command: gcc -g -c manager_driver.c manager.c database.c %COVER_ENV%\c_cover_io.c
+            >   Append through the GUI
+
++   Regression Scripts
+    Regression scripts allow the regeneration of the tool options and the test
+        environment
+    Files created:
+           Batch file environment_name.bat/sh
+           Environment script env_name.enc with instructions on how 
+                to build environment
+            >   Contains source file information and probe points
+            >   XML format
+            >   Called by env_name.bat/sh
+           If environment has imported results env_name.cvr is created
+
++   Building an Instrumented Executable
+    Two Methods:
+    1.  Use the System Test Script in VectorCAST
+        >   Right mouse on Environment -> System Testing->Edit Script
+        >   Add Build Command to Python Script
+        >   Optionally, add Execution Scripts
+    2.  Use Normal Build Mechanism to build your application
+        >   e.g.,, makefile, Visual Studio Project, 
+                Eclipse Project. etc…
+        >   Add c_cover_io.c to your project
+        >   Add the include path for vcast_c_options.h & c_cover.h
+        >   Note that vcast_c_options.h changes if instrumentation options change
+
++   Applying Coverage to the Source Tree
+    
+    The Apply Coverage to Source Tree options specifies 
+        where instrumented files are
+        stored and how they are used by VectorCAST
+       Options can be accessed by right clicking on QA environment 
+        and selecting System
+        Testing->Apply Coverage to Source Tree
+       Three options
+        1.  During Build (default)
+            >   Source code copied to backup files and replace 
+                    with instrumented code
+            >   Build is performed via system_tests.py script
+            >   When build is complete original source files are 
+                    restored and instrumented files are moved back
+                    to vc-inst directory
+        2.  Always
+            >   Source code backed up and replaced with 
+                instrumented code
+            >   Only way to revert code is to un-instrument 
+                    the application
+        3.  Never
+            >   Instrumented code is stored in vc-inst
+            >   Build is performed with un-instrumented files
+
+<<< eof.Lec#28  sta:done
+
+
+>>> beg.Lec#29:Configuration Management         [*]:391-399
+
+### dtm:2025-07-28:Mo
+
++   Configuration Management Overview
+       VectorCAST Project artifacts that need to be saved
+       Obtaining project files from configuration management
+       Saving your work
+
++   Goal: Commit minimal set of VectorCAST files
+    Maintain VectorCAST folder structure
+
++   Folders of interest:
+    dos$>tree
+       vcast_working
+        >   Lua_Testing
+        >   Environment
+        >   Python
+        >   Template_Env
+        >   SupportFiles
+
++   vcast_working (_wsp)
+    The vcast_working folder stores all VectorCAST
+    artifacts
+    We will keep all folders for now but eliminate
+        extraneous files from this working directory
+    Files to check-in:
+           Lua_Testing.vcm
+            >   VectorCAST project file
+           setup_env.bat/sh
+           Start_VectorCAST.bat/sh
+
++   vcast_working\Lua_Testing
+    The Lua_Testing folder contains environment
+        specific folders and files
+    Folders of interest:
+           environment
+            > C ontains all unit and system test environment artifacts
+            > Everything in this folder is checked-in to SCM
+           python
+            >   Remove all *.pyc files
+    All other files and folders can be removed
+
++   vcast_working\Template_Env
+    The Template_Env folder contains all artifacts
+        related to our template unit test environment
+    Files of interest:
+           LAPI.bat
+           LAPI.env
+           LAPI.tst
+    The build folder and all other files do not need
+    to be saved in SCM
+
++   vcast_working\SupportFiles
+    The SupportFiles folder contains custom scripts,
+        header files, etc.
+    In our labs we stored build logs and a working
+        CCAST.CFG. 
+    Although these files are not necessary to 
+        rebuild the VectorCAST Project,
+    they can be stored in SCM as a baseline.
+    Save all files in this folder.
+
++   Getting Testing Artifacts From Configuration Management
+    Test engineers will clone/checkout via
+           git clone << Repository URL >>
+           svn checkout << Repository URL >>
+    The test engineer should update their
+        local repository at least daily
+           git pull
+           svn update
+
++   Start VectorCAST
+    Test engineers open VectorCAST from
+        Start_VectorCAST.bat/sh in
+    vcast_working folder
+           Start_VectorCAST.bat/sh calls
+            setup_env.bat/sh
+            >   Sets up system environment variables
+                needed for testing
+           Starts VectorCAST via vcastqt.exe
+    Create a shortcut to
+        Start_VectorCAST.bat/sh
+
++   Saving Your Work to the Repository
+       vcast_working\Lua_Testing\environment\<< New Environment Folder >>
+    *   Git
+        > git add << New Environment Folder >>
+        > git commit –m “Message for commit”
+        > git push
+    *   SVN
+        > svn add << New Environment Folder >>
+        > svn commit –m “Message for commit”
+
+    Updates to existing environments
+           Git
+            > git commit –m “Message for commit”
+            > git push
+           SVN
+            > Svn commit –m “Message for commit”
+
+<<< eof.Lec#29  sta:done
+
+
+>>> beg.Lec#30:Continuous Integration           [*]:401-404
+
+### dtm:2025-07-28:Mo
+
+?   What is Continuous Integration?
+
++   Continuous integration is a strategy for software developers 
+    to help increase the speed of development by building and 
+        testing an application frequently
+       Developers commit code changes daily
+       Continuous integration software automatically builds and 
+        runs tests
+    Goal is to find bugs early
+       Less man hours to debug, identify and fix
+    Popular Continuous Integration Tools
+       Jenkins
+        https://www.jenkins.io/   
+       Bamboo
+        https://www.atlassian.com/de/software/bamboo
+       GitLab
+        https://about.gitlab.com/
+        https://en.wikipedia.org/wiki/GitLab
+
+=  Jenkins Integration with VectorCAST
+
+•   VectorCAST plug-ins are available for Jenkins CI tool
+       Checks out application code and VectorCAST Project from SCM
+       Sets up environment for testing
+       Executes tests and reports results
+        >   Takes advantage of VectorCAST’s Change Based Testing
+
+•   Two types of supported Jenkins jobs
+       Single job
+        >   Creates a single job to build and 
+            execute environments in VectorCAST Project
+        >   Executed on one target computer
+       Pipeline job
+        >   Builds and executes all environments in 
+            a VectorCAST Project in parallel
+        >   Speeds up test execution
+
+•   Prerequisites for Jenkins Integration
+       VectorCAST must be installed on each Jenkins 
+        node performing the job
+        >   Access to license server
+        >   Pipeline can consume more than one license
+       Application build tools must be installed on 
+        Jenkins node performing the job
+       Running tests on target
+        >   Flash programming tools must be installed
+        >   All necessary connections to target
+       Credentials for SCM and other tools
+
+•   Creating a Single Job
+       Path to the VectorCAST Project
+        > Relative to the SCM check-out root
+       Script commands
+        >   Call to setup_env.bat/sh
+       Optionally use reporting
+       SCM Integration
+        >   Repository URL
+        >   Credentials to access repository
+
+<<< eof.Lec#30  sta:done
+
+
+>>> beg.Lec#31:Building Test Environments   [*]:406-410
+
+### dtm:2025-07-28:Mo
+
++   Creating a VectorCAST Project
+        Select File->SetProductMode->VectorCAST Project
+        >   If this option is greyed out proceed to next step
+       Set your Working Directory (File->SetWorkingDirectory)
+        >   Suggestion: C:\vcast\training\vcast_working
+        >   The Working Directory should already be set 
+                by start_vc.bat file
+       Create the Project (File->New->VectorCASTProject->EmptyProject)
+        a.  Enter a name (e.g., TestCampaign)
+        b.  Click on button next to “Compiler” field and 
+            select C/C++->VectorCASTMinGW->C++ (or C) as the compiler
+            >   If you are using Linux, 
+                choose C/C++->GNUNative and select the appropriate C++ 
+                    compiler installed in your
+                    Linux distribution
+        c.  Click the drop-down list on “Base Directory” and 
+                select “$VCAST_SRC_BASE”
+        d.  Select Create
+
++   Configuring a VectorCAST Project
+    1. Once the Project is Created, set high-level configuration items
+        a. RightMouse on the top-level node (TestCampaign) and 
+            select OpenConfiguration
+    2. Expand the Manage Node (in MDI area on right side of screen)
+        a.  Add “SourceFiles” as a Source Directory 
+            (point to wherever you unzipped the source code)
+            Click in Source Directories cell and click on green ‘+’ 
+                and select “Choose”
+        b. Turn Whitebox on
+        c. Set Coverage type to None
+    3.  Close the Configuration window and save
+    4.  Select option to display Execution Report after test case execution
+        a.  Tools->Options->GUI
+        b.  At bottom of page: 
+            “After Single Test Execution show: Execution Report”
+
++   Creating an Environment
+       Create a Unit Test Environment inside of the VectorCAST Project
+        >   RightMouse on the Group Node and select 
+            “Create Unit Test Environment->Interactive”
+
++   Environment Options
+       Browse through all 8 steps to see the various options
+       For this exercise, only specify the Env Name and UUT
+        >   Step 2: Name the Environment (e.g., MATH)
+        >   Step 6: Select “math.c” as the UUT
+        >   Select “Build”
+
+
+<<< eof.Lec#31  sta:done
+
+=== end:Lec
+
+===============================================================================
+!m: Laboratory
+===============================================================================
+
+
+>>> beg.Lab#01:Building Test Environments [*]:406-410
+
+### dtm:2025-06-16:Mo
+
+!   env:{E409_MATH}
+!   env:{E412_MGR_UT1}
+
+=== Creating a VectorCAST Project
+    
+       Select 
+        gui::File->SetProductMode->VectorCAST Project
+
+       Set your Working Directory
+        >   Suggestion: C:\vcast\training\vcast_working
+        >   The Working Directory should already be set by start_vc.bat file
+        !PHA: _wsp
+        
+       Create the Project 
+        gui::File->New->VectorCASTProject->EmptyProject    
+        a.  Enter a name (e.g., TestCampaign)
+        b.  Click on button next to 
+            “Compiler” field and select C/C++->VectorCASTMinGW->C++ (or C) 
+                as the compiler
+            >   If you are using Linux, 
+                    choose C/C++->GNUNative and select the appropriate C++ 
+                    compiler installed in your Linux distribution
+        c.  Click the drop-down list on “Base Directory” and 
+                select “$VCAST_SRC_BASE”
+        d.  Select Create
+
+        Result should look like this .. *:[406]
+        
+=== Configuring a VectorCAST Project
+
+    1.  Once the Project is Created, set high-level configuration items
+        a.  RightMouse on the top-level node (TestCampaign) and select 
+                OpenConfiguration
+    2.  Expand the Manage Node (in MDI area on right side of screen)
+        a.  Add “SourceFiles” as a Source Directory (point to wherever you 
+                unzipped the source code)
+            and 
+            Click in Source Directories cell and click on green ‘+’ 
+                and select “Choose”
+        b.  Turn Whitebox on
+        c.  Set Coverage type to None
+    3. Close the Configuration window and save
+    4. Select option to display Execution Report after test case execution
+        a. Tools->Options->GUI
+        b. At bottom of page: 
+                “After Single Test Execution show: Execution Report”
+    
+
+==  Creating an Environment
+        Create a Unit Test Environment inside of the VectorCAST Project
+        >   RightMouse on the Group Node and select 
+            “Create Unit Test Environment->Interactive”
+
+    
+=== Environment Options
+
+    Browse through all 8 steps to see the various options
+       For this exercise, only specify the Env Name and UUT
+        >   Step 2: Name the Environment (e.g., MATH)
+        >   Step 6: Select “math.c” as the UUT
+        >   Select “Build”
+    
+    +   E409_math
+    +   Configuring a VectorCAST Project
+        2. Expand the Manage Node   
+    +   TestType := whitebox
+
+=== Environment within a VectorCAST Project *:[410]
+    
+    +   Upon completion, 
+        resultant screen should look like this...
+
+<<< eof.Lab#01  sta:done
+
+>>> beg.Lab#02:Creating Test Cases      
+
+### dtm:2025-06-17:Di 
+
+!   env:{E412_MGR_UT1}
+
+=== Part 1
+    
+    1. Create an Environment for manager.c and name it MGR_UT1
+        a.  Close MATH environment and RightMouse on Group Name and 
+                do: CreateUnitTestEnvironment->Interactive
+    2   Create a Test for Add_Tax_Tip()
+        a. RightMouse on Add_Tax_Tip and select InsertTestCase
+    3. Change the Test Name to “Normal”
+    4. In the Test Case Editor on right side of GUI, Enter the following data 
+        into the Input Values column:
+        a. check_total: 10.0
+        b. sales_tax: 0.05
+        c. tip: 0.15
+    5. Enter an Expected Value on “return” of 12.0
+    6. Execute the Test and analyze the Execution Report - make sure the 
+        Expected Value matched
+    7. How many events are in the Report?
+    8. What is Event # 2? Note that this is a stubbed function.
+    9. Events 1 & 3 are the normal Entrance & Exit of the Test
+    10.Toggle back and forth between the Execution Report and the Parameter Tree
+        > see tabs at bottom of Test Case Editor
+    11.Enter some notes describing your test 
+        (“Notes” button at very bottom of Test Case Editor)
+
+=== Part 2
+
+    1.  Duplicate your test case
+        a)  Right click on “Normal” and select “Duplicate Test Case”
+        b)  Rename the duplicated test case to ZeroTax
+    2.  Leave “check_total” at 10.0
+    3.  Change “sales_tax” & “tip” to 0.0
+    4.  Enter an Expected Value of 10.0
+    5.  Execute the Test. Why did it fail?
+        >   To figure out the failure, you may want to look at the source code
+        >   Select Add_Tax_Tip in Environment View & do RightMouse->OpenSource
+    6.  Leave this test case as an example of a test failure
+    7.  Duplicate ZeroTax and rename it to TenPercentTax
+    8.  Expand <<GLOBAL>> node and change the input & expected value 
+            of “default_tax” to 0.10
+    9.  Set the expected value of “log_err_cnt” to 0
+    10. Set the expected value of “return” to 11.0
+    11. Run the test and analyze the Execution Report to make sure 
+            all 3 Expected Values match
+
+=== Part 3
+
+    1. Duplicate TenPercentTax and rename it to CheckStubValues
+    2. Expand StubbedSubprograms
+    3. Expand log_tax_receipts and set expected value of this_tax_ttl to 1.0
+    4. Rerun the test and again analyze the report. You should now have 4 matching expected values.
+    5. On log_tax_receipts, change the input value of “return” to 1
+        >   This step forces log_tax_receipts to return a 1
+    6. Rerun the test. Why do one of the expected values now fail?
+    7. Leave this test case as an example of partial success
+    
+    Note: 
+        When duplicating test cases not only the input and expected values 
+            are duplicated, but the notes
+        for the test case are also duplicated. 
+        Remember to update test case notes appropriately 
+            after duplicating test cases!!!
+
+<<< eof.Lab#02  sta:done
+
+### dtm:2025-06-18:Mi
+
+>>> beg.Lab#03:Test Case Fundamentals   
+!   env:{E412_MGR_UT1}
+
++   Floating Point Tolerance
+        Environment-wide
+             Tools->Options->Execute
+        Test Case Specific
+             Test case window – Options tab
+        Parameter Specific
+             Use “+/-<number>” to indicate range around expected value
+             <number> can be absolute, or can end with “%” to be relative    
+
+?   Quiz: Floating Point Tolerance 
+    Floating Point Tolerance can be specified at the:
+            A   Environment Level
+            B   Test Case Level
+            C   Parameter Level
+            D   All the
+    <<< D
+
+?   Quiz: range syntax
+    Which Range specification is syntactically incorrect?
+            A   1..10/1     * ok
+            B   10..1/-1    * ok 
+            C   10..1/1     * error
+            D   1..10/3     * ok        
+    
++   Character Strings
++   Arrays
++   Additional Test Case Features
++   Specifying Pointer Arguments
+
+<<< eof.Lab#03  sta:done
+
+
+>>> beg.Lab#04:Compound Tests   
+
+### dtm:2025-06-19:Do 
+
+!   env:{E425_DISH_WHITEBOX}
+!   env:{E427_DISH_BLACKBOX}
+
+### dtm:2025-07-29:Di 
+
++   Whitebox Testing
+    1.  Build an environment for dishwasher_fsm.c.
+        a)  Name the Environment DISH_WHITEBOX and 
+                make sure White Box is on
+    2.  Create a test case for processIdleState(). 
+        Call it START_WASH
+        a) Input EVENT_START_WASH and expected value on 
+            return to STS_ALL_GOOD
+        b) Run the Test. Why did it fail?
+    3. Create an Initialization Test. 
+            Call it POWER_ON
+        a) Set the global variable powerOn to 1
+    4. Create a Compound Test
+        a) Drag POWER_ON & START_WASH to the Compound Test
+    5. Run the Compound Test and verify that it passes
+    6. Create a test for processWashCycle(). Call it START_RINSE
+        a) Input EVENT_START_RINSE and expected value on return 
+                to STS_ALL_GOOD
+    7. This will fail in a similar fashion to START_WASH
+        > Is there a better way to solve this problem?
+    8. Flag the POWER_ON test as 
+            “Automatic Initialization”
+    9. Rerun START_WASH & START_RINSE
+        > make sure they now pass as stand-alone tests
+
++   Stub by Function (SBF)
+    1. Create a test for processRinseCycle and call it NO_HEAT:
+    2. Set EVENT_START_DRY as the input parameter
+        a) Set STS_NO_HEAT as the expected return value
+        b) Run the test and verify that it fails
+    3. How can you get the test to pass? You’ll need to use 
+            Stub-by-Function (SBF).
+        a) In the Test Case Editor, Expand the SBF Node
+        b) Select check-box next to CheckHeatingElement
+        c) Force it to return STS_NO_HEAT
+    4. Rerun the test and make sure it now passes
+
++   Blackbox Testing
+    1. Build another environment for dishwasher_fsm.c.
+        a) Name the Environment DISH_BLACKBOX and make sure White Box 
+            is off (in Build Options)
+    2. How is this environment different?
+        <<< no globals visible
+    3. Create a series of Simple Test Cases against the corresponding functions to:
+        a) Turn Power On
+        b) Transition thru the proper states of the dishwasher
+        c) Turn Power Off
+        d) Make sure each test has at least 1 expected value
+    4. Create a Compound Test that completes the entire Cycle
+        a) RightMouse on the CompoundTests node and InsertTestCase
+        b) Name the test COMPLETE_CYCLE
+        c) Drag the simple tests over to the Compound Test, 
+            in the correct order
+        d) Run all tests in the entire environment
+    e) Make sure no test cases fail (remember Compound Only!)
+
+
+<<< eof.Lab#04  sta:done
+
+
+>>> beg.Lab#05:Code Coverage Basics       [*]:430-433
+!   env:{E430_MGR_COVER}
+!   env:{E433_CBA_UT}
+
+### dtm:2025-06-20:Fr
+
++   Statement Coverage
+    gui::CodeCoverageSummary->CodeCoverageSummary
+    gui::Test->View
+    1. Create a New Test Environment for manager.c
+        a) Name the Environment MGR_COVER
+        b) Set Coverage to “statement” in the BuildOptions (4)
+        c) Select “Build”
+    2. Create Test Case(s) to achieve 100% coverage for Place_Order
+        > Set appropriate return values for each test
+        > Take Advantage of the Symbolic Constants for the return values:
+    3. How many tests did you need?
+        > Could you achieve 100% coverage in fewer tests?
+        <<< 6 Testfälle
+    4. Select the Data Summary Report icon:
+        > CodeCoverageSummary->CodeCoverageSummary
+        > Sort some of the columns
+        > Enter “>2” at top of Vg Column
+    5. View the Metrics Report (Test->View)
+    6. View the Aggregate Coverage Report
+    7. Save the report to a file (File->Save).
+
++   Transitioning from Statement to Statement+Branch Coverage
+    1.  Clear the Coverage Data: Coverage->RemoveAllCoverageData
+    2.  Write a test case for Add_Included_Dessert for the Free Pie path
+            > Name the test “FreePie”
+            > Set expected values for the return value and for the Dessert
+    3.  Create a similar test for Free Cake
+    4.  Run both tests & verify 100% statement coverage for 
+        Add_Included_Dessert
+    5.  Change coverage type to Statement+Branch (Coverage->Initialize)
+        >   Rerun the tests
+        >   What test needs to be added to get 100% Branch Coverage?
+    6.  Create this test and call it “NoDessert”
+    7.  Rerun the tests and verify 100% Statement & Branch Coverage on 
+            Add_Included_Dessert
+    8.  Now, Automatically Create Basis Path Tests
+        >   RightMouse on Add_Included_Dessert->InsertBasisPathTestCases
+    9.  How do these new tests compare to your hand-crafted tests?
+    10. Review gui::Tools->BasisPath->ViewAnalysisReport
+
++   Using Coverage to Debug Test Cases
+    1.  How about using Code Coverage to Help Debug?
+        >   A transition from Green to Red, 
+            with no corresponding branch, is typically a clue
+    2.  Insert a test for: Place_Order, call it: SEG_FAULT
+        >   Enter Table: 1, Seat: 10000
+    3.  Run the test
+    4.  You should see “Signal Raised: Segmentation Violation” 
+        in the Execution Report
+    5.  Deselect all coverage results except for SEG_FAULT
+        a)  Go to top of Environment View and do 
+                RightMouse->DeselectCoverage
+        b)  Select the Coverage Box next to SEG_FAULT
+    6.  Open the Coverage Viewer and go to the top of the module
+    7.  Press the Green Down Arrow from the tool bar
+    8.  Then press the Red Down Arrow
+    9.  Why did the crash occur?
+
++   Coverage by Analysis (CBA)
+    1.  Close the current environment
+    2.  Set Code Coverage to Statement+Branch as the default going forward
+        a)  RightMouse at top level (TestCampaign) & 
+            select OpenConfiguration
+        b)  Expand the Manage node
+        c)  Set Coverage Type to Statement+Branch
+    3.  Create a New Test Environment using cba_example.c and 
+            name it CBA_UT
+    4.  Create Tests to try and get 100% Coverage
+        >   Note that the Default Case cannot be reached
+    5.  Enable CBA
+        a)  Select the module name in the Environment 
+                View (cba_example)
+        b)  Select the CBA Icon
+    6.  In the Coverage Viewer, Select the uncovered lines
+    7.  Add Notes in the right-hand pane and Save
+    8.  View the Metrics & CBA Reports: 
+            (All reports are under Test->View)
+<<< eof.Lab#05  sta:done
+
+>>> beg.Lab#06:Test Reports         [*]:435-439         
+
+### dtm:2025-06-23:Mo
+
+!   env:{E412_MGR_UT}   
+
+    --- Part 1
+    +   Tools->Options->Report->Content 
+        Add Report Header := "Peters Report" = *        
+    +   Test->View->Full Report 
+        <<< report header is '*'
+    --- Part 2
+    +   Test Reports Overview
+        Each Report has a Table of Contents with 
+            Hyperlinked Sections
+        men::Test|View|ExecutionResults
+    --- Part 3
+    +   Write Some notes and watch with 
+        men::Test|View|TestCaseDataReport
+    +   File Version Command” of “dir”
+        men::Test|View|TestCaseManagementReport
+    +   Verbose management report
+        +   chkBox:Tools->Options-Report.VerboseManagementReport
+            := true
+    +   men::Test|View|TestCaseManagementReport
+    +   reply 
+        <<< Notes of each Tc in the 
+            TestCaseManagementReport
+    +   Redirecting Standard Output to Execution Report
+        Tools->Options->Execute->“Redirect standard output” [*]:438
+        ExecutionReport
+            "Clear Table 5" 
+    +   Saving the Options
+
+<<< eof.Lab#06  sta:done
+
+
+>>> beg.Lab#07:Regression Testing       [*]:441-443
+
+!   env:{E441_CLI}
+### dtm:2025-06-24:Di
+    
++   Test Scripts
+    1. Build an Environment for manager.c or use an existing one
+    3. Export the Test Script (Test->Scripting->Export)
+    4. Edit the Test Script and make the following changes
+    5. Import the myTest.tst script (Test->Scripting->Import)
+    
++   Regression Testing within the VectorCAST GUI
+    1. Turn on Statement+Branch Coverage for All Environments:
+    2. Run all tests from within TestCampaign:
+    3. Change some source code:
+        a)  Outside of VectorCAST, Edit “manager.c”
+        b)  In Add_Included_Dessert, 
+                change “int rc;” to “static int rc;”
+        c)  This won’t change the logic, 
+                but should cause some tests to be rerun
+    4. Now do RightMouse->BuildExecute->Incremental
+        >   What environments were rebuilt?
+        >   What tests were rerun?
+        >   Note: You can go into the affected environments 
+            and look at the Test Case Management report to see what 
+                tests were rerun
+
++   Command Line Regression Testing
+       Note: This lab is basically the same as the previous page, 
+            except the tests are run outside of the GUI
+            at the command line. 
+        To save time, you may want to just review this lab and 
+            run it at a later time.
+    1.  Run all tests at the Command Line:
+        e) $>   manage --project TestCampaign.vcm --build-execute
+        g) $>   manage --project TestCampaign.vcm --full-status=full_rpt.html
+
+    2.  Now, change some source code
+    3.  Do an Incremental Build
+        $>  manage --project TestCampaign.vcm --build-execute --incremental
+    4.  Analyze the Incremental Report
+
+<<< eof.Lab#07  sta:open
+
+### dtm:2025-06-25:Mi
+
+>>> beg.Lab#08:TestCase and Parameter User Code         [*]:445-448
+
+!   env:{E445_IO_CHAINING}  
+!   key:UnitCode:<Parameter>
+
++   Writing Data to a File. Part 1
+    2. Create a Test Case for OpenFile and call it: OPEN_WRITE
+        a) Select “Copy User Code Tag”
+        b) Paste it into the Test Case Notes just to see what 
+                you have (“<<io_wrapper.OpenFile.return>>”)    
+    3. RightMouse on the “return” parameter from OpenFile (not “return[0]”, but “return”!)
+    4. Create a Test Case for WriteString and call it: WRITE_DATA
+        d) Resultant code should look like this:
+            <<io_wrapper.WriteString.fp>> = ( <<io_wrapper.OpenFile.return>> );
++   Writing Data to a File, Part 2
+    1. Create a Test Case for CloseFile and call it CLOSE
+    2. Set the Compound Only flag on OPEN_WRITE, WRITE_DATA and CLOSE
+    3. Create a Compound Test and call it WRITE_FILE
+        a) Drag your 3 simple tests into the compound (order matters!)
+    4. Run the Compound Test
++   Reading Data from a File
+    1. You should now have a Compound Test (WRITE_FILE) that creates a file with known data.
+    2. Create another Compound Called READ_FILE that verifies the data:
+        > i.e., OPEN_READ, READ_DATA, CLOSE (see Note below!)
+        > Should have 4 expected values in total (1 per slot, plus 2 for READ_DATA)
+        > Remember to set the Compound Only flag
+    3. The 2 Compounds should be separately executable as long as WRITE_FILE executes first
+    4. Create a 3rd Nested Compound called WRITE_AND_READ that includes WRITE_FILE & READ_FILE
+        > You can set WRITE_FILE and READ_FILE to Compound Only as well
+    5. Run the Nested Compound to make sure it passes
++   REM:
+    inside a TC select Parameter and open Properties
+
+### dtm:2025-06-26:Do
+
+!   key:UnitCode:<TestCase>
+
++   Test Case User Code Example
+    1. When testing a file creation function, 
+        you would want to make sure the file did not exist before starting
+        the test
+    2. Using Test Case User Code, 
+            you can delete the file before running the test
+        a) Open OPEN_WRITE Test Case
+        b) Open Test Case User Code tab
+        c) Add code to delete file*
+            On Windows use:
+                > system(“del /s TestOutput.txt”);
+        To confirm that file was deleted
+            > Redirect Standard Output
+            > Confirmation message will be at the
+                    bottom of Execution Report
++   REM:
+    inside a TC bottom TAB "Testcase UserCode"
+
+<<< eof.Lab#08  sta:done
+
+
+### dtm:2024-08-11:So
+### dtm:2025-06-27:Fr 
+
+>>> beg.Lab#09:Environment User Code                [*]:450-452
+
+!   env:{E450_VOID_PTR} 
+!   key:UnitCode:<Environment>
+
+    Anm:    UserGlobals zählen auch zu dem Environment User Code.
+            Hier werden zusätzliche UserGlobals definiert.
+            Der TC.ProcessMessage.005 verwendet aber 
+                VECTORCAST_STR1
+            <<< siehet auch ~GLOBALS.c
+    
++   Adding User Globals
+    
+    1. Build environment for “communication.c”
+        a) Call it VOID_PTR
+        b) Turn on whitebox testing, Statement+Branch Coverage
+    2. After Build completes, Edit User Globals
+            gui::Environment|UpdateEnvironment.EnvironmentUserCode
+        a)  Environment->EnvironmentUserCode>UserGlobals
+        b)  Add the following 3 lines
+                >   #include "communication.h" *** meine Definiton
+                >   VCAST_USER_GLOBALS_EXTERN AltCmdT      g_user_AltCmd;
+                >   VCAST_USER_GLOBALS_EXTERN CourseCmdT   g_user_CourseCmd;
+        c)  Insert these lines just before VECTORCAST_INT1
+        d)  Select the Test Compile icon
+        e)  Make sure it compiles successfully
+            >>> saved into file:
+            C:\workspace\prj\30_academy_legacy\_wsp\393222364\E450_VOID_PTR.env
+    3. Rebuild environment
+        a)  gui::Environment->RebuildEnvironment
+
++   Assigning Void Pointers to User Globals
+    4. Insert Test Case for ProcessMessage, call it: GoodCourse
+    5. Verify that AltCmd & CourseCmd show up under 
+            USER_GLOBALS_VCAST in Parameter Tree
+        >   These objects are what the “void *” parameter will point to below
+    6.  Enter the following Values:
+        a)  For MessageCategory, select Change_Course from pull down
+        b)  For message, select CourseCmd from pull down
+        c)  Enter True for “return” on expected value side
+        d)  Expand CourseCmd in User Globals and enter a 
+                value of “Pi” for newCourse
+    7.  Run the test to make sure it passes
+    8.  Open the Code Coverage Viewer to make sure the right path is covered
+    9.  Examine source code to understand what other tests need to be written
+    10. Add those Tests to Achieve 100% coverage
+    11. Make sure each test specifies the proper expected value for 
+        the return value
+
+    add int i_TcCtr=0;
+        into TestHarnessInit
+
++   Void Pointer Screenshot [*]:452
+
+<<< eof.Lab#09  sta:done
+
+### dtm:2025-06-30:Mo 
+
+>>> beg.Lab#10:Stubbing Fundamentals    [*]:454-459
+
+!   env:{E454_ADV_STUBS}
+
++   Library Stubbing                    [*]:454
+    1.  Build environment for advanced_stubbing.c and call it ADV_STUBS
+            a)  Make sure Whitebox and Statement+Branch Coverage are enabled
+            b)  In step 6 of New Environment Wizard, enter “malloc” 
+                    as a Library Stub
+            c)  Press “Build”
+    2.  Create a Test Case for: “use_malloc”, call it: “Stub”
+    3.  Create another Test Case for: “use_malloc”, call it: “Real”
+
++   Using Function Pointers             [*]:454
+    1. Add a prototype for a new function in Appendix User Code
+        a) Go to Environment->UnitUserCode
+        b) In the Unit Appendix column add the function prototype
+            1. “float myGauge(void);”
+            2. Test compile and make sure it compiles successfully
+            3. Save the changes (File->Save)
+    2. Now, we need to stub myGauge
+        a) Update environment using: Environment->Update Environment 
+        b) Go to step 6: Choose UUTs & Stubs
+        c) Add myGauge as an Additional Stub
+        d) Select Update
+    3. Make sure Test Environment Rebuilds without errors
+    4. Write Tests against temp_monitor() and try to obtain 
+        100% Statement+Branch Coverage
+        a) Browse the source to get a basic understanding of the code
+        > Note that “myGauge” should show up in the pull-down list 
+            for the Function Pointer
+        b) Find the Stub of myGuage and have it return appropriate temperature 
+        values for the various paths thru the code
+        c) Make sure all tests pass with an expected value
+
+    <<< ?   wie sollen diese Werte eingegeben werden. Es ist ein Stub!
+    >>> !   In Stubbed Subprograms steht myGauge() mit ReturnCode
+
++   Additional Stubs Screenshot             [*]:454
+    +   add stub "myGauge"
+
++   Return Data List Options                [*]:457
+    1.  Write a few simple tests against get_numeric_string() to understand 
+        the function
+    2.  Now write one Range Test that reads in 3 different values 
+        representing a User ID
+        a) The user ID is of the form “XXX YY ZZZZ” 
+            (i.e., 3 digits, 2 digits, 4 digits)
+        b) Enter “1,2,3,4,5,6,7,8,9” as the input characters on 
+            the stub of “read_key_pad”
+        c) Specify a “3,2,4” as the input string lengths
+        d) Enter “123,45,6789” for the expected return values
+    3.  Did the test fail? 
+        What is the actual value of the 2nd & 3rd strings?
+        <<< yes, fails, actual value is again 1,2
+    4. Try Test Case Option 
+        “Multi-return spans range iterations” 
+        and it should now pass
+        <<< TC is OK            
+
++   Screenshot: Return Data List Options    [*]:458
+
++   Object Initialization User Code         [*]:459
+    1. Create a Test Case for: “log_error_msg”
+        a) Pass in any string as the log msg
+        b) Run the Test
+        c) Look at code coverage
+        d) How do you test for a non-zero value of debug_flag?
+    <<< ? Eine Eingabe ist nicht möglich
+    2. Use Object Initialization User Code to set value of debug_flag
+        a) Go to Environment->ObjectInitializationUserCode
+        b) For Object: “debug_flag”, specify a non-zero value in the “Initialization Code” section
+            > For Example, type in “= 1”
+        c) Test Compile and then select Environment->RebuildEnvironment
+    3. Run the test
+    4. Look at code coverage
+    5. Is it possible to get 100% Branch coverage on this function?
+        Note: (If you’re curious, 
+                    open file “advanced_stubbing_exp_inst_driver.c” 
+                    in the current working
+                directory and search for “debug_flag” 
+                        to see how object initialization works)
+    
+<<< eof.Lab#10  sta:done
+
+### dtm:2025-07-01:Di
+
+>>> beg.Lab#11:C++ Testing      <C++>       [*]:461-466
+
+!   env:{E461_SHAPES}
+!   env:{E466_INLINE}
+!   env:{E466_INLINE_SPHERE}
+
++   Testing a Constructor
+    1.  Create a test environment and name it SHAPES
+    2.  Create a test case for Rectangle::Rectangle(int,int,int,int)
+
++   Constructor Screenshot              [*]:462
+
++   Testing C++ Methods                 [*]:463
+    1.  Create a test for Rectangle::getArea() called SegFault
+    2.  Run the Test - should result in a Segmentation Violation
+    3.  Create a second test case called: Normal
+        a)  In the <<GLOBAL>> section, find the Rectangle Instance (in yellow)
+        b)  Select “Rectangle” as the ClassPtr in the Input Values column
+        c)  Select the User Defined Constructor and enter 
+                values X=3, Y=4, Height =5, Width=10
+        d)  Set Expected return value for getArea to be 50
+    4.  Run the test and verify that it passes
+    5.  Create a third test case called: Default
+    6.  Run the test, verify that it passes  
+
+    *   Special getName()
+        Es wird der c-String "Rectangle" zurückgegeben.
+        getName.001: direkt auf String testen 
+        getName.002: Testen auf neue UserCode Variable g_cBuffer[128]
+        <<USER_GLOBALS_VCAST.<<GLOBAL>>.g_cBuffer>>
+
++   Using Compound Tests to Initialize the Constructor [*]:464
+       Use an Automatic Initialization Test Case to 
+            setup a Class Instance
+    1.  Create an Initialization test called: RECTANGLE_INIT
+    2.  In the Global section, select the Rectangle Instance and 
+            use either constructor
+    3.  Enter the same values as from the previous test
+    4.  Right-click on the test case and 
+            choose Automatic Initialization
+    5.  Create a new test for Rectangle::getArea() and 
+            call it USE_RECTANGLE_INIT
+    6.  Create a Test for Rectangle:: getX
+        a)  Set an Expected Value of 3 for the return
+        b)  Run the Test and Verify that it passes
+    7.  Note that the AutoInit Test applies to both tests
+
++   Inline Testing                      [*]:466
+    1.  Create an environment for: inlines.cpp
+        a)  Make sure Whitebox is on
+        b)  Set Coverage Type to Statement
+    2.  Turn on coverage in headers
+        a)  gui::Tools->Options->Coverage->“Provide code coverage 
+                in header files”
+    3. Create Basis Path Tests for all member functions
+        a)  RightClick on “inlines” & Insert Basis Path Test Cases
+    4. Run all tests
+        >   This should achieve 100% coverage (4/4 lines).
+    5. Turn on Inline Testing options in the Tools->Options->Builder tab
+    6. Rebuild Environment and note the new member functions that appear
+    7. Re-run the previous tests and note that coverage is now at 62% (5/8 lines).
+    8. Insert Basis Path Tests for the new functions
+        >   Choose the “Missing” option. 
+            This will insert only the missing basis path test cases.
+    9. Run all tests and verify 100% statement coverage
+
+<<< eof.Lab#11  sta:done
+
+
+>>> beg.Lab#12:Include Paths                    [*]:468-470 
+        
+!   env:{E468_INC_SEARCH} 
+!   env:{E469_INC_TYPE_HANDED}
+!   env:{E470_INC_LIBRARY}
+
+### dtm:2025-07-01:Di
+
++   Search/Source Directories
+    1. Build a new environment for: vcast_time.c.
+    2. Build a test case for function: time_add_seconds
+    
+    add “SourceFiles\SearchPaths”
+    add “SourceFiles\SearchPaths\include”
+    src vcast_time.c
+    TC  time_add_seconds.c
+
++   Type Handled Directories
+    1. Update the environment (Environment->UpdateEnvironment) 
+            & go to “(5) Locate Source Files”
+        a) Make Sure only the “..\include” line is selected in blue
+        b) Right Mouse->SetAsTypeHandledDirectory & then select Update
+    3. You should now get an unresolved extern on “invalid_time()”.
+        > Note: Since its prototype is in a Type Handled Directory, it is no longer automatically stubbed.
+    4. Update the Environment & go to “(6) Chose UUTs & Stubs”
+    5. Add “invalid_time” as an Additional Stub
+
++   Library/Include Paths
+    1. Update the environment again and go to Step 5 “Locate Source Files”
+    2. Change “..\include” to be a Library Directory
+        a) Make Sure only the “..\include” line is selected in blue
+        b) Right Mouse->SetAsLibraryIncludeDirectory & then select Update
+    Extra Credit:
+         The typedef “time_T” is not available to the GUI, 
+                but it is still known by the compiler. Write
+            Parameter User Code to fill in the input value and 
+            expected value with the same values as before
+            and rerun your test.
+         Hint: The input user code would look something like this:
+                <<vcast_time.time_add_seconds.start>>.mins = 1;
+
+<<< eof.Lab#12  sta:done
+
+
+>>> beg.Lab#13:MC/DC Coverage           [*]:472-475
+
+### dtm:2025-07-01:Di 
+
+!   env:{E473_MCDC} 
+        
++   Part 1: Writing Functional Tests that satisfy MC/DC
+    1. Build an Environment for mcdc_example.c
+        > Select Statement+Branch Coverage
+    2. For the function “open_for_business()”:
+        a) Write 2 tests for the “open” and “closed” conditions
+        b) Make sure to check the return value on each test.
+        c) Verify 100% Statement + Branch Coverage
+        d) (You may want to save the Coverage Viewer screen shot as a text file (.txt), or as a screen snip for comparison
+            after the next step).
+    3. Now enable Statement + MC/DC (Coverage->Initialize) and rerun the tests
+        > Note the differences in the Coverage Viewer when MC/DC is enabled
+    4. See if you can add functional tests to meet 100% Statement + MC/DC Coverage
+    <<< missing : time=0,day=Monday
+
++   Part 2: Creating MC/DC Tests from the Truth Table
+    For Conditional_Example () function:
+    1. View the Equivalence Pair Table for Conditional_Example (Tools->MC/DC->ViewEquivalenceMatrices)
+    2. Create 2 Test Cases that satisfy “Pair Coverage” for condition “a”
+        > For your sanity, use a naming convention for the test names, e.g.: PairA_Row2_TTF_T
+    3. Create additional Test Cases that give you “Pair Coverage” for “b” and “c”
+    4. Run all tests and verify 100% MC/DC pair coverage
+    5. Now View the Equivalence Pair Table in the Coverage Viewer
+        > In the Code Coverage Viewer, click the red arrow to the left of the Conditional
+
++   Extra Credit
+    Think about the API and the requirements for “open_for_business”. 
+    See if you can develop additional tests that fully test the interface.
+     There is a bug in the function “open_for_business()”. 
+        Did any of your tests uncover the bug?
+
+    Classroom Discussion:
+     Why did the initial Tests from Part 1 (that satisfied MC/DC) not necessarily uncover the bug?
+     What additional functional tests did you create?
+     What is a better approach to testing? Part 1 or Part 2?
+
+<<< eof.Lab#13  sta:done
+
+### dtm:2025-07-02:Mi
+
+>>> beg.Lab#14:Advanced User Code                   [*]:477-482
+
+!   env:{E478_ADC_USER_CODE} 
+!   key:UserCode:<Unit>
+!   key:UserCode:<Global>
+!   key:UserCode:<Tag>
+
+--- Adding Environment User Code
+
+    1. Create a Test Environment for “datalink_transmit.c” and call 
+            it ADV_USER_CODE
+    
+    2. Write stub code for “calc_crc()” to return a constant value
+        REM:Es muss zunächst ein Tc für die Funktion
+                data_tx_V1() oder
+                pkt_transmit() 
+            erstellt werden.
+        a) gui::Environment->EnvironmentUserCode->UserCodes
+            REM:Falsch, es ist ist "UnitUserCode" gemeint !
+                gui::Environment->UnitUserCode->UserCodes
+        b) Click on calc_crc & add this code to “Beginning of stub”:
+            > return(0xAB);
+            > Test compile & Save!
+    
+    3. Also write stub code for “log_msg()” so we can capture any 
+        output in the execution report
+        a) printf(“\n%s\n”, msg );      ### Achtung- war problematisch
+        b) Test Compile & Save!
+        c) Set option “Redirect Standard Output” in Tools->Options->Execute
+    
+    4. Add Stub Counter to User Globals !UserCode:<UserGlobals>
+        a) gui::Environment->EnvironmentUserCode->UserGlobals
+        b) Add: “VCAST_USER_GLOBALS_EXTERN int g_iStubCtr;”
+        c) Test Compile & Save!
+    
+    5. Select Tools->Options->Builder->”Test All non-member inline functions”
+    
+    6. Rebuild The Environment
+
+--- Stubbing Out the Hardware Interface
+    
+    1. Create a Test For pkt_transmit() & call it SMALL
+    
+        a) Msg = “abc”, msg_len = 3, msg_num = 0x99
+        b) Set return code to TX_GOOD
+        c) Use SBF to stub hw_send_rts() & hw_tx_byte()
+            > Just checkmark the boxes – no action required
+        d) Use SBF to stub hw_check_cts() and return a 1
+    
+    2. Run Test and make sure it passes
+
+--- Verifying Data Transmission
+    
+     The format of the packet should be as follows (each value is a byte):
+        MsgLen MsgNum CRC Data1 Data2 Data3
+    
+    1. Modify the SBF for hw_tx_byte()
+        a) For the expected value of “ch”, enter:
+            > 6,0x99,0xAB,0x61,0x62,0x63                * msgLen=6, msgNum=x99
+            > Note that “0x61,0x62,0x63” are the 
+                hex equivalents of ascii “a,b,c”.
+    2. Run the test and verify that you 
+            have 7 out of 7 expected values (6 data bytes plus return code)
+
++   printf("\n%s\n",msg);
++   printf("\n--- Message:{%s}\n",msg);
+
+
+--- Using a Stub Counter
+
+!   key:UserCode:<Parameter>
+!   key:UserCode:<Tag>
+
+    1.  Duplicate the SMALL test and name it LARGE
+        1. Keep the same SBF settings except delete the expected values on hw_tx_byte
+        2. Set input parameters msg_len = 100, msg_num = 1
+        3. Write Parameter User Code to fill in the “msg” parameter:
+            > <<datalink_transmit.pkt_transmit.msg>> = malloc(100);
+                > memset(<< datalink_transmit.pkt_transmit.msg >>,'A',100);
+    2. To make sure all bytes are transmitted, we’ll use a stub counter to count the bytes
+        1. Add Parameter User Code on hw_tx_byte “ch”
+            > Delete the default user code on Input.
+            > Add: my_stub_ctr++;
+        rem: 
+            open UserCodeTags,
+            drag & drop tag             
+    3. In USER_GLOBALS_VCAST, set “my_stub_ctr” 
+            to zero on input and to 103 for the expected value.
+            > Note: 100 data bytes plus 3 header bytes
+    4. Run the test and make sure it passes.
+    5. Examine the Execution Report and make sure the 
+            message is printed at the bottom
+    6. Why are there some garbage characters at the end of the string?
+
+    Lösung :
+        +   Es wird der UserCode verwendet :
+            int i = 0;
+            int iSize = 40;
+            int c = 'A';
+            <<datalink_transmit.pkt_transmit.msg>> = malloc(iSize); 
+            memset(<<datalink_transmit.pkt_transmit.msg>>,0,iSize);
+            for(int i=0; i<iSize; i++) {  
+                <<datalink_transmit.pkt_transmit.msg>>[i] = c++;
+                if ( ((i+1) % 10) == 0) { 
+                    <<datalink_transmit.pkt_transmit.msg>>[i] = '.';
+                    c = 'A'; 
+                }
+            };
+            <<datalink_transmit.pkt_transmit.msg>>[iSize-1] = 0;
+        +   Ergebnis 
+            --- myMessageAtTron:{
+                Message Transmitted: ABCDEFGHI.ABCDEFGHI.ABCDEFGHI.ABCDEFGHI}
+
+
++   Lab Review
+    Several Key Concepts were Covered Here:
+     Stubbing Utility Routines to Help with Testing
+        > i.e. calc_crc() & log_msg()
+     Echoing Standard Output to the Report
+     Stubbing Inline Functions
+     Verifying Stub Parameters
+     Counting Stub Occurrences
+     Testing upper layers of a Device Driver without requiring hardware
+
++   Behebung eines SEGFAULTs 
+    in TC:data_tx_V1.003
+        Dieser TC verwendet, im Gegensatz zu 001 und 002
+        einen gültigen Ptr und möchte "TX_Good"  zurückgeben,
+    Wie kann erreicht werden, 
+            dass dieser TC läuft suceess ?
+    <<< Die Header Datei 
+            datalink_types.h 
+        definiert in den Zeile 25/26
+            #define L1_RTS 1
+            #define HW_STS_REG  ((unsigned char *)0x8000000)
+            #define HW_DATA_REG ((unsigned char *)0x8000004)
+        feste Hardware-Adressen. 
+        Dieses stellt für den Code in der Datei 
+            datalink_types.c 
+        in Zeile 34
+            *HW_STS_REG = L1_RTS;
+        ein Problem dar. 
+        Es wird auf eine nicht gültige Adresse referenziert,
+        welches zu einer SEGFAULT führt.
+        url: https://de.wikipedia.org/wiki/Schutzverletzung
+        Der Code sollte maskiert werden.
+        Durch den UserCode Prefix 
+            include "datalink_types.h"
+            #undef HW_STS_REG
+            #undef HW_DATA_REG
+            int g_i1, *p_i1 = &g_i1;
+            int g_i2, *p_i2 = &g_i2;
+            #define HW_STS_REG  p_i1
+            #define HW_DATA_REG p_i2
+        werden Variablen definiert und Pointer zugwiesen.
+        Jetzt wird die Zeile 34 
+        von:
+            *HW_STS_REG = L1_RTS;
+        zu:     
+            *p_i1 = 1;
+        Keine EXC tritt mehr auf.
+
+<<< eof.Lab#14  sta:done
+
+### dtm:2025-07-03:Do
+
+>>> beg.Lab#15:CSV Importing                 [*]:484,485
+
+!   env:{E484_CSV_IMPORT}  
+
+=== Mapping CSV Data to Parameters
+
+1.  Build an environment for line.c and call it CSV_IMPORT
+
+2.  Create a CSV Map for findY()
+    a) Right Mouse on findY and select “Generate CSV Map”
+    b) In the Map Window on the right, 
+                browse to ..\SourceFiles\SupportFiles\line.csv
+    c) Select the Load button
+        > You should now see the loaded data
+        > Note that the 1st row is just header info
+        > All other rows represent individual test cases        
+    d) Slide over the CSV Options next to the data (see screen shot on next page)
+    e) Enter 1 for “Number of rows before start of data”
+    f) Enter 1 for “Row containing column headings”
+    g) Drag the Column Headers down to the corresponding parameter values
+       > i.e., Drag Slope from Column 2 down to the “m” parameter
+       > Do the same for the other 3 parameters (note: Y goes to expected value of return)
+    h) Right Mouse on the Map name in the Environment View and select CreateTests
+    i) Run the Tests, making sure all tests pass
+
+3.  Some Tests fails
+
+    >>> Lösung :
+        Die Werte sollen auf den Wert <<NAN>> gesetzt werden
+
+    >>> findM-ROW_0033 
+        FloatingPointPrecision change to 
+            1.0000%
+        
+<<< eof.Lab#15  sta:done
+
+>>> beg.Lab#16:Probe Point Example      [*]:487-491
+!   env:{E487_PROBE_POINT}      
+
+### dtm:2025-07-07:Mo
+
+--- Probe Point Example *:[487]
+    
+    1. Create an environment for probe_points.c and call it PROBE_POINTS
+    2. Create a test for miles_before_fillup() and call it “InvalidFuelReading”
+    3. Use a Probe Point to change the return value from get_fuel_level():
+        a) (see screen shot on next page for an example)
+        b) RightMouse on subprogram name “miles_before_fillup” and 
+                select EditProbePoints
+        c) In the Probe Point Editor, select the dot in front of the “if” statement
+        d) In the Right Hand Pane, enter the following
+            > “fuel_level = 25;”
+        e) Select Test Compile
+    4. Activate & Run
+        a) Activate the Probe Point via button in upper left corner
+        b) Run the test case
+        c) Using Code Coverage, verify the TRUE path of 
+                the “if” statement is covered
+    
+    <<< STATUS: done
+
+--- Probe Point Screenshot  *:[488]
+
+--- Probe Point API         *:[489]
+
+         vcast_probe_print_int( x );
+         vcast_probe_print_float ( floatVal );
+         vcast_probe_print (“ got here\n” );
+         vcast_test_name_equals(“MyTest1”)
+    
+    1. Select Tools->Options->Execute->RedirectStandardOutput
+
+    2. Continuing with the prior example, add Probe Points to:
+        > Output the string “\nTank Size = ” using vcast_probe_print()
+        > display the value of tank_size using vcast_probe_print_int()
+        > Output the string “\nFuel Level = ” using vcast_probe_print()
+        > Display the value of fuel_level using vcast_probe_print_float()
+    3. Examine the Execution Report to see the output
+    4. Add a Probe Point that is Test Case Specific
+            by using “vcast_test_name_equals()”
+
+    >>> [docHlp]:USING THE PROBE POINT EDITOR 546
+
+    <<< STATUS: done 95% - open vcast_test_name_equals
+
+--- Using Probe Points for a State Machine  *:[490]
+    
+    1. For function process_door_event(), write 1 simple test that 
+            raises the “door ajar” alarm
+        <<< nur POWER_UP:  DOOR_OPEN: DOOR_CLOSED:
+        ### STATUS: done 
+        
+        > How would you test this code without Probe Points?
+        ?zzHassP : weiss nicht
+        
+    
+    2. In function check_rx_err_bit():
+        a) Insert and execute a test
+        b) Note the Seg Fault and use Code Coverage to determine the offending line
+        c) Write a Probe Point to avoid the Seg Fault
+        d) Augment the Probe Point to cover both the True & False paths of 
+                the “if” statement
+        
+        <<< immer SEG FAULT 
+
+            #define DEVICE_REG ((unsigned char*)0x80008000)
+            #define RX_ERROR_BIT 0x04
+            int check_rx_err_bit(void)
+            {
+                unsigned char reg_value;
+                reg_value = *DEVICE_REG; ... liefert !CPE
+                === 
+                reg_value = *(unsigned char*)0x80008000
+            }
+
+        
+        >>> schreiben ProbePoint mit before && after 
+            before_probe_point 
+                #if 0           
+            reg_value = *DEVICE_REG; ... liefert !CPE
+            after__probe_point 
+                #endif
+            
+            REM: unable SEGFAULT
+
+        ### STATUS: done
+
+    3. Write a test against monitor_task() and break out of 
+            the loop after 5 iterations     
+        <<< !zzHassP: ProbePoint in montor_sleep vor sleep() 
+            if (rx_err_count > 5) break;
+        ### STATUS: done
+    
+    
+    REM: ProbePoints sind global für eine Unit - 
+        es kann kein ProbePoint (PP) für einen speziellen Test erstellt werden.
+        Aber: Mit vcast_test_name_equals()
+                kann der PP spezialisiert werden, bzw eine 
+                TC Abhängigkeit erzielt werden.
+    
+    ### STATUS: done 80%    
+        
+<<< eof.Lab#16  sta:done
+
+
+>>> beg.Lab#17:Abstract Class and Templates <C++>   [*]:493-497
+
+!   env:{E493_ABSTRACT_SHAPE}
+!   env:{E495_STACK}
+
++   Using the Auto-Generated Concrete Class     {E493_ABSTRACT_SHAPE}
+        DIR=.\SourceFiles\Shapes
+        FILE=shape.cpp
+        ! WHITEBOX
+    1. Build environment for shape.cpp (call it ABSTRACT_SHAPE)
+        a) In Step 5 of the New Env Wizard, add a path for this module (i.e. ..\SourceFiles\Shapes)
+    2. Insert a test case for Shape::getX(), call it: GET_CONCRETE
+        a) In the globals section, choose vcast_concrete_Shape as the class pointer and select either of the subclass
+            options
+        b) Initialize mX to 1
+        c) Set the expected value of “return” to be 1
+    3. Run the test case and verify that it passes.
+
++   Adding other Concrete Classes to Test Against
+    1. Now create a concrete subclass of “Shape” by including the Rectangle Class
+        a) Go To gui::Environment->UnitUserCode
+        b) In the Unit Appendix column enter: #include “rectangle.h”
+        c) Test Compile and Save
+    2. Rebuild environment
+    3. Duplicate existing test case GET_CONCRETE
+    4. Select Rectangle as the subclass for Shape Instance
+    5. Select Rectangle::Rectangle() as the constructor
+    6. Initialize mX to 10
+    7. Change the expected value of “return” to be 10
+    8. Execute the test and verify that it passes
+
+    #   The Point of these exercises is to emphasize 
+            that an Abstract Class cannot be tested by itself. 
+        It needs to be instantiated as an auto-created concrete class, 
+            or by a user defined derived class.
+
++   Adding Template Instances to Test Against   {E495_STACK}
+    ! WHITEBOX && cover:statement
+        stack.cpp (call it STACK)
+    1. Build environment for stack.cpp (call it STACK)
+        a) Select Statement Coverage and Whitebox
+    2. Notice that no testable functions exist
+    3. Open the source code for the “stack”
+        > Note that Stack is defined as a templated class
+    4. Make it Testable by adding user code to Unit Appendix User Code for both an Integer & a Float
+        a) gui::Environment->UnitUserCode and enter the following code 
+            to Unit Appendix editor
+            > template class Stack<float>;
+            > template class Stack<int>;
+    5. Rebuild the environment
+    6. Notice that all the Stack methods are now testable for both int and float types
+
++   Writing Tests on a Template Instance
+    1. Insert a test case for Stack<float>::push, call it PUSH_FLT
+    2. Insert a value of 7 as the input value for “item”
+    3. In the <<GLOBAL>> section, 
+            Choose a sub-class in the Input column for the Stack<float> instance
+    4. Verify that “mStackCount” gets set properly
+        a) This is a member of the Stack class located under Stack<float> Instance
+        b) Select “<<choose a subclass>>” on the expected value column
+        c) Now, enter a value of 1 for “mStackCount”
+    5. Execute the test to verify “mStackCount” goes to a value of 1
+    6. Create a similar test for Stack<int>::push, call it: PUSH_INT
+    7. Open the Coverage Viewer
+        > Notice that we have coverage of the empty stack 
+            case in method: push
+
++   Writing Tests on a Template Instance 2
+    1. Duplicate the PUSH_INT and call it PUSH_INT2
+        a) Change the input and expected data to be 7,100 and 1,2 respectively
+        b) Set maxSize to 2
+        c) On the Options Button, select the 
+                “Display global data after” to be
+                “After each range iteration”
+        gui::Tc|Option|checkGlobalDataAfter|radioEachRangeIteration        
+    2. Run the test, and re-open the Coverage Viewer
+    3. Hover over the source lines in the Coverage Viewer
+            > Notice that all tests give coverage of the “empty stack” case (lines 10-12)
+            > Notice that only PUSH_INT2 gives us coverage of lines: 2-9
+    
+    ?PHA:Wo?
+       
+<<< eof.Lab#17  sta:request
+
+
+>>> beg.Lab#18:Testing C++ Classes   <C++>        [*]:499-505
+
+### dtm:2025-07-10:Do 
+
+!   env:{E500_ACME_PAYROLL} * LEGACY
+
++   ACME Payroll System Derived Class
+    Lab Overview:
+    In this lab, we will test a Payroll System for the ACME Widget company. 
+    The base Payroll Class contains most of the functionality, 
+        and the derived class (for ACME) takes care of the
+            details specific to ACME.
+-   begin:[*]:499
+    1. Create a new environment for “ACME_PayrollSystem.cpp”:
+        a) Name the environment ACME_PAYROLL
+        b) Make sure Whitebox is selected
+        c) Add a new path to ..\SourceFiles\Payroll
+        d) Delete all other paths
+        e) Build the environment
+    2. Write a test for the Constructor with an InitialCash value of 10,000
+    3. Expand <<GLOBAL>> and expand ACME_PayrollSystem 
+        on the expected value side.
+        a) Set an expected value of 10,000 for mCashOnHand
+        b) Set an expected value 0.20 for mTaxRate (default tax rate for ACME)
+    4. Run the test. Why did one of the values fail?
+        > Explanation on next page
+
++   ACME Payroll System Derived Class: Screenshot
+    When testing a derived class, it’s not uncommon to forget that 
+        the Base Class is stubbed.
+    That’s why the previous test failed for mCashOnHand, 
+        because the Base Class initializes that
+    variable
+
++   Including Derived & Base Class in the UUT
+       One solution to the prior problem would be to write Stub User Code (
+        Environment->UnitUserCode) 
+        on the base class constructor to initialize all member variables.
+       However, it’s typically easier to just include the Base Class in the UUT. 
+        That’s what we will do now.
+-   do
+    1. Update the environment
+        a) Include the Base Class: PayrollSystem.ccp
+        b) Also include Employee.cpp, 
+            so those methods won’t have to be stubbed either
+    2. Rerun the Constructor test and make sure it now passes
+        a) If it passes, you know the Base Class Constructor is doing its job.
+    3. Write a test for Acme_PayrollSystem::addEmployee
+        a) Initialize the class instance using any method you 
+            wish (remember prior C++ lab?)
+        b) Specify 5000 as the Salary and use any Name & Age
+        c) Verify that mTotalPayroll gets set to 5000
+        d) Verify that mNumEmployees gets set to 1
+
++   Class Visibility
+    Since the intent is to only test the Derived Class, we don’t need the Base Class and the
+    Employee Class to show up as testable. 
+        We will now use Custom Stubbing to hide those classes.
+    1. Update the Environment
+    2. Go to Step 6 of the Environment Wizard
+    3. Under “Stub Dependencies”, select “Custom”
+        > See screenshot on next page
+    4. Drag PayrollSystem.cpp & Employee.cpp down to DONT_STUB
+    5. Select Update
+    6. After rebuild completes, only Acme_PayrollSystem should be visible
+    7. Rerun all tests and make sure everything passes
+
++   ACME Payroll System: Compound Testing
+
+       Now write some Compound Tests to do additional testing on the class. 
+        Before jumping into this, you
+        may want to examine the Source Code to gain an understanding of 
+            how everything works together.       
+
+       Note that using Initialization tests can be useful to verify 
+        expected values at different points in your compound.
+
+       Here are some suggestions for things to test 
+        (if you need help, the next slide may provide some clues):
+
+    *   Add multiple employees and verify mTotalPayroll & mNumEmployees
+    *   Remove an employee and again verify mTotalPayroll & mNumEmployees
+    *   Test runPayroll() and verify mCashOnHand
+    *   Can you think of other things to test?
+    
+<<< eof.Lab#18  sta:observe
+
+
+>>> beg.Lab#19: Trouble Shooting Build Issues   [*]:507
+
+### dtm:2025-07-11:Fr
+
++   Build Diagnostic Info
+    1. Close any open Environments
+    2. Disable Code Coverage & the Range Test, as follows:
+        a) At top of VectorCAST Project, 
+                RightMouse::OpenConfiguration
+        b) In RightSide pane, goto 
+                Manage->CoverageType, set to None
+        c) Search (ctrl-F) for “range check” and set it 
+                to None
+        d) Save the configuration
+    3. Open the Log Messages Window & Clear it
+    4. Pin the Jobs window & clear it
+    5. From the VectorCAST Project, 
+                Build & then Open an existing Environment
+    6. Note the commands in the Jobs Window that 
+                were executed during the Build
+    7. Double Click on any one entry to see the Job Status Details
+    8. Close the Environment
+    9. Re-enable Code Coverage & 
+                Range Test Options (i.e., revert changes from #2 above)
+                
+    >>> im Projekt-Fenster 
+            1.  CoverageType := None 
+            2.  RangeCheck := None
+                
+<<< eof.Lab#19  sta:done
+
+
+>>> beg.Lab#20:Debugging Test Execution Issues  [*]:509-512
+
+### dtm:2025-07-14:Mo
+
+!   env:{E509_DEBUG_MGR}
+
++   Stepping through the FUT
+    1.  Create a new environment for “manager.c” and call it DEBUG_MGR
+    2.  Create a test for Place_Order and call it SEG_FAULT
+        a) Enter 1 for the Table and 10000 for the Seat
+    3.  Run the Test (should cause a seg fault)
+    4.  Now, Debug the Test Case
+        a)  Disable Coverage (Coverage->Disable)
+        b)  Click on Test Case, and RightMouse->ExecuteWithDebug
+        c)  A command window for the GDB Debugger should appear
+
++   Stepping through the FUT(2)
+    1. Set a break at main() and at Place_Order()
+        a)  b main
+        b)  b Place_Order   
+    2.  Start Debugging the Code
+        a)  run (r) Start program execution from beginning. 
+                It should stop at main()
+        b)  next (n) Execute next line of code. Will not enter function.
+        c)  step (s) Step to next line of code. Will step into function.
+        d)  continue (c) Continue executing until next breakpoint. Should stop at Place_Order()
+        e)  Continue stepping until the segfault occurs
+        f)  quit (q) Exit GDB debugger
+       Experiment with ‘n’ and ‘s’ to get familiar of how these commands work
+       Other commands of interest:
+        >   backtrace (bt) Show a trace of where you are currently. 
+                Prints stack backtrace.
+        >   print (p) Syntax: p <variable-name>. 
+                Prints value stored in variable.
+       Note: The same debug process should apply in most all debuggers.
+
++   code manager.c
+        Table1, Seat 10     
+            // --- File: ctypes.h
+        #define SEATS_AT_ONE_TABLE  4
+        #define NUMBER_OF_TABLES    6
+        struct table_data_type
+        {
+            enum boolean      Is_Occupied;
+            seat_index_type   Number_In_Party;
+            char              Designator;
+            char              Wait_Person[10];
+            struct order_type Order[SEATS_AT_ONE_TABLE];
+            float             Check_Total;
+        };
+        +   Das Feld 'Oder' hate nur 4 Size
+
++   Debugging User Code Problems
+    1.  Create another test for Place Order
+        a)  Enter 3 for the Table and 1 for the Seat
+    2.  Find Get_Table_Record in the list of StubbedSubPrograms
+    3.  Enter Parameter User Code for Table on Input side, as follows:
+        if ( <<uut_prototype_stubs.Get_Table_Record.Table>> ==  3  ) {
+            unsigned uEndlessCounter = 10;
+            while (uEndlessCounter-- >= 0) {};  // *forever
+            //  ENDLOS-LOOP weil, unsigned ist IMMER >= 0
+        }
+    4. Run the Test Case (it should spin forever)
+    5. Abort the Test from the Execute Pulldown:
+
++   Debugging Stub Code
+    1. Abort the Test and now Debug it
+    2. From the VectorCAST shell search the Harness files for the stub code, 
+        as follows:
+        a)  findstr xyzzz *.c*
+    3.  Open the file containing the Stub Code in an editor
+        *   Note: 
+            You may get multiple hits but use 
+                "manager_expanded_driver.c"
+    4.  Find the function name that contains the Stub Code
+        >   Should be “vCAST_STUB_PROCESSING_9()”
+    5.  Debug the Test Case
+    6.  Set a break in the Stub Code
+    7.  Step through the code to debug the problem
+
+<<< eof.Lab#20  sta:done
+
+
+>>> beg.Lab#21:Requirements Gateway (RGW)           [*]:514-517 
+
+!   env:{E515_RGW}
+
+### dtm:2025-07-15:Di 
+    
++   RGW Product Overview    
+    tools: 
+        IBM® Rational® DOORS®
+        IBM® Rational® RequisitePro®
+
++   Configuring RGW
+        gui::Tools->Requirements Gateway->Options
+        ..\SourceFiles\SupportFiles to set the RGW Repository Location
+
++   Mapping Tests to Requirements
+
++   Exporting Test Case to Requirements Traceability
+        
+    1.  Go back to the RGW editor tool and select the Export tab
+    2.  Under “Specify CSV export settings” select all three options
+    3.  Export the results to a CSV file
+            gui::Tools->Requirements Gateway->CSV
+
+    <<< Ergebnis nicht sehr beeindruckend. Oder ?
+            "FR11", "E515_RGW", "Place_Order.001", "pass"
+            "FR12", "E515_RGW", "Place_Order.001", "pass"
+            "FR13", "E515_RGW", "Place_Order.001", "pass"
+            "FR22", "E515_RGW", "Place_Order.001", "pass"
+            
+<<< eof.Lab#21  sta:delay
+
+
+>>> beg.Lab#22:System Testing with vCAST/QA     [*]:519-527
+    
+!   env:{E519_DINER_SYSTEM_TEST}
+
+### dtm:2025-07-15:Di 
+
+    REM:    Dieses LAB kann nur teilweise mit dieser VectorCAST Version 
+            durchgeführt werden. 
+    
+=   QA Process Overview
+
+       Create a New QA Environment
+        source: 
+                database.c, manager.c, & manager_driver.c
+                Coverage Options: select Statement+Branch
+       Instrument the Files
+        <<< !PHA:notEnabled; exit 
+       Build the Executable - Using Python to do the Build
+
+       Run the Executable
+       View Coverage Data in VectorCAST/QA
+       Integrate System & Unit Coverage Result
+            <<< nicht möglich
+
+    !PHA:   Instrumenting not supported in this version.
+
+<<< eof.Lab#22  sta:reject
+
+
+>>> beg.Lab#23:Additional Test Case Options     [*]:529-532
+    
+!   env:{E529_CONTROL_FLOW}
+
+### dtm:2025-07-15:Di
+### dtm:2025-07-28:Mo 
+
++   Duplicating Test Cases
+    1.  Build an environment for control_flow.c
+    2.  Create a test case with test case notes
+        a)  Insert a Test for “computeBaseArea” and call it AreaTest_BOX
+            1.  Enter values 2,3,4 for the global widthX, lengthY, heightZ
+            2.  Enter an input value of BOX on the “shape” parameter
+            3. Enter an expected value of 6 on the return for computeBaseArea
+        b)  Run the test. 
+                    Why did it fail?
+        c)  Enter return value of 1 on the validShape stub and 
+                make sure it now passes
+        d)  Enter some test case notes by clicking on the Notes button at the bottom of the test case editor
+            >   For example: 
+                    “Testing BOX with width=2, length=3 and height=4”
+    3.  Duplicate AreaTest_BOX
+        a)  Right click on AreaTest_BOX and select Duplicate Test Case
+            1. Rename duplicated test case to AreaTest_CONE
+            2. Change “shape” parameter to CONE
+            3. Change the expected value of the return parameter for 
+                    computeBaseArea to PI
+                >   PI is a symbolic constant. 
+                    Remember that you can drag and drop PI from the 
+                        symbolic constants window
+    4.  Update the test case notes to CONE
+        >   For example: 
+            “Testing CONE with width=2, length=3 and height=4”
+    5. Run the test case and ensure that it passes
+
+       Remember test case <notes> should always be updated when 
+            duplicating test cases!!!!
+
++   Partitioned Test Cases
+           RightMouseMenu|InsertPartionedTestCase
+
+    1.  RightMouse on partitionExample and 
+            select “Insert Partitioned Test Case” and name it 5_PARTITIONS
+    2.  In the Test Case Options tab, 
+            Set the Number of Partitions to 5
+    3.  Run the Test, how many Range Iterations are created?
+        <<< 6 Iterations
+        >   Note the values used on each range iteration        
+    4.  Duplicate 5_PARTITIONS and name the new test 10_PARTITIONS
+    5.  Change the Number of Partitions to 10
+    6.  Run the Test, how many Range Iterations are created?
+        >   Again, note the values used on each range iteration
+        <<< 11 Iterations
+
++   Control Flow    
+    1. Insert a Test Case for controlFlowExample, name it TEST_ONE
+    2. Using the Test Case Editor, add the correct values for the control flow
+        a) Select “Control Flow” tab
+        b) Drag and drop Subprograms into “Control Flow” pane in 
+            the order they are called
+    3. Run test, ensure that it passes
+    4. Duplicate the test
+    5. Add incorrect items to the control flow
+    6. Run Test Verify that it fails
+
++   Find, Filter, & Cross Reference
+    1. Filtering the Test Case Tree in Environment View
+        a)  From the Environment View search for (ctrl-F): 
+            “compute”, and click the “Filter” checkbox on and off
+            >   Note: You may have to expand the “Environment View” 
+                pane to expose the Filter option
+    2.  Filtering the Parameter Tree
+        a)  Open the Test Editor for any test
+        b)  Search for: “shape” and click the “Filter” checkbox on and off
+    3.  Highlighting and “Display Referenced Items Only” checkbox
+        a)  Open a test case for computeBaseArea to display 
+                the Test Case Editor
+            >   If you are already using a test case for computeBaseArea 
+                from the previous steps, 
+                make sure the filter checkbox is NOT selected
+        b)  Expand the SBF list, 
+                the GLOBAL list and Stubbed Subprograms list.
+        c)  Click on the various global variables and 
+            notice what changes in the GUI
+            >   Subprograms that reference the global variables will 
+                be highlighted in yellow
+        d)  Click on the “Display Referenced Items Only” checkbox at 
+                bottom right of editor
+        e)  Notice how the Test Editor Display changes, why?
+            > Only items that are referenced by computeBaseArea are 
+                visible in the test case editor
+
++   Anm: Partioned Tc 
+        5 Partionnen bedeutet,
+        dass es TC 001..006 erzeugt werden.
+    Im Gegensatz zum BasePath sind diese eher zufällig.
+        Partitioned - 
+        Partitioned tests create "partitions" for each data type and 
+        test the min and max value from each partition. 
+    The assumption is that values from the same partition will stimulate the
+        application in a similar way
+
++   Anm: ControlFlow 
+        Die Funktionen haben 2 Events (IN && OUT), 
+            der STUB hingegen nur 1 Event.
+
+<<< eof.Lab#23  sta:done
+
+
+>>> beg.Lab#24:Environment Building Errors      [*]:534,535
+
+### dtm:2025-07-28:Mo 
+
+!   env:{E534_NEED_MACRO}
+
++   Part1   :   "add PP command"
+    dir:..\SourceFiles\EnvironmentBuildingErrors\src
+        add Environment
+            || Update Environment 
+        set Compiler 
+            ChooseCompiler
+            Preprocessor/Compiler
+            add :
+            MAXIMUM_MEMORY_SIZE=100
+    
+!   env:{E535_NEED_INCLUDE} 
+
++   Part 2  :   
+        dir: .\SourceFiles\EnvironmentBuildingErrors\src
+        dir: .\SourceFiles\EnvironmentBuildingErrors\Search1
+        dir: .\SourceFiles\EnvironmentBuildingErrors\Search2
+
+<<< eof.Lab#24  sta:done
+
+
+>>> beg.Lab#25:Code Coverage Options            [*]:537-540
+
+!   env:{E537_CVR_ANIMATION}
+### dtm:2025-06-13:Fr
+
++   Coverage Animation              [*]:537
+    +   Turn on “Animation Mode” in 
+        Tools->Options->CoverageTab.“Animation Mode”
+    +   TC.DateString.001 
+        <<date.DateString.return>> := "September 3\, 2024"
+
++   Coverage Reporting
+    +   Basis Path Tests
+    +   Code Coverage Summary
+    +   Metrics Report
+
++   Metrics Report Filters
+        Tools->Options->Report->FilterMetricsReport
+            .“Include subprograms and units”
+            .“Include only units”
+            .“Show only Grand Totals”
+
++   Other Options
+    1. Get code coverage for function: TRACE (defined in utilities.h)
+        Tools->Options->Builder.“Test all non-member inline functions”
+        Tools->Options->Coverage.“Provide code coverage in header files”
+        Tools->Options->Coverage.“Show inlines as covered in all units”     
+    2. Achieve 100% Branch Coverage in function: MaxDays
+        Tools->Options->Coverage.“Instrument implicit default case for switch-case blocks”
+        
+<<< eof.Lab#25  sta:done
+
+
+>>> beg.Lab#26:Testing Hardware Interfaces      [*]:542-543
+!   env:{E542_HAL}
+
+### dtm:2025-07-29:Di 
+
++   Testing Hardware Abstraction Layer (HAL) on a Host Platform
+        src: datalink_transmit.c
+        <<< SEGFAULT 
+    1. Create a new Test Environment using datalink_transmit.c
+        a) Set Code Coverage to Statement+Branch
+    2. Create a Test against data_tx_V1()
+        a) Enter msg of “hello” and msg_len of 5
+        b) Run The test
+
+    > This should cause a Segment Violation. Why
+
++   Stubbing out the HAL
+        +   Tools->Options->Builder->”Test All non-member inline functions”
+        +   Tools->Options->Coverage->”Provide Code Coverage in Header Files”   
+    1. Select 
+        Tools->Options->Builder->”Test All non-member inline functions”
+    2. Select 
+        Tools->Options->Coverage->”Provide Code Coverage in Header Files”
+    3. If either option was not already set, then rebuild
+    4. Create a Test against data_tx_V2()
+        a) Enter msg of “hello” and msg_len of 5
+   5. Use SBF to stub out the functions that touch the hardware
+        a) Stub: hw_send_rts(), hw_check_cts(), & hw_tx_byte()
+    6. Run the test and examine the Code Coverage
+    7. Write additional Tests to get 100% Code Coverage on this function
+    8. Contrast the differences between testing this function and 
+        the prior version (data_tx_V1)
+
+<<< eof.Lab#26  sta:done 
+
+
+>>> beg.Lab#27:Workflow Preparation         [*]:545-550
+
+### dtm:2025-07-29:Di 
+    
++   Edit setup_env.bat                  [*]:546
+        navigate to C:\VCAST\Workflow_Training\lua-5.3.5\vcast_working
+    <<< kein lua Training
+
+    >>> meine setup Datei 
+        :f_def_vCAST (void)
+            @set LM_LICENSE_FILE=
+            @set LM_APP_DISABLE_CACHE_READ=1
+            @set VECTOR_LICENSE_FILE=7650@hdhappvectorcastvtlic
+            @set v_TMP=%SystemDrive%\vCAST
+            @call :f_chkFp "%v_TMP%"
+            @if %ERRORLEVEL% lss 0 @goto :eof
+            @set VECTORCAST_DIR=%v_TMP%
+        @goto :EOF
+    <<< ohne SET VCAST_SRC_BASE
+
++   Test Environment Variables          [*]:548
+        Select Tools->Custom Tools->Command Prompt
+        $>gcc (Rev6, Built by MSYS2 project) 10.2.0 
+    
++   Create a Build Log                  [*]:550
+         Enter “cd %VCAST_SUPPORT_FILES%”
+             Enter “make -C %VCAST_SRC_BASE% clean generic > build_log.txt”
+        
+<<< eof.Lab#27  sta:done
+
+>>> beg.Lab#28: Unit Test Workflow      [*]:552-560
+!   env:{E552_WORKFLOW}
+
++   Create Working Directory for Template Environment
+        +   Compiler : MinGW C
+
++   Create VectorCAST Project Based 
+        on Template Environment [*]:558
+    *   File->SetWorkingDirectory       # right-corner shows WorkingDir
+    *   Select File->New->VectorCASTProject->FromExistingEnvironments
+    ?   wie ?
+
++   Promote Common Options
+        +   cut & paste Whitebox and Coverage Type
+
++   Configuration Editor        [*]:560 
+
+<<< eof.Lab#28  sta:-
+
+>>> beg.Lab#29: System Test Workflow      [*]:562-567
+
+<<< eof.Lab#29  sta:-
+    
+### EOF
+
+
