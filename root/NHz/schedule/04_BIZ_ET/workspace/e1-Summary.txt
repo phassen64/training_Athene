@@ -1,0 +1,1834 @@
+###############################################################################
+--- !sem.ETBIZ:summary   [Oktober-2026]
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Kurs:    
+        Name:   ETBIZ - Exam ETZ-210
+        Dauer:  01.Oktober 2026 - 21.Oktober 2026
+
+                
+--- content:
+    
+    •   m:  Planning an IoT Implementation      [ov1]:a
+        •   s:  Define IoT
+        •   s:  IoT Infrastructure
+        •   s:  Business Benefits and Challenges
+
+    •   m:  Undertaking an IoT Project  [ov2]:b
+        •   s:  Real-World Applications for IoT
+        •   s:  The IoT Development Lifecycle
+
+    •   m:  Data Science Fundamentals               [ov3]:c   
+        •   s:  What Is Data Science?
+        •   s:  Types of Data
+        •   s:  The Data Science Lifecycle
+
+    •   m:  Functions of Data Science in Business   [ov4]:d
+        •   s:  Improve Customer Experience
+        •   s:  Improve Marketing Efforts
+        •   s:  Optimize Operational and Transactional Security
+        •   s:  Enhance Operational Practices
+
+    •   m:  Implementing Business Requirements for Data Science [ov5]:e
+        •   s:  Develop a Data-Centric Organization
+        •   s:  Develop an Implementation Strategy
+        •   s:  Identify Impact of Data Science on Business
+        •   s:  Identify Governance Measures
+
+    •   m:  AI Fundamentals [ov6]:f
+        •   s:  A Brief History of AI
+        •   s:  AI Concepts
+
+    •   m:  Functions of AI in Business [ov7]:g   
+        •   s:  Improve User Experiences
+        •   s:  Segment Audiences
+        •   s:  Secure Assets
+        •   s:  Optimize Processes
+
+    •   m:  Implementing Business Requirements for AI   [ov8]:h
+        •   s:  Identify Design Requirements
+        •   s:  Identify Data Requirements
+        •   s:  Identify Risks in Implementing AI
+        •   s:  Develop an AI Strategy
+
+    
+
+===============================================================================
+m:  Planning an IoT Implementation [ov1]:a
+===============================================================================
+
+=== s:  Define IoT
+
+    url:https://de.wikipedia.org/wiki/Internet_der_Dinge
+    Das Internet der Dinge bezeichnet die Verknüpfung eindeutig identifizierbarer physischer Objekte (englisch things) 
+        mit einer 
+    virtuellen Repräsentation in einer Internet-ähnlichen Struktur. 
+    Es besteht nicht mehr nur aus menschlichen Teilnehmern, 
+        sondern auch aus Dingen. 
+    Der Begriff „Internet of Things“ geht auf Kevin Ashton zurück, 
+        der ihn 1999 erstmals verwendete. 
+    Jedoch ist dies nicht schriftlich dokumentiert.[6] 
+    Bekannt wurde das Internet der Dinge durch die Aktivitäten 
+        der „Auto-ID Labs“.[7]
+
+u:  a04 Dawn{"Morgendämmerung"} of a New Day
+
+u:  a05 What Is IoT?
+    
+    Everyday things
+    Data processed in the cloud
+    Network connected
+
+    Collect data
+    Share data
+    Interpret data
+    Control remote devices
+
+    Increase global food production
+    Promote safety and security
+    Improve the quality of life in our cities
+    Create new markets and opportunities
+    Conserve natural resources
+
+
+$<  Internet of Things (IoT)
+        Internet of Things (IoT) refers to a 
+    network of physical objects ("things") embedded with sensors, processing power, software, and connectivity technologies to collect and exchange data with other devices and systems over the internet or local networks.
+
+u:  a06 IoT Ingredients
+
+u:  a07 The "Things" in IoT
+    Devices that are network connected, 
+        include embedded processors, 
+        and may include sensors and actuators that interact 
+        with the physical world around the devices.
+
+u:  a08 Examples of IoT Devices
+
+u:  a09 IoT in Industry: Automation Milestones
+
+    197x    :   PLCs & SCADA
+    198x    :   PCs        
+    199x    :   Internet 
+    200x    :   Cloud 
+    201x    :   IoT
+    
+    $   PLC 
+        PLCs most commonly refers to "Programmable Logic Controllers". 
+    
+    $   SCADA
+        SCADA stands for "Supervisory Control and Data Acquisition". 
+        It is a control system architecture comprising computers
+        networked data communications, 
+        and graphical user interfaces (GUIs) used 
+        for high-level process supervisory management.
+
+u:  a10 Industry Evolution
+    
+u:  a11 Enabling Technologies
+    
+    +   Miniturization
+    +   Ubiquitous{"allgegenwärtig"} computing
+
+u:  a12 Industry 4.0 Promise
+
+    Visibility      :   What happened?
+    Transparency    :   What is happened?
+    Predictive Capacity:    What will happen ?
+    Adaptability    :   How can autonomous response be archieved?
+
+u:  a13 Four Ps of Planned Maintenance
+
+    Preventative
+        Schedule maintenance at standard intervals.
+    Predictive
+        Routinely inspect components to predict issues.
+    Proactive
+        Control problems that lead to issues.
+    Prescriptive
+        Automate and improve preventative maintenance
+
+u:  a14 Three Key IoT Business Strategy Steps to Follow
+    
+    •   Value 
+    •   Insights 
+    •   Data 
+    
+=== s:  IoT Infrastructure
+
+u:  a22 IoT Infrastructure—System of Systems
+
+    IoT Device 
+        Local Network 
+            Global Network 
+                Cloud Service 
+                    User Interface
+
+u:  a23 IoT Gateway
+
+    •   Supports local communication and messaging.
+    •   Stores data from IoT devices temporarily.
+    •   Forwards data acquired from IoT devices to cloud services.
+    •   Performs local data analysis.
+    •   Translates between IPv6 and IPv4.
+    •   Serves as a local cache for software updates.
+    •   Receives device commands from the cloud.
+
+
+u:  a24 Cloud Services (Slide 1 of 2)
+u:  a25 Cloud Services (Slide 2 of 2)
+
+    •   Provide a central point for:
+        Storage and analysis of data.
+        Integration with other solutions.
+    •   Example platforms: AWS, Azure, Google Cloud.
+    •   Can also be hosted in own data center.
+    •   Can scale as needed.
+
+
+
+u:  a26 User Interface (Slide 1 of 2)
+u:  a27 User Interface (Slide 2 of 2)
+
+    •   Client apps provide users with access to IoT data and 
+        issue commands.
+    •   Consumer IoT: 
+            smartphone, tablet, desktop apps.
+    •   Business intelligence and data dashboards.
+    •   Administrative applications.
+
+u:  a28 Software Stacks (Slide 1 of 4)
+    IoT Devices 
+        Local Network 
+            Global Network 
+                Cloud Service 
+                    User Interface
+            
+u:  a29 Software Stacks (Slide 2 of 4)
+    Program 
+        Lightweight Communication 
+            Hardware Abstraction Layer 
+                Operating System (Optional)
+
+u:  a30 Software Stacks (Slide 3 of 4)
+u:  a31 Software Stacks (Slide 4 of 4)
+    
+    Cloud Service 
+        Event Management | Analytics
+        Datamanagement 
+        Device Management and Registry 
+        Communication and Messaging
+        Operating System / Platform as a Service (PaaS)
+
+
+=== s:  Business Benefits and Challenges
+
+u:  a37 Business Benefits
+
+    •   Improve competitive position.
+    •   Identify new and enhanced revenue{"Einnahme"} streams 
+        and markets.
+    •   Enable predictive capabilities.
+    •   Reduce operational costs and natural resources usage.
+    •   Reduce impact on the environment.
+
+
+u:  a38 Business Considerations (Slide 1 of 4)
+    What type of work does your 
+        organization (or an organization that you serve) 
+        perform?
+
+u:  a39 Business Considerations (Slide 2 of 4)
+    What incremental value are you trying to capture?
+
+u:  a40 Business Considerations (Slide 3 of 4)
+    What new information (insights) will 
+        you need to be able to deliver on this new value?
+
+u:  a41 Business Considerations (Slide 4 of 4)
+    What data will you need to 
+        capture to help facilitate and support this new information?
+
+
+u:  a42 Business Challenges
+
+    •   Disruption to existing infrastructure and business processes.
+    •   Provisioning and tracking thousands of devices.
+    •   Value/cost.
+    •   Business risk (security/privacy).
+    •   Organizational change.
+    •   Organizational skills.
+
+
+u:  a43 Technical Challenges
+
+    •   Device constraints
+    •   Data communication
+    •   Interoperability
+    •   Real-time operations
+    •   Security and privacy
+    •   Usability
+    •   Updates
+
+
+u:  a44 Security Challenges
+
+u:  a45 IoT Security Threat Map
+        >   Ransomware 
+        >   Cyber Criminals 
+        >   Cyber Warfare{"Kriegsführung"}
+    
+    ransom {"Lösegeld"}
+
+$   Ransomware
+    ~   is a type of malicious software (malware) that 
+        encrypts a victim’s files, systems, 
+        or network infrastructure, 
+                rendering them >inaccessible<. 
+        Threat actors then demand a ransom payment—typically 
+            in cryptocurrency—in exchange for a decryption 
+        key or to prevent sensitive data from being published online.
+
+u:  a46 IoT Contributes to the Threat Landscape
+
+    "In 2016, there were 11 billion devices 
+        connected to the Internet, 
+        with an expansion to 30 billion 
+        by 2020."
+
+    Weltweit sind schätzungsweise 29,4 Milliarden Geräte aktiv 
+        mit dem Internet verbunden (Stand Mitte 2026). 
+    Das entspricht durchschnittlich mehr als 
+        3,5 vernetzten Geräten pro Mensch auf der Erde.
+    [Purple WiFi]
+
+u:  a47 The Dyn Attack
+
+    "Security by design is a mandatory prerequisite 
+        to securing the IoT macrocosm … 
+        the Dyn attack was just a practice run."
+    — James Scott, Sr. Fellow, 
+        Institute for Critical Infrastructure Technology
+
+
+u:  a48 Why IoT Is Lacking Fundamental Security
+
+    •   Lack of industry knowledge
+    •   Rapid time to market
+    •   Lack of developer knowledge
+
+u:  a49 sSocietal{"gesellschaftlich"} Impact (Slide 1 of 3)
+
+    •   Technology has potential to disrupt and 
+        change the way things are done.
+        +   May provide benefits as well as harm.
+        +   May affect different people differently
+        +   May have unintended side effects.
+
+u:  a50 Societal Impact (Slide 2 of 3)
+
+    What is the potential impact IoT has on an organization and people?
+    Machines can efficiently perform tasks that are dangerous, 
+        risky, or mundane{"banal"}.
+    Eliminating jobs may have a significant negative impact 
+        on entire families for years.
+
+u:  a51 Societal Impact (Slide 3 of 3)
+
+    What is the potential impact IoT has on the environment?
+
+        +   Reduce manufacturing waste and the 
+            use of natural resources and may significantly help 
+            to reduce pollution of the environment.
+
+        +   There are significant environmental costs for technology.
+
+
+u:  a52 Organizational Skills Impact
+
+    •   New skillsets for IT staff:
+        +   Embedded devices.
+        +   Sensors and actuators.
+        +   Real-time data processing and networking.
+        +   Edge computing.
+        +   New methos of data processing and analysis.
+
+u:  a55 IoT Devices—Common Features
+    
+    +   Local Control
+        Example: 
+            Switches on the device enable user to turn it on or off directly and 
+        to start Wi-Fi configuration routine.
+
+    +   Remote Control
+        Example: 
+            Switches power on or off through remote app 
+                or “smart home” voice-controlled speakers.
+
+    +   Connected
+        Example: 
+            Connects to cloud through Wi-Fi to send sensor data and 
+                device status and 
+                receive commands from apps.
+
+    +   Smart
+        Example: 
+            Onboard microcontroller monitors sensors, 
+                controls switching, 
+                and communicates with cloud servers.
+
+    +   Local Outputs
+        Example: 
+            LED on the device changes color to show on/off status and 
+            when it enters configuration mode.
+
+
+    +   Remote Sensing
+        Example: 
+            Sensors in the device monitor power usage and 
+            conditions such as overheating and overcurrent.
+
+
+
+
+u:  a56 Industrial Controllers
+
+    Network ->  
+        IT ~
+        Production ~
+        Remote ~
+        
+
+u:  a57 Key Takeaways {"Kernpunkte"}
+
+    •   IoT can transform both <old> and <new> businesses. 
+    
+    •   How well you both understand 
+            and apply both 
+        IoT and your industry domain knowledge 
+        before you dive 
+            in will determine, 
+        to a large extent, how successful your path will be.
+
+
+
+===============================================================================
+m:  Undertaking an IoT Project     [ov2]:b
+===============================================================================
+
+=== s:  Real-World Applications for IoT
+
+u:  b04 IoT Market Sectors
+    
+    chart...
+    Smart City 23%  ...
+    Connected Industry 17%
+    Connected Buildings 11%    
+    Smart Energy 10%
+    Connected Health 6%
+    Smart Retail 4% 
+    Other 8%
+    
+u:  b05 Smart City 
+    
+    Garbage
+    Lighting 
+    Street & Traffic
+    Cameras 
+    Air Quality 
+    Public Transportation
+
+u:  b06 Industry
+    
+    Industry Control Systems 
+    Transport & Distibution
+    Wereables 
+    Environment
+    Maintenance
+
+u:  b07 Smart Buildings
+    
+    Building Traffic 
+    Occupants
+    Safety & Security 
+    Building Infrastructure
+
+u:  b08 Connected Cars
+    
+    Maintenance
+    Economy and Environmental Impact 
+    Navigation
+    Safety & Security
+    Comfort & Convenience{"geeignet, verbrauchernah"}
+    
+u:  b09 Energy and Utilities
+    
+    Energy Sources 
+    Inspection & Predictive Maintenance 
+    Distribution & Delivery 
+    Customer Service & Billing
+
+u:  b10 Health, Medical, and Life Science
+    
+    Personal Helth & Welfare 
+    Medical Devices 
+    Hospital Logistics 
+    Medical Services 
+
+u:  b11 Supply Chain
+    
+    Monitoring Shipping Conditions 
+    Managing Inventory
+    Tracking Shipments 
+    Telematics
+
+u:  b12 Agriculture
+    
+    Crops & Livestock 
+    Soil & Environment 
+    Equipments 
+    Irrigation{"Berieselung|Bewässerung"}
+    Drainage{"Wasserablauf"} and Waste
+
+u:  b13 Retail {"Einzelhandel"}
+    
+    Customer Traffic & Presence 
+    Advertising
+    Security 
+    Vending & Payment
+
+u:  b14 Defense
+    
+    Material 
+    Logistics 
+    Connected Warfighter
+
+u:  b15 Connected Services (Slide 1 of 2)
+    
+    Connected devices maintain connection between manufacturer and customer.
+    Customers must see benefits in allowing such a connection.
+    Help to:
+        Establish relationship with customers.
+        Provide more value to customers.
+        Enable companies to learn more about customers.
+        Make improvements to products/services over time.
+
+u:  b16 Connected Services (Slide 2 of 2)
+    
+    Fitness watch features:
+        Dashboard for viewing data collected by watch.
+        Social networking with other watch users.
+        Access to an app store.
+        Exercise recommendations.
+        Ability to view watch data on other devices.
+   
+u:  b17 Identify Goals for an IoT Implementation
+    
+    Look for opportunities to:
+        Improve decision making.
+        Understand customers better.
+        Deliver new value to customers.
+        Make operations more efficient and effective.
+        Reduce adverse impact on the environment.
+        Improve bottom line and increase business value.
+
+
+u:  b18 Identify Areas Where IoT Can Improve Your Business
+    
+    Can we obtain real-time data that would help us respond faster or better?
+    Would it help if we could accomplish work in 
+        remote locations with less intervention?
+    Would it help to collect and analyze data about any of the following?
+        Location and status of raw materials.
+        Operations performed.
+        Equipment, assets, and inventory.
+        How operations impact environment.
+        How customers interact with products.
+        Customer shopping behavior.
+
+
+u:  b19 Use Models to Design a Solution
+    
+    Use a good reference architecture as a general model for 
+        your own projects, such as:
+        IEEE P2413.2 Standard for a 
+            Reference Architecture for Power Distribution IoT (PDIoT)
+        Industrial Internet Reference Architecture (IIRA)
+    https://standards.ieee.org/ieee/2413.2/11971/
+
+
+u:  b20 Use Vendor References to Guide Your Design
+
+    Take time to learn practices vendors recommend for their platform.
+    Example vendor-specific guides include:
+        AWS Pragma architecture
+        IBM IoT reference architecture
+        Intel IoT platform reference architecture
+        Microsoft Azure IoT reference architecture
+
+
+=== s:  The IoT Development Lifecycle
+
+u:  b24 Complexity of IoT Projects
+    Many IoT projects don't get past POC stage.
+    IoT projects are often complex.
+    Requires new strategies and approaches.
+    Significant risks involved.
+
+    
+u:  b25 The IoT Development Lifecycle
+
+u:  b26 Return on Investment
+    Can be difficult to estimate:
+    Benefits to business.
+    Cost (network design, cybersecurity, aggregating data, etc.).
+
+u:  b27 Focus on Business Goals
+
+    IoT projects have seen success.
+    IoT projects can be transformative.
+    Don't be tempted by hype.
+    Don't try to shoehorn IoT into the business.
+    Focus on specific problems you need to address.
+    Consider how IoT can address problems.
+
+
+u:  b28 Cybersecurity Throughout the IoT Lifecycle
+
+u:  b29 Prepare for an IoT Initiative
+
+    To prepare for an IoT initiative:
+        Understand the organization's current state.
+        Perform pilot projects and experimentation.
+        Manage change and corporate culture.
+
+
+u:  b30 Follow Best Practices for IoT Development (Slide 1 of 2)
+
+    To ensure success in your IoT projects:
+        Work with project stakeholders to define business goals.
+        Build security and privacy into every phase of development.
+        Employ a dedicated IoT architect. 
+        Update skillsets{"Fähigkeiten-Profil" | "Expertise"} and job 
+            descriptions as needed.
+        Include various business groups when planning the target architecture.
+
+
+u:  b31 Follow Best Practices for IoT Development (Slide 2 of 2)
+
+    To ensure success in your IoT projects:
+        Appraise{"abschätzen"} legacy infrastructure.
+        Appraise the organization's capabilities.
+        Utilize{"nutze!"} resources from various business groups.
+        Provide training to staff as needed.
+        Design the entire solution as a system.
+
+
+
+===============================================================================
+m:  Data Science Fundamentals   [ov3]:c
+===============================================================================
+
+url:    https://de.wikipedia.org/wiki/Data_Science
+
+=== s:  What Is Data Science?
+
+u:  c04 Data science: 
+
+    ~   The scientific study of data to gain knowledge.
+
+u:  c05 The Elements of Data Science
+    •   Data Analysis
+    •   ML engineering
+    •   Statistical analysis 
+    •   Data Analytics
+    •   Data cleaning 
+    •   Data engineering 
+    
+
+u:  c06 Data Teams
+    
+    ~   A group of individuals involved in the strategic 
+            development, implementation, and management 
+            of business analytics technologies, processes, 
+        and the overall success of business analytics at the organization.
+    
+    examples:
+        Data scientists
+        Data architects
+        Statisticians
+        Database administrators
+        Data engineers
+        Data analysts
+        ML engineer
+        Data-team manager
+
+u:  c07 Required Skills and Knowledge
+    Mathematical Skills
+    Computing Skills
+    Industry/Domain Knowledge
+
+u:  c08 Data Analytics
+    ~ The science of examining raw data to derive insights and 
+        conclusions that help businesses make better decisions or 
+        to verify or disprove existing models or theories.
+
+    Subset of required mathematical skills.
+    Four main types:
+        •   Descriptive
+        •   Diagnostic
+        •   Predictive
+        •   Prescriptive{"verordnend,empfehlend"}
+
+u:  c09 "Descriptive Analytics"
+ 
+    ~   A form of data analytics that uses data 
+        to summarize past behaviors. 
+                
+    Any time in the past.
+    
+    Answers the question :: 
+        "What has happened?"
+    
+    Mathematical operations like summation and average.
+        Total stock in inventory
+        Averages sales by department
+        Sales growth month over month
+    Use descriptive analytics when:
+        You need a high-level understanding of what's going on in your company.
+        You want to summarize and describe different aspects of your business.
+
+
+u:  c10 Types of Descriptive Analytics
+    Business intelligence (BI)
+    Data mining
+    Data visualization
+
+
+u:  c11 "Diagnostic Analytics"
+    ~ A form of data analytics that focuses on 
+            examining past data to identify the causes of specific events.
+
+u:  c12 Types of Diagnostic Analytics
+    Identification of reasons for changes in market demand.
+    Explanation of customer behavior.
+    Identification of technology issues
+
+u:  c13 "Predictive Analytics"
+    
+    ~   A form of data analytics that uses data to 
+        forecast future behaviors. Estimation of future outcomes.
+   
+    Answers the question :: 
+        "What could happen in the future?"
+    Commonly used in forecasting.
+
+u:  c14 Types of Predictive Analytics
+    Predictive modeling
+    Root-cause analysis
+    Data mining
+    Pattern identification and alerts
+
+u:  c15 Prescriptive Analytics
+    
+    ~   A form of data analytics that uses data to 
+            predict multiple possible outcomes and 
+            then offers recommendations for actions based 
+        on those predictions.
+    
+    A step beyond predictive analytics.
+    Answers the question ::
+        "What should we do?"
+    Uses business rules, algorithms, ML, and computational modeling.
+    Data inputs:
+        Historical data
+        Transactional data
+        Real-time data
+        Big data
+        
+u:  c16 Types of Prescriptive Analytics
+    Simulation
+    Optimization
+
+u:  c17 Statistical Analysis Concepts
+    •   Statistical modeling
+    •   Statistical inference
+    •   Hypothesis testing
+    •   Regression analysis
+    •   Linear regression
+    •   Correlation and causation
+    •   Sampling
+    •   Distribution of data
+
+u:  c18 Related Concepts and Technologies
+    •   AI
+    •   Algorithms
+    •   Generative AI
+    •   ML and DL
+    •   Programming tools
+    •   APIs
+    •   Web scraping
+    •   BI
+
+u:  c19 Pulling It All Together
+
+
+=== s:  Types of Data
+
+u:  c23 "Big Data"
+    
+    ~   Collections of data that are so large and 
+        complex that they require advanced tools to process and 
+        analyze them. 
+        
+    •   Volume
+    •   Velocity
+    •   Variety
+    •   Veracity {"Aufrichtigkeit"}
+    •   Validity
+    •   Volatility
+
+
+u:  c24 Structured, Unstructured, and Semi-Structured Data
+
+    a)  Structured
+        Contains elements that are easily accessible for 
+        effective analysis
+    
+    b)  Unstructured   
+        Is not organized in an established manner and 
+        does not conform to a data model.
+
+    c)  Semi-Structured Data
+        Data stored outside a relational database that has 
+        characteristics that support analysis.
+
+u:  c25 Open and Proprietary Data
+    
+    Open data: 
+        Freely available for use.
+        Can be shared or built on by anyone for any reason.
+        Should be legally and technically open.
+    
+    Proprietary data: 
+        Owned/controlled by an individual, organization, or group. 
+        Protected by copyright, patent, or trade-secret legislation
+
+u:  c26 Data Sources
+    Data can come from numerous sources.
+    It can be difficult to ascertain the veracity of each dataset. 
+    Categories:
+        Transactional data
+        Machine data
+        Social data
+
+u:  c27 Data Repositories
+
+
+=== s:  The Data Science Lifecycle
+
+u:  c30 Lifecycle Stages
+    
+    1.  Problem Identification
+    2.  Data Collection 
+    3.  Preprocessing 
+    4.  Exporatory Data Analysis
+    5.  Modeling
+    6.  Model Deployment 
+    7.  Communication Results => 1.
+    
+u:  c31 Problem Identification   
+    Roles:
+        Stakeholders
+        Data-team manager
+        Data scientist
+
+u:  c32 Data Collection 
+    Roles: 
+        Data scientist
+        Data analyst
+        Data-team manager
+        Database administrator
+
+u:  c33 Preprocessing
+    Improves data quality to facilitate analysis.
+    Tasks:
+        Data wrangling/munging
+        Data cleaning
+        ETL
+
+u:  c34 Exploratory Data Analysis
+    Summarizes main characteristics of datasets.
+    Visual representation of summary information.
+    Can use different plot types.
+    Can identify when additional preprocessing is needed.
+
+u:  c35 Modeling 
+    Develops an ML model to solve the problem.
+    ML models: algorithms and model data.
+    Feature engineering.
+    Model training and evaluation.
+    Model validation.
+
+u:  c36 Model Deployment
+    Integrates the ML model into existing systems.
+    Operationalizing:
+        Moving into production.
+        Integration via APIs/executables.
+        Results: repeatable, scalable, and flawless.
+    Monitoring:
+        Outside influences affect performance.
+        Periodically verify the model generates expected results. 
+        When thresholds are exceeded, 
+            revisit earlier stages to adjust the model.
+
+u:  c37 Communication of Results
+    Gather results and communicate them to stakeholders.
+    Identify key findings documented throughout the process stages.
+    Create visual representations of insights.
+    Package it all into reports for stakeholders.
+
+
+
+===============================================================================
+m:  Functions of Data Science in Business   [ov4]:d
+===============================================================================
+
+=== s:  Improve Customer Experience
+
+u:  d04 "Customer Experience" (CX)
+    
+    ~   The overall perception of a company based on 
+        customers' interactions with  that company.
+    
+    Based on subjective responses.
+    Covers all stages of the customer journey.
+    Highly individualized in details but improving CX benefits the business.
+    Potential use cases:
+    •   Personalization
+    •   Sentiment analysis
+    •   Recommender systems
+    •   Self-service support
+    •   Chatbots
+    •   Virtual assistants
+    
+u:  d05 Personalized CX
+    Helps customers feel valued.
+    Identify services and interactions that lead to positive reactions.
+    Collect data at all stages of the customer journey.
+    Initial enquiry->Comparison->Purchase->Implementation & Use -> Loyality
+
+u:  d06 "Sentiment Analysis"
+
+    ~   A process that determines the emotional tone of textual data, 
+        often grouping results in 
+            positive, negative, and neutral categories.
+
+    Common sources:
+        Emails
+        Customer-support chat transcripts
+        Online reviews
+        Social media comments
+    Technologies used: ML, statistics, and NLP.
+    Insight into customers' mindsets.
+    Uncover possible ways to increase customer satisfaction.
+
+u:  d07 "Recommender Systems"
+    
+    ~ A form of ML that suggests potential items of 
+        interest based on a customer's profile, search history, 
+    and inventory metadata.
+
+    Past interest becomes a factor to predict future interest.
+    
+    Examples:
+        Books by same author
+        Books in same genre
+        Companion products
+        Clothing in similar styles or colors
+
+u:  d08 Self-Service Support
+    Get help when you need it.
+    Optimal for resolving basic issues.
+    Implementation options:
+        Chatbots
+        Knowledgebases/documentation
+        Online forums/communities
+    Combine with traditional customer support.
+    How does data science help?
+
+u:  d09 Chatbots and Virtual Assistants
+
+    Generative AI: 
+        Creates content that appears convincingly humanlike.
+        Text, audio, images, and video
+
+    Chatbots
+        Simulate human conversation via text or voice messages.
+        On websites, in apps, and on messaging platforms.
+        Use a conversational interface.
+        Primary goal: 
+            to provide customer support.
+
+    Virtual assistants
+        Assist users with performing simple tasks.
+        Commonly built into devices.
+        No interface needed.
+        Primary goal: 
+            to help users conduct business or personal activities.
+
+
+=== s:  Improve Marketing Efforts
+
+u:  d12 "Audience Segmentation"
+    ~   The process of dividing individuals into groups based 
+        on common characteristics.
+    Demographic
+    Geographic
+    Psychographic
+    Behavioral
+
+u:  d13 Targeted Advertising
+
+    Major goal of audience segmentation.
+    Focus on traits, preferences, and interests.
+        Then send different messages to each segment.
+    Data sources:
+        Web tracking
+        Location tracking
+        Cross-device tracking
+    Mixed reviews for acceptance
+
+u:  d14 Campaign Optimization
+
+    Increase the effectiveness of marketing and advertising campaigns.
+        Maximize ROI.
+    Campaign optimization software can suggest metrics and KPIs.
+        ROAS
+        Cost per click
+        Conversion rate
+
+$>  AI ROAS =: Return on Ad Spend
+        refers to the use of artificial intelligence and 
+            machine learning to predict, measure, optimize, 
+        and maximize return on advertising spend across digital channels.
+
+$>  AI KPIs (Key Performance Indicators) 
+        are specific, quantifiable metrics used 
+            to measure the success, efficiency, business value, 
+            and technical execution of artificial intelligence initiatives.
+
+u:  d15 Marketing Measurement Analysis
+    The process of collecting, 
+        analyzing, and interpreting data to measure 
+        the effectiveness of marketing activities.
+    A step beyond campaign optimization.
+    Analyzing effectiveness of prior activities helps drive success 
+        of future campaigns.
+
+    Metric & Description
+    Reach:      
+        Number of people who are exposed to a marketing message.
+    Frequency:  
+        Number of instances a person is exposed to a 
+                    marketing message.
+    Engagement: 
+        Level of interaction with a marketing message.
+    Conversion:
+            Number of people who react to a marketing message as was intended by the organization.
+    ROI
+        Amount of money generated by a marketing campaign 
+                divided by the amount of money spent on the campaign.
+
+
+=== s:  Optimize Operational and Transactional Security
+
+u:  d18 Fraud Detection
+    Banks analyze transactional data.
+    Flags anomalous activity that is not overtly fraudulent.
+        But possibly related to fraud.
+        Example: 
+            several consecutive small transactions followed 
+                by a larger transaction. 
+    Once the flag has been raised, the bank can:
+        Contact the account holder to verify the transactions.
+        Take corrective action if necessary. 
+
+u:  d19 Minimization of Loan{"Darlehen"} Defaults
+    Predicting if loan applicants will repay loans.
+    Historical data can show higher-risk loan types.
+        Weighting system to factor in the risk.
+    Other factors to consider:
+        Applicant's identifying information. 
+        Applicant's financial history.
+        Applicant's current work status and financial standing.
+        Estimated value of the property to be acquired.
+        Loan amount.
+    mortgage{"Hypothek"}
+    <<< Approved!{"Genehmigt!"}
+
+u:  d21 Reduction of Intellectual Property Theft
+    IP: (intellectual property) 
+        A category of property that includes intangible{"immateriell"}
+            creations of human intellect, 
+        such as literary and artistic works, inventions, designs, 
+            and so forth {"und so weiter"}.
+
+    Patents, copyrights, trademarks, and trade secrets.
+    IP theft causes:
+        Loss of competitive edge.
+        Damage to reputation.
+        Slow/stagnant growth. 
+        Loss of customer trust.
+    Best practices for protecting IP:
+        Monitor user activity.
+        Real-time investigations.
+        UEBA.
+        Honey trap.
+
+u:  d21 Risk Identification and Mitigation
+
+    Operational risk: 
+        disrupts day-to-day business.
+    Strategic risk: 
+        inability to react to changing market conditions.
+    Example: failure of mission-critical equipment.
+        Predictive modeling 
+    Example: changes in customer requirements.
+        Prescriptive modeling
+
+u:  d22 Cybersecurity Considerations
+    Analyzing network traffic.
+    Conducting UEBA.
+    Analyzing historical data.
+    Analyzing online content.
+
+$>  AI UEBA 
+    (Artificial Intelligence for 
+    'U'ser and 'E'ntity 'B'ehavior 'A'nalytics) 
+    is a cybersecurity domain that uses machine learning (ML) and 
+    behavioral modeling to detect cyber threats, 
+    insider risks, and compromised accounts.
+
+=== s:  Enhance Operational Practices
+
+u:  d25 System or Component Failure
+    Availability: percentage of uptime (99.999%).
+    Predictive maintenance:
+        What: monitoring performance and equipment conditions.
+        When: during regular operations. 
+        Goal: avoid unplanned downtime.
+    Predictive analytics:
+        Estimate probability of system/component failure.
+        Based on historical information about past failures.
+        Schedule planned downtime for maintenance.
+
+
+u:  d26 Sales Forecasting
+    Creating and refining sales forecasts.
+        Analyze historical data, 
+            identify trends and patterns, and apply ML models.
+        Results in better decisions about staffing, 
+            inventory, marketing, and pricing.
+    Short term or long term.
+    Common methods:
+        Time series
+        Regression
+        Historical
+        Opportunity stage
+
+u:  d27 "Dynamic Pricing"
+    ~ The process of adjusting the price of goods or 
+        services according to customer behavior or changes in the market.
+    Example: changing price of airline tickets.
+        Seat type
+        Number of available seats
+        Time before flight
+
+u:  d28 "Customer Churn" {"Kunden Abwanderung"}
+    ~ The tendency of customers to cancel subscriptions to a service, 
+    or otherwise cease{"be-enden"} their relationship with a business.
+    
+    Some churn occurs naturally.
+    It's crucial to recognize changes in churn, 
+        why they happen, and how you can control them.
+    Predictive analytics for identifying the "why."
+    Once identified, 
+        the company can address causes.
+    Relevant data:  
+        demographic/behavioral data, interactions with the company.
+    Find common characteristics/patterns; offer incentives to stay.
+
+u:  d29 Talent Acquisition
+
+    TA analytics: 
+        The process of analyzing recruitment data and 
+        candidate data to optimize the recruiting and 
+            hiring process.
+
+    HR/recruiting software
+        Automated candidate sourcing and tracking, 
+            résumé parsing, and email communication.
+        Fewer tedious/repetitive tasks for humans.
+
+    Common metrics:
+        Time to fill
+        Time to hire
+        Offer acceptance rate
+        Recruitment channel effectiveness
+        Quality of hire
+
+u:  d30 Transportation and Logistics
+
+    Optimize delivery routes.
+    Reduce costs for customer and company.
+    Warehouse management/optimization.
+    Operational capacity planning
+
+
+===============================================================================
+m:  Implementing Business Requirements for Data Science [ov5]:e
+===============================================================================
+
+=== s:  Develop a Data-Centric Organization
+
+u:  e04 What Is a Data-Centric Organization?
+    Management and employees believe data analytics are 
+        critical to the overall business strategy.
+    Implements a framework where data is stored independently 
+        of applications and tools.
+    Generates relevant information and 
+        uses it collaboratively to achieve outcomes.
+
+u:  e05 Challenges Associated with Building a Data-Centric Organization
+    Data silos
+    Data quality
+    Data governance
+    Trust
+    Changing roles and responsibilities
+
+u:  e06 Organizational Preparation
+    Getting management buy-in.
+    Aligning with organizational objectives/values.
+    Identifying potential contributors.
+    Preparing teams to succeed.
+
+u:  e07 Team Preparation
+    Training
+    Talent recruiting and acquisition
+    Combining roles
+
+
+=== s:  Develop an Implementation Strategy
+
+
+u:  e10 Selection of Business Cases for Implementation
+    Numerous possible implementations.
+    Identify the most viable options.
+        What provides the most benefit?
+        What can be done at a low cost?
+        What can be done quickly?
+    Prioritize the projects.
+    Cost vs. benefits.
+
+u:  e11 Implementation Investments
+    People
+    Technology
+    Data
+    Governance{"Steuerung"}
+    Time
+
+u:  e12 Data Collection Considerations  
+    Collect only relevant data.
+    Identify collection options.
+    Generate synthetic data.
+    Identify storage solution.
+    Decide how to combine data from different sources.
+
+u:  e13 Data Preparation Considerations
+    Find/use tools that streamline preprocessing tasks.
+        Data wrangling
+        Data cleaning
+    Find/use tools that support EDA activities.
+        Examine datasets.
+        Summarize main characteristics.
+        Visualize summary information
+
+$   AI EDA 
+    The acronym AI EDA typically refers to one of 
+        two distinct technical fields: 
+    Electronic Design Automation in Hardware Engineering or 
+        Exploratory Data Analysis in Data Science.
+
+$   Data Wrangling
+    Data Wrangling (oft auch als Data Munging bezeichnet) 
+        ist der Prozess, bei dem Rohdaten bereinigt, 
+        strukturiert und in ein nutzbares Format transformiert werden, 
+        damit sie für Analysen, 
+        Business Intelligence oder Machine Learning 
+    verwendet werden können.
+
+u:  e14 Modeling and Deployment Considerations
+    Select algorithms/ML models that support solving the 
+        identified business problem.
+    Tune the model's hyperparameters to optimize performance.
+    During model testing, identify/use multiple algorithms.
+    Evaluate the model's performance and results. 
+    Don't deploy a model too soon.
+    Verify that repeatable, 
+        scalable, and flawless results are achieved.
+    Monitor output for performance and quality.
+
+u:  e15 Results Communication Considerations
+    Identify audience and adjust communications when needed.
+    Summarize the project and provide context.
+    Highlight/explain key findings.
+    Use visualizations.
+    Create reports (findings and visualizations).
+    Ask for feedback.
+
+=== s:  Identify Impact of Data Science on Business
+
+u:  e18 Effects on Overall Business Operations
+    Reputational impact
+    Impact on talent pool
+    Legal and regulatory compliance
+
+u:  e19 Effects on Business Processes and Practices
+    Cost management
+    Management of infrastructure requirements
+    Employee impact
+    Organizational changes
+    
+u:  e20 Data Issues
+    Security - Controls - Quality - Privacy 
+
+u:  e21 AI-Related Risks
+    Lack of formal governance for AI.
+    Acquisition of third-party data and AI products.
+    Lack of domain expertise.
+    Using black-box models and technologies.
+
+
+=== s:  Identify Governance Measures
+
+u:  e24 Ethical Considerations
+    Data ethics: 
+        A collection of moral principles that govern 
+        how organizations gather, protect, and use data.
+    Privacy
+    Accountability
+    Transparency/explainability
+    Fairness/non-discrimination
+    Safety/security
+        
+    
+u:  e25 
+    Legal and Regulatory Considerations, Frameworks, and Guidelines
+
+    Data privacy
+        GDPR
+        PCI DSS
+        OECD Privacy Guidelines
+        APEC CBPR
+    AI implementations
+        China: provisional regulations governing generative AI.
+        Proposed legislation in other countries (EU, Canada).
+
+    Be aware of what applies to your company.
+    Rapidly changing landscape — keep up with new developments!
+
+===============================================================================
+m:  AI Fundamentals [ov6]:f
+===============================================================================
+
+=== s:  A Brief History of AI
+
+u:  f04 What Is Artificial Intelligence (AI)?
+    Artificial intelligence (AI): 
+        The ability of machines to exhibit human-like intelligence.
+
+u:  f05 Timeline of AI
+    1950:   Turing test 
+    1997:   Deep Blue
+    2000:   Kismet 
+    2011:   Siri
+    2016:   Deep Mind
+    2020:   DALL-E & ChatGpt
+
+u:  f06 AI-Enabling Technologies: Cloud Computing
+
+    Cloud computing: 
+        An approach to providing computing services and 
+            other resources over a network of distributed servers 
+            and other infrastructure.
+
+    Offload high AI costs.
+    Match ever-changing demands.
+    Example: Virtual meeting software.
+    AWS EC2 released in 2006.
+    Many services and vendors since then.
+
+u:  f07 AI-Enabling Technologies: GPUs
+    GPU: 
+        A computer chip designed to process graphics, 
+        images, and other visual media.
+
+    General-purpose GPUs do more.
+    CPU is like a small sports car.
+        GPU is a like a big delivery truck.
+    GPUs better for doing AI calculations.
+    Example: 
+        Online store recommendations.
+    First general-purpose GPUs released in 2007.
+    High-performance GPUs now more common
+
+u:  f08 AI-Enabling Technologies: Big Data
+    Big data: 
+        Collections of data that are so large and complex 
+        that they require advanced tools to process and analyze them.
+
+    Example: 
+        Searches used in targeted ads/customized results.
+    2008 whitepaper by CCC outlined rise of big data.
+
+
+=== s:  AI Concepts
+
+u:  f11 General AI and Narrow AI
+    
+    General AI 
+        Same or better cognition than humans
+        Extrapolates reasoning
+        Solves multiple novel problems
+        Not yet a reality
+    
+    Narrow AI
+        Approximates human cognitive traits
+        No true capacity for reason
+        Solves one or a few designated problems
+        Currently a reality
+
+u:  f12 Machine Learning
+u:  f13 Machine Learning Datasets
+
+u:  f14 Deep Learning
+    A type of machine learning that makes decisions 
+        using multiple layers of information.
+
+u:  f15 Deep Learning Applications
+    Natural language processing (NLP)
+    Computer vision
+    Robotics
+
+u:  f16 Generative AI
+    a photograph of a monkey typing at a typewriter, 
+        wearing a small hat, in an office, realistic, highly detailed
+
+
+u:  f17 Machine Learning vs. Deep Learning
+
+u:  f18 The Choice Between Machine Learning and Deep Learning
+
+    Traditional machine learning:
+        Used with smaller datasets.
+        Expert has determined features.
+        Customer surveys, health records, bank activity, etc.
+
+    Deep learning:
+        Used with larger datasets.
+        Difficult for human to extract features.
+        Object recognition, speech understanding, etc.
+
+u:  f19 How AI Concepts Relate
+    AI - ML - DL
+    
+u:  f20 Machine Learning Approaches
+    Supervised~ :   UnSupervised~ : Reinforcement Learning
+
+u:  f21 Supervised Machine Learning 
+    a)  learning 
+    Labeled dataset -> Model learns patterns from labeled data 
+    b)  using 
+        input: New, unlabeled data sent to model
+        output: Model outputs classification
+
+u:  f22 Unsupervised Machine Learning
+    input:  Unlabeled dataset
+    output: Model clusters similar data
+
+u:  f23 Reinforcement Learning - example Chess Program "AplhaZero"       
+    1.  action selected     :   Figures & Board & Rules 
+    2.  action performed    :   chess games
+    3.  environment changed :   -
+    4.  reward given        :   win | lost
+    5.  process repeats 
+
+
+===============================================================================
+m:  Functions of AI in Business [ov7]:g
+===============================================================================
+
+=== s:  Improve User Experiences
+
+u:  g04 Natural Language Processing (NLP)    
+    Text Analysis
+    Speech Recognition
+    Natural Language Understanding
+    Natural Language Generation
+    Natural Language Translation
+
+u:  g05 Chatbots 
+
+    Chatbot: 
+        An AI system that uses NLP to engage in real-time, 
+        text-based chatting with a human user.
+
+    Customer service
+    Appointment scheduling
+    HR management
+    Information research
+
+u:  g06 Agent Assistance
+
+    Agent assistance: 
+        Automation technology that helps human agents in 
+            a call center do their jobs more efficiently and effectively.
+
+    Call context
+    Immediate responses
+    Suggested responses
+    Live transcription and summarization
+
+u:  g07 Sentiment Analysis
+
+    Sentiment analysis: 
+        The technique of determining the attitudes and 
+        feelings someone has toward something.
+
+    Customer retention{"Beibehaltung|Vorbehalt"}
+    Employee retention
+    Product development strategy
+    Recommendations
+
+u:  g08 Emotion AI
+
+    Emotion AI: 
+        A type of sentiment analysis solution that focuses on 
+        the physical attributes of a person, 
+        particularly their facial expressions and features.
+
+    Uses computer vision to detect facial features.
+        Object recognition, motion detection, etc.
+    Similar applications to sentiment analysis.
+        More difficult and controversial to implement
+
+u:  g09 "Recommendation Systems"
+
+    ~   A system that suggests items, services, 
+            and other things of interest to users.
+
+    Content recommendation
+    Product recommendation
+    Social networking
+    Research
+
+u:  g10 Digital Personalization
+
+    Personalization approaches:
+        Serve specific content.
+        Hide specific content.
+        Rearrange content.
+        Change visual themes.
+
+    User profile aspects that influence experience:
+        Geolocation.
+        Demographics.
+        Socioeconomic status.
+        Browsing and online shopping history.
+        General sentiment toward business.
+
+    Model learns what experience fits best with what user.
+
+
+=== s:  Segment Audiences
+
+u:  g13 Customer Segmentation
+    Professionals 
+    Retires 
+    Students 
+    Academics 
+    Executives{"Führungskraft"}
+
+u:  g14 Predictive Segmentation
+
+    Supervised learning can improve segmentation.
+        Use classification or regression to predict label.
+    
+    Example: Customer return status.
+        Predict if future customers will return.
+        Segment based on predicted result directly.
+        Or, incorporate as part of clustering
+
+u:  g15 Targeted Campaigns and Customer Profiles
+
+=== s:  Secure Assets
+
+
+u:  g18 Risk Management
+
+    ~   The cyclical process of identifying, 
+        assessing, analyzing, and responding to risks.
+
+    •   Risk detection
+    •   Risk analysis
+    •   Risk scoring
+    •   Risk response
+
+    assessment{"Bewertung,Einschätzung"} 
+
+u:  g19 Threat Analysis
+    
+    ~   The study of people, events, 
+        and technologies that can harm an organization's assets.
+
+    •   Threat classification
+    •   Threat ranking
+    •   Threat segmentation
+    •   Threat research
+
+u:  g20 IT Asset{"Vermögen|Bestand"} Management (ITAM)
+
+    ~   The process of identifying, 
+            inventorying, tracking, and 
+        maintaining information technology assets as 
+            they are used across the organization.
+
+    User requests
+    Fault prediction
+    Asset procurement
+    Compliance issue identification
+
+u:  g21 Fraud Identification
+    Transaction assessment
+    Outlier detection
+    Signature analysis
+    Identity theft detection
+
+u:  g22 Security Notifications and Alerts
+    Alert sorting and filtering
+    Security dashboards
+    Notification dissemination
+    Remediation suggestions
+
+
+=== s:  Optimize Processes
+
+u:  g25 Industrial Robots
+    ~   A robot used in warehouses and 
+        manufacturing facilities to automate dangerous or difficult processes.
+
+    Welding {"Schweißarbeiten"}
+    Assembly and disassembly
+    Inspection and testing
+    Packaging and labeling
+
+
+u:  g26 Autonomous Vehicles    
+    ~   A vehicle that has self-driving capabilities
+
+    Product transport and freight
+    Delivery
+    Public transportation
+    Tourism
+
+u:  g27 Robotic Process Automation
+
+    ~   A method by which software agents, 
+        also called "bots", 
+            automate the performance of one or more tasks.
+
+    Data entry and extraction
+    Software testing
+    Customer service
+    Financial processes
+
+u:  g28 Predictive Analytics for AI
+    ~   A form of data analytics that uses data to 
+        forecast future behaviors.
+
+    Inventory levels
+    Purchasing patterns
+    Staffing needs
+    Customer behavior
+
+
+===============================================================================
+m:  Implementing Business Requirements for AI   [ov8]:h
+===============================================================================
+
+
+=== s:  Identify Design Requirements
+
+u:  h04 Use Case Identification
+    Don't shoehorn{"hineinpressen"} AI into your business.
+    Identify problems first, then how AI can help.
+    Factors for identifying use cases:
+    Problems solved using traditional methods.
+        Existing solutions.
+        Overall goals.
+        Relevant data.
+        Similar problems solved by others.
+    Consult with stakeholders.
+        Both technical and non-technical.
+
+u:  h05 The Value Proposition of AI   
+    Quantify the value that AI can bring.
+    Example: Recommendation system.
+        Customers more likely to buy more products.
+        Increase in sales worth the expense of AI?
+        Increase in customer loyalty?
+        Other ways to quantify value?
+
+u:  h06 Prototype Assessment
+
+    Is the design efficient and effective?
+    Is the system scalable?
+    On-premises vs. cloud resources?
+    Can the model be moved elsewhere?
+    Can the model be improved later?
+    What are the maintenance costs?
+
+=== s:  Identify Data Requirements
+
+u:  h09 Data Quality and AI
+
+    Refers to:
+        Accuracy
+        Recentness
+        Completeness
+        Formatting
+        Volume
+        Usability
+
+    A deficiency in any will cause problems.
+    Determine which aspect(s) present highest risk.
+    Or, determine which are most important.
+
+u:  h10 Data Control and AI
+
+    Techniques:
+        Acquisition
+        Storage
+        Ownership
+        Access permissions
+        Modification permissions
+        Sharing permissions
+        Disposal
+    May repurpose general IT control processes.
+    AI has unique requirements for data control.
+
+u:  h11 Data Security and AI
+    Data at risk of being:
+        Copied/disseminated
+        Modified
+        Deleted
+        Unavailable
+    Control access according to least privilege.
+    Implement encryption at rest, in transit, in use.
+    Consult with IT team.
+
+
+=== s:  Identify Risks in Implementing AI
+
+u:  h14 Impact on Employees
+    AI can displace jobs.
+        Mostly jobs with routine and predictable behavior.
+    Employees may feel "technostress."
+        Lost productivity.
+        Job insecurity.
+    Employees may struggle to adapt.
+        AI can disrupt workflow.
+        Reduced productivity during transitional period.
+
+u:  h15 Operational Risks
+    Disruptive AI brings operational risks.
+    AI solution may:
+        Outright fail.
+        Not bring business value.
+        Not be cost beneficial.
+        Not be well integrated.
+        Not be easily updated/maintained.
+    Change management can:
+        Increase organizational readiness.
+        Minimize risks.
+        Better prepare org to harness AI.
+
+
+u:  h16 Ethical Considerations
+    Privacy
+    Accountability
+    Transparency and explainability
+    Fairness and non-discrimination
+    Safety and security
+
+u:  h17 Legal and Regulatory Considerations 
+    DoD [U.S. Department of Defense] AI Principles
+    The DoD AI principles are a set of five ethical guidelines =: 
+        Responsible, 
+        Equitable, 
+        Traceable, 
+        Reliable, and 
+        Governable—designed 
+    to ensure the lawful, ethical, 
+    and accountable use of AI in military operations.
+
+=== s:  Develop an AI Strategy
+
+u:  h20 Alignment to Organizational Initiatives
+
+    AI solutions must align to initiatives/strategies.
+        Otherwise, they won't bring much value.
+        Could also be disastrous if not aligned.
+    
+    Example: Digital transformation.
+        Org seeks change through digital technologies.
+        AI is an attractive option.
+        AI fulfills initiative objectives.
+
+    Other relevant initiatives:
+        Data strategy
+        Growth strategy
+
+u:  h21 Alignment to 
+        Environmental(E), Social(S), and Governance(G)=: (ESG) Initiatives
+    
+    E:  Commitment to sustainability
+        Power efficiency of AI solutions
+
+    S:  Commitment to treating people fairly
+        Supporting diversity, equity, and inclusion
+  
+    G:  Commitment to leadership and management
+        Supporting data protection processes
+
+u:  h22 Organizational Resources
+    Talent resources
+    Data resources
+    Computing resources
+    Budget resources
+    Stakeholders
+
+u:  Competitive Considerations       
+    AI gives orgs a competitive edge.   
+    A way to obtain or maintain industry leadership.   
+    Example competitive benefits:
+        Improving existing products and services.
+        Fostering innovation.
+        Streamlining business processes.
+        Generating renewed customer interest.
+        Attracting new talent.
+

@@ -1,0 +1,420 @@
+###############################################################################
+--- !sem.ETBIZ:KnowHow   [Oktober-2026]
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Kurs:    
+        Name:   ETBIZ
+        Dauer:  01.Oktober 2026 - 21.Oktober 2026
+
+                
+--- url:
+    Gemini
+
+
+### !date:<2026-10-05>:Mo 
+    
+
+$   Internet of Things (IoT)
+    <  ~ refers to a  network of physical objects ("things") 
+    embedded with sensors, 
+        processing power, software, 
+    and connectivity technologies to collect and 
+        exchange data with other devices and systems over 
+    the internet or local networks.
+
+
+<   Core Architecture (4 Pillars) : {"Säule"}
+    
+    Perception Layer (Sensing): 
+        Physical hardware equipped with sensors 
+            (temperature, motion, pressure) and 
+    actuators (motors, relays) that interact with the environment.
+
+    Connectivity Layer (Networking): 
+        Communication protocols 
+        that transmit gathered data to local nodes or 
+        the cloud (e.g., MQTT, CoAP, Wi-Fi, 
+        Bluetooth LE, LoRaWAN, NB-IoT, Cellular).
+
+    Data Processing Layer (Middleware / Cloud / Edge): 
+        Processing raw telemetry data, 
+        performing real-time analytics, filtering, 
+        and running machine learning inference 
+        (often using Edge Computing or Cloud IoT hubs like AWS IoT Core, 
+        Azure IoT Hub, or GCP Cloud IoT).
+
+    Application Layer: 
+        Front-end dashboards, user interfaces, or 
+        automated feedback loops 
+        (e.g., smart home controllers, 
+        industrial SCADA integrations, predictive maintenance triggers).
+
+
+$   IoT Examples
+    Smart Thermostats (e.g., Ecobee, Google Nest):
+        Sensors: Temperature, humidity, ambient light, 
+        occupancy (PIR).
+        Connectivity: Wi-Fi, Matter/Thread.
+        Function: 
+            Learns home usage patterns, 
+            adjusts HVAC systems dynamically to save energy, 
+            and allows remote control via smartphone apps.   
+
+
+$   Safety vs Security 
+
+    Obwohl Safety und Security im Deutschen häufig beide 
+        mit „Sicherheit“ übersetzt werden, 
+    bezeichnen sie im Ingenieurwesen, 
+        in der IT und im Risikomanagement 
+        zwei grundlegend unterschiedliche Konzepte.
+
+    Der Kernunterschied lässt sich kurz zusammenfassen:
+
+    Safety (Funktionale / Arbeitssicherheit): 
+        Schutz der Umwelt und Menschen vor den Gefahren 
+        eines Systems 
+        (Schutz vor <unbeabsichtigten> Fehlern, Unfällen 
+            und Naturereignissen).
+
+    Security (Informations- / Objekt-Sicherheit): 
+        Schutz des Systems vor den Gefahren aus der 
+        Umwelt 
+        (Schutz vor <vorsätzlichen>, bösartigen Angriffen 
+            und Manipulationen).
+    
+
+$   Telemetry
+    Telemetry refers to the automated collection, 
+        transmission, and measurement of data from 
+        remote or inaccessible sources to a central 
+    system for monitoring, analysis, and management.
+
+$   Telematics 
+    is an interdisciplinary field that merges 
+    telecommunications and informatics (computer science) 
+    to send, 
+    receive, and store information regarding remote objects—most 
+    commonly vehicles and mobile assets—via telecommunication networks.
+
+$   DCS 
+    Distributed Control System (Industrial Engineering)
+    A Distributed Control System (DCS) is a specially designed 
+        control system used in complex process industries 
+        where control elements are distributed throughout the system, 
+    with sub-controllers managed by a central supervisor.
+    
+$   data dashboard
+    A data dashboard is an interactive, 
+        visual interface that consolidates metrics, 
+        key performance indicators (KPIs), 
+        and operational data from multiple sources into a single view. 
+    It allows decision-makers to track performance, 
+        spot anomalies, and evaluate business health at a glance.
+
+$   CRM 
+    Ein CRM (Customer Relationship Management) – auf Deutsch Kundenbeziehungsmanagement – bezeichnet sowohl eine Unternehmensstrategie 
+    als auch die dazugehörige Software, 
+    mit der sämtliche Interaktionen, Beziehungen und 
+    Daten zwischen einem Unternehmen und 
+    seinen (potenziellen) Kunden zentral erfasst und gesteuert werden.
+
+
+$   smart pig 
+    Depending on the industry, 
+        smart pig (or "intelligent pig") refers either to 
+            an advanced diagnostic tool used in pipeline engineering or 
+    to technology applications in precision livestock farming.
+    In the oil, gas, and process industries, 
+        a smart pig (Pipeline Inspection Gauge) is an autonomous robotic
+        inspection tool inserted into a pipeline. 
+    Driven by the pressure of the flowing product itself, 
+    it travels through miles of pipe to inspect walls without 
+        interrupting service.
+
+
+$   RFID (Radio-Frequency Identification) is a 
+    wireless communication technology that uses electromagnetic fields 
+    in the radio frequency spectrum to identify, 
+    track, and transfer data between 
+    a reader and tagged objects without requiring line-of-sight contact.
+
+
+$   RTU 
+    The component you are referring to is a 
+        Remote Terminal Unit (RTU) 
+        (sometimes also called a Remote Telemetry Unit).
+    Geographic Distribution: 
+        Unlike a Programmable Logic Controller (PLC) 
+        which typically handles fast, 
+    high-density machine control 
+        inside a factory or plant, 
+    an RTU is designed to monitor assets{"Güter"} scattered over 
+        broad geographic areas.
+
+
+### !date:<2026-10-13>:Di 
+
+$   clustering model
+
+    clustering model helps you perform targeted marketing primarily 
+        by segmenting customers into 
+        distinct, 
+    homogeneous groups based on shared behaviors, 
+        purchasing patterns, 
+    or demographics, allowing you to tailor campaigns to each group.
+
+    Key examples of how this works in practice include:
+
+    Customer Segmentation: 
+        Grouping customers by purchasing 
+            history (e.g., high-value frequent buyers vs. bargain hunters) 
+            so you can send personalized product recommendations or 
+            targeted discount offers.
+
+    Churn Risk Identification: 
+        Grouping users by engagement frequency and feature usage 
+            to identify declining usage patterns early and 
+            send targeted re-engagement campaigns.
+
+    Customized Communication Channels: 
+        Clustering customers based on communication preferences or 
+        response rates so you reach each segment 
+        via their preferred channel (email, SMS, push notification).
+
+    Behavior-Based Persona 
+        Creation: Identifying natural clusters i
+        n raw behavioral data 
+        (e.g., late-night impulse shoppers vs. weekend planners) 
+        to design distinct messaging for each customer persona.
+
+    Core Principle: 
+        Clustering is an >unsupervised< learning technique 
+        that discovers hidden patterns 
+        and natural groupings in data without 
+        predefined labels, making it ideal for discovering unexpected market segments.    
+        
+$   transactional data
+    An example of transactional data is a record of a specific 
+        event or exchange that occurs as part of 
+    routine business operations, 
+    typically capturing details such as time, amount, 
+        participants, and items involved.
+
+
+$   Examples Generative AI 
+       
+    --- Legende:
+    
+    Modality
+        What It Generates
+            Common Examples / ToolsTypical 
+                Use Cases
+    
+    +   Text & Conversation
+            Natural language, code, summaries, and structured data
+                Gemini, ChatGPT, Claude
+                    Writing essays, summarizing reports, drafting emails,
+                        programming
+                
+    +   Images & Graphics
+            Digital artwork, photorealistic photos, design assets
+                Imagen 3, Midjourney, DALL-E 3
+                    Marketing visuals, UI mockups, concept art, photo editing
+                    
+    +   Code & Software
+            Executable code, scripts, and debugging fixes
+                GitHub Copilot, Cursor, Gemini Code Assist
+                    Writing functions, generating SQL queries, unit testing
+        
+    +   Audio & Music
+            Human-like speech, sound effects, original songs
+                Lyria, ElevenLabs, Suno, Udio
+                    Text-to-speech voiceovers, music comp
+    
+
+$   database schema      
+
+    A database schema is an example of a 
+        physical data model (or a logical data model, 
+        depending on the context and level of abstraction).
+
+    legend:
+    Data Model Level	
+        Role & Focus	
+            How Database Schema Applies
+
+    +   Physical Data Model (Most Common Answer)	
+
+            Implements the database on a specific DBMS. 
+
+            Defines exact tables, data types, 
+                primary/foreign keys, indexes, 
+                storage engine specifications, and constraints.	
+   
+            DDL scripts (CREATE TABLE ...) or the actual 
+                implemented database structure in SQL/NoSQL systems.
+
+    +   Logical Data Model	
+
+            Defines entities, attributes, relationships, 
+            and business rules independent of the underlying database 
+            hardware or DBMS software.	
+            
+                Entity-Relationship (ER) schemas or logical database 
+                    diagrams showing table relationships and 
+                    keys without specific storage details.
+
+
+$   Data science 
+    is an interdisciplinary field that combines 
+        domain expertise, programming skills, 
+        and mathematical/statistical knowledge 
+        to extract meaningful insights 
+            from structured and unstructured data.
+
+$   data breach{"Bruch,Bresche,Verletzung"}
+    A data breach occurs when confidential, 
+        sensitive, or protected information is accessed, 
+            exposed, stolen, or transmitted without authorization.
+    Data breaches can impact individuals, 
+        corporations, and governments, leading to severe financial 
+        loss, legal penalties, and reputational damage.
+
+$   IoT gateway
+    An IoT gateway is a physical device or software 
+        program that serves as the central connection hub between 
+        field IoT devices (sensors, actuators, smart appliances) 
+    and the cloud or data center.
+    It acts as a network bridge and central translator, 
+        enabling low-power local sensors to communicate 
+        securely with remote cloud platforms.
+
+    Lightweight Protocols :Zigbee, BLE, Modbus, LoRaWAN             
+    Standard Protocol : 
+        HTTP/MQTT over TCP    HTTPS, MQTT over TCP, REST
+             
+$   IoT device    
+    An IoT device (Internet of Things device) is a 
+        non-standard computing hardware object—such as a 
+    sensor, smart appliance, wearable, or industrial machine—that 
+        connects wirelessly to a network and transmits or receives data.
+    Unlike traditional computing endpoints 
+        (like laptops or smartphones), 
+    IoT devices operate autonomously in physical environments 
+        to monitor, automate, and interact with real-world conditions.
+
+
+$   Which of the following are considered benefits of 
+    data science? (Choose two.) 	
+ 	 
+$<  richtig 2&4 
+    Erklärung:
+• Option 2 (Identifying the target audience): Data Science wird im Marketing intensiv genutzt, um große Datenmengen (wie Kaufverhalten, Demografie und Online-Aktivitäten) zu analysieren. Mithilfe von Clustering-Algorithmen und Kundensegmentierung können Unternehmen ihre genaue Zielgruppe definieren und personalisierte Kampagnen ausspielen.
+• Option 4 (Detecting fraudulent activity): In der Finanz- und Cybersicherheitsbranche ist die Betrugserkennung einer der wichtigsten Data-Science-Anwendungsfälle. Machine-Learning-Modelle (wie die Anomalieerkennung) analysieren Transaktionen in Echtzeit, um untypische Muster sofort zu identifizieren und Betrug (z. B. Kreditkartenbetrug) zu verhindern.
+
+
+$<  Falsch Option 1 & 3 (Reducing data breaches & Ensuring data privacy): Datenminimierung, Verschlüsselung, 
+    Firewalls und strikte IT-Sicherheitsrichtlinien fallen 
+        primär in den Bereich der Cybersicherheit (Cybersecurity) und des Datenschutzes (Data Governance / Compliance). 
+    Data Science kann zwar als Werkzeug zur Analyse von Sicherheitslogs unterstützen, aber das Verhindern 
+        von Sicherheitslücken und die Gewährleistung 
+        von Privatsphäre sind Kernaufgaben der IT-Infrastruktur und Rechtsebene, keine originären Ziele 
+        der Datenwissenschaft an sich.
+
+
+
+
+  	  	 
+$>  
+    Question 25:  	Which of the following cybersecurity concerns are generally more applicable to IoT devices than to client computers, cloud services, and IoT gateways? (Choose three.) 	
+ 	 	 
+ 	 	 
+Option 1: 	
+	Because they need to conserve energy, they may have minimal encryption capability.
+ 	 	 
+Option 2: 	
+	Because they often rely on wireless connections, they may be subject to communication jamming.
+ 	 	 
+Option 3: 	
+	Because they store large amounts of data, they are valuable targets.
+ 	 	 
+Option 4: 	
+	Because they are often mobile or located in remote locations, it may be challenging to provide them with physical protection from attackers.
+ 	 	 
+Option 5: 	
+	Because they process personal data, they are subject to strict data-protection regulations.
+
+Die drei richtigen Antworten sind:
+• Option 1: Because they need to conserve energy, they may have minimal encryption capability.
+• Option 2: Because they often rely on wireless connections, they may be subject to communication jamming.
+• Option 4: Because they are often mobile or located in remote locations, it may be challenging to provide them with physical protection from attackers.
+
+
+Erklärung:
+
+Diese drei Sicherheitsrisiken treffen spezifisch und in weitaus höherem Maße auf IoT-Endgeräte (wie eingebettete Sensoren oder Aktoren) zu als auf klassische PCs, Gateways oder Cloud-Dienste:
+
+1. Ressourcenbeschränkung (Option 1): 
+Viele IoT-Geräte sind extrem klein und müssen 
+mit minimaler Energie (z. B. jahrelang über eine Batterie) 
+auskommen. Daher fehlt ihnen oft die Rechenleistung für komplexe, asymmetrische Verschlüsselungsverfahren, die auf PCs oder in der Cloud Standard sind.
+
+2. Drahtlose Kommunikation & Jamming (Option 2): 
+IoT-Geräte kommunizieren überwiegend über drahtlose Protokolle (wie Zigbee, Bluetooth, LoRaWAN). 
+Dadurch sind sie anfällig für Signalstörungen (Jamming) oder das Abfangen von Funksignalen aus der Ferne.
+3. Physische Erreichbarkeit (Option 4): Während Server in geschützten Rechenzentren stehen und PCs meist in überwachten Büros genutzt werden, sind IoT-Sensoren oft im öffentlichen Raum, an Außenwänden, in Fahrzeugen oder an abgelegenen Orten (z. B. in der Landwirtschaft) installiert. Angreifer können daher leicht physischen Zugriff erlangen, um die Hardware zu manipulieren oder auszulesen.
+Warum die anderen Optionen nicht primär auf IoT-Geräte zutreffen:
+• Option 3 ist falsch: IoT-Endgeräte erfassen zwar kontinuierlich Daten, speichern selbst aber meist nur minimale Mengen und leiten sie direkt weiter. Große Datenmengen akkumulieren sich stattdessen in der Cloud oder auf zentralen Datenbanken.
+• Option 5 ist falsch: Die Einhaltung von Datenschutzrichtlinien (wie der DSGVO) gilt für alle Systeme, die personenbezogene Daten verarbeiten. Cloud-Dienste und Server-Infrastrukturen tragen hierbei aufgrund der zentralen Datenspeicherung meist die ungleich größere regulatorische Last.
+Möchtest du Unterstützung bei einer weiteren Frage aus diesem Fragenkatalog oder benötigst du nähere Details zu den Verschlüsselungs-Einschränkungen bei IoT-Geräten?
+KI-Antworten können Fehler enthalten. Weitere Informationen
+• 
+Cryptology ePrint Archive
+SoK: Applying Blockchain Technology in Industrial Internet of Things
+industrial IoT largely depends on the cloud … uploading the confidential IoT data to the cloud may also compromise the vulnerable ...
+• 
+dokumen.pub
+Security, Privacy and Trust in the IoT Environment [1st ed.] 978-3
+SCADA network devices have limited computational capabilities and low-rate data transmission
+• 
+Scribd
+Introduction to Internet of Things (IoT) | PDF
+01.01.2026 — It is commonly used for IoT devices that require low power consumption and intermittent data transfer, such as wearable devices an...
+Diese drei Sicherheitsrisiken treffen spezifisch und in weitaus höherem Maße auf IoT-Endgeräte (wie eingebettete Sensoren oder Aktoren) zu als auf klassische PCs
+
+
+
+
+$>  Which of the following are feasible{"durchführbar"} methods for 
+        upholding{"aufrechterhalten"} fairness 
+    and non-discrimination in data science projects? 
+    (Choose two.) 	
+ 	 	 
+x   Option 1: 	Scrub all data that contains informatioin
+                pertaining{"betreffend"} to 
+                    race, gender, creed, and other protected attributes.
+x ? Option 2: 	Address disparities in how specific groups of 
+                    people are represented in the data.
+  ? Option 3: 	Minimize the reinforcement of stereotypes within 
+                    the data.
+    Option 4:   Avoid the use of public data.
+ 	 	 
+
+$<  2&3
+
+Erklärung:
+
+• Option 2 zielt darauf ab, ein Ungleichgewicht in den Trainingsdaten zu korrigieren (z. B. wenn eine Minderheit in den Daten stark unterrepräsentiert ist). Durch Techniken wie Oversampling, das gezielte Nacherheben von Daten oder synthetische Datengenerierung wird sichergestellt, dass das Modell für alle Gruppen gleichermaßen präzise und faire Vorhersagen trifft.
+• Option 3 bekämpft systematische Verzerrungen, indem historische Vorurteile und gesellschaftliche Stereotypen, die sich in Daten widerspiegeln (wie z. B. die Verknüpfung bestimmter Berufe mit nur einem Geschlecht in Textdaten), aktiv minimiert oder herausgefiltert (debiasing) werden.
+
+
+
+
+$   Prescriptive Maintenance
+• Prescriptive Maintenance (Option 2): 
+    Dies ist die fortschrittlichste Stufe der Wartungsstrategien. Sie geht über das bloße Vorhersagen eines Fehlers hinaus. Das System nutzt künstliche Intelligenz und Datenanalysen, um nicht nur festzustellen, wann etwas repariert werden muss, sondern trifft selbstständig Entscheidungen und Optimierungen, wie zum Beispiel das Priorisieren und Umplanen von Wartungsaufgaben gegenüber anderen routinemäßigen Abläufen, um den Produktionsfluss zu optimieren.
+            
