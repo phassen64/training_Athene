@@ -1,0 +1,287 @@
+###############################################################################
+--- !sem.GenAIBIZ:background    [September-2026]
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Kurs:    
+        Name:   GenAiBIZ - Generate AI 
+        Dauer:  17.September 2026 - 30.September 2026
+    
+--- content:
+    •   m:  Quiz
+
+        
+===============================================================================
+m:  Quiz
+===============================================================================
+
+
+Achieving a score of 20 or greater out of 25 means you 
+    will be GenAIBIZ certified for another year.
+
+>   Question 1:
+    Which of the following image-generation techniques 
+    enables you to change the composition of an existing image 
+    while retaining other aspects of that image?
+<   inpainting
+
+
+>   Question 1b:
+    You want to develop a custom chatbot that can 
+    communicate with customers. 
+    The chatbot must rely on a third-party, 
+    large language model (LLM) hosted by a cloud provider.
+    As you investigate your options, 
+    what should you look for in this cloud provider? 	
+<   The availability of an API that can connect your app to the LLM.     
+
+
+>	Question 2: 
+    Which of the following generative AI techniques is 
+    used to retrain a foundational model on new, 
+    labeled data?    
+<   Fine-tuning: 
+    Takes a pre-trained base or foundational model (originally 
+    trained on vast amounts of unlabelled data 
+    via self-supervised learning) and 
+    continues the training process using a smaller, 
+    task-specific labeled dataset. 
+    This adapts the model's weights to optimize performance 
+    for specific tasks like classification, 
+        sentiment analysis, or domain-specific Q&A.
+
+
+>   Question 3:  	
+    In which of the following ways will generative AI 
+    impact the future of work?    
+<   Business professionals will need at least a basic 
+    understanding of generative AI and experience using it.
+    
+> 	Question 4:
+    In the context of large language models (LLMs), 
+        what distinguishes a reasoning model from a non-reasoning model?
+<   Reasoning Model (RLM)    
+    Reasoning models are built to follow a chain of thought 
+    before responding.
+  	  	 
+>   Question 5:  	
+    Which of the following would be a useful 
+        key performance indicator (KPI) for 
+    evaluating the quality 
+        of outputs from an image-generation model?
+<   The time it takes for the model to generate an acceptable image.
+
+
+>   Question 6:  	
+    Which of the following is an example of generative AI 
+        exhibiting bias in its outputs?    
+<   An image-generation model, 
+    when prompted to simply generate 
+    'a businessperson,' produces images of people who are all the same race.        
+    
+>   Question 7:  	
+    Which of the following tasks is an example of keeping 
+    "humans in the loop"?
+<   An auditor periodically reviews the outputs of 
+    an agentic AI model to detect issues.
+
+
+>   Question 8:  	
+    Which of the following best demonstrates how 
+        an organization can convince its stakeholders 
+    that it has fulfilled the "social" component of environmental, 
+        social, and governance (ESG) initiatives for AI?
+<   Outline how the AI solution upholds ideals 
+    like fairness and non-discrimination.
+
+
+>   Question 9:  	
+    Unsupervised learning algorithms are trained without 
+        which of the following?
+<   Labels
+    
+
+>   Question 10:  	
+    A colleague mentions that a recently announced large 
+        language model (LLM) has 300 billion parameters. 
+    What does this mean? 	
+<   The model was trained on 300 billion tokens.    [FALSE]
+<   The model has 300 billion connected weights in its neutral
+    network 
+
+*   Internal parameters are the trainable mathematical 
+    variables—specifically the weights ($W$) and biases ($b$)—that 
+    constitute the neural network. 
+    During training, the model learns patterns, 
+    language structures, 
+    and factual relationships by continuously adjusting these 
+    values via backpropagation.  
+
+>   Question 11:  	
+    You want to generate background music for a video advertisement. 
+    The ad is promoting a new model of pickup truck. 
+    Which of the following text prompts would be most 
+        likely to produce the desired results?
+<   rock music used in a car commercial, 
+    driving drum beat, energetic, soaring vocals, mid tempo'        
+    
+    
+>   Question 12:  	
+    Which of the following is an example of generative AI?
+<   A system that scans an image and identifies the people in that image
+
+
+>   Question 13:  	
+    Which of the following is a major disadvantage 
+        of relying on cloud services to facilitate generative AI 
+    compared to an on-premises solution?
+<   You do not have direct control over the service(s) 
+    provided by the cloud vendor.    [FALSE]
+<   The cost of using a cloud-based generative AI service is higher.
+    
+>   Question 14:  	
+    In a large language model (LLM), 
+    what does it mean to tokenize a sentence?        
+<   Partition the sentence into meaningful units.    
+
+
+>   Question 15:  	
+    Which of the following image-generation techniques enables 
+        you to change the composition of an existing 
+    image while retaining other aspects of that image? 	
+<   Inpainting 	 	 
+ 	 
+
+>   Question 16:  	
+    You have a block of code that fails to run, 
+        and the error message is not particularly helpful. 
+    You decide to paste this block of code into a chatbot to see 
+        if it can explain the problem and then fix the code. 
+    What code-generation approach are you using?
+<   Code debugging
+     
+     
+>   Question 17:  	
+    Which of the following scenarios involves using A/B 
+        testing to evaluate the results of a text-generation solution?
+<   Present two responses to each user: 
+    one from a human, and one from an AI. 
+    Ask the users to rate each.
+<   Show half the users a response generated by an AI, 
+        and the other half a response generated by a human. 
+        Collect feedback on both and compare.
+
+
+>   Question 18:  	
+    How can a code-generation AI help enhance someone's programming skills?     
+<   The AI could run the user's compiled program, 
+    identify performance issues, 
+    then output a version that has better performance.
+<   The AI could interface with the user's integrated 
+    development environment (IDE) and complete 
+    the user's code as they type it.
+    
+
+>   Question 19:  	
+    As of 2025, in most jurisdictions, 
+        who owns the copyright to a work generated entirely by AI 
+        without human authorship?
+<   There is not yet widespread legal precedent 
+        regarding who owns the copyright.
+
+
+
+>   Question 20:  	
+    You have an image of a mountain that you'd like to use in a 
+        promotional post on social media. 
+    However, the image doesn't fully encompass the mountain - 
+        it's cut off at both edges of the image. 
+    What image-generation technique can you use to 
+        widen the image and draw the rest of the mountain, 
+    without changing what's already in the image?
+<   Outpainting
+
+
+>   Question 21:  	
+    Which of the following is an example of the generative 
+    AI phenomenon known as confabulation (a.k.a. hallucination)?
+<   The AI outputs false information 
+    despite being trained on trustworthy sources of text.
+
+
+>   Question 22:  	
+    You want to generate a realistic voice that can speak 
+        some lines to people as they walk into your place of business. 
+    Which of the following text prompts would 
+    be most appropriate to input to a speech-synthesis tool?
+<   "Welcome! Please sign in at the reception desk."
+
+
+>   Question 23:  	
+    You want to use an AI to quickly extract key information 
+        from a large set of technical documentation. 
+    Which of the following techniques would enable the AI 
+        to do this without having to 
+        retrain on the documentation or 
+        require the user to supply 
+    the documentation in a prompt?
+
+<	Retrieval-augmented generation (RAG)
+
+
+>   Question 24:  
+	Which of the following ethical principles is directly 
+        undermined by so-called "black-box" machine learning models?
+<   Transparency || Explainability
+
+
+$<  Why Transparency is Undermined
+    The Black-Box Problem: 
+        Complex machine learning models 
+        (like deep neural networks or ensemble models) 
+        transform input data into predictions through millions 
+        or billions of parameters. 
+    Because these internal decision-making paths are opaque, 
+    humans cannot easily see or comprehend
+    how or why a specific prediction was reached.
+    Impact on Accountability & Fairness: 
+        Without transparency, 
+    it is extremely difficult to verify whether 
+        a model is making decisions based on legitimate 
+        factors or discriminatory biases, 
+    making it hard to hold the system or its creators accountable for harmful errors.
+
+>   Question 25:  	
+        How does agentic AI differ from generative AI?
+<   Access To Internet.
+    
+
+>   Which of the following is an example of generative AI?   
+<   A system that summarizes the contents of an 
+    email message in a single sentence
+<$  Why it IS Generative AI
+    Primary Task: 
+        Content synthesis and text generation.
+    Content Creation: 
+        Rather than just extracting a sentence or 
+            labeling the email, 
+    the system uses a Large Language Model (LLM) 
+        to process the entire message, 
+        comprehend its key context, 
+    and compose a brand-new, 
+    concise sentence that accurately represents the original content.
+
+
+>   Question 14:  	
+    In a large language model (LLM), 
+    what does it mean to tokenize a sentence?    
+
+<   Split the words in the sentence into two or more parts.    
+
+
+>   Question 17:  	
+    How does agentic AI differ from generative AI?   
+<    AI has access to external sources of information 
+    like Internet search results.

@@ -1,0 +1,24 @@
+###############################################################################
+--- !sem.GENAIBIZ
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Kurs:    
+        Name:   Gen AIBIZ
+                Generating AI
+
+        Implementing Strategies for Generative AI 
+
+--- Credentials:
+
++   Kurs:   GenAIBIZ ETBIZ
+    url:    https://lochoice.com/
+    usr:    <@msn>
+    pwd:    <!samba>
+
+
++   Kursdauer:
+    17.September 2026 - 30.September 2026
+    
