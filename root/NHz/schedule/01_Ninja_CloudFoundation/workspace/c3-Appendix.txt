@@ -1,0 +1,1147 @@
+###############################################################################
+--- !appendix Cloud Foundation
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+
+>>> xpr ::  Gemini.$>   "Wann braucht man eine Cloud"   [260908].Di 
+
+    Wann Cloud-Nutzung (fast) alternativlos ist...
+
+    •   Kollaboration und mobiles Arbeiten:
+        Wenn Teams ortsunabhängig an denselben Dokumenten arbeiten 
+        oder Videokonferenzen nutzen 
+        (z. B. Microsoft 365, Google Workspace, Zoom, Teams).
+
+    •   Ausfallsicherheit und Disaster Recovery:
+        Backups, die geografisch getrennt von den 
+            Hauptservern gelagert werden müssen, 
+        um Brand-, Wasser- oder Diebstahlschäden am eigenen Standort abzufangen.
+
+    •   Saisonal schwankende Lasten:
+        Anwendungen oder Server-Kapazitäten, 
+            die stark skalieren müssen 
+            (z. B. Online-Shops mit extremem Weihnachtsgeschäft), 
+            damit man keine teure Hardware kauft, 
+        die 10 Monate im Jahr ungenutzt bleibt.
+
+    •   Moderne, datenintensive Technologien:
+            Anwendungen für Künstliche Intelligenz (KI), 
+            Big-Data-Analysen oder Machine Learning, 
+                deren Rechenleistung lokal extrem teuer aufzubauen wäre.
+
+    •   SaaS-Standardsoftware:
+            Softwarelösungen, 
+                die vom Hersteller gar nicht mehr als 
+                lokale Installation angeboten werden 
+                    (z.B. moderne CRM-Systeme wie Salesforce).
+
+<<< xpr ::  Gemini.$<.  "Wann braucht man eine Cloud".
+
+
+>>> xpr ::  Gemini.$>   "single-tenant cloud architecture"  [260907].Mo
+
+$>  "single-tenant cloud architecture"
+$<  
+    Single-tenant cloud architecture is an environment 
+        where a single instance of a 
+        software application and its supporting infrastructure serve exactly 
+    one customer (tenant). 
+    Unlike multi-tenant architecture, 
+        where resources are shared among multiple clients, 
+    single-tenancy grants complete isolation across compute, storage, 
+        and database layers.
+    Think of it as owning a single-family house 
+        rather than renting an apartment in a high-rise building.
+
+<<< xpr ::  Gemini.$<.  "single-tenant cloud architecture"
+
+	
++	NIST
+	https://www.nist.gov/
+	https://de.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology
+
+	Das National Institute of Standards and Technology ist 
+	    eine Bundesbehörde der 
+	Vereinigten Staaten mit Sitz in Gaithersburg und hat seit 1954 eine 
+		Niederlassung in Boulder. 
+
+    The NIST Cloud Computing Model 
+        (defined in NIST Special Publication 800-145) is the industry-standard benchmark created by the National Institute of Standards and Technology. 
+
+    It breaks cloud computing down into 
+        a)  5 essential characteristics, 
+        b)  3 service models, and 
+        c)    4 deployment models.  
+
+    a)  characteristic
+        •   On-Demand Self-Service : user can provision computing capabilities
+        •   Broad Network Access
+        •   Resource Pooling : resources are pooled to serve multiple
+        •   Rapid Elasticity
+        •   Measured Service
+    
+    b)  service models 
+        •   SaaS (Software as a Service)        :   Google Workspace
+        •   PaaS (Platform as a Service)        :   Google App Engine
+        •   IaaS (Infrastructure as a Service)  :   Google Compute Engine
+    
+    c)  deployment models
+        •   Public Cloud
+        •   Private Cloud
+        •   Hybrid Cloud 
+        •   Community Cloud
+
++	NIS2
+	https://de.wikipedia.org/wiki/NIS-2-Richtlinie
+
+	Die NIS-2-Richtlinie oder zweite Richtlinie zur Sicherung von 
+	    Netz- und Informationssystemen, 	
+        ausführlich Richtlinie (EU) 2022/2555 des Europäischen Parlaments und 
+        des Rates vom 14.Dezember 2022 über 
+        Maßnahmen für ein hohes 
+        gemeinsames Cybersicherheitsniveau in der Union, 
+        ist eine EU-Richtlinie, 
+        die das Niveau der Cyberresilienz in der Union stärken soll.
+	Begründung
+
+    Vor dem Hintergrund einer steigenden Abhängigkeit von digitalen 
+        Technologien zeigte die COVID-19-Pandemie auf, 
+        wie sensibel digitalisierte Gesellschaften auf unerwartete 
+        Risiken reagieren können.[2] 
+
+    Im Zuge dessen prüfte die Europäische Kommission 
+    die bestehende NIS-Richtlinie und stellte folgende Kritikpunkte fest:
+    unzureichende Cyberresilienz von Unternehmen, 
+        die in der EU tätig sind,
+    inkonsistente Widerstandsfähigkeit zwischen Mitgliedstaaten und Sektoren,
+    unzureichendes gemeinsames Verständnis 
+        der wichtigsten Bedrohungen und Herausforderungen der Mitgliedstaaten,
+    fehlende gemeinsame Krisenreaktion.
+
+    Nach diversen Abstimmungsrunden wurde die finale 
+        NIS-2-Richtlinie[3] am 14. Dezember 2022 von der EU-Kommission 
+        verabschiedet.
+
+1.  Anwendungs-Kriterien für Cloud-Anbieter (Scope)
+    
+    Ein Cloud-Anbieter fällt in den Geltungsbereich von 
+        NIS2 (Anhang I, Sektor 8: Digitale Infrastruktur), 
+        wenn folgende <zwei> Punkte zutreffen ...
+
+    +   A.  Technische Definition (Art. 6 Nr. 30 NIS2)
+            Es muss sich um einen digitalen Dienst handeln, 
+            der den auf Anforderung erfolgenden Zugang zu 
+            einem skalierbaren und elastischen Pool sharebarer 
+            Rechenressourcen ermöglicht
+    
+    +   B.  Unternehmensgröße (Schwellenwerte)
+            Mittlere Unternehmen (Wichtige Einrichtungen): 
+                >   50 Mitarbeiter oder 
+                >   10 Mio. € Jahresumsatz (bzw. Jahresbilanzsumme).    
+            Großunternehmen (Besonders wichtige Einrichtungen): 
+            >   250 Mitarbeiter oder 
+            >   50 Mio. € Jahresumsatz / 43 Mio. € Bilanzsumme
+
+2.  Die 10 Risikomanagement-Kriterien (Art. 21 NIS2)
+
+        1. Risikoanalyse & IT-Sicherheit
+        2. Bewältigung von Sicherheitsvorfällen
+        3. Business Continuity & Krisenmanagement
+        4. Lieferkettensicherheit (Supply Chain Security)
+        5. Sicherheit bei Erwerb & Entwicklun
+        6. Bewertung der Wirksamkeit
+        7. Grundlegende Cyber-Hygiene
+        8. Verschlüsselung & Kryptografie
+        9. Zugriffskontrollen & Identity Management
+        10. Multi-Faktor / Sichere Kommunikation
+        
+
+>>> xpr ::  Gemini.$>   "cloud deployment models"   [260905].Mo
+    
+    $>  "cloud deployment models"
+    $<  ...
+
+    Primary Cloud Deployment Models
+
+!   key:Private Cloud (Deployment Model)
+
+    *   ... ist eine exklusive Cloud-Computing-Umgebung, 
+        die nur von einer einzigen Organisation oder Person genutzt wird.
+
+    Infrastructure is dedicated exclusively to a single organization. 
+        It can be hosted on-premises in a company’s own data center 
+            or managed off-site by a third-party vendor.
+    
+    Best for: 
+        Finance, healthcare, government, 
+            or enterprises with strict regulatory, security, 
+            and data sovereignty requirements.  
+    Pros: 
+        Maximum control, customized security policies, 
+            predictable performance.  
+    Cons: 
+        High capital expenditure (CapEx) and operating expenses (OpEx), 
+            limited elasticity compared to public clouds.  
+
+!   key:Public Cloud (Deployment Model)
+
+	*   ... ist eine Art von Cloud Computing-Dienst, 
+        bei dem Computingressourcen wie Server, 
+		Speicher und Netzwerke über das Internet zugänglich sind.
+    
+    Resources (servers, storage, networking) are owned and 
+        operated by third-party cloud service providers 
+        e.g. -> AWS, Microsoft Azure, Google Cloud Platform
+    and shared across multiple tenants over the public internet.
+    
+    Best for: 
+        Web applications, 
+            SaaS platforms, 
+            high-burst workloads, 
+            startups, and dev/test environments.
+    Pros: 
+        Scalability, 
+            low upfront costs (pay-as-you-go), 
+            no physical hardware maintenance.  
+    Cons: 
+        Reduced control over infrastructure, 
+            potential multi-tenancy security or compliance restrictions.  
+
+!   key:Community Cloud (Deployment Model) 
+
+    *   Mehrere Organisationen teilen 
+            sich eine gemeinsame (private) Cloud.
+    
+    Infrastructure shared by several organizations with common goals, 
+        operational requirements, 
+        or regulatory burdens (e.g., banks sharing a secure 
+            compliance network or research universities sharing 
+            HPC infrastructure).
+
+    Best for: 
+        Joint industry initiatives, 
+            government departments, and compliance-heavy consortiums.
+
+    Pros: 
+        Shared costs among participants, 
+            tailored security for specific industry standards.
+
+    Cons: 
+        Split management responsibility, shared bandwidth/storage allocations.
+
+
+!   key:Hybrid Cloud (Deployment Model) 
+
+    *   Firma 
+        teilt Ihre Dienste in eine Privaten Cloud
+            und Public Cloud und Community Cloud auf. 
+
+    Integrates public and 
+        private clouds (or on-premises legacy systems), 
+            allowing data and applications to be shared between them 
+            via encrypted connections and orchestration software.
+    
+    
+    Best for: 
+        Organizations undergoing gradual cloud migration, 
+            or those needing "cloud bursting" 
+        (running day-to-day operations privately, 
+            but bursting into the public cloud for peak demand).
+    Pros: 
+        Flexibility, optimized cost structure, 
+            compliance maintenance for sensitive data.  
+    Cons: 
+        Complex network configuration, 
+            operational overhead, 
+            potential integration friction.  
+
+
+!   key:Multi Cloud  (Deployment Model) 
+
+    *   Firma verwendet verschiedene 
+            Public Cloud Anbieter 
+
+    The strategic deployment of workloads across 
+        services from two or more public cloud vendors 
+        (e.g., combining AWS S3, Google BigQuery, and Azure Active Directory).
+    
+    Best for: 
+        Large enterprises seeking to avoid vendor 
+        lock-in or leverage specific best-in-class features from 
+            different providers.
+    Pros: 
+        Vendor redundancy, disaster recovery, 
+        feature specialization.
+    
+    Cons: 
+        Fragmented Identity and Access Management (IAM), 
+            disparate cost-tracking tools, 
+            increased architectural complexity.
+
+
+<<< xpr ::  Gemini.$<.  "cloud deployment models".
+
+
++   IaaS.Google Compute Engine (GCE) 
+    is Google Cloud’s Infrastructure-as-a-Service (IaaS)         
+    https://cloud.google.com/products/compute    
+
+    Google Compute Engine (GCE) is Google Cloud’s 
+        Infrastructure-as-a-Service (IaaS) offering that lets you create 
+        and run virtual machines (VMs) on Google’s global infrastructure. 
+    It provides full control over compute resources, 
+        making it suitable for workloads ranging from small web 
+        apps to large-scale AI/ML training.
+    Core Capabilities GCE supports preset and custom machine 
+        types with up to 96 vCPUs and 8 GB RAM per core. 
+    You can choose from general-purpose, compute-optimized, 
+        memory-optimized, and accelerator-optimized VM families. 
+    Storage options include 
+        Persistent Disk, Hyperdisk, and Local SSD. 
+    Networking features like global load balancing and placement 
+        policies help optimize performance and reliability. 
+    Security is enhanced with Confidential VMs, Shielded VMs, 
+    and compliance-ready configurations.
+
+    Example: Creating a VM via gcloud CLI
+
+    #   Create an e2-medium VM in us-central1-a with Debian OS
+    
+    gcloud compute instances create my-vm \
+        --zone=us-central1-a \
+        --machine-type=e2-medium \
+        --image-family=debian-11 \
+        --image-project=debian-cloud
+
+    Copy
+    This command provisions a VM with specified CPU, memory, 
+        and OS image. 
+    You can later attach GPUs, configure disks, or set firewall rules.
+
+    Why Businesses Use GCE
+        Scalability – Auto-scale with managed instance groups to handle traffic spikes.
+
+    Cost Efficiency – Pay-as-you-go, with Sustained Use, Committed Use, and Spot VM discounts (up to 91% off).
+
+    Reliability – SLA up to 99.95% with live migration for minimal downtime.
+
+    Integration – Works seamlessly with Google Kubernetes Engine, Cloud Storage, and AI services.
+
+    Flexibility – 
+        Supports Linux, Windows, and containerized workloads.
+
+    Common Use Cases
+
+    Hosting web applications and APIs
+
+    Running AI/ML training with GPUs/TPUs
+
+    High-performance computing (HPC)
+
+    Game server hosting with low latency
+
+    Data analytics and large-scale simulations
+
+    Key Considerations Choose machine types based on workload (e.g., C-series for compute-heavy tasks, M-series for memory-intensive workloads). Use placement policies for latency or redundancy needs. Always specify disk type and region to optimize cost and performance.
+
+    If you want, I can also provide a Terraform configuration to automate GCE VM deployment. Would you like me to prepare that?
+
+
+
+>>> xpr ::  Gemini.$>   "cloud service models"  [260905].Mo
+
++   Infrastructure as a Service (IaaS)  
+    IaaS provides basic computing infrastructure—virtual servers, 
+        raw storage, and networking components—over the internet. 
+    You get maximum control over your IT environment without 
+        buying or maintaining physical hardware.  
+    
+    You Manage: 
+        Operating Systems (OS), 
+            runtime, middleware, 
+            data, and applications.  
+
+    Provider Manages: 
+        Physical data centers, 
+            virtualization layer, 
+            servers, 
+                networking hardware, and storage drives.
+
+    Best For: 
+        Migrating existing legacy workloads (lift-and-shift), 
+            network architecture customization, 
+            and high-performance computing needs.  
+    Examples: 
+        AWS (EC2), 
+        Microsoft Azure (VMs), 
+        Google Cloud Compute Engine.  
+
+
++   Platform as a Service (PaaS)  
+
+    PaaS offers a complete development and deployment environment in the cloud. 
+    The provider manages the underlying infrastructure and operating system, 
+    leaving developers free to focus solely on writing and deploying code.  
+    
+    You Manage: 
+        Application code, 
+        business logic, 
+        and application-level data.  
+    
+    Provider Manages: 
+        Hardware, virtualization, OS, runtime environments, 
+            middleware, and database engines.  
+    
+    Best For: 
+        Rapid application development, 
+            API creation, and microservices architectures without 
+                DevOps overhead.  
+    
+    Examples: 
+        Heroku, 
+        AWS Elastic Beanstalk, 
+        Google App Engine.  
+
+
++   Software as a Service (SaaS)  
+
+    SaaS delivers fully functional, 
+        end-user applications over the web on a subscription 
+        or pay-per-use basis. 
+        You interact directly with the software interface through a 
+        browser or lightweight app.
+        
+    You Manage: 
+        User access management, 
+        permissions, and 
+            initial configuration settings.
+    
+    Provider Manages: 
+        Everything—infrastructure, 
+        operating system, application updates, security patches, 
+            and performance scaling.
+        
+    Best For: 
+        Everyday productivity, 
+            collaboration, 
+            customer relationship management (CRM), and 
+                standard enterprise software.              
+                
+    Examples: 
+        Google Workspace, 
+        Microsoft 365, 
+        Salesforce, 
+        Dropbox.
+
+
++   Modern Emerging Service Models
+
+    Beyond the primary three, 
+        specialized models have emerged to optimize workflows:
+    
+!   key:FaaS    Function as a Service /Serverless: 
+        Event-driven execution where code runs only when triggered by 
+            specific events (e.g., AWS Lambda, Google Cloud Functions). 
+        Providers bill strictly for execution time down to the millisecond.  
+        
+!   key:BaaS    Backend as a Service 
+        Provides cloud-backed services for mobile and 
+            web apps (like authentication, database sync, 
+            and push notifications) 
+            so front-end developers don't have to build 
+            server logic (e.g., Firebase). 
+
+!   key:AIaaS   Artificial Intelligence as a Service 
+        Delivers pre-trained AI and machine learning models 
+            via APIs (vision recognition, language models, sentiment analysis) 
+            without needing in-house data science teams.
+
+<<< xpr ::  Gemini.$<.  "cloud service models".
+
+
++   Cloud Managed Services & Managed Service Provider (MSP)   
+    involve outsourcing the 
+        daily management, maintenance, and optimization of an 
+        organization's cloud 
+    infrastructure and applications to a 
+    third-party Cloud Managed Service Provider (MSP).
+    Instead of relying solely on an in-house IT team to 
+        configure server instances, 
+            monitor system health, manage security patches, 
+            and control cloud spend, organizations partner with 
+            specialized MSPs 
+    to handle the technical heavy lifting.
+
+
++   Full-Stack-Entwickler arbeiten 
+    über alle Schichten hinweg: 
+        UI, APIs, Datenbanken und Server. 
+    Relevanz für Marketing Full-Stack-Fähigkeiten 
+        ermöglichen End-to-End-Entwicklung und schnellere Iteration. 
+    Häufige Fallstricke Jack of all trades, master of none. 
+    Technische Tiefe fehlt in kritischen Bereichen.
+
++   AWS Lambda 
+        is an event-driven, serverless compute service 
+            provided by Amazon Web Services (AWS). 
+    It allows developers to run code without 
+        provisioning or managing underlying servers, 
+            virtual machines, or operating systems.  
+    Lambda sits at the core of 
+        Function as a Service (FaaS) architecture. 
+    You simply upload your code, 
+        and Lambda executes it only when triggered, 
+        automatically handling execution, auto-scaling, and resource allocation.  
+    1.  Trigger: 
+        An event occurs in an connected system (e.g., an HTTP API call, an 
+            S3 file upload, or a database change).
+    2.  Execution: 
+        Lambda automatically spins up an isolated execution environment, 
+        runs your handler function, and returns the output.
+    3.  Shutdown: Once execution finishes, 
+        Lambda scales back down. 
+            If no events occur, zero instances remain running.
+
+
+>>> xpr ::  Gemini.$>   Cloud Container [260907]
+
++   Ein Cloud-Container ist ein leichtgewichtiges, 
+    isoliertes Software-Paket, das einen Anwendungscode zusammen 
+        mit allen benötigten 
+        Bibliotheken, Konfigurationsdateien und Abhängigkeiten bündelt. 
+    Dadurch läuft die Anwendung auf jeder Plattform – 
+        ob auf dem Laptop eines Entwicklers, 
+            einem lokalen Server oder in einer Cloud-Infrastruktur – 
+            absolut identisch und zuverlässig.  
+
++   Key Concepts & Ecosystem    
+
+    --- Containerisierung vs. Virtualisierung:  
+    Virtuelle Maschinen (VMs): 
+        Emulieren ein komplettes System inklusive eigenem Gast-Betriebssystem. 
+        Sie sind schwerfälliger und benötigen mehr Speicher und Boot-Zeit.  
+    Container: 
+        Teilen sich den Betriebssystem-Kernel des Hosts. 
+        Sie isolieren lediglich die Anwendungsprozesse, 
+        weshalb sie innerhalb von Millisekunden bis Sekunden starten und 
+        deutlich ressourcenschonender sind.  
+
++   Wichtige Technologien
+    Docker: 
+        Standard-Tool zur Erstellung, 
+            Verwaltung und Ausführung einzelner Container.  
+    Kubernetes (K8s): 
+        Die führende Open-Source-Plattform zur Orchestrierung 
+            – sie automatisiert die Bereitstellung, Skalierung und 
+            Verwaltung von Hunderten oder Tausenden 
+        Containern über Cloud-Cluster hinweg.     
+    Managed Cloud Services: 
+        Führende Provider bieten schlüsselfertige 
+            Container-Plattformen an (z. B. AWS ECS/EKS, Google Kubernetes Engine [GKE], Microsoft Azure AKS).
+
++   Der grundlegende Unterschied zwischen Containern und 
+    Virtuellen Maschinen (VMs) liegt in der Ebene der 
+        Isoliertheit und der Ressourcennutzung:
+    Virtuelle Maschinen 
+        virtualisieren die Hardware. 
+        Jede VM enthält ein vollständiges Gast-Betriebssystem.
+    Container virtualisieren das Betriebssystem. 
+        Alle Container auf einem Host 
+            teilen sich denselben Betriebssystem-Kernel.
+            
++-----------------------+      +-----------------------+
+|  App A   |   App B    |      |  App A   |   App B    |
+|  Libs    |   Libs     |      |  Libs    |   Libs     |
++----------+------------+      +----------+------------+
+|   Container Engine    |      | Gast OS  |  Gast OS   |
++-----------------------+      +----------+------------+
+|        Host OS        |      |      Hypervisor       |
++-----------------------+      +-----------------------+
+|       Infrastruktur   |      |     Infrastruktur     |
++-----------------------+      +-----------------------+
+       CONTAINER                    VIRTUELLE MASCHINE
+       
+
+<<< xpr ::  Gemini.$<.  Cloud Container.
+    
+    
+
+!   key:OSI model
+    https://en.wikipedia.org/wiki/OSI_model
+    
+!   key:OSI-1   pysical
+    https://en.wikipedia.org/wiki/Physical_layer
+
+    In the seven-layer OSI model of computer networking, 
+        the physical layer or layer 1 is the first and 
+        lowest layer: 
+    the layer most closely associated with the physical connection between devices. 
+    The physical layer provides an 
+        electrical, mechanical, and procedural interface 
+        to the transmission medium. 
+    The shapes and properties of the electrical connectors, 
+    the frequencies to transmit on, 
+    the line code to use and similar low-level parameters are specified 
+    by the physical layer.
+
+    https://en.wikipedia.org/wiki/Bluetooth
+    https://en.wikipedia.org/wiki/CAN_bus
+    https://en.wikipedia.org/wiki/Digital_subscriber_line * DSL  
+    https://en.wikipedia.org/wiki/HDMI
+    https://en.wikipedia.org/wiki/IEEE_1394 * FireWire
+    https://en.wikipedia.org/wiki/I2S  * I²C
+    https://en.wikipedia.org/wiki/Serial_Peripheral_Interface   * SPI
+    https://en.wikipedia.org/wiki/SATA
+    https://en.wikipedia.org/wiki/USB
+
+!   key:OSI-2   dataLink
+    https://en.wikipedia.org/wiki/Data_link_layer
+
+    This layer is the protocol layer that transfers data between nodes 
+        on a network segment across the physical layer.
+    The data link layer provides the functional and procedural 
+    means to transfer data between network entities and may also 
+    provide the means to detect and possibly correct errors that can occur 
+    in the physical layer.    
+    The data link layer is concerned with local delivery of 
+    frames between nodes on the same level of the network.
+
+    https://en.wikipedia.org/wiki/Address_Resolution_Protocol * MAC
+    https://en.wikipedia.org/wiki/Ethernet
+    https://en.wikipedia.org/wiki/IEEE_802.11      
+    https://en.wikipedia.org/wiki/Profibus
+
+!   key:OSI-3   network
+    https://en.wikipedia.org/wiki/Network_layer
+    
+    The network layer provides the means of 
+        transferring variable-length network packets from a 
+        source to a destination host via one or more networks. 
+        Within the service layering semantics of the 
+        OSI (Open Systems Interconnection) network architecture, 
+        the network layer responds to service requests from 
+        the transport layer and issues service requests to 
+        the data link layer.    
+    
+    +   Ad hoc On-Demand Distance Vector Routing
+    https://en.wikipedia.org/wiki/Ad_hoc_On-Demand_Distance_Vector_Routing   
+    +   ICMP
+    https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol 
+    +   IP    
+    https://en.wikipedia.org/wiki/Internet_Protocol  * IPv4 & IPv6
+    https://en.wikipedia.org/wiki/IPsec
+    https://en.wikipedia.org/wiki/Routing_Information_Protocol * RIP
+
+!   key:OSI-4   transport
+    https://en.wikipedia.org/wiki/Transport_layer
+
+    In computer networking, the transport layer is 
+        an abstraction layer in a network protocol stack that 
+        provides communication services between applications. 
+    Depending on the protocol, these services may 
+        include <connection-oriented> communication, 
+        reliable and ordered 
+        delivery, flow control, congestion control, and the multiplexing 
+    of communication between applications.
+
+    https://en.wikipedia.org/wiki/AppleTalk
+    https://en.wikipedia.org/wiki/Fibre_Channel_Protocol  * -> SCSI
+    https://en.wikipedia.org/wiki/Transmission_Control_Protocol * TCP
+    https://en.wikipedia.org/wiki/User_Datagram_Protocol  * UDP 
+    
+
+!   key:OSI-5   session
+    https://en.wikipedia.org/wiki/Session_layer
+
+    The session layer provides the mechanism for 
+        opening, 
+        closing and 
+        managing 
+    a session between 
+        end-user application processes, i.e., a semi-permanent dialogue. 
+    Communication sessions consist of requests and responses 
+        that occur between applications. 
+    Session-layer services are commonly used in 
+        application environments that make use of 
+        remote procedure calls (RPCs).
+
+    https://en.wikipedia.org/wiki/Internet_Storage_Name_Service     * iSNS
+    https://en.wikipedia.org/wiki/NetBIOS * Network Basic Input/Output System
+    https://en.wikipedia.org/wiki/Remote_procedure_call             * RPC
+    https://en.wikipedia.org/wiki/RTP_Control_Protocol          * RTP & RTCP
+    https://en.wikipedia.org/wiki/Secure_copy_protocol      * SCP 
+    https://en.wikipedia.org/wiki/Sockets_Direct_Protocol   * SDP
+
+!   key:OSI-6   presentation 
+    https://en.wikipedia.org/wiki/Presentation_layer    
+
+    In the seven-layer OSI model of computer networking, 
+        the presentation layer is layer 6 and serves as 
+        the data translator for the network.[2][3][4] 
+    It is sometimes called the syntax layer.[5
+
+    Services
+        Data conversion[3]
+        Character code translation[3]
+        Compression[3]
+        Encryption and Decryption[3]
+        Serialization   -> JSon
+
+    https://en.wikipedia.org/wiki/Lightweight_Presentation_Protocol * LPP
+    https://en.wikipedia.org/wiki/NetWare_Core_Protocol     * NCP
+    https://en.wikipedia.org/wiki/Network_Data_Representation * NDR
+    https://en.wikipedia.org/wiki/X.25  *X.25
+    
+
+
+!   key:OSI-7   application
+    https://en.wikipedia.org/wiki/Application_layer
+
+    An application layer is an abstraction layer that specifies 
+        the shared communication protocols and interface methods 
+        used by hosts in a communications network.[1]
+
+    https://en.wikipedia.org/wiki/Bitcoin
+    https://en.wikipedia.org/wiki/BitTorrent
+    https://en.wikipedia.org/wiki/File_Transfer_Protocol    * FTP
+    https://en.wikipedia.org/wiki/HTTP
+    +   LDAP
+    https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol
+    https://en.wikipedia.org/wiki/MIME
+    https://en.wikipedia.org/wiki/Modbus * Field Bus
+    https://en.wikipedia.org/wiki/Network_File_System   * NFS but NOT NTFS
+    https://en.wikipedia.org/wiki/Network_Time_Protocol     * NTP
+    https://en.wikipedia.org/wiki/Remote_Desktop_Protocol   * RDP
+    https://en.wikipedia.org/wiki/Remote_procedure_call     * RPC
+    https://en.wikipedia.org/wiki/Server_Message_Block      * SMB
+    https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol * SMTP
+    https://en.wikipedia.org/wiki/Secure_Shell      * SSH
+
+
++   NTFS 
+    NT File System (NTFS) is a proprietary 
+        journaling file system developed by Microsoft in the 1990s.[9]
+    It was developed to overcome scalability, security and 
+        other limitations with FAT.[11] 
+    NTFS adds several features that FAT and HPFS lack, 
+        including: access control lists (ACLs); 
+        filesystem encryption; transparent compression; 
+        sparse files; file system journaling and volume shadow copy, 
+        a feature that allows backups of a system while in use.    
+    https://en.wikipedia.org/wiki/NTFS
+    
+
++   Thin Client 
+    https://en.wikipedia.org/wiki/Thin_client
+    https://www.thinclientdirect.com/the-ultimate-thin-client-guide/
+
+    In computer networking, a thin client 
+        (sometimes called a slim client or lean client) is a simple, 
+        low-performance computer that has been optimized 
+        for remote desktop connections 
+    to a server-based computing environment. 
+    In some cases, 
+        they are also referred to as network computers or, 
+        in their simplest form, zero clients.
+
+    Key advantages of centralization include:
+
+    Hardware resource optimization – 
+        shared infrastructure pools computing resources for 
+            maximum utilization.
+    Reduced software maintenance – 
+        operating system updates and software patching can be deployed 
+        from a centralized location.
+    Improved security – 
+        centralized data is easier to protect, 
+        monitor, and firewall; 
+        physical device loss does not compromise stored data.
+
+    Thin client hardware typically supports 
+        common peripherals, 
+        such as keyboards, mice, computer monitors, 
+            audio jacks, and open USB ports 
+            (e.g., for printers, flash drives, webcams). 
+    
+    Some models include legacy 
+        serial ports or parallel ports 
+    to support specialized equipment such as 
+        receipt printers or time-clocks.
+
+    Thin client software commonly includes:
+        a minimal graphical user interface (GUI),
+    cloud access agents (e.g., RDP, ICA, PCoIP),
+        a lightweight web browser,
+    terminal emulators (in some cases), and
+        essential local utilities.
+                
++   ThinClient example 
+    +   HP T5700 
+        https://minipcspec.com/computers/hp-t5700
+    NComputing RX-series 
+        RX420 (RDP) - USFF - keine CPU - RAM 0 GB - keine HDD - Gig
+
+
+>>> xpr ::  Gemini.$>   "Risiko bei der Cloud Nutzung"  [260908].Di 
+
+<   Wichtigste Schutzmaßnahmen zur Risikominimierung
+
+    1.  Multi-Faktor-Authentifizierung (MFA): 
+        Konsequent für alle Zugänge erzwingen.  
+
+    2.  Ende-zu-Ende-Verschlüsselung: 
+        Daten sowohl bei der Übertragung als auch bei der Speicherung 
+        (Data in Transit / at Rest) verschlüsseln.  
+    
+    3.  Identity & Access Management (IAM): 
+            Rechte strikt nach dem  Least-Privilege-Prinzip vergeben.
+
+    4.  Zertifizierungen prüfen: 
+        Auf Nachweise wie ISO/IEC 27001 oder den BSI C5-Kriterienkatalog achten.  
+
+
+<<< xpr ::  Gemini.$<.  "Risiko bei der Cloud Nutzung".
+
+
+>>> xpr ::  Gemini.$>   "Erklärung der Menschenrechte"  [260908].Di 
+
+    Die Allgemeine Erklärung der Menschenrechte (AEMR) wurde 
+    am 10. Dezember 1948 von 
+        den Vereinten Nationen (UN) in Paris verabschiedet. 
+    Sie war die Reaktion der Weltgemeinschaft auf die 
+        Greueltaten des Zweiten Weltkriegs und den Holocaust, 
+    mit dem Ziel, 
+    die Würde und Rechte jedes einzelnen Menschen weltweit zu schützen.
+
+Die wichtigsten Kernpunkte:
+
+•   Universell und unveräußerlich: 
+        Menschenrechte gelten für alle Menschen weltweit – 
+        unabhängig von Herkunft, Geschlecht, Religion, 
+        Hautfarbe oder politischer Überzeugung. 
+    Sie können niemandem weggenommen werden.
+
+•   30 Artikel: 
+    Die Erklärung umfasst 30 Artikel, 
+        die fundamentale Freiheiten und Rechte festlegen.
+
+•   Nicht rechtlich bindend, 
+    aber moralisch mächtig: 
+    Als Resolution der UN-Generalversammlung ist die AEMR >kein< völkerrechtlich 
+        bindender Vertrag. 
+    Sie dient jedoch als moralischer Kompass und 
+        bildet das Fundament 
+    für zahlreiche bindende internationale Abkommen und 
+        nationale Grundgesetze (wie das Grundgesetz der 
+        Bundesrepublik Deutschland).
+
+<<< xpr ::  Gemini.$<.  "Erklärung der Menschenrechte".
+
++   DSGVO 
+    
+    url:    https://dsgvo-gesetz.de/    
+
+    Inhalt der DSGVO (Datengrundschutzverordnung)
+    
+    Kapitel 1   Allgemeine Bestimmungen
+    Kapitel 2   Grundsätze
+    Kapitel 3   Rechte der betroffenen Person
+    Kapitel 4   Verantwortlicher und Auftragsverarbeiter
+    Kapitel 5   Übermittlungen personenbezogener Daten an 
+                Drittländer oder an internationale Organisationen
+    Kapitel 6   Unabhängige Aufsichtsbehörden
+    Kapitel 7   Zusammenarbeit und Kohärenz
+    Kapitel 8   Rechtsbehelfe, Haftung und Sanktionen
+    Kapitel 9   Vorschriften für besondere Verarbeitungssituationen
+    Kapitel 10  Delegierte Rechtsakte und Durchführungsrechtsakte
+    Kapitel 11  Schlussbestimmungen
+
++   BSI 
+
+    url:    https://www.bsi.bund.de/DE/Home/home_node.html
+    
+    Im Kontext von Cybersecurity und IT steht BSI 
+        für das "Bundesamt für Sicherheit in der Informationstechnik". 
+    Es ist die zentrale nationale IT-Sicherheitsbehörde Deutschlands 
+        mit Hauptsitz in Bonn (sowie Standorten in Freital und Saarbrücken) 
+    und untersteht 
+        dem Bundesministerium des Innern und für Heimat (BMI).
+
+    Themen:
+
+        +   KI 
+            Erklärbare Künstliche Intelligenz (XAI) wird oft als Lösung gesehen, 
+            um KI in der Cybersicherheit einzusetzen. 
+            Ein Whitepaper des BSI zeigt Potenziale, Einsatzmöglichkeiten 
+            und Risiken auf.
+    
+        +   Cyber Resilience Act    :   Meldepflicht startet
+            Für Hersteller von Produkten mit digitalen Elementen 
+                gelten auf dem Binnenmarkt der EU 
+                ab dem 11. September 2026 die Meldepflichten des CRA. 
+            Hersteller müssen aktiv ausgenutzte Schwachstellen 
+                sowie schwerwiegende Sicherheitsvorfälle melden. 
+                Das BSI unterstützt mit Schritt-für-Schritt-Anleitungen.
+        
+        +   Sovereign Tech Agency und BSI empfehlen 
+                speichersichere Programmiersprachen
+        
+
++   ISO 20000
+
+    https://de.wikipedia.org/wiki/ISO/IEC_20000
+
+
+    Die ISO/IEC 20000 ist der internationale 
+        Prüf- und Zertifizierungsstandard für ein 
+    IT-Service-Managementsystem (SMS). 
+    Während Best-Practice-Frameworks wie ITIL beschreiben, 
+        wie Prozesse gestaltet werden können, 
+        legt die ISO 20000 als verbindliche Norm fest, 
+    welche Mindestanforderungen ein Service-Provider erfüllen muss, 
+        um qualitativ hochwertige IT-Dienstleistungen nachweisbar und 
+        auditierbar bereitzustellen.
+
+    
++   SOAP Protocol
+
+    https://www.w3schools.com/XML/xml_soap.asp
+
+    SOAP stands for Simple Object Access Protocol
+    •   SOAP is an application communication protocol
+    •   SOAP is a format for sending and receiving messages
+    •   SOAP is platform independent
+    •   SOAP is based on XML
+    •   SOAP is a W3C recommendation
+
+    Why SOAP?
+    It is important for web applications to 
+        be able to communicate over the Internet.
+    The best way to communicate between applications is over HTTP, 
+        because HTTP is supported by all Internet browsers and servers. 
+    SOAP was created to accomplish this.
+    SOAP provides a way to communicate between applications running 
+        on different operating systems, 
+        with different technologies and programming languages.
+
+>>> example.SOAP of
+    <?xml version="1.0"?>
+    <soap:Envelope
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        soap:encodingStyle="http://www.w3.org/2003/05/soap-encoding">
+
+    <soap:Header>
+        <m:Trans xmlns:m="https://www.w3schools.com/transaction/"
+            soap:mustUnderstand="1">234
+        </m:Trans>
+    </soap:Header>
+    ...
+    ...
+    </soap:Envelope>
+    The example above contains a header with a 
+        "Trans" element, a "mustUnderstand" attribute with a value of 1, 
+        and a value of 234.
+
+!   key:AI
+    Die wichtigsten KI-Alternativen im Überblick
+    https://use.ai/
+    
++   ChatGPT (OpenAI)
+    https://chatgpt.com/
+    Lern- und Verständnisunterstützung: 
+        Die KI fungiert als geduldiger Nachhilfelehrer, 
+            der schwierige Schulfächer, Fremdsprachen oder 
+            wissenschaftliche Konzepte einfach und verständlich erklärt.
+    Kreatives Brainstorming: 
+        Bei Schreibblockaden, Projektideen, Geschenktipps 
+            oder der Planung von Präsentationen liefert das Tool 
+            schnell kreative Impulse und neue Ansätze.     
+    Programmieren und Problemlösen: 
+        ChatGPT unterstützt beim Schreiben, 
+            Verstehen und Debuggen von Quellcode in 
+            verschiedenen Programmiersprachen oder hilft 
+            logische Rätsel und Matheaufgaben Schritt für Schritt zu lösen.
+    Mehrsprachigkeit: 
+        Übersetzungen zwischen zahlreichen Sprachen gelingen 
+        flüssig und können sogar an bestimmte Tonalitäten oder 
+        kulturelle Kontexte angepasst werden.  
+    Rund um die Uhr verfügbar: 
+        Als digitaler Assistent steht der Chatbot 
+            jederzeit (24/7) ohne Wartezeiten für Fragen zur Verfügung.  
+    
++   Google Gemini
+    https://gemini.google.com/
+    
+        Ökosystem: 
+            Gemini arbeitet direkt in Gmail, Docs, Drive und Tabellen.
+        Multimodalität: 
+            Es verarbeitet große Datenmengen wie lange 
+                Videos, Audiodateien oder ganze Code-Pakete in 
+                einem einzigen Befehl.
+        Kosten: 
+            Es gibt kostenlose Versionen sowie gestaffelte Abos 
+                (wie AI Plus oder AI Pro) ab etwa 8 bis 22 Euro pro Monat. [1]     
+
++   Microsoft Copilot
+    https://copilot.microsoft.com/ 
+        Stark in Microsoft 365 integriert und ideal für die Arbeit mit 
+        Word, Excel und Co.
+
+
+>>> xpr ::  $>. "Cloud Service Provider" (CSP)  [260909]
+
+=== CSP
+
+    Ein Cloud Service Provider (CSP) – 
+        auf Deutsch Cloud-Dienstanbieter – ist ein Unternehmen, 
+    das IT-Ressourcen wie Rechenleistung, Speicherplatz, 
+        Datenbanken, Netzwerke oder fertige Softwareanwendungen 
+        über das Internet bereitstellt.
+
+    Kunden mieten diese Dienste flexibel nach Bedarf (Pay-as-you-go), 
+        anstatt eigene physische Server und Rechenzentren zu kaufen 
+        und zu warten.
+
+
+=== CSP.Anbieter & Marktführer
+
+    Die 3 Marktführer („The Big Three“)
+
+        Der weltweite Markt für Cloud-Infrastruktur wird von 
+            drei US-amerikanischen Herstellern dominiert, 
+           die zusammen knapp 68 % des Gesamtmarktes abdecken:
+
+    •   Amazon Web Services (AWS): 
+        Der Pionier und globale Marktführer (~28–31 % Marktanteil). 
+        Bietet den umfangreichsten Katalog an Diensten und Schnittstellen.  
+
+    •   Microsoft Azure: 
+        Die Nummer 2 am Markt (~23–25 % Marktanteil). 
+        Sehr stark bei etablierten Unternehmen durch die 
+        nahtlose Anbindung an vorhandene Microsoft-Umgebungen 
+        (Windows Server, Active Directory, Microsoft 365) und 
+        OpenAI-Integrationen.  
+
+    •   Google Cloud Platform (GCP): 
+        Die Nummer 3 (~11–14 % Marktanteil). 
+        Führend bei Big-Data-Analysen, 
+        Kubernetes/Containerisierung und spezialisierter KI-Infrastruktur.  
+
+    Weitere relevante Anbieter im Überblick
+        Neben den Marktführern gibt es spezialisierte und regionale 
+        Alternativen:Infrastruktur-Spezialisten:
+    
+    •   Oracle Cloud Infrastructure (OCI) 
+        (stark für Unternehmensdatenbanken und KI) und 
+        IBM Cloud (fokussiert auf hochregulierte Branchen).  
+    
+    Europäische & Datenschutz-fokussierte Anbieter: 
+        •   Hetzner, 
+        •   OVHcloud oder 
+        •   Exoscale, 
+
+    die garantierten Datensitz in der EU bieten und 
+    strikt der DSGVO unterliegen.  
+    
+    Entwickler- & Spezial-Clouds:        
+        •   DigitalOcean, 
+        •   Vercel oder Cloudflare, 
+    die auf extrem einfache Bereitstellung von Webanwendungen oder 
+    Edge-Computing ausgelegt sind.
+
+    Chinesische Hyperscaler: 
+        •   Alibaba Cloud, 
+        •   Tencent Cloud und 
+        •   Huawei Cloud 
+    dominieren vor allem im asiatischen Raum.
+        
+
+=== CSP.Aufgaben&Leistungen
+
+    Ein Cloud Service Provider übernimmt wesentliche 
+        operative Pflichten:
+
+    •   Infrastruktur-Bereitstellung: 
+        Betrieb und Kühlung weltweiter 
+        Rechenzentren, Stromversorgung, physische Hardware.
+
+    •   Sicherheit & Ausfallsicherheit: 
+        Schutz der physischen Server vor 
+        Angriffen, Ausfallschutz durch 
+            redundante Systeme (Availability Zones).  
+
+    •   Automatisierte Wartung: 
+        Aktualisierung von Hardware, 
+            Hypervisoren und System-Software.
+
+
+    •   Skalierbarkeit: 
+        Ressourcen lassen sich per Klick oder Skript in Sekundenschnelle 
+        hoch- oder runterfahren.
+
+=== CSP.Bewertung 
+
+    Die 6 Hauptkriterien zur CSP-Bewertung
+    
+    Cloud Provider Bewertung
+    +-- 1. Sicherheit & Compliance (Datenschutz, BSI C5, ISO 27001)
+    +-- 2. Digitale Souveränität (EU-DSGVO, Hyperscaler vs. Lokale Provider)
+    +-- 3. Performance & Zuverlässigkeit (SLA, Multi-AZ, Latenz)
+    +-- 4. Kostenstruktur & TCO (FinOps, Versteckte Kosten)
+    +-- 5. Funktionsumfang & Ökosystem (PaaS, AI-Integration, Lock-in)
+    +-- 6. Support & Zukunftsfähigkeit (SLA, Roadmaps, Vendor Stability)
+
+<<< xpr ::  $<. "Cloud Service Provider" (CSP)
+
++   Cloud Act 
+    https://en.wikipedia.org/wiki/CLOUD_Act
+    The Clarifying Lawful Overseas Use of Data Act or 
+        CLOUD Act (H.R. 4943) is a United States federal law enacted in 
+        2018 by the passing of the Consolidated Appropriations Act, 
+        2018, PL 115–141, Division V.
+    
++   UDHR 
+    https://www.un.org/en/about-us/universal-declaration-of-human-rights
+    The Universal Declaration of Human Rights (UDHR) is a milestone document 
+        in the history of human rights. 
+    Drafted by representatives with different legal and c
+        ultural backgrounds from all regions of the world, 
+        the Declaration was proclaimed by the 
+        United Nations General Assembly in Paris on 
+        10 December 1948 (General Assembly resolution 217 A) as a 
+        common standard of achievements for all peoples and all nations. 
+    It sets out, for the first time, fundamental human rights 
+    to be universally protected and it has been translated into 
+    over 500 languages. 
+    The UDHR is widely recognized as having inspired, and paved the way for, 
+    the adoption of more than seventy human rights treaties, 
+    applied today on a permanent basis at global and regional levels 
+    (all containing references to it in their preambles). 
+
++   Cloud "Informationskampagne" zur Risikominimierung         
+    Eine Informationskampagne zur Risikominimierung zielt darauf ab, 
+        Bewusstsein (Awareness) zu schaffen, 
+        Verhaltensänderungen anzustoßen und Risiken – 
+        sei es im Bereich 
+        IT-Sicherheit, Arbeitsschutz, Compliance oder Krisenmanagement – 
+            präventiv zu reduzieren.
+
+    Hier ist ein strukturierter Leitfaden für die 
+        Planung, Umsetzung und Messung einer erfolgreichen Kampagne:
+    1. Vorbereitung & Zieldefinition
+    2. Kernbotschaft & Storytelling
+    3. Formate & Kommunikationskanäle (Mix)
+    4. Phasenweiser Ablauf der Kampagne
+    5. Erfolgsmessung (KPIs)
+
++   Cloud "Audit"
+    Ein Cloud Audit ist die systematische, 
+        unabhängige Prüfung einer Cloud-Infrastruktur, 
+        ihrer Prozesse und der darin verarbeiteten Daten. 
+    Das Ziel ist es, Sicherheitslücken zu identifizieren, 
+    die Einhaltung rechtlicher Vorgaben (Compliance) 
+        sicherzustellen und nachzuweisen, 
+        dass Daten sowie Systeme ordnungsgemäß geschützt sind.

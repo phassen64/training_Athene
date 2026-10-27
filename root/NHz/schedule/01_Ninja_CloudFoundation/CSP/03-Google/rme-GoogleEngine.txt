@@ -1,0 +1,32 @@
+--- rme.CSP := Google Engine
+
+
++   login Google
+    usr:    <@google>
+    pwd:    <!google>
+
+
++   vmInstanz:  gryphos-1
+
+
++   Google Cloud Essentials
+
+    +   what is google cloud 
+    https://www.youtube.com/watch?v=XwrX5AnCf1A
+
+    +   Google Vm erstellen
+    https://www.youtube.com/watch?v=ti7_z15fER0
+
+    +   cloud shell
+    https://www.youtube.com/watch?v=G-NRWgAjToA
+
+    +   Web server einrichten
+    https://www.youtube.com/watch?v=gHIVA-LUWTg
+
+    +   Google CE & SSH
+        https://www.youtube.com/watch?v=evaHoJm4bdI
+
++   Externe Ip Address
+    ipa:    34.30.59.56
+    usr:    phassen64
+    

@@ -1,0 +1,21 @@
+###############################################################################
+--- !sem.EXIN_Cloud_FND
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Kurs:    
+        Name:   EXIN Cloud Foundation 
+
+--- Credentials:
+
++   Kurs:   EXIN Cloud Foundation 
+    url     https://digital.ninja-training.de/
+    usr:    <@msn>
+    pwd:    g65484hjHHgg~fMy;bJ
+
+
++   Kursdauer:
+    01.September 2026 - 16.September 2026
+    

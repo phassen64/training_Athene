@@ -1,0 +1,55 @@
+--- rme.CSP := AWS
+
+
++   Credentials.AWS        
+    url:    https://aws.amazon.com/console/
+    eml:    <@pluto>
+    pwd:    <!surf>
+    account ID:"4323-4242-1362"     *   IAM userName
+    account name:"phassen64"        *   IAM password
+
+
++   YouTube AWS for absolute beginners 
+    https://www.youtube.com/watch?v=UQ5_9G7q-ec
+
+
+### !date:<2026-09-16>:Mi 
+
++   Putty Settings
+    +   update ec2-63-179-243-121.eu-central-1.compute.amazonaws.com
+                := public DNS 
+    +   Connection.SSH.Auth.Credentials.PrivateKey := 
+            "C:\Users\peter\Downloads\KeyPair_Britney.ppk"
+    
+
++   Putty login
+    usr:    "admin" * for Debian 13x
+    pwd:    <!surf>
+    
+    
++   install Desktop Environment XFCE    
+    sudo apt update
+    sudo apt install -y task-xfce-desktop
+    sudo apt install -y xfce4 xfce4-goodies
+    sudo systemctl set-default graphical.target
+    sudo reboot
+    sudo apt list --upgradable
+    sudo apt upgrade
+
++   install xrdp
+    sudo apt-get update
+	sudo apt-get install xrdp -y
+    
++   xrd run 
+    echo "startxfce4" > ~/.xsession
+    sudo systemctl restart xrdp
+    sudo passwd admin
+
++   check external ip address
+    $>  curl checkip.amazonaws.com
+    $<  63.179.243.121
+
+    
+### keine Verbindung mit der externen IP möglich
+    <   auch kein XRDP möglich 
+    <   keine grafische Verbindung

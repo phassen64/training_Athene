@@ -1,0 +1,13 @@
+--- rme.CSP := Microsoft Azure
+
+
++   Azure AI
+    https://azure.microsoft.com/en-us/products/virtual-machines/
+    https://portal.azure.com/#view/Microsoft_Azure_Billing/FreeServicesBlade
+
++   login Microsoft 
+    usr:    <@msn>
+    pwd:    <!prior>
+
++   intro
+    https://www.youtube.com/watch?v=nr-HQN9nIxM&t=91s

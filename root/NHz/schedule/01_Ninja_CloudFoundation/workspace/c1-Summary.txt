@@ -1,0 +1,2059 @@
+###############################################################################
+--- !sem.EXIN_Cloud_FND
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- readme.NH	EXIN_Cloud_FND
+	now:2026-09-01,15:34
+
+--- Kurs:    
+        Name:   Cloud Computing Foundation
+        ID:     EXIN_Cloud_FND
+
+--  content:
+    m:  i0: Index
+    m:  K0: Einleitung
+    m:  K1	Cloud Prinzipien 
+    m:  K2  Implementierung und Management des Cloud Computing
+    m:  K3	Nutzung von Cloud Computing
+    m:  XE  XE.AWS  Exkurs  AWS Management Console
+    m:  K4: Sicherheit, Identität und Privatsphäre im Cloud Computing
+    m:  K5: Bewertung des Cloud Computing
+    m:  Ax: Appendix 
+    m:  Ex: Examen.Vorbereitung
+    m:  mx: Misc
+
+
+===============================================================================
+m:	i0: Index
+===============================================================================
+
+K0	Einleitung
+	K0.01	Exin Cloud Computing
+	K0.02	Prüfungsanforderung
+	K0.03	Liste der Grundbegriffe
+	K0.04	Literatur 
+	K0.-	Programm-Übersicht
+	K0.-	Exin Secure Cloud Services
+
+K1	Cloud Prinzipien 
+	K1.04	Cloud & Informationsmanagement
+	K1.06	Cloud-Prinzipien
+	K1.07	Cloud-Betriebsmodelle (Deployment Models)
+	K1.08	hybrid-cloud
+	K1.09	multi-cloud
+	K1.10	...AAS
+	K1.11	SaaS, PaaS and IaaS
+	K1.12	aaS YouManage vs ServiceProvider manages
+	K1.12m	movie:utility
+	K1.13	Entwicklung des Cloud Computing
+	K1.14	Minicomputer (mainframes)
+	K1.15	Personal Computer PC 
+	K1.16	LAN & Lösungen 
+	K1.17	Modem
+	K1.18	Virtualisierung im Cloud Computing
+	K1.19	Virtualisierung im Cloud Computing (2)
+	K1.19m	movie:ServerVirtualisierungen Typ1&2
+	K1.20	Virtualisierung als Betriebssystem
+	K1.21	Virtualisierung mit einem Host-Betriebssystem
+	K1.22	Cloud-Architektur
+	K1.23	tiered architecture (Mehrstufige Architektur)
+	K1.24	Multi-tenancy architecture (Mehrmandanten Architektur)
+    Q1.07   Questions K1
+
+XE  XE.AWS  Exkurs  AWS Management Console
+ 
+K2  Implementierung und Management des Cloud Computing
+    K2.01   Aufbau lokaler Cloud-Umgebungen 
+    K2.27   Lokale Cloud-Umgebungen 
+    K2.28   Lokale Cloud-Umgebungen.B
+    K2.29   Service Level bei der Cloud
+    Q2.04   Questions K2
+      
+K3	Nutzung von Cloud Computing
+    K3.33   Übersicht [33]
+    K3.34   Webanwendung / Browser
+    K3.35   Das OSI-Modell
+    K3.36   OSI vs TCP/IP 
+    K3.37   Thin Clients
+    K3.38   Marktanteile von Desktop OS     
+    K3.39   Marktanteile von mobilen OS
+    K3.40   Standard Applikationen
+    Q3.06   Questions K3
+
+K4: Sicherheit, Identität und Privatsphäre im Cloud Computing
+    K4.41   Cloud-Sicherheit und Datenschutz
+    K4.42   Punkte Sicherheit
+    K4.43   Maßnahme zur Minderung der Sicherheitsrisiken
+    K4.44   Identity Management
+    K4.45   CIA
+    K4.46   DSGVO
+    Q4.05   Questions K4
+
+K5: Bewertung des Cloud Computing
+    K5.48   Business Case für die Cloud
+    K5.49   Business Case für die Cloud(2)
+    K5.50   Kosten / SLA etc
+    K5.51   ROI
+    K5.52   Bewertung der Cloud
+
+Ax: Appendix
+    A1: ISO.20000
+    A2: BSI 200-3 IT-Grundschutz Katalog
+    A3: Risikomatrix & Risikoanalyse
+
+Mx: Misc
+
+===============================================================================
+m:  K0: Einleitung
+===============================================================================
+
++	Examen
+	https://www.exin.com/de/
++	Liste der Grundbegriffe
+
++	Literatur
+	EXIN Cloud Computin Workbook
+https://www.exin.com/technologies-software/exin-cloud-computing/exin-cloud-computing-foundation/
+
++	Programm-Übersicht 
+
++	EXIN Secure Cloud Services
+	Certified Integrator
+
+===============================================================================
+m:  K1: Cloud Grundsätze
+===============================================================================
+
+>>>	K1.06:	Cloud Grundsätze (Prinzipien)
+
+
++   Cloud Computing 
+    is the delivery of computing 
+            services—including servers, 
+            storage, 
+            databases, networking, software, 
+                and analytics—over the internet ("the cloud"). 
+    Instead of buying and maintaining physical data centers, 
+        businesses rent access to infrastructure and 
+        applications on a pay-as-you-go basis from providers 
+    like AWS, Microsoft Azure, and Google Cloud.
+
+
++   Die Cloud-Prinzipien sind grundlegende Konzepte, 
+    welche das Cloud-Computing charakterisieren. 
+    •   Internet    :   muss da sein 
+    •   Service     :   möchte man nutzen 
+    •   gemeinsam nutzbar     : für viele Per   sonen 
+    •   skalierbar  :   wieviel RAM? 
+    •   Virtualisierung
+
++	Single vs multi-tenant cloud: 
+        Key differences and benefits
+
+	Single-tenant cloud architecture provides a 
+		dedicated environment where all hardware, 
+            storage, and computing resources 
+	are reserved for a single organization. 
+
+	Multi-tenant cloud architecture shares the same 
+		physical hardware and infrastructure among 
+		multiple independent customers, 
+		using logical isolation to keep each user's data secure and private.
+
+
+>>>	K1.07:	Cloud-Betriebsmodelle
+
+	https://cloud.google.com/discover/types-of-cloud-computing
+
+	private Cloud 	-> 	NAS 
+	public ~	-> 	AWS		
+	community ~	-> 	Education and Research
+	hybrid ~ 	->	mix private&public
+	multi~		->	meherere Anbieter
+
+>>>	K1.08:	Hybrid Cloud 
+		ist eine IT-Umgebung, 
+	die eine private Infrastruktur (Private Cloud oder lokale Server) mit 
+	einer öffentlichen Cloud (Public Cloud) 	verbindet, 
+	sodass Daten und Anwendungen zwischen beiden ausgetauscht werden können.
+	Vorteile :
+	Flexibilität: 
+        Unternehmen nutzen die Skalierbarkeit der 
+            Public Cloud bei Lastspitzen.
+	Sicherheit: 
+        Sensible Daten verbleiben geschützt in der Private Cloud.
+	Kostenkontrolle: 
+        Nur benötigte Zusatzressourcen in der Public Cloud werden bezahlt.
+
+    Beispiel: 
+        public:     Office365
+        private:    Forschung&Entwicklung 
+        community:  Verein 
+
+
++	Community Cloud 
+		ist eine gemeinsame Cloud-Infrastruktur, 
+		die von mehreren Organisationen oder Unternehmen 
+		    mit ähnlichen Interessen, 
+		Anforderungen oder Branchenstandards genutzt wird
+
+	---	Merkmale und FunktionsweiseGemeinsame Nutzung: 
+		Mehrere Parteien teilen sich eine IT-Infrastruktur, 
+		um Kosten zu sparen und Daten sicher auszutauschen.
+	Geschlossener Kreis: 
+    	Im Gegensatz zu einer Public Cloud ist der Zugriff streng auf 
+    	eine definierte 
+	Gruppe (z. B. Behörden, Krankenhäuser oder Banken) beschränkt.
+	Verwaltung: Die Verwaltung kann durch eine der 
+		beteiligten Organisationen oder einen externen Dienstleister erfolgen.
+
+>>>	K1.09:	multi-cloud
+	Die Nutzung von Cloud-Diensten verschiedener Anbieter 
+		(z. B. AWS und Google Cloud gleichzeitig), 
+	um sich nicht an einen einzigen Provider zu binden und 
+		spezifische Stärken der jeweiligen Anbieter zu nutzen.
+
+
+>>>	K1.10:	AAS
+
+!   key:XaaS    Everything_as_a_Service
+    https://de.wikipedia.org/wiki/Everything_as_a_Service
+
+	XAAS
+	XAAS Everything As a Solution
+	https://de.wikipedia.org/wiki/Everything_as_a_Service
+	Everything as a Service (auch Anything as a Service), 
+	    kurz XaaS (auch EaaS), 
+	bezeichnet einen Ansatz, „alles“ als Service zur Verfügung zu stellen 
+	und zu konsumieren. 
+	Damit ist es der konsequente letzte Schritt, 
+	nachdem es z. B. bereits Software, Laufzeitumgebungen und 
+	    Hardware as a Service gibt.
+
+!   key:SaaS    Software as a Service
+    https://en.wikipedia.org/wiki/Software_as_a_service
+
+	*	sehr viel standardisierung
+	*	keine Änderungen möglich
+
+	Fertige Softwareanwendungen, 
+	die direkt über den Browser oder eine App genutzt werden.
+	Der Anbieter kümmert sich um Wartung, Updates und Betrieb.
+
+    Beispiele:
+
+    +   SaaS.CRM HubSpot
+        https://www.hubspot.com/
+        HubSpot’s Smart CRM is the single source of truth that connects 
+            all your business data.
+    
+    +   SaaS.DropBox 
+        Dropbox delivers tools that help you collaborate with ease, 
+        move work forward faster, and keep it all safe.    
+        Dropbox is a cloud-based Software as a Service (SaaS) platform. 
+        https://www.dropbox.com/
+        https://www.dropbox.com/plans
+
+    +   SaaS.GitHub
+        https://github.com/
+    
+    +   SaaS::  Google Workspace 
+        Join millions of businesses that run on premium versions of :
+        Gmail, Calendar, Drive, Meet, and more. 
+        Focus on getting results instead of looking for information 
+        with helpful,  personalized AI.        
+        https://workspace.google.com/
+            
+    +   SaaS.Microsoft365
+        https://www.microsoft.com/de-de/windows-365
+        Windows 365 ist Ihr PC in der Cloud
+            Geben Sie allen Mitarbeitern das, 
+            was sie brauchen, 
+        um überall und auf jedem Gerät produktiv zu sein.
+
+    +   SaaS.Salesforce        
+        https://www.salesforce.com/
+        Sorgen Sie mit Automatisierungen und einer zuverlässigen 
+        agentengesteuerten CRM-Plattform, 
+            auf der Menschen und KI-Agents zusammenarbeiten, 
+        für Verbesserungen im Vertrieb, Service und Marketing. 
+        Erzielen Sie mit einer schnellen und 
+            einfachen Einrichtung sowie vorgefertigten Agents 
+            vom ersten Tag an einen echten Mehrwert.
+
+    +   weitere ohne url 
+        billing & invoice
+        e-commerce 
+        online collaboration(Zusammenarbeit)  
+        
+
+
+!   key:PaaS    Platform as a Service (PaaS) 
+    https://de.wikipedia.org/wiki/Platform_as_a_Service
+	*	mehr Möglichkeiten als bei SaaS
+	*	für Anwendungs-Entwickler
+
+	Bietet Entwicklern eine fertige Plattform inklusive Betriebssystem, 
+	Datenbanken und Entwicklungswerkzeugen, 
+        um Anwendungen zu programmieren und zu testen, 
+	ohne sich um die darunterliegende Hardware kümmern zu müssen.
+
+    Beispiele:
+    
+    +   PaaS.AWS Elastik Beanstalk 
+        https://aws.amazon.com/de/elasticbeanstalk/
+        *   Einfache Migration, 
+            Bereitstellung und Skalierung von Full-Stack-Anwendungen auf AWS.
+
+    +   PaaS.Google App Engine 
+        https://cloud.google.com/appengine
+        Build monolithic server-side rendered websites. 
+        App Engine supports popular development languages 
+            with a range of developer tools.
+
+	+   PaaS.Heroku
+        https://www.heroku.com/
+        The Cloud Application Platform For 
+            Building, Deploying, and Scaling Apps
+        Heroku is your fastest path from idea to production. 
+        Our fully managed application platform provides 
+        scalable app hosting so you can stay focused on building great apps.
+
+    +   PaaS.ApacheStratos 
+        https://stratos.apache.org/
+        Apache Stratos is a highly-extensible Platform-as-a-Service (PaaS) 
+            framework that helps run 
+        Apache Tomcat, 
+        PHP, and MySQL applications 
+        and can be extended to 
+            support many more environments on all major cloud infrastructures. 
+        For developers, 
+            Stratos provides a cloud-based environment for 
+            developing, testing, and running scalable applications. 
+        IT providers benefit from high utilization rates, 
+            automated resource management, 
+            and platform-wide insight including monitoring and billing.
+
+	+   PaaS.Windows Azure 
+        https://azure.microsoft.com/en-us
+        Get started creating, deploying, and managing 
+            applications—across 
+            multiple clouds, on-premises, 
+            and at the edge—with scalable and cost-efficient Azure services.    
+                		
+!   key:IaaS    Infrastructure as a Service
+    https://en.wikipedia.org/wiki/Infrastructure_as_a_service
+    https://www.geeksforgeeks.org/cloud-computing/infrastructure-as-a-service-iaas/
+
+    Die Bereitstellung von grundlegenden IT-Infrastrukturen 
+        wie virtuellen Servern, Speicherplatz und Netzwerken 
+            über das Internet. 
+	Der Nutzer 
+        verwaltet das Betriebssystem und die Software selbst.
+
+    Beispiele:  	
+        •   Amazon Web Services(AWS) mit Produkten wie EC2 
+        •   Digital Ocean
+		•   Linode
+		•   Rackspace,
+		•   Cisco Metapod
+		•   Google Compute Engine (GCE)
+
+    +   IaaS.AWS.EC2
+        https://aws.amazon.com/pm/ec2/
+
+    +   IaaS.Google Compute Engine     
+        https://cloud.google.com/products/compute
+
+
+
+>>>	K1.11:	Dienstmodelle Vergleich 
+
+	OnSite-IaaS-PaaS-SaaS
+	?	was mache ich und was machen andere für mich
+		youManage | serviceProvideManage(x)
+
++	Components managed by 
+    On-Premises(1) & IaaS(2) &  PaaS(3) & SaaS(4)
+
+!   key:table:OnSite-IaaS-PaaS-SaaS    	
+                       (1) (2) (3) (4)                       
+    Application		    x	x 	x   -
+	Data			    x   x	x	-
+	Runtime			    x   x   -   -
+	Middleware		    x   x 	-	-
+	O/S 			    x	x 	-   -
+	Virtualization	    x	-   -   -	
+	Servers (PC)	    x	-   -   -
+	Storage (HDD)	    x	-   -   -
+	Networking		    x	-   -   -
+    x: you manage
+
+>>>	K1.12m:	Utility 
+
+	~ bezeichnet im wirtschaftlichen Kontext 
+        ein öffentliches Versorgungsunternehmen, 
+		das grundlegende Infrastruktur sowie damit verbundene 
+	Dienstleistungen bereitstellt und damit 
+	zur grundlegenden Daseinsvorsorge einer modernen Gesellschaft beiträgt.
+        :<	Dienstleistung "Elektrizität"
+        :<	Dienstleistung "Cloud"
+
+>>>	K1.13:	Entwicklung des Cloud Computing
+
+	1950:	mainframe 
+	1969:	Arpanet Researcg
+	1970:	Virtual Machines
+	1980:	Supercomputing & Ethernet
+	1990:	rise of the internet
+	2006:	Amazon Elastic Compute
+	2008:	Amazon Cloud Front
+	2009:	Gartner talks of Cloud 
+	2010:	MS Azure & Rackpace OpenStack 
+	2011:	IBM SmartCloud
+	2013:	Google ComputeEngine
+	2014:	IBM PaaS Bluemix 
+	2016:	IBM & Gloogle release modular cloud servicesc
+	2019:	growth of content delivery nerworks
+	
++	Arpanet
+	https://de.wikipedia.org/wiki/ARPANET
+	Was ist das ARPANET?
+	Definition: 
+	Ein frühes Computernetzwerk, 
+		das im Jahr 1969 von der DARPA (damals ARPA) im Auftrag des 
+		US-Verteidigungsministeriums gestartet wurde.
+	Hauptidee: Daten werden nicht als ganzer Block gesendet, 
+	sondern in kleine Teile zerlegt (Paketvermittlung). 
+	Fällt ein Weg aus, nehmen die Pakete automatisch eine andere Route.
+	Erster Erfolg: 
+	Im Herbst 1969 wurden die ersten vier Universitäten in den 
+		USA (u. a. UCLA und Stanford) miteinander verbunden.
+		
+>>>	K1.14:	Minicomputer... (History)
+
+	Terminal : kommuniziert mit dem Großrechner(HOST)
+	PC : Personal Computer
+	LAN Lösungen: 
+		ARCNET - Ethernet - Token Ring
+		https://de.wikipedia.org/wiki/Token_Ring
+		https://de.wikipedia.org/wiki/ARCNET
+	Modem 
+	Virtualisierung im Mainframe IBM VM/370
+
+---	Kapitel.1.Virtualisierung im Clound Computing
+	mit dem OS, mit einem HOST
+
++	Load Balancing
+	https://de.wikipedia.org/wiki/Lastverteilung_(Informatik)
+
+
+>>> xpr ::  Server Virtualisierung [260903]
+
+    === Type.1  :  "Bare-Metal Architecture"
+	
+    *	DireKt auf der HW
+	Aufbau: Host(Hardware) - Hypervisor - VM - Gast-Os
+
+	So funktioniert es:
+
+	Physischer Server (Host): 
+		Die echte Hardware mit CPU, 
+            Arbeitsspeicher und Festplatten.
+        *   es läuft kein Windows/Linux/etc...    
+
+	Hypervisor: 
+		Eine spezielle Software-Schicht, 
+			die direkt auf der Hardware läuft. 
+		Sie teilt die Ressourcen auf und trennt die VMs voneinander.
+        
+	Virtuelle Maschinen (Gäste): 
+		Jede VM verhält sich wie ein eigener, 
+		echter Computer mit einem eigenen Betriebssystem und Anwendungen.
+
+<	Die wichtigsten Vorteile
+	Kosteneinsparung: 
+		Weniger physische Hardware bedeutet weniger Strom, 
+		weniger Platz im Rechenzentrum und geringere Anschaffungskosten.
+	Bessere Auslastung: 
+		Ein großer Server ist oft unterfordert. Virtualisierung 
+		    bündelt die Last, weil sich mehrere virtuelle Server 
+		    die Leistung teilen.
+	Flexibilität und Tempo: 
+		Neue Server lassen sich per Mauskollk in Minuten erstellen 
+		    statt tagelang auf neue Hardware zu warten.
+	Ausfallsicherheit: 
+		Virtuelle Maschinen können im laufenden Betrieb 
+		auf einen anderen physischen Server verschoben werden (Live-Migration).
+	<:	VMware vSphere / ESXi
+		Microsoft Hyper-V
+		KVM / Proxmox
+		Nutanix AHV
+
++	Server Virtualisierung.Type2:"
+
+    === Type.2  :  "Hosted Architecture"
+
+	*	normal Fall
+	Aufbau: Hardware(Host) - HostOs - Hypervisor - VM - Gast-OS
+
+	<:	Bekannte Software-Beispiele
+		Oracle VM VirtualBox
+		VMware Workstation Pro / VMware Player
+		Parallels Desktop (Häufig genutzt auf macOS)
+		Red Hat OpenShift
+
+<<< xpr ::  Server Virtualisierung.
+
++	KVM (Kernel-based Virtual Machine) 
+		ist eine leistungsstarke, 
+		native Open-Source-Virtualisierungsinfrastruktur, 
+	die den Linux-Kernel seit Version 2.6.20 (aus dem Jahr 2007) 
+	in einen vollwertigen Hypervisor (Typ1) verwandelt.
+	https://de.wikipedia.org/wiki/Kernel-based_Virtual_Machine
+	https://linux-kvm.org/page/Main_Page
+
+
++   Bare Metal, Virtual Machines or Containers?
+    https://www.cloud4c.com/blogs/bare-metal-vs-vms-vs-containers-ultimate-guide-to-modern-infrastructure-operations
+
+    Bare Metal (Owning the House)
+        Like owning a house from foundation to roof – 
+            get direct access to all hardware resources, 
+            customize every aspect of the server, 
+            install any operating system, 
+            and have full control over performance, 
+            security, and configuration.
+
+    Virtual Machine (Renting the Whole House)
+        There is significant freedom without owning the infrastructure. 
+        One can install software, modify settings, and run applications, 
+        but the physical hardware is managed by the cloud provider - 
+            just like a rental where the property owner 
+            handles major structural changes.
+
+    Container (Renting a Room in the House)
+        Containers are lightweight, 
+            portable environments that share the host OS-es kernel. 
+        Considered more affordable and flexible, 
+        and ideal for microservices and application deployment. 
+        Like a room in a shared house, 
+            there is limited access and shared resources.
+
+
+>>>	K1.20:	Virtualisierung als Betriebssystem Folie:[1.20]
+	HW - Hypervisor - GuestOs & AWP
+
+>>>	K1.21:	Virtualisierung mit einem Host-Betriebssystem [1.21]
+	HW - HostOs - Hypervisor - GuestOs & AWP
+
+>>>	K1.22:	Cloud Architektur
+	architecture...
+		service-oriented architecture -> SOA
+		tiered architecture
+		multipurpose architecture
+        datacenter architecture
+	service...
+		service | hypervisor
+	aas...
+		SaaS | PaaS | IaaS
+
+!   key:multi-purpose architecture 
+    (often referred to as mixed-use or flexible architecture) 
+    refers to the design of spaces and buildings that 
+    serve several distinct        
+    functions within a single footprint. 
+    Instead of dedicating a structure to a 
+        single purpose—such as exclusively residential, office, or 
+        retail—multi-purpose design integrates various programs 
+            into a cohesive environment.
+    Key Types of Multi-Purpose Architecture
+        1. Mixed-Use High-Rises & Complexes
+        2. Flexible & Transformative Spaces
+        3. Adaptive Reuse & Temporality
+
+>>> xpr ::  Gemini.$>   "Data Center Architecture" [260907]
+
++   Data Center Architecture encompasses the 
+    integration of physical facility design, 
+        computing infrastructure, network topologies, 
+        and management software to form a scalable, high-availability platform.
+
+1. Physical & Infrastructure Layer
+    A facility relies on critical support systems to keep hardware running 
+    safely and continuously:
+    Power Systems: 
+        Redundant power distribution units (PDUs), uninterruptible power 
+        supplies (UPS), and backup diesel generators 
+        (often deployed in $N+1$ or $2N$ redundancy configurations).  
+    Cooling & Environmental Control: 
+        Air-based cooling (Hot/Cold Aisle containment) and liquid cooling 
+        solutions (direct-to-chip or immersion) 
+        designed to handle high TDP workloads like AI/ML clusters.
+    Security & Compliance: 
+        Biometric entry controls, surveillance, and fire suppression 
+        systems (e.g., clean agent gas systems).
+
+2. Network Architecture  
+    Modern data centers have shifted from legacy 3-tier models to  flat, 
+    high-throughput topologies optimized for 
+    server-to-server (East-West) traffic.
+
+<<< xpr ::  Gemini.$<.  "Data Center Architecture".
+
++   Compliance 
+    Was bedeutet Compliance und was gehört konkret alles dazu? 
+    Compliance beschreibt, 
+        dass ein Unternehmen sich verlässlich an geltende Gesetze hält, 
+        interne Regeln beachtet und verantwortungsvoll handelt. 
+    Dazu gehören z.B. Anti-Korruption, Datenschutz, 
+        Hinweisgebersysteme sowie ESG-Themen.
+
++   Layered Data Center Design typically follows:
+    Core Layer – 
+        High-speed Layer 3 backbone connecting aggregation modules 
+        with no single point of failure.
+    Aggregation Layer – 
+        Integrates services like firewalls, load balancers, 
+            and SSL offload; manages VLANs and Layer 2 domains.
+    Access Layer – 
+        Direct server connections (rack servers, blade servers) 
+        with Layer 2/3 switching.
+        
+>>>	K1.23:	Tiered (mehrstufige Architektur):multitier architecture
+	load balancing
+	web front end
+	business logic
+	dataBase
+
+>>>	K1.24:	Multi-tenancy architecture (Mehrmandanten Architektur)
+
+!   key:CRM	    Customer-Relationship-Management
+	https://de.wikipedia.org/wiki/Customer-Relationship-Management
+	Customer-Relationship-Management, kurz 
+	CRM (englisch für Kundenbeziehungsmanagement oder Kundenpflege), 
+	bezeichnet die konsequente Ausrichtung eines Unternehmens auf seine 
+	Kunden und die 	systematische Gestaltung der Kundenbeziehungsprozesse. 
+	Die dazugehörige Dokumentation und Verwaltung von Kundenbeziehungen 
+	sind wichtige Bausteine und ermöglichen ein vertieftes Beziehungsmarketing. 
+	In vielen Branchen 
+	(z. B. Telekommunikation, Versandhandel, Dienstleistungsunternehmen) 
+	sind Beziehungen zwischen Unternehmen und Kunden langfristig ausgerichtet. 
+	Mittels CRM werden diese Kundenbeziehungen gepflegt, 
+	was sich maßgeblich auf den Unternehmenserfolg auswirken soll.
+	<:	Salesforce 
+		https://www.salesforce.com/de/
+
++	A multipurpose software architecture refers to a 
+    high-level software system 	
+        layout designed to handle highly diverse system requirements, 
+	varied data workloads, or heterogeneous hardware targets. 
+	Rather than forcing an entire application into one strict structure, 
+	a 	multipurpose approach utilizes a multi-architecture strategy. 
+	This combines multiple architectural patterns to deliver 
+	extreme flexibility, resilience, 
+	and scaling capabilities across different components of the 
+	same application.
+
+!   key:multitier architecture
+	https://en.wikipedia.org/wiki/Multitier_architecture
+	In software engineering, 
+		multitier architecture (often referred to as n-tier architecture or 
+		layered architecture) 
+	is a client–server architecture in 
+	which various levels of software architecture are physically separated. 
+	The most common use of 	multitier architecture is the 
+	three-tier architecture, 
+		which separates presentation, 
+				application processing and 
+				data management functions, 
+	such as in the case of Cisco's hierarchical internetworking model. 
+	Other tiers of separation may include the 
+		service layer, business layer, data access layer, and persistence layer.
+
++	Model View Controller (MVC )
+	https://de.wikipedia.org/wiki/Model_View_Controller
+			
++	Data Center Architecture
+	https://en.wikipedia.org/wiki/Data_center_network_architectures
+
+>>> xpr ::  SOA [260901]
+
+	SOA steht im Bereich der Informationstechnik 
+	für serviceorientierte Architektur (engl. service-oriented architecture)
+
+Was ist eine Serviceorientierte Architektur (SOA)?
+
+Definition: 
+	in Architekturmuster, bei dem Softwarefunktionen als unabhängige, 
+		 sich geschlossene Dienste (Services) organisiert werden.
+Funktionsweise: 
+	Die einzelnen Services erledigen bestimmte Aufgaben oder 
+	Geschäftsprozesse und kommunizieren über ein Netzwerk miteinander.
+Komponenten: 
+	Ein Dienst wird von einem Anbieter bereitgestellt, 
+	über ein Verzeichnis gesucht und von einer anderen Anwendung angefragt.
+Vorteile: 
+	Anwendungen sind flexibler, 
+	Bausteine lassen sich leichter austauschen und der Code kann in 
+	anderen Programmen wiederverwendet werden.
+
+<<< xpr ::  SOA.
+
+
+>>> Q1.07   Questions K1    [260902]
+
+    Q1.01
+    >   What are the 4 types of cloud deployment models ?
+            Give a summary or example of each of the four types.
+    <   private, public, hybrid, community 
+
+    >   Name 2 key characteristics of SaaS, PaaS and IaaS each.
+    <   SaaS "Sofware"~aaS
+        Minimal IT organization engagement requirements 
+        Software hosted offsite
+        Software on demand
+        Software package
+        No modification of the software
+        Plug-in software: external software used with 
+            internal applications (hybrid cloud)
+        Vendor with advanced technical knowledge
+        User entangled with vendor
+
+    <   PasS "Platform"~aaS 
+
+        Requires strong engagement of the IT organization for ordering 
+            and consumption 
+        Used for remote application development and 
+            for developed applications hosting
+        Remote platform support
+        Platform may have special features 
+            and/or limited platform modification options
+        Low development costs
+        Low TCO and high agility for custom 
+            applications (platform injected benefits
+
+    <   IaaS "Infrastructure"~aaS 
+            Requires strong engagement of IT organization for ordering and          consumption (applications and 
+            infrastructure management teams)
+        Dynamic scaling
+        Most flexible and vendor-agnostic cloud service model 
+            in many cases
+        Desktop virtualization
+        Policy-based services
+
+:   Q1.02
+
+>   Which 3 developments enabled the 
+            emergence of cloud technology?
+
+<   Most important developments:
+        the development of computer networks
+        the development of the Internet
+        the move from Mainframe computing to PC
+
+:   Q1.04
+>   Which 2 other developments were crucial to 
+        make the Internet accessible to everyone ?   
+
+<   personal devices
+    network connectivity
+
+:   Q1.05
+>   What is a single purpose architecture?
+    Does cloud computing use single purpose architectures?
+
+<   In the past, 
+    most architectures were proprietary and single purpose. 
+    Examples are accounting 
+        systems and storage of health care data. 
+    This infrastructure had only one purpose. 
+
+<   No
+    Cloud computing infrastructure are multi-purpose. 
+    An example could be a system on which 
+        data is not only stored, 
+        but also distributed over the Internet
+
+:   Q1.06
+>   What does SOA mean?
+<   SOA stands for service-oriented architecture. 
+        This is an architectural style that supports service 
+        orientation. 
+    Service orientation is a way of thinking in terms of services and 
+        service-based 
+    development and the outcomes of services. 
+    This contrasts with thinking in terms of products
+
+:   Q1.07
+>   Name 4 benefits and 4 limitations of cloud computing.
+
+<   Automation
+    Early access
+    Flexibility
+    Focus on core business
+    Low costs
+
+<   Buy as-is
+    Compliance
+    Dependent on internet
+    Integration
+    Privacy
+
+<<< eoq.
+
+
+
+===============================================================================
+m:  K2: Implementierung und Management des Cloud Computing
+===============================================================================
+
+!   key:Cloud Computing 
+    https://de.wikipedia.org/wiki/Cloud_Computing
+
+    Cloud Computing (aus dem Englischen, für Rechnen in der 
+        Wolke, Rechnerwolke oder Datenwolke[1]) 
+    ist die Nutzung von Computersoftware, 
+        die nicht auf dem lokalen PC, sondern entfernt in der Cloud liegt.
+
+?   What are the benefits of cloud computing?
+    The most significant advantages of cloud computing include:
+
+    Scalability: 
+        You can quickly increase your resources without installing IT 
+            hardware or software to make it possible. 
+            Scaling back is also simple.
+        
+    Savings: 
+        You only pay for what you use and don’t have to invest in the 
+        actual hardware or software, as the vendor takes care of that.
+        
+    Speed: 
+        Connecting to resources online on a cloud provider’s powerful 
+        servers can be incredibly fast. 
+       
+    Mobility: 
+        You can access cloud computing applications on any 
+        internet-connected device. 
+    
+    
+    Security: 
+        Data is encrypted for transmission to the cloud and storage 
+        in cloud databases, 
+        so your information could be more secure in the cloud 
+            than it might be on-premises. 
+
+!   key:On-premises software 
+    https://en.wikipedia.org/wiki/On-premises_software
+
+    On-premises("im Gebäude") refers to software and 
+        IT infrastructure that is hosted locally within an organization’s 
+        own facilities, giving full control over data, 
+        security, and operations. 
+    This setup allows organizations to manage their own hardware, 
+        software, and data, which is particularly beneficial 
+        for those with strict compliance needs or sensitive data handling.
+
+    Key points about on-premises include:
+    Control: 
+        Organizations have complete control over their data and 
+            security measures.
+    Customization: 
+        This model allows for extensive customization to meet specific 
+            operational requirements.
+    Initial Investment: On-premises systems typically require 
+        a significant initial investment in hardware and software licenses.
+    Maintenance: 
+        Organizations are responsible for managing, updating, 
+            and securing the infrastructure, which can be challenging 
+            and costly. 
+
+>>> K2.01   Aufbau lokaler Cloud-Umgebungen 
+
++   standards & components of a cloud
+    •   uniformity
+    •   portability !
+    •   backup
+    •   LAN 
+    •   web-based applications
+    •   support
+
+       
+>>> K2.27   Lokale Cloud-Umgebungen 
+
++   SW
+    •   WebServer
+    •   AppSW
+    •   DBMS (DB Systems)
+    •   OS Systems
+
++   HW 
+    •   Switch
+    •   Router
+    •   Server
+    •   Speicherplatz
+
+<<< eoc
+
+>>> K2.28   Lokale Cloud-Umgebungen.B (SAN)
+
++   Folie 
+    server [i] <-> SAN <-> raid [i] : zone [a..z]
+
++   SAN 
+    https://en.wikipedia.org/wiki/Storage_area_network
+    A storage area network (SAN) or storage network is a computer network 
+        which provides access to consolidated, 
+        block-level data storage. 
+    SANs are primarily used to access data storage devices, 
+        such as disk arrays and tape libraries from servers so that 
+        the devices appear to the operating system as direct-attached storage. 
+    A SAN typically is a dedicated network of storage devices not accessible through the local area network (LAN).
+    Although a SAN provides only block-level access, 
+        file systems built on top of SANs do provide file-level access and 
+        are known as shared-disk file systems.
+    Newer SAN configurations enable hybrid SAN[1] and allow traditional 
+    block storage that appears as local storage 
+        but also object storage for web services through APIs.
+    
+    Components
+    SANs have their own networking devices, such as SAN switches. 
+        To access the SAN, so-called SAN servers are used, 
+        which in turn connect to SAN host adapters. 
+    Within the SAN, a range of data storage devices may be interconnected, 
+    such as SAN-capable disk arrays, JBODs and tape libraries.
+
++   SAN Mangement Systems 
+https://en.wikipedia.org/wiki/List_of_storage_area_network_management_systems
+    This is a list of Storage area network (SAN) management systems. 
+        A storage area network is a dedicated network that provides 
+            access to consolidated, block level data storage.
+    •   Cisco Fabric Manager
+    •   IBM SAN Volume Controller
+
+!   key:MLPS    Multi Protocol Label Switching
+https://www.geeksforgeeks.org/computer-networks/multi-protocol-label-switching-mpls/
+    Multi-Protocol Label Switching (MPLS) is an advanced 
+        packet-forwarding technique used in modern networks. 
+        Instead of making routers look into complex Layer 3 routing 
+        tables for every IP packet, 
+    MPLS uses labels for forwarding decisions. 
+
++   MPLS and VPN
+
+    MPLS can separate traffic of different customers similar to VPNs.
+    Unlike regular VPNs, MPLS does not encrypt data.
+    Instead, 
+        it ensures traffic isolation by keeping each customer’s 
+        traffic within its label-switched path (LSP).
+
+
+>>> K2.29   Service Level bei der Cloud
+
++   Operation:  "Angebot & Nachfrage"
+    •   Budgetierung und Abrechnungen von Serviceleistungen
+    •   Demand Management         
+    •   Capacity Management "Bedarf?"
+
++   Operation:  "Lösung und Erfüllung"
+    •   Service Request Management
+    •   Incident(Störung) Management   
+    •   Problem Management
+
++   Operation:  "Gewährleistung"
+    •   Service availability
+        <   erreichbar die Cloud
+    •   Service continuity managements 
+        <   Katastrophe
+    •   Information security management
+        <   Sicherheit - ISO 27001
+
++   Leistungsbewertung 
+    •   Überwachung, Messung, Analyse & Bewertung
+    •   Internes Audit
+    •   Service-Berichterstattung
+    •   Management Review
+
+<<< eoc.K2
+
+>>> K2.30   Mangement von Service Levels
+
++   Konventionelles IT-Service Management 
+    Ziele: 
+        •   Wirksames SLA Management 
+        •   Verbesserte Leistung 
+        •   Kostengünstigere Abrechnungen
+    Kernelemente:
+        •   SLA-Verwaltung...
+        
++   Management von Services 
+    Ziele: 
+        •   Effezientes Kapazitätsmanagement
+        •   Kontiuierliche Stabilität der Dienste 
+        •   Orchestrierung von Ressourcen für eine 
+                schnelle Bereitstellung
+
+    Kernelemente:
+        •   Rechnungstellung...
+    
+!   key:SLA     service-level agreement
+    https://en.wikipedia.org/wiki/Service-level_agreement
+
+    A service-level agreement (SLA) is an agreement, 
+        typically a binding contract, 
+            between a service provider and a customer that define 
+            particular aspects of the service – 
+            such as quality of service, availability, responsibilities – 
+            as terms of contract.
+    [1] SLAs are commonly used in the technology industry, 
+        and often contain specific service-level objectives 
+        for defined service level indicators, 
+        such as mean time between failures, 
+        mean time to repair, mean time to recovery, network throughput, 
+        jitter, uptime, first-call resolution, and turnaround time.
+
+    Unlike traditional contracts, 
+        SLAs often require parties involved to meet regularly 
+        to create an open forum for communication, 
+    apply rewards and penalties for performance, 
+        and leave room for periodic revisitation to 
+            make changes.[2] SLAs may be supported by 
+            operational-level agreements, or OLAs.
+
+<<< eoc.
+
+>>> xpr ::  Gemini.$>   "SLA:Service Level Agreement"  [260908].Di 
+
++   A Service Level Agreement (SLA) is a formal, 
+        legally binding or operational contract 
+            between a service provider and a customer. 
+    It defines the specific quality, availability, 
+        and responsibilities expected during the service delivery, 
+        along with remedies or penalties if those standards are not met.
+
++   Core Components of an SLA
+ 
+    Component	    :   
+        1.  Scope & Services          
+        2.  Performance Metrics        
+        3.  Service Provider Commitments
+        4.  Penalties & Credits
+        5.  Customer Responsibilities
+        
+    Description	    :   
+        1.  Defines exactly what services are provided 
+            and supported.
+        2.  Quantifiable indicators used to measure service quality.
+        3.  Objectives the provider guarantees to maintain.
+        4.  Financial or operational compensation if SLA targets are missed.
+        5.  Duties required from the client to uphold the agreement.
+                    
+    Example:    
+        1.  "24/7 Monitoring and Management of Cloud Infrastructure."
+        2.   Uptime, Latency, Throughput, Response Time.
+        3.  "99.9% system uptime per calendar month."
+        4.  "10% bill credit if uptime falls below 99.0%."
+        5.  "Providing timely access to internal server logs during incidents."
+    
+    Key Performance Metrics:    
+        •   Uptime / Availability: 
+            Percentage of time services are operational 
+                (e.g., 99.9% uptime allowing a maximum of ~43 minutes 
+                    of monthly downtime).
+        •   Mean Time to Respond (MTTRsp): 
+            Time taken to acknowledge a critical issue after it is logged.
+        •   Mean Time to Resolve (MTTR): 
+            Average time elapsed from issue reporting to resolution.
+        •   Response Time & Latency: 
+            Speed at which a application or system responds to user requests.
+
+    Types of SLAs
+        •   Customer-Based SLA: 
+            Tailored to an individual customer covering all services 
+            they use (e.g., an enterprise software contract).
+        •   Service-Based SLA: 
+            Standard agreement offered to all customers using 
+            a specific service 
+            (e.g., standard AWS or Microsoft 365 uptime guarantees).
+
+    Multi-Level SLA: 
+        Layered structure addressing global corporate rules, 
+            specific customer requirements, 
+                and distinct service tiers within one document.
+
+Common SLA Levels (The "Nines" of Availability)
++----------------+--------------------------+
+| Availability % | Allowed Downtime / Month |
++----------------+--------------------------+
+| 99% ("Two 9s") | ~7 hours 18 minutes      |
+| 99.9% ("Three")| ~43 minutes 49 seconds   |
+| 99.99% ("Four")| ~4 minutes 23 seconds    |
+| 99.999% ("Five")| ~26 seconds              |
++----------------+--------------------------+
+
+
+<<< xpr ::  Gemini.$<.  "Service Level Agreement"  
+
+
+
+>>> K2.31   ISO/IEC 20000:2018 Prozesse
+
+
++   key:ISO 
+    https://www.iso.org/home.html
+    Standards define what great looks like, 
+        setting consistent benchmarks for businesses and consumers 
+        alike — ensuring reliability, building trust, 
+        and simplifying choices.
+
+   
+!   key:ISO.20000
+    https://en.wikipedia.org/wiki/ISO/IEC_20000
+    ISO/IEC 20000-1 is the international standard for IT service management. 
+    It was originally developed in 2005 by ISO/IEC JTC1/SC7 
+        and revised in 2011 and 2018.[1] 
+    It was originally based on the earlier BS 15000 that 
+        was developed by BSI Group.[2]
+    ISO/IEC 20000, like its BS 15000 predecessor, 
+        was originally developed to reflect 
+        best practice guidance contained within the 
+        ITIL framework,[citation needed] although 
+        it equally supports other IT service management frameworks 
+        and approaches including Microsoft Operations Framework and 
+        components of ISACA's COBIT framework. 
+    The differentiation between ISO/IEC 20000 and 
+        BS 15000 has been addressed by Jenny Dugmore.[3][4]
+
+
++   ISO/IEC 20000 is the international 
+    standard for Service Management Systems (SMS). 
+
++   ISO/IEC 20000-1: Service management
+        specifies the requirements for establishing, 
+        implementing, maintaining, and continually 
+        improving a service management system. 
+    An SMS supports the management of the service lifecycle, 
+        including the planning, design, transition, delivery and 
+        improvement of services
+
+    While originally created for IT Service Management (ITSM), 
+    the modern standard applies to any service provider—internal 
+    or external—seeking to design, implement, monitor, and 
+    continually improve quality service delivery.
+
+    ISO/IEC 20000-1 Structure
+    │
+    ├── Management System Core (Clauses 4–7, 9–10)
+    │   ├── Context of the Organization
+    │   ├── Leadership & Commitment
+    │   ├── Planning & Risk Management
+    │   └── Support & Resource Management
+    │
+    └── Operational Service Management (Clause 8)
+        ├── Service Portfolio (Catalogue, CMDB, Assets)
+        ├── Relationships (SLAs, Business Relationships)
+        ├── Supply & Demand (Budgeting, Capacity)
+        ├── Design, Build & Transition (Change, Release)
+        ├── Resolution & Fulfilment (Incidents, Problems)
+        └── Service Assurance (Availability, Continuity, Security)
+    
+
++   Service Delivery Process (6)
+    "Wie liefere ich meinen Service aus?"
+
++   Control Process (9)
+
++   Resolution
+    <   Erfüllung 
+
++   Relationship
+    <   business R   
+
+*   der Anbieter muss die Prozessanforderungen
+    einhalten
+
+<<< eoc.
+
+
+>>> Q2.04   Questions K2
+
++   Q2.02
+    ?   What are the key benefits of using a VPN combined with MPLS?
+
+>>> xpr ::  Gemini.$>   "benefits of using VPN combined with MPLS"
+
+
+    Combining a VPN (Virtual Private Network) with 
+        MPLS (Multiprotocol Label Switching) 
+        is a common hybrid WAN strategy. 
+
+    MPLS provides high performance, reliability, 
+        and strict Quality of Service (QoS), 
+        while a VPN provides flexibility, 
+            cost efficiency, and strong encryption over the public internet.
+
+    When integrated—often implemented via a Hybrid 
+        WAN or SD-WAN architecture—you get the strengths of both 
+        networking models:
+
+1.  Cost Optimization
+
+    Offloading Non-Critical Traffic: 
+        MPLS bandwidth is expensive per megabit. 
+        By routing less critical, high-volume internet 
+        traffic or SaaS applications 
+        (like Office 365 or video streaming) through secure VPN connections, 
+        you free up expensive MPLS capacity for mission-critical apps 
+        (like ERPs or core database access).
+
+    Tiered Connectivity: 
+        You can connect high-priority, 
+        core data centers using MPLS, 
+        while connecting remote or smaller branch offices 
+        using significantly cheaper broadband or LTE VPNs.
+
+2.  Enhanced Security & Encryption
+
+    Data-in-Transit Protection: 
+        Traditional MPLS networks are private,
+        meaning they are isolated from the public internet, 
+        but traffic within an MPLS cloud is generally not encrypted by default.
+
+    End-to-End Encryption: 
+        Overlaying an IPsec VPN on top of an MPLS link adds 
+        strong cryptographic encryption (like AES-256). 
+        This protects sensitive traffic against potential eavesdropping 
+        if the service provider's network is compromised or 
+        if traffic crosses carrier interconnects.
+
+3. Redundancy & High Availability
+
+    Seamless Failover: 
+        Setting up a VPN alongside an MPLS circuit creates a 
+        primary/backup path structure. 
+        If an physical fiber cut or carrier outage disables the MPLS line, 
+        traffic automatically reroutes over the encrypted VPN connection 
+        across public internet providers, ensuring continuous uptime.
+
+4. Rapid Remote Branch & User Onboarding
+
+    Fast Deployment: 
+        Provisioning a new MPLS link requires coordinating with 
+    telecom carriers and can take weeks or months. 
+    A site-to-site VPN over local broadband can be set up 
+    in hours to get a remote site operational immediately.
+
+    Hybrid Work Support: 
+        MPLS only connects physical sites. 
+        Remote, mobile, or work-from-home employees can 
+        use client-based VPNs to connect securely into the enterprise network, 
+        effectively extending the corporate MPLS domain to remote users.
+
+5. SLA Guarantees Combined with Broad Reach
+
+    Optimized Latency for Real-Time Apps: 
+        MPLS offers guaranteed Service Level Agreements (SLAs) for jitter, 
+        packet loss, and latency, making it ideal for 
+        Voice over IP (VoIP) and live video conferencing.
+
+    Global Footprint: 
+        Where MPLS is unavailable or cost-prohibitive 
+        (e.g., distant international regions), 
+        VPN over public internet fills the geographical gaps 
+        without sacrificing connectivity.
+
+<<< xpr ::  Gemini.$<.   "benefits of using VPN combined with MPLS"  
+
+<<< eoq.Q2
+
++   Q2.03
+
++   The goal of an ISO/IEC 20000 certification or a 
+    follow-up audit is to check if the organization fulfills 
+    the ISO/IEC 20000 requirements. 
+    Several requirements are mandatory.
+    
+    One of these is the documentation of the 
+
+        ISO/IEC 20000 processes.
+    What are three process groups?
+    Include the processes per group.
+
+Process Group: 
+    processes for... 
+    +   service delivery    -> Service Level Management
+    +   relationship        ->  Business ~
+    +   control             ->  Change Management
+    +   resoltion           ->  Incident & Problem Management
+    +   release             ->  Release Management
+    
+
+
+===============================================================================
+m:  K3: Nutzung von Cloud Computing
+===============================================================================
+
+
+>>> K3.33   Übersicht [33]
+            Enduser -> (Webbrowser|FatClient|ThinCloud)
+                    ->  Cloud-Zugriffsarchitektur 
+                    ->  Web-Anwendung|Desktop-Virtualisierung
+    
+>>> K3.34   Webanwendung / Browser
+
++    Web-fähiges Gerät, z.B. 
+        PC, Laptop, Tablet, Smartphone,
+            Thin Client
++   Es gibt standardisierte Protokolle für jede OSI-Schicht 
++   Internet Browser
++   Ich brauche eine Internerverbindung
+        Anbieter & IP-Adresse
+
++   Ich starte eine Cloud-basierte Anwendungen, z.B. 
+        SaaS
+
+>>> K3.35   Das OSI-Modell
+
+    1   physical link "Bitübertragungsschicht"
+    2   data link "Sicherungsschicht"
+    3   Network  "Vermittlungsschicht"
+    4   Transport "Transportschicht"
+    5   Session - "Kommunikationssteuerungsschicht"
+    6   Presentation - "Darstellungsschicht"
+    7   Application - Anwendung
+
+>>> K3.36   OSI vs TCP/IP 
+
++   OSI     :   7 Schichten 
+    1   physical link
+    2   data link
+    3   Network 
+    4   Transport 
+    5   Session 
+    6   Presentation 
+    7   Application 
+    <   keine Protokolle
+
++   TCP/IP  :   4 Schichten
+    1   Network Interface   (OSI:1&2) 
+    2   Network             (OSI:3)
+    3   Transport           (OSI:4)
+    4   Application         (OSI:5-7)
+
+>>> movie: OSI-Modell
+
++   Modelle 
+    IBM:    IBM System Network Architecture (SNA) 
+    DEC:    Digigatl Network Architcture (DNA)
+    XNS:    Xerox Network Systems 
+
++   Probleme der Vergangenheit
+    Jeder Hersteller definierte seine eigenen Regeln.
+
++   ISO 
+    https://www.iso.org/standards.html
+    https://www.iso.org/home.html
+    <   output: OSI Modell
+
++   Beispiel
+    Politiker Deutscher <=> Spanischer Politiker 
+    Übersetzer DE->SP       Übersetzer SP->DE
+    Telefon : SP->          <-DE : Telefon
+
++   Beispiel Schichten im OSI und ihre Protokolle
+    1   physical link   V.24 | X.21, RS-232 Repeater|Hub
+    2   data link       Bridges, Switch
+    3   Network         Router, Protkoll:IP
+    4   Transport       Protkoll:TCP/UDP
+    5   Session         NetBIOS, RPC, OSI session-layer Protocol X.225, ISO 8327
+    6   Presentation    SSL/TLS ISO 8822/X.216
+    7   Application     Protokolle: HTTP, FTP, SMTP, IMAP, DNS
+
++   OSI vs TCP/IP 
+    OSI     :   aus der ISO 1970-1980
+    TCP/IP  :   aus dem ARPANET der 1970er Jahre
+
++   OSI heute theoretischer Rahmen
+    TCP/IP der Internet Standard
+
+<<< eoc. 
+
+>>> K3.37   Thin Clients
+    
++   Kunde vs ISP [17:00]
+    Kundenseite
+        VPN                    
+        Firewall               
+        Zugang zum Internet 
+        Kundengeräte 
+        
+    ISP-Seite: Internet Service Provider 
+        Cloud-Anbieter
+        Unternehmen 
+        VPN-Gateways
+        Firewalls 
+        System zur Verhinderung von Einbrüchen (ISP)
+
+            
+>>> K3.38   Marktanteile von Desktop OS
+    77% Windows OS      
+    18% OS/X     
+    5%  Linux etc...
+
++   Marktanteile Desktop-Os    
+    https://gs.statcounter.com/os-market-share/desktop/worldwide/
+
++   Chrome Os 
+    https://chromeos.google/
+
++   OS/X =: MacOs
+    https://en.wikipedia.org/wiki/MacOS
+
+>>> K3.39   Marktanteile von mobilen OS
+    72% Android
+    27% iOS 
+    1%  Windows etc...
+ 
++   Marktanteile Mobile-Os    
+    https://gs.statcounter.com/os-market-share/mobile/worldwide
+
++   IOS Apple   
+    https://www.apple.com/os/ios/    
+    
+>>> K3.40   Standard Applikationen
+    Email           :   Microsoft Office 365
+    Messaging       :   MS Teams 
+    Office Suite    :   Google Apps for Work
+    OnlineSpeicher  :   AmazonS3, GoogleDrive
+    VideoKonferenz  :   Skype, MsTeams
+    Coden           :   BitBucket, GitHub 
+
+
+>>> Q3.06   Questions K3
+ 
+1 / 6
+    List the 7 OSI-model layers and describe the 
+    hardware, software, protocols and standards necessary 
+        to access web applications through a web browser.
+
+<<< answer
+    1:  physical layer  
+        100Base-T, 1000Base-T 
+    2:  dataLink layer 
+        Ethernet, IEEE 802.3
+    3:  network layer: IP 
+    4:  transport layer: TCP, UDP
+    5:  session layer: API-sockets or sockets 
+    6:  presentation layer: VT, RTSE 
+    7:  applcation layer : HTTP & HTTPS 
+    
+
+2 / 6
+    What are the 2 key architectural features of cloud computing?
+
+<<< answer  [K3.34]
+    +   common protocols
+    +   virtualization ?
+    
+ 
+3 / 6
+    What is a thin client? 
+    What is a benefit of using thin clients over more traditional 
+        solutions in the office?
+
+<<< answer.ThinClients  [K3.37]
+    +   a simple low-performance computer 
+    +   optimized for RDP
+    +   without a hard disc
+
+    Benefits are (you should have listed one of these): 
+    +   Costs for thin clients are lower than for 
+        fully capable devices.
+            o lower initial price and running costs 
+    +   Simple devices without moving parts do not break often.
+    +   Thin clients are better for the environment, 
+            because they produce less heat and need less cooling.           
+    +   Thin clients provide heightened security, 
+            because they 
+        o boot from the network with controlled access
+        o do not store data locally
+    +   User error is almost impossible with thin clients, 
+            because they are very simple
+
+4 / 6
+    There are many business solutions available from the cloud. 
+    Name at least 7 SaaS business solution categories 
+    (such as e-mail services) and give an example of 
+        a service for each.
+
+<<< answer  key.SaaS
+
+5 / 6
+    Using cloud computing changes the 
+        relationship between vendors and customers. 
+    What aspects change?
+
+<<< providers more involved with the customer business
+    and have to show their value as part of the business value
+
+6 / 6
+    What are two benefits and two challenges of 
+        providing cloud-based services?
+
+<<< benefits 
+    Reutilization of old resources (IaaS)
+    Better use of resources because of multi-tenancy
+    Economics of scale
+    
+<<< challenges 
+    Compliance risks
+    Standards, legislation and regulation
+    Performance issues
+
+<<< eoq.
+
+
+===============================================================================
+m:  K4: Sicherheit, Identität und Privatsphäre im Cloud Computing
+===============================================================================
+
+
+>>> K4.41   Cloud-Sicherheit und Datenschutz
+    
+    https://www.ibm.com/think/topics/cloud-security
+
+>>> K4.42   Punkte Sicherheit
+    +   Sicherheit - security
+        Geschäftskritische Anwendungen werden an andere 
+            Unternehmen weitergereicht        
+    +   Risko
+            bei gemeinsamer Ressourcen-Nutzung         
+    +   Virtualisierte Umgebungen 
+    +   Zugang (access)
+    +   Massnahme 
+    +   Genehmigung (authorization)
+    +   Authentifizierung 
+
++   example         
+    *   Login aus einem anderen Land ?
+    
+>>> K4.43   Maßnahme zur Minderung der Sicherheitsrisiken
+    
+    Risiko...
+
++   Risiko
+    •   Datenschutzverletzung 
+    •   Fehlkonfiguration & unzureichende Änderungskontrolle
+    •   Fehlen einer Cloud Sicherheitsarchitektur -strategie
+    •   Unzureichendes Indentitäts, Berechtigung...
+    •   Entführung von Konten 
+    •   Bedrohung durch Insider
+    •   Unsichere Schnittstellen und APIs 
+    •   Schwache Steuerebene 
+    •   Ausfällen von Meta- und Anwendungsstrukturen
+    •   Begrenzte Sichtbarkeit der Cloud-Nutzung 
+    •   Missbrauch und missbräuchliche Nutzung von Cloud-Diensten 
+
++   Massnahmen zur Minderung der Risiken
+    •   Zugangsverwaltung und Abschwächung aller anderen Riskien
+    •   Kontrolle ändern 
+    •   Ausbildung
+    •   Passwortverwaltung 
+    •   Starke Authentifizierung
+    •   Personalüberprüfung und Sensibilisierung
+    •   Penetrationstests
+    •   Einschränkungen bei Schulung und Installation 
+    •   Überwachen von Verkehr und Nutzung
+
+<<< eoc.
+
+>>> K4.44   Identity Management
+
+!   key:IAM     Identity and Access Management
+    https://en.wikipedia.org/wiki/Identity_and_access_management
+    
+    Identity and access management (IAM or IdAM) or 
+        Identity management (IdM) is a framework of policies 
+            and technologies to ensure that 
+    the right users (that are part of the ecosystem connected 
+        to or within an enterprise) have the appropriate access 
+        to technology resources. 
+    IAM systems fall under the overarching umbrellas of 
+        IT security 
+        and data management. 
+    Identity and access management systems not only identify, 
+        authenticate, and control access for individuals 
+    who will be utilizing IT resources but also 
+        the hardware and applications employees need to access.[1]
+
++   Identity Management Aspects...
+    +   personal data 
+    +   federation levels 
+    +   single sign-on 
+    +   federation
+    +   authentification
+    +   identify
+    +   cloud presence 
+    +   claim-based solution
+    +   location
+    +   privacy
+    +   safeguards
+
+>>> K4.45   CIA
+
++   CIA von Daten
+    +   C   confidentially  Vertraulichkeit 
+    +   I   integrity       Integrität 
+    +   A   availbilty      Verfügbarkeit
+
++   CIA 
+    https://en.wikipedia.org/wiki/CIA_triad
+    The "CIA triad" of confidentiality, integrity, 
+        and availability sits at the heart of 
+            many information security standards.[1] 
+    The concept was introduced in the Anderson Report in 1972 and 
+    later repeated in The Protection of Information in Computer Systems. 
+    The abbreviation was coined by Steve Lipner around 1986.[2]
+    The triad is used in information-security standards and guidance, 
+    including the ISO/IEC 27000 family of standards and the 
+    NIST Cybersecurity Framework. ISO/IEC 27000 defines information 
+    security as the preservation of confidentiality, 
+    integrity and availability of information, 
+    while other frameworks use the three concepts as part 
+    of wider approaches to managing cyber and information-security risk.
+
+
+!   key:BSI     
+    Bundesamt für Sicherheit in der 
+                Informationstechnik
+    https://www.bsi.bund.de/
+
+<   Gefährungsklassen
+    "Feuer"
+
++   BSI Smartphone 
+    Ein besonderes Risiko stellt in vielen Fällen der Zugang 
+        via Smartphone dar. 
+    Werden die Zugangsdaten in der App des Dienstes gespeichert, 
+        genügt ein bloßes Aufrufen der App, 
+        um auf die Cloud zuzugreifen. 
+    Was auf der einen Seite praktisch ist, 
+        bedeutet andererseits, 
+        dass möglicherweise auch Schadprogramme auf 
+            dem Smartphone leichten Zugriff auf die Daten in der Cloud haben. 
+    Wenn das Smartphone durch Verlust oder Diebstahl in falsche Hände gerät, 
+        sind die Cloud-Daten nur so sicher, 
+        wie der Zugriff auf das Smartphone geschützt ist. 
+    Wer also beispielsweise sein Smartphone 
+        nur mit einer vierstelligen PIN schützt, 
+        legt die Hürde recht niedrig. 
+    Außerdem ist in der Regel nicht garantiert, 
+        dass die verwendeten Apps die Daten verschlüsselt übertragen. 
+    Anders als bei der Benutzung 
+        moderner Internet-Browser werden Benutzer hier i.d.R. 
+    nicht auf die Risiken einer 
+        unverschlüsselten Verbindung hingewiesen. 
+    Die Benutzung eines Smartphones in unsicheren Hotspots 
+        kann also mit Sicherheitsrisiken verbunden sein.
+
+
+>>> K4.46   DSGVO
+
+!   key:DSGVO   Datenschutz-Grundverordnung
+    https://dsgvo-gesetz.de/
+    (EU) 2016/679
+    Die EU-DSGVO und das BDSG sind seit dem 25. Mai 2018 anwendbar. 
+    
++   Geschichte
+    +   1948    UNO
+                Die Allgemeine Erklärung der Menschenrechte wurde 
+                    1948 von den Vereinten Nationen verabschiedet und 
+                    besteht aus 30 Artikeln, 
+                    die die Rechte und Freiheiten jedes 
+                Menschen definieren.
+    +   1957 & 2000
+                EU:     Vertrag von Rom & EU-Charta 1957 & 2000
+                Erklärung des Rechts auf Datenschutz 
+    +   2019    Allgemeine Datenschutz-Grundverordnung
+                Gilt für alle Mitgliedstaaten und EWR(-EFTA)
+                   Staaten
+
+
+
+
+>>> Q4.05   Questions K4
+
+Exam Preparation: Chapter 4
+‘Get it’ questions
+  
+1 / 5
+    What is the most common security risk to cloud computing?
+
+<<< answer 
+    identity of user
+
+
+2 / 5
+    Which measures can be taken to mitigate(mildern) that security risk?
+
+<<< 
+    Passwortverwaltung 
+    Starke Authentifizierung 
+    Überwachung von Verkehr & Nutzung
+
+3 / 5
+    Explain what Authentication means within AAA.
+
+!   key:AAA     Authentication, Authorization, and Accounting
+
+    AAA in security stands for Authentication, Authorization, and Accounting 
+        — a foundational access‑control framework used
+        to verify identity, enforce permissions, 
+            and log user activity across networks. 
+            It is widely implemented in enterprise networks, 
+            cloud platforms, and device management systems, 
+            using protocols such as RADIUS, TACACS+, 
+            and Diameter to control and audit access.
+
++   authentication 
+    <   verify identity
+    
++   authorization
+    <   enforce permissions
+    
++   accounting    
+    <   log user activity across networks
+
+    
+4 / 5
+    Explain the SSO principle.
+
+!   key:SSO     Single Sign-On (SSO) 
+    allows a user to authenticate once with a single set of 
+        credentials (like a username and password) and 
+        gain access to multiple independent applications or 
+            services without logging in again.
+    Think of SSO like 
+        a wristband at an amusement park. 
+    Instead of paying and showing your ID at every individual ride, 
+        you prove who you are once at the entrance gate, 
+        receive a verified wristband, 
+        and show that wristband to enter every ride instantly.
+
+<<< mit einem Gegenstand sich für diverse Aktivitäten 
+    zu authentifizieren
+
++   Core Entities in SSO
+    SSO relies on a trusted relationship between three main components:
+        User (Subject):
+            The person attempting to access an application.
+        Service Provider (SP / Relying Party): 
+            The target application you want to use 
+            (e.g., Gmail, Slack, Salesforce).
+        Identity Provider (IdP): 
+            The central authentication authority that holds 
+            user credentials and verifies identities 
+    (e.g., Okta, Microsoft Entra ID/Azure AD, Auth0, Google Workspace).
+    SSO architecture uses the so-called SOAP protocol, 
+    a protocol for the exchange of
+        information in the implementation of 
+    Web Services in the cloud or any other network.
+
+       
+5 / 5
+Is there a difference between personal data and PII?
+Give 4 examples of personal data.
+
+
+<<< answer 
+
+Both personally identifiable information (PII) and 
+    personal data are terms for any information that
+can be used to directly or indirectly uniquely identify, 
+    contact, or locate a natural person. 
+The USA
+    CLOUD Act uses the term PII. 
+The European GDPR uses the term personal data.
+
+!   key:PII     Personally identifiable information (PII) 
+    is any data that can identify or trace an individual, 
+        either directly or indirectly, and requires protection to 
+        prevent identity theft or misuse.
+    https://www.investopedia.com/terms/p/personally-identifiable-information-pii.asp
+<<< eoq.4
+
+
+===============================================================================
+m:  K5: Bewertung des Cloud Computing
+===============================================================================
+
+>>> K5.48   Business Case für die Cloud
+
++   SLA  zu betrachten 
+        - "Was muss in der Cloud sein?"
+    Unternehmen "Wie groß"
+        - Service (24/7?) 
+            - Anbieter (Provider)
+    Vorteile "Welche Dienste bekomme ich?" 
+        - Einsparungen "Spare ich etwas" 
+        - Kosten "Was muss ich investieren?"
+    Mitarbeiter - 
+        Operations - 
+            Hardware - 
+                Software
+
+>>> K5.49   Business Case für die Cloud2
+    
+    *   Die folgenden Daten müssen ermittelt werden...
+
++   Einsparung vs Kosten
+    ?   TCO - ROI   "Total Costs" & "Return of Investment"
+    ?   CAPEX - OPEX    "Capital Expenditures" & "Operational Expenditure"
+    ?   Einsparung - Kosten - Vorteile 
+    ?   Restwerte am Ende des Lebenszyklus    
+
++   Vorteile 
+    ?   Markteinführungszeit    :   "schneller am Markt"
+    ?   Skalierbarkeit & Elastizität
+    ?   Produktivität "mehr arbeiten"
+            & Mobilität "Leute können überall arbeiten"
+    ?   Assetnutzung
+            "Lizenzen können übertragen werden"
+
+<<< eoc.
+
+
++   Total Cost of Ownership (TCO) and Return on Investment (ROI) 
+    are complementary financial metrics used to evaluate 
+        capital allocations, 
+        software purchases, and infrastructure investments.
+    In short: TCO calculates what an investment costs, 
+        while ROI calculates what an investment yields.
+
++   Core Definitions [Gemini]
+
+!   key:TCO     Total Cost of Ownership
+    A holistic accounting methodology 
+        that captures all direct and indirect, 
+    upfront and ongoing costs associated with purchasing, 
+        deploying, operating, and retiring an asset 
+            over its entire lifecycle.
+
+!   key:ROI     Return on Investment
+    A profitability ratio that measures 
+        the financial gain or efficiency of an investment 
+            relative to its total costs.
+
+!   key:CAPEX   Capital Expenditures 
+    are funds used by a company to acquire, upgrade, 
+        and maintain physical assets such as 
+            property, plants, buildings, technology, or equipment. 
+    These expenditures are made to expand 
+        operations or maintain current scope over 
+        a long-term period (typically longer than 1 financial year).
+    *   Welche langfristige Investitionen ?
+
+    Key Characteristics of CAPEX
+    Long-Term Asset Creation: 
+        Adds value to fixed assets or extends their 
+            useful lifespan 
+        (e.g., buying a warehouse, upgrading factory machinery, or 
+            purchasing enterprise servers).
+    Capitalized, Not Expensed: 
+        CAPEX costs are not fully deducted from revenue on the 
+            income statement in the year they are spent. 
+        Instead, they appear on the Balance Sheet as an asset.
+    Depreciation & Amortization: 
+        The expense is gradually written off over 
+        the asset's useful life via Depreciation 
+        (for tangible assets) or 
+        Amortization (for intangible assets like patents or 
+        proprietary software).
+
+!   key:OPEX    Operational Expenditure   
+    OPEX stands for Operational Expenditures (or Operating Expenses). 
+        It refers to the ongoing day-to-day costs that a 
+        business incurs to keep its core operations running.
+    *   laufende Kosten 
+
+
+>>> K5.50   Kosten / SLA etc
+        SLA = Service Level Agreements 
+    
+>>> K5.51   ROI     "Return on Investment"
+        ROI = (Final-Initial) Value Of Investment / Total cost of the investment
+
+>>> K5.52   Bewertung der Cloud
+
+?   Können die Cloud Dienste das Unternehmen unterstützen ?
+?   Wie stabil ist die Sicherheit der Cloud-Lösung ?
+?   Entsprechen die SLAs des Cloud-Anbieters den SLAs des Unternehemns ?
+?   Wie ist die System-Leistung der Cloud-Lösung ?
+?   Was sind die Abrechnungsmechanismen und ~Einheiten für Cloud-Dienste ?
+
+
+>>> M5.xx   movie 
+    Matthias Farwick
+    IBM 
+    Matthias Farwick
+Innsbruck, Tirol, Österreich  Kontaktinformationen    
+
+<<< Die Agility (Gewandheit) ist der Hauptvorteil der Cloud.   
+    Companies need to become cloud native (heimisch), 
+        or they will become obsolete..
+    Cloud computing will become a commodity (Ware), 
+        traded like a resource.
+    Within a decade the vast(gewaltig) majority of all data will 
+        be stored in the public cloud.
+        
++   Example Service Level Aggreement (SLA) Vertrag 
+    +   beide Parteien 
+    +   Inhalt
+        1   Vertragsgegenstand (CRM-SaaR)
+        2   Dienste und Verfügbarkeit 
+                Verfügbarkeitsgarantien
+                Wartungsfenster 
+                Unerwartee Ausfälle            
+        3   Serviceverfügbarkeit und Eskalationen 
+        4   Leistungsmessung
+        5   Datenverfügkbarkeit und Sicherheit
+        6   Datenschutz & Compliance (Zustimmung)
+            6.1 DSGVO
+        7   Haftung und Entschädigung  
+        8   Laufzeit & Kündigung
+        9   Schlussbestimmungen
+    +   Unterschriften
+
+>>> Q5.05   Questions K5
+
+1 / 5
+    Does Capital Expenditure (CAPEX) in cloud computing 
+        always result 
+        in savings or reduction of costs?
+<<< no.
+
+2 / 5
+    What types of benefit are listed below, 
+        operational or staffing?
+    
+    Benefit:       Operational           Staffing
+    Instant server deployment
+    Less training
+    Backups as a Service
+    Managed services
+
+3 / 5
+    Before you sign a contract with a CSP, 
+        it is wise to prepare yourself and to do a 
+            comparative study of several providers.
+    Give an example of a question you should ask.
+    
+<<< goto:[CSP.Bewertung]
+
+
+4 / 5
+    Part of proper cloud governance is making sure the cloud service 
+        provider’s performance matches the SLAs.
+    What should you do to evaluate the technical 
+        performance of the cloud service provider?
+
+5 / 5
+    What key benefit areas of the RoI study should 
+        be taken into account?
+
+    <<< Return on Investment (ROI)
+    <<< Geschäftswachstum, Agilität, Risiko-Reduzierung.
+
+
+<<< eoq.5
+    
++   Trainer
+    Marc Schachteli
+    Waldemar Lange
+    
+?   Was ist die Prüfung relevant ?
+    >   Risiken 
+    >   SLA & Datenschutz 
+    >   OSI-Modell - Schichten 
+    >   Public - Private Cloud etc... 
+    >   CIA 
+    >   Virtualisierung 
+    >   SOA 
+    >   iAAS & pAAS & sAAS 
+    >   ISO 20.000       
+    >   ROI 
+    >   Business Case
+    >   IEEE 
+    >   VPN 
+    >   Thin Clients
+
++   Multiple-Choice (1/4) 
+   
+   
+   
+===============================================================================
+m:  Ax: Appendix
+===============================================================================
+   
+
+>>> A1: ISO.20000
+    https://en.wikipedia.org/wiki/ISO/IEC_20000
+
+>>> A2: BSI
+    https://www.bsi.bund.de/DE/Service-Navi/Kontakt/kontakt_node.html
+
+=   Einteilung 
+
++   Gefährdung 
+    Elementare Gefährdung
+    Höhere Gewalt
+    Organisatorische Mängel
+    Menschliche Fehlhandlungen 
+    Technisches Versagen 
+    Vorsätzliche Handlung
+
++   Massnahmen 
+    Infrastruktur 
+    Organisation 
+    Personal
+    Hard u Software 
+    Kommunikation 
+    Notfallvorsorge
+
++   Welche konkreten Handlungen fanden statt ? 
+    Hackerangriffe 74%
+    Vorsätzliche Straftat 16% 
+    Belauschen und Abhören 9% 
+    
+
+>>> A3: Risikomatrix & Risikoanalyse
+
++   Risikomatrix & Risikoanalyse für den IT-Grunschutz (SW)
+
+    https://verinice.com/en/
+    The sovereign OpenSource Tool for GRC, ISMS, DPMS and BCM
+        verinice.
+    verinice is the sovereign GRC software of 
+        choice for the management of information security, 
+            data protection and business continuity. 
+    With the ready-to-use solution, you can master 
+        BSI IT-Grundschutz, 
+        ISO 27001, 
+        VDA ISA / TISAX or fulfill the requirements of 
+        EU-DSGVO and 
+        NIS 2 and 
+    efficiently handle your emergency management (BCM).
+
+    Riskiko-Arten:
+        begrenzt
+        beträchtlich
+        vernachlässigbar 
+        existenzbedrohend
+            
+    Risikobehandlungsaktionen
+        unbearbeitet
+        Riskikoreduktion...
+
