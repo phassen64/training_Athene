@@ -1,0 +1,40 @@
+###############################################################################
+--- !sem.AICert
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+--- Kurs bei AI Certs:
+        •   c1: AI+ Foundation™
+        •   c2: AI+ Cloud Practitioner™ 
+
+    AI CERTs is a training and certification body focused 
+        on providing objective validation of 
+        practical skills in Artificial Intelligence (AI) 
+        and Blockchain. 
+    It is designed to address the primary challenge facing 
+        organizations today: 
+            a lack of clear strategy and 
+            verified competency in the rapidly evolving AI landscape. 
+    Through AI CERTs, organizations gain the structured curriculum 
+        and proven technical readiness 
+        required to confidently integrate and 
+        scale high-value AI solutions.
+
+--- Credentials:
+
+    für beide Kurse:   
+        AI+ Foundation™ && AI+ Foundation™
+    url:    https://learn.aicerts.ai/
+    usr:    <@msn>
+    pwd:    <!samba>
+
++   Note:
+    war ein Ausweichkurs
+
++   Kursdauer:
+    c1: 17.September 2026 - 18.September 2026
+    c2: 02.Oktober-openEnd
+
+    
