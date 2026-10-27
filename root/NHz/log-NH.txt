@@ -856,3 +856,6 @@ Support Team.
 
 +   about
 AI CERTs is a global, vendor-neutral certification and credentialing platform that provides role-based training and exams in artificial intelligence (AI) and blockchain technologies.
+
+
+sem.AICert.Practitioner™   :   summary
