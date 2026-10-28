@@ -882,4 +882,5 @@ sem.AICert.Practitioner™   :   summary
     url:    https://www.freeconvert.com/pdf-to-text
     10 Dateien pro Tag
 
-    
++   use python 
+    $   pyenv shell 3.13.0    
