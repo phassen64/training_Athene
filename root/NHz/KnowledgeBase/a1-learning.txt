@@ -29,6 +29,17 @@
     m:  [2.8]   Case Studies
 
 
+•   Module 3: Data Engineering for AI
+    m:  [3.1]   Data Collection, Storage, and Processing Pipelines (ETL/ELT)
+    m:  [3.2]   Big Data Technologies
+    m:  [3.3]   Data Lakes, Data Warehouses, and Feature Stores
+    m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
+    m:  [3.5]   Real-Time Data Streaming
+    m:  [3.6]   Use Cases
+    m:  [3.7]   Case Studies
+
+
+
 ===============================================================================
 Module 1: Cloud Fundamentals
 ===============================================================================
@@ -1666,4 +1677,17 @@ Scenario:
     failures before they occurred. 
     This initiative helped the company transition from 
     reactive maintenance to a proactive maintenance strategy.
+
+
+===============================================================================
+Module 3: Data Engineering for AI
+===============================================================================
+
+=== m:  [3.1]   Data Collection, Storage, and Processing Pipelines (ETL/ELT)
+=== m:  [3.2]   Big Data Technologies
+=== m:  [3.3]   Data Lakes, Data Warehouses, and Feature Stores
+=== m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
+=== m:  [3.5]   Real-Time Data Streaming
+=== m:  [3.6]   Use Cases
+=== m:  [3.7]   Case Studies
 
