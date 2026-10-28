@@ -3,7 +3,7 @@
 ###############################################################################
 
 #   encoding.UTF8:
-    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
 
 +   Kontakt
     New Horizons Nürnberg
@@ -870,8 +870,16 @@ sem.AICert.Practitioner™   :   summary
 
 ### !date:<2026-10-28>:Mi
 
-+   
++   PDF converter.FWK
 
+    +   inside FWK 
+    psh$>   $pExe = "$env:v_My\tools\pdf2txt\pdf2text.exe"
+    psh$>   $dSrc = "$env:v_VCS\training\root\NHz\schedule\05_AICerts_AIP\eBook"
+    psh$>   $sFnm = 'AIP-02-AIFoundation&Python.pdf'
+    psh$>   . $pExe "$sFnm" 1> out.txt
 
++   PDF converter.URL 
+    url:    https://www.freeconvert.com/pdf-to-text
+    10 Dateien pro Tag
 
     
