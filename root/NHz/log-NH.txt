@@ -859,3 +859,19 @@ AI CERTs is a global, vendor-neutral certification and credentialing platform th
 
 
 sem.AICert.Practitioner™   :   summary
+
+
++   login Azure OK
+    url:    https://portal.azure.com/
+    usr:    Student131005@aicertscloud.onmicrosoft.com
+    tap:    QA8n7Cb5
+    pwd:    Learn@646
+    
+
+### !date:<2026-10-28>:Mi
+
++   
+
+
+
+    
