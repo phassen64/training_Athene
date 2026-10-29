@@ -45,6 +45,7 @@ Module 1: Cloud Fundamentals
 ===============================================================================
 
 
+url:    https://de.wikipedia.org/wiki/Cloud_Computing
 
 ### !date:<2026-10-20>:Di
 
@@ -274,6 +275,8 @@ Module 1: Cloud Fundamentals
     
 
 === m:  [1.3]   Identity and Access Management (IAM)
+
+url:    https://de.wikipedia.org/wiki/Identit%C3%A4tsmanagement
 
 ~   controls access to cloud resources and actions 
 
@@ -516,6 +519,10 @@ $   resource utilization rate
     •   1   AWS
     •   2   MS Azure 
     •   3   Google Cloud 
+    
+    url:    https://aws.amazon.com/de/
+    url:    https://azure.microsoft.com/de-de
+    url:    https://cloud.google.com
     
 +   Importance of Cloud Providers 
     
@@ -847,6 +854,9 @@ $   workload
 Module 2: AI Fundamentals and Python Fundamentals
 ===============================================================================
 
+url:    https://en.wikipedia.org/wiki/Artificial_intelligence
+url:    https://de.wikipedia.org/wiki/Deep_Learning
+url:    https://de.wikipedia.org/wiki/Maschinelles_Lernen
 
 ### !date:<2026-10-26>:Mo 
 
@@ -1302,7 +1312,7 @@ Module 2: AI Fundamentals and Python Fundamentals
         Sets of equations solved simultaneously using matrix methods.
 
 +   Was ist eine Matrix
-    url :   https://www.youtube.com/watch?v=c4t9X1FOUGE&t=123
+    url:    https://www.youtube.com/watch?v=c4t9X1FOUGE&t=123
 
 +   Die Grundgleichung (Eigenwertproblem)
     Wendet man die Matrix A auf einen von 
@@ -2015,6 +2025,162 @@ and derive actionable insights from data-driven systems.
   
 
 === m:  [3.2]   Big Data Technologies
+
+    url:    https://de.wikipedia.org/wiki/Big_Data
+
+    Big Data technologies are designed to 
+        store, process, and analyze massive volumes of 
+    structured, semi-structured, and unstructured data that 
+        traditional systems cannot handle efficiently. 
+   
+    Among the most widely used Big Data frameworks are 
+        Apache Spark and 
+        Apache Hadoop, 
+    which enable organizations to process large 
+        datasets across distributed computing environments. 
+    
+    Let's explore them in below section....
+
+
++   Apache Spark Overview:
+    url:    https://spark.apache.org/
+
+    ~ is a fast, 
+        open-source distributed computing engine designed 
+        for large-scale data processing and analytics. 
+
+    It enables parallel data processing across 
+        clusters of computers and is widely used 
+    for big data workloads, 
+        real-time analytics, 
+        and machine learning applications.
+
+    Spark supports multiple widely used programming languages 
+        (Python, Java, Scala, and R), 
+        includes libraries for diverse tasks ranging 
+            from SQL to streaming and machine learning.
+
++   Spark Components 
+
+    •   Apache Spark Core 
+            is the foundation of the framework. 
+            It provides distributed processing, memory management, 
+            task scheduling, and fault tolerance.
+
+    •   Spark Streaming 
+            enables real-time data processing from continuous 
+                data streams.
+            
+    •   MLlib 
+            provides machine learning algorithms for 
+            predictive analytics and data mining.
+
+    •   Spark SQL 
+        supports SQL queries and processing of 
+            structured data using DataFrames.
+
+    •   GraphX is used for graph processing and network analysis.
+    
+
++   Core Features of Apache Spark
+
+    •   Stream Processing
+        Spark supports real-time processing of streaming 
+            data, enabling continuous analysis of incoming 
+            data such as logs, sensor data, and live events.
+    
+    •   Speed
+        Spark is designed for high-speed computation by processing 
+        data in memory, making it significantly faster than 
+        traditional disk-based systems.
+    
+    •   Lazy Evaluation
+        Spark does not execute operations immediately. 
+        Instead, it builds a logical execution plan and 
+        runs computations only when required, improving optimization.
+    
+    •   In-Memory Processing
+        Data is stored and processed in RAM instead of disk, 
+        which reduces I/O operations and increases processing efficiency.
+    
+    •   Concise
+        Spark provides simple and expressive APIs (Python, Scala, Java), 
+        allowing developers to write less code for 
+            complex data processing tasks.
+
++   Apache Spark Architecture
+
+    The diagram illustrates the high-level architecture of 
+        Apache Spark, showing how an application is 
+        executed across a distributed cluster.
+
+    *   Application: User program using Spark APIs.
+    *   Driver (Spark Session): 
+        Creates execution plan, divides job into tasks, 
+            schedules execution, collects results.
+    *   Cluster Manager
+        Allocates resources (e.g., Apache Hadoop YARN, Kubernetes).
+    *   Executors (Worker Nodes):
+        Run tasks in parallel and store intermediate data.
+    *   Tasks & Partitions: 
+        Data is split into partitions; each partition 
+            is processed by one task.
+
++   Apache Hadoop Overview:
+    url:    https://hadoop.apache.org/
+
+    ~ is an open-source framework that allows the 
+        distributed storage and processing of 
+        large datasets across clusters of computers. 
+
+    It is designed to scale from a single server to 
+        thousands of machines, 
+        providing high availability and fault tolerance.
+
++   Apache Hadoop Architecture 
+
+    •   MapReduce
+        A distributed programming model used to process 
+        large datasets in parallel across multiple nodes. 
+        It divides tasks into Map and Reduce phases for efficient computation.
+
+    •   HDFS (Hadoop Distributed File System)
+        A distributed storage system that stores large files across multiple machines. 
+        It provides high fault tolerance and reliable data access.
+
+    •   YARN (Yet Another Resource Negotiator)
+        YARN is the resource management framework in the 
+            Hadoop ecosystem that enables multiple processing engines, 
+            such as MapReduce and Spark, 
+            to efficiently share cluster resources.
+
+    •   Hadoop Common
+        A collection of shared libraries and utilities required 
+            by other Hadoop modules. 
+        It provides essential services such as configuration, 
+        file management, and networking support.
+
+
++   Table 8: Hadoop vs Spark
+    *   processing speed 
+        Hadoop  :   is disk-based, slower
+        Spark   :   is in memory faster 
+    *   realtime-streaming 
+        Hadoop  :   limited support 
+        Spark   :   build-in support 
+    *   ML & APIs 
+        Hadoop  :   external ML tools, complex API
+        Spark   :   MLlib, easier API
+    *   Batch Processing
+        Hadoop  :   supported
+        Spark   :   supported
+    
+    Note:
+        Hadoop provides reliable distribted storage through HDFS
+        Spark delivers fast processing and analytics on Hadoop data,
+            or run independently
+    
+
 === m:  [3.3]   Data Lakes, Data Warehouses, and Feature Stores
 === m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
 === m:  [3.5]   Real-Time Data Streaming
