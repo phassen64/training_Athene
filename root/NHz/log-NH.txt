@@ -884,3 +884,7 @@ sem.AICert.Practitioner™   :   summary
 
 +   use python 
     $   pyenv shell 3.13.0    
+    
+### !date:<2026-10-29>:Do 
+
+    

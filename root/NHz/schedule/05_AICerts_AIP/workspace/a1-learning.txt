@@ -3,38 +3,41 @@
 ###############################################################################
 
 #   encoding.UTF8:
-    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
 
 
 --- content module(m) and videos(v) :
     
-    •   m:  [01]    Cloud Fundamentals
-        v:  [01.1]  Cloud Computing Models
-        v:  [01.2]  Core Cloud Services
-        v:  [01.3]  Identity and Access Management
-        v:  [01.4]  Billing Costs
-        v:  [01.5]  Multi-Cloud Concepts
-        v:  [01.6]  Infrastructure as Code(IaC) Concepts
-        v:  [01.7]  Use Cases
-        q:  [01.n]  Quiz
+•   Module 1:   Cloud Fundamentals
+    m:  [1.1]   Cloud Computing Models
+    m:  [1.2]   Core Cloud Services
+    m:  [1.3]   Identity & Access Management (IAM), 
+                Security & Compliance... Basics
+    m:  [1.4]   Billing, Cost Optimization, and Cloud Economics
+    m:  [1.5]   Multi-cloud Concepts
+    m:  [1.6]   Infrastructure as Code (IaC) Basics with Terraform
     
 
-    •   m:  [02]    AI Fundamentals and Python Fundamentals 
-        v:  [02.1]  Introduction
-        v:  [02.2]  Networks and Deep Learning Fundamentals    
-    
-    •   m:  [03]    Data Engineering for AI Fundamentals 
-    •   m:  [04]    Cloud with AI
-    •   m:  [05]    Generative AI and Large Language Models (LLM)
-    •   m:  [06]    Clouds with Generative AI and LLM
-    •   m:  [07]    AI Workloads on Cloud
-    •   m:  [08]    Retrieval-Augmented Generation (RAG) 
-    •   m:  [09]    Fine-Tuning and Optimization on Cloud 
-    •   m:  [10]    Agent AI on Cloud
-    •   m:  [11]    Evaluation, Monitoriny, Security and Responsible AI
-    •   m:  [12]    Capstone Project
-    
-    •   m:  [o1]    AI Agents for Cloud Services 
+•   Module 2:   AI Fundamentals and Python Fundamentals 
+    m:  [2.1]   Introduction to Artificial Intelligence, Machine Learning Types
+    m:  [2.2]   Neural Networks and Deep Learning Fundamentals
+    m:  [2.3]   Python Programming
+    m:  [2.4]   Essential Libraries of Python
+    m:  [2.5]   Mathematics for AI
+    m:  [2.6]   Data Preprocessing, Exploration, and Visualization Techniques
+    m:  [2.7]   Use Cases
+    m:  [2.8]   Case Studies
+
+
+•   Module 3: Data Engineering for AI
+    m:  [3.1]   Data Collection, Storage, and Processing Pipelines (ETL/ELT)
+    m:  [3.2]   Big Data Technologies
+    m:  [3.3]   Data Lakes, Data Warehouses, and Feature Stores
+    m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
+    m:  [3.5]   Real-Time Data Streaming
+    m:  [3.6]   Use Cases
+    m:  [3.7]   Case Studies
+
 
 
 ===============================================================================
@@ -42,9 +45,6 @@ Module 1: Cloud Fundamentals
 ===============================================================================
 
 
-v:  [1.5]   Multi-Cloud Concepts
-v:  [1.6]   Infrastructure as Code(IaC) Concepts
-v:  [1.7]   Use Cases
 
 ### !date:<2026-10-20>:Di
 
@@ -162,7 +162,7 @@ v:  [1.7]   Use Cases
 +   Example Scenario: e-commerce website hosting 
 
 +   Conclusion{"Schluss","Schlussfolgerung","Fazit"}
-    an appropiate Service Model 
+    an appropriate Service Model 
     +   optimize resources
     +   simplify infrastructure management 
     +   improve operational efficiency 
@@ -848,13 +848,6 @@ Module 2: AI Fundamentals and Python Fundamentals
 ===============================================================================
 
 
-=== m:  [2.3]   Python Programming
-=== m:  [2.4]   Essential Libraries
-=== m:  [2.5]   Mathematics for AI
-=== m:  [2.6]   Data Preprocessing, Exploration, and Visualization Techniques
-=== m:  [2.7]   Use Cases
-=== m:  [2.8]   Case Studies    
-
 ### !date:<2026-10-26>:Mo 
 
 === m:  [2.1]   Introduction to Artificial Intelligence, Machine Learning Types
@@ -1059,3 +1052,642 @@ Module 2: AI Fundamentals and Python Fundamentals
 
 +   Comparing 
     AI->ML->DL
+    
+
+### !date:<2026-10-27>:Di 
+    
+=== m:  [2.3]   Python Programming
+
++   Python add to Path    
+
++   Python basics 
+    •   I/O 
+    •   variables 
+    •   keywords 
+    •   data types 
+    •   control structure 
+    •   functions 
+    •   object-oriented programming
+    
++   Python input & ouptut 
+    $   name = input("EnterName")
+    $   print("Welcome Python")
+        
++   Variables stores values that programs uses during 
+    execution 
+
++   Variable names may not have keyword names, like:
+        False, None, yield
+
++   Data Types
+        enable appropriate data operations
+
++   Data Type Categories 
+        Text, Numeric, Boolean, Sequence, Mapping, Special
+
++   Control Structures manages the flow of a program with ...
+        conditional statements 
+        looping structures 
+        loop control statements
+
++   Conditional statements execute code
+        when a code is true or false.
+        
++   Functions 
+        reduce repeated code
+        make debugging easier 
+        improve readability
+        break larger problems into smaller parts
+
++   Python Function types 
+    •   build-in ~  
+    •   user-defined ~
+    •   lambda ~    :   single-line ops
+    •   recursive ~ :   call themselves repeatedly
+    •   generator ~ :   values one at a time
+
++   Object-Oriented Programming
+    •   Attributes (Data)
+    •   Methods (Behaviour)    
+    •   Class -  BluePrint 
+    •   Object, an Instance of 1 Class
+    
++   4 Pillars{"Säule"} of OOP    
+    •   Groups data and methods together
+    •   Inheritance
+    •   Abstraction - hides complex implementation details 
+    •   Polymorphismus - allows the same method[name] to behave differently
+    
++   OOP benefits and applications
+    •   Enterprise SW
+    •   cloud-based systems
+    •   game developement 
+    •   web applications 
+    •   AI applications 
+    •   mobile applications
+    
+    
+=== m:  [2.4]   Essential Libraries of Python
+
++   Python Libraries
+    •   NumPy           :   numerical computing 
+    •   Pandas          :   enables data manipluation     
+    •   Matplotlib      :   facilitiates data visualization 
+    •   Seaborn         :   supports statistical exploration
+    •   Scikit-learn    :   enables ML
+    
++   Numpy 
+
+    url:    https://numpy.org/   
+
+    ~   supports multidimensional arrays
+    •   Mathematical and statistical operations
+    •   Linear algebra functions
+    •   Random number generation
+    •   Faster computation compared to Python lists
+
+    Common Applications:
+    •   Scientific computing.
+    •   Mathematical modeling.
+    •   Data preprocessing.
+    •   Machine learning computations.
+    •   Image and signal processing.
+    
++   Pandas
+
+    url:    https://pandas.pydata.org/
+
+    Pandas is a powerful library used for data manipulation and analysis. 
+    It provides data
+    structures such as Series 
+        and DataFrame that make handling structured data simple and
+    efficient.
+
+    Key Features:
+    •   Data cleaning and preprocessing.
+    •   Data filtering and sorting.
+    •   Handling missing values.
+    •   Data aggregation and grouping.
+    •   Reading and writing data from various file formats.
+
+    Common Applications:
+    •   Business analytics.
+    •   Financial data analysis.
+    •   Data cleaning and transformation.
+    •   Exploratory Data Analysis (EDA).
+    •   Reporting and dashboard preparation.
+
+
++   Matplotlib is a comprehensive plotting and 
+
+    url:    https://de.wikipedia.org/wiki/Matplotlib
+            https://matplotlib.org/    
+
+    visualization library used to create static,
+    animated, and interactive graphs.
+    •   Line charts
+    •   Bar charts
+    •   Pie charts 
+    •   Histograms
+    •   Scatter plots
+    •   Customizable visualizations
+    Matplotlib ist eine umfassende Matplotlib Bibliothek für 
+        Python zur Erstellung von statischen, 
+        animierten und interaktiven Visualisierungen.
+
+
++   Seaborn
+
+    url:    https://seaborn.pydata.org/
+    ~
+
+    Seaborn is a statistical data visualization library built 
+        on top of Matplotlib. 
+    It provides
+    attractive and informative visualizations with less code.
+
+    Key Features:
+       Statistical plots.
+       Heatmaps.
+       Distribution plots.
+       Pair plots.
+       Regression plots.
+       Enhanced styling and themes.
+
++   SciKit Learn 
+    https://scikit-learn.org/stable/
+    •   Simple and efficient tools for predictive data analysis
+    •   Accessible to everybody, and reusable in various contexts
+    •   Built on NumPy, SciPy, and matplotlib
+    •   Open source, commercially usable - BSD license
+
+    Key Features:
+    •   Classification algorithms.
+    •   Regression algorithms.    
+    •   Clustering techniques.
+    •   Model evaluation tools.
+    •   Feature selection.
+    •   Data preprocessing utilities.
+
+### !date:<2026-10-28>:Mi 
+
+=== m:  [2.5]   Mathematics for AI
+
++   Uses of Linear Algebra in AI:
+
+    •   Data Representation
+        Represents datasets as vectors and matrices for efficient storage and processing.
+
+    •   Machine Learning Models: 
+        Forms the mathematical foundation of algorithms such as 
+        Linear Regression, Logistic Regression, and Support Vector Machines.
+
+    •   Neural Networks: 
+        Uses matrix operations to compute inputs, weights, 
+        biases, and outputs in deep learning models.
+
+    •   Image Processing and Computer Vision: 
+        Represents images as matrices of pixel values for tasks 
+        such as object detection and facial recognition.
+
+    •   Natural Language Processing (NLP): 
+        Converts words, sentences, 
+            and documents into numerical vectors for language understanding.
+
+    •   Dimensionality Reduction: 
+        Reduces data complexity while preserving important
+            information using techniques such as 
+            Principal Component Analysis (PCA).
+
++   Key Components of Linear Algebra
+
+    •   Scalars
+        Single numerical values used to represent 
+            quantities (e.g., 5, 10.5, - 3).
+
+    •   Vectors
+        Ordered collections of numbers representing data points, 
+            features, or directions.
+
+    •   Matrices
+        Rectangular arrays of numbers arranged in rows and columns, 
+            used to store and process data.
+
+    •   Tensors
+        Multi-dimensional extensions of matrices used 
+            in deep learning and AI applications.
+
+    •   Matrix Operations
+        Mathematical operations such as 
+        addition, subtraction, multiplication, 
+            and transpose performed on matrices.
+
+    •   Determinants
+        Special values calculated from square matrices 
+            that indicate properties such as invertibility.
+
+    •   Inverse Matrices
+        Matrices that reverse the effect of matrix multiplication and 
+        help solve systems of equations.
+
+    •   Eigenvalues and Eigenvectors
+        Important concepts used to identify patterns, 
+            directions, and data variance in datasets.
+
+    •   Linear Transformations
+        Operations that change the position, size, 
+            or orientation of vectors while preserving linear relationships.
+
+    •   Systems of Linear Equations
+        Sets of equations solved simultaneously using matrix methods.
+
++   Was ist eine Matrix
+    url :   https://www.youtube.com/watch?v=c4t9X1FOUGE&t=123
+
++   Die Grundgleichung (Eigenwertproblem)
+    Wendet man die Matrix A auf einen von 
+        Null verschiedenen Vektor v (den Eigenvektor) an, 
+        ändert sich bei einem echten Eigenvektor nicht die Richtung, 
+        sondern er wird lediglich mit dem Faktor λ skaliert:
+    
+    A * v = λ * v
+        
+        A:  Quadratische Matrix 
+        v:  Eigenvektor
+        λ:  Eigenwert
+    url:    https://studyflix.de/mathematik/eigenwert-1635
+    
++   Inverse Matrix 
+    Wenn du eine Zahl $a$ mit ihrem Kehrwert 
+        A * A **-1 = A**-1 * A = I multiplizierst, erhältst du 1. 
+    Bei Matrizen ist das Prinzip analog: 
+        Multiplizierst du eine quadratische Matrix $A$ mit ihrer inversen Matrix $A^{-1}$, 
+    erhältst du die Einheitsmatrix $I$ (die Matrix, 
+    die auf der Hauptdiagonale Einsen und sonst nur Nullen hat).
+    $$A \cdot A^{-1} = A^{-1} \cdot A = I$$    
+    
++   Linear Algebra is the language "AI and ML"    
+    AI Data Representation:
+        Vector - Matrix - Tensor 
+        
+$   Tensor        
+    Ein Tensor ist ein mathematisches Objekt, das skalare Werte, 
+        Vektoren und Matrizen in eine gemeinsame, 
+        verallgemeinerte Form bringt.
+
+$   Scalar vs Number 
+    Obwohl die Begriffe Skalar und Zahl (Number) im Alltag oft 
+        synonym verwendet werden, 
+        stammen sie aus unterschiedlichen Bereichen und haben verschiedene Bedeutungen:
+
+    Scalar: 
+        Existiert immer im Gegensatz zu 
+            Richtungsgrößen (Vektoren, Matrizen, Tensoren).
+    Number:
+        Steht für sich selbst (kein direkter Bezug zu Vektoren nötig).    
+
+    Key Takeaways
+        Jeder Skalar ist eine Zahl, 
+            aber nicht jede Zahl ist als Skalar gedacht:
+        Eine Zahl wie '5' ist erst dann ein Skalar, 
+            wenn sie in einem Kontext verwendet wird, 
+            in dem auch Vektoren oder Richtungen eine 
+                Rolle spielen (z. B. als Skalierungsfaktor 5*v).
+
+
++   Probability
+    Probability measures the likelihood of an event occurring. 
+        AI systems often deal with uncertainty and 
+        incomplete information, making probability essential 
+        for prediction and decision-making.
+
++   Statistics in AI
+
+    *   Learning from Data: 
+            Enables AI systems to identify patterns and relationships 
+            from large datasets.
+
+    *   Modeling Uncertainty: 
+            Helps AI make decisions and predictions even when 
+                data is 
+            incomplete or uncertain.
+
+    *   Prediction and Forecasting: 
+        Supports estimating future outcomes based on historical data.
+
+    *   Pattern Recognition: 
+        Allows AI to detect trends, correlations, and 
+            hidden structures in data.
+
+    *   Model Evaluation: 
+        Measures the accuracy and effectiveness of AI models using 
+            statistical metrics.
+
+    *   Decision Making: 
+            Provides a framework for selecting the most appropriate 
+        action based on available information and probabilities.
+
+
++   Statistics in AI Examples:
+
+    *   Variance measures how spread out the data is.
+    *   Correlation Analysis is used to determine relationships 
+        between features.
+
++   Calculus
+    ~ plays a critical role in Artificial Intelligence (AI) by 
+        enabling models to learn, optimize, 
+        and improve their performance. 
+    It provides the mathematical foundation for training 
+        machine learning algorithms, minimizing errors, 
+        and understanding how changes in inputs affect outputs.
+
++   Key Uses of Calculus in AI:
+
+    Calculus is essential in AI as it underpins various applications 
+        and techniques. 
+
+    The following table highlights the key applications of 
+        calculus in training machine learning models and 
+        supporting intelligent decision-making.
+
+    •   Gradient Descent
+    •   Loss Function Minimization
+    •   Feature Sensitivity Analysis
+    •   Function Approximation
+    •   Deep Learning
+    •   Reinforcement Learning
+
+$   In AI and machine learning, 
+    calculus is the primary engine used to train models—specifically 
+        through optimization and gradient-based learning.
+
++   Conclusion 
+    •   Linear Algebra represents data 
+    •   Probability handles uncertainty  
+    •   Statistics Analyzes Patterns
+    •   Calculus optimizes learning
+    
+ 
+=== m:  [2.6]   Data Preprocessing, 
+                Data Exploration, and Visualization Techniques
+
+
++   Data is the foundation of 
+        Artificial Intelligence (AI), 
+        Machine Learning (ML), 
+        and Data Science. 
+    However, raw data collected from various sources is often 
+        incomplete, inconsistent, noisy, 
+        or unstructured. 
+    Before building predictive models, 
+        data must be prepared, analyzed, and visualized 
+    to uncover meaningful insights. 
+
+--- s:  [2.6.1] Data Preprocessing
+
++   Data Preprocessing
+    ~ is the process of cleaning and transforming raw data into 
+        a structured format suitable for analysis 
+        and machine learning algorithms. 
+    High-quality data leads to more accurate and reliable models.
+
+
++   Objectives of Data Preprocessing:
+    *   Improve data quality and consistency.
+    *   Handle missing or incorrect values.
+    *   Remove noise and redundancy.
+    *   Convert data into machine-readable formats.
+    *   Enhance model performance and accuracy.
+
++   Key Data Preprocessing Techniques:
+    
+    •   Data Cleaning
+        Removes errors, duplicate records, and inconsistencies.
+
+    •   Handling Missing Values
+        Replaces or removes missing data using statistical methods.
+
+    •   Data Transformation
+        Converts data into suitable formats for analysis.
+
+    •   Data Normalization
+        Scales numerical values to a common range.
+
+    •   Data Standardization
+        Adjusts data to have a mean of 0 and standard deviation of 1.
+        
+    •   Encoding Categorical Data
+        Converts text categories into numerical values.
+
+    •   Feature Selection
+        Identifies the most relevant variables for analysis.
+
+    •   Feature Engineering
+        Creates new features from existing data to improve model 
+            performance.
+
+--- s:  [2.6.2] Data Exploration (Exploratory Data Analysis - EDA)
+
+    Data exploration{"erforschen"} is the process of examining datasets 
+        to understand their characteristics, discover patterns, 
+        detect anomalies, 
+        and identify relationships among variables.
+
++   Objectives of Data Exploration:
+    *   Understand data distribution.
+    *   Detect outliers and anomalies.
+    *   Identify trends and patterns.
+    *   Discover relationships between variables.
+    *   Generate hypotheses for further analysis.
+
++   Common EDA Activities:
+
+    Exploratory Data Analysis (EDA) 
+        involves examining and summarizing data to understand 
+        its characteristics, identify patterns, 
+        and detect potential issues before 
+        building analytical or machine learning models. 
+    
+    The following are some of the most common EDA activities:
+
+    •   Summary Statistics
+        Calculating measures such as mean, 
+            median, mode, variance, and standard deviation.
+            
+    •   Distribution Analysis
+        Understanding how data values are distributed using histograms 
+        and density plots.
+
+    •   Correlation Analysis
+        Measuring relationships between variables using 
+            correlation coefficients and heatmaps.
+
+    •   Outlier Detection
+        Detecting unusual observations that differ significantly 
+        from the rest of the data.
+
+    •   Grouping and Aggregation
+        Summarizing data by categories, groups, or segments.
+
+    •   Trend Analysis
+        Identifying patterns and changes in data over time.
+
+--- s:  [2.6.3] Data Visualization
+
++   Data Visualization
+    ~ is the graphical representation of data using 
+        charts, graphs, and plots. 
+    It helps analysts and decision-makers understand
+        complex information quickly and effectively.
+
++   Benefits of Data Visualization
+    *   Simplifies large datasets.
+    *   Identifies trends and patterns easily.
+    *   Detects anomalies and outliers.
+    *   Improves communication of insights.
+    *   Supports better decision-making.
+
+
++   Common Visualization Techniques
+
+    •   Bar Chart: 
+        A bar chart uses rectangular bars to compare values across 
+            different categories. 
+            The length or height of each bar represents the magnitude 
+            of the corresponding value.
+        Use: Category comparison, 
+            ranking products, and performance analysis.
+        Example: Comparing sales of laptops, 
+            smartphones, and tablets in a retail store.
+
+    •   Pie Chart: 
+        A pie chart represents data as slices of a circle, 
+            where each slice shows the proportion of a category 
+        relative to the whole.
+        Use: 
+            Showing percentage distribution and composition of data.
+        Example: 
+            Displaying the market share of different smartphone brands.
+
+    •   Line Chart: 
+        A line chart connects data points using lines to 
+            show trends and changes over time.
+        Use: 
+            Trend analysis, forecasting, and time-series data visualization.
+        Example: 
+            Monitoring monthly revenue growth of a company throughout the year.
+
+    •   Area Plot: 
+        An area plot is similar to a line chart but fills the 
+            area beneath the line, 
+            emphasizing the magnitude of change over time.
+        Use: 
+            Visualizing growth, cumulative totals, and trends.
+        Example: 
+            Showing cumulative website traffic across several months.
+
+
+    •   Histogram: 
+        A histogram groups numerical data into intervals (bins) and 
+            displays the frequency of observations in each interval.
+        Use: Understanding data distribution, spread, and skewness.
+        Example: 
+            Analyzing the distribution of student examination scores.
+
+    •   Scatter Plot: 
+        A scatter plot displays individual data points to reveal 
+            relationships between two numerical variables.
+        Use: 
+            Correlation analysis, trend identification, and 
+                outlier detection.
+        Example: 
+            Examining the relationship between advertising expenditure 
+            and sales revenue.
+
+    •   Box Plot: 
+        Box Plot: 
+            A box plot summarizes the distribution of data using quartiles 
+            and highlights outliers.
+        Use: 
+            Detecting outliers and understanding data spread.
+        Example: 
+            Comparing salary distributions across different departments.
+
+    •   Heat Map: 
+        A heat map uses colors to represent data values or 
+            correlation strengths between variables.
+        Use: Correlation analysis and pattern identification.
+        Example: 
+            Visualizing correlations among features in a 
+            machine learning dataset.
+
+
+=== m:  [2.7]   Use Cases
+
+2.7 Use Cases
+
+    Data analytics enables organizations to transform raw data 
+        into meaningful insights that support strategic planning, 
+        operational efficiency, and business growth. 
+
+    By leveraging statistical methods, machine learning techniques, 
+        and advanced analytical tools, 
+        businesses can identify patterns, predict future outcomes, 
+    and make informed decisions based on evidence rather than intuition. 
+    
+    The following use cases demonstrate how data analytics 
+        helps organizations forecast future trends through 
+        predictive analytics and improve operational 
+        performance through data-driven decision making, 
+        ultimately enhancing productivity, profitability, 
+        and competitive advantage.
+
+Scenario:
+
+    Organizations generate large volumes of operational data 
+        from production systems, supply chains, 
+            customer interactions, logistics, and business processes. 
+    However, decision-making is often based on intuition or incomplete information, leading to inefficiencies, 
+        delays,
+
+
+
+=== m:  [2.8]   Case Studies    
+
++   Case Study 1:
+
+    Customer churn is a major concern for telecom companies 
+        because retaining existing customers is significantly more cost-effective than acquiring new ones. 
+    This case study highlights how a leading telecommunications 
+        operator used predictive analytics and 
+        machine learning to identify customers likely 
+        to leave and implement targeted retention strategies. 
+    The initiative successfully reduced churn and improved customer loyalty.
+
+
++   Case Study 2:
+
+    Manufacturing plants often face costly production delays due 
+        to unexpected equipment failures. 
+    To improve operational efficiency and reduce downtime, 
+        BlueScope Steel implemented an AI-powered predictive 
+        maintenance system that continuously 
+        monitored machine health and identified potential 
+    failures before they occurred. 
+    This initiative helped the company transition from 
+    reactive maintenance to a proactive maintenance strategy.
+
+
+===============================================================================
+Module 3: Data Engineering for AI
+===============================================================================
+
+=== m:  [3.1]   Data Collection, Storage, and Processing Pipelines (ETL/ELT)
+=== m:  [3.2]   Big Data Technologies
+=== m:  [3.3]   Data Lakes, Data Warehouses, and Feature Stores
+=== m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
+=== m:  [3.5]   Real-Time Data Streaming
+=== m:  [3.6]   Use Cases
+=== m:  [3.7]   Case Studies
+

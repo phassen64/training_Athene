@@ -35,8 +35,7 @@ Module 1: Cloud Fundamentals
 
     m:  [1.1]   Cloud Computing Models
     m:  [1.2]   Core Cloud Services
-    m:  [1.3]   Identity & Access Management (IAM), 
-                    Security & Compliance Basics
+    m:  [1.3]   Identity & Access Management (IAM), Security & Compliance Basics
     m:  [1.4]   Billing, Cost Optimization, and Cloud Economics
     m:  [1.5]   Multi-cloud Concepts
     m:  [1.6]   Infrastructure as Code (IaC) Basics with Terraform
