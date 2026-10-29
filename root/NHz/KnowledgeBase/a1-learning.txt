@@ -854,9 +854,9 @@ $   workload
 Module 2: AI Fundamentals and Python Fundamentals
 ===============================================================================
 
-url:    https://en.wikipedia.org/wiki/Artificial_intelligence
-url:    https://de.wikipedia.org/wiki/Deep_Learning
-url:    https://de.wikipedia.org/wiki/Maschinelles_Lernen
+url:    https://en.wikipedia.org/wiki/Artificial_intelligence       * key:AI
+url:    https://de.wikipedia.org/wiki/Maschinelles_Lernen           * key:ML 
+url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
 
 ### !date:<2026-10-26>:Mo 
 
@@ -1454,7 +1454,7 @@ $   In AI and machine learning,
         data must be prepared, analyzed, and visualized 
     to uncover meaningful insights. 
 
---- s:  [2.6.1] Data Preprocessing
+--- s:  [2.6].Data Preprocessing
 
 +   Data Preprocessing
     ~ is the process of cleaning and transforming raw data into 
@@ -1497,7 +1497,7 @@ $   In AI and machine learning,
         Creates new features from existing data to improve model 
             performance.
 
---- s:  [2.6.2] Data Exploration (Exploratory Data Analysis - EDA)
+--- s:  [2.6].Data Exploration (Exploratory Data Analysis - EDA)
 
     Data exploration{"erforschen"} is the process of examining datasets 
         to understand their characteristics, discover patterns, 
@@ -1543,7 +1543,7 @@ $   In AI and machine learning,
     •   Trend Analysis
         Identifying patterns and changes in data over time.
 
---- s:  [2.6.3] Data Visualization
+--- s:  [2.6].Data Visualization
 
 +   Data Visualization
     ~ is the graphical representation of data using 
@@ -1739,7 +1739,7 @@ and derive actionable insights from data-driven systems.
         managed services that simplify these tasks and 
     enable organizations to handle data efficiently at any scale.
 
---- s:  Data Collection
+--- s:  [3.1].Data Collection
 
 
 +   Objectives of Data Collection:
@@ -1853,7 +1853,8 @@ and derive actionable insights from data-driven systems.
         especially in dynamic environments.
 
 
---- s:  Data Storage
+--- s:  [3.1].Data Storage 
+
 
 +   After collection, 
         data must be stored in a secure and scalable environment. 
@@ -1943,7 +1944,8 @@ and derive actionable insights from data-driven systems.
         High-performance databases and virtual machines
 
 
---- s:  Data Processing Pipelines 
+--- s:  [3.1].Data Processing Pipelines 
+
 
 +   A Data Processing Pipeline is a series of structured steps that... 
         collect, transform, validate,and move data 
@@ -2182,6 +2184,203 @@ and derive actionable insights from data-driven systems.
     
 
 === m:  [3.3]   Data Lakes, Data Warehouses, and Feature Stores
+
+
+    As organizations generate massive volumes of data, 
+        they require specialized systems to store, manage, 
+        and utilize information efficiently. 
+    Data Lakes, Data Warehouses, and Feature Stores are three 
+        essential components of modern data platforms. 
+    While all three manage data, 
+        they serve different purposes and support different stages 
+        of the data lifecycle, from storage and analytics to machine learning.
+
+--- s:  [3.3].Data Lakes
+
+    A Data Lake is a centralized repository that stores 
+        raw data in its original format 
+        (structured, semi-structured, and unstructured). 
+    Data lakes have no fixed schema, 
+        allowing businesses to collect and store 
+        massive volumes of diverse data from various sources.
+
++   Data Lake.Common Technologies:
+
+    *   Amazon S3
+        Scalable object storage service widely used for data lakes.
+        https://aws.amazon.com/de/s3/   
+
+    *   Azure Data Lake Storage
+        Cloud-based storage optimized for big data analytics.           
+        https://azure.microsoft.com/de-de/products/storage/data-lake-storage
+
+    *   Google Cloud Storage
+        Object storage service for large-scale data storage and processing.
+        https://cloud.google.com/storage
+
+    *   Apache Hadoop HDFS
+        Distributed file system for storing large datasets across clusters.
+
+
++   Scenario:
+
+    Organizations collect large volumes of structured, 
+        semi-structured, and unstructured data 
+        from business 
+    applications, websites, IoT devices, customer interactions, 
+        and operational systems. 
+    Without proper governance and security controls, 
+        sensitive information stored in a data lake can be 
+        exposed, misused, or accessed by unauthorized users, 
+    leading to compliance violations and data breaches.
+
+
+    Solution with Data Lake:
+
+    This use case explains how organizations can 
+        securely deploy and manage a data lake to 
+        centralize enterprise data while maintaining 
+        data security, governance, and controlled access. 
+    It focuses on data ingestion, 
+    storage, access management, monitoring, and compliance controls.
+
+
+--- s:  [3.3].Data Warehouse
+
+    Data Warehouse is a large repository of organizational 
+        data which collects and manages data 
+        from varied sources (operational and external data sources) 
+        to provide meaningful business insights. 
+    We can understand it as a process of transforming raw data 
+        into information because data is first processed and 
+        then organized into sections.
+
+
++   a Data Warehouse supports...
+
+    *   Analysis: 
+        for exploring trends and supporting decision-making
+
+    *   Reporting: 
+        for generating dashboards and business reports
+
+    *   Data Mining: 
+        for discovering patterns and insights from historical data
+
+
++   Key Characteristics of a Data Warehouse
+
+    *   Subject-Oriented: 
+        Data is organized around specific business subjects such as customers, products, and sales.
+
+    *   Integrated: 
+        Data from multiple sources is consolidated into a 
+            consistent and unified format.
+
+    *   Time-Variant: Historical data is maintained over 
+        time to support trend analysis and forecasting.
+
+    *   Non-Volatile: 
+        Data remains stable after loading and is primarily used for querying and analysis.
+
++   Data Warehouse Common Technologies
+
+    *   Snowflake: 
+        Cloud-native data warehouse with high scalability and 
+            performance
+        https://www.snowflake.com/en/fundamentals/data-warehouse/
+
+    *   Amazon Redshift: 
+        Fully managed cloud data warehouse service by AWS
+        https://aws.amazon.com/de/redshift/
+
+    *   Azure Synapse Analytics: 
+        Integrated analytics platform combining data warehousing and big data processing
+        https://azure.microsoft.com/en-us/products/synapse-analytics
+
+    *   Google BigQuery: 
+        Serverless data warehouse for large-scale analytics
+        https://cloud.google.com/bigquery
+
+--- s:  [3.3].Feature Store
+
+    A Feature Store is a centralized platform that 
+        manages, stores, and serves machine learning features 
+        for both training and inference. 
+    It ensures consistency, reusability, and efficient collaboration 
+    while accelerating the development and deployment of ML models.
+
++   key characteristics of feature store...
+
+    *   Centralized Feature Management:
+            Provides a single repository for storing, organizing, 
+            and sharing features across teams and ML models.
+
+    *   Feature Consistency and Reproducibility:
+            Ensures features are computed uniformly and
+            reused consistently, improving model reliability and reproducibility.
+
+    *   Real-Time and Batch Feature Support:
+        Supports both real-time and batch feature serving 
+        for diverse machine learning applications.
+
+    *   Accelerating Time to Production:
+        Simplifies feature access and collaboration, 
+        enabling faster deployment of ML models.
+
+    *   Reducing Costs and Improving Resource Efficiency:
+        Eliminates redundant feature computation and 
+        storage by enabling feature reuse.
+
+    *   Collaboration and Governance:
+        Facilitates	teamwork through shared feature repositories, 
+        version control, monitoring, and validation.
+
+    *   Programmatic and Declarative Programming Support: 
+        Provides feature access through interfaces such 
+            as SQL, Python, and PySpark for flexible development.
+
++   Common Technologies
+
+    *   Feast: 
+        Open-source feature store for managing and serving 
+            ML features.
+        https://feast.dev/
+        Feast is an open source feature store that delivers 
+            structured data to AI and LLM applications 
+            at high scale during training and inference
+
+    *   Tecton: 
+        Enterprise feature platform for machine learning workflows.
+        https://docs.tecton.ai/
+
+    *   Databricks Feature Store: 
+        Feature management solution integrated with the Databricks platform.
+        https://www.databricks.com/
+
+    *   SageMaker Feature Store: 
+        AWS-managed feature store for machine learning applications.
+        https://aws.amazon.com/de/sagemaker
+
+
++   Comparison
+    
+    Data Lake:   
+        stores raw data with 
+            scheme-on-read "interpret structure when quering"
+        +   low cost and moderate performance
+
+    Data Warehouse:
+        stores structured data with 
+            schema-on-write "define structure before inserting"
+        +   serve analyst and executives with high performance 
+                
+    Feature Store:
+        stores processed ML features for training and prediction 
+        +   serve ML teams with optimized ML access and moderate 
+            cost
+
+
 === m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
 === m:  [3.5]   Real-Time Data Streaming
 === m:  [3.6]   Use Cases
