@@ -2,6 +2,8 @@
 --- !sem.AICert.Practitioner™   :   summary
 ###############################################################################
 
+    Aktueller Kurs : AICert Practitioner™ 
+    
 #   encoding.UTF8:
     !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
 
@@ -37,6 +39,16 @@
     m:  [3.5]   Real-Time Data Streaming
     m:  [3.6]   Use Cases
     m:  [3.7]   Case Studies
+
+
+•   Module 4: Cloud with AI
+    m:  [4.1]   Managed AI/ML Platforms
+    m:  [4.2]   Model Training, Deployment, and Inference on Cloud
+    m:  [4.3]   Containerization with Docker and Orchestration with Kubernetes
+    m:  [4.4]   Serverless AI Architectures
+    m:  [4.5]   Scaling and Monitoring AI Workloads
+    m:  [4.6]   Use Cases
+    m:  [4.7]   Case Studies
 
 
 
@@ -2792,16 +2804,19 @@ Case Study 1:
     Uber
     https://de.wikipedia.org/wiki/Uber_(Unternehmen)
 
-As Uber's global operations expanded, 
-the company faced challenges in managing rapidly growing volumes 
-of structured and unstructured data generated from 
-rides, customers, drivers, and business processes. 
-This case study highlights how Uber implemented 
-a unified data lake architecture to centralize data across 
-the organization, eliminate data silos, 
-and enable scalable analytics, reporting, and machine learning. 
-The initiative improved data accessibility, 
-operational efficiency, and data-driven decision-making across the enterprise.
+    As Uber's global operations expanded, 
+        the company faced challenges in managing rapidly growing volumes 
+    of structured and unstructured data generated from 
+    rides, customers, drivers, and business processes. 
+    
+    This case study highlights how Uber implemented 
+    a unified data lake architecture to centralize data across 
+    the organization, eliminate data silos, 
+    and enable scalable analytics, reporting, 
+        and machine learning. 
+
+    The initiative improved data accessibility, 
+    operational efficiency, and data-driven decision-making across the enterprise.
 
 Case Study 2:
 
@@ -2809,14 +2824,14 @@ Case Study 2:
     https://de.wikipedia.org/wiki/BlueScope_Steel
 
 
-BlueScope Steel produziert Stahl verschiedener Sorten. 
-Das Unternehmen wurde 2002 gegründet, als der Stahlbereich 
-von BHP Billiton als eigenständiges Unternehmen (BHP Steel) 
-abgetrennt wurde. 
-Hochöfen befinden sich in Port Kembla nahe Wollongong und 
-Hastings nahe Melbourne. 
-Außerdem besitzt BlueScope Steel das New-Zealand-Steel-Werk 
-in Glenbrook nahe Waiuku, Neuseeland.    
+    BlueScope Steel produziert Stahl verschiedener Sorten. 
+        Das Unternehmen wurde 2002 gegründet, als der Stahlbereich 
+    von BHP Billiton als eigenständiges Unternehmen (BHP Steel) 
+    abgetrennt wurde. 
+    Hochöfen befinden sich in Port Kembla nahe Wollongong und 
+        Hastings nahe Melbourne. 
+        Außerdem besitzt BlueScope Steel das New-Zealand-Steel-Werk 
+    in Glenbrook nahe Waiuku, Neuseeland.    
 
 
 Case Study 3:
@@ -2825,20 +2840,69 @@ Case Study 3:
     https://www.airbnb.de/
 
 
-*   Target Industry: 
-    Travel, Hospitality, and Online Marketplace
+    *   Target Industry: 
+        Travel, Hospitality, and Online Marketplace
+    
+    *   Machine learning teams were independently 
+        creating and maintaining similar features.
+    
+    *   Feature duplication led to increased development 
+        effort and inconsistencies.
+    
+    *   Ensuring consistency between training and 
+        serving data was difficult.
+    
+    *   Scaling recommendation models across multiple 
+        products required standardized feature management.
+    
+    *   Feature discovery and reuse across teams were limited.
 
-*   Machine learning teams were independently 
-    creating and maintaining similar features.
 
-*   Feature duplication led to increased development 
-    effort and inconsistencies.
+===============================================================================
+Module 4: Cloud with AI
+===============================================================================
 
-*   Ensuring consistency between training and 
-    serving data was difficult.
+    m:  [4.2]   Model Training, Deployment, and Inference on Cloud
+    m:  [4.3]   Containerization with Docker and Orchestration with Kubernetes
+    m:  [4.4]   Serverless AI Architectures
+    m:  [4.5]   Scaling and Monitoring AI Workloads
+    m:  [4.6]   Use Cases
+    m:  [4.7]   Case Studies
 
-*   Scaling recommendation models across multiple 
-    products required standardized feature management.
 
-*   Feature discovery and reuse across teams were limited.
+This module covers:
+
+*   Managed AI/ML Platforms: 
+    Understanding cloud-based AI and machine learning services that 
+        simplify model development, deployment, and management.
+
+*   Model Training, Deployment, and Inference on Cloud: 
+    Learning how AI models are trained, deployed, 
+    and used for real-time or batch predictions using cloud infrastructure.
+
+*   Containerization with Docker and Orchestration with Kubernetes: 
+    Exploring how Docker containers package AI applications and 
+        how Kubernetes automates their deployment, scaling, and management.
+
+*   Serverless AI Architectures: 
+    Understanding serverless computing approaches for building and 
+        deploying AI solutions without managing servers.
+
+*   Scaling and Monitoring AI Workloads: 
+    Examining techniques for scaling AI applications, 
+        optimizing resource utilization, 
+        and monitoring model and system performance.
+
+*   Use Cases of Cloud-Based AI: 
+    Analyzing practical applications of cloud-powered AI across industries 
+    such as healthcare, finance, retail, manufacturing, and transportation.
+
+*   Case Studies: 
+    Reviewing real-world examples of organizations that have 
+    successfully implemented cloud-based AI solutions 
+    to improve efficiency, innovation, and business outcomes.
+
+
+
+=== m:  [4.1]   Managed AI/ML Platforms  Amazon SageMaker
 

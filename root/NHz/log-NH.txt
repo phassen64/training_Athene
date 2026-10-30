@@ -887,4 +887,20 @@ sem.AICert.Practitioner™   :   summary
     
 ### !date:<2026-10-29>:Do 
 
-    
+### !date:<2026-10-30>:Fr 
+
++   Jupiter Notebook Dateien ansehen
+    https://jupyter.org/
+
+    Eine .ipynb-Datei (IPython Notebook) ist ein 
+        interaktives Dokument von Project Jupyter. 
+    Es verbindet ausführbaren Programmcode (meist Python), 
+        erklärenden Text (Markdown), 
+        mathematische Formeln und direkt erzeugte Ergebnisse oder Diagramme in einer einzigen Datei.
+
+    https://colab.research.google.com/
+    https://en.wikipedia.org/wiki/Project_Jupyter
+
+
++   Kursbuch Eintrag
+    Aktueller Kurs : AICert Practitioner™ 
