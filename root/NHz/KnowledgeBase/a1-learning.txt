@@ -2382,7 +2382,463 @@ and derive actionable insights from data-driven systems.
 
 
 === m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
+
+
+    As organizations collect and process massive amounts of data, 
+        ensuring that data remains accurate, reliable, secure, 
+        and easily discoverable becomes essential. 
+    
+    Data quality, governance, versioning, 
+        and cataloging are critical components of 
+        modern data management frameworks. 
+        
+    Together, 
+        they help organizations maintain trust in data, 
+            support regulatory
+
+
+--- s:  [3.4].Data Quality
+
++   Key Dimensions of Data Quality
+
+    *   Accuracy: 
+        Accuracy refers to how correctly data represents real-world 
+            values or facts. Accurate data is free from errors and ensures reliable decision-making.
+
+    *   Completeness: 
+        Completeness indicates that all required data fields are present 
+        and populated. 
+        Missing information can lead to incomplete analysis and 
+        inaccurate insights.
+    
+    *   Consistency: 
+        Consistency ensures that data remains uniform across 
+            different systems, databases, and applications. 
+        Consistent data improves reliability and prevents conflicts.
+
+    *   Validity: 
+        Validity measures whether data conforms to predefined formats, 
+            rules, and business constraints. 
+        Valid data supports smooth processing and analysis.
+
+    *   Timeliness: 
+        Timeliness refers to the availability of current and 
+            up-to-date data when needed. 
+        Timely data enables faster responses and informed decisions.
+
+    *   Uniqueness: Uniqueness ensures that each record is 
+        distinct and free from unnecessary duplication. 
+        Unique data reduces redundancy and improves data integrity.
+
+
+--- s:  [3.4].Data Governance
+
+    Data Governance is a structured approach to managing an 
+        organization's data through defined 
+            policies, processes, roles, and standards. 
+   
+    It ensures that data remains 
+        accurate, consistent, secure, and accessible throughout its lifecycle. 
+   
+    By establishing clear ownership and accountability, 
+        data governance helps organizations improve data quality, 
+        maintain regulatory compliance, reduce risks, and support reliable decision-making.
+
+--- s:  [3.4].Cataloging
+
+    Data cataloging is the process of creating an 
+        organized inventory of data assets within an organization. 
+    A data catalog provides 
+        metadata, descriptions, ownership information, 
+        and usage details, making data easier to discover and understand.
+
+
+--- s:  [3.4].Versioning
+
+
+    Data versioning is the process of 
+        tracking, managing, and storing changes 
+        made to datasets over time. 
+    
+    Similar to source code version control in software development, 
+        data versioning enables organizations to maintain 
+        multiple versions of data, track modifications, 
+        and reproduce results using specific dataset versions.
+
+    As data continuously evolves through updates, 
+        corrections, and new records, 
+        versioning helps ensure consistency, traceability, 
+        and reliability across analytics, reporting, and AI workflows.
+
+
++   Concept of Data Versioning
+
+    The diagram represents data versioning in ML systems as a 
+        combination of Data +  Model + Code, 
+    where each component evolves independently and 
+    jointly affects system behavior.
+
+    *   Data Versioning 
+        ~tracks changes in schema, sampling over time, 
+        and data volume to ensure reproducibility of training datasets.
+
+    *   Model Versioning captures changes in algorithms, 
+        retraining cycles, and experiments to manage model evolution.
+
+    *   Code Versioning manages business logic updates, 
+        bug fixes, and configuration changes affecting pipeline behavior.
+
++   Key Features of Data Versioning
+
+    *   Change Tracking: 
+        Records all modifications made to datasets, 
+        including additions, updates, and deletions.
+
+    *   Historical Snapshots: 
+        Maintains previous versions of datasets for reference and recovery.
+
+    *   Reproducibility:	
+        Allows	analyst and	data scientists	to reproduce 
+            reports, experiments, 
+            and model results using the exact dataset version.
+
+    *   Rollback Capability: 
+        Enables restoration of earlier versions if errors 
+        or data corruption occur.
+
+    *   Collaboration Support: 
+        Allows multiple users and teams to work on datasets 
+        while maintaining version history.
+
+    *   Auditability: 
+        Provides a complete record of dataset changes for compliance 
+        and governance purposes.
+
+
++   Types of Versioning 
+
+    •   Snapshot-Based Versioning
+        Stores complete copies of datasets at different points in time.
+        Simple implementation; Easy recovery and restoration.
+        High storage requirements.
+
+    •   Incremental Versioning
+        Stores only the changes made between dataset versions.
+        Efficient storage utilization; Faster updates.
+        More complex version management.
+
+    •   Hybrid Versioning
+        Combines snapshots and incremental changes to 
+            balance storage and performance.
+        Improved scalability; 
+            Efficient version tracking; Balanced storage usage.
+        More complex implementation and maintenance.
+
+
+   
 === m:  [3.5]   Real-Time Data Streaming
+
+
+    Streaming refers to the continuous flow and 
+        real-time processing of data as it is generated.
+    
+    Unlike batch processing, 
+        streaming handles data instantly without waiting for accumulation.
+
++   Key Steps in Streaming
+
+    1   source is a content a video file
+    2   compress file 
+    3   generate small packages 
+    4   send over internet
+    5   received by device 
+    6   decompress
+    7   play
+    
+  
+    *   Play content: 
+        The user requests to stream media from their device.
+
+    *   Media file is compressed: 
+        The media file is divided and repackaged 
+            into small data packets for efficient transmission.
+
+    *   Data is sent from the server to a device: 
+        The packets are sent over the internet from
+            a host server to a user's device.
+
+    *   The device plays the data: 
+        The device decompresses the incoming data and plays 
+        the content.
+    
+    Note: 
+        Delivers content without saving the full file first.
+        
+
++   Key Features:
+
+    *   Continuous Data Ingestion{"aufnehmen"} & Processing: 
+        Data is continuously captured and processed in 
+            real-time without waiting for batch cycles.
+
+    *   High Throughput & Low Latency: 
+        Supports fast processing of large data volumes with minimal delay.
+
+    *   Scalable Architecture: 
+        Easily scales to handle increasing data streams and workloads.
+
+    *   Fault-Tolerant & Reliable Delivery: 
+        Ensures data is not lost and processing continues 
+            even during system failures.
+
+    *   Analytics, AI & ML Integration: 
+        Enables real-time analytics and supports machine 
+            learning model integration for instant insights.
+
+    *   Continuous data ingestion and processing.
+
+    *   High-throughput and low-latency data transfer.
+
+    *   Scalable architecture for handling millions of events.
+
+    *   Fault-tolerant and reliable data delivery.
+
+    *   Integration with analytics, AI, 
+            and machine learning systems.
+
++   BanknSolution
+    
+    •   events  by:UPI | card | transfer         
+    •   ingestion{"aufnehmen"}        
+    •   processing 
+    •   realt-time evaluation 
+    
+    
++   Streaming Platforms
+    
+    •   ingestion {"aufnehmen"}  
+        https://kafka.apache.org/
+        https://aws.amazon.com/kinesis/
+          
+    •   processing
+        https://flink.apache.org/
+    
+    •   processing
+        https://spark.apache.org/streaming/
+
++   wiki 
+    https://en.wikipedia.org/wiki/Amazon_Kinesis    
+    https://de.wikipedia.org/wiki/Apache_Kafka
+    https://de.wikipedia.org/wiki/Apache_Flink
+    
+
++   Bank Solution
+    
+    •   events 
+        UPI | card | transfer 
+        
+    •   ingestion{"aufnehmen"}
+        Apache kafka 
+        A kafka 
+        
+    •   processing 
+        Apache Flink or 
+        
+            Apache Spark Streaming
+        
+    •   realt-time evaluation 
+    
+
++   Kafka Ecosystem
+
+    •   data source 
+        Apache Cassandra    
+            https://de.wikipedia.org/wiki/Apache_Cassandra
+        MySQL
+            https://de.wikipedia.org/wiki/MySQL
+            https://de.wikipedia.org/wiki/MariaDB            
+        Oracle Database
+            https://en.wikipedia.org/wiki/Oracle_Database        
+        MongoDB
+            https://de.wikipedia.org/wiki/MongoDB
+
+    •   ingestion
+        Their data is ingested into Kafka through Kafka Connect, 
+            which serves as an integration layer.
+
+    •   event streaming platform 
+        Kafka functions as a central event streaming backbone, 
+            enabling real-time data flow between systems.
+
+    •   destination
+        From Kafka, 
+            data is streamed to various target systems such as 
+        Hadoop Distributed File System for distributed storage, 
+        Elasticsearch for indexing and analytics, and 
+        Apache Cassandra for scalable NoSQL storage.
+        https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html
+        https://de.wikipedia.org/wiki/Elasticsearch
+
+
++   Kafka Architecture:
+        https://kafka.apache.org/
+
+    Kafka architecture is a distributed system design that 
+        enables high-throughput, fault-tolerant, 
+        and real-time streaming of data between producers and consumers. 
+    It is built to handle large-scale data pipelines efficiently 
+    using a publish subscribe model.
+
+    The architecture of Apache Kafka is built around 
+        four core APIs within a Kafka cluster 
+    (a group of one or more brokers in a distributed messaging system).
+
+    *   Producer API: 
+        Publishes records to one or more Kafka topics.
+
+    *   Consumer API: 
+        Subscribes to topics and reads records from them.
+
+    *   Streams API: 
+        Processes and transforms input streams into output streams 
+        between topics.
+
+    *   Connector API: 
+        Integrates Kafka with external systems 
+        (e.g., databases) using reusable source and sink connectors.
+
+
++   Amazon Kinesis:
+        https://aws.amazon.com/kinesis/
+
+    Amazon Kinesis is a fully managed real-time data 
+        streaming service provided by Amazon Web Services (AWS). 
+    It enables organizations to collect, process, 
+        and analyze streaming data without managing 
+        underlying infrastructure.
+
++   Amazon Kinesis  Stream Processing and Real-Time Analytics:
+
+    *   Data Analytics 
+        processes incoming data streams using SQL or 
+            Apache Flink for real-time computation.
+
+    *   Data is filtered, 
+        transformed, and analyzed to detect anomalies such 
+        as unusual spending patterns or login behavior.
+
+    *   Integration with AWS Lambda enables 
+        real-time rule execution and automated responses.
+
+    *   Processed data is stored in downstream systems 
+        such as data lakes, databases, or dashboards for visualization.
+
+    *   Fraud detection models trigger alerts or block 
+        suspicious transactions instantly.
+
+    *   Operational teams receive real-time insights 
+        for monitoring system health and user behavior.
+
+
++   Kafka vs Kinesis
+
+    Kafka:
+    +   is Open Source 
+    +   On-Premises Cloud Hybrid 
+    +   High Customization
+    -   Higher Maintenance 
+    -   Higher Infrastucture costs 
+
+    Kinesis:
+    -   AWS only 
+    +   automatically scalable 
+    +   usage based 
+    +   easier for AWS-first teams 
+
+
 === m:  [3.6]   Use Cases
+
+    Real-Time Streaming for Fraud Detection in Digital Banking 
+    
+    Transactions Title: 
+        "Real-Time Streaming Architecture for 
+            Fraud Detection in Digital Banking Systems" 
+    
+    Background:
+
+        A leading digital bank processes millions of 
+            transactions daily through mobile banking 
+            apps, debit/credit cards, and online transfers. 
+        
+        With the rapid growth of digital payments, 
+            fraudulent transactions such as 
+            unauthorized card usage, 
+            identity theft, 
+            and suspicious account activity have increased significantly.
+
+        Earlier, 
+            the bank used batch-based fraud detection systems 
+                that analyzed transactions after they were completed, 
+                resulting in delayed detection and financial losses. 
+        To improve security and customer trust, 
+            the bank needed a real-time system capable of 
+        detecting and blocking fraudulent transactions instantly.
+
 === m:  [3.7]   Case Studies
+
+    
+Case Study 1:
+
+    Uber
+    https://de.wikipedia.org/wiki/Uber_(Unternehmen)
+
+As Uber's global operations expanded, 
+the company faced challenges in managing rapidly growing volumes 
+of structured and unstructured data generated from 
+rides, customers, drivers, and business processes. 
+This case study highlights how Uber implemented 
+a unified data lake architecture to centralize data across 
+the organization, eliminate data silos, 
+and enable scalable analytics, reporting, and machine learning. 
+The initiative improved data accessibility, 
+operational efficiency, and data-driven decision-making across the enterprise.
+
+Case Study 2:
+
+    Blue Scope Steel 
+    https://de.wikipedia.org/wiki/BlueScope_Steel
+
+
+BlueScope Steel produziert Stahl verschiedener Sorten. 
+Das Unternehmen wurde 2002 gegründet, als der Stahlbereich 
+von BHP Billiton als eigenständiges Unternehmen (BHP Steel) 
+abgetrennt wurde. 
+Hochöfen befinden sich in Port Kembla nahe Wollongong und 
+Hastings nahe Melbourne. 
+Außerdem besitzt BlueScope Steel das New-Zealand-Steel-Werk 
+in Glenbrook nahe Waiuku, Neuseeland.    
+
+
+Case Study 3:
+
+    Airbnb Feature Store 
+    https://www.airbnb.de/
+
+
+*   Target Industry: 
+    Travel, Hospitality, and Online Marketplace
+
+*   Machine learning teams were independently 
+    creating and maintaining similar features.
+
+*   Feature duplication led to increased development 
+    effort and inconsistencies.
+
+*   Ensuring consistency between training and 
+    serving data was difficult.
+
+*   Scaling recommendation models across multiple 
+    products required standardized feature management.
+
+*   Feature discovery and reuse across teams were limited.
 
