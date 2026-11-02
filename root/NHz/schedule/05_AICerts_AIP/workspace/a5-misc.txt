@@ -1,0 +1,93 @@
+###############################################################################
+--- !sem.AICert.Practitioner™   :   summary
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
+
+### !date:<2026-10-30>:Fr 
+
++   Jupiter Notebook Dateien ansehen
+    https://jupyter.org/
+
+    Eine .ipynb-Datei (IPython Notebook) ist ein 
+        interaktives Dokument von Project Jupyter. 
+    Es verbindet ausführbaren Programmcode (meist Python), 
+        erklärenden Text (Markdown), 
+        mathematische Formeln und direkt erzeugte Ergebnisse oder Diagramme in einer einzigen Datei.
+
+    https://colab.research.google.com/
+    https://en.wikipedia.org/wiki/Project_Jupyter
+
++   HU Berlin 
+    https://www.digitale-lehre.hu-berlin.de/de/lehr-und-lernlandschaft/jupyterhub
+    Die Jupyter Notebooks die über den Jupyterhub genutzt werden 
+        können sind vor allem für didaktische Szenarien ausgelegt.
+
+    Verschiedene Jupyterlab-Umgebungen, 
+        sog. Profile stehen derzeit zur Auswahl, u.a. 
+        Python, Spark, R (erweitert um einen Positron Server), 
+        Tensorflow, eine Umgebung für Natural Language Processing, 
+        eine Umgebung mit CUDA-Unterstützung, ein sog. 
+    Digital History Vision Image sowie zwei Images 
+        für aktuell laufende Projekte (Digimatch & TC Experiments).
+        
++   Project Jupyter
+    https://de.wikipedia.org/wiki/Project_Jupyter
+    Project Jupyter ([ˈdʒuːpɪtər] ⓘ) ist der Herausgeber von 
+        Softwareprodukten für interaktive wissenschaftliche 
+        Datenauswertung und wissenschaftliche Berechnungen. 
+    Der Name Jupyter bezieht sich auf die 
+        drei wesentlichen Programmiersprachen 
+            Julia, Python und R 
+    und ist auch eine Hommage an Galileis Notizbucheinträge 
+        zur Entdeckung der Jupitermonde, 
+        bei denen Galilei Beobachtungen und Messdaten 
+    zusammen mit Metadaten darstellte. 
+    Project Jupyter hat die Produkte Jupyter 
+        Notebook, JupyterHub und JupyterLab entwickelt.
+
++   Jupyter Notebook
+    Oberfläche von Jupyter Notebook
+    Jupyter Notebook (früher IPython Notebooks) ist eine Webanwendung, 
+    die Jupyter-Notebook-Dokumente erstellen und bearbeiten kann.
+    Ein Jupyter-Notebook-Dokument ist ein JSON-Dokument, 
+        das aus einer Liste von Eingabe- und Ausgabezellen besteht. 
+    Es kann jeweils Code, 
+        Text und Graphen oder Diagramme (Plots) enthalten. 
+    Es ist versioniert. 
+    Seine Dateiendung ist „.ipynb“. 
+    Ein Jupyter-Notebook-Dokument kann 
+    in verschiedene Formate konvertiert und ausgegeben werden,
+    z. B. HTML, PDF, LaTeX und Folien für Präsentationen.
+        
++   JSon 
+    JSON (JavaScript Object Notation) ist ein
+        kompaktes, textbasiertes Datenaustauschformat, 
+        das für Menschen leicht lesbar und für Maschinen einfach zu verarbeiten ist. 
+    Es ist unabhängig von einzelnen Programmiersprachen, hat aber seine Wurzeln in der JavaScript-Syntax.
+
+
++   Messwert JSon 
+    json
+    {
+        "sensor_id": "PS-03",
+        "zeitstempel": "2026-10-30T17:56:00Z",
+        "messwert": 23.5,
+        "einheit": "°C",
+        "status": true
+    }
+    
+    json
+    {
+        "temperature": {
+            "value": 23.5,
+            "unit": "°C",
+            "ucumUnit": "Cel"
+    },
+    "linePressure": {
+        "value": 101.3,
+        "unit": "kPa",
+        "ucumUnit": "kPa"
+    }
+}
