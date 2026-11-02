@@ -1,0 +1,51 @@
+###############################################################################
+--- !sem.AICert.Practitioner™   :   info
+###############################################################################
+
+    Aktueller Kurs : AICert Practitioner™ 
+    
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
+
++   Amazon
+    https://de.wikipedia.org/wiki/Amazon
+    Gründung	5. Juli 1994
+    Sitz	Seattle, Washington USA
+    Leitung	Jeff Bezos
+    Mitarbeiterzahl	1.576.000 (2025)[2]
+    Umsatz	716,9 Mrd. US-Dollar 
+
++   Microsoft 
+    Sitz 	Redmond, Washington USA
+    https://de.wikipedia.org/wiki/Microsoft
+    Leitung   Satya Nadella CEO
+    Mitarbeiterzahl	228.000
+    Umsatz	281,7 Mrd. USD
+
++   Google LLC 
+    https://de.wikipedia.org/wiki/Google_LLC
+    Sitz	Mountain View, Kalifornien USA 
+    Leitung	Sundar Pichai (CEO)
+    Mitarbeiterzahl	183.323
+    Umsatz	350 Mrd. USD (2024)
+    
++   VW
+    https://de.wikipedia.org/wiki/Volkswagen_AG    
+    CEO Oliver Blume
+    Mitarbeiterzahl	662.900 
+    Umsatz	321,9 Mrd
+
++   Telekom 
+    https://de.wikipedia.org/wiki/Deutsche_Telekom
+    Mitarbeiterzahl	198.079 (31. Dez. 2025)[2]
+    Umsatz	119,1 Mrd. Euro (2025)
+    
++   SAP 
+    https://de.wikipedia.org/wiki/SAP
+    Mitarbeiterzahl	111.397 
+    Umsatz	36,8 Mrd. Euro (2025)[1]
+    
+    
+    
+    
+
