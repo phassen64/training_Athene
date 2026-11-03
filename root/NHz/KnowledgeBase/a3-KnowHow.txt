@@ -1,0 +1,99 @@
+###############################################################################
+--- !sem.AICert.Practitioner™   :   knowHow
+###############################################################################
+
+    Aktueller Kurs : AICert Practitioner™ 
+    
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
+
+
+$   Token 
+    Ein Token kann ein vollständiges Wort sein, 
+        aber genauso nur ein Teil davon, ein einzelnes Zeichen oder 
+        ein Satzzeichen. 
+    Selbst Schreibweise, Leerzeichen und verwendete Sprache 
+        können beeinflussen, wie ein Text zerlegt wird. 
+    Deshalb gilt: Ein Token ist nicht automatisch ein Wort.
+
+$   Token Art               https://www.caseking.de/blog/was-sind-ai-tokens#Welche_Arten_von_AI_Tokens_gibt_es
+
+    •   Input Token
+        Tokens, die du dem Modell als Eingabe übergibst. 
+            Dazu gehören dein Prompt, vorherige Nachrichten und 
+        zusätzlicher Kontext. Sie werden auch als Prompt Tokens bezeichnet.
+
+    •   Output Token
+        Tokens, die das AI-Modell für seine Antwort erzeugt. 
+        Bei manchen APIs werden sie auch Completion Tokens genannt.
+
+    •   Cached Input Token
+            Bereits verarbeitete Eingaben, 
+        die über Prompt Caching erneut genutzt werden können. 
+        Je nach Anbieter können dafür andere Preise gelten als für 
+        normale Input Tokens.
+        
+    •   Reasoning Token 
+        Tokens, die bestimmte Reasoning-Modelle intern für 
+            ihre Verarbeitung nutzen, bevor sie die sichtbare Antwort erzeugen.
+
+$   Reasoning-Model
+    
+    Ein Reasoning-Modell (Schlussfolgerungsmodell) ist eine 
+        spezialisierte Klasse von KI-Modellen, 
+    die darauf ausgelegt ist, komplexe Probleme durch systematische, 
+    mehrstufige Gedankengänge ("Chain of Thought") zu lösen, 
+    bevor sie eine finale Antwort ausgibt.
+    Während klassische Large Language Models (LLMs) Antworten 
+        direkt Token für Token generieren 
+        (System-1-Denken: intuitiv und schnell), 
+    simulieren Reasoning-Modelle ein strukturiertes System-2-Denken: 
+    
+    Sie zerlegen Aufgaben, überprüfen Zwischenschritte, 
+    korrigieren eigene Fehler und evaluieren alternative Pfade.
+    
+    Konzepte
+
+    •   Chain of Thought (CoT) Prompting & Generation
+        Das Modell generiert intern eine Kette von Zwischenüberlegungen. 
+        Statt direkt 42 zu antworten, 
+            führt es Schritt für Schritt die mathematischen oder 
+        logischen Zwischenrechnungen durch.
+    
+    •   Test-Time Compute (Inferenzzeit-Skalierung)
+        Klassische Modelle nutzen während der Antwortgenerierung immer die 
+            gleiche Menge an Rechenleistung pro Token. 
+        Reasoning-Modelle verbringen bei schwierigen Problemen mehr Zeit 
+            mit dem "Nachdenken" (Generieren von Reasoning-Tokens), 
+            was die Genauigkeit bei komplexen Aufgaben drastisch erhöht.
+
+    •   Reinforcement Learning (RL) auf Argumentationspfade
+        Das Training basiert stark auf Reinforcement Learning 
+        (wie RLAIF oder PPO/GRPO).        
+        Das Modell wird dafür belohnt, logisch korrekte Zwischenschritte zu 
+        wählen und Selbstkorrekturen durchzuführen.
+        
+    •   Suchbaum-Verfahren (Tree-of-Thought / Monte Carlo Tree Search)
+        Bei besonders komplexen Pfaden können verschiedene Lösungsansätze 
+        parallel evaluiert, verworfen oder weiterverfolgt werden.        
+        
+?   Wie viele Wörter sind 1.000 Tokens?
+    Für englischen Text gilt als grobe Faustregel:
+    1.000 Tokens entsprechen ungefähr 750 Wörtern =>
+        1 Token : 3/4 Wort
+    oder rund 4 Zeichen pro Token.  
+ 
+$   Tokens pro Sekunde: Die FPS der lokalen AI?
+    Wenn du dich mit lokalen Sprachmodellen beschäftigst, 
+        wirst du noch eine weitere Angabe häufig sehen:
+    Tokens pro Sekunde – kurz tok/s.
+
+$   Reinforcement Learning from Human Feedback =: 'RLHF'
+    ~ RLHF 
+        is a machine learning training method used to align large 
+        language models (LLMs) and artificial intelligence agents 
+    with human values, intentions, and preferences. 
+    It guides models to produce outputs that are helpful, 
+        honest, and safe
+
+        
