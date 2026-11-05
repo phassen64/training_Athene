@@ -6625,7 +6625,7 @@ This module covers:
     resulting in more accurate, 
         context-aware, and reliable AI-generated responses.
 
-=== s:  [8.3].Advanced Chunking
+=== s:  [8.3]   Advanced Chunking
 
 +   ~ is the process of intelligently dividing 
         large documents into meaningful and context-preserving chunks 
@@ -6678,7 +6678,7 @@ This module covers:
         author, page number, section, or source.
 
 
-=== s:  [8.3].HyDE (Hypothetical Document Embeddings)
+=== s:  [8.3]   HyDE (Hypothetical Document Embeddings)
 
 +   ~ is an advanced retrieval technique in which the 
     LLM first generates a hypothetical answer 
@@ -6701,7 +6701,7 @@ This module covers:
     from the vector database.
 
 
-=== s:  [8.3].GraphRAG:
+=== s:  [8.3]   GraphRAG:
 
 +   GraphRAG extends traditional RAG by incorporating knowledge 
         graphs to capture relationships between entities 
@@ -6941,13 +6941,766 @@ Case Study 2:
 Module 9: Fine-Tuning and Optimization on Cloud
 ===============================================================================
 
+    https://de.wikipedia.org/wiki/Fine-Tuning_(K%C3%BCnstliche_Intelligenz)
+    https://finetuna.io/
+
+
+This module covers:
+
+*   Full Fine-Tuning vs. Parameter-Efficient Fine-Tuning (PEFT): 
+    Understand full fine-tuning and efficient techniques such as 
+          LoRA and QLoRA.
+
+*   Distributed Training and Hyperparameter Optimization: 
+    Learn scalable training methods and techniques for optimizing model performance.
+
+*   Model Compression, Distillation, and Quantization: 
+    Explore methods to reduce model size, improve inference speed, 
+        and lower deployment costs.
+
+*   Domain Adaptation and Continual Learning: 
+    Study approaches for adapting models to domain-specific tasks and 
+    enabling continuous learning.
+
+*   Cloud Tools for Efficient Fine-Tuning: 
+    Examine cloud-native services and frameworks that simplify 
+    large-scale model fine-tuning.
+
+*   Use Case: 
+    Understand a practical application of cloud-based fine-tuning and 
+    optimization in an enterprise scenario.
+
+*   Case Studies: 
+    Analyze real-world implementations demonstrating scalable, 
+    efficient, and cost-effective model optimization on cloud platforms.
+
 
 === m:  [9.1]   Full Fine-Tuning vs. Parameter-Efficient Fine-Tuning (PEFT)
+
++   Fine-tuning adapts a pre-trained model to a specific task 
+    by training it on domain-specific data. 
+    Depending on the available compute resources, 
+        budget, and business requirements, 
+    organizations can choose between 
+        Full Fine-Tuning and 
+        Parameter-Efficient Fine-Tuning (PEFT) techniques...
+        
++   Key Features of Fine-Tuning
+
+    *   Uses Pre-trained Models: 
+        Builds on models already trained on large datasets, 
+        eliminating the need to train from scratch.
+
+    *   Task-Specific Adaptation:
+        Customizes the model for a particular 
+        domain, application, or business use case.
+
+    *   Reduced Training Time: 
+        Requires significantly less time and computational 
+        resources than full model training.
+
+    *   Improved Performance: 
+        Enhances accuracy and relevance for specialized tasks 
+        by learning from domain-specific data.
+
+    *   Efficient Data Usage: 
+        Achieves good results using relatively small, labeled datasets.
+
+    *   Knowledge Retention: 
+        Preserves the model's general language understanding 
+        while learning new task-specific knowledge.
+
+    *   Cost-Effective: 
+        Lowers infrastructure and training costs by 
+        leveraging existing model capabilities.
+
+    *   Cloud Integration: 
+        Can be performed efficiently using managed cloud 
+        AI platforms with built-in training, 
+            monitoring, and deployment services.
+
+        
++   How fine-tuning works?
+
+    Fine-tuning adapts a pre-trained model to a specific task by 
+        continuing its training on a smaller, 
+        task-specific dataset. 
+    Instead of learning from scratch, 
+    the model builds on its existing knowledge, 
+    making the process faster, more efficient, and less resource-intensive.
+
++   Workflow of Fine-Tuning
+
+
+    1   Train on a Large Dataset: 
+        A model is first trained on a large dataset to learn 
+            general features and patterns.
+
+    2   Transfer Learned Weights: 
+        The learned weights are transferred to a new model 
+        through transfer learning.
+
+    3   Retain Common Layers: 
+        The initial layers, which capture general knowledge, 
+        are kept unchanged or updated minimally.
+
+    4   Update 
+        A task-specific dataset is used to adapt the model 
+        to the target application.
+        - use a Small Dataset.
+        The final layers are retrained to learn domain-specific features.
+
+    5   Generate Optimized Output: 
+        The fine-tuned model delivers accurate predictions 
+        for the target task with less training effort.
+
+
+--- s: [9.1].Full Fine-Tuning
+
++   ~ updates all the parameters (weights) of 
+    a pre-trained model using a task-specific dataset. 
+    Every layer of the neural network participates in training, 
+    enabling the model to learn domain-specific patterns comprehensively.
+
++    Architecture of ~
+
+    *   Complete Pre-trained Network: 
+        The entire pre-trained model is used as the starting 
+        point for fine-tuning.
+
+    *   Gradient Flow Across All Layers: 
+        Gradients propagate through every layer during 
+        backpropagation, enabling all weights to be updated.
+
+    *   Updates All Parameters: 
+        Every parameter in the model is optimized to 
+        learn task-specific features and improve performance.
+
+    *   End-to-End Learning: 
+        The model learns from input to output without 
+        freezing any layers, resulting in complete adaptation.
+
+    *   Maximum Customization: 
+        Updating the full network allows the model to 
+            capture complex domain-specific patterns.
+
+    *   High Resource Consumption: 
+        Since all parameters are retrained, 
+        full fine-tuning requires substantial computational power, 
+        memory, and longer training time.
+
++   Advantages and Limitations of Full Fine-Tuning
+
+    •   Highest task-specific accuracy due to complete 
+            model optimization.    
+    •   Requires high-end GPUs/TPUs and significant computational resources.   
+    •   Learns deep domain-specific knowledge for specialized 
+            applications.   
+    •   Longer training time as all model parameters are updated.   
+    •   Well-suited for complex enterprise and mission-critical 
+            AI applications.
+    •   High cloud infrastructure and training costs.
+    •   Provides better adaptation for specialized 
+        industries such as healthcare, finance, and legal services.
+    •   Large storage requirements to maintain multiple 
+        fine-tuned model versions.
+
+--- s: [9.2].Parameter-Efficient Fine-Tuning 
+
++   Parameter-Efficient Fine-Tuning (PEFT) 
+    updates only a small subset of model parameters 
+        while keeping the original model weights frozen. 
+    Instead of retraining the entire model, 
+        lightweight trainable components are added, 
+        significantly reducing computational and storage requirements.
+
++   Needs...
+    •   Reduces Computational Cost
+    •   Updates only a small subset of model parameters, 
+        reducing GPU/TPU requirements.
+    •   Minimizes Memory Usage
+    •   Requires significantly less memory, 
+        making fine-tuning feasible on limited hardware.
+
+
++   Common PEFT Techniques:
+    Parameter-Efficient Fine-Tuning (PEFT) includes several 
+        techniques that adapt large language models 
+        by training only a small subset of parameters. 
+
+    The most widely used PEFT methods are:
+    •   LoRA (Low-Rank Adaptation):
+    •   QLoRA (Quantized Low-Rank Adaptation)
+
+
++   LoRA is one of the most widely used PEFT techniques. 
+    Instead of modifying all model weights, 
+        LoRA inserts small low-rank matrices 
+        into selected layers (typically attention layers) and 
+    trains only these additional matrices.
+    https://www.databricks.com/de/blog/efficient-fine-tuning-lora-guide-llms
+    https://www.youtube.com/watch?v=6l8GZDPbFn8
+
++   Advantages  of LoRA 
+    •   Improved Transferability
+            Task-specific adapters can be easily reused, shared, 
+                or transferred across different applications while 
+            keeping the base model unchanged.
+    •   Supports Multi-Task Learning
+            Allows multiple adapters for different tasks to be 
+                attached to the same pre-trained model, 
+            enabling efficient task switching without retraining.
+
+
++   QLoRA extends LoRA by combining 4-bit model quantization 
+    with Low-Rank Adaptation. 
+    The base model is loaded in a compressed (quantized) format, 
+        while LoRA adapters are trained on top of it.
+
+*   Use Cases: 
+        LoRA is suitable for systems with adequate GPU resources, 
+        while QLoRA is ideal for memory-constrained hardware.
+    https://www.redhat.com/de/topics/ai/lora-vs-qlora
+
+         
 === m:  [9.2]   Distributed Training and Hyperparameter Optimization
+
+
+--- s:  [9.2].Distributed Training
+ 
++   Distributed Training:
+    ~ is the process of training a machine learning model using 
+        multiple GPUs or multiple computing nodes simultaneously. 
+    The training workload is divided across available 
+        computing resources, 
+    enabling faster processing of large datasets and models.
+
+
++   Need for Distributed Training:
+    ~ is essential for modern AI development because 
+        it overcomes the computational and memory limitations 
+    of a single machine. 
+    By leveraging multiple GPUs or compute nodes, 
+        it enables faster, scalable, 
+        and efficient training of large models on massive datasets. 
+    Key reasons are summarized in below table.
+
++   Working of Distributed Learning
+
+    *   Data Source: 
+        The training dataset is collected from 
+            local, cloud, or distributed storage.
+
+    *   Distributed Sampler: 
+        The dataset is partitioned into non-overlapping subsets, 
+        with each process receiving a unique portion of the data.
+
+    *   Multi-Process Data Loading: 
+        Multiple worker processes load and preprocess 
+            the assigned data in parallel to improve throughput.
+
+    *   Batch Tensor Creation: 
+        The processed data is organized into mini-batch tensors and 
+        distributed to the GPUs.
+
+    *   Checkpoint-Restart Process: 
+        Model states, optimizer parameters, 
+            and training progress are periodically saved, 
+            enabling recovery in case of failures.
+
+    *   Training Loop: 
+        Each GPU performs the forward pass, loss computation, 
+            backpropagation, 
+        and local gradient calculation on its assigned mini-batch.
+
+    *   Distributed Data Parallel (DDP): 
+        Gradients from all GPUs are synchronized using 
+        collective communication (e.g., All-Reduce), 
+        ensuring identical model parameters across all devices.
+
+    *   HPC System: 
+        Multiple GPUs across one or more compute nodes collaboratively 
+        execute the training workload using 
+        high-speed interconnects and communication libraries such as NCCL.
+        $   HPC     High-performance computing 
+        $   NCCL    NVIDIA Collective Communications Library
+
+    *   Trained Model: 
+        After multiple synchronized training iterations, 
+        the optimized model is produced and is ready 
+        for evaluation or deployment.
+
++   Types of Distributed Learning
+
+    *   Data Parallelism
+        o   The training data is partitioned into multiple subsets.
+        o   Each worker maintains a complete copy of the model.
+        o   Every worker processes a different mini-batch independently.
+        o   Gradients are synchronized after each iteration to update 
+            the model consistently.
+        <   Best suited for: 
+                Large datasets with models that fit into a single GPU.
+
+    *   Model Parallelism
+        o   The entire dataset is shared among all workers.
+        o   The model is partitioned across multiple workers.
+        o   Each worker computes only its assigned portion of the model.
+        o   Intermediate outputs are exchanged between workers 
+            during forward and backward passes.
+        <   Best suited for: 
+            Very large models that cannot fit into the memory of a single GPU.
+
+
+--- s:  [9.2].Hyperparameter Optimization (HPO)
+
++   Hyperparameter Optimization (HPO) is the process of 
+    automatically selecting the best hyperparameter values 
+    to maximize model performance 
+    while minimizing training time and computational cost.
+
++   Key Steps in Hyperparameter Tuning:
+
+    *   Hyperparameter Tuning: 
+        Identify the training parameters that influence model learning.
+
+    *   Search, Selection, and Optimization: 
+        Explore different hyperparameter combinations to 
+            determine the optimal configuration.
+    
+    *   Model Training: 
+        Train the machine learning or deep learning model using 
+        the selected hyperparameters.
+
+    *   Performance	Maximization:	
+        Achieve	improved accuracy,	reduced	loss,	
+        faster convergence, and better generalization on unseen data.
+
++   Common Hyperparameters
+
+    •   Batch Size
+        Number of training samples processed before updating model 
+            parameters.
+        Larger batches improve GPU utilization but require more memory; 
+            smaller batches reduce memory usage.
+
+    •   Number of Training Epochs
+        Number of complete passes through the training dataset.
+        More epochs can improve learning but may lead to 
+            overfitting if excessive.
+
+    •   Optimizer
+        Algorithm used to update model weights based on 
+            computed gradients.
+        Influences convergence speed, stability, 
+            and final model performance.
+    
+    •   Weight Decay
+        Regularization technique that penalizes large model 
+            weights to reduce overfitting.
+        Improves model generalization by preventing excessively large weights.
+
+    •   Dropout Rate
+        Fraction of neurons randomly deactivated during training
+            to reduce overfitting.
+        Higher dropout improves generalization but may slow 
+            learning if set too high.
+
+    •   LoRA Rank (PEFT)
+        Defines the rank of the low-rank adapter matrices used 
+            in LoRA fine-tuning.
+        Higher rank increases adaptation capability but 
+            also increases trainable parameters and memory usage.
+
+    •   Quantization Parameters (QLoRA)
+        Specifies the precision and quantization settings for 
+            storing model weights.
+        Reduces GPU memory consumption while maintaining model 
+            performance with minimal accuracy loss.
+
++   Common Hyperparameter Optimization Techniques
+
+    *   Grid Search: 
+        Exhaustively evaluates all possible combinations of 
+            predefined hyperparameter values to find the optimal configuration.
+
+    *   Random Search: 
+        Randomly samples hyperparameter combinations from the 
+            search space, often achieving good results 
+            with fewer evaluations than grid search.
+
+    *   Bayesian Optimization: 
+        Uses previous evaluation results to build a probabilistic model 
+        and intelligently select the most promising 
+        hyperparameter configurations.
+        https://en.wikipedia.org/wiki/Bayesian_optimization
+
+    *   Genetic Algorithms: 
+        Employs evolutionary principles such as selection, 
+        crossover, and mutation to iteratively evolve 
+        better hyperparameter combinations.
+
+    *   Hyperband & Successive Halving {"halbieren"}: 
+        Efficiently allocates computational resources by 
+        quickly discarding poorly performing configurations and 
+        focusing on promising candidates.
+
+
+
 === m:  [9.3]   Model Compression, Distillation, and Quantization
+
+Modern Large Language Models (LLMs) contain billions of parameters, 
+    making them computationally intensive and expensive to  deploy. 
+Organizations often require AI models that provide high performance 
+    while consuming fewer computational resources. 
+Model compression, knowledge distillation, 
+    and quantization are optimization techniques 
+    that reduce model size, memory usage, 
+    and inference latency without 
+significantly affecting model accuracy. 
+These techniques enable faster, 
+    cost-effective deployment of AI models on cloud, edge devices, 
+    and resource-constrained environments. 
+
+
++   Model Compression:
+    ~ is the process of reducing the size, 
+        memory footprint, and computational complexity 
+        of machine learning models 
+    while maintaining acceptable prediction accuracy. 
+    It enables efficient deployment of AI models on 
+        resource-constrained devices such as smartphones, 
+    IoT devices, edge systems, 
+        and embedded platforms, 
+    while also reducing cloud infrastructure costs and inference latency.
+
++   Objectives of Model Compression
+
+    *   Reduce Model Size: 
+        Decreases storage requirements for easier deployment.
+
+    *   Lower Memory Usage: 
+        Minimizes RAM consumption during inference.
+
+    *   Reduce FLOPs:
+        Lowers	computational complexity by reducing 
+            floating-point operations.
+
+    *   Reduce Latency: 
+        Enables faster inference and real-time predictions.
+
+    *   Less Energy Consumption: 
+        Improves energy efficiency, especially on battery-powered devices.
+
+    *   Lower Power Usage: 
+        Reduces processor workload and overall power consumption.
+
+    *   Enable Edge/Mobile Deployment: 
+        Facilitates deployment on smartphones, IoT, embedded, 
+        and edge devices with limited resources.
+
+
++   Key Model Compression Techniques
+
+    1.  Knowledge Distillation:
+        ~ is a model compression technique in which a smaller, 
+        lightweight model is trained to replicate 
+            the behavior of a larger, more complex model. 
+        By transferring knowledge from the larger teacher model 
+            to the smaller student model, 
+            it produces efficient models that retain most 
+            of the original performance 
+        while requiring significantly fewer computational resources.
+
+    2.  Quantization:
+        ~ is a model compression technique that reduces 
+            the numerical precision of a machine learning model's weights 
+        and activations 
+            while preserving most of its predictive accuracy. 
+        By representing values using 
+        fewer bits 
+        (such as 8-bit or 4-bit integers instead of 32-bit 
+            floating-point numbers), 
+        quantization significantly reduces model size, 
+        memory usage, and inference latency.
+
+
+
 === m:  [9.4]   Domain Adaptation and Continual Learning
+
+
+=== s:  [9.4]   Domain Adaptation
+
+    https://en.wikipedia.org/wiki/Domain_adaptation
+    https://www.youtube.com/watch?v=TUqEvsO_7Gw&t=1163s
+
++   What is Domain{"Einsatzgebiet"} Adaptation?
+
+    Domain adaptation is a transfer learning technique in 
+        which a model trained on a source domain 
+        is adapted to perform effectively on a target domain 
+    that has different data characteristics. 
+    Instead of training a new model from scratch, 
+        the existing model is fine-tuned using a smaller dataset 
+        from the target domain.
+
++   example 
+    A common example is spam filtering, 
+        where a model trained on emails from one user (source domain) 
+        is adapted to handle emails for another user 
+    with significantly different patterns (target domain).
+
++   Why Domain Adaptation is Needed?
+    Domain adaptation is essential because AI models often 
+        encounter data in deployment 
+    that differs from the data used during training. 
+    By transferring learned knowledge to new domains, 
+        domain adaptation improves model robustness, 
+        reduces labeling costs, accelerates deployment, 
+        and enables AI systems to perform reliably in 
+    diverse real-world environments. 
+
++   Key Steps of Domain Adaption Workflow
+
+    >   Source Domain Preparation
+        Collect labeled data from the source domain and train an 
+            initial machine learning model.
+
+    >   Target Domain Data Collection
+        Gather target-domain data, which may be fully labeled, 
+            partially labeled, or unlabeled.
+
+    >   Domain Shift Analysis
+        Identify differences in feature distributions, 
+            data characteristics, or environmental conditions between 
+        the source and target domains.
+
+    >   Feature Alignment
+        Learn domain-invariant features by reducing the distribution 
+            gap between source and target data.
+
+    >   Model Adaptation
+        Fine-tune or adapt the pretrained model using target-domain 
+            data or domain adaptation techniques.
+
+    >   Model Validation
+        Evaluate the adapted model on target-domain data using 
+            appropriate performance metrics.
+
+    >   Deployment
+        Deploy the adapted model in the target environment for 
+            real-world inference.
+
+    >   Continuous Monitoring
+        Monitor model performance, detect domain drift, 
+            and periodically update the model to maintain accuracy.
+
+
++   Types of Domain Adaptation
+
+    1.  Supervised Domain Adaptation
+        *   Uses labeled data from both the source and target domains.
+        *   The target domain contains sufficient labeled samples for 
+            model adaptation.
+        *   Typically achieves high accuracy but requires 
+            expensive and time-consuming data labeling.
+
+    2. Unsupervised Domain Adaptation
+        *   Uses labeled source data and unlabeled target data.
+        *   The model learns domain-invariant features to 
+            reduce the distribution gap without target labels.
+        *   This is the most widely used approach because labeled target 
+            data is often unavailable.
+
+    3. Semi-Supervised Domain Adaptation
+        *   Uses labeled source data along with a small amount of 
+            labeled and a larger amount of unlabeled target data.
+        *   Combines supervised and unsupervised learning 
+            to improve adaptation performance.
+        *   Provides a balance between labeling cost and model accuracy
+
+    4. Multi-Source Domain Adaptation
+        *   Uses labeled data from multiple source domains to adapt 
+            a model to a single target domain.
+        *   Leverages diverse knowledge from several source datasets 
+            to improve robustness and generalization.
+        *   Particularly useful when no single source domain closely 
+            matches the target domain.
+
+
+=== s:  [9.4]   Continual Learning
+
+
++   Continual Learning:
+    ~ (also called lifelong learning) enables AI models to 
+        continuously learn from new data and 
+    tasks while retaining knowledge acquired from previous training. 
+    This helps models adapt to evolving environments 
+    without requiring complete retraining.
+
++   Core Challenges
+    •   Plasticity vs. Stability: 
+        The model needs enough plasticity to learn new facts and skills, 
+        and enough stability to preserve old knowledge.
+    •   Non-IID Data: 
+        Real-world streaming data arrives in uneven, 
+        domain-specific chunks rather than balanced training distributions.
+    •   Portability & Upgrades: 
+        Weight-based updates stored directly inside a model 
+        can make upgrading to a newer architecture difficult or messy.
+
++   Working of Continual Learning
+
+    *   Deploy Initial Trained Model: 
+        Deploy a pretrained model to perform inference in a 
+        real-world environment.
+    
+    *   Collect New Data: 
+        Continuously gather new data from users, 
+            devices, or applications to capture changing patterns.
+
+    *   Update Model Incrementally: 
+        Retrain the model using new data without starting the 
+            training process from scratch.
+
+    *   Preserve and Retain Knowledge: 
+        Use continual learning techniques to retain previously 
+            learned knowledge and prevent catastrophic forgetting.
+
+    *   Monitor and Repeat Cycle: 
+        Monitor model performance, detect data drift, 
+            and repeat the learning cycle to keep the model accurate and up to date.
+
+
 === m:  [9.5]   Cloud Tools for Efficient Fine-Tuning
+
+Cloud platforms provide managed services and scalable infrastructure 
+    that simplify the fine-tuning of machine learning 
+    and large language models (LLMs). 
+    
+These tools automate data preparation, training, 
+    hyperparameter tuning, deployment, 
+    and monitoring, 
+enabling organizations to build high-performing AI models with 
+reduced complexity, 
+        cost, 
+        and development time.
+
+
+    •   Scalable Computing Resources
+        Instantly access powerful GPUs and TPUs to fine-tune models 
+            of any size without purchasing hardware.
+
+    •   Cost Efficiency
+        Pay only for the computing resources you use, 
+            reducing infrastructure and maintenance costs.
+
+    •   Faster Model Training
+        Leverage distributed training and high-performance 
+            cloud hardware to significantly reduce training time.
+
+    •   Automated MLOps Workflows
+        Automate data preparation, model training, 
+        evaluation, deployment, and monitoring for greater efficiency.
+
+    •   Collaboration and Version Control
+        Enable multiple teams to collaborate using 
+            shared workspaces, experiment tracking, and model versioning.
+
+    •   Easy Deployment and Monitoring
+        Deploy fine-tuned models as APIs or cloud services and 
+            continuously monitor their performance in production.
+
+
++   Cloud Tools for Fine-Tuning
+
+    •   Amazon SageMaker
+            Managed platform for data preparation, 
+            fine-tuning, training, deployment, and MLOps.
+
+    •   Microsoft Azure Machine Learning
+        End-to-end service for building, fine-tuning, managing, 
+            and deploying AI models with integrated MLOps.
+
+    •   Google Vertex AI
+        Unified AI platform for dataset management, 
+            model training, fine-tuning, evaluation, and deployment.
+
+    •   Databricks
+        Lakehouse platform for large-scale data engineering, 
+            distributed training, and collaborative model development.
+        https://www.databricks.com/
+
+    •   Hugging Face on Cloud
+        Provides pre-trained models, fine-tuning libraries, 
+            and cloud integrations with AWS, Azure, and Google Cloud.
+        https://huggingface.co/
+
+    •   NVIDIA DGX Cloud
+        High-performance GPU cloud platform designed for 
+            large-scale deep learning and LLM fine-tuning.
+        https://www.nvidia.com/de-de/data-center/dgx-cloud/
+
 === m:  [9.6]   Use Cases
+
+
+1.  Title: Creating Domain-Specific AI Models Using Cloud Fine-Tuning
+
+    A financial services company wants to develop an AI assistant 
+        that understands banking terminology, 
+    regulatory requirements, and internal policies. 
+    Although a pre-trained Large Language Model (LLM) 
+        has strong general knowledge, 
+    it lacks expertise in the organization's domain. 
+    The company uses cloud-based fine-tuning services to train 
+        the model on domain-specific documents while 
+    leveraging scalable computing resources and managed AI infrastructure.
+
+2.  Title: Optimizing AI Model Performance for Production Using Cloud Tools
+    An e-commerce company has successfully fine-tuned a 
+        recommendation model 
+        but needs to deploy it in production. 
+    The model must deliver low-latency predictions, 
+        handle thousands of concurrent users, 
+    and minimize operational costs. 
+    The organization uses cloud optimization services 
+    to improve inference speed, resource utilization, 
+        and deployment scalability.
+
+
 === m:  [9.7]   Case Studies
+
+
+Case Study 1:
+
+    Title: BloombergGPT: 
+        Building a Domain-Specific Large Language Model 
+        for Financial Intelligence
+
+    *   Organization: Bloomberg L.P.
+    *   Target Industry: 
+        Financial Services, Investment Management, 
+            Banking, Capital Markets, and Financial Research
+    
+    Mitarbeiterzahl	21.000 (2023)[2]
+    Umsatz	12,5 Mrd. USD (2023)[2]
+    USA New York City, New York
+    
+    https://www.bloomberg.com/europe
+    https://de.wikipedia.org/wiki/Bloomberg_L.P.
+    https://de.wikipedia.org/wiki/Bloomberg_News
+    https://de.wikipedia.org/wiki/Michael_Bloomberg
+
+Case Study 2:
+
+    Title: Hippocratic AI: 
+        Developing a Healthcare-Specific Large Language Model 
+            for Patient-Centered AI Solutions
+
+    *   Organization: Hippocratic AI
+    *   Target Industry: 
+        Healthcare, Hospitals, Health Insurance, 
+            Telemedicine, and Digital Health Services
+
+    https://hippocraticai.com/
 
 .
