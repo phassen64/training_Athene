@@ -95,6 +95,18 @@
     m:  [8.6]   Use Cases
     m:  [8.7]   Case Studies
 
+
+
+•   Module 9: Fine-Tuning and Optimization on Cloud
+
+    m:  [9.1]   Full Fine-Tuning vs. Parameter-Efficient Fine-Tuning (PEFT)
+    m:  [9.2]   Distributed Training and Hyperparameter Optimization
+    m:  [9.3]   Model Compression, Distillation, and Quantization
+    m:  [9.4]   Domain Adaptation and Continual Learning
+    m:  [9.5]   Cloud Tools for Efficient Fine-Tuning
+    m:  [9.6]   Use Cases
+    m:  [9.7]   Case Studies
+
 ===============================================================================
 Module 1: Cloud Fundamentals
 ===============================================================================
@@ -6924,5 +6936,18 @@ Case Study 2:
         Food Delivery Technology, E-commerce, Software Engineering, Enterprise Operations
     https://www.doordash.com/
 
+
+===============================================================================
+Module 9: Fine-Tuning and Optimization on Cloud
+===============================================================================
+
+
+=== m:  [9.1]   Full Fine-Tuning vs. Parameter-Efficient Fine-Tuning (PEFT)
+=== m:  [9.2]   Distributed Training and Hyperparameter Optimization
+=== m:  [9.3]   Model Compression, Distillation, and Quantization
+=== m:  [9.4]   Domain Adaptation and Continual Learning
+=== m:  [9.5]   Cloud Tools for Efficient Fine-Tuning
+=== m:  [9.6]   Use Cases
+=== m:  [9.7]   Case Studies
 
 .
