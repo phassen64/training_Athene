@@ -107,6 +107,16 @@
     m:  [9.6]   Use Cases
     m:  [9.7]   Case Studies
 
+•   Module 10: Agentic AI on Cloud
+
+    m:  [10.1]  AI Agents Fundamentals
+    m:  [10.2]  Distributed Frameworks: LangGraph, CrewAI, AutoGen, Semantic Kernel
+    m:  [10.3]  Multi-Agent Systems and Orchestration
+    m:  [10.4]  Autonomous Workflows and Decision Engines
+    m:  [10.5]  Cloud Deployment of Agentic Systems
+    m:  [10.6]  Use Cases
+    m:  [10.7]  Case Studies
+
 ===============================================================================
 Module 1: Cloud Fundamentals
 ===============================================================================
@@ -845,12 +855,15 @@ $   Ansible
         configuration management tool 
         that automates cloud provisioning, 
         software deployment, 
-        intra-service orchestration, and network configuration.
+        intra-service orchestration{"instrumentieren"}, 
+        and network configuration.
     Unlike tools like Terraform 
         (which excel at provisioning raw cloud resources), 
     Ansible shines in configuration management, 
         application deployment, and continuous orchestration.
     https://www.puppet.com/
+
+&   en:orchestrate = de:instrumentieren
     
 +   IaC and Terraform 
     
@@ -4187,7 +4200,7 @@ $   BART (Bidirectional and Auto-Regressive Transformers)
         Final generated text is presented as the output to the user.
 
 
-$   LLM::ChatGPT 
+$   LLM :: ChatGPT 
     https://chatgpt.com/
 
     Generative Pre-trained Transformer (GPT) is an 
@@ -4240,7 +4253,7 @@ $   LLM::ChatGPT
         Handles FAQs and routine customer interactions.
 
 
-$   LLM::LLaMA
+$   LLM :: LLaMA
     https://de.wikipedia.org/wiki/LLaMA-Sprachmodell
 
     Das LLaMA (Large Language Model Meta AI) von Meta ist ein 
@@ -4281,7 +4294,7 @@ $   LLM::LLaMA
         Produces concise summaries of lengthy documents and articles.
 
 
-$   LLM::Gemini
+$   LLM :: Gemini
     https://de.wikipedia.org/wiki/Google_Gemini
 
     Google Gemini (ehemals Google Bard) ist ein von Google 
@@ -4330,7 +4343,7 @@ $   LLM::Gemini
 
 
 
-$   LLM::Claude
+$   LLM :: Claude
     https://claude.com/
     https://de.wikipedia.org/wiki/Claude_Shannon
     https://www.youtube.com/watch?v=9oJySubZRSA
@@ -4380,7 +4393,7 @@ $   LLM::Claude
         and development environments through APIs.
 
 
-$   LLM::Mistral_AI
+$   LLM :: Mistral_AI
     https://mistral.ai/
     https://de.wikipedia.org/wiki/Mistral_AI
     Mistral AI ist ein französisches KI-Unternehmen mit Sitz in Paris, 
@@ -7702,5 +7715,405 @@ Case Study 2:
             Telemedicine, and Digital Health Services
 
     https://hippocraticai.com/
+
+
+===============================================================================
+Module 10:  Agentic AI on Cloud
+===============================================================================
+
+
+
+=== m:  [10.1]  AI Agents Fundamentals
+
+
++   AI agents are autonomous software systems that can 
+        perceive{"erkennen"} information, 
+        reason about a problem, 
+        plan a sequence of actions, 
+        use external tools, 
+        and learn from previous interactions 
+    to achieve a specific goal. 
+    Unlike traditional AI models that simply generate 
+        responses to prompts, 
+    AI agents can make 
+            decisions, 
+            interact with APIs, 
+            access enterprise data, 
+            and execute multi-step workflows 
+    with minimal human intervention. 
+    In cloud environments, 
+        AI agents leverage scalable infrastructure, 
+        managed AI services, 
+        and secure integrations 
+    to automate business processes and support intelligent decision-making.
+
+
++   Reasoning:
+    ~ is the ability of an AI agent 
+        to analyze information, 
+        understand context, 
+        evaluate multiple options, 
+        and determine the most appropriate course of action. 
+    Rather than producing an immediate response, 
+        the agent applies logical thinking to solve problems 
+    and make informed decisions.
+
+
++   Key Functions of Reasoning:
+
+
+    *   Intent & Context Understanding: 
+        AI identifies the user's objective and interprets the 
+            surrounding context to accurately understand 
+        the request before generating a response or taking action.
+
+    *   Information Analysis: 
+        The agent gathers, organizes, and examines relevant data 
+        from available sources to extract useful insights 
+        and support informed decision-making.
+
+    *   Problem Breakdown: 
+        Complex tasks are divided into smaller, 
+            logical subtasks, 
+        allowing the agent to solve multi-step problems 
+            in a structured and efficient manner.
+
+    *   Alternative Evaluation: 
+        The agent compares multiple possible solutions by 
+            considering factors such as 
+                feasibility{"durchführbar"}, 
+                accuracy, 
+                cost, 
+                constraints, 
+                and expected outcomes before making a decision.
+
+    *   Best Action Selection: 
+        Based on the analysis and evaluation, 
+            the AI selects the most appropriate action or 
+                response that best satisfies the user's goal 
+        while adhering to policies and constraints.
+
+
++   How Reasoning Works
+
+
+    1   Understand Goal: 
+        The AI interprets the user's request, 
+        identifies the objective, 
+        and understands the context and constraints of the task
+
+    2   Gather Information: 
+        The agent collects relevant information from its knowledge base, 
+        memory, retrieved documents, 
+        or external tools to gain the necessary context.
+
+    3   Evaluate Options: 
+        Multiple possible solutions or actions are analyzed 
+        by considering factors such as 
+            accuracy, feasibility, risks, policies, and 
+        expected outcomes.
+
+    4   Select Best Action: 
+        Based on the evaluation, the AI chooses the 
+            most suitable action or solution that 
+        best fulfills the user's objective.
+
+    5   Generate Response: 
+        The selected action is executed, and the AI produces a 
+            clear, accurate, and contextually relevant 
+        response or performs the required task.
+
+
++   Types of Reasoning:
+
+    •   Logical Reasoning
+        Applies rules, facts, 
+            and logical principles to reach valid conclusions.
+        Determining whether a user has sufficient permissions 
+            to access a cloud resource.
+
+    •   Analytical Reasoning
+        Breaks complex problems into smaller, 
+            manageable components for systematic analysis.
+        Diagnosing why a cloud application is experiencing high latency.
+
+    •   Contextual Reasoning
+        Uses surrounding context and prior information 
+            to improve understanding and decision-making.
+        Understanding that "restart the service" 
+            refers to the currently discussed application.
+
+    •   Causal Reasoning
+        Identifies cause-and-effect relationships to 
+            explain events or predict outcomes.
+        Identifying that increased network traffic caused 
+            an application's response time to slow down.
+
+
++   Planning:
+    ~ is the ability of an AI agent to transform a high-level 
+        objective into a structured sequence of executable tasks. 
+    Instead of attempting to solve an entire problem at once, 
+        the agent develops a workflow that guides task execution.
+
++   Key Functions of Planning
+
+    *   Define Objectives: 
+        Establishes clear goals and desired outcomes before 
+            initiating task execution.
+
+    *   Decompose Complex Tasks: 
+        Breaks large or complex tasks into smaller, 
+            manageable subtasks that can be executed systematically.
+
+    *   Prioritize Activities: 
+        Organizes tasks based on 
+            importance, urgency, dependencies, or available resources to improve execution efficiency.
+
+    *   Coordinate Multiple Actions: 
+        Synchronizes multiple tasks, tools, 
+            or workflows to ensure smooth and efficient completion 
+        of the overall objective.
+
+    *   Adapt to Changing Conditions: 
+        Continuously updates the plan in response to 
+            new information, 
+            changing requirements, 
+            or unexpected events.
+
+
++   Tool Calling:
+    ~ is the capability that allows an AI agent to interact 
+        with external systems and services to perform tasks 
+        beyond the knowledge contained in its language model. 
+    Instead of relying solely on pretrained information, 
+        the agent can invoke tools to retrieve real-time data, 
+        execute operations, or automate workflows.
+
++   Common Tools Used by AI Agents:
+
+    •   Business Application Tools or Enterprise Tools 
+            Interact with enterprise applications to automate 
+            business processes.
+        CRM, ERP, HRMS, ticketing systems
+
+    •   Cloud Service Tools
+        Manage cloud infrastructure, compute, 
+            networking, and storage resources.
+        AWS, Microsoft Azure, Google Cloud Platform
+
+    •   Productivity Tools
+        Automate communication, scheduling, 
+            and document management tasks.
+        Email services, calendars, document creation tools
+
+    •   Analytical Tools
+        Perform calculations, generate reports, 
+            and analyze datasets for decision-making.
+        Business intelligence tools, reporting platforms, 
+            data analytics tools
+
++   Memory:
+    Memory enables an AI agent to retain, retrieve, 
+        and utilize information from previous interactions and 
+    external knowledge sources. 
+    It allows the agent to maintain context, 
+    personalize responses, and improve decision-making over time.
+
+
++   Need of Memory by AI Agents:
+    Many real-world scenarios demand agents to remember and adapt to:
+    *   Keep track of conversations.
+    *   Track progress in multi-step workflows.
+    *   Learn from past feedback and improve.
+    *   To keep the personalization i.e remembering user preferences.
+
++   Types of Memory in AI Agents
+
+    *   Short-Term Memory (STM): 
+        Stores temporary information related to the current 
+            conversation or task. It helps the AI agent maintain context 
+            and generate coherent responses within an active session.
+
+    *   Long-Term Memory (LTM): 
+        Stores persistent knowledge, user preferences, 
+            organizational information, and past interactions. 
+        This enables personalized responses and continuity 
+            across multiple sessions.
+
+    *   Feedback Loops: 
+        Continuously refine the agent's behavior by incorporating 
+            user feedback, execution results, and new information. 
+        This helps improve decision-making, accuracy, 
+            and overall performance over time.
+
+
++   Integration of the Four Capabilities
+
+    These capabilities work together to enable autonomous agent 
+        behavior:
+
+    1. Reasoning analyzes the problem and determines the best approach.
+    2. Planning creates an ordered sequence of tasks to achieve the objective.
+    3. Tool Calling interacts with external systems to retrieve 
+        information or perform actions.
+    4.  Memory preserves context and past knowledge, 
+        allowing the agent to make informed decisions and 
+        provide personalized assistance.
+
+    By combining Reasoning, Planning, Tool Calling, and Memory, 
+        Agentic AI enables cloud-based IT support systems 
+    to autonomously analyze problems, 
+        execute workflows, interact with enterprise tools, 
+        and continuously improve service quality 
+    while reducing operational effort.
+
+
+
+=== m:  [10.2]  Distributed Frameworks: 
+                LangGraph, CrewAI, AutoGen, Semantic Kernel
+
++   Distributed Framework:              
+    They simplify the process of building agents that can reason, 
+        plan, use external tools, maintain memory, 
+        and collaborate with other agents to accomplish complex tasks. 
+    These frameworks provide reusable
+        components, orchestration capabilities, 
+        and integration with cloud 
+            services, allowing developers 
+    to create scalable and production-ready agentic AI systems.
+                
+$   AI Framework :: LangGraph
+
+    https://www.langchain.com/langgraph
+
+    Design agents that reliably handle complex tasks with LangGraph, an agent runtime and low-level orchestration framework.            
+    LangGraph is an open-source, 
+        low-level orchestration framework developed by LangChain 
+        for building stateful, multi-step, and multi-agent AI applications.
+
+>   LangGraph is an open-source framework built on LangChain 
+        that enables developers to create stateful, 
+            graph-based AI agents. 
+    Unlike linear workflows, LangGraph models agent execution 
+        as a graph, allowing branching, looping, 
+            conditional execution, and persistent state management.
+
+    It is particularly useful for applications 
+        requiring iterative reasoning and complex decision-making.
+
+    Key Features of LangGraph:
+        LangGraph provides a graph-based framework for building 
+            stateful AI agents, 
+            enabling complex workflows with 
+                branching, looping, memory, and tool integration. 
+    It is ideal for developing reliable, 
+        multi-step, and production-ready agentic AI applications.
+
+
+
+$   AI Framework :: CrewAI
+
+    https://crewai.com/
+
+    crewAI ist ein Open-Source-Framework für die Multi-Agent-Orchestrierung, 
+        das von João Moura entwickelt wurde. 
+    Dieses auf Python basierende Framework nutzt 
+        die Zusammenarbeit von künstlicher Intelligenz (KI), 
+    indem es autonome KI-Agenten mit Rollenspielen orchestriert, 
+        die als zusammenhängende Einheit oder 
+        „Crew“ zusammenarbeiten, um Aufgaben auszuführen
+
+    CrewAI is a lightweight framework designed to build multi-agent 
+        collaborative systems. 
+    It enables multiple AI agents, 
+        each with specialized roles, 
+        to cooperate on solving complex tasks through coordinated communication.
+    
+>   Advantages:
+        
+    Easy to Build Collaborative AI Systems
+        Simplifies the creation of multi-agent applications 
+            where agents work together toward a common objective.
+
+    Clear Separation of Responsibilities
+        Assigns distinct roles and tasks to individual agents,
+        improving organization and reducing task overlap.
+
+    Rapid Development
+        Provides a lightweight framework with minimal setup, enabling faster prototyping and deployment of AI solutions.
+
+    Supports Scalable Teamwork
+        Easily accommodates additional agents and workflows, 
+        allowing AI systems to scale efficiently as task complexity increases.
+
+
+    
+$   AI Framework :: AutoGen 
+
+    https://microsoft.github.io/autogen/stable//index.html
+    https://liora.io/de/was-ist-autogen
+
+    is an open-source framework developed by Microsoft Research 
+        for building multi-agent AI systems powered 
+        by Large Language Models (LLMs).
+    Instead of relying on a single AI agent to execute tasks linearly, 
+    AutoGen structures complex workflows as a dialogue 
+    between multiple specialized agents.  
+
+>   Key Features:
+    AutoGen is a multi-agent framework that enables 
+        autonomous AI agents to communicate, 
+        collaborate, 
+        and solve complex tasks through structured conversations. 
+    It simplifies the development of intelligent applications by 
+        supporting agent coordination, tool integration, 
+        and human interaction within flexible workflows.
+
+
+$   AI Framework :: Semantic Kernel
+
+    https://learn.microsoft.com/de-de/semantic-kernel/
+
+    Microsoft Semantic Kernel ist ein quelloffenes 
+        Software Development Kit (SDK) und Framework von Microsoft. 
+    Es dient als Middleware zwischen herkömmlichem Programmcode und 
+        großen Sprachmodellen (LLMs).
+
+>   It supports multiple programming languages and cloud AI services.
+
+    AI Orchestration
+        Coordinates interactions between LLMs, prompts, plugins, 
+            and application logic to execute intelligent workflows efficiently.
+
+    Plugin Architecture
+        Supports reusable plugins that connect AI applications 
+            with APIs, databases, cloud services, and custom business functions.
+
+    Memory Management
+        Stores and retrieves contextual information, 
+        enabling AI applications to maintain conversation history 
+        and deliver personalized responses.
+
+    Prompt Templates
+    Provides reusable and parameterized prompts to 
+        ensure consistent, maintainable, and efficient AI interactions.
+
+    Planning Capabilities
+        Breaks complex tasks into smaller executable steps, 
+        enabling multi-step reasoning and workflow automation.
+
+    Cross-Platform SDK
+    Offers SDKs for multiple programming languages and platforms, 
+        simplifying the development and deployment 
+    of AI applications across diverse environments.
+
+
+
+=== m:  [10.3]  Multi-Agent Systems and Orchestration
+=== m:  [10.4]  Autonomous Workflows and Decision Engines
+=== m:  [10.5]  Cloud Deployment of Agentic Systems
+=== m:  [10.6]  Use Cases
+=== m:  [10.7]  Case Studies
 
 .

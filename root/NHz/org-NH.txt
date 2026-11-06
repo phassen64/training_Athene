@@ -1,0 +1,25 @@
+###############################################################################
+--- !org.2026.NH:NewHorizons
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
+
++   Kontakt
+    New Horizons Nürnberg
+    https://www.newhorizons.de/standorte/nuernberg    
+        New Horizons Nürnberg 
+        Königstraße 73
+        90402 Nürnberg
+        D-0911 
+        Tel: 0911-51 77 80 70
+    nuernberg@newhorizons.de
+
++   Schedule 
+    mo 31.08.- mi 16.09.    EXIN Cloud Foundation 
+    do 17.09.- mi 30.09.    GENAIBIZ 
+    do 01.10.- mi 21.10.    ETBIZ 
+    do 22.10.- mi 18.11.    AI+ Cloud Practioner
+
+
++       
