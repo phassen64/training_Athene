@@ -2,7 +2,7 @@
 --- !sem.AICert.Practitioner™   :   summary
 ###############################################################################
 
-    Aktueller Kurs : AICert Practitioner™ 
+    Aktueller Kurs : AICertPractitioner™ 
     
 #   encoding.UTF8:
     !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
@@ -8111,9 +8111,295 @@ $   AI Framework :: Semantic Kernel
 
 
 === m:  [10.3]  Multi-Agent Systems and Orchestration
+
+
++   A Multi-Agent System (MAS) is a collection of intelligent 
+    AI agents that collaborate to solve complex problems that 
+        are difficult for a single agent to handle efficiently. 
+
+    Each agent is designed with a specific role, 
+        expertise, or responsibility and works independently 
+    while communicating and coordinating with other agents to achieve a common objective.
+
+
++   Core Components of MAS
+
+    •   Agents
+        Independent AI entities with specific skills, 
+            knowledge, and goals that perform tasks and make decisions autonomously.
+
+    •   Environment
+        The physical or virtual space where agents operate and interact, 
+        such as factories, roads, or cloud platforms.
+
+    •   Interactions
+        The communication, cooperation, coordination, 
+            or competition among agents to accomplish individual or shared objectives.
+
+    •   Communication Protocols
+        Standardized languages, APIs, or 
+            messaging mechanisms that enable reliable information exchange and coordinated agent behavior.
+
++   Type of Multi-Agent System
+
+    •   Cooperative MAS
+        Agents collaborate, share information, 
+            and coordinate actions to achieve a common objective.
+        Team-based robotics, smart grids, disaster response
+
+    •   Hierarchical MAS
+        Agents are organized in a layered structure where 
+            higher-level agents assign and supervise tasks.
+        Manufacturing systems, workflow automation, 
+            military command systems
+
+    •   Competitive MAS
+        Agents pursue individual goals and compete for 
+            resources or optimal outcomes.
+        Auctions, trading systems, strategic games, 
+            resource allocation
+
+    •   Heterogeneous MAS
+        Agents with different capabilities, 
+            roles, or technologies work together to solve complex problems.
+        Autonomous vehicles, healthcare systems, 
+            smart cities, enterprise AI
+
+
 === m:  [10.4]  Autonomous Workflows and Decision Engines
+
++   Autonomous Workflows automate processes,
+    while decision engine drive intelligent actions.
+
+--- s:  [10.4]  Autonomous Workflows
+
++   Autonomous workflows and decision engines are 
+        key building blocks of modern Agentic AI systems. 
+    Unlike traditional AI applications that only respond 
+        to user queries, 
+        autonomous systems can independently analyze situations, 
+        plan tasks, make decisions, invoke external tools, 
+        monitor results, 
+        and adapt their actions with minimal human intervention. 
+    In cloud environments, 
+        these workflows leverage scalable infrastructure, 
+        AI models, APIs, event-driven architectures, 
+        orchestration frameworks, 
+        and cloud-native services 
+        to automate complex business processes across multiple systems.
+
+
++   Key Components of Autonomous Workflow
+
+    Machine
+    Uses robots, machines, or automated equipment to 
+        perform repetitive and physical tasks with high accuracy 
+        and speed.
+
+
+    Process
+    Standardizes and automates business workflows to reduce 
+        manual intervention, improve consistency, 
+        and increase operational efficiency.
+
+
+    Innovation
+    Encourages the adoption of advanced technologies 
+    such as Artificial Intelligence (AI), 
+    Machine Learning (ML), 
+        Internet of Things (IoT), 
+        and cloud computing to develop smarter automation solutions.
+
+    Autonomous
+    Enables systems to make decisions and execute tasks 
+    independently with minimal or no human intervention 
+    using AI and intelligent algorithms.
+
+
+    Productivity
+    Increases output by reducing processing time, 
+        minimizing errors, 
+        and allowing employees to focus on higher-value activities.
+
+    Repeatability
+    Ensures tasks are executed consistently every time with 
+    the same quality, improving reliability and reducing variability.
+
+    Improvement
+    Continuously monitors performance, 
+    analyzes results, and optimizes workflows for 
+    better efficiency, quality, and business outcomes.
+
+
+--- s:  [10.4]  Decision Engines
+
+
+    A decision engine is the intelligence responsible for 
+        selecting the best action based on available information, 
+        business rules, AI reasoning, and current context. 
+    Instead of executing static workflows, 
+        decision engines dynamically determine the next action.
+
+
++   Key Responsibilities of Decision Engines
+ 
+    Analyze Inputs
+    Collects and analyzes data from multiple sources to 
+        understand the current context.
+
+    Evaluate Conditions
+    Applies business rules and decision logic to assess 
+        conditions before making decisions.
+
+    Select Actions
+    Chooses the most appropriate action based on evaluation 
+    results and predefined policies.
+
+    Prioritize Tasks
+    Determines task priority and execution order for 
+        efficient workflow execution.
+
+    Manage Workflow States
+    Tracks workflow progress, updates execution states, 
+    and manages task transitions.
+    
+    Resolve Conflicts
+    Identifies conflicting conditions and applies rules 
+        to determine the best resolution.
+
+    Trigger External Services
+    Invokes APIs, cloud services, or enterprise applications 
+    to execute required actions.
+
+    Escalate When Necessary
+    Routes complex or exceptional cases to human operators or 
+    higher-level systems when required.
+
+
+
 === m:  [10.5]  Cloud Deployment of Agentic Systems
+
++   Agentic AI systems are intelligent applications that can reason, 
+    plan, make decisions, interact with external tools, 
+        and execute tasks autonomously. 
+        
+    Deploying these systems on the cloud provides scalability, 
+    reliability, security, high availability, 
+    and seamless integration with enterprise applications. 
+    
+    Cloud platforms also offer managed AI services, 
+        serverless computing, orchestration tools, 
+        monitoring, and security controls 
+        that simplify the deployment and management of AI agents.
+
++   Unlike traditional AI applications that only generate 
+    responses,
+    cloud-hosted agentic systems continuously execute workflows, 
+    access APIs, retrieve enterprise knowledge, 
+    collaborate with other agents, 
+    and make autonomous decisions while being monitored and governed throughout their lifecycle.
+
++   Agentic AI Deployment Stack on Cloud Platforms
+
+    *   Agentic AI System: 
+        The top layer represents the intelligent agent 
+            that autonomously plans, reasons, makes decisions, 
+            and executes tasks to achieve user-defined goals.
+
+    *   LLM / Foundation Model: 
+        The foundation model serves as the reasoning engine, 
+            enabling natural language understanding, 
+            content generation, planning, and decision-making.
+
+    *   Memory / Vector Database: 
+        This layer stores conversation history, embeddings, 
+            and domain knowledge, 
+            allowing the agent to retrieve relevant context 
+        for accurate and personalized responses.
+
+    *   Workflow / Orchestration: 
+        Coordinates multi-step workflows, 
+            manages task execution, 
+            and enables collaboration between multiple AI agents and 
+            external tools.
+
+    *   API Management / Actions: 
+        Provides secure integration with enterprise applications, 
+        databases, cloud services, 
+        and third-party APIs, enabling the agent 
+        to perform real-world actions.
+
+    *   Observability: 
+        Monitors system health, performance, 
+            logs, traces, and agent activities 
+            to ensure reliability, troubleshooting, and continuous optimization.
+    
+    *   Security / Governance: 
+        Implements authentication, authorization, 
+        encryption, compliance policies, audit logging, and 
+        responsible AI controls to secure the entire system.
+
+    *   Cloud Components: 
+        Provides the underlying compute, storage, 
+            networking, databases, containers, 
+            and AI services required to deploy and 
+            manage the agentic AI application.
+
+    *   Cloud Platforms (AWS, Azure, and GCP): 
+        Public cloud providers deliver scalable, 
+        highly available, 
+        and managed infrastructure for hosting, 
+        deploying, and operating agentic AI systems in production.
+
++   Comparing Deployment Modelle 
+    •   Amazon Elastic Compute Cloud (EC2)
+    •   Azure Virtual Machines (AZ)
+    •   Google Compute Engine (Google CE)
+
+
 === m:  [10.6]  Use Cases
+
+
++   Title: Autonomous Business Process Automation Using AI Agents
++   Title: Intelligent Multi-Step Problem Solving Using AI Agents
+
+
 === m:  [10.7]  Case Studies
+
+
+Case Study 1:
+    Title: Transforming Customer Relationship Management with 
+        "Salesforce Agentforce"
+    https://www.salesforce.com/de/agentforce/
+
++   Salesforce Agentforce is Salesforce’s suite 
+    of autonomous AI agents designed to execute 
+    end-to-end tasks across sales, service, marketing, 
+    and operational workflows within the Salesforce ecosystem
+
+
+
+
+Case Study 2:
+    Title: Accelerating Enterprise Knowledge Work with 
+        "Adept's Multi-Agent Research System"
+
+    https://www.adept.ai/blog/adept-agents/
+
+$   ADEPT (Agentic Discovery and Exploration Platform for Tools) 
+        is an open-source, modular multi-agent 
+    scientific framework developed by 
+    the Pacific Northwest National Laboratory (PNNL)
+
+*   Target Industry: 
+    Enterprise Productivity, Research, Consulting, 
+    Finance, Healthcare, Legal, Technology
+
+
+Reference:
+* https://www.gartner.com/en/articles/multiagent-systems
+* https://airia.com/blog/multi-agent-ai-systems-enterprise-architecture/
+
+
 
 .

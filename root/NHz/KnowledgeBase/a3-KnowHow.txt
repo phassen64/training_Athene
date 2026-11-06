@@ -132,6 +132,11 @@ $   Fine Tuning Hyperparameter vs Parameter
         Saved into Configuration files 
             (e.g., config.json, training scripts, YAML configs).
 
+$   API 
+    An API (Application Programming Interface) is a set of rules 
+        and protocols that allows different software applications 
+        to communicate and exchange data with one another
+
 $   GPU    
     A GPU (Graphics Processing Unit) is a specialized 
         electronic circuit designed to rapidly manipulate and 
