@@ -96,4 +96,75 @@ $   Reinforcement Learning from Human Feedback =: 'RLHF'
     It guides models to produce outputs that are helpful, 
         honest, and safe
 
-        
+$   NCCL 
+    If you meant NCCL (often informally referred to as "NCC"), 
+        it stands for the "NVIDIA Collective Communications Library". 
+    It is the foundation for multi-GPU and multi-node communication 
+    in modern deep learning and 
+        high-performance computing (HPC) workflows.
+
+$   Hyperparameter
+    These parameters dictate convergence, 
+        training stability, memory consumption, 
+        and generalization capabilities during pre-training or 
+    fine-tuning (e.g., LoRA, QLoRA, full parameter tuning).
+
+$   Fine Tuning Hyperparameter vs Parameter
+
+    In machine learning and deep learning, the fundamental difference 
+        comes down to what learns the value: 
+    parameters are learned directly by the algorithm 
+        from the training data, 
+    while hyperparameters are explicitly set by you
+        before training begins to control how that learning happens.
+
+    Parameter:      
+        -   Updated automatically by Optimizer
+        The internal values, weights, and 
+            biases that define what the model actually "knows."   
+        saved into:
+            The final model checkpoint files (e.g., .bin, .safetensors).
+            
+    Hyperparameter: 
+        -   Configured by User
+        The configuration settings chosen by the practitioner to 
+            control the training process.
+        Saved into Configuration files 
+            (e.g., config.json, training scripts, YAML configs).
+
+$   API 
+    An API (Application Programming Interface) is a set of rules 
+        and protocols that allows different software applications 
+        to communicate and exchange data with one another
+
+$   GPU    
+    A GPU (Graphics Processing Unit) is a specialized 
+        electronic circuit designed to rapidly manipulate and 
+        alter memory to accelerate parallel compute tasks. 
+    While originally created for rendering 2D/3D images, 
+        modern GPUs serve as the computational backbone for 
+        gaming, artificial intelligence (AI/ML), 
+        scientific simulations, and video processing.
+
+$   AI Evaluation
+    AI Evaluation refers to the structured 
+        methodology, metrics, datasets, and frameworks used to 
+        measure the capabilities, safety, performance, efficiency, and alignment of Artificial Intelligence systems.
+
+$   AI Alignment 
+    ... is the subfield of artificial intelligence 
+    research dedicated to ensuring that AI systems reliably 
+        pursue outcomes intended by their human designers, 
+        without producing unexpected or harmful behavior.
+    Outer Alignment: 
+        The challenge of designing an objective or loss 
+            function that correctly captures human intent 
+                and values without missing key edge cases 
+                or contextual subtleties.   
+    Inner Alignment: 
+        The challenge of ensuring that during optimization, 
+            the AI actually adopts the intended objective 
+                internally, 
+        rather than developing unintended internal 
+            sub-goals (mesa-optimizers) that perform 
+            well during training but fail upon deployment.
