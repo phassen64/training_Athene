@@ -168,3 +168,10 @@ $   AI Alignment
         rather than developing unintended internal 
             sub-goals (mesa-optimizers) that perform 
             well during training but fail upon deployment.
+
+
++   AI Model Training example 
+    https://www.youtube.com/watch?v=fCUkvL0mbxI
+
++   AI Model Training KnowHow
+    https://www.youtube.com/watch?v=edIHPoWgIKU
