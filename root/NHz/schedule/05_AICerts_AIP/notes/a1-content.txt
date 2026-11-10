@@ -132,8 +132,8 @@
 
     m:  [12.1]  Problem Identification and Solution Planning
     m:  [12.2]  AI Model Development and Cloud Deployment
-    m:  [12.3]  Deliverables
-
+    m:  [12.3]  Evaluation and Project Presentation
+    m:  [12.4]  Deliverables
 
 ===============================================================================
 Module 1: Cloud Fundamentals
@@ -2709,7 +2709,7 @@ and derive actionable insights from data-driven systems.
     *   Integration with analytics, AI, 
             and machine learning systems.
 
-+   BanknSolution
++   Bank Solution
     
     •   events  by:UPI | card | transfer         
     •   ingestion{"aufnehmen"}        
@@ -3257,17 +3257,13 @@ $   Lightweight Device
     
     
 +   Types of Inference{"Folgerung/Rückschluss"}:
+
     Cloud platforms support different types of inference 
         depending on business requirements.
-    Figure 4.17: Types of Inference
+
     The figure represents types of inference classified in 
         two categories:
-    *   Real-Time Inference: 
-        Predictions are generated immediately after receiving input data.
-        Examples:
-            o Fraud detection in online banking
-            o Product recommendations on e-commerce websites
-            o Chatbots and virtual assistants
+
     *   Batch Inference: 
         Predictions are generated for large datasets at scheduled intervals.
         Examples:
@@ -3275,7 +3271,23 @@ $   Lightweight Device
             o Customer segmentation analysis
             o Inventory demand prediction
 
-+   Table 7: Key Benefits of Cloud-Based Inference
+    *   Real-Time Inference: 
+        Predictions are generated immediately after receiving input data.
+        Examples:
+            o Fraud detection in online banking
+            o Product recommendations on e-commerce websites
+            o Chatbots and virtual assistants
+        $   Real-Time Inference (auch Online Inference) 
+            ist der Prozess, 
+            bei dem ein trainiertes 
+        KI- oder Machine-Learning-Modell eingehende Daten 
+        sofort verarbeitet und eine Vorhersage zurückliefert, 
+        während die Information noch aktuell ist.
+
+    >   Real-Time vs Batch Inference video
+        https://www.youtube.com/watch?v=h5IKjg--ziw
+
++   Key Benefits of Cloud-Based Inference
 
     Low Latency
     Delivers fast prediction responses, 
@@ -3375,6 +3387,7 @@ $   Lightweight Device
         providing a standardized runtime environment.
 
 +   Basic Components of Docker
+
     Docker works through a few core components that help 
         create, manage, and run containers efficiently. 
 
@@ -3441,8 +3454,8 @@ $   Lightweight Device
         and the trademark is held by the Cloud Native Computing Foundation.
 
 +   Note: 
-    While Docker manages individual containers, 
-        Kubernetes manages large numbers of 
+    While <Docker> manages individual containers, 
+        <Kubernetes> manages large numbers of 
             containers running across multiple servers.
 
 +   Kubernetes  Key features are:
@@ -3464,7 +3477,6 @@ $   Lightweight Device
 
     *   Rolling Updates and Rollbacks: 
         Updates applications smoothly and reverts changes if needed.
-
 
 +   How Kubernetes works?
     Kubernetes works by managing containerized 
@@ -4921,6 +4933,25 @@ Module 6: Cloud with Generative AI and LLM Models
     *   Containerized deployment environments
     *   API gateways
 
+$   REST 
+    https://de.wikipedia.org/wiki/Representational_State_Transfer
+    Representational State Transfer (abgekürzt REST) ist ein 
+        Paradigma für die Softwarearchitektur von 
+    verteilten Systemen, insbesondere für Webservices. 
+    REST ist eine Abstraktion der Struktur und des Verhaltens 
+        des World Wide Web. 
+    REST hat das Ziel, einen Architekturstil zu schaffen, 
+    der den Anforderungen des modernen Web besser genügt. 
+    Dabei unterscheidet sich REST vor allem in der Forderung 
+        nach einer einheitlichen Schnittstelle 
+        (siehe Abschnitt Prinzipien) von anderen Architekturstilen.
+    Die Bezeichnung „Representational State Transfer“ soll 
+        den Übergang vom aktuellen Zustand zum nächsten Zustand (state) 
+        einer Applikation verbildlichen. 
+    Dieser Zustandsübergang erfolgt durch den Transfer der Daten, 
+        die den nächsten Zustand repräsentieren.[1]
+
+
 +   Caching & Load Balancing
     
     Caching Functions:
@@ -4984,11 +5015,13 @@ Module 6: Cloud with Generative AI and LLM Models
     ~ is a technique 
         that simulates low-precision computations during training 
         to produce a highly accurate quantized model.
+    https://machinelearning.apple.com/research/compute-optimal
 
 +   Post-Training Quantization (PTQ): 
     ~ is a technique that converts a fully trained model 
         to lower precision without retraining, 
         using a small calibration dataset.
+    https://docs.pytorch.org/TensorRT/ts/ptq.html
 
 
 --- s:  [6.2].Batching:
@@ -5712,6 +5745,8 @@ $   DevOps
     *   Model Evaluation: 
         Assess model accuracy and performance using 
         validation metrics to select the best model for deployment.
+        
+    dict :: en.assess == de.{beurteilen,bewerten}
 
     *   Deployment: 
         Deploy the validated model to production environments 
@@ -5874,7 +5909,6 @@ $   DevOps
             models for deployment across multiple environments.
         • REST API deployment
         • Docker container support
-
         • Cloud platform deployment
 
         Consistent, multi-platform deployment
@@ -6126,11 +6160,29 @@ $   DevOps
 
     •   F1-score
         Provides a balanced measure of precision and recall.
-        https://en.wikipedia.org/wiki/F-score
+        https://en.wikipedia.org/wiki/F-score        
+        https://en.wikipedia.org/wiki/F-test
+        -   Menge M Elements 
+        Teil-Menge T : alle True aus M "relevant elements"
+        Teil-Menge F : alle False aus M 
+        Sample ST    : ausgewählte Elemente aus T 
+        Sample SF    : ausgewählte Elemente aus F 
+        Beispiel:   
+            Z =  Menge aller natürlichen Zahlen (N=1..10)
+            TP  = Menge der Primzahlen in Z = {1,3,5,7}              
+                    welche vorhergesagt wurden "predictive"
+            FP  = der Rest = { 2,4,6,8,10 }
+            Sample ST = 1,3         sind Primzahlen aus N
+            Sample SF = 2,4         die anderen Zahlen 
+        Def: 
+            Precision P     P       = ST/SF {1,3}/{2,4}
+            Recall R        ST/TP   = ST / {1,3,5,7} 
+        F1Score=2TP/(2TP+FP+FN)
 
-    •   ROC-AUC
+    •   ROC-AUC    
         Evaluates the model's ability to distinguish between 
             different classes.
+        https://en.wikipedia.org/wiki/Receiver_operating_characteristic
 
     •   Mean Absolute Error (MAE)
         Measures the average magnitude of prediction errors 
@@ -6141,6 +6193,24 @@ $   DevOps
         Measures the standard deviation of prediction errors, 
             giving higher weight to larger errors.
         https://en.wikipedia.org/wiki/Root_mean_square_deviation
+
+    •   Mean Absolute Percentage Error (MAPE) is a 
+        common evaluation metric used in AI and 
+            machine learning to measure the accuracy of regression models 
+        and forecasting systems. 
+        It expresses average prediction error as a percentage 
+        of actual values, 
+            making model accuracy easy to communicate to non-technical stakeholders.
+https://en.wikipedia.org/wiki/Mean_absolute_percentage_error#:~:text=It%20usually%20expresses%20the%20accuracy%20as%20a,can%20lead%20to%20highly%20inflated%20MAPE%20scores.
+
+    •   R²-Score
+        Der R²-Score (Bestimmtheitsmaß) ist eine Leistungskennzahl 
+        in der KI und im Machine Learning, 
+        die bewertet, wie gut ein Regressionsmodell die Daten erklärt. 
+        Er zeigt an, welcher Anteil der Varianz der Zielvariablen 
+        durch das Modell vorhergesagt werden kann.
+        https://en.wikipedia.org/wiki/Coefficient_of_determination
+        
 
 
 === m:  [7.4]   Orchestration Tools: 
@@ -8781,6 +8851,7 @@ This module covers:
         https://www.youtube.com/watch?v=qQvC6FWlc-E
 
     •   SHAP (SHapley Additive exPlanations): 
+        https://shap.readthedocs.io/en/latest/   
         Quantifies the contribution of each feature to a prediction using 
         Shapley values.
         is a game-theoretic approach used to explain the output 
@@ -8791,14 +8862,17 @@ This module covers:
         (a Shapley value) for a specific prediction.
         
     *   Explainable Boosting Machines (EBMs): 
+        https://interpret.ml/docs/ebm.html
         Interpretable machine learning models that provide 
         high accuracy with transparent decision-making.
 
     *   XAI for Deep Learning: 
+        https://www.youtube.com/watch?v=njgx-erZljI
         Uses techniques such as saliency maps, attention mechanisms, 
         and Grad-CAM to explain deep neural network predictions.
 
     *   XAI Frameworks: 
+        https://www.enz.ai/de/glossary/xai-framework
         Provide libraries and tools for generating explanations, 
             evaluating model behavior, 
             and improving transparency across AI systems.
@@ -9229,4 +9303,309 @@ Microsoft Azure AI implemented a comprehensive security and
     and PCI DSS through Azure's compliance offerings.
 
 https://learn.microsoft.com/en-us/azure/security/fundamentals/ai-security-best-practices
+
+
+
+===============================================================================
+Module 12: Capstone Project
+===============================================================================
+
+The Capstone Project is the culminating module of 
+    the AI + Cloud Practitioner course, 
+    providing learners with the opportunity to integrate and apply 
+    the knowledge and skills acquired throughout the program. 
+
+In this module, 
+    learners design and implement an end-to-end AI solution that addresses 
+        a real-world business or industry challenge using cloud technologies. 
+ 
+ The project covers the complete AI lifecycle, 
+    including problem identification, 
+    data preparation, 
+    model development, 
+    cloud deployment, 
+    evaluation, 
+    and presentation. 
+    
+By working through a practical scenario,
+    learners gain hands-on experience in combining AI capabilities 
+    with cloud services to build scalable, 
+        secure, and cost-effective solutions.
+
+This module covers:
+
+*   Problem Identification and Solution Planning focuses on defining the    business problem, preparing datasets, 
+    and designing the cloud-based solution architecture.
+
+*   AI Model Development and Cloud Deployment guides learners 
+    through building, 
+        training, validating, and deploying AI models 
+        while implementing cloud security and resource optimization practices.
+
+*   Evaluation and Project Presentation 
+    emphasizes assessing model performance, 
+    evaluating the scalability and business impact of the solution, 
+    and effectively communicating the project 
+    through technical documentation and presentations.
+
+=== m:  [12.1]  Problem Identification and Solution Planning
+
+
+This phase lays the foundation for the capstone project 
+    by helping learners identify a meaningful business problem, 
+    prepare the required data, 
+    and design an AI solution that leverages cloud technologies. 
+
+A well-planned project ensures that the AI solution 
+    addresses a genuine{"echt|authentisch"} business need, 
+    uses quality data, and is built 
+    on a scalable and secure cloud architecture.
+
+Phase 1: 
+    Selecting a Real-World Business Problem and Defining Project Objectives: 
+            Identify the business problem, 
+            understand stakeholder requirements, 
+            and define clear project objectives and scope.
+Phase 2: 
+    Collecting, Preparing, and Storing Datasets on the Cloud: 
+        Collect relevant datasets, 
+        preprocess and validate the data, 
+        and securely store it in cloud storage for AI development.
+
+Phase 3: 
+    Designing the AI Solution Architecture and 
+        Selecting Cloud Services: 
+    Design the AI solution architecture, 
+        choose appropriate cloud services, 
+        and define implementation metrics to prepare for AI model development.
+
+
+=== m:  [12.2]  AI Model Development and Cloud Deployment
+
+    The workflow illustrates the systematic process of 
+        building, 
+        deploying, 
+        and managing an AI solution in the cloud. 
+    
+    It is organized into two major phases, 
+        guiding learners from AI model development 
+        to secure cloud deployment, 
+                monitoring, 
+                and cost optimization.
+
+--- s:  [12.2].Phase 1
+        Building, Training, Validating, and Testing the AI Model
+
+    The first step is to develop an AI model using the 
+        prepared dataset. 
+    Depending on the business problem, 
+        an appropriate machine learning or deep learning algorithm 
+            is selected and trained using cloud AI platforms 
+            such as 
+        Amazon SageMaker, 
+        Azure Machine Learning, or 
+        Google Vertex AI. 
+    
+    During training, 
+        the model learns patterns from historical data 
+        to make predictions or classifications. 
+    The model is then validated using separate validation data 
+        to fine-tune its performance and prevent overfitting. 
+    Finally, 
+        the model is tested on unseen data to evaluate 
+            its real-world performance using suitable evaluation metrics.
+
++   Key Points
+
+    A.  Model Development
+    *   Select an appropriate AI or machine learning algorithm.
+    *   Configure the cloud AI development environment.
+    *   Split the dataset into training, validation, and testing datasets.
+    *   Define model parameters and training configuration.
+
+    B.  Model Training
+    *   Train the AI model using prepared datasets.
+    *   Optimize model parameters to improve performance.
+    *   Use cloud-based compute resources (CPU/GPU) for efficient training.
+    *   Track training progress and experiment results.
+
+    C. Model Validation
+    *   Evaluate model performance using validation data.
+    *   Tune hyperparameters to improve accuracy.
+    *   Detect overfitting or underfitting.
+    *   Compare multiple model versions to identify the best-performing model.
+
+    D. Model Testing
+    *   Test the final model using unseen test data.
+    *   Measure model performance using evaluation metrics such as 
+        Accuracy, Precision, Recall, F1-Score, or RMSE.
+    *   Verify model reliability before deployment.
+    *   Document model performance and limitations.
+
+
+--- s:  [12.2].Phase 2
+
+    Deploying the AI Solution Using Cloud AI 
+        and Application Services: 
+    Deploy the AI model as a cloud service, 
+        integrate it with applications, 
+        implement security, 
+        monitor performance, 
+        and optimize cloud resource utilization and costs.
+
++   Key Points
+
+    A.  Model Deployment
+    *   Register and package the trained AI model.
+    *   Deploy the model using managed cloud AI services.
+    *   Create REST APIs or web endpoints for prediction requests.
+    *   Enable real-time or batch inference.
+
+    B.  Cloud Application Integration
+    *   Connect the AI model with web or mobile applications.
+    *   Integrate the model with cloud databases and storage services.
+    *   Enable data flow between applications and the deployed model.
+    *   Support business workflows using cloud services.
+    
+    C.  Scalability and Availability
+    *   Configure auto-scaling for varying workloads.
+    *   Ensure high availability using managed cloud infrastructure.
+    *   Optimize response time and system performance.
+    *   Support multiple concurrent users.
+
+
+=== m:  [12.3]  Evaluation and Project Presentation
+
+The final phase of the capstone project focuses on 
+    evaluating the performance of the AI model, 
+    assessing the effectiveness of the cloud-based solution, 
+    and presenting the completed project. 
+ 
+The trained AI model is evaluated using appropriate 
+    performance metrics to ensure it meets 
+    the defined business objectives and delivers reliable results. 
+
+The cloud deployment is assessed for scalability, 
+    reliability, 
+    security, 
+    and cost efficiency to verify that 
+    it can support real-world workloads. 
+    
+Finally, learners present their complete solution, 
+    including the business problem, 
+    AI model, 
+    cloud architecture, 
+    deployment workflow, 
+    evaluation results, and recommendations for future improvements. 
+
+--- s:  [12.3].Phase1 
+        Evaluating AI Model Performance and Cloud Solution Effectiveness
+
+*   This phase demonstrates the successful application of AI 
+        and cloud technologies to solve a real-world business challenge.
+
+    >   A. AI Model Performance Evaluation
+    *   Evaluate the model using appropriate performance metrics.
+    *   Measure prediction 
+            accuracy, 
+            precision, 
+            recall, 
+            F1-score, or regression metrics 
+        where applicable.
+    *   Compare actual and predicted results
+    *   Identify strengths and limitations of the AI model.
+    *   Verify that the model meets the defined project objectives.
+
+    >   B. Cloud Solution Effectiveness
+    *   Evaluate deployment performance and application responsiveness.
+    *   Assess resource utilization and infrastructure efficiency.
+    *   Verify secure access and data protection mechanisms.
+    *   Measure service availability and operational reliability.
+    *   Compare results with Project Objectives - 
+        Review cloud monitoring reports and system logs.
+
+--- s:  [12.3].Phase 2
+        Assessing Scalability, Reliability, and Business Impact
+
+    The deployed AI solution should be assessed to determine 
+        whether it can support future business growth 
+        while maintaining consistent performance. 
+    In addition to technical evaluation, 
+        the solution's overall business value and 
+        organizational impact should also be measured.
+
+>   A.  Scalability Assessment
+    *   Evaluate the system's ability to handle increasing workloads.
+    *   Verify auto-scaling and cloud resource allocation.
+    *   Assess performance under multiple concurrent users.
+    *   Ensure future expansion is supported.
+
+>   B.  Reliability Assessment
+    *   Measure system availability and uptime.
+    *   Verify consistent AI predictions during continuous operation.
+    *   Evaluate fault tolerance and recovery mechanisms.
+    *   Review monitoring alerts and operational logs.
+
+>   C.  Business Impact Assessment
+    *   Measure improvements in efficiency and productivity.
+    *   Evaluate reduction in operational costs and processing time.
+    *   Assess decision-making improvements through AI insights.
+    *   Measure customer satisfaction and business value.
+    *   Compare achieved outcomes with the original project objectives.
+
+
+=== m:  [12.4]  Deliverables
+
+
+The capstone project deliverables for the AI + Cloud Practitioner 
+    course are designed to showcase learners' ability 
+to apply AI and cloud computing concepts in a practical, 
+    real-world scenario. 
+
+Each deliverable represents a key stage of the AI project lifecycle, 
+    from solution planning and implementation to 
+        cloud deployment, 
+        evaluation, 
+        and presentation, 
+        demonstrating the knowledge and 
+            skills gained throughout the course.
+
+Deliverables for the project are:
+
+*   Project Proposal and Solution Design: 
+        A document describing the problem statement, 
+            business objectives, 
+            selected cloud platform, 
+            AI approach, 
+            solution architecture, 
+        and expected outcomes.
+
+*   AI Model and Cloud Implementation Documentation: 
+        A trained AI model with dataset details, 
+            preprocessing steps, 
+        model evaluation, 
+        deployment process, 
+        cloud services used, 
+        and security implementation.
+
+*   Cloud Deployment and Performance Report: 
+        A report covering model performance, 
+            cloud resource utilization, 
+            scalability, monitoring, 
+            cost estimation, 
+        and optimization recommendations.
+
+*   Final Presentation and Demonstration: 
+        A presentation showcasing the AI solution, 
+            cloud architecture, 
+            deployment workflow, 
+            project outcomes, 
+            live demonstration, 
+    and future enhancement roadmap.
+
+
+
+
 .
+
+
