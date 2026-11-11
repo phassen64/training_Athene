@@ -7,45 +7,116 @@
 #   encoding.UTF8:
     !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ≈+÷×Ø∂¡¿¢£¤¥¦§¨©«¬®°±²³¶·¹º»¼½¾ÄÖÜäöüß♔♞αβγδλμπΩ
 
+
+https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
+
++   AirNb
+    Mitarbeiterzahl	8200
+    Umsatz	12,2 Mrd. USD 
+    Brian Chesky (CEO)    
+    https://de.wikipedia.org/wiki/Airbnb
+    https://www.airbnb.de/
+
 +   Amazon
-    https://de.wikipedia.org/wiki/Amazon
     Gründung	5. Juli 1994
     Sitz	Seattle, Washington USA
     Leitung	Jeff Bezos
+    https://de.wikipedia.org/wiki/Jeff_Bezos    * founder 
     Mitarbeiterzahl	1.576.000 (2025)[2]
     Umsatz	716,9 Mrd. US-Dollar 
+    https://de.wikipedia.org/wiki/Amazon
+    https://www.amazon.com/
 
-+   Microsoft 
-    Sitz 	Redmond, Washington USA
-    https://de.wikipedia.org/wiki/Microsoft
-    Leitung   Satya Nadella CEO
-    Mitarbeiterzahl	228.000
-    Umsatz	281,7 Mrd. USD
++   Apple 
+    Mitarbeiterzahl	167.000 (VZÄ 2026)[1]
+    Umsatz	479 Mrd. USD (2026)[1]
+    Sitz    Cupertino   
+    https://de.wikipedia.org/wiki/Apple
+    https://de.wikipedia.org/wiki/Steve_Jobs    * founder 
+    https://de.wikipedia.org/wiki/Steve_Wozniak * founder 
+    https://de.wikipedia.org/wiki/Ron_Wayne     * founder
+    https://www.apple.com/
 
 +   Google LLC 
-    https://de.wikipedia.org/wiki/Google_LLC
     Sitz	Mountain View, Kalifornien USA 
     Leitung	Sundar Pichai (CEO)
     Mitarbeiterzahl	183.323
     Umsatz	350 Mrd. USD (2024)
+    founder:
+    https://de.wikipedia.org/wiki/Larry_Page    * founder
+    https://de.wikipedia.org/wiki/Sergey_Brin   * founder
+    https://de.wikipedia.org/wiki/Google_LLC
+    https://about.google/
+
++   Microsoft 
+    Sitz 	Redmond, Washington USA
+    Umsatz	281,7 Mrd. USD
+    Leitung   Satya Nadella CEO
+    Mitarbeiterzahl	228.000
+    https://de.wikipedia.org/wiki/Bill_Gates    * founder 
+    https://de.wikipedia.org/wiki/Microsoft
+    https://www.microsoft.com/de-de/
+
++   Netflix
+    Mitarbeiterzahl	16.000   
+    Umsatz	45,2 Mrd. USD    
+    https://de.wikipedia.org/wiki/Netflix
+    https://www.netflix.com/
+
+
++   NVidia
+    Mitarbeiterzahl	42.000 (2026)[2]
+    Umsatz 	216 Mrd. US-Dollar (GJ 2025/26)[2]
+    https://de.wikipedia.org/wiki/Jen-Hsun_Huang    * CEO
+    https://de.wikipedia.org/wiki/Nvidia
+    https://www.nvidia.com/de-de/
+    
++   SAP 
+    https://de.wikipedia.org/wiki/SAP
+    Mitarbeiterzahl	111.397 
+    Umsatz	36,8 Mrd. Euro (2025)[1]
+    founder:
+    https://de.wikipedia.org/wiki/Claus_Wellenreuther * founder
+    CEO:
+    https://de.wikipedia.org/wiki/Christian_Klein_(Manager) * CEO
+    https://www.sap.com/germany/index.html
+
++   Siemens
+    Mitarbeiterzahl	318.000 (2025)[2][3]
+    Umsatz	78,9 Mrd. Euro (2025)[2]
+    https://de.wikipedia.org/wiki/Siemens
+    https://de.wikipedia.org/wiki/Roland_Busch * CEO
+    https://www.siemens.com/en-us/
+    
++   Telekom 
+    https://de.wikipedia.org/wiki/Deutsche_Telekom
+    Mitarbeiterzahl	198.079 (31. Dez. 2025)[2]
+    Umsatz	119,1 Mrd. Euro (2025)
+    https://de.wikipedia.org/wiki/Timotheus_H%C3%B6ttges * CEO
+    https://www.telekom.com/de
+
++   Tesla 
+    https://de.wikipedia.org/wiki/Tesla,_Inc.
+    Sitz: Austin, Texas
+    Mitarbeiterzahl	125.665 (31.12.2024)[1]
+    Umsatz 97,690 Mrd. US-Dollar (2024)[1]
+    https://www.tesla.com/
     
 +   VW
     https://de.wikipedia.org/wiki/Volkswagen_AG    
     CEO Oliver Blume
     Mitarbeiterzahl	662.900 
     Umsatz	321,9 Mrd
+    https://de.wikipedia.org/wiki/Oliver_Blume_(Manager) * CEO
+    https://www.volkswagen-group.com/de
 
-+   Telekom 
-    https://de.wikipedia.org/wiki/Deutsche_Telekom
-    Mitarbeiterzahl	198.079 (31. Dez. 2025)[2]
-    Umsatz	119,1 Mrd. Euro (2025)
-    
-+   SAP 
-    https://de.wikipedia.org/wiki/SAP
-    Mitarbeiterzahl	111.397 
-    Umsatz	36,8 Mrd. Euro (2025)[1]
-    
-    
++   Walmarkt 
+    https://de.wikipedia.org/wiki/Walmart
+    Mitarbeiterzahl	2.100.000 (GJ 2025/26)[2]   
+    Umsatz: 713,163 Mrd. USD (GJ 2025/26)[2]
+    founder:
+    https://en.wikipedia.org/wiki/Sam_Walton * founder
+    https://www.walmart.com/
     
     
 

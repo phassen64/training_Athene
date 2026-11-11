@@ -1,0 +1,87 @@
+###############################################################################
+--- !NHz.url 
+###############################################################################
+
+#   encoding.UTF8:
+    !@€ƒ„…†‡ˆ‰Š‹ŒŽ +‘“”•—™š›œžŸ+¡¢£¤¥¦§¨©«¬®°±²³µ¶·¹º»¼½¾¿ÄÖÜÑ×ØÞßäæçîðñôö÷üýþÿ
+
+
+===============================================================================
+m:  AI Agents
+===============================================================================
+     
++   GitHub Copilot
+    https://github.com/features/copilot
+
+
++   Gemini Code Assistant        
+    https://codeassist.google/   
+
+
+===============================================================================
+m:  Cloud
+===============================================================================
+
+
+$>  PaaS 
+    
+    Heroku      
+    https://www.heroku.com/
+
+$>  SSH
+    https://de.wikipedia.org/wiki/Secure_Shell
+
+===============================================================================
+m:  Website
+===============================================================================
+
+$>  Website and App Styling    
+
+    Caffeine 
+    https://caffeine.ai/
+
+$>  Image Generation Tools
+
+    FLUX.1 
+    https://flux1ai.com/
+
+$>  Video-Generation Tools
+
+    Veo 
+    https://aistudio.google.com/models/veo
+
+$>  Audio-Generation Tools 
+    https://join.elevenlabs.io/studio
+    https://murf.ai/
+
+$>  Music generator 
+    https://musicgen.com/
+    https://suno.com/de
+    https://www.udio.com/
+
+
+===============================================================================
+m:  Virtual Reality
+===============================================================================
+
++   AirPano     *   Virtual Travelling
+    https://www.airpano.com
+
+$>  VR Glasses
+
+$<  Google Cardboard 
+    https://arvr.google.com/cardboard/
+        
+$<  Meta Quest 3S of :Meta Quest
+    https://www.meta.com/de/en/
+    
+$<  VITURE Pro 2 XR/AR    of :VITURE 
+    https://www.viture.com
+
+
+===============================================================================
+m:  wikipedia 
+===============================================================================
+
+
+https://de.wikipedia.org/wiki/Cloud_Computing

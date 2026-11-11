@@ -140,7 +140,21 @@ Module 1: Cloud Fundamentals
 ===============================================================================
 
 
-url:    https://de.wikipedia.org/wiki/Cloud_Computing
+
++   Cloud Fundamentals introduces the core concepts, 
+        technologies, 
+        and services that enable organizations to deliver 
+        computing resources over the internet. 
+    
+    It provides an understanding of cloud computing models, service offerings, 
+        security practices, resource management, 
+        and cost optimization strategies used in modern cloud environments. 
+        Cloud computing allows businesses to access scalable 
+        and on-demand infrastructure, platforms, 
+        and software without investing heavily in physical hardware.
+
+    https://de.wikipedia.org/wiki/Cloud_Computing
+
 
 ### !date:<2026-10-20>:Di
 
@@ -163,7 +177,7 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
 +   Benefits and Real-World Applications (Earth Cloud Computing)
     +   Data Storage 
     +   e-commerce 
-    +   Collaboration 
+    +   Collaboration{"Zusammenarbeit|Mitarbeit"} 
     +   big data analytics 
     +   software developement 
     +   business applications
@@ -193,9 +207,12 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
     •   maximum flexibility
 
     •   Examples: 
-            AWS EC2 
-            Azure Virtual Machines 
-            Google Compute Engine 
+        AWS EC2 
+            https://aws.amazon.com/pm/ec2/
+        Azure Virtual Machines 
+            https://azure.microsoft.com/en-us/products/virtual-machines
+        Google Compute Engine
+            https://cloud.google.com/products/compute            
 
 
 +   Platform as a Services (PaaS)
@@ -206,9 +223,12 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
     •   user:   "Now i can focus on developement and deployment"
 
     •   Examples: 
-            Azure App Services 
-            Google App Engine 
-            Heroku 
+        Azure App Services
+            https://azure.microsoft.com/en-us/products/app-service
+        Google App Engine
+            https://cloud.google.com/appengine
+        Heroku 
+            https://www.heroku.com/
 
 +   Software as a Services (SaaS)
 
@@ -225,9 +245,12 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
                 and security
                 
     •   Examples: 
-            Google Workspace 
-            Microsoft 365
-            Salesforce
+        Google Workspace 
+            https://workspace.google.com/
+        Microsoft 365
+            https://m365.cloud.microsoft/
+        Salesforce
+            https://www.salesforce.com/
                 
 
 +   Serverless Computing and Functions as a Service 
@@ -239,9 +262,12 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
         auto scaling
     
     •   Examples: 
-            AWS Lambda
-            Azure Functions 
-            Google Cloud Functions
+        AWS Lambda
+            https://en.wikipedia.org/wiki/AWS_Lambda
+        Azure Functions 
+            https://azure.microsoft.com/en-us/products/functions
+        Google Cloud Functions
+            https://cloud.google.com/functions
 
 +   Comparing Cloud Comparing Models 
     
@@ -309,6 +335,7 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
         +   Serverless Computing
             ~   execute code only when triggered by events -
                 example: processing upload images 
+            https://www.ibm.com/de-de/think/topics/serverless
 
 +   Storage Services 
 
@@ -346,14 +373,18 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
         data replication
                 
     •   types of ~
-        +   relational databases store structured data in tables 
+        +   Relational databases store structured data in tables 
+            https://en.wikipedia.org/wiki/Relational_database       * RDB       
         +   NoSql databases support flexible models for 
                 structured and unstructured data
+            https://en.wikipedia.org/wiki/NoSQL
+            https://en.wikipedia.org/wiki/Amazon_DynamoDB   
         +   data warehouses enable large-scale analytics 
         +   in-memory databases deliver extremely fast data 
             access for high-performance applications
             
-+   Load Balancing Services 
++   Load Balancing Services     
+    https://de.wikipedia.org/wiki/Lastverteilung_(Informatik)
     
     ~   split incomming requests into
             servers | VMs | Containers
@@ -439,11 +470,16 @@ url:    https://de.wikipedia.org/wiki/Identit%C3%A4tsmanagement
 +   Common Compliance Frameworks 
     •   ISO 27001
     •   GPDR        general data protection
+        https://gdpr.eu/    * DSGVO
     •   HIPAA       health ...
+        https://www.proofpoint.com/de/threat-reference/hipaa-compliance
     •   PCI DSS     
+        https://de.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard
     •   SOC 2 
+        https://en.wikipedia.org/wiki/System_and_organization_controls
     •   NIST Cybersecurity Framwork
-
+        https://www.nist.gov/cyberframework
+    
 +   Conclusion of IAM 
     ~   controls access to cloud resources 
     ~   protects systems and data from evolving threats 
@@ -462,11 +498,14 @@ url:    https://de.wikipedia.org/wiki/Identit%C3%A4tsmanagement
 +   Cloud Provider use a consumption based model    
 
 +   key characteristics of Cloud Bills
-    •   pay-as-you-go pricing 
+    •   pay-as-you-go pricing
     •   usage-based metering 
     •   flexible pricing models 
     •   detailed dashboards for monitoring 
         costs across service,teams and projects
+
+    https://en.wikipedia.org/wiki/Pay_what_you_want
+    https://en.wikipedia.org/wiki/Pay_what_you_can
         
 +   common cloud pricing models 
     •   pay-as-you-go
@@ -483,6 +522,9 @@ $   fault vs error vs failure
         stages in a cause-and-effect chain 
     within systems, software, and engineering:
 
+    https://stackoverflow.com/questions/6323049/understanding-what-fault-error-and-failure-mean
+    
+    
     •   fault 
         definition:    
             The underlying cause, defect, 
@@ -512,6 +554,16 @@ $   fault vs error vs failure
         example:
             The application crashes or produces an 
                 incorrect final total on screen.
+
+$   error vs defect vs bug bs fault vs failure
+    https://www.geeksforgeeks.org/software-testing/software-testing-bug-vs-defect-vs-error-vs-fault-vs-failure/
+
+    •   bug 
+        A bug is an informal term commonly used for a software defect or fault.
+
+    •   defect 
+        A defect is an imperfection in a software work product that may 
+            cause it to behave differently from its specified or expected behavior.
         
 +   core cloud costs 
     •   compute
@@ -557,6 +609,7 @@ $   FinOps
         and business teams to collaborate 
         on data-driven spending decisions 
         to maximize cloud business value.
+    https://www.ibm.com/de-de/think/topics/finops
      
 +   FinOps Lifecycle
     •   inform - for costs visibility
@@ -610,14 +663,31 @@ $   resource utilization rate
     
 === m:  [1.5]   Multi-cloud Concepts
 
-+   CSP
+    https://de.wikipedia.org/wiki/Multicloud
+
++   Was ist ein Hyperscaler ?
+    https://www.redhat.com/de/topics/cloud-computing/what-is-a-hyperscaler
+    Es gibt zwar keinen allgemeingültigen Standard dafür, 
+        was als Hyperscaler einzustufen ist, 
+        aber große Cloud-Anbieter wie Amazon Web Services, 
+        Google Cloud, Microsoft Azure, 
+        IBM Cloud und 
+        Alibaba Cloud passen in diese Kategorie.
+
++   CSP Hyperscaler
     •   1   AWS
     •   2   MS Azure 
     •   3   Google Cloud 
+    •   4   IBM Cloud 
+    •   5   Alibaba Cloud 
+    •   -   IONOS
     
     url:    https://aws.amazon.com/de/
     url:    https://azure.microsoft.com/de-de
     url:    https://cloud.google.com
+    url:    https://www.ibm.com/de-de/products/cloud
+    url:    https://www.alibabacloud.com/
+    url:    https://cloud.ionos.com/
     
 +   Importance of Cloud Providers 
     
@@ -662,6 +732,7 @@ $   Emerging Technologies
             •   manage
     
 =   AWS 
+    https://aws.amazon.com/de/
 
     Services:
         Computing, Storage, Networking, Databases, 
@@ -691,6 +762,8 @@ $   Emerging Technologies
         
 
 =   Microsoft Azure (AZ)
+    https://azure.microsoft.com/de-de
+
 
     Services:   
         Computing, 
@@ -716,6 +789,7 @@ $   Emerging Technologies
 
 
 =   Google Cloud Platform (GCP)
+    https://cloud.google.com
 
     supports:
         application developement
@@ -740,6 +814,7 @@ $   Emerging Technologies
         Gemini models -> Generative AI 
         Cloud Vision AI -> Image Analysis 
         Cloud Natural Language AI -> Text Understanding
+
         
 +   Comparison of Major Cloud AI Platforms (aws|Azure|GCP)...
     
@@ -766,6 +841,7 @@ $   Emerging Technologies
 === m:  [1.6]   Infrastructure as Code (IaC) Basics with Terraform
 
 +   What is IaC ?
+    https://en.wikipedia.org/wiki/Infrastructure_as_code
 
     01  IAC manages infrastructure thorough code, 
         not manual    processes            
@@ -821,6 +897,18 @@ $   Emerging Technologies
     ... delivers consistent environments
     ... encourages reusable modules 
     ... simplifies disaster recovery by recreating infrastructure from code
+
++   Notfallwiederherstellung     
+    https://de.wikipedia.org/wiki/Disaster_Recovery
+    Der englische Begriff Disaster Recovery 
+        (im Deutschen auch Katastrophenwiederherstellung oder 
+        Notfallwiederherstellung genannt) bezeichnet Maßnahmen, 
+    die nach einem Ausfall von Komponenten in der Informationstechnik 
+        eingeleitet werden. 
+    Dazu zählt sowohl die Datenwiederherstellung als 
+        auch das Ersetzen nicht mehr benutzbarer 
+        Infrastruktur, Hardware und Organisation.
+    disaster = Katastrophe | Notfall
     
 +   Approaches of IaC 
     1.  declarative 
@@ -835,8 +923,8 @@ $   Emerging Technologies
         •   powershell scripts
         focus : "how to achieve the desired state"
 
-
 $   Was ist Infrastructure as Code (IaC)?
+    https://en.wikipedia.org/wiki/Infrastructure_as_code
 
     •   Deklarativer Ansatz: 
         Sie beschreiben im Code den gewünschten Endzustand 
@@ -852,6 +940,20 @@ $   Was ist Infrastructure as Code (IaC)?
         Infrastruktur-Code wird wie Anwendungscode in 
             Git gespeichert, nachvollziehbar geändert und per Rev
         
++   Tools for IaC 
+    •   Ansible     * Python 
+        https://www.redhat.com/en/ansible-collaborative/   
+    •   Chef        * Ruby
+        https://www.chef.io/
+    •   Puppet      *   C++ && Ruby
+        https://www.puppet.com/
+    •   Pullumi     * Go 
+        https://www.pulumi.com/
+    •   Salt        * Python 
+        https://saltproject.io/
+    •   Terraform   *   Go
+        https://developer.hashicorp.com/terraform
+
     
 $   Terraform
 
@@ -869,6 +971,7 @@ $   Kubernet YAML
 
 
 $   Ansible 
+    https://www.redhat.com/en/ansible-collaborative/   
     Ansible is an open-source Infrastructure as Code (IaC) and 
         configuration management tool 
         that automates cloud provisioning, 
@@ -879,7 +982,6 @@ $   Ansible
         (which excel at provisioning raw cloud resources), 
     Ansible shines in configuration management, 
         application deployment, and continuous orchestration.
-    https://www.puppet.com/
 
 &   en:orchestrate = de:instrumentieren
     
@@ -893,11 +995,10 @@ $   Ansible
     key concepts
     •   uses cfg files with .tf extension to define an infrastructure
     
-    
-      
+          
 === m:  [1.7]   Use Cases
 
-+   Why cloud use cases matter{"Belang"} ?
++   Why cloud use cases matter{"von belang"} ?
 
 +   Scenario: 
     unpredictable traffic skipes for e-commerce 
@@ -1011,6 +1112,7 @@ url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
 +   Types of AI 
     
     •   Artificial Narrow Intelligence (ANI): 
+        https://en.wikipedia.org/wiki/Weak_artificial_intelligence
         
         ~   refers to AI systems that are  designed and trained 
                 to perform a specific task or a narrow range of tasks. 
@@ -1025,6 +1127,7 @@ url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
             ChatGPT, Siri, Alexa, Netflix
             
     •   Artificial General Intelligence (AGI): 
+        https://en.wikipedia.org/wiki/Artificial_general_intelligence
     
         ~ refers to machines that can perform any 
                 intellectual task that a human can do. 
@@ -1039,7 +1142,9 @@ url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
             the next milestone in AI developement
             
     •   Artificial Super Intelligence (ASI): 
-        
+        https://en.wikipedia.org/wiki/Superintelligence
+        https://en.wikipedia.org/wiki/AlphaZero
+
         ~   is an advanced form of AI that 
             
         >   surpasses human intelligence in all aspects 
@@ -2020,31 +2125,39 @@ and derive actionable insights from data-driven systems.
     Databases
         Store structured data in rows and columns
         Transaction processing and applications
+        https://en.wikipedia.org/wiki/Database
 
-    Data Warehouses
+    Data Warehouses DWH or enterprise data warehouse (EDW)
         Store processed and structured data for analytics
-        Business intelligence and reporting
-
+        Business intelligence and reporting.
+        https://en.wikipedia.org/wiki/Data_warehouse
+        
     Data Lakes
         Store raw structured, 
             semi-structured, and unstructured data
             Big data analytics and AI workloads
+        https://en.wikipedia.org/wiki/Data_lake
 
     Cloud Storage
         Provides scalable storage over the internet
         Backup, archival, and cloud applications
+        https://cloud.google.com/learn/what-is-cloud-storage
 
     Object Storage
         Stores data as objects with metadata
         Images, videos, logs, and large files
+        https://en.wikipedia.org/wiki/Object_storage
 
-    File Storage
+    File Storage    {"de.Datenspeicher"}
         Organizes data in files and folders
         Shared documents and enterprise files
+        https://www.ibm.com/de-de/think/topics/file-storage
 
     Block Storage
         Stores data in fixed-size blocks
         High-performance databases and virtual machines
+        https://aws.amazon.com/what-is/block-storage/
+        https://aws.amazon.com/ebs/
 
 
 --- s:  [3.1].Data Processing Pipelines 
@@ -2089,8 +2202,11 @@ and derive actionable insights from data-driven systems.
     data integration and data processing pipelines.
 
 
-+   ETL stands for 
++   ETL :: Extract, Transform, Load
+    https://en.wikipedia.org/wiki/Extract,_transform,_load
+
         Extract, Transform, Load. 
+        https://aws.amazon.com/de/what-is/etl/
 
     It is a data integration process used to 
         collect data from multiple sources, 
@@ -2103,7 +2219,11 @@ and derive actionable insights from data-driven systems.
         clean, accurate, and ready for analysis.
 
 
-+   ELT Processing
++   ELT :: Extract, Load, Transform
+    https://en.wikipedia.org/wiki/Extract,_load,_transform
+    https://en.wikipedia.org/wiki/Amazon_S3
+
+    * modern and reverse to ETL
 
     The image illustrates the ELT (Extract, Load, Transform) process 
     a modern data integration workflow widely used in 
@@ -2407,6 +2527,8 @@ and derive actionable insights from data-driven systems.
 
 --- s:  [3.3].Feature Store
 
+    https://en.wikipedia.org/wiki/Feature_store
+
     A Feature Store is a centralized platform that 
         manages, stores, and serves machine learning features 
         for both training and inference. 
@@ -2448,22 +2570,22 @@ and derive actionable insights from data-driven systems.
     *   Feast: 
         Open-source feature store for managing and serving 
             ML features.
-        https://feast.dev/
+        https://feast.dev/               *   feature store
         Feast is an open source feature store that delivers 
             structured data to AI and LLM applications 
             at high scale during training and inference
 
     *   Tecton: 
         Enterprise feature platform for machine learning workflows.
-        https://docs.tecton.ai/
+        https://docs.tecton.ai/         *   feature store
 
     *   Databricks Feature Store: 
         Feature management solution integrated with the Databricks platform.
-        https://www.databricks.com/
+        https://www.databricks.com/         *   feature store
 
     *   SageMaker Feature Store: 
         AWS-managed feature store for machine learning applications.
-        https://aws.amazon.com/de/sagemaker
+        https://aws.amazon.com/de/sagemaker  *   feature store
 
 
 +   Comparison
