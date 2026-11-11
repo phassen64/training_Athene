@@ -163,7 +163,7 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
 +   Benefits and Real-World Applications (Earth Cloud Computing)
     +   Data Storage 
     +   e-commerce 
-    +   Collaboration 
+    +   Collaboration{"Zusammenarbeit|Mitarbeit"} 
     +   big data analytics 
     +   software developement 
     +   business applications
@@ -207,8 +207,9 @@ url:    https://de.wikipedia.org/wiki/Cloud_Computing
 
     •   Examples: 
             Azure App Services 
-            Google App Engine 
+            Google App Engine             
             Heroku 
+            https://www.heroku.com/
 
 +   Software as a Services (SaaS)
 

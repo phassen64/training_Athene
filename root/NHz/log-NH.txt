@@ -929,12 +929,56 @@ sem.AICert.Practitioner™   :   summary
     +   ein anderer Suchprompt nach Stellen  
     +   auf welche Stellen wie bewerben   
 
-
 ### !date:<2026-11-09>:Mo 
+
++   chapter 11:AgentAI 
+
+
+### !date:<2026-11-10>:Di 
+
++   chapter 12:Capstone Project
 
 +   email to 
     nazia.kayani@nhacademy.de
 
 +   Mazen Nehme 
     35/50 Questions
+
+
+### !date:<2026-11-11>:Mi 
+
++   pwsh
+
+    pwsh$>  $d='D:\repository\training\root\NHz\KnowledgeBase'
+    pwsh$>  Set-Location $d
+    pwsh$>  _prompt
+    pwsh$>  Select-String -Path '*.txt' -Pattern 'Heroku' -CaseSensitive
     
+    *   alias  Select-String=:sls
+    pwsh$>  Select-String -Path '*.txt' -Pattern 'Herok?' -CaseSensitive
+  
+>>> xpr:pwsh:<2026-11-11>:Mi 
+
+#   Search for a string in a file
+    $>  Select-String 
+            -Path "C:\logs\app.log" 
+            -Pattern "Error"
+
+#   Case-sensitive search
+    $>  Select-String 
+            -Path "C:\logs\app.log" 
+            -Pattern "ERROR" 
+            -CaseSensitive
+
+#   Simple literal match (disables Regex special characters)
+    $>  Select-String 
+        -Path "C:\logs\app.log" 
+        -Pattern "user.name" -SimpleMatch
+
+#   Search across all .txt files recursively
+    $>  Get-ChildItem 
+        -Path "C:\logs" -Filter *.txt 
+            -Recurse | Select-String -Pattern "Failed"
+    
+<<< xpr:pwsh 
+
