@@ -1,5 +1,5 @@
 <#   
-    url Searcher
+    url Searcher        [2026-11-11]
    
     description:    
         Searches all Files with extension 
@@ -8,7 +8,9 @@
             'https://' 
 
     usage :
-    $   .\job_urlSearch.ps1
+    $>  $d='D:\repository\training\root\NHz\KnowledgeBase'
+    $>  Set-Location $d
+    $>  .\job_urlSearch.ps1
 
     Working with a temp file at localDir
         $pTmp = "tmp.log"
@@ -93,6 +95,9 @@ foreach ( $sLine in $aFileLine ) {
 
 #   sort and unique
 $aMatchLine = $aMatchLine | Sort-Object | Select-Object -Unique
+
+#   sample with alle matched lines
+Write-Output "### created urlSearch [$sDtm] " > $pUrl
 
 #   sample with alle matched lines
 $iLine=0
