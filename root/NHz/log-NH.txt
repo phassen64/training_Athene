@@ -494,8 +494,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1t47VeLnYvZjZHnulQum44iOyAI8jvYGJ76HL1mMz
 
 ### 17:35
 
-+   Die DNS Namen ändern sich ständig,
-        nicht aber die SSH keys.
     
 +   Instant-Namen & user
     aws i1-a61x-Demo    key:MyDemoKeyPair2.ppk      "ec2-user"
@@ -982,3 +980,29 @@ sem.AICert.Practitioner™   :   summary
     
 <<< xpr:pwsh 
 
+
+>>> xpr:CSP.amazon.s3 
+
++   url: 
+    https://aws.amazon.com/de/console/
+   
+
++   Browser FireFox 
+
++   credentials root user 
+        eml:pluto@e-mail.de
+        pwd:
+
+    url:    https://aws.amazon.com/console/
+    usr:    "phassen64"
+    pwd:    <!surf> =:      '!Silversurfer2022'
+    eml:    <@pluto>    =:  'pluto64@e-mail.de'
+
+
+<<< xpr:CSP.amazon.s3
+
++   Vera Algasinger
+    Coaching in Zukunft
+
++   Themen 
+    AI & DevOps & Security 
