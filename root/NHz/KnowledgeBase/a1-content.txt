@@ -469,6 +469,9 @@ url:    https://de.wikipedia.org/wiki/Identit%C3%A4tsmanagement
 
 +   Common Compliance Frameworks 
     •   ISO 27001
+        https://de.wikipedia.org/wiki/ISO/IEC_27001
+        https://de.wikipedia.org/wiki/DIN-Norm
+        https://www.iso.org/standard/27001
     •   GPDR        general data protection
         https://gdpr.eu/    * DSGVO
     •   HIPAA       health ...
@@ -1234,13 +1237,50 @@ url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
     •   Optimization Algorithms: 
         Adjust parameters (e.g., using gradient descent) to minimize error. 
 
+
++   Optimization Algorithms: 
     
+    •   ADM     Alternating Direction Method (ADM / ADMM)
+        The alternating direction method of multipliers (ADMM) is an 
+            algorithm that solves convex optimization problems 
+            by breaking them into smaller pieces, 
+        each of which are then easier to handle. 
+        It has recently found wide application in a number of areas.     
+        https://stanford.edu/~boyd/admm.html    
+    
+    •   Adam    Adaptive Moment Estimation    
+            Adam (kurz für Adaptive Moment Estimation) ist 
+                ein beliebter Optimierungsalgorithmus 
+                im Bereich des maschinellen Lernens und Deep Learnings. 
+                Er wird eingesetzt, 
+                um die Gewichte von neuronalen Netzen schnell und stabil zu trainieren.    
+        https://www.ultralytics.com/glossary/adam-optimizer
+    
+    •   Gradient Descent 
+        Gradient descent is one of the most important algorithms in 
+            all of machine learning and deep learning. 
+        It is an extremely powerful optimization algorithm that 
+            can train linear regression, logistic regression, 
+        and neural network models. 
+        If you are getting into machine learning, 
+        it is therefore imperative to understand the gradient 
+        descent algorithm in-depth.   
+        https://www.datacamp.com/tutorial/tutorial-gradient-descent
+    
+    •   RMSprop (Root Mean Square Propagation) 
+        is an adaptive learning rate optimization algorithm used 
+        to train deep neural networks. 
+        Introduced by Geoffrey Hinton, 
+        it fixes a major flaw in older methods like 
+        AdaGrad by scaling the learning rate for each parameter individually.
+        https://d2l.ai/chapter_optimization/rmsprop.html
+        
+        
 +   Neural Networks (ANNs) process information in 
     a structured, layer-by-layer manner inspired 
         by the human brain.
     
-    
-    
+   
 +   Key Characteristics of Deep Learning  (DL)  
 
     •   Uses multiple hidden layers for advanced feature extraction.  
@@ -1477,6 +1517,36 @@ url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
             information using techniques such as 
             Principal Component Analysis (PCA).
 
++   Uses of Linear Algebra in AI:
+    https://de.wikipedia.org/wiki/Lineare_Algebra
+        Die lineare Algebra (auch Vektoralgebra) ist ein Teilgebiet 
+        der Mathematik, das sich mit Vektorräumen beschäftigt. 
+        Ähnlich wie in anderen Teilgebieten der Mathematik, 
+            sind die strukturerhaltenden Abbildungen, 
+            welche in der linearen Algebra die linearen Abbildungen sind, 
+            von besonderem Interesse. 
+        Diese können durch Matrizen repräsentiert werden. 
+        Die lineare Algebra schließt insbesondere auch die Betrachtung 
+        von linearen Gleichungssystemen mit ein.
+
+    •   Linear Regression 
+        {"Verteilte Punkte einer Gerade zuordnen"}
+        https://de.wikipedia.org/wiki/Lineare_Regression
+    
+    •   Logistic Regression 
+        {"Diskrete Werte (0/1) einer Kurve zuordnen"}
+        https://de.wikipedia.org/wiki/Logistische_Regression
+    
+    •   Support Vector Machine 
+        {"n Mengen jeweils n Geraden zurodnen"}
+        https://de.wikipedia.org/wiki/Support_Vector_Machine
+    
+    •   PCA
+        Principal component analysis 
+        {"Menge in x/y Achse transformieren"}
+        https://en.wikipedia.org/wiki/Principal_component_analysis
+    
+
 +   Key Components of Linear Algebra
 
     •   Scalars
@@ -1572,7 +1642,26 @@ $   Scalar vs Number
             in dem auch Vektoren oder Richtungen eine 
                 Rolle spielen (z. B. als Skalierungsfaktor 5*v).
 
++   Tensor Flow
+    TensorFlow makes it easy to create ML models 
+        that can run in any environment. 
+    Learn how to use the intuitive APIs through interactive code samples.    
+    TensorFlow is a software library for machine learning and artificial intelligence. 
+        It can be used across a range of tasks, 
+        but is used mainly for training and inference of neural networks.[    
+    https://www.tensorflow.org/
+    https://en.wikipedia.org/wiki/TensorFlow
+    It was developed by the Google Brain team for Google's 
+        internal use in research and production.
 
++   PyTorch
+    https://pytorch.org/
+    https://en.wikipedia.org/wiki/PyTorch
+    PyTorch is an open-source deep learning library, 
+    originally developed by Meta Platforms and currently developed 
+    with support from the Linux Foundation.
+    PyTorch utilises the tensor as a fundamental data type, similarly to NumPy.
+        
 +   Probability
     Probability measures the likelihood of an event occurring. 
         AI systems often deal with uncertainty and 
@@ -1620,6 +1709,36 @@ $   Scalar vs Number
         machine learning algorithms, minimizing errors, 
         and understanding how changes in inputs affect outputs.
 
+    https://en.wikipedia.org/wiki/Calculus
+    Calculus is the branch of mathematics that studies continuous change, 
+        and is the principal precursor of modern mathematical analysis.
+    Originally called infinitesimal calculus or the calculus of infinitesimals, 
+    it has two major branches, 
+    differential calculus and integral calculus.
+
+
+    Die zwei Hauptzweige
+
+    •   Differentialrechnung (Differential Calculus):
+        •   Untersucht Änderungsraten und Steigungen in 
+            einem exakten Moment (Ableitung / Derivative).
+        •   Beispiele: 
+            1)  Wie schnell beschleunigt ein Auto genau in einer 
+                    bestimmten Sekunde? 
+            2)  Wo hat eine Kurve ihren höchsten oder tiefsten Punkt?
+
+    •   Integralrechnung (Integral Calculus):
+        •   Untersucht die Akkumulation (das Aufsummieren) 
+            von winzigen Teilen, um Gesamtwerte zu berechnen.
+        •   Beispiel: 
+            1) Wie groß ist die Fläche unter einer geschwungenen Linie oder 
+            b) das Volumen eines unregelmäßigen Körpers?
+
+    https://en.wikipedia.org/wiki/Leibniz's_notation
+    
+    https://de.wikipedia.org/wiki/Nichteuklidische_Geometrie  
+    https://de.wikipedia.org/wiki/Carl_Friedrich_Gau%C3%9F
+    
 +   Key Uses of Calculus in AI:
 
     Calculus is essential in AI as it underpins various applications 
@@ -1665,6 +1784,7 @@ $   In AI and machine learning,
 --- s:  [2.6].Data Preprocessing
 
 +   Data Preprocessing
+    https://www.geeksforgeeks.org/data-science/data-preprocessing-in-data-mining/
     ~ is the process of cleaning and transforming raw data into 
         a structured format suitable for analysis 
         and machine learning algorithms. 
@@ -1706,6 +1826,7 @@ $   In AI and machine learning,
             performance.
 
 --- s:  [2.6].Data Exploration (Exploratory Data Analysis - EDA)
+    https://en.wikipedia.org/wiki/Exploratory_data_analysis
 
     Data exploration{"erforschen"} is the process of examining datasets 
         to understand their characteristics, discover patterns, 
@@ -1754,6 +1875,9 @@ $   In AI and machine learning,
 --- s:  [2.6].Data Visualization
 
 +   Data Visualization
+    https://en.wikipedia.org/wiki/Data_and_information_visualization
+    https://en.wikipedia.org/wiki/List_of_graphical_methods
+
     ~ is the graphical representation of data using 
         charts, graphs, and plots. 
     It helps analysts and decision-makers understand
@@ -3016,6 +3140,7 @@ Case Study 1:
 
     Uber
     https://de.wikipedia.org/wiki/Uber_(Unternehmen)
+    https://www.uber.com/de/en/
 
     As Uber's global operations expanded, 
         the company faced challenges in managing rapidly growing volumes 
@@ -3035,6 +3160,7 @@ Case Study 2:
 
     Blue Scope Steel 
     https://de.wikipedia.org/wiki/BlueScope_Steel
+    https://www.bluescopesteel.com.au/
 
 
     BlueScope Steel produziert Stahl verschiedener Sorten. 
