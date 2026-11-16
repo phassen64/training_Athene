@@ -1,0 +1,13 @@
+---	key.vCAST
+
++	vectorCAST.encryptCode
+	+	VectorCast 2020: 	"st%j#cTYXc5LWcK"
+	+	VectorCast 2021: 	"8BpQuomeGDUYL72"
+	+	VectorCast 2022: 	"xWCRD6cuSYkBaYm"
+	+	VectorCast 2023:	"jGp5T5ZQtCAVknh"
+	+	VectorCast 2024:	"4ERFAYjF1Lwr4zw"
+	+	VectorCast 2025:	"yewWv1qY76VE7iL"
+	+	VectorCast 2026:	"JXFL9AZpat2S4LJ"   * 2026-11-09
+
+	
+
