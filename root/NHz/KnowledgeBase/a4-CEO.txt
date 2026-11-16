@@ -15,11 +15,12 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     Umsatz	12,2 Mrd. USD 
     Brian Chesky (CEO)    
     https://de.wikipedia.org/wiki/Airbnb
+    https://de.wikipedia.org/wiki/Brian_Chesky
     https://www.airbnb.de/
 
 +   Amazon
     Gründung	5. Juli 1994
-    Sitz	Seattle, Washington USA
+    Sitz:   Seattle, Washington USA
     Leitung	Jeff Bezos
     https://de.wikipedia.org/wiki/Jeff_Bezos    * founder 
     Mitarbeiterzahl	1.576.000 (2025)[2]
@@ -30,15 +31,22 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
 +   Apple 
     Mitarbeiterzahl	167.000 (VZÄ 2026)[1]
     Umsatz	479 Mrd. USD (2026)[1]
-    Sitz    Cupertino   
+    Sitz:   Cupertino, Kalifornien, USA
     https://de.wikipedia.org/wiki/Apple
     https://de.wikipedia.org/wiki/Steve_Jobs    * founder 
     https://de.wikipedia.org/wiki/Steve_Wozniak * founder 
     https://de.wikipedia.org/wiki/Ron_Wayne     * founder
     https://www.apple.com/
 
++   BlueScope Steel 
+    Sitz:   Melbourne,  Australien
+    Mitarbeiterzahl	17.063
+    Umsatz	9,3 Mrd
+    https://de.wikipedia.org/wiki/BlueScope_Steel
+    https://www.bluescopesteel.com.au/
+
 +   Google LLC 
-    Sitz	Mountain View, Kalifornien USA 
+    Sitz:   Mountain View, Kalifornien USA 
     Leitung	Sundar Pichai (CEO)
     Mitarbeiterzahl	183.323
     Umsatz	350 Mrd. USD (2024)
@@ -49,22 +57,23 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     https://about.google/
 
 +   Microsoft 
-    Sitz 	Redmond, Washington USA
+    Sitz:   Redmond, Washington USA
+    Mitarbeiterzahl	228.000
     Umsatz	281,7 Mrd. USD
     Leitung   Satya Nadella CEO
-    Mitarbeiterzahl	228.000
     https://de.wikipedia.org/wiki/Bill_Gates    * founder 
     https://de.wikipedia.org/wiki/Microsoft
     https://www.microsoft.com/de-de/
 
 +   Netflix
+    Sitz:   Los Gatos, Kalifornien, USA
     Mitarbeiterzahl	16.000   
     Umsatz	45,2 Mrd. USD    
     https://de.wikipedia.org/wiki/Netflix
     https://www.netflix.com/
 
-
 +   NVidia
+    Sitz:   Santa Clara, Kalifornien,  USA
     Mitarbeiterzahl	42.000 (2026)[2]
     Umsatz 	216 Mrd. US-Dollar (GJ 2025/26)[2]
     https://de.wikipedia.org/wiki/Jen-Hsun_Huang    * CEO
@@ -72,16 +81,18 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     https://www.nvidia.com/de-de/
     
 +   SAP 
-    https://de.wikipedia.org/wiki/SAP
+	Sitz:   Walldorf,  Deutschland
     Mitarbeiterzahl	111.397 
     Umsatz	36,8 Mrd. Euro (2025)[1]
     founder:
     https://de.wikipedia.org/wiki/Claus_Wellenreuther * founder
     CEO:
+    https://de.wikipedia.org/wiki/SAP
     https://de.wikipedia.org/wiki/Christian_Klein_(Manager) * CEO
     https://www.sap.com/germany/index.html
 
 +   Siemens
+    Sitz:   Berlin und München, Deutschland
     Mitarbeiterzahl	318.000 (2025)[2][3]
     Umsatz	78,9 Mrd. Euro (2025)[2]
     https://de.wikipedia.org/wiki/Siemens
@@ -89,28 +100,40 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     https://www.siemens.com/en-us/
     
 +   Telekom 
-    https://de.wikipedia.org/wiki/Deutsche_Telekom
+    Sitz:   Bonn,  Deutschland
     Mitarbeiterzahl	198.079 (31. Dez. 2025)[2]
     Umsatz	119,1 Mrd. Euro (2025)
+    https://de.wikipedia.org/wiki/Deutsche_Telekom
     https://de.wikipedia.org/wiki/Timotheus_H%C3%B6ttges * CEO
     https://www.telekom.com/de
 
 +   Tesla 
-    https://de.wikipedia.org/wiki/Tesla,_Inc.
     Sitz: Austin, Texas
     Mitarbeiterzahl	125.665 (31.12.2024)[1]
     Umsatz 97,690 Mrd. US-Dollar (2024)[1]
+    https://de.wikipedia.org/wiki/Tesla,_Inc.
     https://www.tesla.com/
     
++   Uber 
+    Sitz:   San Francisco, USA
+    Mitarbeiterzahl	31.100
+    Umsatz	44 Mrd. US-Dollar (2024)[2]
+    Leitung	Dara Khosrowshahi (CEO)
+    https://de.wikipedia.org/wiki/Uber_(Unternehmen)
+    https://de.wikipedia.org/wiki/Dara_Khosrowshahi
+    https://www.uber.com/de/en/
+
 +   VW
-    https://de.wikipedia.org/wiki/Volkswagen_AG    
+    Sitz:   Wolfsburg, Deutschland
     CEO Oliver Blume
     Mitarbeiterzahl	662.900 
     Umsatz	321,9 Mrd
+    https://de.wikipedia.org/wiki/Volkswagen_AG    
     https://de.wikipedia.org/wiki/Oliver_Blume_(Manager) * CEO
     https://www.volkswagen-group.com/de
 
 +   Walmarkt 
+    Sitz:   Bentonville, Arkansas, USA
     https://de.wikipedia.org/wiki/Walmart
     Mitarbeiterzahl	2.100.000 (GJ 2025/26)[2]   
     Umsatz: 713,163 Mrd. USD (GJ 2025/26)[2]
