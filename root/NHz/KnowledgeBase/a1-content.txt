@@ -1522,6 +1522,23 @@ url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
     •   Feature selection.
     •   Data preprocessing utilities.
 
++   PyCharm
+    https://www.jetbrains.com/de-de/pycharm/
+    Die professionelle Python-IDE für Sie und Ihre Agents-
+    Veröffentlichen Sie verlässlichen Code für 
+        Web-, Daten- und ML-Projekte.
+    PyCharm analysiert Ihren Python-Code und löst Verwendungen, 
+        Typen und Abhängigkeiten im gesamten Projekt auf – auch 
+    in virtuellen Umgebungen. 
+    So wissen Sie jederzeit genau, 
+    was Ihr Code tut und wo Änderungen zu Fehlern führen würden.
+    Die mitgelieferten Skills des integrierten MCP-Servers 
+        von PyCharm machen diese Präzision auch für Agents nutzbar. 
+    Die IDE verbindet Agents automatisch mit einem 
+        laufenden Jupyter-Kernel. 
+    So erhalten sie präzise, zielgenaue Ergebnisse.
+    
+
 ### !date:<2026-10-28>:Mi 
 
 === m:  [2.5]   Mathematics for AI
@@ -3515,6 +3532,8 @@ This module covers:
         Amazon SageMaker Data and AI Governance: 
             Bietet Sicherheits-, Verwaltungs- und Kontrollfunktionen für Daten und KI-Modelle im Unternehmensmaßstab.
 
+    •   Intro:
+        https://www.youtube.com/watch?v=mzkHGEyAPEw
    
 +   Figure 4.3: Key Features of Amazon SageMaker
 
@@ -3580,6 +3599,49 @@ This module covers:
         including Jupyter Notebooks, Visual Studio Code, 
         or your favorite Python IDE.
 
+
++   Project Jupyter 
+    https://en.wikipedia.org/wiki/Project_Jupyter
+    https://jupyter.org/
+    
+    Project Jupyter (pronounced "Jupiter") is a project 
+        to develop open-source software, 
+        open standards, 
+        and services 
+    for interactive computing across multiple programming languages.
+
+    •   Jupyter Notebook: 
+        The Classic Notebook Interface
+        The Jupyter Notebook is the original web application 
+            for creating and sharing computational documents. 
+        A Jupyter Notebook document is a JSON file, 
+            following a versioned schema, 
+            usually ending with the ".ipynb" extension. 
+
+    •   Jupyter Lab: 
+        A Next-Generation Notebook Interface
+        JupyterLab is the latest web-based interactive development environment 
+            for notebooks, code, and data. 
+        Its flexible interface allows users to configure and 
+            arrange workflows in 
+        data science, scientific computing, 
+        computational journalism, and machine learning. 
+
++   Developer Studio
+    •   Visual Code 
+        https://code.visualstudio.com/
+        https://de.wikipedia.org/wiki/Visual_Studio_Code
+        Code with precision, collaborate with or orchestrate 
+            a team of agents, 
+        and continue your work wherever you are.
+        Visual Studio Code (kurz VS Code) ist ein kostenloser 
+            Quelltext-Editor von Microsoft. 
+        Visual Studio Code ist plattformübergreifend 
+            für die Betriebssysteme Windows, macOS und Linux verfügbar.
+        https://code.visualstudio.com/insiders
+        Get the latest changes daily. 
+            Help shape what’s next in VS Code by trying new features 
+            and fixes the moment they land.
 
 === v:  [4.3]   Google Gortex Azure Machine Learning
 
@@ -3707,8 +3769,7 @@ $   Lightweight Device
         der 3.5-Klasse, das speziell für hochvolumige Subagenten-Aufgaben,  
     Dokumentenverarbeitung und Anwendungen mit Fokus auf 
         niedrige Latenz optimiert wurde.
-    
-    
+        
 +   Types of Inference{"Folgerung/Rückschluss"}:
 
     Cloud platforms support different types of inference 
@@ -3833,6 +3894,8 @@ $   Lightweight Device
 
 +   Docker 
     url:    https://www.docker.com/
+    url:    https://hub.docker.com/
+
     ~ is an open-source containerization platform that allows 
         developers to build, package, distribute, 
         and run applications in containers. 

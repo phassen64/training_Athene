@@ -1006,3 +1006,82 @@ sem.AICert.Practitioner™   :   summary
 
 +   Themen 
     AI & DevOps & Security 
+
+
+### !date:<2026-11-17>:Di 
+
+>>> xpr:docker Tutor <2026-11-17>
+
+    https://www.youtube.com/watch?v=LBG51Gygg7A
+
++   Docker erlauben für den Benutzer ohne sudo 
+    $   sudo usermod -aG docker $USER 
+
++   welche Container laufen bei mir ?
+    $   docker ps
+
++   docker hub 
+    https://hub.docker.com/
+    The world’s largest container registry. 
+        Official images, verified publishers, and content you can trust.
+    <<< Container download 
+    <<< nur welche von Docker verwende !
+
++   Beispiel 
+    nginx
+    <<< ist ein Webserver
+
++   Container laufen lassen 
+    $   docker run -p 80:80 nginx
+
++   Container stop
+    $   docker stop
+
++   Beispiel 
+    pihole 
+
+Anm:
+    'http' und nicht 'https' verwenden bei docker
+
++   Container download/upload mit yaml Datei
+    $   docker compose up -d 
+
++   graphisch Docker 
+    portainer.io 
+
++   Nachfolger von Docker ist 'podman' 
+    https://podman.io/
+
++   Docker update 
+    $   docker compose pull 
+    
+    
+<<< xpr:docker.
+
+
+>>> xpr:podman <2026-11-17>
+
+
++   podman 
+    https://podman.io/
+
++   docker vs podman 
+    https://www.youtube.com/results?search_query=podman
+
++   podman lernen 
+    https://www.youtube.com/watch?v=gdkOjmq1zfQ
+
+
+ps7$>    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
+
+<<< xpr:podman 
+
+
++   Morgen Gespräch 
+
+    Weiterbildungsbeginn:   31.08.2026
+    Weiterbildungsende:     18.11.2026  13W
+
++   Bewerbungen 
+    
