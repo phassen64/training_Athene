@@ -1084,4 +1084,33 @@ ps7$>    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -A
     Weiterbildungsende:     18.11.2026  13W
 
 +   Bewerbungen 
+
+
+### !date:<2026-11-18>:Mi 
+
+10:00   finish 
+
+
+<<< feedback 
++   etwas zu kurz
++   zu viele Inhalte
++   wollte zuerst nach 1 Tag abbrechen 
++   wichtig cloud - AWS/GoogleCE
++   Anstelle Docker(veraltet) ist eher Podman wichtig
+    podman & kubernetes ohne Einrichtung 
++   Zusammenstellung 
+    Docker vs Kubernetes ist falsch     
++   Fragen werden durch den Kurs nicht beantwortet 
+    ?   wie verbinde ich den Docker mit dem Host (binding/mounting)
+    ?   wie schalte ich GitHub Copilot in VsCode ein || aus
+    
++   Oberflächlich 
+    zum Beispiel wird das Wort "pod" erwähnt, aber nicht 
+        beschrieben, was es ist.
+        
++   Was ich gelernt habe...
+    <<< was versteht man unter einem "Workload"
+    
+
+        
     

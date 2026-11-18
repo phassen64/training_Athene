@@ -175,3 +175,9 @@ $   AI Alignment
 
 +   AI Model Training KnowHow
     https://www.youtube.com/watch?v=edIHPoWgIKU
+
+$   Workload
+    The term workload refers to the amount of work assigned to 
+        or expected from a person, 
+        team, machine, or computing system within a specific period. Because the term is used across several domains, 
+        its exact meaning depends on context:
