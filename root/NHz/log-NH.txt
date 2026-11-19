@@ -1112,5 +1112,8 @@ ps7$>    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -A
     <<< was versteht man unter einem "Workload"
     
 
+### !date:<2026-11-19>:Do 
+
+Abmeldung         
++   Aktueller Kurs : AICertPractitioner™ 
         
-    
