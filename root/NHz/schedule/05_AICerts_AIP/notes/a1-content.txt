@@ -379,9 +379,30 @@ Module 1: Cloud Fundamentals
                 structured and unstructured data
             https://en.wikipedia.org/wiki/NoSQL
             https://en.wikipedia.org/wiki/Amazon_DynamoDB   
-        +   data warehouses enable large-scale analytics 
-        +   in-memory databases deliver extremely fast data 
             access for high-performance applications
+
++   Amazon Aurora {SQL Database}
+    https://en.wikipedia.org/wiki/Amazon_Aurora
+    Aurora is available as part of the 
+        Amazon Relational Database Service (RDS).
+    Aurora offered MySQL compatible service upon its release in 2014. 
+    It added PostgreSQL compatibility in October 2017.
+
++   Amazon DynamoDB {NoSQL Database}
+    https://en.wikipedia.org/wiki/Amazon_DynamoDB   
+    Amazon DynamoDB is a managed NoSQL database service provided 
+    by Amazon Web Services (AWS)
+    It supports key-value and document data structures and is designed 
+    to handle a wide range of applications requiring scalability and performance.
+
++   Amazon DocumentDB {NoSQL Database}
+    https://en.wikipedia.org/wiki/Amazon_DocumentDB
+    Amazon DocumentDB is a managed proprietary NoSQL database 
+        service that supports document data structures, 
+            with some compatibility with MongoDB version 3.6..
+    A document database natively stores JSON data. 
+    DocumentDB provides single document lookups, index scans, 
+        regular expression queries, and aggregations.
             
 +   Load Balancing Services     
     https://de.wikipedia.org/wiki/Lastverteilung_(Informatik)
@@ -1047,9 +1068,23 @@ $   workload
     https://www.netflix.com/de/
 
 +   airbnb        
-        its a global marketplace that connects travelers with hosts
-        offering stays and experiences
+    Its a global marketplace that connects travelers with hosts
+        offering stays and experiences.
     https://www.airbnb.de/
+    https://de.wikipedia.org/wiki/Airbnb
+    Airbnb ist ein 2008 im kalifornischen Silicon Valley 
+        gegründetes US-amerikanisches Unternehmen, 
+    das unter dem gleichen Namen ein Online-Portal zur Vermittlung, 
+    Buchung und Vermietung von Unterkünften betreibt („makelt“), 
+    ähnlich einem Computerreservierungssystem.
+    Sowohl private als auch gewerbliche Nutzende mieten und 
+        vermieten hierbei, mittlerweile gegen eine Gebühr, 
+    Räumlichkeiten, 
+    ohne dass Airbnb dabei rechtliche Verpflichtungen übernimmt.
+    Seit der Gründung im Jahr 2008 bis zum März 2020 wurden über 
+    das Unternehmen nach eigenen Angaben mehr als 
+        900 Millionen Übernachtungen gebucht.
+ 
 
 
 ===============================================================================
@@ -1486,6 +1521,23 @@ url:    https://de.wikipedia.org/wiki/Deep_Learning                 * key:DL
     •   Model evaluation tools.
     •   Feature selection.
     •   Data preprocessing utilities.
+
++   PyCharm
+    https://www.jetbrains.com/de-de/pycharm/
+    Die professionelle Python-IDE für Sie und Ihre Agents-
+    Veröffentlichen Sie verlässlichen Code für 
+        Web-, Daten- und ML-Projekte.
+    PyCharm analysiert Ihren Python-Code und löst Verwendungen, 
+        Typen und Abhängigkeiten im gesamten Projekt auf – auch 
+    in virtuellen Umgebungen. 
+    So wissen Sie jederzeit genau, 
+    was Ihr Code tut und wo Änderungen zu Fehlern führen würden.
+    Die mitgelieferten Skills des integrierten MCP-Servers 
+        von PyCharm machen diese Präzision auch für Agents nutzbar. 
+    Die IDE verbindet Agents automatisch mit einem 
+        laufenden Jupyter-Kernel. 
+    So erhalten sie präzise, zielgenaue Ergebnisse.
+    
 
 ### !date:<2026-10-28>:Mi 
 
@@ -2358,7 +2410,7 @@ and derive actionable insights from data-driven systems.
         o   Files (CSV, Parquet, JSON)
         o   SaaS Applications (APIs)
         o   Events (Webhooks, streams)
-
+    
     Extract & Load:
         o   Data is extracted from source systems.
         o   It is loaded directly into the Data Warehouse in raw form.
@@ -2371,6 +2423,75 @@ and derive actionable insights from data-driven systems.
         o   Aggregation
         o   Applying business rules
 
++   File Formats 
+    
+    •   CSV 
+        Das Dateiformat CSV steht für englisch Comma-separated values 
+            (seltener Character-separated values[1]) und 
+        beschreibt den Aufbau einer Textdatei zur Speicherung 
+        oder zum Austausch einfach strukturierter Daten. 
+        Die Dateinamenserweiterung lautet .csv.    
+        https://de.wikipedia.org/wiki/CSV_(Dateiformat)
+        example:
+        Stunde,Montag,Dienstag,Mittwoch,Donnerstag,Freitag
+        1,Mathematik,Deutsch,Englisch,Erdkunde,Politik
+        2,Sport,Deutsch,Englisch,Sport,Geschichte
+        3,Sport,"Religion (ev., kath.)",Kunst,,Kunst
+
+    •   JSON
+        https://json.org/example.html
+        https://de.wikipedia.org/wiki/JSON
+        Die JavaScript Object Notation
+            ist ein kompaktes Datenformat in einer einfach 
+            lesbaren Textform für den Datenaustausch zwischen Anwendungen. 
+        JSON ist von Programmiersprachen unabhängig. 
+        Parser und Generatoren existieren in den meisten 
+            verbreiteten Sprachen.
+        example:
+        {
+            "name": "Anna",
+            "alter": 28,
+            "aktiv": true,
+            "hobbys": [
+                "Lesen",
+                "Sport"
+            ]
+        }
+
+    •   YAML
+        https://yaml.org/
+        https://de.wikipedia.org/wiki/YAML   
+        YAML (rekursives Akronym für YAML Ain't Markup Language, 
+            ursprünglich Yet Another Markup Language) 
+        ist ein weit verbreitetes, textbasiertes Datenformat 
+        zur Datenserialisierung und für Konfigurationsdateien    
+        example:
+        ---
+        # Ein einfaches Benutzerprofil
+        name: Max Mustermann
+        alter: 30
+        ist_aktiv: true
+        gehalt: 45000.50
+        # Eine Liste von Hobbys
+        hobbys:
+        - Lesen
+        - Programmieren
+        - Wandern
+        # Ein verschachteltes Objekt (Dictionary)
+        kontakt:
+            email: max@example.com
+            telefon: "+49123456789"
+  
+    •   Parquet
+        https://parquet.apache.org/
+        Apache Parquet is an open source, 
+            column-oriented data file format designed for efficient 
+            data storage and retrieval. 
+        It provides high performance compression and encoding schemes 
+            to handle complex data in bulk and 
+        is supported in many programming languages and analytics tools.        
+        https://www.youtube.com/watch?v=KLFadWdomyI
+    
   
 
 === m:  [3.2]   Big Data Technologies
@@ -2408,6 +2529,31 @@ and derive actionable insights from data-driven systems.
         (Python, Java, Scala, and R), 
         includes libraries for diverse tasks ranging 
             from SQL to streaming and machine learning.
+    
+    •   Python 
+        https://www.python.org/
+    
+    •   Java 
+        https://www.java.com/de/
+    
+    •   Scala   "small scripts to large"
+        https://de.wikipedia.org/wiki/Scala_(Programmiersprache)
+        https://scala-lang.org/
+        Scala ist eine funktionale und objektorientierte Programmiersprache.
+        Scala-Programme können Java Archive 
+            (umgangssprachlich JAR-Datei) ansprechen und 
+        Java-Programme können Scala-Dateien ansprechen.
+    
+    •   R 
+        https://de.wikipedia.org/wiki/R_(Programmiersprache)
+        R ist eine freie Programmiersprache für statistische Berechnungen 
+        und Grafiken. 
+        Sie wurde 1992 von Statistikern für Anwender mit statistischen 
+            Aufgaben neu entwickelt. 
+        Die Syntax orientiert sich an der Programmiersprache S, 
+        mit der R weitgehend kompatibel ist, und die Semantik an Scheme.   
+        https://www.r-project.org/
+
 
 +   Spark Components 
 
@@ -2509,6 +2655,15 @@ and derive actionable insights from data-driven systems.
         It provides essential services such as configuration, 
         file management, and networking support.
 
++   Apache Hadoop YARN
+    https://hadoop.apache.or/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html
+    The fundamental idea of YARN is to split up the functionalities 
+        of resource management and job scheduling/monitoring 
+    into separate daemons. 
+    The idea is to have a global ResourceManager (RM) and 
+    per-application ApplicationMaster (AM). 
+    An application is either a single job or a DAG of jobs.
+    
 
 +   Table 8: Hadoop vs Spark
     *   processing speed 
@@ -2543,6 +2698,21 @@ and derive actionable insights from data-driven systems.
         of the data lifecycle, from storage and analytics to machine learning.
 
 --- s:  [3.3].Data Lakes
+
++   Data Lake
+    https://de.wikipedia.org/wiki/Data_Lake
+    https://azure.microsoft.com/de-de/solutions/data-lake/
+
+    Ein Data Lake (wörtlich übersetzt: „Datensee“) 
+        ist in der Wirtschaftsinformatik ein System 
+        oder ein Repository von Daten, 
+    die im Rohdatenformat gespeichert sind, normalerweise Blobs oder Dateien. 
+    Ein Data Lake ist in der Regel ein einziger Speicher für 
+        alle Unternehmensdaten, 
+    einschließlich Rohkopien von Quellsystemdaten und transformierten Daten, 
+    die für Aufgaben wie Berichterstellung, 
+        Visualisierung, erweiterte Analysen und 
+    maschinelles Lernen verwendet werden. 
 
     A Data Lake is a centralized repository that stores 
         raw data in its original format 
@@ -2592,7 +2762,15 @@ and derive actionable insights from data-driven systems.
     storage, access management, monitoring, and compliance controls.
 
 
---- s:  [3.3].Data Warehouse
+--- s:  [3.3].Data Warehouse (DWH oder DW)
+
+    https://de.wikipedia.org/wiki/Data_Warehouse
+    Ein Data Warehouse (kurz DWH oder DW; 
+        wörtlich „Datenlager“, im Deutschen dominiert die 
+        englische Schreibweise, 
+    die Schreibweise Datawarehouse wird jedoch auch verwendet) 
+    ist eine für Analysezwecke optimierte zentrale Datenbank, 
+    die Daten aus mehreren, in der Regel heterogenen Quellen zusammenführt.
 
     Data Warehouse is a large repository of organizational 
         data which collects and manages data 
@@ -2601,7 +2779,6 @@ and derive actionable insights from data-driven systems.
     We can understand it as a process of transforming raw data 
         into information because data is first processed and 
         then organized into sections.
-
 
 +   a Data Warehouse supports...
 
@@ -2731,6 +2908,7 @@ and derive actionable insights from data-driven systems.
 
 
 === m:  [3.4]   Data Quality, Governance, Versioning, and Cataloging
+
 
 
     As organizations collect and process massive amounts of data, 
@@ -2979,8 +3157,23 @@ and derive actionable insights from data-driven systems.
     https://en.wikipedia.org/wiki/Amazon_Kinesis    
     https://de.wikipedia.org/wiki/Apache_Kafka
     https://de.wikipedia.org/wiki/Apache_Flink
-    
 
+
++   Apache Kafka     
+    https://kafka.apache.org/
+    Apache Kafka is an open-source distributed event streaming platform 
+        used by thousands of companies for high-performance 
+        data pipelines, streaming analytics, data integration, 
+    and mission-critical applications.
+    
++   Apache Flink    icon:squirrel [ZOOL.] = Eichhörnchen
+    https://flink.apache.org/
+    Apache Flink ist ein Open-Source-Framework und 
+        eine verteilte Rechen-Engine 
+    für die zustandsbehaftete Verarbeitung von unbegrenzten und 
+    begrenzten Datenströmen (Stream- und Batch-Processing).
+    
+    
 +   Bank Solution
     
     •   events 
@@ -2991,14 +3184,13 @@ and derive actionable insights from data-driven systems.
         A kafka 
         
     •   processing 
-        Apache Flink or 
-        
+        Apache Flink or         
             Apache Spark Streaming
         
     •   realt-time evaluation 
     
 
-+   Kafka Ecosystem
++   Apache Kafka Ecosystem
 
     •   data source 
         Apache Cassandra    
@@ -3029,10 +3221,34 @@ and derive actionable insights from data-driven systems.
         https://de.wikipedia.org/wiki/Elasticsearch
 
 
-+   Kafka Architecture:
++   Apache Cassandra {NoSQL Database}
+    https://de.wikipedia.org/wiki/Apache_Cassandra
+    https://cassandra.apache.org/_/index.html
+    Cassandra ist ein einfaches, 
+        verteiltes Datenbankverwaltungssystem für sehr große strukturierte 
+        Daten (ein sogenanntes „NoSQL“-Datenbanksystem). 
+    Es ist auf hohe Skalierbarkeit und Ausfallsicherheit bei großen, 
+        verteilten Systemen ausgelegt. 
+    Die Daten werden in Schlüssel-Wert-Relationen abgelegt. 
+    Es ist offen dokumentiert und in Java implementiert. 
+
++   Oracle Database 
+    https://en.wikipedia.org/wiki/Oracle_Database   
+    https://www.oracle.com/database/
+    Oracle AI Database (commonly referred to as Oracle Database, 
+        Oracle DBMS, Oracle Autonomous Database, 
+        or simply as Oracle) 
+    is a proprietary multi-model database management system developed and 
+        marketed by Oracle Corporation. 
+    First released in 1979, it was among the earliest commercially 
+    available databases to use SQL.[4]
+    It is commonly used for online transaction processing (OLTP), 
+        data warehousing (DW), and mixed database workloads.
+  
++   Apache Kafka Architecture:
         https://kafka.apache.org/
 
-    Kafka architecture is a distributed system design that 
+    Apache Kafka architecture is a distributed system design that 
         enables high-throughput, fault-tolerant, 
         and real-time streaming of data between producers and consumers. 
     It is built to handle large-scale data pipelines efficiently 
@@ -3059,14 +3275,13 @@ and derive actionable insights from data-driven systems.
 
 +   Amazon Kinesis:
         https://aws.amazon.com/kinesis/
-
     Amazon Kinesis is a fully managed real-time data 
         streaming service provided by Amazon Web Services (AWS). 
     It enables organizations to collect, process, 
         and analyze streaming data without managing 
         underlying infrastructure.
 
-+   Amazon Kinesis  Stream Processing and Real-Time Analytics:
++   Amazon Kinesis Stream Processing and Real-Time Analytics:
 
     *   Data Analytics 
         processes incoming data streams using SQL or 
@@ -3089,16 +3304,18 @@ and derive actionable insights from data-driven systems.
         for monitoring system health and user behavior.
 
 
-+   Kafka vs Kinesis
++   Streaming Platforms compare Apache Kafka vs Amazon Kinesis
 
-    Kafka:
+    Apache Kafka:
+    https://kafka.apache.org/
     +   is Open Source 
     +   On-Premises Cloud Hybrid 
     +   High Customization
     -   Higher Maintenance 
     -   Higher Infrastucture costs 
 
-    Kinesis:
+    Amazon Kinesis:
+    https://aws.amazon.com/kinesis/
     -   AWS only 
     +   automatically scalable 
     +   usage based 
@@ -3178,7 +3395,6 @@ Case Study 3:
     Airbnb Feature Store 
     https://www.airbnb.de/
 
-
     *   Target Industry: 
         Travel, Hospitality, and Online Marketplace
     
@@ -3196,6 +3412,12 @@ Case Study 3:
     
     *   Feature discovery and reuse across teams were limited.
 
++   Airbnb AI 
+    https://airbnb.tech/opensource/chronon/
+    Chronon is a data platform for serving for AI/ML applications. 
+        It is an open source end-to-end feature platform that 
+    allows Machine Learning (ML) teams to easily build, 
+    deploy, manage and monitor data pipelines for machine learning.
 
 ===============================================================================
 Module 4: Cloud with AI
@@ -3310,6 +3532,8 @@ This module covers:
         Amazon SageMaker Data and AI Governance: 
             Bietet Sicherheits-, Verwaltungs- und Kontrollfunktionen für Daten und KI-Modelle im Unternehmensmaßstab.
 
+    •   Intro:
+        https://www.youtube.com/watch?v=mzkHGEyAPEw
    
 +   Figure 4.3: Key Features of Amazon SageMaker
 
@@ -3375,6 +3599,49 @@ This module covers:
         including Jupyter Notebooks, Visual Studio Code, 
         or your favorite Python IDE.
 
+
++   Project Jupyter 
+    https://en.wikipedia.org/wiki/Project_Jupyter
+    https://jupyter.org/
+    
+    Project Jupyter (pronounced "Jupiter") is a project 
+        to develop open-source software, 
+        open standards, 
+        and services 
+    for interactive computing across multiple programming languages.
+
+    •   Jupyter Notebook: 
+        The Classic Notebook Interface
+        The Jupyter Notebook is the original web application 
+            for creating and sharing computational documents. 
+        A Jupyter Notebook document is a JSON file, 
+            following a versioned schema, 
+            usually ending with the ".ipynb" extension. 
+
+    •   Jupyter Lab: 
+        A Next-Generation Notebook Interface
+        JupyterLab is the latest web-based interactive development environment 
+            for notebooks, code, and data. 
+        Its flexible interface allows users to configure and 
+            arrange workflows in 
+        data science, scientific computing, 
+        computational journalism, and machine learning. 
+
++   Developer Studio
+    •   Visual Code 
+        https://code.visualstudio.com/
+        https://de.wikipedia.org/wiki/Visual_Studio_Code
+        Code with precision, collaborate with or orchestrate 
+            a team of agents, 
+        and continue your work wherever you are.
+        Visual Studio Code (kurz VS Code) ist ein kostenloser 
+            Quelltext-Editor von Microsoft. 
+        Visual Studio Code ist plattformübergreifend 
+            für die Betriebssysteme Windows, macOS und Linux verfügbar.
+        https://code.visualstudio.com/insiders
+        Get the latest changes daily. 
+            Help shape what’s next in VS Code by trying new features 
+            and fixes the moment they land.
 
 === v:  [4.3]   Google Gortex Azure Machine Learning
 
@@ -3502,8 +3769,7 @@ $   Lightweight Device
         der 3.5-Klasse, das speziell für hochvolumige Subagenten-Aufgaben,  
     Dokumentenverarbeitung und Anwendungen mit Fokus auf 
         niedrige Latenz optimiert wurde.
-    
-    
+        
 +   Types of Inference{"Folgerung/Rückschluss"}:
 
     Cloud platforms support different types of inference 
@@ -3628,6 +3894,8 @@ $   Lightweight Device
 
 +   Docker 
     url:    https://www.docker.com/
+    url:    https://hub.docker.com/
+
     ~ is an open-source containerization platform that allows 
         developers to build, package, distribute, 
         and run applications in containers. 
@@ -6651,6 +6919,10 @@ Case Study 2:
 Module 8: Retrieval-Augmented Generation (RAG)
 ===============================================================================
 
+https://de.wikipedia.org/wiki/Information_Retrieval
+https://de.wikipedia.org/wiki/Large_Language_Model
+https://de.wikipedia.org/wiki/Retrieval-Augmented_Generation
+
 Retrieval-Augmented{"erweitern,steigern"} Generation (RAG) is a powerful 
     AI framework that enhances the capabilities of 
     large language models (LLMs) by combining them 
@@ -7259,6 +7531,14 @@ This module covers:
         Distributed search engine with vector search capabilities.
         Dense vectors, hybrid search, real-time analytics.
 
+
++   Elasticsearch 
+    https://github.com/elastic/elasticsearch
+    https://en.wikipedia.org/wiki/Elasticsearch
+    Elasticsearch is a free and open-source search engine developed by Elastic. 
+    It is based on Apache Lucene and provides a distributed, 
+        multitenant-capable full-text search engine with 
+        an HTTP web interface and schema-free JSON documents.
 
 
 === m:  [8.6]   Use Cases

@@ -4336,6 +4336,14 @@ Module 5: Generative AI and LLM Models
 === m:  [5.1]   Transformer Architecture, Attention Mechanism, and Tokenization
 === v:  [5.1]   Transformer
 
+    https://www.ibm.com/think/topics/transformer-model
+    The transformer model is a type of neural network architecture 
+        that excels at processing sequential data, 
+        most prominently associated with large language models (LLMs). 
+    Transformer models have also achieved elite performance in 
+        other fields of artificial intelligence (AI), 
+    such as computer vision, 
+    speech recognition and time series forecasting.
 
     This module covers:
 
@@ -4633,6 +4641,8 @@ $   BART (Bidirectional and Auto-Regressive Transformers)
 
 +   Types of Tokens:
 
+    https://www.turingpost.com/p/tokentaxonomy
+
     Tokens are the basic units of text that an LLM processes. 
         Depending on how text is split, 
         there are different types of tokens:
@@ -4746,6 +4756,14 @@ $   BART (Bidirectional and Auto-Regressive Transformers)
         Final generated text is presented as the output to the user.
 
 
++   LLM products overview
+    •   ChatGPT     https://chatgpt.com/    
+    •   Gemini      https://gemini.google.com/
+    •   Claude      https://claude.com/
+    •   LLaMA       https://dev.meta.ai/llama
+    •   Mistral     https://mistral.ai/
+
+
 $   LLM :: ChatGPT 
     https://chatgpt.com/
 
@@ -4801,6 +4819,7 @@ $   LLM :: ChatGPT
 
 $   LLM :: LLaMA
     https://de.wikipedia.org/wiki/LLaMA-Sprachmodell
+    https://dev.meta.ai/llama/models/llama-4
 
     Das LLaMA (Large Language Model Meta AI) von Meta ist ein 
         sogenanntes Großes Sprachmodell, 
@@ -4991,6 +5010,8 @@ $   LLM :: Mistral_AI
 === m:  [5.3]   Prompt Engineering Techniques
     v:  [5.5]
 
+    https://www.promptingguide.ai/techniques
+
     Prompt Engineering is the process of designing 
         clear, structured, and effective inputs (prompts) 
         to guide a Large Language Model (LLM) 
@@ -5030,7 +5051,6 @@ $   LLM :: Mistral_AI
         *   Fast and easy to implement.
         *   Suitable for straightforward tasks.
         *   Leverages the model's existing knowledge.
-
 
     2.  Few-Shot prompting
 
@@ -5287,6 +5307,7 @@ $   LLM :: Mistral_AI
         https://openai.com/de-DE/gpt-5/
     
     •   Gemini 1.5 Pro
+        https://www.mindstudio.ai/models/gemini-1-5-pro
    
     •   Microsoft Copilot 
         https://www.microsoft.com/de-de/copilot
@@ -5297,8 +5318,9 @@ $   LLM :: Mistral_AI
     •   Llama 3.1
         Open-Source-KI
         https://ollama.com/library/llama3
+        https://ollama.com/library/llama4
      
-    •   Mistral Large 2
+    •   Mistral Large 2 LeChat
         https://docs.mistral.ai/models/mistral-large-2-0-24-07
       
     •   Grok 2
@@ -5333,6 +5355,20 @@ $   LLM :: Mistral_AI
         https://en.wikipedia.org/wiki/Stable_Diffusion
         Text-to-image generation, 
             image editing, artistic content creation
+
++   Comprehensive :: Multimodal AI Models
+    •   Claude 3.5          https://www.anthropic.com/
+    •   Ernie 4.0           https://aimode.co/model/ernie-4/
+    •   Gemini 1.5 Pro      https://www.mindstudio.ai/models/gemini-1-5-pro
+    •   Grok 2              https://grok.com/
+    •   GPT-5               https://openai.com/de-DE/gpt-5/
+    •   Kosmos 2.0          https://huggingface.co/papers/2306.14824
+    •   Qwen 2-VL           https://chat.qwen.ai/   
+    •   Llama 4             https://ollama.com/library/llama4
+    •   Microsoft Copilot   https://www.microsoft.com/de-de/copilot   
+    •   Mistral Large       https://mistral.ai
+    •   Stable Difusion     https://stability.ai/stable-imageion
+
 
     
 === m:  [5.6]   Use Cases

@@ -1,26 +1,26 @@
-<#   
+<#
     ***************************************************************************
-    name:   url.searcher                    DTM: [2026-11-13]
+    name:   url.searcher                    DTM: [2026-11-23]
     ***************************************************************************
-   
-    description:    
+
+    description:
         •   Searches at directory:
                 $p_dSrc
-            in files like 
+            in files like
                 $p_sSrcFnmExt  = '.txt'
             lines with the pattern:
-                $p_sSearchPattern = 'https://' 
+                $p_sSearchPattern = 'https://'
         •   sorting the results and check unique
         •   flush the result into directory:
                 $p_dObj
-            named with:     
+            named with:
                 'url_<DATETIME>.log'
         •   supporting to switches
                 o_usage     *   helper info
                 o_perform   *   performs the job
 
     remark:
-        •   the script is startable via the 
+        •   the script is startable via the
                 Windows FileExplorer
     usage:
         $>  $d='D:\repository\training\root\NHz\KnowledgeBase'
@@ -31,17 +31,17 @@
     preconditions:
         •   $env:UserProfile
         •   $env:v_USR_scratch_relPath
-        •   existing scratchDir 
+        •   existing scratchDir
             "$env:UserProfile$env:v_USR_scratch_relPath"
-    
+
     output at scratch:
         •   tmp.log     *   temp dir
         •   url.log     *   all url's found in sourceDir textFiles
         •   url_<DTM>.log   *   is COPY, but versionized
-                      
+
     organization:
         •   mATe64 UG
-    
+
 #>
 
 #
@@ -87,6 +87,10 @@ function f_hlp_puts(
     f_hlp_print -p_sText $p_sText -p_sColor $p_sColor -o_NL
 } # f~puts
 
+function f_hlp_output([string] $p_sText) {
+    Write-Output $p_sText
+} # f~output
+
 function f_hlp_joinPath ( [string] $p_sDir, [string] $p_sFnm ) {
     #   build
     $s = $p_sDir
@@ -99,7 +103,7 @@ function f_hlp_joinPath ( [string] $p_sDir, [string] $p_sFnm ) {
 
 function f_hlp_delay( [int] $p_iSeconds = 1, $p_sText = 'stop') {
     if ($p_iSeconds -gt 1) {
-    }        
+    }
     $s = "--- "
     $s += $p_sText
     $s += "<$p_iSeconds>"
@@ -122,7 +126,7 @@ function  f_help_getFileDateTime([string] $p_sFilePath,
 #   ===========================================================================
 
 function f_mod_usage([int] $p_iLine) {
-    $sScp   = $MyInvocation.ScriptName    
+    $sScp   = $MyInvocation.ScriptName
     $sDtm   = f_help_getFileDateTime($sScp)
     $s =    "<scp>:='$sScp'"
     $s +=   "`n`t<ver>:='[$sDtm]"
@@ -134,21 +138,21 @@ function f_mod_usage([int] $p_iLine) {
     $s +=   "`n`t`t -o_perform  * do urlSearch "
     $s +=   "`n`t`t -o_verbose  * more text"
     $s +=   "`n`t`t -p_iDelay   = <$p_iDelay> * delay after finishing script "
-    $sUsage = $s    
+    $sUsage = $s
     Write-Host $sUsage -ForegroundColor $C_sColor_result
 }#  f~usage
 
 function f_mod_main([int] $p_iLine) {
 
     _puts "### `tmain" $C_sColor_menu
-    
-    #   body 
+
+    #   body
     Set-Location $p_dSrc
-    
+
     #   search
-    #   $sFex = '*.txt'
     $sDtm = Get-Date -Format 'yymmddHHmmss'
-       
+    $sDtm_beauty = Get-Date -Format 'yyyy-MM-dd|HH:mm:ss'
+
     #   work:tmpFile
     $fNam = "tmp.log"
     $pTmp = f_hlp_joinPath ($p_dObj)($fNam)
@@ -156,103 +160,107 @@ function f_mod_main([int] $p_iLine) {
         -Path $p_sSrcFnmExt `
         -Pattern $p_sSearchPattern > $pTmp
     if ($o_verbose) {
-        _puts "<`tcreated temp file:'$pTmp'." $C_sColor_info        
+        _puts "<`tcreated temp file:'$pTmp'." $C_sColor_info
     }
 
     #   genrate output file
     $fNam = "url.log"
     $pUrl = f_hlp_joinPath ($p_dObj)($fNam)
-    Write-Output "### created urlSearch dtm:[$sDtm]" > $pUrl
-    Write-Output "... file :$pUrl" >> $pUrl
-    Write-Output "... using:$pTmp" >> $pUrl
-    
+    _echo "### created urlSearch dtm:[$sDtm_beauty]" > $pUrl
+    _echo "    dSrc   : '$p_dSrc'" >> $pUrl
+    _echo "    sMatch : '$p_sSearchPattern'" >> $pUrl
+    if ($o_verbose) {
+        _echo "    using  : '$pTmp'"   >> $pUrl
+    }
+    _echo "<<< result : '$pUrl'"   >> $pUrl
+
     #   reply
     $env:v_sRc = $pTmp
-    
+
     #   parse file
     $aFileLine = Get-Content $pTmp
-    
+
     #   help array
-    $aMatchLine = @() 
-    
+    $aMatchLine = @()
+
     $i = 0
     foreach ( $sLine in $aFileLine ) {
-    
+
         $i += 1
         if ($sLine.Length -le 0) {
-            continue 
+            continue
         }
-        if ($o_debug) { Write-Output "[$i]:'$sLine'" >> $pUrl }
+        if ($o_debug) { _echo "[$i]:'$sLine'" >> $pUrl }
 
         if ([string]::IsNullOrWhiteSpace($sLine)) {
-            continue 
+            continue
         }
-        if ($o_debug) { Write-Output "--- notNull" >> $pUrl }
-        
-        #   'z1-url.txt:79:    https://www.viture.com'    
-        #   fetch last part of output 
+        if ($o_debug) { _echo "--- notNull" >> $pUrl }
+
+        #   'z1-url.txt:79:    https://www.viture.com'
+        #   fetch last part of output
         $i = $sLine.IndexOf(' ')
         if ($i -le 0) {
-            continue 
+            continue
         }
-        
+
         $s = $sLine.SubString($i)
         $s = $s.Trim()
         if ($sLine.Length -le 0) {
-            continue 
+            continue
         }
-        if ($o_debug) { Write-Output "--- afterTrim" >> $pUrl }
-    
+        if ($o_debug) { _echo "--- afterTrim" >> $pUrl }
+
         #   sometimes lines like  'url:https://emberspun.com/'
         #   starting search
         $bFound = $false
         for($i=0; $i -lt $s.length; $i++) {
             $t = $s.SubString($i)
             if ($t.StartsWith($p_sSearchPattern)) {
-                $s = $t 
+                $s = $t
                 $bFound = $true
                 break
-            } 
+            }
         }
         if (!$bFound) {
             continue
         }
-        
+
         #   sometimes lines like 'https://xyz      :!url'
         $a = $s.Split(' ')
-        $s = $a[0]    
-    
+        $s = $a[0]
+
         $aMatchLine += $s
-       
+
     }
-        
+
     #   sort and unique
     $aMatchLine = $aMatchLine | Sort-Object | Select-Object -Unique
-    
-    
+
+
     #   sample with alle matched lines
     $iLine=0
     foreach ( $sLine in $aMatchLine ) {
         $iLine += 1
         $sIdx = [String]::Format("{0:d3}", $iLine)
-        Write-Output "[$sIdx] : '$sLine'" >> $pUrl
+        _echo "[$sIdx] : '$sLine'" >> $pUrl
     }
     if ($o_verbose) {
         _puts "<`tcreated file:'$pUrl'." $C_sColor_info
     }
-    
+
     #   copy into pResult
     $fNam = "url_$sDtm.log"
     $pOut = f_hlp_joinPath ($p_dObj)($fNam)
     Copy-Item $pUrl $pOut
     _puts "<`tcreated file:'$pOut'." $C_sColor_result
-    
+
     #   reply
     $env:v_sRc=$pOut
-    Write-Output "< storing file:'$pOut'." 
-    
+    _echo "< storing file:'$pOut'."
+
     return $true
-    
+
 }   # f~main
 
 #   ===========================================================================
@@ -264,6 +272,7 @@ Set-Alias -Name __LINE__    -Value f_hlp_getCurrentLineNumber
 Set-Alias -Name _print      -Value f_hlp_print
 Set-Alias -Name _puts       -Value f_hlp_puts
 Set-Alias -Name _delay      -Value f_hlp_delay
+Set-Alias -Name _echo       -Value f_hlp_output
 
 #   s:  const
 Set-Variable -Name C_sColor_std     -Value 'Gray'
@@ -283,7 +292,7 @@ $C_cSepDirectoryPath    =   '\'
 if ($o_usage) {
     $iDelay = 2 * $p_iDelay
     $bRc = f_mod_usage(__LINE__)
-} 
+}
 elseif ($o_perform) {
     $iDelay = $p_iDelay
     $bRc = f_mod_main(__LINE__)
