@@ -1,6 +1,7 @@
-### created urlSearch dtm:[260223120221]
-... file :C:\Users\peter\documents\$\Temp\url.log
-... using:C:\Users\peter\documents\$\Temp\tmp.log
+### created urlSearch dtm:[2026-11-23|12:27:12]
+    dSrc   : 'd:\repository\training\root\NHz\KnowledgeBase'
+    sMatch : 'https://'
+<<< result : 'C:\Users\peter\documents\$\Temp\url.log'
 [001] : 'https://about.google/'
 [002] : 'https://ai.meta.com/tools/faiss/'
 [003] : 'https://aimode.co/model/ernie-4/'
