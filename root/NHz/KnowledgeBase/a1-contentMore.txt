@@ -85,7 +85,7 @@
     m:  [7.6]   Case Studies
 
 
-•   Module 8: Retrieval-Augmented Generation (RAG)
+•   Module 8: Retrieval-Augmented{"vermehrt"} Generation (RAG)
 
     m:  [8.1]   RAG Architecture and Components
     m:  [8.2]   Vector Databases and Embeddings
@@ -6977,6 +6977,14 @@ such as hallucinations, outdated knowledge,
 enterprise AI applications, 
 intelligent assistants, and knowledge management systems.
 
+products:
+    https://www.elastic.co/cloud/serverless
+    https://www.progress.com/agentic-rag
+
+
+RAG Explained For Beginners
+https://www.youtube.com/watch?v=_HQ2H_0Ayy0
+https://learn.kodekloud.com/
 
 === m:  [8.1]   RAG Architecture and Components
 
@@ -7052,7 +7060,6 @@ This module covers:
             The client submits a question to the RAG framework.
 
     Step 2: Semantic Retrieval
-
             *   The framework converts the query into an 
                 embedding and performs a semantic search on the 
                 vector database.
@@ -7061,7 +7068,6 @@ This module covers:
                 indexed original and newly added documents.
 
     Step 3: Prompt Augmentation
-
             *   The retrieved context is combined with 
                 the user's query to create an augmented prompt.
             *   The prompt is sent to the Large Language Model (LLM).
@@ -7152,7 +7158,7 @@ This module covers:
         of Retrieval-Augmented Generation (RAG) systems. 
     Embeddings convert textual information into numerical vectors 
         that capture semantic meaning, 
-        while vector databases store and retrieve these vectors 
+    while vector databases store and retrieve these vectors 
         efficiently to enable fast and accurate semantic search. 
 
 
@@ -7216,6 +7222,20 @@ This module covers:
         vectors based on semantic closeness, 
         making it an essential component of RAG systems.
 
++   Indexing Methods 
+
+    •   FLAT 
+        https://vizlearn.in/gen_ai/flat_index.html
+   
+    •   Inverted File Index (IVF) 
+    https://www.velodb.io/glossary/inverted-file-index-in-vector-similarity-search
+
+    •   HNSW    Hierarchical Navigable Small World
+        https://www.pinecone.io/learn/series/faiss/hnsw/
+
+    •   Product Quantization (PQ)
+        https://www.pinecone.io/learn/series/faiss/product-quantization/
+    
 +   Functions of a Vector Database
 
     *   Stores Vector Embeddings: 
@@ -7282,7 +7302,16 @@ This module covers:
     resulting in more accurate, 
         context-aware, and reliable AI-generated responses.
 
-=== s:  [8.3]   Advanced Chunking
++   survey
+    •   Advanced Chunking{"Stückwerk"}
+        https://futureagi.com/blog/advanced-chunking-techniques-for-rag/
+    •   HyDE (Hypothetical Document Embeddings)
+        https://emergent.sh/glossary/hypothetical-document-embeddings
+    •   GraphRAG
+        https://www.ibm.com/de-de/think/topics/graphrag
+
+    
+=== s:  [8.3]   Advanced Chunking{"Stückwerk"}
 
 +   ~ is the process of intelligently dividing 
         large documents into meaningful and context-preserving chunks 
@@ -7290,6 +7319,12 @@ This module covers:
     Better chunking improves retrieval accuracy by 
         ensuring that relevant information remains together.
 
++   language.en "Chunking" 
+    is the process of grouping smaller pieces of information into 
+        larger, 
+    meaningful units (or breaking large information into smaller, 
+    manageable parts) 
+    to make it easier to remember, process, or organize.
 
 +   Process of ~
 
@@ -7336,7 +7371,8 @@ This module covers:
 
 
 === s:  [8.3]   HyDE (Hypothetical Document Embeddings)
-
+    https://emergent.sh/glossary/hypothetical-document-embeddings
+   
 +   ~ is an advanced retrieval technique in which the 
     LLM first generates a hypothetical answer 
         or document for the user's query. 
@@ -7358,7 +7394,7 @@ This module covers:
     from the vector database.
 
 
-=== s:  [8.3]   GraphRAG:
+=== s:  [8.3]   GraphRAG
 
 +   GraphRAG extends traditional RAG by incorporating knowledge 
         graphs to capture relationships between entities 
@@ -7394,8 +7430,7 @@ This module covers:
     *   Response Delivery: 
         The generated response is returned to the user.
 
-+   Advantages of GraphRAG over Traditional RAG:
-
++   Advantages of GraphRAG over Traditional RAG
     While Traditional RAG relies on semantic similarity, 
         GraphRAG enhances retrieval by incorporating entity 
         relationships and graph structures. 
@@ -7421,7 +7456,6 @@ This module covers:
         It evaluates the retrieval and generation components 
         by using LLMs and embedding models instead of 
     relying solely on human-annotated reference answers.
-
 
 
 +   Hauptfunktionen von Ragas

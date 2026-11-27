@@ -45,6 +45,14 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     https://de.wikipedia.org/wiki/BlueScope_Steel
     https://www.bluescopesteel.com.au/
 
++   Doordash
+    https://www.doordash.com/
+    https://de.wikipedia.org/wiki/DoorDash
+    Sitz	San Francisco, Kalifornien USA
+    Mitarbeiterzahl	23.700 (2024)
+    Umsatz	13,72 Mrd. USD (2025)
+    Tony Xu (CEO)
+   
 +   Google LLC 
     Sitz:   Mountain View, Kalifornien USA 
     Leitung	Sundar Pichai (CEO)
@@ -56,6 +64,17 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     https://de.wikipedia.org/wiki/Google_LLC
     https://about.google/
 
++   IBM 
+    Number of employees	264,300 (2025)
+    Sitz:   	Armonk, New York
+    Mitarbeiterzahl	300.000 
+    Umsatz	67,5 Mrd. USD (2025)    
+    Leitung	Arvind Krishna (CEO)
+    https://de.wikipedia.org/wiki/IBM
+    https://de.wikipedia.org/wiki/Arvind_Krishna    * CEO
+    https://en.wikipedia.org/wiki/George_Winthrop_Fairchild * founder
+    https://www.ibm.com/us-en
+    
 +   Microsoft 
     Sitz:   Redmond, Washington USA
     Mitarbeiterzahl	228.000
@@ -69,6 +88,8 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     Sitz:   Los Gatos, Kalifornien, USA
     Mitarbeiterzahl	16.000   
     Umsatz	45,2 Mrd. USD    
+    https://de.wikipedia.org/wiki/Reed_Hastings * founder
+    https://de.wikipedia.org/wiki/Marc_Randolph * founder
     https://de.wikipedia.org/wiki/Netflix
     https://www.netflix.com/
 
@@ -95,6 +116,8 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     Sitz:   Berlin und München, Deutschland
     Mitarbeiterzahl	318.000 (2025)[2][3]
     Umsatz	78,9 Mrd. Euro (2025)[2]
+    https://de.wikipedia.org/wiki/Werner_von_Siemens    *   founder
+    https://de.wikipedia.org/wiki/Johann_Georg_Halske   *   founder
     https://de.wikipedia.org/wiki/Siemens
     https://de.wikipedia.org/wiki/Roland_Busch * CEO
     https://www.siemens.com/en-us/
@@ -111,25 +134,42 @@ https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_der_Welt
     Sitz: Austin, Texas
     Mitarbeiterzahl	125.665 (31.12.2024)[1]
     Umsatz 97,690 Mrd. US-Dollar (2024)[1]
+    https://de.wikipedia.org/wiki/Elon_Musk * CEO
     https://de.wikipedia.org/wiki/Tesla,_Inc.
     https://www.tesla.com/
+
++   Thomas Reuters
+    Number of employees	27,100 (2025)[2]
+    Net income	Decrease US$1.50 billion (2025)
+    Steve Hasker    (president and CEO)   
+    David Thomson, 3rd Baron Thomson of Fleet * chairman / founder
+    https://en.wikipedia.org/wiki/David_Thomson,_3rd_Baron_Thomson_of_Fleet
+    https://en.wikipedia.org/wiki/Thomson_Reuters
+    https://www.thomsonreuters.com/en
+
++   SpaceX 
+    https://de.wikipedia.org/wiki/Elon_Musk * CEO
+    https://de.wikipedia.org/wiki/SpaceX
+    Mitarbeiterzahl	> 22.000 
+    Umsatz	15,5 Mrd. US-Dollar 
+    Sitz	Starbase, Texas, USA
     
 +   Uber 
     Sitz:   San Francisco, USA
     Mitarbeiterzahl	31.100
     Umsatz	44 Mrd. US-Dollar (2024)[2]
     Leitung	Dara Khosrowshahi (CEO)
-    https://de.wikipedia.org/wiki/Uber_(Unternehmen)
     https://de.wikipedia.org/wiki/Dara_Khosrowshahi
+    https://de.wikipedia.org/wiki/Uber_(Unternehmen)
     https://www.uber.com/de/en/
 
 +   VW
     Sitz:   Wolfsburg, Deutschland
-    CEO Oliver Blume
     Mitarbeiterzahl	662.900 
     Umsatz	321,9 Mrd
-    https://de.wikipedia.org/wiki/Volkswagen_AG    
+    CEO Oliver Blume
     https://de.wikipedia.org/wiki/Oliver_Blume_(Manager) * CEO
+    https://de.wikipedia.org/wiki/Volkswagen_AG    
     https://www.volkswagen-group.com/de
 
 +   Walmarkt 
