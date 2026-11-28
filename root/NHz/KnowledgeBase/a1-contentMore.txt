@@ -3536,6 +3536,7 @@ This module covers:
         https://www.youtube.com/watch?v=mzkHGEyAPEw
    
 +   Figure 4.3: Key Features of Amazon SageMaker
+    https://aws.amazon.com/de/sagemaker/ai/
 
     The image represents key features of 
         Amazon SageMaker:
@@ -6689,7 +6690,9 @@ $   DevOps
         Azure Machine Learning provide cloud-native 
             monitoring integrated with their respective 
             MLOps ecosystems.
-
+        https://aws.amazon.com/de/sagemaker/ai/
+        https://docs.aws.amazon.com/de_de/sagemaker/latest/dg/model-monitor.html
+        
     *   Domino Data Lab and 
         Censius offer enterprise-grade monitoring, 
             governance, and AI observability features.
